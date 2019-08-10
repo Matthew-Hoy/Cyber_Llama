@@ -129,6 +129,14 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\aboutIcon.png" />
+    <Content Include="Images\buildIcon.png" />
+    <Content Include="Images\ComponentsIcon.png" />
+    <Content Include="Images\computerIcon.png" />
+    <Content Include="Images\contactIcon.png" />
+    <Content Include="Images\faqIcon.png" />
+    <Content Include="Images\homeIcon.png" />
+    <Content Include="Images\JumboTron-Background.jpg" />
     <Content Include="Images\TestLogo.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

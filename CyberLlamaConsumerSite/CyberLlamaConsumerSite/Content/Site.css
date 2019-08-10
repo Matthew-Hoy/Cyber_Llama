@@ -38,8 +38,39 @@ textarea {
 
 .nav-link {
     color: white !important;
+    font-size: 80%;
+}
+
+.nav-item {
+    float: left;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    width: 50%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+    text-align: center; /* If you want the text to be centered */ 
+}
+
+.navbar-nav {
+    width: 100%;   
 }
 
 .nav-link:hover {
     color: black !important;
+}
+
+.body {
+    color: #bfbfbf !important;
+}
+
+.jumbotron {
+    border-radius: 0 !important;
+    background-image: url("/Images/JumboTron-Background.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+}
+
+.MenuIcon {
+    width: 30px;
+    margin-right: 5px;
 }
