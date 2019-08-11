@@ -1,11 +1,13 @@
-﻿
-@{
+﻿@{
+    <!--Add the title for the page-->
     ViewBag.Title = "About";
-
 }
+<!--Add the first Title Heading-->
 <h2 class="titleText">About CyberLlama</h2>
 <hr width="50%" color="purple" />
+<!--create the 3 About us Boxes-->
 <div class="row" style="margin-top:3%;">
+    <!--Sign Up Box-->
     <div class="col-md-4">
         <div class="borderedElement">
             <a class="navbar-brand" href=@Url.Action("Index", "SignUp") title="Sign Up Now"><img class="centerImage" src="/Images/signUpIcon.png" /></a>
@@ -19,6 +21,7 @@
             </p>
         </div>
     </div>
+    <!--Components Box-->
     <div class="col-md-4">
         <div class="borderedElement">
             <a class="navbar-brand" href=@Url.Action("Index", "Components") title="Shop Components Now"><img class="centerImage" src="/Images/shoppingCartIcon.png" /></a>
@@ -31,6 +34,7 @@
             </p>
         </div>
     </div>
+    <!--Build PC Box-->
     <div class="col-md-4">
         <div class="borderedElement">
             <a class="navbar-brand" href=@Url.Action("Index", "BuildPC") title="Build PC Now"><img class="centerImage" src="/Images/buildIcon.png" /></a>
@@ -44,7 +48,7 @@
         </div>
     </div>
 </div>
-
+<!--Create the Center OurStorySection-->
 <h2 class="centerText titleText">Our Story</h2>
 <hr width="50%" color="purple" />
 <div class="centerText-Max1000">
@@ -57,6 +61,7 @@
         It is for this reason that CyberLlama will be investing heavily in reasearch of self driving cars and Aftificial intelligence over the next few Years.
     </p>
 </div>
+<!--Create the Mission Section-->
 <h2 class="centerText titleText">Our Mission</h2>
 <hr width="50%" color="purple" />
 <div class="centerText-Max1000">
@@ -73,8 +78,10 @@
         Our Mission is to become a primary supplier of telecommunications solutions in South Africa
     </p>
 </div>
+<!--Create the Contact section-->
 <h2 class="centerText titleText">Get In Contact</h2>
 <hr width="50%" color="purple" />
+<!--add 2 boxes for contact and for address-->
 <div class="row" style="margin-top:3%;">
     <div class="col-md-6">
         <div class="borderedElement centerText-Max1000">
