@@ -1,14 +1,16 @@
 ﻿
 @{
     ViewBag.Title = "About";
-    
+
 }
-<h3 class="titleText">About CyberLlama</h3>
+<h2 class="titleText">About CyberLlama</h2>
 <hr width="50%" color="purple" />
-<div class="row" style="margin-top:5%;">
+<div class="row" style="margin-top:3%;">
     <div class="col-md-4">
         <div class="borderedElement">
-            <h5>The 4th industrial revolution</h5>
+            <a class="navbar-brand" href=@Url.Action("Index", "SignUp") title="Sign Up Now"><img class="centerImage" src="/Images/signUpIcon.png" /></a>
+            <hr width="30%" color="purple" />
+            <h5 class="centerText">The 4th industrial revolution</h5>
             <p>
                 Earth has entered a new era full of great technological advancements in imformation technology, robotics, AI and computing.
                 <hr width="30%" color="purple" />
@@ -19,25 +21,27 @@
     </div>
     <div class="col-md-4">
         <div class="borderedElement">
-            <h5>Innovative Solutions</h5>
+            <a class="navbar-brand" href=@Url.Action("Index", "Components") title="Shop Components Now"><img class="centerImage" src="/Images/shoppingCartIcon.png" /></a>
+            <hr width="30%" color="purple" />
+            <h5 class="centerText">Innovative Solutions</h5>
             <p>
                 CyberLlama strives to deliver the best, newest and cheapest products to your doorstep.
                 <hr width="30%" color="purple" />
-                
-                
+                CyberLama offers deliveries to the whole of South Africa and has warehouses situated in Cape-Towm, Johannesburg, Durban
             </p>
         </div>
     </div>
-        <div class="col-md-4">
-            <div class="borderedElement">
-                <h5>The 4th industrial revolution</h5>
-                <p>
-                    Earth has entered a new era full of great technological advancements in imformation technology, robotics, AI and computing.
-                    <hr width="30%" color="purple" />
-                    CyberLlama is here to help you with all your computing needs
-                    <hr width="30%" color="purple" />
-                    So join us and let us help you move foreward in the greatest revolution of all time.
-                </p>
-            </div>
+    <div class="col-md-4">
+        <div class="borderedElement">
+            <a class="navbar-brand" href=@Url.Action("Index", "BuildPC") title="Build PC Now"><img class="centerImage" src="/Images/buildIcon.png" /></a>
+            <hr width="30%" color="purple" />
+            <h5 class="centerText">Build Your own PC</h5>
+            <p>
+                CyberLama offers services for building your custom PC's based on your personal preferences
+                <hr width="30%" color="purple" />
+                We offer products for all your business, gaming or developing needs with a wide range of pre built PC's
+            </p>
         </div>
     </div>
+</div>
+

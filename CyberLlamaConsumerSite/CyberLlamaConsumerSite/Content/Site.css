@@ -74,7 +74,6 @@ textarea {
    
 }
 
-
 .navbar-nav {
     width: 100%;   
 }
@@ -83,8 +82,6 @@ textarea {
     color: yellow !important;
     display:block;
 }
-
-
 
 .body {
     color: #bfbfbf !important;
@@ -111,7 +108,7 @@ textarea {
 
 .titleText {
     text-align: center;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 .borderedElement {
@@ -120,7 +117,8 @@ textarea {
     padding: 20px;
     color: black;
     border-radius: 10px;
-    margin:1% 2% 1% 2%;
+    margin:0% 2% 0% 2%;
+    height:100%;
 }
 @media (min-width: 1400px) {
     .container {
@@ -138,20 +136,27 @@ textarea {
     }
 }
 
-
-
-/*
-    style of things within navigation bar
+.centerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    min-width:30px;
+}
+/*
+    style of things within navigation bar
 */
 .dropdown-menu{
-    
-    border: solid;
+    border: 1px solid green;
     color: darkblue;
-    border-color: green;
     cursor: pointer
 }
 
 .dropdown:hover .dropdown-menu {
     display: block;
+}
+
+.centerText {
+    text-align:center;
 }
 
