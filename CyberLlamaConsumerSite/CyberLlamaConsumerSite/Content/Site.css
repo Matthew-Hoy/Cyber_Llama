@@ -22,3 +22,55 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.bg-dark {
+    background-color: purple !important;
+}
+
+.navbar-dark .navbar-toggler {
+    color: rgba(255, 255, 255, 1) !important;
+    border-color: rgba(255, 255, 255, 1) !important;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 80%;
+}
+
+.nav-item {
+    float: left;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    width: 50%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+    text-align: center; /* If you want the text to be centered */ 
+}
+
+.navbar-nav {
+    width: 100%;   
+}
+
+.nav-link:hover {
+    color: black !important;
+}
+
+.body {
+    color: #bfbfbf !important;
+}
+
+.jumbotron {
+    border-radius: 0 !important;
+    background-image: url("/Images/JumboTron-Background.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+}
+
+.MenuIcon {
+    width: 30px;
+    margin-right: 5px;
+}
