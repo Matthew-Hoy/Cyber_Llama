@@ -46,7 +46,18 @@ textarea {
     color: white !important;
     font-size: 80%;
     padding-bottom: 0px;
+    cursor:default;
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
 
 .nav-item {
     float: left;
@@ -55,15 +66,20 @@ textarea {
     text-decoration: none;
     width: 50%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
     text-align: center; /* If you want the text to be centered */ 
+   
 }
+
 
 .navbar-nav {
     width: 100%;   
 }
 
-.nav-link:hover {
-    color: black !important;
+.nav-link:hover{
+    color: yellow !important;
+    display:block;
 }
+
+
 
 .body {
     color: #bfbfbf !important;
@@ -87,3 +103,19 @@ textarea {
         display: none;
     }
 }
+
+/*
+    style of things within navigation bar
+*/
+.dropdown-menu{
+    
+    border: solid;
+    color: darkblue;
+    border-color: green;
+    cursor: pointer
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
