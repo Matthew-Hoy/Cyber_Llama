@@ -138,6 +138,8 @@
     <Content Include="Images\faqIcon.png" />
     <Content Include="Images\homeIcon.png" />
     <Content Include="Images\JumboTron-Background.jpg" />
+    <Content Include="Images\llama.jpg" />
+    <Content Include="Images\llama.png" />
     <Content Include="Images\TestLogo.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
