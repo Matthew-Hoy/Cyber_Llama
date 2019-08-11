@@ -41,6 +41,11 @@ textarea {
 .navbar-dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
+@media (max-width: 768px) {
+    .navbar-brand {
+        display:none;
+    }
+}
 
 .nav-link {
     color: white !important;
@@ -104,8 +109,39 @@ textarea {
     }
 }
 
-/*
-    style of things within navigation bar
+.titleText {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.borderedElement {
+    border: 2px solid white;
+    background-color: #cccaca;
+    padding: 20px;
+    color: black;
+    border-radius: 10px;
+    margin:1% 2% 1% 2%;
+}
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1340px;
+    }
+}
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1540px;
+    }
+}
+@media (min-width: 1800px) {
+    .container {
+        max-width: 1740px;
+    }
+}
+
+
+
+/*
+    style of things within navigation bar
 */
 .dropdown-menu{
     
