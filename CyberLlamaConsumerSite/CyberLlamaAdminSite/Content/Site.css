@@ -1,0 +1,179 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/*
+    Layout Page Items
+*/
+.bg-dark {
+    background-color: purple !important;
+    border-bottom: 1px solid pink !important;
+}
+
+.navbar .navbar-dark {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.navbar-dark .navbar-toggler {
+    color: rgba(255, 255, 255, 1) !important;
+    border-color: rgba(255, 255, 255, 1) !important;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 80%;
+    padding-bottom: 0px;
+    cursor: default;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.nav-item {
+    float: left;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    width: 50%;
+    text-align: center;
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: yellow !important;
+    display: block;
+}
+
+.body {
+    color: #bfbfbf !important;
+}
+
+.jumbotron {
+    border-radius: 0 !important;
+    background-image: url("/Images/JumboTron-Background.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+}
+
+.MenuIcon {
+    width: 30px;
+    margin-right: 5px;
+}
+
+.dropdown-menu {
+    border: 1px solid green;
+    color: darkblue;
+    cursor: pointer
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+/*
+    Layout Resizing options
+*/
+@media (max-width: 768px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .MenuIcon {
+        display: none;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1340px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1540px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .container {
+        max-width: 1740px;
+    }
+}
+/*
+    Text Related CSS
+*/
+.titleText {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.centerText-Max1000 {
+    display: block;
+    text-align: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
+    Image relates CSS
+*/
+.centerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    min-width: 30px;
+}
+/*
+    Div relates CSS
+*/
+.borderedElement {
+    border: 2px solid white;
+    background-color: #cccaca;
+    padding: 20px;
+    color: black;
+    border-radius: 10px;
+    margin: 0% 2% 0% 2%;
+    height: 100%;
+}
