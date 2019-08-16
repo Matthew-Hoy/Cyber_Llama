@@ -132,8 +132,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#"><img src="Images/faqIcon.png" class="MenuIcon" /></a>
-                    <a class="nav-link" href="#">
+                    <a href=@Url.Action("Index", "FAQs")><img src="Images/faqIcon.png" class="MenuIcon" /></a>
+                    <a class="nav-link" href=@Url.Action("Index", "FAQs")>
                         FAQ's
                     </a>
                 </li>
@@ -145,8 +145,12 @@
         @RenderBody()
         <hr color="white"/>
         <footer>
-            <p>&copy; @DateTime.Now.Year - Property of CyberLlama</p>
-            <p>T's and C's are added here...</p>
+            <p align="left">&copy; @DateTime.Now.Year - Property of CyberLlama <br/>
+            All Rights Reserved </p>
+            <p align="right"><a href="">Privacy & terms</a><br/>
+             <a href="">terms and Conditions</a><br/>
+            <a href="">Polices and Reporting</a></p>
+
         </footer>
     </div>
 </body>
