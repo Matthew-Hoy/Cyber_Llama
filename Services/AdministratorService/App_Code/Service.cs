@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -16,7 +16,8 @@ public class Service : IService
     {
         try
         {
-            var User = db.LoginTables.Where(x => x.User_Name.Equals(strUserName) && x.Password.Equals(strPassword))
+            var hash = HashUserInfo.hash(strPassword, strUserName);
+            var User = db.LoginTables.Where(x => x.User_Name.Equals(strUserName) && x.Password.Equals(hash))
                     .Select(y => y).FirstOrDefault();
             if (User != null)
             {
