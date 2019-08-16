@@ -12,5 +12,21 @@ namespace CyberLlamaAdminSite.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Login(string strEmail, string strPassword)
+        {
+            if (strEmail == "a@a" && strPassword == "12345")
+            {
+                int x = 1;
+                this.Session["Xsession"] = x;
+                return this.Redirect(Url.Action("Index","Home"));
+            }
+            else{
+                int y = 2;
+                this.Session["Xsession"] = y;
+                return this.Redirect(Url.Action("Index", "Home"));
+            }
+            
+        }
     }
 }
