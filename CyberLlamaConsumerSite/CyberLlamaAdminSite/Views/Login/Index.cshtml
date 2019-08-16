@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LoginAdmin.cshtml";
 }
@@ -13,10 +12,12 @@
     </div>
     <div class="form-Input centerImage">
         <label for="Password" class="required">Password:</label>
-        <input type="text" name="strPassword" id="password" />
+        <input type="password" name="strPassword" id="password" />
     </div>
-
-        <input type="submit" value="Login"/>
-}
+        <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input centerImage login">
+        <input type="submit" value="Login" />
+    </div>
+ }
 
 

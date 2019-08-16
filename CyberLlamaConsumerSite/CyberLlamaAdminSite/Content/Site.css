@@ -158,6 +158,15 @@ textarea {
 .form-Input label{
     font-size:20px;
     color:white;
+    padding-top:15px;
+}
+.login input {
+    margin-top: 12px;
+    float: left;
+    background-color: purple;
+    color: white;
+    padding: 5px 20px 5px 20px;
+    border:2px solid green;
 }
 /*
     Image relates CSS
@@ -181,8 +190,6 @@ textarea {
     margin: 0% 2% 0% 2%;
     height: 100%;
 }
-.form-Input {
-    margin-top:5px;
-    margin-bottom:5px;
+.form-Input{
 
 }

@@ -3,30 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CyberLlamaAdminSite.Models;
+using Newtonsoft.Json;
 
 namespace CyberLlamaAdminSite.Controllers
 {
     public class LoginController : Controller
     {
-        public ActionResult Index()
+        
+        public ActionResult Index(int? status)
         {
+            if(status== 1)
+            {
+                ViewBag.status = "ERROR";
+            }
+            else if(status == 2)
+            {
+                ViewBag.status = "Incorrect";
+            }
+            else
+            {
+                ViewBag.status = "";
+            }
             return View();
         }
         [HttpPost]
         public ActionResult Login(string strEmail, string strPassword)
         {
-            if (strEmail == "a@a" && strPassword == "12345")
+            AdminServiceReference.ServiceClient sc = new AdminServiceReference.ServiceClient();
+            var User = sc.Login(strEmail, strPassword);
+            if (User == "EX")
             {
-                int x = 1;
-                this.Session["Xsession"] = x;
-                return this.Redirect(Url.Action("Index","Home"));
+               
+                this.Session["UserSession"] = null;
+                return this.Redirect(Url.Action("Index", "Login", new { status = 1}));
             }
-            else{
-                int y = 2;
-                this.Session["Xsession"] = y;
+            else if (User == null)
+            {
+                
+                this.Session["UserSession"] = null;
+                return this.Redirect(Url.Action("Index", "Login", new { status = 2 }));
+            }
+            else
+            {
+                string[] splitUser = User.Split(',');
+                UserLogin objVerifiedUser = new UserLogin()
+                {
+                    UserID = splitUser[0],
+                    UserName = splitUser[1],
+                    UserType = Convert.ToInt32(splitUser[2])
+                };
+                this.Session["UserSession"] = objVerifiedUser;
                 return this.Redirect(Url.Action("Index", "Home"));
-            }
-            
+            }     
         }
     }
 }

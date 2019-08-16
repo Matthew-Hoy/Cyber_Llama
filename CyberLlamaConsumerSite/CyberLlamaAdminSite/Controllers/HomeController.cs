@@ -11,13 +11,13 @@ namespace CyberLlamaAdminSite.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            if (Session["Xsession"].Equals(1))
+            if (Session["UserSession"] == null)
             {
-                return View();
+                return View("Error");
             }
             else
             {
-                return View("Error");
+                return View();
             }
         }
     }
