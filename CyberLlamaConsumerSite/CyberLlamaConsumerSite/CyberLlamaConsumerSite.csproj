@@ -118,6 +118,7 @@
     <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\FAQsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -139,14 +140,18 @@
     <Content Include="Images\ComponentsIcon.png" />
     <Content Include="Images\computerIcon.png" />
     <Content Include="Images\contactIcon.png" />
+    <Content Include="Images\facebook.png" />
     <Content Include="Images\faqIcon.png" />
     <Content Include="Images\homeIcon.png" />
+    <Content Include="Images\insta.png" />
     <Content Include="Images\JumboTron-Background.jpg" />
     <Content Include="Images\llama.jpg" />
     <Content Include="Images\llama.png" />
     <Content Include="Images\shoppingCartIcon.png" />
     <Content Include="Images\signUpIcon.png" />
     <Content Include="Images\TestLogo.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\youtube.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -213,7 +218,8 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\FAQs\Index.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
