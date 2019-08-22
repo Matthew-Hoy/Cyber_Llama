@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Add New User";
+}
+
+@model CyberLlamaConsumerSite.Models.UserPositionView
+
+<h2 class="titleText centerText">Add New User</h2>
+<div class="row" style="margin-top:3%;">
+    <div class="col-md-6">
+        <div class="borderedElement">
+            <h3 class="titleText centerText">Add Client</h3>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="borderedElement">
+            <h3 class="titleText centerText">Add Employee</h3>
+            <form method ="post" action="@Url.Action("Submit", "AddUser")" style="text-align:left">
+                <div class="form-Input centerImage">
+                    <label for="FirstName" class="required">First Name:</label>
+                    <input type="text" name="fName" id="FirstName" />
+                </div>
+                <div class="form-Input centerImage">
+                    <label for="Surname" class="required">Surname:</label>
+                    <input type="text" name="sName" id="Surname" />
+                </div>
+                <div class="form-Input centerImage">
+                    <label for="Email" class="required">Email:</label>
+                    <input type="email" name="eMail" id="Email" />
+                </div>
+                <div class="form-Input centerImage">
+                    <label for="Phone" class="required">Telephone Number:</label>
+                    <input type="tel" name="phone" id="Phone" />
+                </div>
+                <div class="form-Input centerImage">
+                    <label for="type" class="required">User Type:</label>
+                    <Select name ="type">
+                        @for(int x = 1; x <= Model.userPosition.Select(y => y.Position).Count(); x++)
+                        {
+                            <option value =@x>
+                                @Model.userPosition.Where(p => p.UserID == x).Select(z => z.Position).FirstOrDefault()
+                            </option>
+                        }
+                    </Select>
+                    
+                </div>
+
+                <div class="form-Input centerImage">
+                    <label for="UserName" class="required">User Name:</label>
+                    <input type="text" name="UserName" id="UserName" />
+                </div>
+                <div class="form-Input centerImage">
+                    <label for="Password" class="required">Password:</label>
+                    <input type="password" name="password" id="Password" />
+                </div>
+                <div class="form-Input centerImage">
+                    <label for="Confirm" class="required">Confirm Password:</label>
+                    <input type="password" name="confirm" id="Confirm" />
+                </div>
+                <div class="form-Input centerImage login">
+                    <input type="submit" value="Login" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
