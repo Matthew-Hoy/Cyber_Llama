@@ -28,10 +28,10 @@ namespace CyberLlamaConsumerSite.CRUDService {
         System.Threading.Tasks.Task<int> addEmployeeAsync(string fName, string sName, string eMail, string phone, int type, string UserName, string password, string confirm);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addClient", ReplyAction="http://tempuri.org/IService/addClientResponse")]
-        int addClient(string fName, string sName, string eMail, string address, string City, string Province, int ZipCode);
+        int addClient(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addClient", ReplyAction="http://tempuri.org/IService/addClientResponse")]
-        System.Threading.Tasks.Task<int> addClientAsync(string fName, string sName, string eMail, string address, string City, string Province, int ZipCode);
+        System.Threading.Tasks.Task<int> addClientAsync(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getUserPositions", ReplyAction="http://tempuri.org/IService/getUserPositionsResponse")]
         string[] getUserPositions();
@@ -83,12 +83,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.addEmployeeAsync(fName, sName, eMail, phone, type, UserName, password, confirm);
         }
         
-        public int addClient(string fName, string sName, string eMail, string address, string City, string Province, int ZipCode) {
-            return base.Channel.addClient(fName, sName, eMail, address, City, Province, ZipCode);
+        public int addClient(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm) {
+            return base.Channel.addClient(fName, sName, eMail, address, city, province, zipCode, UserName, password, confirm);
         }
         
-        public System.Threading.Tasks.Task<int> addClientAsync(string fName, string sName, string eMail, string address, string City, string Province, int ZipCode) {
-            return base.Channel.addClientAsync(fName, sName, eMail, address, City, Province, ZipCode);
+        public System.Threading.Tasks.Task<int> addClientAsync(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm) {
+            return base.Channel.addClientAsync(fName, sName, eMail, address, city, province, zipCode, UserName, password, confirm);
         }
         
         public string[] getUserPositions() {

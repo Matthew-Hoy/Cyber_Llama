@@ -44,9 +44,12 @@
         <xs:element minOccurs="0" name="sName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="eMail" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ZipCode" type="xs:int" />
+        <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="province" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zipCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="confirm" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

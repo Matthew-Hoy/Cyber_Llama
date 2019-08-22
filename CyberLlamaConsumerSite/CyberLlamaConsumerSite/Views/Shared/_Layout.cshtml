@@ -137,19 +137,80 @@
                         FAQ's
                     </a>
                 </li>
-                @{ if (Session["UserSession"] == null)
+                @{ if (Session["UserID"] != null)
                     {
+                        var id = Convert.ToInt32(Session["UserType"]);
+                        if (id < 7)
+                        {
+                            <li class="nav-item">
+                                <a href="#"><img src="~/Images/employeeIcon.png" class="MenuIcon" /></a>
+                                <a class="nav-link" href="#">
+                                    Employee
+                                </a>
+                            </li>
+                            if (id == 5 || id < 2)
+                            {
+                                <li class="nav-item">
+                                    <a href="#"><img src="~/Images/moneyIcon.png" class="MenuIcon" /></a>
+                                    <a class="nav-link" href="#">
+                                        Finances
+                                    </a>
+                                </li>
+                            }
+                            if (id == 4 || id < 2)
+                            {
+                                <li class="nav-item">
+                                    <a href="#"><img src="~/Images/carIcon.png" class="MenuIcon" /></a>
+                                    <a class="nav-link" href="#">
+                                        Delivery
+                                    </a>
+                                </li>
+                            }
+                            if (id == 3 || id < 2)
+                            {
+                                <li class="nav-item">
+                                    <a href="#"><img src="~/Images/employeeIcon.png" class="MenuIcon" /></a>
+                                    <a class="nav-link" href="#">
+                                        Sales
+                                    </a>
+                                </li>
+                            }
+                            if (id <= 2)
+                            {
+                                <li class="nav-item dropdown">
+                                    <a href="#"><img src="~/Images/adminIcon.png" class="MenuIcon" /></a>
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_admin" href="#">
+                                        Administration
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdown_admin">
+                                        <a class="dropdown-item" href=@Url.Action("index", "AddUser")>Add New User</a>
+                                    </div>
+                                </li>
+                                if (id == 1)
+                                {
+                                    <li class="nav-item">
+                                        <a href="#"><img src="~/Images/ManagerIcon.png" class="MenuIcon" /></a>
+                                        <a class="nav-link" href="#">
+                                            Management
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
                         <li class="nav-item">
-                            <a class="nav-link" href=@Url.Action("Index", "Login")>
-                                Login
+                            <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href=@Url.Action("Index", "Logout")>
+                                Logout
                             </a>
                         </li>
                     }
                     else
                     {
                         <li class="nav-item">
-                            <a class="nav-link" href=@Url.Action("Index", "Logout")>
-                                Logout
+                            <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href=@Url.Action("Index", "Login")>
+                                Login
                             </a>
                         </li>
                     }

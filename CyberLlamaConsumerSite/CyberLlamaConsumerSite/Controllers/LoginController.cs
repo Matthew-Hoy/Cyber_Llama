@@ -33,25 +33,21 @@ namespace CyberLlamaConsumerSite.Controllers
             if (User == "EX")
             {
 
-                this.Session["UserSession"] = null;
+                this.Session["UserID"] = null;
                 return this.Redirect(Url.Action("Index", "Login", new { status = 1 }));
             }
             else if (User == null)
             {
 
-                this.Session["UserSession"] = null;
+                this.Session["UserID"] = null;
                 return this.Redirect(Url.Action("Index", "Login", new { status = 2 }));
             }
             else
             {
                 string[] splitUser = User.Split(',');
-                UserLogin objVerifiedUser = new UserLogin()
-                {
-                    UserID = splitUser[0],
-                    UserName = splitUser[1],
-                    UserType = Convert.ToInt32(splitUser[2])
-                };
-                this.Session["UserSession"] = objVerifiedUser;
+                this.Session["UserID"] = splitUser[0];
+                this.Session["UserName"] = splitUser[1];
+                this.Session["UserType"] = splitUser[2];
                 return this.Redirect(Url.Action("Index", "Home"));
             }
         }

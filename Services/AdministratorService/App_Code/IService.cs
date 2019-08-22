@@ -16,7 +16,7 @@ public interface IService
     [OperationContract]
     int addEmployee(string fName, string sName, string eMail, string phone, int type, string UserName, string password, string confirm);
     [OperationContract]
-    int addClient(string fName, string sName, string eMail, string address, string City, string Province, int ZipCode);
+    int addClient(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm);
     [OperationContract]
     List<string> getUserPositions();
 }
