@@ -29,6 +29,9 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 	
   #region Extensibility Method Definitions
   partial void OnCreated();
+  partial void InsertUserPosition(UserPosition instance);
+  partial void UpdateUserPosition(UserPosition instance);
+  partial void DeleteUserPosition(UserPosition instance);
   partial void InsertAdmin(Admin instance);
   partial void UpdateAdmin(Admin instance);
   partial void DeleteAdmin(Admin instance);
@@ -95,9 +98,9 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
   partial void InsertMousePad(MousePad instance);
   partial void UpdateMousePad(MousePad instance);
   partial void DeleteMousePad(MousePad instance);
-  partial void InsertOS(OS instance);
-  partial void UpdateOS(OS instance);
-  partial void DeleteOS(OS instance);
+  partial void InsertO(O instance);
+  partial void UpdateO(O instance);
+  partial void DeleteO(O instance);
   partial void InsertPCCase(PCCase instance);
   partial void UpdatePCCase(PCCase instance);
   partial void DeletePCCase(PCCase instance);
@@ -146,6 +149,14 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 			base(connection, mappingSource)
 	{
 		OnCreated();
+	}
+	
+	public System.Data.Linq.Table<UserPosition> UserPositions
+	{
+		get
+		{
+			return this.GetTable<UserPosition>();
+		}
 	}
 	
 	public System.Data.Linq.Table<Admin> Admins
@@ -324,11 +335,11 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		}
 	}
 	
-	public System.Data.Linq.Table<OS> OS
+	public System.Data.Linq.Table<O> Os
 	{
 		get
 		{
-			return this.GetTable<OS>();
+			return this.GetTable<O>();
 		}
 	}
 	
@@ -381,6 +392,120 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 	}
 }
 
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserPosition")]
+public partial class UserPosition : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _PositionID;
+	
+	private string _Position;
+	
+	private EntitySet<Admin> _Admins;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPositionIDChanging(int value);
+    partial void OnPositionIDChanged();
+    partial void OnPositionChanging(string value);
+    partial void OnPositionChanged();
+    #endregion
+	
+	public UserPosition()
+	{
+		this._Admins = new EntitySet<Admin>(new Action<Admin>(this.attach_Admins), new Action<Admin>(this.detach_Admins));
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int PositionID
+	{
+		get
+		{
+			return this._PositionID;
+		}
+		set
+		{
+			if ((this._PositionID != value))
+			{
+				this.OnPositionIDChanging(value);
+				this.SendPropertyChanging();
+				this._PositionID = value;
+				this.SendPropertyChanged("PositionID");
+				this.OnPositionIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Position
+	{
+		get
+		{
+			return this._Position;
+		}
+		set
+		{
+			if ((this._Position != value))
+			{
+				this.OnPositionChanging(value);
+				this.SendPropertyChanging();
+				this._Position = value;
+				this.SendPropertyChanged("Position");
+				this.OnPositionChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserPosition_Admin", Storage="_Admins", ThisKey="PositionID", OtherKey="Position")]
+	public EntitySet<Admin> Admins
+	{
+		get
+		{
+			return this._Admins;
+		}
+		set
+		{
+			this._Admins.Assign(value);
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_Admins(Admin entity)
+	{
+		this.SendPropertyChanging();
+		entity.UserPosition = this;
+	}
+	
+	private void detach_Admins(Admin entity)
+	{
+		this.SendPropertyChanging();
+		entity.UserPosition = null;
+	}
+}
+
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Admin")]
 public partial class Admin : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -397,7 +522,9 @@ public partial class Admin : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Conrtact_Number;
 	
-	private string _Position;
+	private int _Position;
+	
+	private EntityRef<UserPosition> _UserPosition;
 	
 	private EntityRef<LoginTable> _LoginTable;
 	
@@ -415,12 +542,13 @@ public partial class Admin : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnEmailChanged();
     partial void OnConrtact_NumberChanging(string value);
     partial void OnConrtact_NumberChanged();
-    partial void OnPositionChanging(string value);
+    partial void OnPositionChanging(int value);
     partial void OnPositionChanged();
     #endregion
 	
 	public Admin()
 	{
+		this._UserPosition = default(EntityRef<UserPosition>);
 		this._LoginTable = default(EntityRef<LoginTable>);
 		OnCreated();
 	}
@@ -529,8 +657,8 @@ public partial class Admin : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Position
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="Int NOT NULL")]
+	public int Position
 	{
 		get
 		{
@@ -540,11 +668,49 @@ public partial class Admin : INotifyPropertyChanging, INotifyPropertyChanged
 		{
 			if ((this._Position != value))
 			{
+				if (this._UserPosition.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
 				this.OnPositionChanging(value);
 				this.SendPropertyChanging();
 				this._Position = value;
 				this.SendPropertyChanged("Position");
 				this.OnPositionChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserPosition_Admin", Storage="_UserPosition", ThisKey="Position", OtherKey="PositionID", IsForeignKey=true)]
+	public UserPosition UserPosition
+	{
+		get
+		{
+			return this._UserPosition.Entity;
+		}
+		set
+		{
+			UserPosition previousValue = this._UserPosition.Entity;
+			if (((previousValue != value) 
+						|| (this._UserPosition.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._UserPosition.Entity = null;
+					previousValue.Admins.Remove(this);
+				}
+				this._UserPosition.Entity = value;
+				if ((value != null))
+				{
+					value.Admins.Add(this);
+					this._Position = value.PositionID;
+				}
+				else
+				{
+					this._Position = default(int);
+				}
+				this.SendPropertyChanged("UserPosition");
 			}
 		}
 	}
@@ -5511,7 +5677,7 @@ public partial class LoginTable : INotifyPropertyChanging, INotifyPropertyChange
 	
 	private string _Password;
 	
-	private string _User_Type;
+	private int _User_Type;
 	
 	private EntityRef<Admin> _Admin;
 	
@@ -5527,7 +5693,7 @@ public partial class LoginTable : INotifyPropertyChanging, INotifyPropertyChange
     partial void OnUser_NameChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
-    partial void OnUser_TypeChanging(string value);
+    partial void OnUser_TypeChanging(int value);
     partial void OnUser_TypeChanged();
     #endregion
 	
@@ -5598,8 +5764,8 @@ public partial class LoginTable : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Type", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string User_Type
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Type", DbType="Int NOT NULL")]
+	public int User_Type
 	{
 		get
 		{
@@ -8328,7 +8494,7 @@ public partial class MousePad : INotifyPropertyChanging, INotifyPropertyChanged
 }
 
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OS")]
-public partial class OS : INotifyPropertyChanging, INotifyPropertyChanged
+public partial class O : INotifyPropertyChanging, INotifyPropertyChanged
 {
 	
 	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -8367,7 +8533,7 @@ public partial class OS : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnWarrantyChanged();
     #endregion
 	
-	public OS()
+	public O()
 	{
 		OnCreated();
 	}

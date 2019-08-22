@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IFM_Project" Class="CyberLlamaDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=(localdb)\v12.0;Initial Catalog=IFM_Project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="IFM_ProjectConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.UserPosition" Member="UserPositions">
+    <Type Name="UserPosition">
+      <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="UserPosition_Admin" Member="Admins" ThisKey="PositionID" OtherKey="Position" Type="Admin" />
+    </Type>
+  </Table>
   <Table Name="dbo.Admin" Member="Admins">
     <Type Name="Admin">
       <Column Name="Admin_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -7,7 +14,8 @@
       <Column Name="Surname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Conrtact_Number" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
-      <Column Name="Position" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UserPosition_Admin" Member="UserPosition" ThisKey="Position" OtherKey="PositionID" Type="UserPosition" IsForeignKey="true" />
       <Association Name="LoginTable_Admin" Member="LoginTable" ThisKey="Admin_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
     </Type>
   </Table>
@@ -244,7 +252,7 @@
       <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="User_Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="User_Type" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="LoginTable_Admin" Member="Admin" ThisKey="User_ID" OtherKey="Admin_ID" Type="Admin" Cardinality="One" />
       <Association Name="LoginTable_Client" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" Cardinality="One" />
     </Type>
@@ -372,8 +380,8 @@
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.OS" Member="OS">
-    <Type Name="OS">
+  <Table Name="dbo.OS" Member="Os">
+    <Type Name="O">
       <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />

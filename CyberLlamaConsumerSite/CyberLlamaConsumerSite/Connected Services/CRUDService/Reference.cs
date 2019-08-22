@@ -20,6 +20,24 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
         System.Threading.Tasks.Task<string> LoginAsync(string strUserName, string strPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addEmployee", ReplyAction="http://tempuri.org/IService/addEmployeeResponse")]
+        int addEmployee(string fName, string sName, string eMail, string phone, int type, string UserName, string password, string confirm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addEmployee", ReplyAction="http://tempuri.org/IService/addEmployeeResponse")]
+        System.Threading.Tasks.Task<int> addEmployeeAsync(string fName, string sName, string eMail, string phone, int type, string UserName, string password, string confirm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addClient", ReplyAction="http://tempuri.org/IService/addClientResponse")]
+        int addClient(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addClient", ReplyAction="http://tempuri.org/IService/addClientResponse")]
+        System.Threading.Tasks.Task<int> addClientAsync(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getUserPositions", ReplyAction="http://tempuri.org/IService/getUserPositionsResponse")]
+        string[] getUserPositions();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getUserPositions", ReplyAction="http://tempuri.org/IService/getUserPositionsResponse")]
+        System.Threading.Tasks.Task<string[]> getUserPositionsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +73,30 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<string> LoginAsync(string strUserName, string strPassword) {
             return base.Channel.LoginAsync(strUserName, strPassword);
+        }
+        
+        public int addEmployee(string fName, string sName, string eMail, string phone, int type, string UserName, string password, string confirm) {
+            return base.Channel.addEmployee(fName, sName, eMail, phone, type, UserName, password, confirm);
+        }
+        
+        public System.Threading.Tasks.Task<int> addEmployeeAsync(string fName, string sName, string eMail, string phone, int type, string UserName, string password, string confirm) {
+            return base.Channel.addEmployeeAsync(fName, sName, eMail, phone, type, UserName, password, confirm);
+        }
+        
+        public int addClient(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm) {
+            return base.Channel.addClient(fName, sName, eMail, address, city, province, zipCode, UserName, password, confirm);
+        }
+        
+        public System.Threading.Tasks.Task<int> addClientAsync(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm) {
+            return base.Channel.addClientAsync(fName, sName, eMail, address, city, province, zipCode, UserName, password, confirm);
+        }
+        
+        public string[] getUserPositions() {
+            return base.Channel.getUserPositions();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> getUserPositionsAsync() {
+            return base.Channel.getUserPositionsAsync();
         }
     }
 }

@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Add New User";
+}
+
+@model CyberLlamaConsumerSite.Models.UserPositionView
+
+<h2 class="titleText centerText">Add New User</h2>
+<div class="row" style="margin-top:3%;">
+        <div class=" @(Convert.ToInt32(Session["UserType"]) <=2 ? "col-md-6" : "" )">
+            <div class="borderedElement">
+                <h3 class="titleText centerText">@(Convert.ToInt32(Session["UserType"]) <= 2 ? "Add Client" : "New User" )</h3>
+                <form method="post" action="@Url.Action("SubmitClient", "AddUser")">
+                    <div class="form-Input">
+                        <label for="FirstNameClient" class="required">First Name:</label>
+                        <input type="text" name="fName" id="FirstNameClient" style="margin-right:10px" />
+                    </div>
+                    <div class="form-Input">
+                        <label for="SurnameClient" class="required">Surname:</label>
+                        <input type="text" name="sName" id="SurnameClient" style="margin-right:10px" />
+                    </div>
+                    <div class="form-Input">
+                        <label for="EmailClient" class="required">Email:</label>
+                        <input type="email" name="eMail" id="EmailClient" style="margin-right:10px" />
+                    </div>
+                    <div class="form-Input">
+                        <label for="addressClient" class="required">Address:</label>
+                        <input type="text" name="address" id="addressClient" style="margin-right:10px" />
+                    </div>
+                    <div class="form-Input">
+                        <label for="cityClient" class="required">City:</label>
+                        <input type="text" name="city" id="cityClient" style="margin-right:10px" />
+                    </div>
+                    <div class="form-Input">
+                        <label for="provinceClient" class="required">Province:</label>
+                        <input type="text" name="province" id="provinceClient" style="margin-right:10px" />
+                    </div>
+                    <div class="form-Input">
+                        <label for="zipCodeClient" class="required">Zip Code:</label>
+                        <input type="text" name="zipCode" id="zipCodeClient" style="margin-right:10px" />
+                    </div>
+
+                    <div class="form-Input">
+                        <label for="UserNameClient" class="required">User Name:</label>
+                        <input type="text" name="UserName" id="UserNameClient" style="margin-right:10px" />
+                    </div>
+                    <div class="form-Input">
+                        <label for="PasswordClient" class="required">Password:</label>
+                        <input type="password" name="password" id="PasswordClient" style="margin-right:10px" />
+                    </div>
+                    <div class="form-Input">
+                        <label for="ConfirmClient" class="required">Confirm Password:</label>
+                        <input type="password" name="confirm" id="ConfirmClient" style="margin-right:10px" />
+                    </div>
+                    <div class="form-Input login">
+                        <input type="submit" value="@(Convert.ToInt32(Session["UserType"]) <= 2 ? "Add Client" : "New User" )" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        @{ if (Convert.ToInt32(Session["UserType"]) <= 2)
+            {
+                <div class="col-md-6">
+                    <div class="borderedElement">
+                        <h3 class="titleText centerText">Add Employee</h3>
+                        <form method="post" action="@Url.Action("SubmitEmployee", "AddUser")">
+                            <div class="form-Input">
+                                <label for="FirstName" class="required">First Name:</label>
+                                <input type="text" name="fName" id="FirstName" style="margin-right:10px" />
+                            </div>
+                            <div class="form-Input">
+                                <label for="Surname" class="required">Surname:</label>
+                                <input type="text" name="sName" id="Surname" style="margin-right:10px" />
+                            </div>
+                            <div class="form-Input">
+                                <label for="Email" class="required">Email:</label>
+                                <input type="email" name="eMail" id="Email" style="margin-right:10px" />
+                            </div>
+                            <div class="form-Input">
+                                <label for="Phone" class="required">Telephone Number:</label>
+                                <input type="tel" name="phone" id="Phone" style="margin-right:10px" />
+                            </div>
+                            <div class="form-Input">
+                                <label for="type" class="required">User Type:</label>
+                                <Select name="type" style="margin-right:10px">
+                                    @for (int x = 0; x < Model.userPosition.Count(); x++)
+                                    {
+                                        <option value=@(x + 1)>
+                                            @Model.userPosition[x]
+                                        </option>
+                                    }
+                                </Select>
+
+                            </div>
+
+                            <div class="form-Input">
+                                <label for="UserName" class="required">User Name:</label>
+                                <input type="text" name="UserName" id="UserName" style="margin-right:10px" />
+                            </div>
+                            <div class="form-Input">
+                                <label for="Password" class="required">Password:</label>
+                                <input type="password" name="password" id="Password" style="margin-right:10px" />
+                            </div>
+                            <div class="form-Input">
+                                <label for="Confirm" class="required">Confirm Password:</label>
+                                <input type="password" name="confirm" id="Confirm" style="margin-right:10px" />
+                            </div>
+                            <div class="form-Input login">
+                                <input type="submit" value="Submit new Employee" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>

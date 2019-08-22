@@ -32,19 +32,19 @@
         <div class="collapse navbar-collapse" id="collapse_target">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href=@Url.Action("Index", "Home")><img src="Images/homeIcon.png" class="MenuIcon" /></a>
+                    <a href=@Url.Action("Index", "Home")><img src="~/Images/homeIcon.png" class="MenuIcon" /></a>
                     <a class="nav-link" href=@Url.Action("Index", "Home")>
                         HOME
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#"><img src="Images/buildIcon.png" class="MenuIcon" /></a>
+                    <a href="#"><img src="~/Images/buildIcon.png" class="MenuIcon" /></a>
                     <a class="nav-link" href="#">
                         BUILD PC
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#"><img src="Images/ComponentsIcon.png" class="MenuIcon" /></a>
+                    <a href="#"><img src="~/Images/ComponentsIcon.png" class="MenuIcon" /></a>
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_Components" href="#">
                         COMPONENTS
                         <span class="caret"></span>
@@ -79,7 +79,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#"><img src="Images/computerIcon.png" class="MenuIcon" /></a>
+                    <a href="#"><img src="~/Images/computerIcon.png" class="MenuIcon" /></a>
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_desktop" href="#">
                         DESKTOP PCs
                         <span class="caret"></span>
@@ -98,7 +98,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#"><img src="Images/computerIcon.png" class="MenuIcon" /></a>
+                    <a href="#"><img src="~/Images/computerIcon.png" class="MenuIcon" /></a>
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_laptop" href="#">
                         LAPTOPS
                         <span class="caret"></span>
@@ -120,36 +120,97 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href=@Url.Action("Index", "About")><img src="Images/aboutIcon.png" class="MenuIcon" /></a>
+                    <a href=@Url.Action("Index", "About")><img src="~/Images/aboutIcon.png" class="MenuIcon" /></a>
                     <a class="nav-link" href=@Url.Action("Index", "About")>
                         ABOUT
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#"><img src="Images/contactIcon.png" class="MenuIcon" /></a>
+                    <a href="#"><img src="~/Images/contactIcon.png" class="MenuIcon" /></a>
                     <a class="nav-link" href="#">
                         CONTACT
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href=@Url.Action("Index", "FAQs")><img src="Images/faqIcon.png" class="MenuIcon" /></a>
+                    <a href=@Url.Action("Index", "FAQs")><img src="~/Images/faqIcon.png" class="MenuIcon" /></a>
                     <a class="nav-link" href=@Url.Action("Index", "FAQs")>
                         FAQ's
                     </a>
                 </li>
-                @{ if (Session["UserSession"] == null)
+                @{ if (Session["UserID"] != null)
                     {
+                        var id = Convert.ToInt32(Session["UserType"]);
+                        if (id < 7)
+                        {
+                            <li class="nav-item">
+                                <a href="#"><img src="~/Images/employeeIcon.png" class="MenuIcon" /></a>
+                                <a class="nav-link" href="#">
+                                    Employee
+                                </a>
+                            </li>
+                            if (id == 5 || id < 2)
+                            {
+                                <li class="nav-item">
+                                    <a href="#"><img src="~/Images/moneyIcon.png" class="MenuIcon" /></a>
+                                    <a class="nav-link" href="#">
+                                        Finances
+                                    </a>
+                                </li>
+                            }
+                            if (id == 4 || id < 2)
+                            {
+                                <li class="nav-item">
+                                    <a href="#"><img src="~/Images/carIcon.png" class="MenuIcon" /></a>
+                                    <a class="nav-link" href="#">
+                                        Delivery
+                                    </a>
+                                </li>
+                            }
+                            if (id == 3 || id < 2)
+                            {
+                                <li class="nav-item">
+                                    <a href="#"><img src="~/Images/employeeIcon.png" class="MenuIcon" /></a>
+                                    <a class="nav-link" href="#">
+                                        Sales
+                                    </a>
+                                </li>
+                            }
+                            if (id <= 2)
+                            {
+                                <li class="nav-item dropdown">
+                                    <a href="#"><img src="~/Images/adminIcon.png" class="MenuIcon" /></a>
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_admin" href="#">
+                                        Administration
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdown_admin">
+                                        <a class="dropdown-item" href=@Url.Action("index", "AddUser")>Add New User</a>
+                                    </div>
+                                </li>
+                                if (id == 1)
+                                {
+                                    <li class="nav-item">
+                                        <a href="#"><img src="~/Images/ManagerIcon.png" class="MenuIcon" /></a>
+                                        <a class="nav-link" href="#">
+                                            Management
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
                         <li class="nav-item">
-                            <a class="nav-link" href=@Url.Action("Index", "Login")>
-                                Login
+                            <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href=@Url.Action("Index", "Logout")>
+                                Logout
                             </a>
                         </li>
                     }
                     else
                     {
                         <li class="nav-item">
-                            <a class="nav-link" href=@Url.Action("Index", "Logout")>
-                                Logout
+                            <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href=@Url.Action("Index", "Login")>
+                                Login
                             </a>
                         </li>
                     }
@@ -163,40 +224,38 @@
         <hr color="white"/>
         <footer>
 
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="padding-top: 0px;padding-bottom: 0px;">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top nav-bottom" style="padding-top: 0px;padding-bottom: 0px;">
                 <!--create the hamber button for smaller screens-->
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_foot">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div  class="collapse navbar-collapse" id="collapse_target">
-
+                <div  class="collapse navbar-collapse" id="collapse_foot" >
                     <ul class="navbar-nav">
-
                         <li class="nav-item">
-                            <a href="https://www.instagram.com/neo.mulaudzi/"><img src="~/Images/insta.png" class="MenuIcon" /></a>
-                            <a class="nav-link" href="https://www.instagram.com/neo.mulaudzi/">
+                            <a href="https://www.instagram.com/neo.mulaudzi/" target="_blank"><img src="~/Images/insta.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href="https://www.instagram.com/neo.mulaudzi/" target="_blank">
                                 Instagram
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="https://www.youtube.com/channel/UC-7APxNmLIVU4I-pjG3QvxQ"><img src="~/Images/youtube.png" class="MenuIcon" /></a>
-                            <a class="nav-link" href="https://www.youtube.com/channel/UC-7APxNmLIVU4I-pjG3QvxQ">
+                            <a href="https://www.youtube.com/channel/UC-7APxNmLIVU4I-pjG3QvxQ" target="_blank"><img src="~/Images/youtube.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href="https://www.youtube.com/channel/UC-7APxNmLIVU4I-pjG3QvxQ" target="_blank">
                                 Youtube
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="https://www.facebook.com/Cyber-LLama-104592757573309/?modal=admin_todo_tour"><img src="~/Images/facebook.png" class="MenuIcon" /></a>
-                            <a class="nav-link" href="https://www.facebook.com/Cyber-LLama-104592757573309/?modal=admin_todo_tour">
+                            <a href="https://www.facebook.com/Cyber-LLama-104592757573309/?modal=admin_todo_tour" target="_blank"><img src="~/Images/facebook.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href="https://www.facebook.com/Cyber-LLama-104592757573309/?modal=admin_todo_tour" target="_blank">
                                 Facebook
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="https://twitter.com/its_nyiko"><img src="Images/twitter.png" class="MenuIcon" /></a>
-                            <a class="nav-link" href="https://twitter.com/its_nyiko">
+                            <a href="https://twitter.com/its_nyiko" target="_blank"><img src="~/Images/twitter.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href="https://twitter.com/its_nyiko" target="_blank">
                                 Twitter
                             </a>
                         </li>

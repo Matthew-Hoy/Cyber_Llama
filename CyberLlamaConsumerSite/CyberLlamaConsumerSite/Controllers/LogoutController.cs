@@ -11,7 +11,9 @@ namespace CyberLlamaConsumerSite.Controllers
         // GET: Logout
         public ActionResult Index()
         {
-            this.Session["UserSession"] = null;
+            this.Session["UserID"] = null;
+            this.Session["UserName"] = null;
+            this.Session["UserType"] = null;
             return this.Redirect(Url.Action("Index", "Home"));
         }
     }

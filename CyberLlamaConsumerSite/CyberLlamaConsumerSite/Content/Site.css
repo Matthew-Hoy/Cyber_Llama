@@ -78,7 +78,7 @@ textarea {
     color: white;
 }
 .MenuIcon {
-    width: 30px;
+    height: 30px;
     margin-right: 5px;
 }
 .dropdown-menu {
@@ -88,6 +88,9 @@ textarea {
 }
 .dropdown:hover .dropdown-menu {
     display: block;
+}
+.navbar-toggler{
+    margin:1%;
 }
 /*
     Layout Resizing options
@@ -156,6 +159,9 @@ textarea {
     border-radius: 10px;
     margin: 0% 2% 0% 2%;
     height: 100%;
+}
+.smallMargin-top{
+    margin-top:1%;
 }
 
 
