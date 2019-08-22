@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CyberLlamaAdminSite.Models
+namespace CyberLlamaConsumerSite.Models
 {
     public class UserLogin
     {

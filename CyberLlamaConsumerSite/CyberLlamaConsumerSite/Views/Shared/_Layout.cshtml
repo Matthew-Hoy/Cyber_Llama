@@ -137,6 +137,15 @@
                         FAQ's
                     </a>
                 </li>
+                @{ if (Session["UserSession"] == null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href=@Url.Action("Index", "Login")>
+                                Login
+                            </a>
+                        </li>
+                    }
+                }
             </ul>
         </div>
     </nav>
