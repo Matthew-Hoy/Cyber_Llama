@@ -15,26 +15,26 @@
     <div class="col-md-6">
         <div class="borderedElement">
             <h3 class="titleText centerText">Add Employee</h3>
-            <form method ="post" action="@Url.Action("Submit", "AddUser")" style="text-align:left">
-                <div class="form-Input centerImage">
+            <form method ="post" action="@Url.Action("Submit", "AddUser")">
+                <div class="form-Input">
                     <label for="FirstName" class="required">First Name:</label>
-                    <input type="text" name="fName" id="FirstName" />
+                    <input type="text" name="fName" id="FirstName"  style="margin-right:10px"/>
                 </div>
-                <div class="form-Input centerImage">
+                <div class="form-Input">
                     <label for="Surname" class="required">Surname:</label>
-                    <input type="text" name="sName" id="Surname" />
+                    <input type="text" name="sName" id="Surname" style="margin-right:10px"/>
                 </div>
-                <div class="form-Input centerImage">
+                <div class="form-Input">
                     <label for="Email" class="required">Email:</label>
-                    <input type="email" name="eMail" id="Email" />
+                    <input type="email" name="eMail" id="Email" style="margin-right:10px"/>
                 </div>
-                <div class="form-Input centerImage">
+                <div class="form-Input">
                     <label for="Phone" class="required">Telephone Number:</label>
-                    <input type="tel" name="phone" id="Phone" />
+                    <input type="tel" name="phone" id="Phone" style="margin-right:10px"/>
                 </div>
-                <div class="form-Input centerImage">
+                <div class="form-Input">
                     <label for="type" class="required">User Type:</label>
-                    <Select name ="type">
+                    <Select name ="type" style="margin-right:10px">
                         @for(int x = 0; x < Model.userPosition.Count(); x++)
                         {
                             <option value =@(x+1)>
@@ -45,19 +45,19 @@
                     
                 </div>
 
-                <div class="form-Input centerImage">
+                <div class="form-Input">
                     <label for="UserName" class="required">User Name:</label>
-                    <input type="text" name="UserName" id="UserName" />
+                    <input type="text" name="UserName" id="UserName" style="margin-right:10px" />
                 </div>
-                <div class="form-Input centerImage">
+                <div class="form-Input">
                     <label for="Password" class="required">Password:</label>
-                    <input type="password" name="password" id="Password" />
+                    <input type="password" name="password" id="Password" style="margin-right:10px" />
                 </div>
-                <div class="form-Input centerImage">
+                <div class="form-Input">
                     <label for="Confirm" class="required">Confirm Password:</label>
-                    <input type="password" name="confirm" id="Confirm" />
+                    <input type="password" name="confirm" id="Confirm" style="margin-right:10px" />
                 </div>
-                <div class="form-Input centerImage login">
+                <div class="form-Input login">
                     <input type="submit" value="Login" />
                 </div>
             </form>
