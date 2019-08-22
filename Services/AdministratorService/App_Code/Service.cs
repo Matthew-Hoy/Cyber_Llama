@@ -86,8 +86,8 @@ public class Service : IService
         return 1;
     }
 
-    public List<UserPosition> getUserPositions()
+    public List<string> getUserPositions()
     {
-        return db.UserPositions.Select(x => x).ToList();
+        return db.UserPositions.Select(x => x.Position).ToList();
     }
 }

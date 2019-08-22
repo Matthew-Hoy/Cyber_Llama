@@ -14,15 +14,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         {
             var positions = sr.getUserPositions();
-            IEnumerable<UserPositions> positionView = positions.GroupBy(n => new {n.PositionID, n.Position }).Select(y => new UserPositions
-            {
-                UserID = y.Key.PositionID,
-                Position = y.Key.Position
-            });
 
             UserPositionView view = new UserPositionView
             {
-                userPosition = positionView
+                userPosition = positions.ToList()
             };
             return View(view);
         }

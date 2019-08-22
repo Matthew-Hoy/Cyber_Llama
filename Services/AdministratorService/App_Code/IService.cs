@@ -18,5 +18,5 @@ public interface IService
     [OperationContract]
     int addClient(string fName, string sName, string eMail, string address, string City, string Province, int ZipCode);
     [OperationContract]
-    List<UserPosition> getUserPositions();
+    List<string> getUserPositions();
 }

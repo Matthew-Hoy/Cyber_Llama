@@ -35,10 +35,10 @@
                 <div class="form-Input centerImage">
                     <label for="type" class="required">User Type:</label>
                     <Select name ="type">
-                        @for(int x = 1; x <= Model.userPosition.Select(y => y.Position).Count(); x++)
+                        @for(int x = 0; x < Model.userPosition.Count(); x++)
                         {
-                            <option value =@x>
-                                @Model.userPosition.Where(p => p.UserID == x).Select(z => z.Position).FirstOrDefault()
+                            <option value =@(x+1)>
+                                @Model.userPosition[x]
                             </option>
                         }
                     </Select>

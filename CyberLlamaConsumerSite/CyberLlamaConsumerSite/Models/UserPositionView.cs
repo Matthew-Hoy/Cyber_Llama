@@ -7,7 +7,7 @@ namespace CyberLlamaConsumerSite.Models
 {
     public class UserPositionView
     {
-        public IEnumerable<UserPositions> userPosition { get; set; }
+        public List<string> userPosition { get; set; }
         public string chosenPosition { get; set; }
     }
 }

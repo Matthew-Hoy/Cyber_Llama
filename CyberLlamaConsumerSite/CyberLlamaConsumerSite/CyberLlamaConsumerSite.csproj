@@ -139,9 +139,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.UserPosition.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\CRUDService\Service.disco" />
     <None Include="Connected Services\CRUDService\configuration91.svcinfo" />
     <None Include="Connected Services\CRUDService\configuration.svcinfo" />
