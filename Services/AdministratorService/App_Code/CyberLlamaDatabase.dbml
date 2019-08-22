@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IFM_Project" Class="CyberLlamaDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=(localdb)\v12.0;Initial Catalog=IFM_Project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="IFM_ProjectConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.UserPosition" Member="UserPositions">
+    <Type Name="UserPosition">
+      <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="UserPosition_Admin" Member="Admins" ThisKey="PositionID" OtherKey="Position" Type="Admin" />
+    </Type>
+  </Table>
   <Table Name="dbo.Admin" Member="Admins">
     <Type Name="Admin">
       <Column Name="Admin_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -8,8 +15,8 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Conrtact_Number" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
       <Column Name="Position" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="LoginTable_Admin" Member="LoginTable" ThisKey="Admin_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
       <Association Name="UserPosition_Admin" Member="UserPosition" ThisKey="Position" OtherKey="PositionID" Type="UserPosition" IsForeignKey="true" />
+      <Association Name="LoginTable_Admin" Member="LoginTable" ThisKey="Admin_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.AirCooler" Member="AirCoolers">
@@ -491,13 +498,6 @@
       <Column Name="Idle_Power_Usage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Max_Power_Usage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Warrenty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.UserPosition" Member="UserPositions">
-    <Type Name="UserPosition">
-      <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Position" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="UserPosition_Admin" Member="Admins" ThisKey="PositionID" OtherKey="Position" Type="Admin" />
     </Type>
   </Table>
 </Database>
