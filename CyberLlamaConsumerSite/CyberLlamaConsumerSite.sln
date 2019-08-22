@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberLlamaConsumerSite", "CyberLlamaConsumerSite\CyberLlamaConsumerSite.csproj", "{A7838772-BC11-45B3-83D0-36A3FC533E5D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ABBC2451-79F4-4546-8B41-9BFDCCD8C904} = {ABBC2451-79F4-4546-8B41-9BFDCCD8C904}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberLlamaAdminSite", "CyberLlamaAdminSite\CyberLlamaAdminSite.csproj", "{8C75D171-6BCB-4D71-A4DD-7E4E8E2481CE}"
 	ProjectSection(ProjectDependencies) = postProject
