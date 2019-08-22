@@ -89,6 +89,9 @@ textarea {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+.navbar-toggler{
+    margin:1%;
+}
 /*
     Layout Resizing options
 */
@@ -132,6 +135,8 @@ textarea {
     display: block;
     text-align: center;
     width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 /*
     Image relates CSS
@@ -154,6 +159,9 @@ textarea {
     border-radius: 10px;
     margin: 0% 2% 0% 2%;
     height: 100%;
+}
+.smallMargin-top{
+    margin-top:1%;
 }
 
 
