@@ -22,6 +22,8 @@ public interface IService
 
     [OperationContract]
     List<string> getUserPositions();
+    [OperationContract]
+    string getAllEmployees();
 
     //Adding new Products to the DB
     [OperationContract]

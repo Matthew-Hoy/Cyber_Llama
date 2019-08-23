@@ -242,6 +242,12 @@
   <wsdl:message name="IService_checkOut_OutputMessage">
     <wsdl:part name="parameters" element="tns:checkOutResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getAllEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllEmployees" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllEmployeesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
@@ -398,6 +404,10 @@
     <wsdl:operation name="checkOut">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/checkOut" message="tns:IService_checkOut_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/checkOutResponse" message="tns:IService_checkOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllEmployees" message="tns:IService_getAllEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllEmployeesResponse" message="tns:IService_getAllEmployees_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -746,6 +756,15 @@
     </wsdl:operation>
     <wsdl:operation name="checkOut">
       <soap:operation soapAction="http://tempuri.org/IService/checkOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployees">
+      <soap:operation soapAction="http://tempuri.org/IService/getAllEmployees" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

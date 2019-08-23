@@ -13,6 +13,7 @@ public class Service : IService
 {
     CyberLlamaDatabaseDataContext db = new CyberLlamaDatabaseDataContext();
 
+
     //Login, registering of users
     public string Login(string strUserName, string strPassword)
     {
@@ -37,11 +38,14 @@ public class Service : IService
 
     public int addEmployee(string fName, string sName, string eMail, string phone, int type, string UserName, string password, string confirm)
     {
-
+        //make sure the passwords match
         if (password.Equals(confirm))
         {
-            if(db.LoginTables.Where(x => x.User_Name.Equals(UserName)).Select(y => y.User_Name).FirstOrDefault() == null)
+            //make sure email and username are not duplicated
+            if((db.LoginTables.Where(x => x.User_Name.Equals(UserName)).Select(y => y.User_Name).FirstOrDefault() == null)
+                && db.Admins.Where(z =>z.Email.Equals(eMail)).Select(p=>p.Email).FirstOrDefault() == null)
             {
+                //add to the database the new employee
                 var newLogin = new LoginTable
                 {
                     User_Name = UserName,
@@ -73,7 +77,7 @@ public class Service : IService
             }
             else
             {
-                //the userName already exists
+                //the userName or email already exists
                 return -1;
             }
         }
@@ -86,9 +90,12 @@ public class Service : IService
 
     public int addClient(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm)
     {
+        //make sure the passwords match
         if (password.Equals(confirm))
         {
-            if (db.LoginTables.Where(x => x.User_Name.Equals(UserName)).Select(y => y.User_Name).FirstOrDefault() == null)
+            //make sure username or email dont already exist
+            if (db.LoginTables.Where(x => x.User_Name.Equals(UserName)).Select(y => y.User_Name).FirstOrDefault() == null
+                && db.Clients.Where(z => z.Email.Equals(eMail)).Select(p => p.Email).FirstOrDefault() == null)
             {
                 var newLogin = new LoginTable
                 {
@@ -140,6 +147,16 @@ public class Service : IService
         return db.UserPositions.Select(x => x.Position).ToList();
     }
 
+    public string getAllEmployees()
+    {
+
+        return JsonConvert.SerializeObject(db.Admins.Select(x => new { x.Admin_ID, x.First_Name, x.Surname, x.Email, x.Conrtact_Number, x.Position }).ToList(), Formatting.Indented,
+                new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                }
+                );
+    }
 
     //Adding new Products to the DB
     //Adding new Air Cooler

@@ -3999,6 +3999,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/checkOut", ReplyAction="http://tempuri.org/IService/checkOutResponse")]
         System.Threading.Tasks.Task<bool> checkOutAsync(int user_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
+        string getAllEmployees();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
+        System.Threading.Tasks.Task<string> getAllEmployeesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
