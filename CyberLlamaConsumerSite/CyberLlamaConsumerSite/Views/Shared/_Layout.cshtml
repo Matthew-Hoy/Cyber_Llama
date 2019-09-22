@@ -126,8 +126,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#"><img src="~/Images/contactIcon.png" class="MenuIcon" /></a>
-                    <a class="nav-link" href="#">
+                    <a href=@Url.Action("Index", "Contact")><img src="~/Images/contactIcon.png" class="MenuIcon" /></a>
+                    <a class="nav-link" href=@Url.Action("Index", "Contact")>
                         CONTACT
                     </a>
                 </li>
@@ -208,7 +208,7 @@
                     else
                     {
                         <li class="nav-item">
-                            <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                            <a href=@Url.Action("Index", "Login")><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
                             <a class="nav-link" href=@Url.Action("Index", "Login")>
                                 Login
                             </a>
