@@ -31,7 +31,7 @@ public class Service : IService
             }
         }
         catch(Exception ex){
-            return "EX";
+            return "Ex";
         }
     }
 
