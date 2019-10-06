@@ -15,7 +15,8 @@
     <!--JumboTron is the large banner at the top-->
     <div class="jumbotron" style="margin-bottom:0px; padding: 2%">
         <a class="navbar-brand" href=@Url.Action("Index", "Home")><img width="80" image height="120"  src="~/Images/llama.png" /> </a>
-        <h1 style="font-size:400%; max-width:400px; display:inline;">CyberLlama<br></h1>
+        <h1 style="font-size:400%; color: red; max-width:400px; display:inline;">CyberLlama<br></h1>
+        <h2 style="font-size:200%; color:green; max-width:400px; display:normal;">Cyborg PC's made for you.</h2>
     </div>
     <!--create the navbar and use dark theme, check bg-dark and navbar-dark to change properties in site.css-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" style="padding-top: 0px;padding-bottom: 0px;">
@@ -207,10 +208,20 @@
                     }
                     else
                     {
+                        <!--<li class="nav-item">
+                <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                <a class="nav-link" href=@Url.Action("Index", "Login")>
+                    Login
+                </a>
+            </li>   -->
+
                         <li class="nav-item">
                             <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
                             <a class="nav-link" href=@Url.Action("Index", "Login")>
                                 Login
+                            </a>
+                            <a class="nav-link" href=@Url.Action("Index", "Register")>
+                                Register
                             </a>
                         </li>
                     }

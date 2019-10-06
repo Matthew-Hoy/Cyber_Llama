@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoginAdmin.cshtml";
+}
+<img class="centerImage" Style="margin-top:8%;" src="Images/llama.png" />
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <div class="form-Input centerImage">
+        <label for="text" class="required">Name:</label>
+        <input type="text" name="strName" id="name" />
+    </div>
+
+    <div class="form-Input centerImage">
+        <label for="text" class="required">Surname:</label>
+        <input type="text" name="strSurmame" id="surname" />
+    </div>
+
+    <div class="form-Input centerImage">
+        <label for="email" class="required">Email:</label>
+        <input type="text" name="strEmail" id="email" />
+    </div>
+   
+    <div class="form-Input centerImage">
+        <label for="Password" class="required">Password:</label>
+        <input type="password" name="strPassword" id="password" />
+    </div>
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input centerImage login">
+        <input type="submit" value="Register" />
+    </div>
+}
+
