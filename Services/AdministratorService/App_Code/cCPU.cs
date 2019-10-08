@@ -15,7 +15,7 @@ public class cCPU
     public String base_clock;
     public String boost_clock;
     public String total_cache;
-    public String cmos;
+    public String Chipset;
     public int tdp;
     public String max_temp;
     public int max_mem_speed;

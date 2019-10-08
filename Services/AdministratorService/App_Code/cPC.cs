@@ -18,7 +18,7 @@ public class cPC
     public String gpu_id;
     public String cooler_id;
     public String ssd_id;
-    public String hhd_id;
+    public String hdd_id;
     public String psu_id;
     public String os_id;
     public String fan_id;

@@ -11,8 +11,8 @@ using System.Text;
 public interface IService
 {
 
-	[OperationContract]
-	string Login(string strUserName, string strPassword);
+    [OperationContract]
+    string Login(string strUserName, string strPassword);
 
     [OperationContract]
     int addEmployee(string fName, string sName, string eMail, string phone, int type, string UserName, string password, string confirm);
@@ -71,7 +71,11 @@ public interface IService
 
 
     //Select types
+    [OperationContract]
+    List<cPC> getPC(String Type);
 
+    [OperationContract]
+    List<cPC> getPC(Double minPrice, Double maxPrice);
 
     //Entire Table
     [OperationContract]
@@ -115,5 +119,29 @@ public interface IService
     //Reduce Product Quantity
 
     //Add Amount Sold
+
+    //Shopping Cart Operations
+    [OperationContract]
+    Boolean addToPartCart(int user_ID, int part_ID, int qua);
+
+    [OperationContract]
+    Boolean removeFromPartCart(int user_ID, int part_ID);
+
+    [OperationContract]
+    Boolean clearPartCart(int user_ID);
+
+    [OperationContract]
+    Boolean addToPcCart(int user_ID, int pc_ID, int qua);
+
+    [OperationContract]
+    Boolean removeFromPcCart(int user_ID, int pc_ID);
+
+    [OperationContract]
+    Boolean clearPcCart(int user_ID);
+
+    [OperationContract]
+    Boolean checkOut(int user_ID);
+
+
 
 }
