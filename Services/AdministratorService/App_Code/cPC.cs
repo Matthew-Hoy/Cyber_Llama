@@ -31,4 +31,6 @@ public class cPC
     public String mouse_id;
     public String speaker_id;
     public String warranty;
+    public int active;
+    public int discount;
 }

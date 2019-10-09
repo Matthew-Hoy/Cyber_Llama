@@ -19,4 +19,6 @@ public class cPSU
     public String cables;
     public String dimensions;
     public String warranty;
+    public int active;
+    public int discount;
 }

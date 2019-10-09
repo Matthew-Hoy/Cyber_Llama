@@ -18,4 +18,6 @@ public class cRAM
     public String channel_config;
     public String height;
     public String warranty;
+    public int active;
+    public int discount;
 }
