@@ -1,304 +1,613 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 40.75" name="CyberLlamaDatabase">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 47.125, 99.5" name="CyberLlamaDatabase">
   <DataContextMoniker Name="/CyberLlamaDatabaseDataContext" />
   <nestedChildShapes>
-    <classShape Id="63316cc0-f58f-446a-a053-46c3859a12af" absoluteBounds="6.75, 0.75, 2, 1.1939925130208335">
+    <classShape Id="31ff845f-94df-4b51-9de7-7d9f18b7aca1" absoluteBounds="0.875, 1.875, 2, 1.1939925130208335">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/UserPosition" />
       <nestedChildShapes>
-        <elementListCompartment Id="e69415de-5e43-49e8-ad8a-64aeccd165e1" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4a5d1adc-89e0-41a4-93a3-046d02a52690" absoluteBounds="0.88999999999999968, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0fb9c32a-eec1-4522-8860-87e8adc374c0" absoluteBounds="9.5, 2.375, 2, 1.9631982421874996">
+    <classShape Id="56509a41-7686-4bab-9ab4-0cf79cdb2864" absoluteBounds="4.875, 2.125, 2, 1.9631982421874996">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Admin" />
       <nestedChildShapes>
-        <elementListCompartment Id="4995bc87-8237-4b2b-9e36-0ae4f2e3cb01" absoluteBounds="9.515, 2.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="41dc809b-7cf0-4e96-be42-5ebd3aef315c" absoluteBounds="4.8900000000000006, 2.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="79f8af26-99d9-439f-8625-79403384b285" absoluteBounds="0.75, 36.375, 2, 4.0785139973958309">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/AirCooler" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a444bb2b-eeb9-4dd0-adc2-584a3720d77e" absoluteBounds="0.765, 36.835, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="ec6aa83d-e228-4524-805f-7d8fbc7e5a6a" absoluteBounds="3.5, 3.875, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/CaseToMobo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7141c73f-81d6-4a50-8923-999465a71d3e" absoluteBounds="3.515, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="2558b7a2-36f5-4d12-8528-70c5b34b31a3" absoluteBounds="9.5, 5.875, 2, 2.3478011067708344">
+    <classShape Id="79b32c00-4ae3-490f-8185-ab4d7e0c8178" absoluteBounds="5, 5.75, 2, 2.3478011067708344">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Client" />
       <nestedChildShapes>
-        <elementListCompartment Id="bb42e5c7-f17f-4c85-9611-c6c998cce799" absoluteBounds="9.515, 6.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="22a20dd2-72d6-496e-9eca-e199fb6e45ab" absoluteBounds="5.0150000000000006, 6.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cc3169e3-ede9-4218-8340-d7feec655293" absoluteBounds="0.75, 19.25, 2, 4.4631168619791666">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/CPU" />
-      <nestedChildShapes>
-        <elementListCompartment Id="57f7e575-2dc1-4109-bcdf-defc2f8d8209" absoluteBounds="0.765, 19.71, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="197b773e-1839-4fcd-a89c-0412f106beac" absoluteBounds="3.5, 20.875, 2, 1.1939925130208309">
+    <classShape Id="7301f18b-df24-43e5-85f6-104946c5c894" absoluteBounds="13.5, 60.875, 2, 1.1939925130208309">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/CpuToAirCooler" />
       <nestedChildShapes>
-        <elementListCompartment Id="80448863-c0ca-492a-9c71-4d433f301b1f" absoluteBounds="3.515, 21.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f379e88e-4a7e-4a2d-b7d6-a9ecccbd6650" absoluteBounds="13.515, 61.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="dc565839-335a-44fc-beea-e81a928ba2a1" absoluteBounds="3.5, 18.875, 2, 1.1939925130208309">
+    <classShape Id="be810db8-f5fa-47f7-82a6-81cc3e22f598" absoluteBounds="18, 48.625, 2, 1.1939925130208309">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/CpuToLiquidCooler" />
       <nestedChildShapes>
-        <elementListCompartment Id="6ae44a54-ae75-42eb-ac5d-0533f13ee8a6" absoluteBounds="3.515, 19.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fe9aafaa-521b-4b45-b427-96ad81c118fb" absoluteBounds="18.015, 49.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fab18fef-9fc5-4176-b4f1-15d5b61086fd" absoluteBounds="12.75, 1.5, 2, 3.309308268229167">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Fan" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6453da81-2761-4a12-b891-5b1b1c7a2107" absoluteBounds="12.765, 1.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="bcced76b-1a5e-4853-acd0-0f0abb14a9d2" absoluteBounds="6.75, 9.75, 2, 4.4631168619791666">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/GPU" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a9392e4f-17af-415d-96ee-d95ea3294d90" absoluteBounds="6.765, 10.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="c2f77eab-cd2c-45ed-8649-b3e921372fb1" absoluteBounds="9.5, 11.125, 2, 1.7708968098958344">
+    <classShape Id="1c8b65d9-0c47-4b25-81cf-833d62708342" absoluteBounds="15.75, 89.625, 2, 1.1939925130208451">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/GpuToMonitor" />
       <nestedChildShapes>
-        <elementListCompartment Id="f86e23b5-3be9-4aa0-895f-8380448f7cff" absoluteBounds="9.515, 11.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="22581941-0e95-4357-978b-2374fc9ae0c6" absoluteBounds="15.765, 90.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="95765b67-3abc-4099-976b-17248ec3127f" absoluteBounds="12.75, 6.5, 2, 3.8862125651041666">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/HDD" />
-      <nestedChildShapes>
-        <elementListCompartment Id="fa3c5f26-1ab2-4888-8671-c691b87455ee" absoluteBounds="12.765, 6.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="498e4679-04df-4fbf-b75e-ef370d65fe8f" absoluteBounds="12.75, 11.5, 2, 4.0785139973958309">
+    <classShape Id="9cfde531-97f9-49de-966a-c1e8a24050e5" absoluteBounds="8.875, 66.25, 2, 4.2708154296875023">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Headset" />
       <nestedChildShapes>
-        <elementListCompartment Id="2330ba1e-7ca0-4188-901d-a1f3476e7994" absoluteBounds="12.765, 11.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f04a40f8-620f-4e86-a3e8-536b506ec44e" absoluteBounds="8.89, 66.71, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2750f371-a617-4069-899f-b6491e65e1c8" absoluteBounds="15.75, 1.5, 2, 3.1170068359375">
+    <classShape Id="b3f84b20-f3e5-45f6-9d4e-363e46dcb4bb" absoluteBounds="8.875, 25.25, 2, 3.3093082682291666">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Keyboard" />
       <nestedChildShapes>
-        <elementListCompartment Id="98407170-d85b-42bd-84b4-bf802388f54f" absoluteBounds="15.765, 1.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1e955387-529d-473b-9128-15db92a1765c" absoluteBounds="8.89, 25.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c324f33b-7c78-42b7-9701-d07b98cdfa38" absoluteBounds="0.75, 29.25, 2, 6.3861311848958309">
+    <classShape Id="e8897552-d9fc-4da8-ab8b-025ecc42d3ad" absoluteBounds="8.875, 51.75, 2, 4.0785139973958309">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/LiquidCooler" />
       <nestedChildShapes>
-        <elementListCompartment Id="5290664b-f3ee-482d-97ee-84acbbe6ac72" absoluteBounds="0.765, 29.71, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="93486161-219c-4093-8b65-7b88436f6a1d" absoluteBounds="8.89, 52.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7f6063a8-ab78-4b22-89d4-fdb127bee13f" absoluteBounds="6.75, 3.5, 2, 1.5785953776041675">
+    <classShape Id="24e95dec-beac-4aff-9d67-19be73184103" absoluteBounds="9.875, 3.375, 2, 1.5785953776041675">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/LoginTable" />
       <nestedChildShapes>
-        <elementListCompartment Id="eee0296d-d00a-4ddf-8915-26c183512fea" absoluteBounds="6.765, 3.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="40f6e1f2-d6aa-46e7-927c-dc5de3fcc31d" absoluteBounds="9.89, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cd160a63-a1a0-4d2d-8b3e-6b88bad7c376" absoluteBounds="15.75, 5.5, 2, 2.3478011067708344">
+    <classShape Id="4f3b193e-0cb9-47ce-a693-fc48b09a3aa2" absoluteBounds="8.875, 14.375, 2, 2.5401025390624987">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Microphone" />
       <nestedChildShapes>
-        <elementListCompartment Id="4ec306f2-716e-4131-a00b-3183c401f4c6" absoluteBounds="15.765, 5.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d84dff8c-6c4d-4362-a9a1-fcb370838917" absoluteBounds="8.89, 14.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7fc46d7d-2cd3-415a-ab89-3f037f0526da" absoluteBounds="3.5, 6.75, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/MoboToCPU" />
+    <classShape Id="2aa6c4a7-6a34-4000-9008-2f96a241cd72" absoluteBounds="21.75, 50.25, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/MoboToRam" />
       <nestedChildShapes>
-        <elementListCompartment Id="ce2ba30d-914a-48e8-8288-8dc0131e9d92" absoluteBounds="3.515, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="248d4b88-2214-42da-ae63-9a66d5fd2529" absoluteBounds="21.765, 50.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="591a7895-526c-43c1-b2be-6c673d0272ba" absoluteBounds="3.5, 1.875, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/MoboToRAM" />
-      <nestedChildShapes>
-        <elementListCompartment Id="658510fa-2b01-4dac-a477-7d2bd3a71714" absoluteBounds="3.515, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4a819d5b-7141-40c8-87e5-b6ff3a0951da" absoluteBounds="6.75, 15.125, 2, 5.8092268880208291">
+    <classShape Id="44c33e08-9e87-4111-b1eb-2deef34bc46b" absoluteBounds="8.875, 93.25, 2, 6.0015283203125023">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Monitor" />
       <nestedChildShapes>
-        <elementListCompartment Id="cead47da-1353-4717-98f7-75706084ceb5" absoluteBounds="6.765, 15.585, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bb27aa42-0e8d-4327-a76d-6ffd6f7e0799" absoluteBounds="8.89, 93.71, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fae6a852-9e1c-4492-92cd-71f2c744feb4" absoluteBounds="0.75, 2, 2, 4.8477197265625">
+    <classShape Id="6c8f0336-684b-4563-a9b7-3b9b3fcb09d8" absoluteBounds="8.875, 71.25, 2, 4.2708154296875023">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Motherboard" />
       <nestedChildShapes>
-        <elementListCompartment Id="637df7fd-3677-45da-ad84-0605c4b487f4" absoluteBounds="0.765, 2.46, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7e590c64-30ae-4269-abac-96b37b0c3088" absoluteBounds="8.89, 71.71, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ef31b68d-50ae-43be-8114-a30bf805da82" absoluteBounds="15.75, 9.5, 2, 3.8862125651041666">
+    <classShape Id="553adedb-898c-4610-a320-74cd421a2cdf" absoluteBounds="8.875, 56.5, 2, 4.0785139973958309">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Mouse" />
       <nestedChildShapes>
-        <elementListCompartment Id="a2d03d1d-6761-43b8-bf07-e11e837b7ced" absoluteBounds="15.765, 9.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7d11ff68-b043-4230-a6b2-8fec9b7e1877" absoluteBounds="8.89, 56.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f389c4f3-4fe4-4dec-8691-b72b5422b47a" absoluteBounds="9.75, 16.5, 2, 2.9247054036458309">
+    <classShape Id="a9a4c53a-1579-44d1-b0e2-a472e5204d91" absoluteBounds="8.875, 21.375, 2, 3.1170068359375023">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/MousePad" />
       <nestedChildShapes>
-        <elementListCompartment Id="9d58496c-e5ab-4a83-b181-3e53b77a30e7" absoluteBounds="9.765, 16.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3ab4e799-bd47-46c9-8a66-b94ec4c1e425" absoluteBounds="8.89, 21.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3255033d-cc1c-4478-a96e-63f67505c5eb" absoluteBounds="12.75, 16.5, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/O" />
+    <classShape Id="e2712b79-c17c-4e26-a968-e9239648c116" absoluteBounds="8.875, 11.375, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/OperatingSystem" />
       <nestedChildShapes>
-        <elementListCompartment Id="3e4a9e0c-eae2-41c8-ae69-6b8848a67723" absoluteBounds="12.765, 16.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d35431a6-3c40-4740-b92c-776c217a7195" absoluteBounds="8.89, 11.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c34b40ad-2d2a-4e60-a864-73fb182b81a9" absoluteBounds="0.75, 13, 2, 5.040021158854163">
+    <classShape Id="c0d00164-cef5-4684-9058-fbf1312b7a35" absoluteBounds="0.75, 57.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/PartsSold" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6bff3d5-8ccb-4ee4-9c8b-d875c3464da1" absoluteBounds="0.76500000000000012, 58.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea69b44d-a24f-4b2c-8707-a883249b5676" absoluteBounds="6.125, 53.375, 2, 1.5785953776041737">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97757741-977e-4662-abe2-83c005cbffe7" absoluteBounds="6.14, 53.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43286821-75df-4ac6-bd52-657ec55f1791" absoluteBounds="8.875, 87, 2, 5.4246240234375023">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/PCCase" />
       <nestedChildShapes>
-        <elementListCompartment Id="90d2b26e-99e5-4ff3-b291-44e4feaa8ead" absoluteBounds="0.765, 13.46, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b01a65d7-d354-4156-b071-7110480c15b2" absoluteBounds="8.89, 87.46, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f5b9f60d-097e-47b6-b4c9-3ae79f47d61b" absoluteBounds="0.75, 24.75, 2, 3.3093082682291666">
+    <classShape Id="c04ce9ca-f1b2-470c-99bb-0fe8c44ef0d1" absoluteBounds="44.875, 53.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/PcSold" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c22671b9-98e8-4155-9a91-ba7ba4efd7dc" absoluteBounds="44.89, 53.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6f50043-a22e-447a-a6f0-bdc95470d0db" absoluteBounds="8.875, 33.375, 2, 3.5016097005208309">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/PSU" />
       <nestedChildShapes>
-        <elementListCompartment Id="9f517148-fb57-48d9-b799-3221fdcdd46f" absoluteBounds="0.765, 25.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="00670b7e-3690-4993-87e4-2fe50840d4db" absoluteBounds="8.89, 33.835, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="563111c0-374e-4b84-8fa6-52c7f3dcb600" absoluteBounds="3.5, 14.75, 2, 1.3862939453124969">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/PSUtoCase" />
-      <nestedChildShapes>
-        <elementListCompartment Id="63fdf5d4-8576-49e3-9726-1bcfe2ae8970" absoluteBounds="3.515, 15.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4c06d77b-4b6d-4936-a604-088db48508f3" absoluteBounds="0.75, 8.5, 2, 3.3093082682291666">
+    <classShape Id="c55cb766-0581-4b4e-8cc0-4d99f4457a58" absoluteBounds="8.875, 29.25, 2, 3.3093082682291666">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/RAM" />
       <nestedChildShapes>
-        <elementListCompartment Id="4146c587-225f-45ca-91bc-16cffdbfe08d" absoluteBounds="0.765, 8.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="956c9ef5-0c03-4b90-8aac-44d81b796007" absoluteBounds="8.89, 29.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="908808ea-5763-476f-b64f-6c059d04550a" absoluteBounds="15.75, 14.5, 2, 2.7324039713541648">
+    <classShape Id="67344dc1-88d7-46b2-a363-ceae21c90043" absoluteBounds="8.875, 17.75, 2, 2.9247054036458309">
       <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Speaker" />
       <nestedChildShapes>
-        <elementListCompartment Id="2e90bb9e-2d60-4d22-aa4e-53d99bc2a9b5" absoluteBounds="15.765, 14.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dd644f54-583c-4b75-b7b2-3f99b7e6291b" absoluteBounds="8.89, 18.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="190b7aa5-91e7-4fb9-a16e-421b9d5eefda" absoluteBounds="15.75, 18.5, 2, 4.2708154296875023">
-      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/SSD" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6ccc8573-4df6-4b78-ba55-7086fa59159b" absoluteBounds="15.765, 18.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(8.75 : 1.34699625651042); (10.5 : 1.34699625651042); (10.5 : 2.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.875 : 2.59699625651042); (4.875 : 2.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/UserPosition/UserPosition_Admin" />
       <nodes>
-        <classShapeMoniker Id="63316cc0-f58f-446a-a053-46c3859a12af" />
-        <classShapeMoniker Id="0fb9c32a-eec1-4522-8860-87e8adc374c0" />
+        <classShapeMoniker Id="31ff845f-94df-4b51-9de7-7d9f18b7aca1" />
+        <classShapeMoniker Id="56509a41-7686-4bab-9ab4-0cf79cdb2864" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 38.4142569986979); (4.5 : 38.4142569986979); (4.5 : 22.0689925130208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/AirCooler/AirCooler_CpuToAirCooler" />
-      <nodes>
-        <classShapeMoniker Id="79f8af26-99d9-439f-8625-79403384b285" />
-        <classShapeMoniker Id="197b773e-1839-4fcd-a89c-0412f106beac" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 21.4719962565104); (3.04166666666667 : 21.4719962565104 : JumpStart); (3.20833333333333 : 21.4719962565104 : JumpEnd); (3.22916666666667 : 21.4719962565104 : JumpStart); (3.39583333333333 : 21.4719962565104 : JumpEnd); (3.5 : 21.4719962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/CPU/CPU_CpuToAirCooler" />
-      <nodes>
-        <classShapeMoniker Id="cc3169e3-ede9-4218-8340-d7feec655293" />
-        <classShapeMoniker Id="197b773e-1839-4fcd-a89c-0412f106beac" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 19.6594962565104); (3.04166666666667 : 19.6594962565104 : JumpStart); (3.20833333333333 : 19.6594962565104 : JumpEnd); (3.22916666666667 : 19.6594962565104 : JumpStart); (3.39583333333333 : 19.6594962565104 : JumpEnd); (3.5 : 19.6594962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/CPU/CPU_CpuToLiquidCooler" />
-      <nodes>
-        <classShapeMoniker Id="cc3169e3-ede9-4218-8340-d7feec655293" />
-        <classShapeMoniker Id="dc565839-335a-44fc-beea-e81a928ba2a1" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 12.0104484049479); (9.5 : 12.0104484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/GPU/GPU_GpuToMonitor" />
-      <nodes>
-        <classShapeMoniker Id="bcced76b-1a5e-4853-acd0-0f0abb14a9d2" />
-        <classShapeMoniker Id="c2f77eab-cd2c-45ed-8649-b3e921372fb1" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 29.25); (3.125 : 28.875); (3.125 : 19.2359961282552); (3.22916666666667 : 19.2359961282552 : JumpStart); (3.39583333333333 : 19.2359961282552 : JumpEnd); (3.5 : 19.2359961282552)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.875 : 54.0660901464844); (18.9617406911971 : 54.0660901464844); (18.9617406911971 : 49.8189925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/LiquidCooler/LiquidCooler_CpuToLiquidCooler" />
       <nodes>
-        <classShapeMoniker Id="c324f33b-7c78-42b7-9701-d07b98cdfa38" />
-        <classShapeMoniker Id="dc565839-335a-44fc-beea-e81a928ba2a1" />
+        <classShapeMoniker Id="e8897552-d9fc-4da8-ab8b-025ecc42d3ad" />
+        <classShapeMoniker Id="be810db8-f5fa-47f7-82a6-81cc3e22f598" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 3.91909912109375); (9.5 : 3.91909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.875 : 3.73159912109375); (6.875 : 3.73159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/LoginTable/LoginTable_Admin" />
       <nodes>
-        <classShapeMoniker Id="7f6063a8-ab78-4b22-89d4-fdb127bee13f" />
-        <classShapeMoniker Id="0fb9c32a-eec1-4522-8860-87e8adc374c0" />
+        <classShapeMoniker Id="24e95dec-beac-4aff-9d67-19be73184103" />
+        <classShapeMoniker Id="56509a41-7686-4bab-9ab4-0cf79cdb2864" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.75 : 5.07859537760417); (7.75 : 7.04890055338542); (9.5 : 7.04890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.875 : 4.95359537760417); (10.875 : 6.92390055338542); (7 : 6.92390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/LoginTable/LoginTable_Client" />
       <nodes>
-        <classShapeMoniker Id="7f6063a8-ab78-4b22-89d4-fdb127bee13f" />
-        <classShapeMoniker Id="2558b7a2-36f5-4d12-8528-70c5b34b31a3" />
+        <classShapeMoniker Id="24e95dec-beac-4aff-9d67-19be73184103" />
+        <classShapeMoniker Id="79b32c00-4ae3-490f-8185-ab4d7e0c8178" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 19.25); (3.125 : 18.875); (3.125 : 7.44314697265625); (3.22916666666667 : 7.44314697265625 : JumpStart); (3.39583333333333 : 7.44314697265625 : JumpEnd); (3.5 : 7.44314697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/CPU/CPU_MoboToCPU" />
-      <nodes>
-        <classShapeMoniker Id="cc3169e3-ede9-4218-8340-d7feec655293" />
-        <classShapeMoniker Id="7fc46d7d-2cd3-415a-ab89-3f037f0526da" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 20.2107161458333); (9.59375 : 20.2107161458333); (9.59375 : 12.8958968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.875 : 97.0165814501953); (16.75 : 97.0165814501953); (16.75 : 90.8189925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Monitor/Monitor_GpuToMonitor" />
       <nodes>
-        <classShapeMoniker Id="4a819d5b-7141-40c8-87e5-b6ff3a0951da" />
-        <classShapeMoniker Id="c2f77eab-cd2c-45ed-8649-b3e921372fb1" />
+        <classShapeMoniker Id="44c33e08-9e87-4111-b1eb-2deef34bc46b" />
+        <classShapeMoniker Id="1c8b65d9-0c47-4b25-81cf-833d62708342" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.47199625651042); (3.10416666666667 : 4.47199625651042 : JumpStart); (3.27083333333333 : 4.47199625651042 : JumpEnd); (3.5 : 4.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Motherboard/Motherboard_CaseToMobo" />
+    <associationConnector edgePoints="[(10.875 : 73.7271202383461); (22.75 : 73.7271202383461); (22.75 : 51.4439925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Motherboard/Motherboard_MoboToRam" />
       <nodes>
-        <classShapeMoniker Id="fae6a852-9e1c-4492-92cd-71f2c744feb4" />
-        <classShapeMoniker Id="ec6aa83d-e228-4524-805f-7d8fbc7e5a6a" />
+        <classShapeMoniker Id="6c8f0336-684b-4563-a9b7-3b9b3fcb09d8" />
+        <classShapeMoniker Id="2aa6c4a7-6a34-4000-9008-2f96a241cd72" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 6.8477197265625); (1.75 : 7.82097295898438); (3.04166666666667 : 7.82097295898437 : JumpStart); (3.39583333333333 : 7.82097295898438 : JumpEnd); (3.5 : 7.82097295898438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Motherboard/Motherboard_MoboToCPU" />
+    <associationConnector edgePoints="[(6.5937475 : 54.9535953776042); (6.5937475 : 68.3854077148438); (7.04166666666667 : 68.3854077148438 : JumpStart); (7.20833333333333 : 68.3854077148438 : JumpEnd); (8.875 : 68.3854077148438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_Headset" />
       <nodes>
-        <classShapeMoniker Id="fae6a852-9e1c-4492-92cd-71f2c744feb4" />
-        <classShapeMoniker Id="7fc46d7d-2cd3-415a-ab89-3f037f0526da" />
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="9cfde531-97f9-49de-966a-c1e8a24050e5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.53449625651042); (3.10416666666667 : 2.53449625651042 : JumpStart); (3.27083333333333 : 2.53449625651042 : JumpEnd); (3.5 : 2.53449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Motherboard/Motherboard_MoboToRAM" />
+    <associationConnector edgePoints="[(7.92187875 : 53.375); (7.92187875 : 26.9046541341146); (8.875 : 26.9046541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_Keyboard" />
       <nodes>
-        <classShapeMoniker Id="fae6a852-9e1c-4492-92cd-71f2c744feb4" />
-        <classShapeMoniker Id="591a7895-526c-43c1-b2be-6c673d0272ba" />
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="b3f84b20-f3e5-45f6-9d4e-363e46dcb4bb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 13.0630759230769); (3.06607443490112 : 12.7470014881758 : JumpStart); (3.18392556509888 : 12.629150357978 : JumpEnd); (3.3125 : 12.5005759230769); (3.3125 : 4.80174638476563); (3.5 : 4.80174638476563)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PCCase/PCCase_CaseToMobo" />
+    <associationConnector edgePoints="[(8.125 : 54.1642976888021); (8.875 : 54.1642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_LiquidCooler" />
       <nodes>
-        <classShapeMoniker Id="c34b40ad-2d2a-4e60-a864-73fb182b81a9" />
-        <classShapeMoniker Id="ec6aa83d-e228-4524-805f-7d8fbc7e5a6a" />
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="e8897552-d9fc-4da8-ab8b-025ecc42d3ad" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 15.4431469726562); (3.04166666666667 : 15.4431469726562 : JumpStart); (3.20833333333333 : 15.4431469726562 : JumpEnd); (3.5 : 15.4431469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PCCase/PCCase_PSUtoCase" />
+    <associationConnector edgePoints="[(7.39062625 : 53.375); (7.39062625 : 15.6450512695312); (8.875 : 15.6450512695312)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_Microphone" />
       <nodes>
-        <classShapeMoniker Id="c34b40ad-2d2a-4e60-a864-73fb182b81a9" />
-        <classShapeMoniker Id="563111c0-374e-4b84-8fa6-52c7f3dcb600" />
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="4f3b193e-0cb9-47ce-a693-fc48b09a3aa2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 24.8115374615385); (3.06607443490112 : 24.4954630266373 : JumpStart); (3.18392556509888 : 24.3776118964396 : JumpEnd); (3.3125 : 24.2490374615385); (3.3125 : 15.8209724589844); (3.5 : 15.8209724589844)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PSU/PSU_PSUtoCase" />
+    <associationConnector edgePoints="[(7.92187875 : 54.9535953776042); (7.92187875 : 96.2507641601563); (8.875 : 96.2507641601563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_Monitor" />
       <nodes>
-        <classShapeMoniker Id="f5b9f60d-097e-47b6-b4c9-3ae79f47d61b" />
-        <classShapeMoniker Id="563111c0-374e-4b84-8fa6-52c7f3dcb600" />
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="44c33e08-9e87-4111-b1eb-2deef34bc46b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.56307592307692); (3.06607443490112 : 8.2470014881758 : JumpStart); (3.18392556509888 : 8.12915035797804 : JumpEnd); (3.1875 : 8.12557592307692); (3.1875 : 2.17349612825521); (3.5 : 2.17349612825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/RAM/RAM_MoboToRAM" />
+    <associationConnector edgePoints="[(7.39062625 : 54.9535953776042); (7.39062625 : 73.3854077148438); (7.57291916666667 : 73.3854077148438 : JumpStart); (7.73958583333333 : 73.3854077148438 : JumpEnd); (8.875 : 73.3854077148438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_Motherboard" />
       <nodes>
-        <classShapeMoniker Id="4c06d77b-4b6d-4936-a604-088db48508f3" />
-        <classShapeMoniker Id="591a7895-526c-43c1-b2be-6c673d0272ba" />
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="6c8f0336-684b-4563-a9b7-3b9b3fcb09d8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.85937375 : 54.9535953776042); (6.85937375 : 58.5392569986979); (8.875 : 58.5392569986979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_Mouse" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="553adedb-898c-4610-a320-74cd421a2cdf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.85937375 : 53.375); (6.85937375 : 22.9335034179688); (7.30729291666667 : 22.9335034179688 : JumpStart); (7.47395958333333 : 22.9335034179688 : JumpEnd); (8.875 : 22.9335034179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_MousePad" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="a9a4c53a-1579-44d1-b0e2-a472e5204d91" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.32812125 : 53.375); (6.32812125 : 12.5489005533854); (8.875 : 12.5489005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_OperatingSystem" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="e2712b79-c17c-4e26-a968-e9239648c116" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 54.3772483610026); (1.44786934758713 : 54.3772483610026); (1.44786934758713 : 57.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_PartsSold" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="c0d00164-cef5-4684-9058-fbf1312b7a35" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.32812125 : 54.9535953776042); (6.32812125 : 89.7123120117188); (8.875 : 89.7123120117188)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_PCCase" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="43286821-75df-4ac6-bd52-657ec55f1791" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 53.375); (7.125 : 34.9155449945869); (7.30729291666667 : 34.9155449945869 : JumpStart); (7.47395958333333 : 34.9155449945869 : JumpEnd); (7.83854541666667 : 34.9155449945869 : JumpStart); (8.00521208333333 : 34.9155449945869 : JumpEnd); (8.875 : 34.9155449945869)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_PSU" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="e6f50043-a22e-447a-a6f0-bdc95470d0db" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 30.4753643505859); (22.75 : 30.4753643505859); (22.75 : 50.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/RAM/RAM_MoboToRam" />
+      <nodes>
+        <classShapeMoniker Id="c55cb766-0581-4b4e-8cc0-4d99f4457a58" />
+        <classShapeMoniker Id="2aa6c4a7-6a34-4000-9008-2f96a241cd72" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.789065625 : 53.375); (7.789065625 : 30.9046541341146); (7.83854541666667 : 30.9046541341146 : JumpStart); (8.00521208333333 : 30.9046541341146 : JumpEnd); (8.875 : 30.9046541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_RAM" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="c55cb766-0581-4b4e-8cc0-4d99f4457a58" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.523439375 : 53.375); (7.523439375 : 19.2123527018229); (8.875 : 19.2123527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_Speaker" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="67344dc1-88d7-46b2-a363-ceae21c90043" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d0ba41de-c9f2-4207-991a-d59307b5adab" absoluteBounds="8.875, 76.375, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/AirCooler" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f6f34bd-f258-436e-ab53-ad90217e80ab" absoluteBounds="8.89, 76.835, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.875 : 78.6065584309896); (13.9166666666667 : 78.6065584309896 : JumpStart); (14.0833333333333 : 78.6065584309896 : JumpEnd); (15.15625 : 78.6065584309896); (15.15625 : 62.0689925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/AirCooler/AirCooler_CpuToAirCooler" />
+      <nodes>
+        <classShapeMoniker Id="d0ba41de-c9f2-4207-991a-d59307b5adab" />
+        <classShapeMoniker Id="7301f18b-df24-43e5-85f6-104946c5c894" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 54.9535953776042); (7.125 : 78.6065584309896); (8.875 : 78.6065584309896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_AirCooler" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="d0ba41de-c9f2-4207-991a-d59307b5adab" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3fe9133d-f704-47d4-b3f0-618667106197" absoluteBounds="0.75, 5.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/PartCart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dbdf4baf-3cd2-4ebc-9671-f5c55e7d448d" absoluteBounds="0.76500000000000057, 6.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.125 : 53.7383963444011); (1.57533519726658 : 53.7383963444011); (1.57533519726658 : 7.2612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_PartCart" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="3fe9133d-f704-47d4-b3f0-618667106197" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5 : 6.56814697265625); (2.75 : 6.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Client/Client_PartCart" />
+      <nodes>
+        <classShapeMoniker Id="79b32c00-4ae3-490f-8185-ab4d7e0c8178" />
+        <classShapeMoniker Id="3fe9133d-f704-47d4-b3f0-618667106197" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="12fac5d4-6f48-4148-98e3-e9379b226e92" absoluteBounds="8.875, 81.625, 2, 4.8477197265625">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/GPU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53f54435-612d-43cd-85af-e1871cd1016a" absoluteBounds="8.89, 82.085, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.875 : 84.0488598632813); (16.75 : 84.0488598632813); (16.75 : 89.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/GPU/GPU_GpuToMonitor" />
+      <nodes>
+        <classShapeMoniker Id="12fac5d4-6f48-4148-98e3-e9379b226e92" />
+        <classShapeMoniker Id="1c8b65d9-0c47-4b25-81cf-833d62708342" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.6562525 : 54.9535953776042); (7.6562525 : 84.0488598632813); (8.875 : 84.0488598632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_GPU" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="12fac5d4-6f48-4148-98e3-e9379b226e92" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="997177ae-334a-49e8-86ae-658c9eb72c17" absoluteBounds="8.875, 46.875, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/HDD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c7010ed-440f-43f3-bd51-2aa3e57856fe" absoluteBounds="8.89, 47.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.5937475 : 53.375); (6.5937475 : 48.7219555664063); (7.30729291666667 : 48.7219555664063 : JumpStart); (7.47395958333333 : 48.7219555664063 : JumpEnd); (7.57291916666667 : 48.7219555664063 : JumpStart); (7.73958583333333 : 48.7219555664063 : JumpEnd); (7.83854541666667 : 48.7219555664063 : JumpStart); (8.13802520833333 : 48.7219555664063 : JumpEnd); (8.875 : 48.7219555664063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_HDD" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="997177ae-334a-49e8-86ae-658c9eb72c17" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e853cb43-2e17-440c-b0d5-cb69342146d7" absoluteBounds="8.875, 61.375, 2, 4.2708154296875">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/SSD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aabc822a-13c9-4ad3-8df5-55eb0c6e276b" absoluteBounds="8.89, 61.835, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.054691875 : 54.9535953776042); (8.054691875 : 63.5104077148438); (8.875 : 63.5104077148438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_SSD" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="e853cb43-2e17-440c-b0d5-cb69342146d7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" absoluteBounds="37.625, 47.5, 2, 5.2323225911458326">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Pc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8f9c42a-716e-45a8-86bf-7217910d8e1e" absoluteBounds="37.64, 47.96, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.875 : 88.34375); (38.625 : 88.34375); (38.625 : 52.7323225911458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PCCase/PCCase_Pc" />
+      <nodes>
+        <classShapeMoniker Id="43286821-75df-4ac6-bd52-657ec55f1791" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 52.2411612955729); (22.6666666666667 : 52.2411612955729 : JumpStart); (22.8333333333333 : 52.2411612955729 : JumpEnd); (37.625 : 52.2411612955729)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/LiquidCooler/LiquidCooler_Pc" />
+      <nodes>
+        <classShapeMoniker Id="e8897552-d9fc-4da8-ab8b-025ecc42d3ad" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 82.8056774316406); (37.7447879166667 : 82.8056774316406 : JumpStart); (37.9114545833333 : 82.8056774316406 : JumpEnd); (38.5416666666667 : 82.8056774316406 : JumpStart); (38.7083333333333 : 82.8056774316406 : JumpEnd); (39.42187875 : 82.8056774316406); (39.42187875 : 52.7323225911458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/GPU/GPU_Pc" />
+      <nodes>
+        <classShapeMoniker Id="12fac5d4-6f48-4148-98e3-e9379b226e92" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 48.03125); (22.6666666666667 : 48.03125 : JumpStart); (22.8333333333333 : 48.03125 : JumpEnd); (37.625 : 48.03125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/HDD/HDD_Pc" />
+      <nodes>
+        <classShapeMoniker Id="997177ae-334a-49e8-86ae-658c9eb72c17" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 67.03125); (15.0729166666667 : 67.03125 : JumpStart); (15.2395833333333 : 67.03125 : JumpEnd); (17.5041477531431 : 67.03125 : JumpStart); (17.6708144198097 : 67.03125 : JumpEnd); (22.6666666666667 : 67.03125 : JumpStart); (22.8333333333333 : 67.03125 : JumpEnd); (37.7447879166667 : 67.03125 : JumpStart); (37.9114545833333 : 67.03125 : JumpEnd); (38.0937475 : 67.03125); (38.0937475 : 52.7323225911458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Headset/Headset_Pc" />
+      <nodes>
+        <classShapeMoniker Id="9cfde531-97f9-49de-966a-c1e8a24050e5" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 26.9046541341146); (39.1562525 : 26.9046541341146); (39.1562525 : 47.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Keyboard/Keyboard_Pc" />
+      <nodes>
+        <classShapeMoniker Id="b3f84b20-f3e5-45f6-9d4e-363e46dcb4bb" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 74.6552203340168); (39.1562525 : 74.6552203340168); (39.1562525 : 52.7323225911458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Motherboard/Motherboard_Pc" />
+      <nodes>
+        <classShapeMoniker Id="6c8f0336-684b-4563-a9b7-3b9b3fcb09d8" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 94.7191295800781); (16.6666666666667 : 94.7191295800781 : JumpStart); (16.8333333333333 : 94.7191295800781 : JumpEnd); (37.82812125 : 94.7191295800781); (37.82812125 : 52.7323225911458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Monitor/Monitor_Pc" />
+      <nodes>
+        <classShapeMoniker Id="44c33e08-9e87-4111-b1eb-2deef34bc46b" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 58.9175032552083); (17.5041477531431 : 58.9175032552083 : JumpStart); (17.6708144198097 : 58.9175032552083 : JumpEnd); (22.6666666666667 : 58.9175032552083 : JumpStart); (22.8333333333333 : 58.9175032552083 : JumpEnd); (37.7447879166667 : 58.9175032552083 : JumpStart); (37.9114545833333 : 58.9175032552083 : JumpEnd); (38.35937375 : 58.9175032552083); (38.35937375 : 52.7323225911458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Mouse/Mouse_Pc" />
+      <nodes>
+        <classShapeMoniker Id="553adedb-898c-4610-a320-74cd421a2cdf" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 35.1258048502604); (22.6666666666667 : 35.1258048502604 : JumpStart); (22.8333333333333 : 35.1258048502604 : JumpEnd); (37.82812125 : 35.1258048502604); (37.82812125 : 47.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PSU/PSU_Pc" />
+      <nodes>
+        <classShapeMoniker Id="e6f50043-a22e-447a-a6f0-bdc95470d0db" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 31.5485888094075); (22.6666666666667 : 31.5485888094075 : JumpStart); (22.8333333333333 : 31.5485888094075 : JumpEnd); (38.35937375 : 31.5485888094075); (38.35937375 : 47.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/RAM/RAM_Pc" />
+      <nodes>
+        <classShapeMoniker Id="c55cb766-0581-4b4e-8cc0-4d99f4457a58" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 19.2123527018229); (38.89062625 : 19.2123527018229); (38.89062625 : 47.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Speaker/Speaker_Pc" />
+      <nodes>
+        <classShapeMoniker Id="67344dc1-88d7-46b2-a363-ceae21c90043" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 62.9788207421875); (15.0729166666667 : 62.9788207421875 : JumpStart); (15.2395833333333 : 62.9788207421875 : JumpEnd); (17.5041477531431 : 62.9788207421875 : JumpStart); (17.6708144198097 : 62.9788207421875 : JumpEnd); (22.6666666666667 : 62.9788207421875 : JumpStart); (22.8333333333333 : 62.9788207421875 : JumpEnd); (37.7447879166667 : 62.9788207421875 : JumpStart); (37.9114545833333 : 62.9788207421875 : JumpEnd); (38.0104141666667 : 62.9788207421875 : JumpStart); (38.1770808333333 : 62.9788207421875 : JumpEnd); (38.5416666666667 : 62.9788207421875 : JumpStart); (38.7083333333333 : 62.9788207421875 : JumpEnd); (38.89062625 : 62.9788207421875); (38.89062625 : 52.7323225911458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/SSD/SSD_Pc" />
+      <nodes>
+        <classShapeMoniker Id="e853cb43-2e17-440c-b0d5-cb69342146d7" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a8b96e5a-0c48-48c5-8588-482554cd94d5" absoluteBounds="13, 80.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/MoboToCase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abea0f39-0ac5-47fd-83c4-76b91c116b45" absoluteBounds="13.015, 80.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.875 : 91.7155582682292); (14.0791002742477 : 91.7155582682292); (14.0791002742477 : 81.4439925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PCCase/PCCase_MoboToCase" />
+      <nodes>
+        <classShapeMoniker Id="43286821-75df-4ac6-bd52-657ec55f1791" />
+        <classShapeMoniker Id="a8b96e5a-0c48-48c5-8588-482554cd94d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 72.0674520244615); (14 : 72.0674520244615); (14 : 80.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Motherboard/Motherboard_MoboToCase" />
+      <nodes>
+        <classShapeMoniker Id="6c8f0336-684b-4563-a9b7-3b9b3fcb09d8" />
+        <classShapeMoniker Id="a8b96e5a-0c48-48c5-8588-482554cd94d5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3b5be0b3-7783-42bd-967b-349595125378" absoluteBounds="17.125, 55.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/MoboToCpu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9dc8f808-84dd-4904-97db-1c56b3ff6144" absoluteBounds="17.14, 56.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.875 : 72.8972861314038); (13.9166666666667 : 72.8972861314038 : JumpStart); (14.0833333333333 : 72.8972861314038 : JumpEnd); (17.5874810864764 : 72.8972861314038); (17.5874810864764 : 56.9439925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Motherboard/Motherboard_MoboToCpu" />
+      <nodes>
+        <classShapeMoniker Id="6c8f0336-684b-4563-a9b7-3b9b3fcb09d8" />
+        <classShapeMoniker Id="3b5be0b3-7783-42bd-967b-349595125378" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="459766b4-45d1-448c-8e2b-02036bdfe9e6" absoluteBounds="8.75, 42, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/CPU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5281eb73-71eb-4569-87e4-ec134a4b161f" absoluteBounds="8.765, 42.46, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.75 : 45.5135948059891); (14.5 : 45.5135948059891); (14.5 : 60.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/CPU/CPU_CpuToAirCooler" />
+      <nodes>
+        <classShapeMoniker Id="459766b4-45d1-448c-8e2b-02036bdfe9e6" />
+        <classShapeMoniker Id="7301f18b-df24-43e5-85f6-104946c5c894" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.75 : 44.0392569986979); (19 : 44.0392569986979); (19 : 48.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/CPU/CPU_CpuToLiquidCooler" />
+      <nodes>
+        <classShapeMoniker Id="459766b4-45d1-448c-8e2b-02036bdfe9e6" />
+        <classShapeMoniker Id="be810db8-f5fa-47f7-82a6-81cc3e22f598" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.75 : 44.7402851677586); (38.0104141666667 : 44.7402851677586 : JumpStart); (38.1770808333333 : 44.7402851677586 : JumpEnd); (38.625 : 44.7402851677586); (38.625 : 47.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/CPU/CPU_Pc" />
+      <nodes>
+        <classShapeMoniker Id="459766b4-45d1-448c-8e2b-02036bdfe9e6" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.054691875 : 53.375); (8.054691875 : 44.0392569986979); (8.75 : 44.0392569986979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_CPU" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="459766b4-45d1-448c-8e2b-02036bdfe9e6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.75 : 45.2361438562289); (17.53125 : 45.2361438562289); (17.53125 : 55.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/CPU/CPU_MoboToCpu" />
+      <nodes>
+        <classShapeMoniker Id="459766b4-45d1-448c-8e2b-02036bdfe9e6" />
+        <classShapeMoniker Id="3b5be0b3-7783-42bd-967b-349595125378" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3925ee06-999d-4794-b077-a068cbb79570" absoluteBounds="8.75, 37.625, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/Fan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a2920faa-3895-445d-bb1e-c1746c2b9145" absoluteBounds="8.765, 38.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.75 : 39.4719555664063); (38.0937475 : 39.4719555664063); (38.0937475 : 47.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Fan/Fan_Pc" />
+      <nodes>
+        <classShapeMoniker Id="3925ee06-999d-4794-b077-a068cbb79570" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.6562525 : 53.375); (7.6562525 : 39.4719555664063); (7.83854541666667 : 39.4719555664063 : JumpStart); (8.00521208333333 : 39.4719555664063 : JumpEnd); (8.75 : 39.4719555664063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PartsStock/PartsStock_Fan" />
+      <nodes>
+        <classShapeMoniker Id="ea69b44d-a24f-4b2c-8707-a883249b5676" />
+        <classShapeMoniker Id="3925ee06-999d-4794-b077-a068cbb79570" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="48b27ac0-a709-4e87-a17a-b5629be79079" absoluteBounds="44.625, 49.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/PcStock" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a80daeb3-9074-4de9-8762-c6d1c992a94f" absoluteBounds="44.64, 49.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(45.75 : 50.6362939453125); (45.75 : 53.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PcStock/PcStock_PcSold" />
+      <nodes>
+        <classShapeMoniker Id="48b27ac0-a709-4e87-a17a-b5629be79079" />
+        <classShapeMoniker Id="c04ce9ca-f1b2-470c-99bb-0fe8c44ef0d1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(44.625 : 49.9431469726563); (39.625 : 49.9431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PcStock/PcStock_Pc" />
+      <nodes>
+        <classShapeMoniker Id="48b27ac0-a709-4e87-a17a-b5629be79079" />
+        <classShapeMoniker Id="6383a79e-7e78-427a-b6c3-5ae7414cd532" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e1bd06af-3311-41f9-a272-26e01747bd74" absoluteBounds="12.375, 8.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/CyberLlamaDatabaseDataContext/PcCart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d780af6-4a11-463e-8f08-216ec25fa62c" absoluteBounds="12.39, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(45.625 : 49.25); (45.625 : 9.44314697265625); (14.375 : 9.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/PcStock/PcStock_PcCart" />
+      <nodes>
+        <classShapeMoniker Id="48b27ac0-a709-4e87-a17a-b5629be79079" />
+        <classShapeMoniker Id="e1bd06af-3311-41f9-a272-26e01747bd74" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 8.09780110677083); (6 : 9.02712611967316); (12.375 : 9.02712611967316)]" fixedFrom="Algorithm" fixedTo="Caller">
+      <AssociationMoniker Name="/CyberLlamaDatabaseDataContext/Client/Client_PcCart" />
+      <nodes>
+        <classShapeMoniker Id="79b32c00-4ae3-490f-8185-ab4d7e0c8178" />
+        <classShapeMoniker Id="e1bd06af-3311-41f9-a272-26e01747bd74" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
