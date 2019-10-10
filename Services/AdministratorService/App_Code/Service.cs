@@ -1197,7 +1197,7 @@ public class Service : IService
         return temp;
     }
 
-    public cPC getPC(int ID)
+    public cPC idgetPC(int ID)
     {
         var info = (from p in db.PcStocks where p.ID == ID select p).FirstOrDefault();
         var pc = (from p in db.Pcs where p.PC_ID == ID select p).FirstOrDefault();
@@ -1656,7 +1656,7 @@ public class Service : IService
 
         foreach (PcStock p in pcs)
         {
-            var pc = getPC(pcs.ID);
+            var pc = idgetPC(pcs.ID);
 
             cPC temp = new cPC
             {
@@ -1694,7 +1694,7 @@ public class Service : IService
     }
 
     //Return Items Based on parameters
-    public List<cPC> getPC(String Type)
+    public List<cPC> strgetPC(String Type)
     {
         List<cPC> list = new List<cPC>();
         dynamic pcs = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals(Type) select p).FirstOrDefault();
@@ -1739,7 +1739,7 @@ public class Service : IService
     }
 
     //This can be dodne at the back end of the website
-    public List<cPC> getPC(Double minPrice, Double maxPrice)
+    public List<cPC> dblgetPC(Double minPrice, Double maxPrice)
     {
         List<cPC> list = new List<cPC>();
         dynamic pcs = (from p in db.PartsStocks where p.Active == 1 select p).FirstOrDefault();

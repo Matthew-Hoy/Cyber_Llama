@@ -67,15 +67,15 @@ public interface IService
     dynamic getPart(int ID);
 
     [OperationContract]
-    cPC getPC(int ID);
+    cPC idgetPC(int ID);
 
 
     //Select types
     [OperationContract]
-    List<cPC> getPC(String Type);
+    List<cPC> strgetPC(String Type);
 
     [OperationContract]
-    List<cPC> getPC(Double minPrice, Double maxPrice);
+    List<cPC> dblgetPC(Double minPrice, Double maxPrice);
 
     //Entire Table
     [OperationContract]
