@@ -30,7 +30,7 @@ public class Service : IService
                 return null;
             }
         }
-        catch(Exception ex){
+        catch (Exception ex) {
             return "EX";
         }
     }
@@ -40,7 +40,7 @@ public class Service : IService
 
         if (password.Equals(confirm))
         {
-            if(db.LoginTables.Where(x => x.User_Name.Equals(UserName)).Select(y => y.User_Name).FirstOrDefault() == null)
+            if (db.LoginTables.Where(x => x.User_Name.Equals(UserName)).Select(y => y.User_Name).FirstOrDefault() == null)
             {
                 var newLogin = new LoginTable
                 {
@@ -54,7 +54,7 @@ public class Service : IService
                         Email = eMail,
                         Conrtact_Number = phone,
                         Position = type,
-                    }  
+                    }
                 };
                 db.LoginTables.InsertOnSubmit(newLogin);
                 try
@@ -163,7 +163,7 @@ public class Service : IService
             Model = newAC.model,
             Brand = newAC.brand,
             Series = newAC.series,
-            
+
             Fan_Size = newAC.fan_size,
             Compatibility = newAC.chipset,
             Fan_RPM = newAC.fan_rpm,
@@ -182,7 +182,7 @@ public class Service : IService
         db.AirCoolers.InsertOnSubmit(AC);
         db.PartsStocks.InsertOnSubmit(part);
 
-        /*
+        
         //Check for the compatible chipsets
         String str = AC.Compatibility;
         char[] seperator = { ',', ' ' };
@@ -196,16 +196,15 @@ public class Service : IService
             
             foreach (CPU c in cpuList)
             {
-                    var bridge = new CpuToAirCooler
-                    {
-                        CPU_ID = c.ID,
-                        AC_ID = AC.ID
-                    };
-                    db.CpuToAirCoolers.InsertOnSubmit(bridge);
+                bool link = linkAcToCPU(c.ID, AC.ID);
+                if (link == false)
+                {
+                    continue;
+                }
             }
         }
-        */
         
+
         try
         {
             db.SubmitChanges();
@@ -232,7 +231,7 @@ public class Service : IService
         };
 
         //Add new Part to its respective Table
-        var PCcase = new PCCase
+        var Case = new PCCase
         {
             ID = part.ID,
             Model = newCase.model,
@@ -256,25 +255,24 @@ public class Service : IService
             Warranty = newCase.warranty
         };
 
-        db.PCCases.InsertOnSubmit(PCcase);
+        db.PCCases.InsertOnSubmit(Case);
         db.PartsStocks.InsertOnSubmit(part);
 
-        /*
+        
         //Check for the compatible form Factors
-        String ff = PCcase.Motherboard_Form_Factor;
+        String ff = Case.Motherboard_Form_Factor;
 
-        dynamic moboList = (from c in db.Motherboards where c.Form_Factor.Equals(ff) select c);
+        dynamic moboList = (from c in db.Motherboards where (c.Form_Factor).Equals(ff) select c);
 
-        foreach (Motherboard c in moboList)
+        foreach (Motherboard m in moboList)
         {
-            var bridge = new MoboToCase
+            bool link = linkMoboToCase(m.ID, Case.ID);
+            if (link == false)
             {
-                 Mobo_ID = c.ID,
-                Case_ID = PCcase.ID
-            };
-           db.MoboToCases.InsertOnSubmit(bridge);
+                return false;
+            }
         }
-        */
+        
 
         try
         {
@@ -315,7 +313,7 @@ public class Service : IService
             Total_Cache = newCPU.total_cache,
             TDP = Convert.ToString(newCPU.tdp),
             Max_Temp = newCPU.max_temp,
-            System_Memory_Speed= Convert.ToInt32(newCPU.max_mem_speed),
+            System_Memory_Speed = Convert.ToInt32(newCPU.max_mem_speed),
             System_Memory_Type = newCPU.mem_type,
             Memory_Channels = newCPU.mem_channels,
             Warranty = newCPU.warranty
@@ -324,28 +322,48 @@ public class Service : IService
         db.CPUs.InsertOnSubmit(cpu);
         db.PartsStocks.InsertOnSubmit(part);
 
-        /*
+        
         //Check for the compatible chipsets
-        String str = AC.Compatibility;
-        char[] seperator = { ',', ' ' };
-        String[] strList = str.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
-        String chip = null;
+        dynamic ACList = (from c in db.AirCoolers select c);
 
-        for (int i = 0; i < strList.Length; i++)
+        foreach (AirCooler ac in ACList)
         {
-            chip = strList[i];
-            dynamic cpuList = (from c in db.CPUs where c.Chipset.Equals(chip) select c);
+            String str = ac.Compatibility;
+            char[] seperator = { ',', ' ' };
+            String[] strList = str.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+            String chip = null;
 
-            foreach (CPU c in cpuList)
+            for (int i = 0; i < strList.Length; i++)
             {
-                var bridge = new CpuToAirCooler
+                chip = strList[i];
+                bool link = linkAcToCPU(ac.ID, cpu.ID);
+                if (link == false)
                 {
-                    CPU_ID = c.ID,
-                    AC_ID = AC.ID
-                };
-                db.CpuToAirCoolers.InsertOnSubmit(bridge);
+                    continue;
+                }
             }
-        }*/
+        }
+
+        dynamic LCList = (from c in db.LiquidCoolers select c);
+
+        foreach (LiquidCooler lc in LCList)
+        {
+            String str = lc.Sockets_Supported;
+            char[] seperator = { ',', ' ' };
+            String[] strList = str.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+            String chip = null;
+
+            for (int i = 0; i < strList.Length; i++)
+            {
+                chip = strList[i];
+                bool link = linkLcToCPU(lc.ID, cpu.ID);
+                if (link == false)
+                {
+                    continue;
+                }
+            }
+        }
+
 
         try
         {
@@ -445,7 +463,7 @@ public class Service : IService
 
         db.GPUs.InsertOnSubmit(gpu);
         db.PartsStocks.InsertOnSubmit(part);
-        
+
         try
         {
             db.SubmitChanges();
@@ -538,9 +556,30 @@ public class Service : IService
             Warranty = newLC.warranty
         };
 
+        //Check for the compatible chipsets
+        String str = LC.Sockets_Supported;
+        char[] seperator = { ',', ' ' };
+        String[] strList = str.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+        String chip = null;
+
+        for (int i = 0; i < strList.Length; i++)
+        {
+            chip = strList[i];
+            dynamic cpuList = (from c in db.CPUs where c.Chipset.Equals(chip) select c);
+
+            foreach (CPU c in cpuList)
+            {
+                bool link = linkLcToCPU(c.ID, LC.ID);
+                if (link == false)
+                {
+                    continue;
+                }
+            }
+        }
+
         db.LiquidCoolers.InsertOnSubmit(LC);
         db.PartsStocks.InsertOnSubmit(part);
-        
+
         try
         {
             db.SubmitChanges();
@@ -587,6 +626,18 @@ public class Service : IService
             Notes = newMobo.notes,
             Warranty = newMobo.warranty
         };
+
+        //Check for the compatible chipsets
+        dynamic CaseList = (from c in db.PCCases where c.Motherboard_Form_Factor.Equals(mobo.Form_Factor) select c);
+
+        foreach (PCCase c in CaseList)
+        {
+            bool link = linkMoboToCase(mobo.ID, c.ID);
+            if (link == false)
+            {
+                continue;
+            }
+        }
 
         db.Motherboards.InsertOnSubmit(mobo);
         db.PartsStocks.InsertOnSubmit(part);
@@ -636,7 +687,7 @@ public class Service : IService
 
         db.PSUs.InsertOnSubmit(psu);
         db.PartsStocks.InsertOnSubmit(part);
-        
+
         try
         {
             db.SubmitChanges();
@@ -681,7 +732,7 @@ public class Service : IService
 
         db.RAMs.InsertOnSubmit(ram);
         db.PartsStocks.InsertOnSubmit(part);
-        
+
         try
         {
             db.SubmitChanges();
@@ -731,7 +782,7 @@ public class Service : IService
 
         db.SSDs.InsertOnSubmit(ssd);
         db.PartsStocks.InsertOnSubmit(part);
-        
+
         try
         {
             db.SubmitChanges();
@@ -785,7 +836,7 @@ public class Service : IService
 
         db.Pcs.InsertOnSubmit(pc);
         db.PcStocks.InsertOnSubmit(temp);
-        
+
         try
         {
             db.SubmitChanges();
@@ -796,7 +847,6 @@ public class Service : IService
             return false;
         }
     }
-
 
 
     //Retrieving Products from the DB
@@ -974,7 +1024,7 @@ public class Service : IService
             noise = part.Noise,
             static_pressure = part.Static_Pressure,
             input_voltage = part.Input_Voltage,
-            mtbf =  part.MTBF,
+            mtbf = part.MTBF,
             cable_length = part.Cable_Length,
             num_fans = part.Num_Fans,
             warranty = part.Warranty,
@@ -1239,9 +1289,9 @@ public class Service : IService
     public List<cAirCooler> getAllAirCooler()
     {
         List<cAirCooler> list = new List<cAirCooler>();
-        dynamic parts = (from p in db.PartsStocks where p.Active==1 && p.Type.Equals("Air Cooler") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Air Cooler") select p).FirstOrDefault();
 
-        foreach(PartsStock part in parts) {
+        foreach (PartsStock part in parts) {
             var p = getPart(parts.ID);
 
             cAirCooler temp = new cAirCooler
@@ -1269,7 +1319,7 @@ public class Service : IService
             };
 
             list.Add(temp);
-           
+
         }
 
         return list;
@@ -1314,7 +1364,7 @@ public class Service : IService
             list.Add(temp);
         }
 
-            return list;
+        return list;
     }
 
     public List<cCPU> getAllCPU()
@@ -1464,7 +1514,7 @@ public class Service : IService
 
         return list;
     }
-    
+
     public List<cLiquidCooler> getAllLiquidCooler()
     {
         List<cLiquidCooler> list = new List<cLiquidCooler>();
@@ -1808,7 +1858,7 @@ public class Service : IService
         {
             return false;
         }
-        
+
     }
 
     private bool linkLcToCPU(int cpu_id, int lc_id)
@@ -1820,27 +1870,6 @@ public class Service : IService
         };
 
         db.CpuToLiquidCoolers.InsertOnSubmit(temp);
-        try
-        {
-            db.SubmitChanges();
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
-
-    }
-
-    private bool linkGpuToMonitor(int gpu_id, int monitor_id)
-    {
-        GpuToMonitor temp = new GpuToMonitor
-        {
-            GPU_ID = gpu_id,
-            Monitor_ID = monitor_id,
-        };
-
-        db.GpuToMonitors.InsertOnSubmit(temp);
         try
         {
             db.SubmitChanges();
@@ -1919,7 +1948,7 @@ public class Service : IService
 
     //Shopping Cart Operations
     //Part Cart
-    public Boolean addToPartCart(int user_ID, int part_ID, int qua) {
+    public Boolean addToPartCart(int user_ID, int part_ID, int qua, Double total_price) {
         Boolean check = checkPartCart(user_ID, part_ID);
         if (check != false)
         {
@@ -1927,7 +1956,8 @@ public class Service : IService
             {
                 User_ID = user_ID,
                 Part_ID = part_ID,
-                Qua = qua
+                Qua = qua,
+                Total_Price = (decimal)total_price
             };
             db.PartCarts.InsertOnSubmit(cartItem);
             try
@@ -1969,14 +1999,14 @@ public class Service : IService
         }
     }
 
-    public Boolean updatePartCart(int user_ID, int part_ID, int qua)
+    public Boolean updatePartCart(int user_ID, int part_ID, int qua, double total_price)
     {
         var part = (from p in db.PartCarts where (p.User_ID == user_ID && p.Part_ID == part_ID) select p).FirstOrDefault();
 
         if (part != null)
         {
             part.Qua = qua;
-
+            part.Total_Price = (decimal)total_price;
             db.PartCarts.InsertOnSubmit(part);
 
             try
@@ -1994,7 +2024,7 @@ public class Service : IService
             return false;
         }
 
-        
+
     }
 
     public Boolean clearPartCart(int user_ID)
@@ -2030,13 +2060,14 @@ public class Service : IService
     }
 
     //Prebuilt PC Cart
-    public Boolean addToPcCart(int user_ID, int pc_ID, int qua)
+    public Boolean addToPcCart(int user_ID, int pc_ID, int qua, Double total_price)
     {
         var pc = new PcCart
         {
             User_ID = user_ID,
             Pc_ID = pc_ID,
-            Qua = qua
+            Qua = qua,
+            Total_Price = (decimal)total_price,
         };
 
         db.PcCarts.InsertOnSubmit(pc);
@@ -2053,7 +2084,7 @@ public class Service : IService
 
     public Boolean removeFromPcCart(int user_ID, int pc_ID)
     {
-        var pc = (from p in db.PcCarts where (p.User_ID == user_ID && p.Pc_ID==pc_ID) select p).FirstOrDefault();
+        var pc = (from p in db.PcCarts where (p.User_ID == user_ID && p.Pc_ID == pc_ID) select p).FirstOrDefault();
         db.PcCarts.DeleteOnSubmit(pc);
 
         try
@@ -2067,14 +2098,14 @@ public class Service : IService
         }
     }
 
-    public Boolean updatePcCart(int user_ID, int pc_ID, int qua)
+    public Boolean updatePcCart(int user_ID, int pc_ID, int qua, double total_price)
     {
         var pc = (from p in db.PcCarts where (p.User_ID == user_ID && p.Pc_ID == pc_ID) select p).FirstOrDefault();
 
         if (pc != null)
         {
             pc.Qua = qua;
-
+            pc.Total_Price = (decimal)total_price;
             db.PcCarts.InsertOnSubmit(pc);
 
             try
@@ -2092,7 +2123,7 @@ public class Service : IService
             return false;
         }
 
-        
+
     }
 
     public Boolean clearPcCart(int user_ID)
@@ -2100,7 +2131,7 @@ public class Service : IService
         dynamic pcs = (from p in db.PcCarts where (p.User_ID == user_ID) select p);
         foreach (PcCart pc in pcs)
         {
-            
+
             db.PcCarts.DeleteOnSubmit(pc);
         }
 
@@ -2136,7 +2167,173 @@ public class Service : IService
         //whatever needs to be done
         //Remove items from carts
         //Generate Invoice
+        dynamic cartPart = (from p in db.PartCarts select p);
+        dynamic cartPC = (from p in db.PcCarts select p);
 
+        foreach (PartCart p in cartPart)
+        {
+            var invoicePart = new PartInvoice
+            {
+                User_ID = p.User_ID,
+                Part_ID = p.Part_ID,
+                Qua = p.Qua,
+                Total_Price = p.Total_Price
+            };
+
+            bool sold = addPartSold(p.Part_ID, p.Qua);
+            if (sold == true)
+            {
+                bool reducedStock = reducePcQua(p.Part_ID, p.Qua);
+                if (reducedStock == true)
+                {
+                    db.PartInvoices.InsertOnSubmit(invoicePart);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        foreach (PcCart p in cartPC)
+        {
+            var invoicePC = new PcInvoice
+            {
+                User_ID = p.User_ID,
+                PC_ID = p.Pc_ID,
+                Qua = p.Qua,
+                Total_Price = p.Total_Price
+            };
+
+            bool sold = addPcSold(p.Pc_ID, p.Qua);
+            if (sold == true)
+            {
+                bool reducedStock = reducePcQua(p.Pc_ID, p.Qua);
+                if (reducedStock == true)
+                {
+                    db.PcInvoices.InsertOnSubmit(invoicePC);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        try
+        {
+            db.SubmitChanges();
+
+            bool partClear = clearPartCart(user_ID);
+            bool pcClear = clearPcCart(user_ID);
+
+            if(partClear == true && pcClear == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    //Reduce Product Quantity
+    private Boolean reducePartQua(int part_ID, int qua_sold)
+    {
+        var part = (from p in db.PartsStocks where p.ID == part_ID select p).FirstOrDefault();
+
+        part.Quantity = part.Quantity - qua_sold;
+
+        db.PartsStocks.InsertOnSubmit(part);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+        
+    }
+
+    private Boolean reducePcQua(int pc_ID, int qua_sold)
+    {
+        var pc = (from p in db.PcStocks where p.ID == pc_ID select p).FirstOrDefault();
+
+        pc.Quantity = pc.Quantity - qua_sold;
+
+        db.PcStocks.InsertOnSubmit(pc);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+
+    }
+
+    //Add Amount Sold
+    private Boolean addPartSold(int part_ID, int qua_sold)
+    {
+        var part = (from p in db.PartsStocks where p.ID==part_ID select p).FirstOrDefault();
+
+        var sold = new PartsSold
+        {
+            ID = part.ID,
+            Model = part.Model,
+            Type = part.Type,
+            Quantity_Sold = qua_sold
+        };
+        db.PartsSolds.InsertOnSubmit(sold);
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch{
+            return false;
+        }
+        return true;
+    }
+
+    private Boolean addPcSold(int pc_ID, int qua_sold)
+    {
+        var pc = (from p in db.PcStocks where p.ID == pc_ID select p).FirstOrDefault();
+
+        var sold = new PcSold
+        {
+            PC_ID = pc.ID,
+            Type = pc.PC_Type,
+            Quantity_Sold = qua_sold
+        };
+        db.PcSolds.InsertOnSubmit(sold);
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
         return true;
     }
 }

@@ -53,10 +53,10 @@
       <Column Name="City" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Province" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="ZIP_Code" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Client_PartCart" Member="PartCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PartCart" />
-      <Association Name="Client_PcCart" Member="PcCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PcCart" />
       <Association Name="Client_PartInvoice" Member="PartInvoices" ThisKey="User_ID" OtherKey="User_ID" Type="PartInvoice" />
       <Association Name="Client_PcInvoice" Member="PcInvoices" ThisKey="User_ID" OtherKey="User_ID" Type="PcInvoice" />
+      <Association Name="Client_PartCart" Member="PartCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PartCart" />
+      <Association Name="Client_PcCart" Member="PcCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PcCart" />
       <Association Name="LoginTable_Client" Member="LoginTable" ThisKey="User_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
     </Type>
   </Table>
@@ -143,17 +143,8 @@
       <Column Name="Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="GPU_GpuToMonitor" Member="GpuToMonitors" ThisKey="ID" OtherKey="GPU_ID" Type="GpuToMonitor" />
       <Association Name="GPU_Pc" Member="Pcs" ThisKey="ID" OtherKey="GPU_ID" Type="Pc" />
       <Association Name="PartsStock_GPU" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.GpuToMonitor" Member="GpuToMonitors">
-    <Type Name="GpuToMonitor">
-      <Column Name="GPU_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Monitor_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="GPU_GpuToMonitor" Member="GPU" ThisKey="GPU_ID" OtherKey="ID" Type="GPU" IsForeignKey="true" />
-      <Association Name="Monitor_GpuToMonitor" Member="Monitor" ThisKey="Monitor_ID" OtherKey="ID" Type="Monitor" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HDD" Member="HDDs">
@@ -319,7 +310,6 @@
       <Column Name="[Pivot]" Member="Pivot" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Regulations" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Monitor_GpuToMonitor" Member="GpuToMonitors" ThisKey="ID" OtherKey="Monitor_ID" Type="GpuToMonitor" />
       <Association Name="Monitor_Pc" Member="Pcs" ThisKey="ID" OtherKey="Monitor_ID" Type="Pc" />
       <Association Name="PartsStock_Monitor" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
     </Type>
@@ -404,15 +394,6 @@
       <Association Name="PartsStock_OperatingSystem" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PartCart" Member="PartCarts">
-    <Type Name="PartCart">
-      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Part_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Client_PartCart" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
-      <Association Name="PartsStock_PartCart" Member="PartsStock" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.PartsSold" Member="PartsSolds">
     <Type Name="PartsSold">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -446,7 +427,6 @@
       <Association Name="PartsStock_Mouse" Member="Mouse" ThisKey="ID" OtherKey="ID" Type="Mouse" Cardinality="One" />
       <Association Name="PartsStock_MousePad" Member="MousePad" ThisKey="ID" OtherKey="ID" Type="MousePad" Cardinality="One" />
       <Association Name="PartsStock_OperatingSystem" Member="OperatingSystem" ThisKey="ID" OtherKey="ID" Type="OperatingSystem" Cardinality="One" />
-      <Association Name="PartsStock_PartCart" Member="PartCarts" ThisKey="ID" OtherKey="Part_ID" Type="PartCart" />
       <Association Name="PartsStock_PartsSold" Member="PartsSold" ThisKey="ID" OtherKey="ID" Type="PartsSold" Cardinality="One" />
       <Association Name="PartsStock_PCCase" Member="PCCase" ThisKey="ID" OtherKey="ID" Type="PCCase" Cardinality="One" />
       <Association Name="PartsStock_PSU" Member="PSU" ThisKey="ID" OtherKey="ID" Type="PSU" Cardinality="One" />
@@ -454,6 +434,7 @@
       <Association Name="PartsStock_Speaker" Member="Speaker" ThisKey="ID" OtherKey="ID" Type="Speaker" Cardinality="One" />
       <Association Name="PartsStock_SSD" Member="SSD" ThisKey="ID" OtherKey="ID" Type="SSD" Cardinality="One" />
       <Association Name="PartsStock_PartInvoice" Member="PartInvoices" ThisKey="ID" OtherKey="Part_ID" Type="PartInvoice" />
+      <Association Name="PartsStock_PartCart" Member="PartCarts" ThisKey="ID" OtherKey="Part_ID" Type="PartCart" />
     </Type>
   </Table>
   <Table Name="dbo.Pc" Member="Pcs">
@@ -497,15 +478,6 @@
       <Association Name="RAM_Pc" Member="RAM" ThisKey="RAM_ID" OtherKey="ID" Type="RAM" IsForeignKey="true" />
       <Association Name="Speaker_Pc" Member="Speaker" ThisKey="Speaker_ID" OtherKey="ID" Type="Speaker" IsForeignKey="true" />
       <Association Name="SSD_Pc" Member="SSD" ThisKey="SSD_ID" OtherKey="ID" Type="SSD" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PcCart" Member="PcCarts">
-    <Type Name="PcCart">
-      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Pc_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Client_PcCart" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
-      <Association Name="PcStock_PcCart" Member="PcStock" ThisKey="Pc_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PCCase" Member="PCCases">
@@ -555,9 +527,9 @@
       <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Discount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="PcStock_Pc" Member="Pc" ThisKey="ID" OtherKey="PC_ID" Type="Pc" Cardinality="One" />
-      <Association Name="PcStock_PcCart" Member="PcCarts" ThisKey="ID" OtherKey="Pc_ID" Type="PcCart" />
       <Association Name="PcStock_PcSold" Member="PcSold" ThisKey="ID" OtherKey="PC_ID" Type="PcSold" Cardinality="One" />
       <Association Name="PcStock_PcInvoice" Member="PcInvoices" ThisKey="ID" OtherKey="PC_ID" Type="PcInvoice" />
+      <Association Name="PcStock_PcCart" Member="PcCarts" ThisKey="ID" OtherKey="Pc_ID" Type="PcCart" />
     </Type>
   </Table>
   <Table Name="dbo.PSU" Member="PSUs">
@@ -656,6 +628,26 @@
       <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Association Name="PcStock_PcInvoice" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
       <Association Name="Client_PcInvoice" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartCart" Member="PartCarts">
+    <Type Name="PartCart">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Part_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_PartCart" Member="PartsStock" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="Client_PartCart" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PcCart" Member="PcCarts">
+    <Type Name="PcCart">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Pc_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock_PcCart" Member="PcStock" ThisKey="Pc_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+      <Association Name="Client_PcCart" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
