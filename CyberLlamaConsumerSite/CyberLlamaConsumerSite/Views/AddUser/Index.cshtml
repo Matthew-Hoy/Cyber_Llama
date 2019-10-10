@@ -1,9 +1,10 @@
 ﻿@{
     ViewBag.Title = "Add New User";
+    Layout = "~/Views/Shared/_LoginAdmin.cshtml";
 }
 
 @model CyberLlamaConsumerSite.Models.UserPositionView
-
+<img class="centerImage" Style="margin-top:8%;" src="Images/llama.png" />
 <h2 class="titleText centerText">Add New User</h2>
 <div class="row" style="margin-top:3%;">
         <div class=" @(Convert.ToInt32(Session["UserType"]) <=2 ? "col-md-6" : "" )">

@@ -12,11 +12,8 @@ namespace CyberLlamaConsumerSite.Controllers
         CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
         public ActionResult Index(string fName, string sName, string eMail, string phone, string type, string UserName, string password, string confirm)
         {
-            //if(Session["UserType"] == null)
-           // {
-               // return View("AccessDenied");
-           // }
-            //else if(Convert.ToInt32(Session["UserType"]) <= 2)
+            
+            if(Convert.ToInt32(Session["UserType"]) <= 2)
             {
                 var positions = sr.getUserPositions();
 

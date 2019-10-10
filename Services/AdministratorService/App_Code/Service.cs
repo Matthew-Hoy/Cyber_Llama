@@ -1626,7 +1626,7 @@ public class Service : IService
         return list;
     }
 
-    public List<cPC> getPC(Double minPrice, Double maxPrice)
+    public List<cPC> getPCbyPrice(Double minPrice, Double maxPrice)
     {
         List<cPC> list = new List<cPC>();
         dynamic pcs = (from p in db.Pcs select p).FirstOrDefault();
