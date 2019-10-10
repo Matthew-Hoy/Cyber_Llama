@@ -10,6 +10,8 @@ namespace CyberLlamaConsumerSite.Controllers
     {
         public ActionResult Index()
         {
+            ServiceReference1.ServiceClient sc = new ServiceReference1.ServiceClient();
+            dynamic test = sc.getAllRAM();
             return View();
         }
     }

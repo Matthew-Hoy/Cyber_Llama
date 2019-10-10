@@ -14,7 +14,7 @@
 <body style="background-color:#1f1e1f; padding-top:0px; color:#bfbfbf;">
     <!--JumboTron is the large banner at the top-->
     <div class="jumbotron" style="margin-bottom:0px; padding: 2%">
-        <a class="navbar-brand" href=@Url.Action("Index", "Home")><img width="80" image height="120"  src="~/Images/llama.png" /> </a>
+        <a class="navbar-brand" href=@Url.Action("Index", "Home")><img width="80" image height="120" src="~/Images/llama.png" /> </a>
         <h1 style="font-size:400%; max-width:400px; display:inline;">CyberLlama<br></h1>
     </div>
     <!--create the navbar and use dark theme, check bg-dark and navbar-dark to change properties in site.css-->
@@ -51,33 +51,54 @@
                     </a>
                     <!--maybe use a for loop if possible and pass data from the database for this bit-->
                     <div class="dropdown-menu" aria-labelledby="dropdown_Components">
-                        <a class="dropdown-item">Graphics card</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "GPU" })>Graphics card</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Motherboards</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Motherboard" })>Motherboards</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">CPU Coolers</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "RAM" })>Memory (RAM)</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">SSD's</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "CPU" })>CPU's</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Hard Drives</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "AirCooler" })>Air Coolers</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">PC Chassis</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "LiquidCooler" })>Liquid Coolers</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Power Supplies</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "SSD" })>SSD's</a>
                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "HDD" })>Hard Drives</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Case" })>PC Chassis</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "PSU" })>Power Supplies</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Fan" })>Case Fans</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item">Monitors</a>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#"><img src="~/Images/mouse_icon.png" class="MenuIcon" /></a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_Components" href="#">
+                        Peripherals
+                        <span class="caret"></span>
+                    </a>
+                    <!--maybe use a for loop if possible and pass data from the database for this bit-->
+                    <div class="dropdown-menu" aria-labelledby="dropdown_Components">                       
                         <a class="dropdown-item">Keyboards</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item">Mice</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Memory (RAM)</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item">Mouse Pads</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Monitors</a>
+                        <a class="dropdown-item">Headsets</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Case Fans</a>
+                        <a class="dropdown-item">Speakers</a>
                     </div>
                 </li>
+
+
                 <li class="nav-item dropdown">
                     <a href="#"><img src="~/Images/computerIcon.png" class="MenuIcon" /></a>
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_desktop" href="#">
@@ -98,7 +119,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#"><img src="~/Images/computerIcon.png" class="MenuIcon" /></a>
+                    <a href="#"><img src="~/Images/laptop_icon.png" class="MenuIcon" /></a>
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_laptop" href="#">
                         LAPTOPS
                         <span class="caret"></span>
@@ -219,9 +240,10 @@
         </div>
     </nav>
     <!--The footer must contain a link to the t and c page and maybe some more links-->
+    
     <div class="container body-content">
         @RenderBody()
-        <hr color="white"/>
+        <hr color="white" />
         <footer>
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top nav-bottom" style="padding-top: 0px;padding-bottom: 0px;">
@@ -230,7 +252,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div  class="collapse navbar-collapse" id="collapse_foot" >
+                <div class="collapse navbar-collapse" id="collapse_foot">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a href="https://www.instagram.com/neo.mulaudzi/" target="_blank"><img src="~/Images/insta.png" class="MenuIcon" /></a>
@@ -265,17 +287,17 @@
             </nav>
 
 
-                <p align="left">
-                    &copy; @DateTime.Now.Year - Property of CyberLlama <br />
-                    All Rights Reserved
-                </p>
-                <p align="right">
-                    <a href="">Privacy & terms</a><br />
-                    <a href="">terms and Conditions</a><br />
-                    <a href="">Polices and Reporting</a>
-                </p>
+            <p align="left">
+                &copy; @DateTime.Now.Year - Property of CyberLlama <br />
+                All Rights Reserved
+            </p>
+            <p align="right">
+                <a href="">Privacy & terms</a><br />
+                <a href="">terms and Conditions</a><br />
+                <a href="">Polices and Reporting</a>
+            </p>
 
-              
+
 
         </footer>
     </div>

@@ -67,15 +67,15 @@ public interface IService
     dynamic getPart(int ID);
 
     [OperationContract]
-    cPC getPC(int ID);
+    cPC intgetPC(int ID);
 
 
     //Select PC by Type or Price
     [OperationContract]
-    List<cPC> getPC(String Type);
+    List<cPC> strgetPC(String Type);
 
     [OperationContract]
-    List<cPC> getPC(Double minPrice, Double maxPrice);
+    List<cPC> dblgetPC(Double minPrice, Double maxPrice);
 
     //Get compatible parts
     List<cAirCooler> getAirCoolersForCPU(int cpu_ID);
@@ -128,6 +128,9 @@ public interface IService
 
     [OperationContract]
     List<cRAM> getAllRAM();
+
+    [OperationContract]
+    List<c_ProductPageInfo> getAllParts(string type);
 
     [OperationContract]
     List<cSSD> getAllSSD();

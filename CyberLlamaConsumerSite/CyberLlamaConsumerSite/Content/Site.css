@@ -84,7 +84,8 @@ textarea {
 .dropdown-menu {
     border: 1px solid green;
     color: darkblue;
-    cursor: pointer
+    cursor: pointer;
+
 }
 .dropdown:hover .dropdown-menu {
     display: block;

@@ -12,7 +12,7 @@ public class cMousePad
     public string colour;
     public string size;
     public string materials;
-    public string base;
+   // public string base;
     public string dimensions;
     public string weight;
     public string features;

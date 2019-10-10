@@ -1327,7 +1327,7 @@ public class Service : IService
         return temp;
     }
 
-    public cPC getPC(int ID)
+    public cPC intgetPC(int ID)
     {
         var info = (from p in db.PcStocks where p.ID == ID select p).FirstOrDefault();
         var pc = (from p in db.Pcs where p.PC_ID == ID select p).FirstOrDefault();
@@ -1683,7 +1683,7 @@ public class Service : IService
 
         foreach (PartsStock p in parts)
         {
-            cRAM part = getPart(parts.ID);
+            cRAM part = getPart(p.ID);
 
             list.Add(part);
         }
@@ -1713,7 +1713,7 @@ public class Service : IService
 
         foreach (PcStock p in pcs)
         {
-            cPC pc = getPC(pcs.ID);
+            cPC pc = intgetPC(pcs.ID);
             
             list.Add(pc);
         }
@@ -1722,7 +1722,7 @@ public class Service : IService
     }
 
     //Return PCs Based on parameters
-    public List<cPC> getPC(String Type)
+    public List<cPC> strgetPC(String Type)
     {
         List<cPC> list = new List<cPC>();
         dynamic pcs = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals(Type) select p).FirstOrDefault();
@@ -1767,7 +1767,7 @@ public class Service : IService
     }
 
     //This can be dodne at the back end of the website
-    public List<cPC> getPC(Double minPrice, Double maxPrice)
+    public List<cPC> dblgetPC(Double minPrice, Double maxPrice)
     {
         List<cPC> list = new List<cPC>();
         dynamic pcs = (from p in db.PartsStocks where p.Active == 1 select p).FirstOrDefault();
@@ -2313,5 +2313,31 @@ public class Service : IService
             return false;
         }
         return true;
+    }
+
+    public List<c_ProductPageInfo> getAllParts(string type)
+    {
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals(type) select p);
+        foreach(PartsStock p in parts)
+        {
+            c_ProductPageInfo product = new c_ProductPageInfo
+            {
+                ID = p.ID,
+                active = p.Active,
+                discount = p.Discount,
+                image = p.Image,
+                model = p.Model,
+                Quantity = p.Quantity,
+                type = p.Type,
+                price = (int) p.Price
+            };
+
+            list.Add(product);
+        }
+        
+        return list;
+
+        
     }
 }
