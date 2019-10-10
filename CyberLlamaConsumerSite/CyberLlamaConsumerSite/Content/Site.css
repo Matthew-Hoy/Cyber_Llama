@@ -164,13 +164,15 @@ textarea {
         height: 100%;
     }
 
-    .registerForm .borderedElement {
-        border: none;
-        background-color: transparent;
-        padding: 20px;
-        color: #bfbfbf;
-        margin: 0% 2% 0% 2%;
-    }
+.registerForm .borderedElement {
+    border: 2px solid white;
+    background-color: transparent;
+    padding: 20px;
+    color: #bfbfbf;
+    margin: 0% 2% 0% 2%;
+    padding:2% 15% 5% 15%;
+    margin-top: 20px;
+}
 
 
     .smallMargin-top {
@@ -183,26 +185,31 @@ textarea {
         flex-direction: row;
     }
 
-        .registerLabel label {
-            position: relative;
-            float: left;
-        }
-
-        .registerLabel input {
-            position: absolute;
-            right: 0px;
-            width:30%;
-        }
-
-        .registerLabel select {
-            position: absolute;
-            right: 0px;
-            width:30%;
-        }
-
-    .registerForm .centerImage {
-        width: 30%;
+    .registerLabel label {
+        position: relative;
+        float: left;
     }
+
+    .registerLabel input {
+        position: absolute;
+        right: 0px;
+        width:30%;
+    }
+
+    .registerLabel select {
+        position: absolute;
+        right: 0px;
+        width:30%;
+    }
+
+.registerForm .centerImage {
+    width: 30%;
+    padding-bottom: 20px;
+}
+.registerForm .col-md-6{
+    padding-bottom:20px;
+    width:300px;
+}
 
 
 

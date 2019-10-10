@@ -4,11 +4,11 @@
 }
 
 @model CyberLlamaConsumerSite.Models.UserPositionView
-<img class="centerImage" Style="margin-top:8%;" src="~/Images/llama.png" />
-<div class="row registerForm" style="margin-top:3%;">
-        <div class=" @((Convert.ToInt32(Session["UserType"]) ==2 || Convert.ToInt32(Session["UserType"]) ==2) ? "col-md-6" : "centerImage" )" >
+<img class="centerImage" Style="margin-top:4%;" src="~/Images/llama.png" />
+<div class="row registerForm">
+        <div class=" @((Convert.ToInt32(Session["UserType"]) ==1 || Convert.ToInt32(Session["UserType"]) ==2) ? "col-md-6" : "centerImage" )" >
             <div class="borderedElement">
-                <h3 class="titleText centerText">@((Convert.ToInt32(Session["UserType"]) == 2 || Convert.ToInt32(Session["UserType"]) == 2) ? "Add Client" : "New User" )</h3>
+                <h3 class="titleText centerText">@((Convert.ToInt32(Session["UserType"]) == 2 || Convert.ToInt32(Session["UserType"]) == 1) ? "Add Client" : "New User" )</h3>
                 <form method="post" action="@Url.Action("SubmitClient", "AddUser")">
                     <div class="registerLabel">
                         <label for="FirstNameClient" class="required">First_Name:</label>
@@ -59,7 +59,7 @@
         </div>
         @{ if (Convert.ToInt32(Session["UserType"]) == 2 || Convert.ToInt32(Session["UserType"]) == 1)
             {
-                <div class="col-md-6 registerForm">
+                <div class="col-md-6">
                     <div class="borderedElement">
                         <h3 class="titleText centerText">Add Employee</h3>
                         <form method="post" action="@Url.Action("SubmitEmployee", "AddUser")">
