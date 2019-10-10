@@ -1586,7 +1586,7 @@ public class Service : IService
     }
 
     //Return Items Based on parameters
-    public List<cPC> getPC(String Type)
+    public List<cPC> getPCbyType(String Type)
     {
         List<cPC> list = new List<cPC>();
         dynamic pcs = (from p in db.Pcs where p.PC_Type.Equals(Type) select p).FirstOrDefault();

@@ -195,16 +195,22 @@
                                         <a class="nav-link" href="#">
                                             Management
                                         </a>
+
                                     </li>
                                 }
                             }
                         }
-                        <li class="nav-item">
-                            <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
-                            <a class="nav-link" href=@Url.Action("Index", "Logout")>
-                                Logout
-                            </a>
-                        </li>
+                                    <li class="nav-item">
+                                        <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                                        <a class="nav-link" href=@Url.Action("Index", "Logout")>
+                                            Logout
+                                        </a>
+                                        @if(id == 1){
+                                            <a class="nav-link" href=@Url.Action("Index", "AddUser")>
+                                                Register
+                                            </a>
+                                        }
+                                    </li>
                     }
                     else
                     {
@@ -220,7 +226,7 @@
                             <a class="nav-link" href=@Url.Action("Index", "Login")>
                                 Login
                             </a>
-                            <a class="nav-link" href=@Url.Action("Index", "Register")>
+                            <a class="nav-link" href=@Url.Action("Index", "AddUser")>
                                 Register
                             </a>
                         </li>
