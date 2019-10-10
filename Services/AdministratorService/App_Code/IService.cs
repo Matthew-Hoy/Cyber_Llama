@@ -116,13 +116,12 @@ public interface IService
 
     //Add to bridging table
 
-    //Reduce Product Quantity
-
-    //Add Amount Sold
-
     //Shopping Cart Operations
     [OperationContract]
-    Boolean addToPartCart(int user_ID, int part_ID, int qua);
+    Boolean addToPartCart(int user_ID, int part_ID, int qua, Double total_price);
+
+    [OperationContract]
+    Boolean updatePartCart(int user_ID, int pc_ID, int qua, double total_price);
 
     [OperationContract]
     Boolean removeFromPartCart(int user_ID, int part_ID);
@@ -131,7 +130,10 @@ public interface IService
     Boolean clearPartCart(int user_ID);
 
     [OperationContract]
-    Boolean addToPcCart(int user_ID, int pc_ID, int qua);
+    Boolean addToPcCart(int user_ID, int pc_ID, int qua, Double total_price);
+
+    [OperationContract]
+    Boolean updatePcCart(int user_ID, int pc_ID, int qua, double total_price);
 
     [OperationContract]
     Boolean removeFromPcCart(int user_ID, int pc_ID);

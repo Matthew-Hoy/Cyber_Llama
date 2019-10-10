@@ -20,4 +20,6 @@ public class cFan
     public String cable_length;
     public int num_fans;
     public String warranty;
+    public int active;
+    public int discount;
 }

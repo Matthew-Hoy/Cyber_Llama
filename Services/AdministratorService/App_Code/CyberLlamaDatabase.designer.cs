@@ -29,24 +29,36 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 	
   #region Extensibility Method Definitions
   partial void OnCreated();
-  partial void InsertUserPosition(UserPosition instance);
-  partial void UpdateUserPosition(UserPosition instance);
-  partial void DeleteUserPosition(UserPosition instance);
   partial void InsertAdmin(Admin instance);
   partial void UpdateAdmin(Admin instance);
   partial void DeleteAdmin(Admin instance);
+  partial void InsertUserPosition(UserPosition instance);
+  partial void UpdateUserPosition(UserPosition instance);
+  partial void DeleteUserPosition(UserPosition instance);
+  partial void InsertAirCooler(AirCooler instance);
+  partial void UpdateAirCooler(AirCooler instance);
+  partial void DeleteAirCooler(AirCooler instance);
   partial void InsertClient(Client instance);
   partial void UpdateClient(Client instance);
   partial void DeleteClient(Client instance);
+  partial void InsertCPU(CPU instance);
+  partial void UpdateCPU(CPU instance);
+  partial void DeleteCPU(CPU instance);
   partial void InsertCpuToAirCooler(CpuToAirCooler instance);
   partial void UpdateCpuToAirCooler(CpuToAirCooler instance);
   partial void DeleteCpuToAirCooler(CpuToAirCooler instance);
   partial void InsertCpuToLiquidCooler(CpuToLiquidCooler instance);
   partial void UpdateCpuToLiquidCooler(CpuToLiquidCooler instance);
   partial void DeleteCpuToLiquidCooler(CpuToLiquidCooler instance);
-  partial void InsertGpuToMonitor(GpuToMonitor instance);
-  partial void UpdateGpuToMonitor(GpuToMonitor instance);
-  partial void DeleteGpuToMonitor(GpuToMonitor instance);
+  partial void InsertFan(Fan instance);
+  partial void UpdateFan(Fan instance);
+  partial void DeleteFan(Fan instance);
+  partial void InsertGPU(GPU instance);
+  partial void UpdateGPU(GPU instance);
+  partial void DeleteGPU(GPU instance);
+  partial void InsertHDD(HDD instance);
+  partial void UpdateHDD(HDD instance);
+  partial void DeleteHDD(HDD instance);
   partial void InsertHeadset(Headset instance);
   partial void UpdateHeadset(Headset instance);
   partial void DeleteHeadset(Headset instance);
@@ -62,6 +74,12 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
   partial void InsertMicrophone(Microphone instance);
   partial void UpdateMicrophone(Microphone instance);
   partial void DeleteMicrophone(Microphone instance);
+  partial void InsertMoboToCase(MoboToCase instance);
+  partial void UpdateMoboToCase(MoboToCase instance);
+  partial void DeleteMoboToCase(MoboToCase instance);
+  partial void InsertMoboToCpu(MoboToCpu instance);
+  partial void UpdateMoboToCpu(MoboToCpu instance);
+  partial void DeleteMoboToCpu(MoboToCpu instance);
   partial void InsertMoboToRam(MoboToRam instance);
   partial void UpdateMoboToRam(MoboToRam instance);
   partial void DeleteMoboToRam(MoboToRam instance);
@@ -86,12 +104,18 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
   partial void InsertPartsStock(PartsStock instance);
   partial void UpdatePartsStock(PartsStock instance);
   partial void DeletePartsStock(PartsStock instance);
+  partial void InsertPc(Pc instance);
+  partial void UpdatePc(Pc instance);
+  partial void DeletePc(Pc instance);
   partial void InsertPCCase(PCCase instance);
   partial void UpdatePCCase(PCCase instance);
   partial void DeletePCCase(PCCase instance);
   partial void InsertPcSold(PcSold instance);
   partial void UpdatePcSold(PcSold instance);
   partial void DeletePcSold(PcSold instance);
+  partial void InsertPcStock(PcStock instance);
+  partial void UpdatePcStock(PcStock instance);
+  partial void DeletePcStock(PcStock instance);
   partial void InsertPSU(PSU instance);
   partial void UpdatePSU(PSU instance);
   partial void DeletePSU(PSU instance);
@@ -101,39 +125,18 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
   partial void InsertSpeaker(Speaker instance);
   partial void UpdateSpeaker(Speaker instance);
   partial void DeleteSpeaker(Speaker instance);
-  partial void InsertAirCooler(AirCooler instance);
-  partial void UpdateAirCooler(AirCooler instance);
-  partial void DeleteAirCooler(AirCooler instance);
-  partial void InsertPartCart(PartCart instance);
-  partial void UpdatePartCart(PartCart instance);
-  partial void DeletePartCart(PartCart instance);
-  partial void InsertGPU(GPU instance);
-  partial void UpdateGPU(GPU instance);
-  partial void DeleteGPU(GPU instance);
-  partial void InsertHDD(HDD instance);
-  partial void UpdateHDD(HDD instance);
-  partial void DeleteHDD(HDD instance);
   partial void InsertSSD(SSD instance);
   partial void UpdateSSD(SSD instance);
   partial void DeleteSSD(SSD instance);
-  partial void InsertPc(Pc instance);
-  partial void UpdatePc(Pc instance);
-  partial void DeletePc(Pc instance);
-  partial void InsertMoboToCase(MoboToCase instance);
-  partial void UpdateMoboToCase(MoboToCase instance);
-  partial void DeleteMoboToCase(MoboToCase instance);
-  partial void InsertMoboToCpu(MoboToCpu instance);
-  partial void UpdateMoboToCpu(MoboToCpu instance);
-  partial void DeleteMoboToCpu(MoboToCpu instance);
-  partial void InsertCPU(CPU instance);
-  partial void UpdateCPU(CPU instance);
-  partial void DeleteCPU(CPU instance);
-  partial void InsertFan(Fan instance);
-  partial void UpdateFan(Fan instance);
-  partial void DeleteFan(Fan instance);
-  partial void InsertPcStock(PcStock instance);
-  partial void UpdatePcStock(PcStock instance);
-  partial void DeletePcStock(PcStock instance);
+  partial void InsertPartInvoice(PartInvoice instance);
+  partial void UpdatePartInvoice(PartInvoice instance);
+  partial void DeletePartInvoice(PartInvoice instance);
+  partial void InsertPcInvoice(PcInvoice instance);
+  partial void UpdatePcInvoice(PcInvoice instance);
+  partial void DeletePcInvoice(PcInvoice instance);
+  partial void InsertPartCart(PartCart instance);
+  partial void UpdatePartCart(PartCart instance);
+  partial void DeletePartCart(PartCart instance);
   partial void InsertPcCart(PcCart instance);
   partial void UpdatePcCart(PcCart instance);
   partial void DeletePcCart(PcCart instance);
@@ -169,14 +172,6 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		OnCreated();
 	}
 	
-	public System.Data.Linq.Table<UserPosition> UserPositions
-	{
-		get
-		{
-			return this.GetTable<UserPosition>();
-		}
-	}
-	
 	public System.Data.Linq.Table<Admin> Admins
 	{
 		get
@@ -185,11 +180,35 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		}
 	}
 	
+	public System.Data.Linq.Table<UserPosition> UserPositions
+	{
+		get
+		{
+			return this.GetTable<UserPosition>();
+		}
+	}
+	
+	public System.Data.Linq.Table<AirCooler> AirCoolers
+	{
+		get
+		{
+			return this.GetTable<AirCooler>();
+		}
+	}
+	
 	public System.Data.Linq.Table<Client> Clients
 	{
 		get
 		{
 			return this.GetTable<Client>();
+		}
+	}
+	
+	public System.Data.Linq.Table<CPU> CPUs
+	{
+		get
+		{
+			return this.GetTable<CPU>();
 		}
 	}
 	
@@ -209,11 +228,27 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		}
 	}
 	
-	public System.Data.Linq.Table<GpuToMonitor> GpuToMonitors
+	public System.Data.Linq.Table<Fan> Fans
 	{
 		get
 		{
-			return this.GetTable<GpuToMonitor>();
+			return this.GetTable<Fan>();
+		}
+	}
+	
+	public System.Data.Linq.Table<GPU> GPUs
+	{
+		get
+		{
+			return this.GetTable<GPU>();
+		}
+	}
+	
+	public System.Data.Linq.Table<HDD> HDDs
+	{
+		get
+		{
+			return this.GetTable<HDD>();
 		}
 	}
 	
@@ -254,6 +289,22 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		get
 		{
 			return this.GetTable<Microphone>();
+		}
+	}
+	
+	public System.Data.Linq.Table<MoboToCase> MoboToCases
+	{
+		get
+		{
+			return this.GetTable<MoboToCase>();
+		}
+	}
+	
+	public System.Data.Linq.Table<MoboToCpu> MoboToCpus
+	{
+		get
+		{
+			return this.GetTable<MoboToCpu>();
 		}
 	}
 	
@@ -321,6 +372,14 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		}
 	}
 	
+	public System.Data.Linq.Table<Pc> Pcs
+	{
+		get
+		{
+			return this.GetTable<Pc>();
+		}
+	}
+	
 	public System.Data.Linq.Table<PCCase> PCCases
 	{
 		get
@@ -334,6 +393,14 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		get
 		{
 			return this.GetTable<PcSold>();
+		}
+	}
+	
+	public System.Data.Linq.Table<PcStock> PcStocks
+	{
+		get
+		{
+			return this.GetTable<PcStock>();
 		}
 	}
 	
@@ -361,11 +428,27 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		}
 	}
 	
-	public System.Data.Linq.Table<AirCooler> AirCoolers
+	public System.Data.Linq.Table<SSD> SSDs
 	{
 		get
 		{
-			return this.GetTable<AirCooler>();
+			return this.GetTable<SSD>();
+		}
+	}
+	
+	public System.Data.Linq.Table<PartInvoice> PartInvoices
+	{
+		get
+		{
+			return this.GetTable<PartInvoice>();
+		}
+	}
+	
+	public System.Data.Linq.Table<PcInvoice> PcInvoices
+	{
+		get
+		{
+			return this.GetTable<PcInvoice>();
 		}
 	}
 	
@@ -377,198 +460,12 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		}
 	}
 	
-	public System.Data.Linq.Table<GPU> GPUs
-	{
-		get
-		{
-			return this.GetTable<GPU>();
-		}
-	}
-	
-	public System.Data.Linq.Table<HDD> HDDs
-	{
-		get
-		{
-			return this.GetTable<HDD>();
-		}
-	}
-	
-	public System.Data.Linq.Table<SSD> SSDs
-	{
-		get
-		{
-			return this.GetTable<SSD>();
-		}
-	}
-	
-	public System.Data.Linq.Table<Pc> Pcs
-	{
-		get
-		{
-			return this.GetTable<Pc>();
-		}
-	}
-	
-	public System.Data.Linq.Table<MoboToCase> MoboToCases
-	{
-		get
-		{
-			return this.GetTable<MoboToCase>();
-		}
-	}
-	
-	public System.Data.Linq.Table<MoboToCpu> MoboToCpus
-	{
-		get
-		{
-			return this.GetTable<MoboToCpu>();
-		}
-	}
-	
-	public System.Data.Linq.Table<CPU> CPUs
-	{
-		get
-		{
-			return this.GetTable<CPU>();
-		}
-	}
-	
-	public System.Data.Linq.Table<Fan> Fans
-	{
-		get
-		{
-			return this.GetTable<Fan>();
-		}
-	}
-	
-	public System.Data.Linq.Table<PcStock> PcStocks
-	{
-		get
-		{
-			return this.GetTable<PcStock>();
-		}
-	}
-	
 	public System.Data.Linq.Table<PcCart> PcCarts
 	{
 		get
 		{
 			return this.GetTable<PcCart>();
 		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserPosition")]
-public partial class UserPosition : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _PositionID;
-	
-	private string _Position;
-	
-	private EntitySet<Admin> _Admins;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPositionIDChanging(int value);
-    partial void OnPositionIDChanged();
-    partial void OnPositionChanging(string value);
-    partial void OnPositionChanged();
-    #endregion
-	
-	public UserPosition()
-	{
-		this._Admins = new EntitySet<Admin>(new Action<Admin>(this.attach_Admins), new Action<Admin>(this.detach_Admins));
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int PositionID
-	{
-		get
-		{
-			return this._PositionID;
-		}
-		set
-		{
-			if ((this._PositionID != value))
-			{
-				this.OnPositionIDChanging(value);
-				this.SendPropertyChanging();
-				this._PositionID = value;
-				this.SendPropertyChanged("PositionID");
-				this.OnPositionIDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Position
-	{
-		get
-		{
-			return this._Position;
-		}
-		set
-		{
-			if ((this._Position != value))
-			{
-				this.OnPositionChanging(value);
-				this.SendPropertyChanging();
-				this._Position = value;
-				this.SendPropertyChanged("Position");
-				this.OnPositionChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserPosition_Admin", Storage="_Admins", ThisKey="PositionID", OtherKey="Position")]
-	public EntitySet<Admin> Admins
-	{
-		get
-		{
-			return this._Admins;
-		}
-		set
-		{
-			this._Admins.Assign(value);
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-	
-	private void attach_Admins(Admin entity)
-	{
-		this.SendPropertyChanging();
-		entity.UserPosition = this;
-	}
-	
-	private void detach_Admins(Admin entity)
-	{
-		this.SendPropertyChanging();
-		entity.UserPosition = null;
 	}
 }
 
@@ -836,6 +733,659 @@ public partial class Admin : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 }
 
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserPosition")]
+public partial class UserPosition : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _PositionID;
+	
+	private string _Position;
+	
+	private EntitySet<Admin> _Admins;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPositionIDChanging(int value);
+    partial void OnPositionIDChanged();
+    partial void OnPositionChanging(string value);
+    partial void OnPositionChanged();
+    #endregion
+	
+	public UserPosition()
+	{
+		this._Admins = new EntitySet<Admin>(new Action<Admin>(this.attach_Admins), new Action<Admin>(this.detach_Admins));
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int PositionID
+	{
+		get
+		{
+			return this._PositionID;
+		}
+		set
+		{
+			if ((this._PositionID != value))
+			{
+				this.OnPositionIDChanging(value);
+				this.SendPropertyChanging();
+				this._PositionID = value;
+				this.SendPropertyChanged("PositionID");
+				this.OnPositionIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Position
+	{
+		get
+		{
+			return this._Position;
+		}
+		set
+		{
+			if ((this._Position != value))
+			{
+				this.OnPositionChanging(value);
+				this.SendPropertyChanging();
+				this._Position = value;
+				this.SendPropertyChanged("Position");
+				this.OnPositionChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserPosition_Admin", Storage="_Admins", ThisKey="PositionID", OtherKey="Position")]
+	public EntitySet<Admin> Admins
+	{
+		get
+		{
+			return this._Admins;
+		}
+		set
+		{
+			this._Admins.Assign(value);
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_Admins(Admin entity)
+	{
+		this.SendPropertyChanging();
+		entity.UserPosition = this;
+	}
+	
+	private void detach_Admins(Admin entity)
+	{
+		this.SendPropertyChanging();
+		entity.UserPosition = null;
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AirCooler")]
+public partial class AirCooler : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private string _Model;
+	
+	private string _Brand;
+	
+	private string _Series;
+	
+	private string _Fan_Size;
+	
+	private string _Compatibility;
+	
+	private string _Fan_RPM;
+	
+	private string _Air_Flow;
+	
+	private string _Noise_Level;
+	
+	private string _Power_Connector;
+	
+	private string _Colour;
+	
+	private string _Materials;
+	
+	private string _Length;
+	
+	private string _Height;
+	
+	private string _Width;
+	
+	private string _Weight;
+	
+	private string _Features;
+	
+	private string _Warranty;
+	
+	private EntitySet<CpuToAirCooler> _CpuToAirCoolers;
+	
+	private EntityRef<PartsStock> _PartsStock;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnModelChanging(string value);
+    partial void OnModelChanged();
+    partial void OnBrandChanging(string value);
+    partial void OnBrandChanged();
+    partial void OnSeriesChanging(string value);
+    partial void OnSeriesChanged();
+    partial void OnFan_SizeChanging(string value);
+    partial void OnFan_SizeChanged();
+    partial void OnCompatibilityChanging(string value);
+    partial void OnCompatibilityChanged();
+    partial void OnFan_RPMChanging(string value);
+    partial void OnFan_RPMChanged();
+    partial void OnAir_FlowChanging(string value);
+    partial void OnAir_FlowChanged();
+    partial void OnNoise_LevelChanging(string value);
+    partial void OnNoise_LevelChanged();
+    partial void OnPower_ConnectorChanging(string value);
+    partial void OnPower_ConnectorChanged();
+    partial void OnColourChanging(string value);
+    partial void OnColourChanged();
+    partial void OnMaterialsChanging(string value);
+    partial void OnMaterialsChanged();
+    partial void OnLengthChanging(string value);
+    partial void OnLengthChanged();
+    partial void OnHeightChanging(string value);
+    partial void OnHeightChanged();
+    partial void OnWidthChanging(string value);
+    partial void OnWidthChanged();
+    partial void OnWeightChanging(string value);
+    partial void OnWeightChanged();
+    partial void OnFeaturesChanging(string value);
+    partial void OnFeaturesChanged();
+    partial void OnWarrantyChanging(string value);
+    partial void OnWarrantyChanged();
+    #endregion
+	
+	public AirCooler()
+	{
+		this._CpuToAirCoolers = new EntitySet<CpuToAirCooler>(new Action<CpuToAirCooler>(this.attach_CpuToAirCoolers), new Action<CpuToAirCooler>(this.detach_CpuToAirCoolers));
+		this._PartsStock = default(EntityRef<PartsStock>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				if (this._PartsStock.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Model
+	{
+		get
+		{
+			return this._Model;
+		}
+		set
+		{
+			if ((this._Model != value))
+			{
+				this.OnModelChanging(value);
+				this.SendPropertyChanging();
+				this._Model = value;
+				this.SendPropertyChanged("Model");
+				this.OnModelChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Brand
+	{
+		get
+		{
+			return this._Brand;
+		}
+		set
+		{
+			if ((this._Brand != value))
+			{
+				this.OnBrandChanging(value);
+				this.SendPropertyChanging();
+				this._Brand = value;
+				this.SendPropertyChanged("Brand");
+				this.OnBrandChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Series
+	{
+		get
+		{
+			return this._Series;
+		}
+		set
+		{
+			if ((this._Series != value))
+			{
+				this.OnSeriesChanging(value);
+				this.SendPropertyChanging();
+				this._Series = value;
+				this.SendPropertyChanged("Series");
+				this.OnSeriesChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fan_Size", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Fan_Size
+	{
+		get
+		{
+			return this._Fan_Size;
+		}
+		set
+		{
+			if ((this._Fan_Size != value))
+			{
+				this.OnFan_SizeChanging(value);
+				this.SendPropertyChanging();
+				this._Fan_Size = value;
+				this.SendPropertyChanged("Fan_Size");
+				this.OnFan_SizeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Compatibility", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Compatibility
+	{
+		get
+		{
+			return this._Compatibility;
+		}
+		set
+		{
+			if ((this._Compatibility != value))
+			{
+				this.OnCompatibilityChanging(value);
+				this.SendPropertyChanging();
+				this._Compatibility = value;
+				this.SendPropertyChanged("Compatibility");
+				this.OnCompatibilityChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fan_RPM", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Fan_RPM
+	{
+		get
+		{
+			return this._Fan_RPM;
+		}
+		set
+		{
+			if ((this._Fan_RPM != value))
+			{
+				this.OnFan_RPMChanging(value);
+				this.SendPropertyChanging();
+				this._Fan_RPM = value;
+				this.SendPropertyChanged("Fan_RPM");
+				this.OnFan_RPMChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Air_Flow", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Air_Flow
+	{
+		get
+		{
+			return this._Air_Flow;
+		}
+		set
+		{
+			if ((this._Air_Flow != value))
+			{
+				this.OnAir_FlowChanging(value);
+				this.SendPropertyChanging();
+				this._Air_Flow = value;
+				this.SendPropertyChanged("Air_Flow");
+				this.OnAir_FlowChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Noise_Level", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Noise_Level
+	{
+		get
+		{
+			return this._Noise_Level;
+		}
+		set
+		{
+			if ((this._Noise_Level != value))
+			{
+				this.OnNoise_LevelChanging(value);
+				this.SendPropertyChanging();
+				this._Noise_Level = value;
+				this.SendPropertyChanged("Noise_Level");
+				this.OnNoise_LevelChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Power_Connector", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Power_Connector
+	{
+		get
+		{
+			return this._Power_Connector;
+		}
+		set
+		{
+			if ((this._Power_Connector != value))
+			{
+				this.OnPower_ConnectorChanging(value);
+				this.SendPropertyChanging();
+				this._Power_Connector = value;
+				this.SendPropertyChanged("Power_Connector");
+				this.OnPower_ConnectorChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Colour", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Colour
+	{
+		get
+		{
+			return this._Colour;
+		}
+		set
+		{
+			if ((this._Colour != value))
+			{
+				this.OnColourChanging(value);
+				this.SendPropertyChanging();
+				this._Colour = value;
+				this.SendPropertyChanged("Colour");
+				this.OnColourChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Materials", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Materials
+	{
+		get
+		{
+			return this._Materials;
+		}
+		set
+		{
+			if ((this._Materials != value))
+			{
+				this.OnMaterialsChanging(value);
+				this.SendPropertyChanging();
+				this._Materials = value;
+				this.SendPropertyChanged("Materials");
+				this.OnMaterialsChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Length
+	{
+		get
+		{
+			return this._Length;
+		}
+		set
+		{
+			if ((this._Length != value))
+			{
+				this.OnLengthChanging(value);
+				this.SendPropertyChanging();
+				this._Length = value;
+				this.SendPropertyChanged("Length");
+				this.OnLengthChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Height
+	{
+		get
+		{
+			return this._Height;
+		}
+		set
+		{
+			if ((this._Height != value))
+			{
+				this.OnHeightChanging(value);
+				this.SendPropertyChanging();
+				this._Height = value;
+				this.SendPropertyChanged("Height");
+				this.OnHeightChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Width", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Width
+	{
+		get
+		{
+			return this._Width;
+		}
+		set
+		{
+			if ((this._Width != value))
+			{
+				this.OnWidthChanging(value);
+				this.SendPropertyChanging();
+				this._Width = value;
+				this.SendPropertyChanged("Width");
+				this.OnWidthChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Weight
+	{
+		get
+		{
+			return this._Weight;
+		}
+		set
+		{
+			if ((this._Weight != value))
+			{
+				this.OnWeightChanging(value);
+				this.SendPropertyChanging();
+				this._Weight = value;
+				this.SendPropertyChanged("Weight");
+				this.OnWeightChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Features", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Features
+	{
+		get
+		{
+			return this._Features;
+		}
+		set
+		{
+			if ((this._Features != value))
+			{
+				this.OnFeaturesChanging(value);
+				this.SendPropertyChanging();
+				this._Features = value;
+				this.SendPropertyChanged("Features");
+				this.OnFeaturesChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Warranty
+	{
+		get
+		{
+			return this._Warranty;
+		}
+		set
+		{
+			if ((this._Warranty != value))
+			{
+				this.OnWarrantyChanging(value);
+				this.SendPropertyChanging();
+				this._Warranty = value;
+				this.SendPropertyChanged("Warranty");
+				this.OnWarrantyChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AirCooler_CpuToAirCooler", Storage="_CpuToAirCoolers", ThisKey="ID", OtherKey="AC_ID")]
+	public EntitySet<CpuToAirCooler> CpuToAirCoolers
+	{
+		get
+		{
+			return this._CpuToAirCoolers;
+		}
+		set
+		{
+			this._CpuToAirCoolers.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_AirCooler", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
+	public PartsStock PartsStock
+	{
+		get
+		{
+			return this._PartsStock.Entity;
+		}
+		set
+		{
+			PartsStock previousValue = this._PartsStock.Entity;
+			if (((previousValue != value) 
+						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PartsStock.Entity = null;
+					previousValue.AirCooler = null;
+				}
+				this._PartsStock.Entity = value;
+				if ((value != null))
+				{
+					value.AirCooler = this;
+					this._ID = value.ID;
+				}
+				else
+				{
+					this._ID = default(int);
+				}
+				this.SendPropertyChanged("PartsStock");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_CpuToAirCoolers(CpuToAirCooler entity)
+	{
+		this.SendPropertyChanging();
+		entity.AirCooler = this;
+	}
+	
+	private void detach_CpuToAirCoolers(CpuToAirCooler entity)
+	{
+		this.SendPropertyChanging();
+		entity.AirCooler = null;
+	}
+}
+
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Client")]
 public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -857,6 +1407,10 @@ public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
 	private string _Province;
 	
 	private string _ZIP_Code;
+	
+	private EntitySet<PartInvoice> _PartInvoices;
+	
+	private EntitySet<PcInvoice> _PcInvoices;
 	
 	private EntitySet<PartCart> _PartCarts;
 	
@@ -888,6 +1442,8 @@ public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	public Client()
 	{
+		this._PartInvoices = new EntitySet<PartInvoice>(new Action<PartInvoice>(this.attach_PartInvoices), new Action<PartInvoice>(this.detach_PartInvoices));
+		this._PcInvoices = new EntitySet<PcInvoice>(new Action<PcInvoice>(this.attach_PcInvoices), new Action<PcInvoice>(this.detach_PcInvoices));
 		this._PartCarts = new EntitySet<PartCart>(new Action<PartCart>(this.attach_PartCarts), new Action<PartCart>(this.detach_PartCarts));
 		this._PcCarts = new EntitySet<PcCart>(new Action<PcCart>(this.attach_PcCarts), new Action<PcCart>(this.detach_PcCarts));
 		this._LoginTable = default(EntityRef<LoginTable>);
@@ -1058,6 +1614,32 @@ public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PartInvoice", Storage="_PartInvoices", ThisKey="User_ID", OtherKey="User_ID")]
+	public EntitySet<PartInvoice> PartInvoices
+	{
+		get
+		{
+			return this._PartInvoices;
+		}
+		set
+		{
+			this._PartInvoices.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PcInvoice", Storage="_PcInvoices", ThisKey="User_ID", OtherKey="User_ID")]
+	public EntitySet<PcInvoice> PcInvoices
+	{
+		get
+		{
+			return this._PcInvoices;
+		}
+		set
+		{
+			this._PcInvoices.Assign(value);
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PartCart", Storage="_PartCarts", ThisKey="User_ID", OtherKey="User_ID")]
 	public EntitySet<PartCart> PartCarts
 	{
@@ -1138,6 +1720,30 @@ public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
+	private void attach_PartInvoices(PartInvoice entity)
+	{
+		this.SendPropertyChanging();
+		entity.Client = this;
+	}
+	
+	private void detach_PartInvoices(PartInvoice entity)
+	{
+		this.SendPropertyChanging();
+		entity.Client = null;
+	}
+	
+	private void attach_PcInvoices(PcInvoice entity)
+	{
+		this.SendPropertyChanging();
+		entity.Client = this;
+	}
+	
+	private void detach_PcInvoices(PcInvoice entity)
+	{
+		this.SendPropertyChanging();
+		entity.Client = null;
+	}
+	
 	private void attach_PartCarts(PartCart entity)
 	{
 		this.SendPropertyChanging();
@@ -1160,6 +1766,581 @@ public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		this.SendPropertyChanging();
 		entity.Client = null;
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CPU")]
+public partial class CPU : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private string _Model;
+	
+	private string _Brand;
+	
+	private string _Series;
+	
+	private string _Cores;
+	
+	private string _Threads;
+	
+	private string _Base_Clock;
+	
+	private string _Boost_Clock;
+	
+	private string _Total_Cache;
+	
+	private string _Chipset;
+	
+	private string _TDP;
+	
+	private string _Max_Temp;
+	
+	private int _System_Memory_Speed;
+	
+	private string _System_Memory_Type;
+	
+	private string _Memory_Channels;
+	
+	private string _Warranty;
+	
+	private EntitySet<CpuToAirCooler> _CpuToAirCoolers;
+	
+	private EntitySet<CpuToLiquidCooler> _CpuToLiquidCoolers;
+	
+	private EntitySet<MoboToCpu> _MoboToCpus;
+	
+	private EntitySet<Pc> _Pcs;
+	
+	private EntityRef<PartsStock> _PartsStock;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnModelChanging(string value);
+    partial void OnModelChanged();
+    partial void OnBrandChanging(string value);
+    partial void OnBrandChanged();
+    partial void OnSeriesChanging(string value);
+    partial void OnSeriesChanged();
+    partial void OnCoresChanging(string value);
+    partial void OnCoresChanged();
+    partial void OnThreadsChanging(string value);
+    partial void OnThreadsChanged();
+    partial void OnBase_ClockChanging(string value);
+    partial void OnBase_ClockChanged();
+    partial void OnBoost_ClockChanging(string value);
+    partial void OnBoost_ClockChanged();
+    partial void OnTotal_CacheChanging(string value);
+    partial void OnTotal_CacheChanged();
+    partial void OnChipsetChanging(string value);
+    partial void OnChipsetChanged();
+    partial void OnTDPChanging(string value);
+    partial void OnTDPChanged();
+    partial void OnMax_TempChanging(string value);
+    partial void OnMax_TempChanged();
+    partial void OnSystem_Memory_SpeedChanging(int value);
+    partial void OnSystem_Memory_SpeedChanged();
+    partial void OnSystem_Memory_TypeChanging(string value);
+    partial void OnSystem_Memory_TypeChanged();
+    partial void OnMemory_ChannelsChanging(string value);
+    partial void OnMemory_ChannelsChanged();
+    partial void OnWarrantyChanging(string value);
+    partial void OnWarrantyChanged();
+    #endregion
+	
+	public CPU()
+	{
+		this._CpuToAirCoolers = new EntitySet<CpuToAirCooler>(new Action<CpuToAirCooler>(this.attach_CpuToAirCoolers), new Action<CpuToAirCooler>(this.detach_CpuToAirCoolers));
+		this._CpuToLiquidCoolers = new EntitySet<CpuToLiquidCooler>(new Action<CpuToLiquidCooler>(this.attach_CpuToLiquidCoolers), new Action<CpuToLiquidCooler>(this.detach_CpuToLiquidCoolers));
+		this._MoboToCpus = new EntitySet<MoboToCpu>(new Action<MoboToCpu>(this.attach_MoboToCpus), new Action<MoboToCpu>(this.detach_MoboToCpus));
+		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
+		this._PartsStock = default(EntityRef<PartsStock>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				if (this._PartsStock.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Model
+	{
+		get
+		{
+			return this._Model;
+		}
+		set
+		{
+			if ((this._Model != value))
+			{
+				this.OnModelChanging(value);
+				this.SendPropertyChanging();
+				this._Model = value;
+				this.SendPropertyChanged("Model");
+				this.OnModelChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Brand
+	{
+		get
+		{
+			return this._Brand;
+		}
+		set
+		{
+			if ((this._Brand != value))
+			{
+				this.OnBrandChanging(value);
+				this.SendPropertyChanging();
+				this._Brand = value;
+				this.SendPropertyChanged("Brand");
+				this.OnBrandChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Series
+	{
+		get
+		{
+			return this._Series;
+		}
+		set
+		{
+			if ((this._Series != value))
+			{
+				this.OnSeriesChanging(value);
+				this.SendPropertyChanging();
+				this._Series = value;
+				this.SendPropertyChanged("Series");
+				this.OnSeriesChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cores", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Cores
+	{
+		get
+		{
+			return this._Cores;
+		}
+		set
+		{
+			if ((this._Cores != value))
+			{
+				this.OnCoresChanging(value);
+				this.SendPropertyChanging();
+				this._Cores = value;
+				this.SendPropertyChanged("Cores");
+				this.OnCoresChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Threads", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Threads
+	{
+		get
+		{
+			return this._Threads;
+		}
+		set
+		{
+			if ((this._Threads != value))
+			{
+				this.OnThreadsChanging(value);
+				this.SendPropertyChanging();
+				this._Threads = value;
+				this.SendPropertyChanged("Threads");
+				this.OnThreadsChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Base_Clock", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Base_Clock
+	{
+		get
+		{
+			return this._Base_Clock;
+		}
+		set
+		{
+			if ((this._Base_Clock != value))
+			{
+				this.OnBase_ClockChanging(value);
+				this.SendPropertyChanging();
+				this._Base_Clock = value;
+				this.SendPropertyChanged("Base_Clock");
+				this.OnBase_ClockChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Boost_Clock", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Boost_Clock
+	{
+		get
+		{
+			return this._Boost_Clock;
+		}
+		set
+		{
+			if ((this._Boost_Clock != value))
+			{
+				this.OnBoost_ClockChanging(value);
+				this.SendPropertyChanging();
+				this._Boost_Clock = value;
+				this.SendPropertyChanged("Boost_Clock");
+				this.OnBoost_ClockChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total_Cache", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Total_Cache
+	{
+		get
+		{
+			return this._Total_Cache;
+		}
+		set
+		{
+			if ((this._Total_Cache != value))
+			{
+				this.OnTotal_CacheChanging(value);
+				this.SendPropertyChanging();
+				this._Total_Cache = value;
+				this.SendPropertyChanged("Total_Cache");
+				this.OnTotal_CacheChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Chipset", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Chipset
+	{
+		get
+		{
+			return this._Chipset;
+		}
+		set
+		{
+			if ((this._Chipset != value))
+			{
+				this.OnChipsetChanging(value);
+				this.SendPropertyChanging();
+				this._Chipset = value;
+				this.SendPropertyChanged("Chipset");
+				this.OnChipsetChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TDP", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string TDP
+	{
+		get
+		{
+			return this._TDP;
+		}
+		set
+		{
+			if ((this._TDP != value))
+			{
+				this.OnTDPChanging(value);
+				this.SendPropertyChanging();
+				this._TDP = value;
+				this.SendPropertyChanged("TDP");
+				this.OnTDPChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Max_Temp", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Max_Temp
+	{
+		get
+		{
+			return this._Max_Temp;
+		}
+		set
+		{
+			if ((this._Max_Temp != value))
+			{
+				this.OnMax_TempChanging(value);
+				this.SendPropertyChanging();
+				this._Max_Temp = value;
+				this.SendPropertyChanged("Max_Temp");
+				this.OnMax_TempChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_System_Memory_Speed", DbType="Int NOT NULL")]
+	public int System_Memory_Speed
+	{
+		get
+		{
+			return this._System_Memory_Speed;
+		}
+		set
+		{
+			if ((this._System_Memory_Speed != value))
+			{
+				this.OnSystem_Memory_SpeedChanging(value);
+				this.SendPropertyChanging();
+				this._System_Memory_Speed = value;
+				this.SendPropertyChanged("System_Memory_Speed");
+				this.OnSystem_Memory_SpeedChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_System_Memory_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string System_Memory_Type
+	{
+		get
+		{
+			return this._System_Memory_Type;
+		}
+		set
+		{
+			if ((this._System_Memory_Type != value))
+			{
+				this.OnSystem_Memory_TypeChanging(value);
+				this.SendPropertyChanging();
+				this._System_Memory_Type = value;
+				this.SendPropertyChanged("System_Memory_Type");
+				this.OnSystem_Memory_TypeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memory_Channels", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Memory_Channels
+	{
+		get
+		{
+			return this._Memory_Channels;
+		}
+		set
+		{
+			if ((this._Memory_Channels != value))
+			{
+				this.OnMemory_ChannelsChanging(value);
+				this.SendPropertyChanging();
+				this._Memory_Channels = value;
+				this.SendPropertyChanged("Memory_Channels");
+				this.OnMemory_ChannelsChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Warranty
+	{
+		get
+		{
+			return this._Warranty;
+		}
+		set
+		{
+			if ((this._Warranty != value))
+			{
+				this.OnWarrantyChanging(value);
+				this.SendPropertyChanging();
+				this._Warranty = value;
+				this.SendPropertyChanged("Warranty");
+				this.OnWarrantyChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_CpuToAirCooler", Storage="_CpuToAirCoolers", ThisKey="ID", OtherKey="CPU_ID")]
+	public EntitySet<CpuToAirCooler> CpuToAirCoolers
+	{
+		get
+		{
+			return this._CpuToAirCoolers;
+		}
+		set
+		{
+			this._CpuToAirCoolers.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_CpuToLiquidCooler", Storage="_CpuToLiquidCoolers", ThisKey="ID", OtherKey="CPU_ID")]
+	public EntitySet<CpuToLiquidCooler> CpuToLiquidCoolers
+	{
+		get
+		{
+			return this._CpuToLiquidCoolers;
+		}
+		set
+		{
+			this._CpuToLiquidCoolers.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_MoboToCpu", Storage="_MoboToCpus", ThisKey="ID", OtherKey="CPU_ID")]
+	public EntitySet<MoboToCpu> MoboToCpus
+	{
+		get
+		{
+			return this._MoboToCpus;
+		}
+		set
+		{
+			this._MoboToCpus.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="CPU_ID")]
+	public EntitySet<Pc> Pcs
+	{
+		get
+		{
+			return this._Pcs;
+		}
+		set
+		{
+			this._Pcs.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_CPU", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
+	public PartsStock PartsStock
+	{
+		get
+		{
+			return this._PartsStock.Entity;
+		}
+		set
+		{
+			PartsStock previousValue = this._PartsStock.Entity;
+			if (((previousValue != value) 
+						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PartsStock.Entity = null;
+					previousValue.CPU = null;
+				}
+				this._PartsStock.Entity = value;
+				if ((value != null))
+				{
+					value.CPU = this;
+					this._ID = value.ID;
+				}
+				else
+				{
+					this._ID = default(int);
+				}
+				this.SendPropertyChanged("PartsStock");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_CpuToAirCoolers(CpuToAirCooler entity)
+	{
+		this.SendPropertyChanging();
+		entity.CPU = this;
+	}
+	
+	private void detach_CpuToAirCoolers(CpuToAirCooler entity)
+	{
+		this.SendPropertyChanging();
+		entity.CPU = null;
+	}
+	
+	private void attach_CpuToLiquidCoolers(CpuToLiquidCooler entity)
+	{
+		this.SendPropertyChanging();
+		entity.CPU = this;
+	}
+	
+	private void detach_CpuToLiquidCoolers(CpuToLiquidCooler entity)
+	{
+		this.SendPropertyChanging();
+		entity.CPU = null;
+	}
+	
+	private void attach_MoboToCpus(MoboToCpu entity)
+	{
+		this.SendPropertyChanging();
+		entity.CPU = this;
+	}
+	
+	private void detach_MoboToCpus(MoboToCpu entity)
+	{
+		this.SendPropertyChanging();
+		entity.CPU = null;
+	}
+	
+	private void attach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.CPU = this;
+	}
+	
+	private void detach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.CPU = null;
 	}
 }
 
@@ -1341,9 +2522,9 @@ public partial class CpuToLiquidCooler : INotifyPropertyChanging, INotifyPropert
 	
 	private int _LC_ID;
 	
-	private EntityRef<LiquidCooler> _LiquidCooler;
-	
 	private EntityRef<CPU> _CPU;
+	
+	private EntityRef<LiquidCooler> _LiquidCooler;
 	
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1357,8 +2538,8 @@ public partial class CpuToLiquidCooler : INotifyPropertyChanging, INotifyPropert
 	
 	public CpuToLiquidCooler()
 	{
-		this._LiquidCooler = default(EntityRef<LiquidCooler>);
 		this._CPU = default(EntityRef<CPU>);
+		this._LiquidCooler = default(EntityRef<LiquidCooler>);
 		OnCreated();
 	}
 	
@@ -1410,40 +2591,6 @@ public partial class CpuToLiquidCooler : INotifyPropertyChanging, INotifyPropert
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LiquidCooler_CpuToLiquidCooler", Storage="_LiquidCooler", ThisKey="LC_ID", OtherKey="ID", IsForeignKey=true)]
-	public LiquidCooler LiquidCooler
-	{
-		get
-		{
-			return this._LiquidCooler.Entity;
-		}
-		set
-		{
-			LiquidCooler previousValue = this._LiquidCooler.Entity;
-			if (((previousValue != value) 
-						|| (this._LiquidCooler.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._LiquidCooler.Entity = null;
-					previousValue.CpuToLiquidCoolers.Remove(this);
-				}
-				this._LiquidCooler.Entity = value;
-				if ((value != null))
-				{
-					value.CpuToLiquidCoolers.Add(this);
-					this._LC_ID = value.ID;
-				}
-				else
-				{
-					this._LC_ID = default(int);
-				}
-				this.SendPropertyChanged("LiquidCooler");
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_CpuToLiquidCooler", Storage="_CPU", ThisKey="CPU_ID", OtherKey="ID", IsForeignKey=true)]
 	public CPU CPU
 	{
@@ -1478,6 +2625,40 @@ public partial class CpuToLiquidCooler : INotifyPropertyChanging, INotifyPropert
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LiquidCooler_CpuToLiquidCooler", Storage="_LiquidCooler", ThisKey="LC_ID", OtherKey="ID", IsForeignKey=true)]
+	public LiquidCooler LiquidCooler
+	{
+		get
+		{
+			return this._LiquidCooler.Entity;
+		}
+		set
+		{
+			LiquidCooler previousValue = this._LiquidCooler.Entity;
+			if (((previousValue != value) 
+						|| (this._LiquidCooler.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._LiquidCooler.Entity = null;
+					previousValue.CpuToLiquidCoolers.Remove(this);
+				}
+				this._LiquidCooler.Entity = value;
+				if ((value != null))
+				{
+					value.CpuToLiquidCoolers.Add(this);
+					this._LC_ID = value.ID;
+				}
+				else
+				{
+					this._LC_ID = default(int);
+				}
+				this.SendPropertyChanged("LiquidCooler");
+			}
+		}
+	}
+	
 	public event PropertyChangingEventHandler PropertyChanging;
 	
 	public event PropertyChangedEventHandler PropertyChanged;
@@ -1499,149 +2680,412 @@ public partial class CpuToLiquidCooler : INotifyPropertyChanging, INotifyPropert
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GpuToMonitor")]
-public partial class GpuToMonitor : INotifyPropertyChanging, INotifyPropertyChanged
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Fans")]
+public partial class Fan : INotifyPropertyChanging, INotifyPropertyChanged
 {
 	
 	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 	
-	private int _GPU_ID;
+	private int _ID;
 	
-	private int _Monitor_ID;
+	private string _Model;
 	
-	private EntityRef<Monitor> _Monitor;
+	private string _Brand;
 	
-	private EntityRef<GPU> _GPU;
+	private string _Series;
+	
+	private string _Size;
+	
+	private string _RPM;
+	
+	private string _Max_Air_Flow;
+	
+	private string _Noise;
+	
+	private string _Static_Pressure;
+	
+	private string _Input_Voltage;
+	
+	private string _MTBF;
+	
+	private string _Cable_Length;
+	
+	private int _Num_Fans;
+	
+	private string _Warranty;
+	
+	private EntitySet<Pc> _Pcs;
+	
+	private EntityRef<PartsStock> _PartsStock;
 	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnGPU_IDChanging(int value);
-    partial void OnGPU_IDChanged();
-    partial void OnMonitor_IDChanging(int value);
-    partial void OnMonitor_IDChanged();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnModelChanging(string value);
+    partial void OnModelChanged();
+    partial void OnBrandChanging(string value);
+    partial void OnBrandChanged();
+    partial void OnSeriesChanging(string value);
+    partial void OnSeriesChanged();
+    partial void OnSizeChanging(string value);
+    partial void OnSizeChanged();
+    partial void OnRPMChanging(string value);
+    partial void OnRPMChanged();
+    partial void OnMax_Air_FlowChanging(string value);
+    partial void OnMax_Air_FlowChanged();
+    partial void OnNoiseChanging(string value);
+    partial void OnNoiseChanged();
+    partial void OnStatic_PressureChanging(string value);
+    partial void OnStatic_PressureChanged();
+    partial void OnInput_VoltageChanging(string value);
+    partial void OnInput_VoltageChanged();
+    partial void OnMTBFChanging(string value);
+    partial void OnMTBFChanged();
+    partial void OnCable_LengthChanging(string value);
+    partial void OnCable_LengthChanged();
+    partial void OnNum_FansChanging(int value);
+    partial void OnNum_FansChanged();
+    partial void OnWarrantyChanging(string value);
+    partial void OnWarrantyChanged();
     #endregion
 	
-	public GpuToMonitor()
+	public Fan()
 	{
-		this._Monitor = default(EntityRef<Monitor>);
-		this._GPU = default(EntityRef<GPU>);
+		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
+		this._PartsStock = default(EntityRef<PartsStock>);
 		OnCreated();
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GPU_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int GPU_ID
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int ID
 	{
 		get
 		{
-			return this._GPU_ID;
+			return this._ID;
 		}
 		set
 		{
-			if ((this._GPU_ID != value))
+			if ((this._ID != value))
 			{
-				if (this._GPU.HasLoadedOrAssignedValue)
+				if (this._PartsStock.HasLoadedOrAssignedValue)
 				{
 					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 				}
-				this.OnGPU_IDChanging(value);
+				this.OnIDChanging(value);
 				this.SendPropertyChanging();
-				this._GPU_ID = value;
-				this.SendPropertyChanged("GPU_ID");
-				this.OnGPU_IDChanged();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Monitor_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int Monitor_ID
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Model
 	{
 		get
 		{
-			return this._Monitor_ID;
+			return this._Model;
 		}
 		set
 		{
-			if ((this._Monitor_ID != value))
+			if ((this._Model != value))
 			{
-				if (this._Monitor.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnMonitor_IDChanging(value);
+				this.OnModelChanging(value);
 				this.SendPropertyChanging();
-				this._Monitor_ID = value;
-				this.SendPropertyChanged("Monitor_ID");
-				this.OnMonitor_IDChanged();
+				this._Model = value;
+				this.SendPropertyChanged("Model");
+				this.OnModelChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Monitor_GpuToMonitor", Storage="_Monitor", ThisKey="Monitor_ID", OtherKey="ID", IsForeignKey=true)]
-	public Monitor Monitor
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Brand
 	{
 		get
 		{
-			return this._Monitor.Entity;
+			return this._Brand;
 		}
 		set
 		{
-			Monitor previousValue = this._Monitor.Entity;
+			if ((this._Brand != value))
+			{
+				this.OnBrandChanging(value);
+				this.SendPropertyChanging();
+				this._Brand = value;
+				this.SendPropertyChanged("Brand");
+				this.OnBrandChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Series
+	{
+		get
+		{
+			return this._Series;
+		}
+		set
+		{
+			if ((this._Series != value))
+			{
+				this.OnSeriesChanging(value);
+				this.SendPropertyChanging();
+				this._Series = value;
+				this.SendPropertyChanged("Series");
+				this.OnSeriesChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Size
+	{
+		get
+		{
+			return this._Size;
+		}
+		set
+		{
+			if ((this._Size != value))
+			{
+				this.OnSizeChanging(value);
+				this.SendPropertyChanging();
+				this._Size = value;
+				this.SendPropertyChanged("Size");
+				this.OnSizeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RPM", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string RPM
+	{
+		get
+		{
+			return this._RPM;
+		}
+		set
+		{
+			if ((this._RPM != value))
+			{
+				this.OnRPMChanging(value);
+				this.SendPropertyChanging();
+				this._RPM = value;
+				this.SendPropertyChanged("RPM");
+				this.OnRPMChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Max_Air_Flow", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Max_Air_Flow
+	{
+		get
+		{
+			return this._Max_Air_Flow;
+		}
+		set
+		{
+			if ((this._Max_Air_Flow != value))
+			{
+				this.OnMax_Air_FlowChanging(value);
+				this.SendPropertyChanging();
+				this._Max_Air_Flow = value;
+				this.SendPropertyChanged("Max_Air_Flow");
+				this.OnMax_Air_FlowChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Noise", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Noise
+	{
+		get
+		{
+			return this._Noise;
+		}
+		set
+		{
+			if ((this._Noise != value))
+			{
+				this.OnNoiseChanging(value);
+				this.SendPropertyChanging();
+				this._Noise = value;
+				this.SendPropertyChanged("Noise");
+				this.OnNoiseChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Static_Pressure", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Static_Pressure
+	{
+		get
+		{
+			return this._Static_Pressure;
+		}
+		set
+		{
+			if ((this._Static_Pressure != value))
+			{
+				this.OnStatic_PressureChanging(value);
+				this.SendPropertyChanging();
+				this._Static_Pressure = value;
+				this.SendPropertyChanged("Static_Pressure");
+				this.OnStatic_PressureChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Input_Voltage", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Input_Voltage
+	{
+		get
+		{
+			return this._Input_Voltage;
+		}
+		set
+		{
+			if ((this._Input_Voltage != value))
+			{
+				this.OnInput_VoltageChanging(value);
+				this.SendPropertyChanging();
+				this._Input_Voltage = value;
+				this.SendPropertyChanged("Input_Voltage");
+				this.OnInput_VoltageChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MTBF", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string MTBF
+	{
+		get
+		{
+			return this._MTBF;
+		}
+		set
+		{
+			if ((this._MTBF != value))
+			{
+				this.OnMTBFChanging(value);
+				this.SendPropertyChanging();
+				this._MTBF = value;
+				this.SendPropertyChanged("MTBF");
+				this.OnMTBFChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cable_Length", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Cable_Length
+	{
+		get
+		{
+			return this._Cable_Length;
+		}
+		set
+		{
+			if ((this._Cable_Length != value))
+			{
+				this.OnCable_LengthChanging(value);
+				this.SendPropertyChanging();
+				this._Cable_Length = value;
+				this.SendPropertyChanged("Cable_Length");
+				this.OnCable_LengthChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_Fans", DbType="Int NOT NULL")]
+	public int Num_Fans
+	{
+		get
+		{
+			return this._Num_Fans;
+		}
+		set
+		{
+			if ((this._Num_Fans != value))
+			{
+				this.OnNum_FansChanging(value);
+				this.SendPropertyChanging();
+				this._Num_Fans = value;
+				this.SendPropertyChanged("Num_Fans");
+				this.OnNum_FansChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Warranty
+	{
+		get
+		{
+			return this._Warranty;
+		}
+		set
+		{
+			if ((this._Warranty != value))
+			{
+				this.OnWarrantyChanging(value);
+				this.SendPropertyChanging();
+				this._Warranty = value;
+				this.SendPropertyChanged("Warranty");
+				this.OnWarrantyChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fan_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="Fan_ID")]
+	public EntitySet<Pc> Pcs
+	{
+		get
+		{
+			return this._Pcs;
+		}
+		set
+		{
+			this._Pcs.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_Fan", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
+	public PartsStock PartsStock
+	{
+		get
+		{
+			return this._PartsStock.Entity;
+		}
+		set
+		{
+			PartsStock previousValue = this._PartsStock.Entity;
 			if (((previousValue != value) 
-						|| (this._Monitor.HasLoadedOrAssignedValue == false)))
+						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
 			{
 				this.SendPropertyChanging();
 				if ((previousValue != null))
 				{
-					this._Monitor.Entity = null;
-					previousValue.GpuToMonitors.Remove(this);
+					this._PartsStock.Entity = null;
+					previousValue.Fan = null;
 				}
-				this._Monitor.Entity = value;
+				this._PartsStock.Entity = value;
 				if ((value != null))
 				{
-					value.GpuToMonitors.Add(this);
-					this._Monitor_ID = value.ID;
+					value.Fan = this;
+					this._ID = value.ID;
 				}
 				else
 				{
-					this._Monitor_ID = default(int);
+					this._ID = default(int);
 				}
-				this.SendPropertyChanged("Monitor");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GPU_GpuToMonitor", Storage="_GPU", ThisKey="GPU_ID", OtherKey="ID", IsForeignKey=true)]
-	public GPU GPU
-	{
-		get
-		{
-			return this._GPU.Entity;
-		}
-		set
-		{
-			GPU previousValue = this._GPU.Entity;
-			if (((previousValue != value) 
-						|| (this._GPU.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._GPU.Entity = null;
-					previousValue.GpuToMonitors.Remove(this);
-				}
-				this._GPU.Entity = value;
-				if ((value != null))
-				{
-					value.GpuToMonitors.Add(this);
-					this._GPU_ID = value.ID;
-				}
-				else
-				{
-					this._GPU_ID = default(int);
-				}
-				this.SendPropertyChanged("GPU");
+				this.SendPropertyChanged("PartsStock");
 			}
 		}
 	}
@@ -1664,6 +3108,1048 @@ public partial class GpuToMonitor : INotifyPropertyChanging, INotifyPropertyChan
 		{
 			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
+	}
+	
+	private void attach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.Fan = this;
+	}
+	
+	private void detach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.Fan = null;
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GPU")]
+public partial class GPU : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private string _Model;
+	
+	private string _Manufacturer;
+	
+	private string _Brand;
+	
+	private string _Series;
+	
+	private string _Base_Clock_Speed;
+	
+	private string _Boost_Clock_Speed;
+	
+	private string _Stream_Processors;
+	
+	private string _Memory_Clock;
+	
+	private string _Memory_Size;
+	
+	private string _Memory_Type;
+	
+	private string _Ports;
+	
+	private string _Max_Digital_Resolution;
+	
+	private string _VR_Ready;
+	
+	private string _Recommended_Power_Supply;
+	
+	private string _Form_Factor;
+	
+	private string _Slot_Width;
+	
+	private string _Length;
+	
+	private string _Height;
+	
+	private string _Warranty;
+	
+	private EntitySet<Pc> _Pcs;
+	
+	private EntityRef<PartsStock> _PartsStock;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnModelChanging(string value);
+    partial void OnModelChanged();
+    partial void OnManufacturerChanging(string value);
+    partial void OnManufacturerChanged();
+    partial void OnBrandChanging(string value);
+    partial void OnBrandChanged();
+    partial void OnSeriesChanging(string value);
+    partial void OnSeriesChanged();
+    partial void OnBase_Clock_SpeedChanging(string value);
+    partial void OnBase_Clock_SpeedChanged();
+    partial void OnBoost_Clock_SpeedChanging(string value);
+    partial void OnBoost_Clock_SpeedChanged();
+    partial void OnStream_ProcessorsChanging(string value);
+    partial void OnStream_ProcessorsChanged();
+    partial void OnMemory_ClockChanging(string value);
+    partial void OnMemory_ClockChanged();
+    partial void OnMemory_SizeChanging(string value);
+    partial void OnMemory_SizeChanged();
+    partial void OnMemory_TypeChanging(string value);
+    partial void OnMemory_TypeChanged();
+    partial void OnPortsChanging(string value);
+    partial void OnPortsChanged();
+    partial void OnMax_Digital_ResolutionChanging(string value);
+    partial void OnMax_Digital_ResolutionChanged();
+    partial void OnVR_ReadyChanging(string value);
+    partial void OnVR_ReadyChanged();
+    partial void OnRecommended_Power_SupplyChanging(string value);
+    partial void OnRecommended_Power_SupplyChanged();
+    partial void OnForm_FactorChanging(string value);
+    partial void OnForm_FactorChanged();
+    partial void OnSlot_WidthChanging(string value);
+    partial void OnSlot_WidthChanged();
+    partial void OnLengthChanging(string value);
+    partial void OnLengthChanged();
+    partial void OnHeightChanging(string value);
+    partial void OnHeightChanged();
+    partial void OnWarrantyChanging(string value);
+    partial void OnWarrantyChanged();
+    #endregion
+	
+	public GPU()
+	{
+		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
+		this._PartsStock = default(EntityRef<PartsStock>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				if (this._PartsStock.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Model
+	{
+		get
+		{
+			return this._Model;
+		}
+		set
+		{
+			if ((this._Model != value))
+			{
+				this.OnModelChanging(value);
+				this.SendPropertyChanging();
+				this._Model = value;
+				this.SendPropertyChanged("Model");
+				this.OnModelChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manufacturer", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Manufacturer
+	{
+		get
+		{
+			return this._Manufacturer;
+		}
+		set
+		{
+			if ((this._Manufacturer != value))
+			{
+				this.OnManufacturerChanging(value);
+				this.SendPropertyChanging();
+				this._Manufacturer = value;
+				this.SendPropertyChanged("Manufacturer");
+				this.OnManufacturerChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Brand
+	{
+		get
+		{
+			return this._Brand;
+		}
+		set
+		{
+			if ((this._Brand != value))
+			{
+				this.OnBrandChanging(value);
+				this.SendPropertyChanging();
+				this._Brand = value;
+				this.SendPropertyChanged("Brand");
+				this.OnBrandChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Series
+	{
+		get
+		{
+			return this._Series;
+		}
+		set
+		{
+			if ((this._Series != value))
+			{
+				this.OnSeriesChanging(value);
+				this.SendPropertyChanging();
+				this._Series = value;
+				this.SendPropertyChanged("Series");
+				this.OnSeriesChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Base_Clock_Speed", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Base_Clock_Speed
+	{
+		get
+		{
+			return this._Base_Clock_Speed;
+		}
+		set
+		{
+			if ((this._Base_Clock_Speed != value))
+			{
+				this.OnBase_Clock_SpeedChanging(value);
+				this.SendPropertyChanging();
+				this._Base_Clock_Speed = value;
+				this.SendPropertyChanged("Base_Clock_Speed");
+				this.OnBase_Clock_SpeedChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Boost_Clock_Speed", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Boost_Clock_Speed
+	{
+		get
+		{
+			return this._Boost_Clock_Speed;
+		}
+		set
+		{
+			if ((this._Boost_Clock_Speed != value))
+			{
+				this.OnBoost_Clock_SpeedChanging(value);
+				this.SendPropertyChanging();
+				this._Boost_Clock_Speed = value;
+				this.SendPropertyChanged("Boost_Clock_Speed");
+				this.OnBoost_Clock_SpeedChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Stream_Processors", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Stream_Processors
+	{
+		get
+		{
+			return this._Stream_Processors;
+		}
+		set
+		{
+			if ((this._Stream_Processors != value))
+			{
+				this.OnStream_ProcessorsChanging(value);
+				this.SendPropertyChanging();
+				this._Stream_Processors = value;
+				this.SendPropertyChanged("Stream_Processors");
+				this.OnStream_ProcessorsChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memory_Clock", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Memory_Clock
+	{
+		get
+		{
+			return this._Memory_Clock;
+		}
+		set
+		{
+			if ((this._Memory_Clock != value))
+			{
+				this.OnMemory_ClockChanging(value);
+				this.SendPropertyChanging();
+				this._Memory_Clock = value;
+				this.SendPropertyChanged("Memory_Clock");
+				this.OnMemory_ClockChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memory_Size", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Memory_Size
+	{
+		get
+		{
+			return this._Memory_Size;
+		}
+		set
+		{
+			if ((this._Memory_Size != value))
+			{
+				this.OnMemory_SizeChanging(value);
+				this.SendPropertyChanging();
+				this._Memory_Size = value;
+				this.SendPropertyChanged("Memory_Size");
+				this.OnMemory_SizeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memory_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Memory_Type
+	{
+		get
+		{
+			return this._Memory_Type;
+		}
+		set
+		{
+			if ((this._Memory_Type != value))
+			{
+				this.OnMemory_TypeChanging(value);
+				this.SendPropertyChanging();
+				this._Memory_Type = value;
+				this.SendPropertyChanged("Memory_Type");
+				this.OnMemory_TypeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ports", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Ports
+	{
+		get
+		{
+			return this._Ports;
+		}
+		set
+		{
+			if ((this._Ports != value))
+			{
+				this.OnPortsChanging(value);
+				this.SendPropertyChanging();
+				this._Ports = value;
+				this.SendPropertyChanged("Ports");
+				this.OnPortsChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Max_Digital_Resolution", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Max_Digital_Resolution
+	{
+		get
+		{
+			return this._Max_Digital_Resolution;
+		}
+		set
+		{
+			if ((this._Max_Digital_Resolution != value))
+			{
+				this.OnMax_Digital_ResolutionChanging(value);
+				this.SendPropertyChanging();
+				this._Max_Digital_Resolution = value;
+				this.SendPropertyChanged("Max_Digital_Resolution");
+				this.OnMax_Digital_ResolutionChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_Ready", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string VR_Ready
+	{
+		get
+		{
+			return this._VR_Ready;
+		}
+		set
+		{
+			if ((this._VR_Ready != value))
+			{
+				this.OnVR_ReadyChanging(value);
+				this.SendPropertyChanging();
+				this._VR_Ready = value;
+				this.SendPropertyChanged("VR_Ready");
+				this.OnVR_ReadyChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Recommended_Power_Supply", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Recommended_Power_Supply
+	{
+		get
+		{
+			return this._Recommended_Power_Supply;
+		}
+		set
+		{
+			if ((this._Recommended_Power_Supply != value))
+			{
+				this.OnRecommended_Power_SupplyChanging(value);
+				this.SendPropertyChanging();
+				this._Recommended_Power_Supply = value;
+				this.SendPropertyChanged("Recommended_Power_Supply");
+				this.OnRecommended_Power_SupplyChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Form_Factor", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Form_Factor
+	{
+		get
+		{
+			return this._Form_Factor;
+		}
+		set
+		{
+			if ((this._Form_Factor != value))
+			{
+				this.OnForm_FactorChanging(value);
+				this.SendPropertyChanging();
+				this._Form_Factor = value;
+				this.SendPropertyChanged("Form_Factor");
+				this.OnForm_FactorChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Slot_Width", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Slot_Width
+	{
+		get
+		{
+			return this._Slot_Width;
+		}
+		set
+		{
+			if ((this._Slot_Width != value))
+			{
+				this.OnSlot_WidthChanging(value);
+				this.SendPropertyChanging();
+				this._Slot_Width = value;
+				this.SendPropertyChanged("Slot_Width");
+				this.OnSlot_WidthChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Length
+	{
+		get
+		{
+			return this._Length;
+		}
+		set
+		{
+			if ((this._Length != value))
+			{
+				this.OnLengthChanging(value);
+				this.SendPropertyChanging();
+				this._Length = value;
+				this.SendPropertyChanged("Length");
+				this.OnLengthChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Height
+	{
+		get
+		{
+			return this._Height;
+		}
+		set
+		{
+			if ((this._Height != value))
+			{
+				this.OnHeightChanging(value);
+				this.SendPropertyChanging();
+				this._Height = value;
+				this.SendPropertyChanged("Height");
+				this.OnHeightChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Warranty
+	{
+		get
+		{
+			return this._Warranty;
+		}
+		set
+		{
+			if ((this._Warranty != value))
+			{
+				this.OnWarrantyChanging(value);
+				this.SendPropertyChanging();
+				this._Warranty = value;
+				this.SendPropertyChanged("Warranty");
+				this.OnWarrantyChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GPU_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="GPU_ID")]
+	public EntitySet<Pc> Pcs
+	{
+		get
+		{
+			return this._Pcs;
+		}
+		set
+		{
+			this._Pcs.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_GPU", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
+	public PartsStock PartsStock
+	{
+		get
+		{
+			return this._PartsStock.Entity;
+		}
+		set
+		{
+			PartsStock previousValue = this._PartsStock.Entity;
+			if (((previousValue != value) 
+						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PartsStock.Entity = null;
+					previousValue.GPU = null;
+				}
+				this._PartsStock.Entity = value;
+				if ((value != null))
+				{
+					value.GPU = this;
+					this._ID = value.ID;
+				}
+				else
+				{
+					this._ID = default(int);
+				}
+				this.SendPropertyChanged("PartsStock");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.GPU = this;
+	}
+	
+	private void detach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.GPU = null;
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HDD")]
+public partial class HDD : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private string _Model;
+	
+	private string _Brand;
+	
+	private string _Series;
+	
+	private string _Interface;
+	
+	private string _Max_Sustained_Transfer_Rate;
+	
+	private string _Rotational_Speed;
+	
+	private string _Load_Unload_Cycles;
+	
+	private string _Workload_Rate_Limit;
+	
+	private string _Power_Usage;
+	
+	private string _Operating_Temp;
+	
+	private string _Size;
+	
+	private string _Weight;
+	
+	private string _Warranty;
+	
+	private EntitySet<Pc> _Pcs;
+	
+	private EntityRef<PartsStock> _PartsStock;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnModelChanging(string value);
+    partial void OnModelChanged();
+    partial void OnBrandChanging(string value);
+    partial void OnBrandChanged();
+    partial void OnSeriesChanging(string value);
+    partial void OnSeriesChanged();
+    partial void OnInterfaceChanging(string value);
+    partial void OnInterfaceChanged();
+    partial void OnMax_Sustained_Transfer_RateChanging(string value);
+    partial void OnMax_Sustained_Transfer_RateChanged();
+    partial void OnRotational_SpeedChanging(string value);
+    partial void OnRotational_SpeedChanged();
+    partial void OnLoad_Unload_CyclesChanging(string value);
+    partial void OnLoad_Unload_CyclesChanged();
+    partial void OnWorkload_Rate_LimitChanging(string value);
+    partial void OnWorkload_Rate_LimitChanged();
+    partial void OnPower_UsageChanging(string value);
+    partial void OnPower_UsageChanged();
+    partial void OnOperating_TempChanging(string value);
+    partial void OnOperating_TempChanged();
+    partial void OnSizeChanging(string value);
+    partial void OnSizeChanged();
+    partial void OnWeightChanging(string value);
+    partial void OnWeightChanged();
+    partial void OnWarrantyChanging(string value);
+    partial void OnWarrantyChanged();
+    #endregion
+	
+	public HDD()
+	{
+		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
+		this._PartsStock = default(EntityRef<PartsStock>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				if (this._PartsStock.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Model
+	{
+		get
+		{
+			return this._Model;
+		}
+		set
+		{
+			if ((this._Model != value))
+			{
+				this.OnModelChanging(value);
+				this.SendPropertyChanging();
+				this._Model = value;
+				this.SendPropertyChanged("Model");
+				this.OnModelChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Brand
+	{
+		get
+		{
+			return this._Brand;
+		}
+		set
+		{
+			if ((this._Brand != value))
+			{
+				this.OnBrandChanging(value);
+				this.SendPropertyChanging();
+				this._Brand = value;
+				this.SendPropertyChanged("Brand");
+				this.OnBrandChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Series
+	{
+		get
+		{
+			return this._Series;
+		}
+		set
+		{
+			if ((this._Series != value))
+			{
+				this.OnSeriesChanging(value);
+				this.SendPropertyChanging();
+				this._Series = value;
+				this.SendPropertyChanged("Series");
+				this.OnSeriesChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Interface", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Interface
+	{
+		get
+		{
+			return this._Interface;
+		}
+		set
+		{
+			if ((this._Interface != value))
+			{
+				this.OnInterfaceChanging(value);
+				this.SendPropertyChanging();
+				this._Interface = value;
+				this.SendPropertyChanged("Interface");
+				this.OnInterfaceChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Max_Sustained_Transfer_Rate", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Max_Sustained_Transfer_Rate
+	{
+		get
+		{
+			return this._Max_Sustained_Transfer_Rate;
+		}
+		set
+		{
+			if ((this._Max_Sustained_Transfer_Rate != value))
+			{
+				this.OnMax_Sustained_Transfer_RateChanging(value);
+				this.SendPropertyChanging();
+				this._Max_Sustained_Transfer_Rate = value;
+				this.SendPropertyChanged("Max_Sustained_Transfer_Rate");
+				this.OnMax_Sustained_Transfer_RateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rotational_Speed", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Rotational_Speed
+	{
+		get
+		{
+			return this._Rotational_Speed;
+		}
+		set
+		{
+			if ((this._Rotational_Speed != value))
+			{
+				this.OnRotational_SpeedChanging(value);
+				this.SendPropertyChanging();
+				this._Rotational_Speed = value;
+				this.SendPropertyChanged("Rotational_Speed");
+				this.OnRotational_SpeedChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Load_Unload_Cycles", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Load_Unload_Cycles
+	{
+		get
+		{
+			return this._Load_Unload_Cycles;
+		}
+		set
+		{
+			if ((this._Load_Unload_Cycles != value))
+			{
+				this.OnLoad_Unload_CyclesChanging(value);
+				this.SendPropertyChanging();
+				this._Load_Unload_Cycles = value;
+				this.SendPropertyChanged("Load_Unload_Cycles");
+				this.OnLoad_Unload_CyclesChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Workload_Rate_Limit", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Workload_Rate_Limit
+	{
+		get
+		{
+			return this._Workload_Rate_Limit;
+		}
+		set
+		{
+			if ((this._Workload_Rate_Limit != value))
+			{
+				this.OnWorkload_Rate_LimitChanging(value);
+				this.SendPropertyChanging();
+				this._Workload_Rate_Limit = value;
+				this.SendPropertyChanged("Workload_Rate_Limit");
+				this.OnWorkload_Rate_LimitChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Power_Usage", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Power_Usage
+	{
+		get
+		{
+			return this._Power_Usage;
+		}
+		set
+		{
+			if ((this._Power_Usage != value))
+			{
+				this.OnPower_UsageChanging(value);
+				this.SendPropertyChanging();
+				this._Power_Usage = value;
+				this.SendPropertyChanged("Power_Usage");
+				this.OnPower_UsageChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Operating_Temp", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Operating_Temp
+	{
+		get
+		{
+			return this._Operating_Temp;
+		}
+		set
+		{
+			if ((this._Operating_Temp != value))
+			{
+				this.OnOperating_TempChanging(value);
+				this.SendPropertyChanging();
+				this._Operating_Temp = value;
+				this.SendPropertyChanged("Operating_Temp");
+				this.OnOperating_TempChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Size
+	{
+		get
+		{
+			return this._Size;
+		}
+		set
+		{
+			if ((this._Size != value))
+			{
+				this.OnSizeChanging(value);
+				this.SendPropertyChanging();
+				this._Size = value;
+				this.SendPropertyChanged("Size");
+				this.OnSizeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Weight
+	{
+		get
+		{
+			return this._Weight;
+		}
+		set
+		{
+			if ((this._Weight != value))
+			{
+				this.OnWeightChanging(value);
+				this.SendPropertyChanging();
+				this._Weight = value;
+				this.SendPropertyChanged("Weight");
+				this.OnWeightChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Warranty
+	{
+		get
+		{
+			return this._Warranty;
+		}
+		set
+		{
+			if ((this._Warranty != value))
+			{
+				this.OnWarrantyChanging(value);
+				this.SendPropertyChanging();
+				this._Warranty = value;
+				this.SendPropertyChanged("Warranty");
+				this.OnWarrantyChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HDD_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="HDD_ID")]
+	public EntitySet<Pc> Pcs
+	{
+		get
+		{
+			return this._Pcs;
+		}
+		set
+		{
+			this._Pcs.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_HDD", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
+	public PartsStock PartsStock
+	{
+		get
+		{
+			return this._PartsStock.Entity;
+		}
+		set
+		{
+			PartsStock previousValue = this._PartsStock.Entity;
+			if (((previousValue != value) 
+						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PartsStock.Entity = null;
+					previousValue.HDD = null;
+				}
+				this._PartsStock.Entity = value;
+				if ((value != null))
+				{
+					value.HDD = this;
+					this._ID = value.ID;
+				}
+				else
+				{
+					this._ID = default(int);
+				}
+				this.SendPropertyChanged("PartsStock");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.HDD = this;
+	}
+	
+	private void detach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.HDD = null;
 	}
 }
 
@@ -2639,8 +5125,6 @@ public partial class LiquidCooler : INotifyPropertyChanging, INotifyPropertyChan
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Fan_Size;
 	
 	private string _Fan_Height;
@@ -2683,8 +5167,6 @@ public partial class LiquidCooler : INotifyPropertyChanging, INotifyPropertyChan
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnFan_SizeChanging(string value);
     partial void OnFan_SizeChanged();
     partial void OnFan_HeightChanging(string value);
@@ -2799,26 +5281,6 @@ public partial class LiquidCooler : INotifyPropertyChanging, INotifyPropertyChan
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -3661,6 +6123,342 @@ public partial class Microphone : INotifyPropertyChanging, INotifyPropertyChange
 	}
 }
 
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MoboToCase")]
+public partial class MoboToCase : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Mobo_ID;
+	
+	private int _Case_ID;
+	
+	private EntityRef<Motherboard> _Motherboard;
+	
+	private EntityRef<PCCase> _PCCase;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMobo_IDChanging(int value);
+    partial void OnMobo_IDChanged();
+    partial void OnCase_IDChanging(int value);
+    partial void OnCase_IDChanged();
+    #endregion
+	
+	public MoboToCase()
+	{
+		this._Motherboard = default(EntityRef<Motherboard>);
+		this._PCCase = default(EntityRef<PCCase>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobo_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int Mobo_ID
+	{
+		get
+		{
+			return this._Mobo_ID;
+		}
+		set
+		{
+			if ((this._Mobo_ID != value))
+			{
+				if (this._Motherboard.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnMobo_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Mobo_ID = value;
+				this.SendPropertyChanged("Mobo_ID");
+				this.OnMobo_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Case_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int Case_ID
+	{
+		get
+		{
+			return this._Case_ID;
+		}
+		set
+		{
+			if ((this._Case_ID != value))
+			{
+				if (this._PCCase.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnCase_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Case_ID = value;
+				this.SendPropertyChanged("Case_ID");
+				this.OnCase_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_MoboToCase", Storage="_Motherboard", ThisKey="Mobo_ID", OtherKey="ID", IsForeignKey=true)]
+	public Motherboard Motherboard
+	{
+		get
+		{
+			return this._Motherboard.Entity;
+		}
+		set
+		{
+			Motherboard previousValue = this._Motherboard.Entity;
+			if (((previousValue != value) 
+						|| (this._Motherboard.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Motherboard.Entity = null;
+					previousValue.MoboToCases.Remove(this);
+				}
+				this._Motherboard.Entity = value;
+				if ((value != null))
+				{
+					value.MoboToCases.Add(this);
+					this._Mobo_ID = value.ID;
+				}
+				else
+				{
+					this._Mobo_ID = default(int);
+				}
+				this.SendPropertyChanged("Motherboard");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PCCase_MoboToCase", Storage="_PCCase", ThisKey="Case_ID", OtherKey="ID", IsForeignKey=true)]
+	public PCCase PCCase
+	{
+		get
+		{
+			return this._PCCase.Entity;
+		}
+		set
+		{
+			PCCase previousValue = this._PCCase.Entity;
+			if (((previousValue != value) 
+						|| (this._PCCase.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PCCase.Entity = null;
+					previousValue.MoboToCases.Remove(this);
+				}
+				this._PCCase.Entity = value;
+				if ((value != null))
+				{
+					value.MoboToCases.Add(this);
+					this._Case_ID = value.ID;
+				}
+				else
+				{
+					this._Case_ID = default(int);
+				}
+				this.SendPropertyChanged("PCCase");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MoboToCpu")]
+public partial class MoboToCpu : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Mobo_ID;
+	
+	private int _CPU_ID;
+	
+	private EntityRef<CPU> _CPU;
+	
+	private EntityRef<Motherboard> _Motherboard;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMobo_IDChanging(int value);
+    partial void OnMobo_IDChanged();
+    partial void OnCPU_IDChanging(int value);
+    partial void OnCPU_IDChanged();
+    #endregion
+	
+	public MoboToCpu()
+	{
+		this._CPU = default(EntityRef<CPU>);
+		this._Motherboard = default(EntityRef<Motherboard>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobo_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int Mobo_ID
+	{
+		get
+		{
+			return this._Mobo_ID;
+		}
+		set
+		{
+			if ((this._Mobo_ID != value))
+			{
+				if (this._Motherboard.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnMobo_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Mobo_ID = value;
+				this.SendPropertyChanged("Mobo_ID");
+				this.OnMobo_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPU_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int CPU_ID
+	{
+		get
+		{
+			return this._CPU_ID;
+		}
+		set
+		{
+			if ((this._CPU_ID != value))
+			{
+				if (this._CPU.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnCPU_IDChanging(value);
+				this.SendPropertyChanging();
+				this._CPU_ID = value;
+				this.SendPropertyChanged("CPU_ID");
+				this.OnCPU_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_MoboToCpu", Storage="_CPU", ThisKey="CPU_ID", OtherKey="ID", IsForeignKey=true)]
+	public CPU CPU
+	{
+		get
+		{
+			return this._CPU.Entity;
+		}
+		set
+		{
+			CPU previousValue = this._CPU.Entity;
+			if (((previousValue != value) 
+						|| (this._CPU.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._CPU.Entity = null;
+					previousValue.MoboToCpus.Remove(this);
+				}
+				this._CPU.Entity = value;
+				if ((value != null))
+				{
+					value.MoboToCpus.Add(this);
+					this._CPU_ID = value.ID;
+				}
+				else
+				{
+					this._CPU_ID = default(int);
+				}
+				this.SendPropertyChanged("CPU");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_MoboToCpu", Storage="_Motherboard", ThisKey="Mobo_ID", OtherKey="ID", IsForeignKey=true)]
+	public Motherboard Motherboard
+	{
+		get
+		{
+			return this._Motherboard.Entity;
+		}
+		set
+		{
+			Motherboard previousValue = this._Motherboard.Entity;
+			if (((previousValue != value) 
+						|| (this._Motherboard.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Motherboard.Entity = null;
+					previousValue.MoboToCpus.Remove(this);
+				}
+				this._Motherboard.Entity = value;
+				if ((value != null))
+				{
+					value.MoboToCpus.Add(this);
+					this._Mobo_ID = value.ID;
+				}
+				else
+				{
+					this._Mobo_ID = default(int);
+				}
+				this.SendPropertyChanged("Motherboard");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MoboToRam")]
 public partial class MoboToRam : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -3889,8 +6687,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Warranty;
 	
-	private EntitySet<GpuToMonitor> _GpuToMonitors;
-	
 	private EntitySet<Pc> _Pcs;
 	
 	private EntityRef<PartsStock> _PartsStock;
@@ -3957,7 +6753,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	public Monitor()
 	{
-		this._GpuToMonitors = new EntitySet<GpuToMonitor>(new Action<GpuToMonitor>(this.attach_GpuToMonitors), new Action<GpuToMonitor>(this.detach_GpuToMonitors));
 		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
 		this._PartsStock = default(EntityRef<PartsStock>);
 		OnCreated();
@@ -4507,19 +7302,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Monitor_GpuToMonitor", Storage="_GpuToMonitors", ThisKey="ID", OtherKey="Monitor_ID")]
-	public EntitySet<GpuToMonitor> GpuToMonitors
-	{
-		get
-		{
-			return this._GpuToMonitors;
-		}
-		set
-		{
-			this._GpuToMonitors.Assign(value);
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Monitor_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="Monitor_ID")]
 	public EntitySet<Pc> Pcs
 	{
@@ -4587,18 +7369,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	private void attach_GpuToMonitors(GpuToMonitor entity)
-	{
-		this.SendPropertyChanging();
-		entity.Monitor = this;
-	}
-	
-	private void detach_GpuToMonitors(GpuToMonitor entity)
-	{
-		this.SendPropertyChanging();
-		entity.Monitor = null;
-	}
-	
 	private void attach_Pcs(Pc entity)
 	{
 		this.SendPropertyChanging();
@@ -4626,8 +7396,6 @@ public partial class Motherboard : INotifyPropertyChanging, INotifyPropertyChang
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Chipset;
 	
 	private string _Memory_Type;
@@ -4654,13 +7422,13 @@ public partial class Motherboard : INotifyPropertyChanging, INotifyPropertyChang
 	
 	private string _Warranty;
 	
-	private EntitySet<MoboToRam> _MoboToRams;
-	
-	private EntitySet<Pc> _Pcs;
-	
 	private EntitySet<MoboToCase> _MoboToCases;
 	
 	private EntitySet<MoboToCpu> _MoboToCpus;
+	
+	private EntitySet<MoboToRam> _MoboToRams;
+	
+	private EntitySet<Pc> _Pcs;
 	
 	private EntityRef<PartsStock> _PartsStock;
 	
@@ -4676,8 +7444,6 @@ public partial class Motherboard : INotifyPropertyChanging, INotifyPropertyChang
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnChipsetChanging(string value);
     partial void OnChipsetChanged();
     partial void OnMemory_TypeChanging(string value);
@@ -4708,10 +7474,10 @@ public partial class Motherboard : INotifyPropertyChanging, INotifyPropertyChang
 	
 	public Motherboard()
 	{
-		this._MoboToRams = new EntitySet<MoboToRam>(new Action<MoboToRam>(this.attach_MoboToRams), new Action<MoboToRam>(this.detach_MoboToRams));
-		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
 		this._MoboToCases = new EntitySet<MoboToCase>(new Action<MoboToCase>(this.attach_MoboToCases), new Action<MoboToCase>(this.detach_MoboToCases));
 		this._MoboToCpus = new EntitySet<MoboToCpu>(new Action<MoboToCpu>(this.attach_MoboToCpus), new Action<MoboToCpu>(this.detach_MoboToCpus));
+		this._MoboToRams = new EntitySet<MoboToRam>(new Action<MoboToRam>(this.attach_MoboToRams), new Action<MoboToRam>(this.detach_MoboToRams));
+		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
 		this._PartsStock = default(EntityRef<PartsStock>);
 		OnCreated();
 	}
@@ -4796,26 +7562,6 @@ public partial class Motherboard : INotifyPropertyChanging, INotifyPropertyChang
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -5080,32 +7826,6 @@ public partial class Motherboard : INotifyPropertyChanging, INotifyPropertyChang
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_MoboToRam", Storage="_MoboToRams", ThisKey="ID", OtherKey="Mobo_ID")]
-	public EntitySet<MoboToRam> MoboToRams
-	{
-		get
-		{
-			return this._MoboToRams;
-		}
-		set
-		{
-			this._MoboToRams.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="Mobo_ID")]
-	public EntitySet<Pc> Pcs
-	{
-		get
-		{
-			return this._Pcs;
-		}
-		set
-		{
-			this._Pcs.Assign(value);
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_MoboToCase", Storage="_MoboToCases", ThisKey="ID", OtherKey="Mobo_ID")]
 	public EntitySet<MoboToCase> MoboToCases
 	{
@@ -5129,6 +7849,32 @@ public partial class Motherboard : INotifyPropertyChanging, INotifyPropertyChang
 		set
 		{
 			this._MoboToCpus.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_MoboToRam", Storage="_MoboToRams", ThisKey="ID", OtherKey="Mobo_ID")]
+	public EntitySet<MoboToRam> MoboToRams
+	{
+		get
+		{
+			return this._MoboToRams;
+		}
+		set
+		{
+			this._MoboToRams.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="Mobo_ID")]
+	public EntitySet<Pc> Pcs
+	{
+		get
+		{
+			return this._Pcs;
+		}
+		set
+		{
+			this._Pcs.Assign(value);
 		}
 	}
 	
@@ -5186,30 +7932,6 @@ public partial class Motherboard : INotifyPropertyChanging, INotifyPropertyChang
 		}
 	}
 	
-	private void attach_MoboToRams(MoboToRam entity)
-	{
-		this.SendPropertyChanging();
-		entity.Motherboard = this;
-	}
-	
-	private void detach_MoboToRams(MoboToRam entity)
-	{
-		this.SendPropertyChanging();
-		entity.Motherboard = null;
-	}
-	
-	private void attach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.Motherboard = this;
-	}
-	
-	private void detach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.Motherboard = null;
-	}
-	
 	private void attach_MoboToCases(MoboToCase entity)
 	{
 		this.SendPropertyChanging();
@@ -5229,6 +7951,30 @@ public partial class Motherboard : INotifyPropertyChanging, INotifyPropertyChang
 	}
 	
 	private void detach_MoboToCpus(MoboToCpu entity)
+	{
+		this.SendPropertyChanging();
+		entity.Motherboard = null;
+	}
+	
+	private void attach_MoboToRams(MoboToRam entity)
+	{
+		this.SendPropertyChanging();
+		entity.Motherboard = this;
+	}
+	
+	private void detach_MoboToRams(MoboToRam entity)
+	{
+		this.SendPropertyChanging();
+		entity.Motherboard = null;
+	}
+	
+	private void attach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.Motherboard = this;
+	}
+	
+	private void detach_Pcs(Pc entity)
 	{
 		this.SendPropertyChanging();
 		entity.Motherboard = null;
@@ -6139,6 +8885,8 @@ public partial class OperatingSystem : INotifyPropertyChanging, INotifyPropertyC
 	
 	private string _Warranty;
 	
+	private EntitySet<Pc> _Pcs;
+	
 	private EntityRef<PartsStock> _PartsStock;
 	
     #region Extensibility Method Definitions
@@ -6165,6 +8913,7 @@ public partial class OperatingSystem : INotifyPropertyChanging, INotifyPropertyC
 	
 	public OperatingSystem()
 	{
+		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
 		this._PartsStock = default(EntityRef<PartsStock>);
 		OnCreated();
 	}
@@ -6333,6 +9082,19 @@ public partial class OperatingSystem : INotifyPropertyChanging, INotifyPropertyC
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="OperatingSystem_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="OS_ID")]
+	public EntitySet<Pc> Pcs
+	{
+		get
+		{
+			return this._Pcs;
+		}
+		set
+		{
+			this._Pcs.Assign(value);
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_OperatingSystem", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
 	public PartsStock PartsStock
 	{
@@ -6385,6 +9147,18 @@ public partial class OperatingSystem : INotifyPropertyChanging, INotifyPropertyC
 		{
 			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
+	}
+	
+	private void attach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.OperatingSystem = this;
+	}
+	
+	private void detach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.OperatingSystem = null;
 	}
 }
 
@@ -6577,6 +9351,24 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 	
 	private int _Quantity;
 	
+	private decimal _Price;
+	
+	private string _Image;
+	
+	private int _Active;
+	
+	private int _Discount;
+	
+	private EntityRef<AirCooler> _AirCooler;
+	
+	private EntityRef<CPU> _CPU;
+	
+	private EntityRef<Fan> _Fan;
+	
+	private EntityRef<GPU> _GPU;
+	
+	private EntityRef<HDD> _HDD;
+	
 	private EntityRef<Headset> _Headset;
 	
 	private EntityRef<Keyboard> _Keyboard;
@@ -6605,19 +9397,11 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 	
 	private EntityRef<Speaker> _Speaker;
 	
-	private EntityRef<AirCooler> _AirCooler;
-	
-	private EntitySet<PartCart> _PartCarts;
-	
-	private EntityRef<GPU> _GPU;
-	
-	private EntityRef<HDD> _HDD;
-	
 	private EntityRef<SSD> _SSD;
 	
-	private EntityRef<CPU> _CPU;
+	private EntitySet<PartInvoice> _PartInvoices;
 	
-	private EntityRef<Fan> _Fan;
+	private EntitySet<PartCart> _PartCarts;
 	
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6631,10 +9415,23 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
     partial void OnTypeChanged();
     partial void OnQuantityChanging(int value);
     partial void OnQuantityChanged();
+    partial void OnPriceChanging(decimal value);
+    partial void OnPriceChanged();
+    partial void OnImageChanging(string value);
+    partial void OnImageChanged();
+    partial void OnActiveChanging(int value);
+    partial void OnActiveChanged();
+    partial void OnDiscountChanging(int value);
+    partial void OnDiscountChanged();
     #endregion
 	
 	public PartsStock()
 	{
+		this._AirCooler = default(EntityRef<AirCooler>);
+		this._CPU = default(EntityRef<CPU>);
+		this._Fan = default(EntityRef<Fan>);
+		this._GPU = default(EntityRef<GPU>);
+		this._HDD = default(EntityRef<HDD>);
 		this._Headset = default(EntityRef<Headset>);
 		this._Keyboard = default(EntityRef<Keyboard>);
 		this._LiquidCooler = default(EntityRef<LiquidCooler>);
@@ -6649,13 +9446,9 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 		this._PSU = default(EntityRef<PSU>);
 		this._RAM = default(EntityRef<RAM>);
 		this._Speaker = default(EntityRef<Speaker>);
-		this._AirCooler = default(EntityRef<AirCooler>);
-		this._PartCarts = new EntitySet<PartCart>(new Action<PartCart>(this.attach_PartCarts), new Action<PartCart>(this.detach_PartCarts));
-		this._GPU = default(EntityRef<GPU>);
-		this._HDD = default(EntityRef<HDD>);
 		this._SSD = default(EntityRef<SSD>);
-		this._CPU = default(EntityRef<CPU>);
-		this._Fan = default(EntityRef<Fan>);
+		this._PartInvoices = new EntitySet<PartInvoice>(new Action<PartInvoice>(this.attach_PartInvoices), new Action<PartInvoice>(this.detach_PartInvoices));
+		this._PartCarts = new EntitySet<PartCart>(new Action<PartCart>(this.attach_PartCarts), new Action<PartCart>(this.detach_PartCarts));
 		OnCreated();
 	}
 	
@@ -6735,6 +9528,231 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 				this._Quantity = value;
 				this.SendPropertyChanged("Quantity");
 				this.OnQuantityChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
+	public decimal Price
+	{
+		get
+		{
+			return this._Price;
+		}
+		set
+		{
+			if ((this._Price != value))
+			{
+				this.OnPriceChanging(value);
+				this.SendPropertyChanging();
+				this._Price = value;
+				this.SendPropertyChanged("Price");
+				this.OnPriceChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string Image
+	{
+		get
+		{
+			return this._Image;
+		}
+		set
+		{
+			if ((this._Image != value))
+			{
+				this.OnImageChanging(value);
+				this.SendPropertyChanging();
+				this._Image = value;
+				this.SendPropertyChanged("Image");
+				this.OnImageChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Int NOT NULL")]
+	public int Active
+	{
+		get
+		{
+			return this._Active;
+		}
+		set
+		{
+			if ((this._Active != value))
+			{
+				this.OnActiveChanging(value);
+				this.SendPropertyChanging();
+				this._Active = value;
+				this.SendPropertyChanged("Active");
+				this.OnActiveChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Int NOT NULL")]
+	public int Discount
+	{
+		get
+		{
+			return this._Discount;
+		}
+		set
+		{
+			if ((this._Discount != value))
+			{
+				this.OnDiscountChanging(value);
+				this.SendPropertyChanging();
+				this._Discount = value;
+				this.SendPropertyChanged("Discount");
+				this.OnDiscountChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_AirCooler", Storage="_AirCooler", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
+	public AirCooler AirCooler
+	{
+		get
+		{
+			return this._AirCooler.Entity;
+		}
+		set
+		{
+			AirCooler previousValue = this._AirCooler.Entity;
+			if (((previousValue != value) 
+						|| (this._AirCooler.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._AirCooler.Entity = null;
+					previousValue.PartsStock = null;
+				}
+				this._AirCooler.Entity = value;
+				if ((value != null))
+				{
+					value.PartsStock = this;
+				}
+				this.SendPropertyChanged("AirCooler");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_CPU", Storage="_CPU", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
+	public CPU CPU
+	{
+		get
+		{
+			return this._CPU.Entity;
+		}
+		set
+		{
+			CPU previousValue = this._CPU.Entity;
+			if (((previousValue != value) 
+						|| (this._CPU.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._CPU.Entity = null;
+					previousValue.PartsStock = null;
+				}
+				this._CPU.Entity = value;
+				if ((value != null))
+				{
+					value.PartsStock = this;
+				}
+				this.SendPropertyChanged("CPU");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_Fan", Storage="_Fan", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
+	public Fan Fan
+	{
+		get
+		{
+			return this._Fan.Entity;
+		}
+		set
+		{
+			Fan previousValue = this._Fan.Entity;
+			if (((previousValue != value) 
+						|| (this._Fan.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Fan.Entity = null;
+					previousValue.PartsStock = null;
+				}
+				this._Fan.Entity = value;
+				if ((value != null))
+				{
+					value.PartsStock = this;
+				}
+				this.SendPropertyChanged("Fan");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_GPU", Storage="_GPU", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
+	public GPU GPU
+	{
+		get
+		{
+			return this._GPU.Entity;
+		}
+		set
+		{
+			GPU previousValue = this._GPU.Entity;
+			if (((previousValue != value) 
+						|| (this._GPU.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._GPU.Entity = null;
+					previousValue.PartsStock = null;
+				}
+				this._GPU.Entity = value;
+				if ((value != null))
+				{
+					value.PartsStock = this;
+				}
+				this.SendPropertyChanged("GPU");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_HDD", Storage="_HDD", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
+	public HDD HDD
+	{
+		get
+		{
+			return this._HDD.Entity;
+		}
+		set
+		{
+			HDD previousValue = this._HDD.Entity;
+			if (((previousValue != value) 
+						|| (this._HDD.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._HDD.Entity = null;
+					previousValue.PartsStock = null;
+				}
+				this._HDD.Entity = value;
+				if ((value != null))
+				{
+					value.PartsStock = this;
+				}
+				this.SendPropertyChanged("HDD");
 			}
 		}
 	}
@@ -7145,106 +10163,6 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_AirCooler", Storage="_AirCooler", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
-	public AirCooler AirCooler
-	{
-		get
-		{
-			return this._AirCooler.Entity;
-		}
-		set
-		{
-			AirCooler previousValue = this._AirCooler.Entity;
-			if (((previousValue != value) 
-						|| (this._AirCooler.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._AirCooler.Entity = null;
-					previousValue.PartsStock = null;
-				}
-				this._AirCooler.Entity = value;
-				if ((value != null))
-				{
-					value.PartsStock = this;
-				}
-				this.SendPropertyChanged("AirCooler");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartCart", Storage="_PartCarts", ThisKey="ID", OtherKey="Part_ID")]
-	public EntitySet<PartCart> PartCarts
-	{
-		get
-		{
-			return this._PartCarts;
-		}
-		set
-		{
-			this._PartCarts.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_GPU", Storage="_GPU", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
-	public GPU GPU
-	{
-		get
-		{
-			return this._GPU.Entity;
-		}
-		set
-		{
-			GPU previousValue = this._GPU.Entity;
-			if (((previousValue != value) 
-						|| (this._GPU.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._GPU.Entity = null;
-					previousValue.PartsStock = null;
-				}
-				this._GPU.Entity = value;
-				if ((value != null))
-				{
-					value.PartsStock = this;
-				}
-				this.SendPropertyChanged("GPU");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_HDD", Storage="_HDD", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
-	public HDD HDD
-	{
-		get
-		{
-			return this._HDD.Entity;
-		}
-		set
-		{
-			HDD previousValue = this._HDD.Entity;
-			if (((previousValue != value) 
-						|| (this._HDD.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._HDD.Entity = null;
-					previousValue.PartsStock = null;
-				}
-				this._HDD.Entity = value;
-				if ((value != null))
-				{
-					value.PartsStock = this;
-				}
-				this.SendPropertyChanged("HDD");
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_SSD", Storage="_SSD", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
 	public SSD SSD
 	{
@@ -7274,61 +10192,29 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_CPU", Storage="_CPU", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
-	public CPU CPU
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartInvoice", Storage="_PartInvoices", ThisKey="ID", OtherKey="Part_ID")]
+	public EntitySet<PartInvoice> PartInvoices
 	{
 		get
 		{
-			return this._CPU.Entity;
+			return this._PartInvoices;
 		}
 		set
 		{
-			CPU previousValue = this._CPU.Entity;
-			if (((previousValue != value) 
-						|| (this._CPU.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._CPU.Entity = null;
-					previousValue.PartsStock = null;
-				}
-				this._CPU.Entity = value;
-				if ((value != null))
-				{
-					value.PartsStock = this;
-				}
-				this.SendPropertyChanged("CPU");
-			}
+			this._PartInvoices.Assign(value);
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_Fan", Storage="_Fan", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
-	public Fan Fan
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartCart", Storage="_PartCarts", ThisKey="ID", OtherKey="Part_ID")]
+	public EntitySet<PartCart> PartCarts
 	{
 		get
 		{
-			return this._Fan.Entity;
+			return this._PartCarts;
 		}
 		set
 		{
-			Fan previousValue = this._Fan.Entity;
-			if (((previousValue != value) 
-						|| (this._Fan.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Fan.Entity = null;
-					previousValue.PartsStock = null;
-				}
-				this._Fan.Entity = value;
-				if ((value != null))
-				{
-					value.PartsStock = this;
-				}
-				this.SendPropertyChanged("Fan");
-			}
+			this._PartCarts.Assign(value);
 		}
 	}
 	
@@ -7352,6 +10238,18 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
+	private void attach_PartInvoices(PartInvoice entity)
+	{
+		this.SendPropertyChanging();
+		entity.PartsStock = this;
+	}
+	
+	private void detach_PartInvoices(PartInvoice entity)
+	{
+		this.SendPropertyChanging();
+		entity.PartsStock = null;
+	}
+	
 	private void attach_PartCarts(PartCart entity)
 	{
 		this.SendPropertyChanging();
@@ -7362,6 +10260,1269 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 	{
 		this.SendPropertyChanging();
 		entity.PartsStock = null;
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Pc")]
+public partial class Pc : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _PC_ID;
+	
+	private string _PC_Type;
+	
+	private int _Case_ID;
+	
+	private int _Mobo_ID;
+	
+	private int _CPU_ID;
+	
+	private int _RAM_ID;
+	
+	private int _GPU_ID;
+	
+	private int _Cooler_ID;
+	
+	private System.Nullable<int> _SSD_ID;
+	
+	private int _Fan_ID;
+	
+	private System.Nullable<int> _HDD_ID;
+	
+	private int _PSU_ID;
+	
+	private int _OS_ID;
+	
+	private int _Num_Fans;
+	
+	private int _Num_SSD;
+	
+	private int _Num_HDD;
+	
+	private System.Nullable<int> _Monitor_ID;
+	
+	private System.Nullable<int> _Headset_ID;
+	
+	private System.Nullable<int> _Keyboard_ID;
+	
+	private System.Nullable<int> _Mouse_ID;
+	
+	private System.Nullable<int> _Speaker_ID;
+	
+	private string _Warranty;
+	
+	private EntityRef<LiquidCooler> _LiquidCooler;
+	
+	private EntityRef<CPU> _CPU;
+	
+	private EntityRef<Fan> _Fan;
+	
+	private EntityRef<GPU> _GPU;
+	
+	private EntityRef<HDD> _HDD;
+	
+	private EntityRef<Headset> _Headset;
+	
+	private EntityRef<Keyboard> _Keyboard;
+	
+	private EntityRef<Motherboard> _Motherboard;
+	
+	private EntityRef<Monitor> _Monitor;
+	
+	private EntityRef<Mouse> _Mouse;
+	
+	private EntityRef<OperatingSystem> _OperatingSystem;
+	
+	private EntityRef<PCCase> _PCCase;
+	
+	private EntityRef<PcStock> _PcStock;
+	
+	private EntityRef<PSU> _PSU;
+	
+	private EntityRef<RAM> _RAM;
+	
+	private EntityRef<Speaker> _Speaker;
+	
+	private EntityRef<SSD> _SSD;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPC_IDChanging(int value);
+    partial void OnPC_IDChanged();
+    partial void OnPC_TypeChanging(string value);
+    partial void OnPC_TypeChanged();
+    partial void OnCase_IDChanging(int value);
+    partial void OnCase_IDChanged();
+    partial void OnMobo_IDChanging(int value);
+    partial void OnMobo_IDChanged();
+    partial void OnCPU_IDChanging(int value);
+    partial void OnCPU_IDChanged();
+    partial void OnRAM_IDChanging(int value);
+    partial void OnRAM_IDChanged();
+    partial void OnGPU_IDChanging(int value);
+    partial void OnGPU_IDChanged();
+    partial void OnCooler_IDChanging(int value);
+    partial void OnCooler_IDChanged();
+    partial void OnSSD_IDChanging(System.Nullable<int> value);
+    partial void OnSSD_IDChanged();
+    partial void OnFan_IDChanging(int value);
+    partial void OnFan_IDChanged();
+    partial void OnHDD_IDChanging(System.Nullable<int> value);
+    partial void OnHDD_IDChanged();
+    partial void OnPSU_IDChanging(int value);
+    partial void OnPSU_IDChanged();
+    partial void OnOS_IDChanging(int value);
+    partial void OnOS_IDChanged();
+    partial void OnNum_FansChanging(int value);
+    partial void OnNum_FansChanged();
+    partial void OnNum_SSDChanging(int value);
+    partial void OnNum_SSDChanged();
+    partial void OnNum_HDDChanging(int value);
+    partial void OnNum_HDDChanged();
+    partial void OnMonitor_IDChanging(System.Nullable<int> value);
+    partial void OnMonitor_IDChanged();
+    partial void OnHeadset_IDChanging(System.Nullable<int> value);
+    partial void OnHeadset_IDChanged();
+    partial void OnKeyboard_IDChanging(System.Nullable<int> value);
+    partial void OnKeyboard_IDChanged();
+    partial void OnMouse_IDChanging(System.Nullable<int> value);
+    partial void OnMouse_IDChanged();
+    partial void OnSpeaker_IDChanging(System.Nullable<int> value);
+    partial void OnSpeaker_IDChanged();
+    partial void OnWarrantyChanging(string value);
+    partial void OnWarrantyChanged();
+    #endregion
+	
+	public Pc()
+	{
+		this._LiquidCooler = default(EntityRef<LiquidCooler>);
+		this._CPU = default(EntityRef<CPU>);
+		this._Fan = default(EntityRef<Fan>);
+		this._GPU = default(EntityRef<GPU>);
+		this._HDD = default(EntityRef<HDD>);
+		this._Headset = default(EntityRef<Headset>);
+		this._Keyboard = default(EntityRef<Keyboard>);
+		this._Motherboard = default(EntityRef<Motherboard>);
+		this._Monitor = default(EntityRef<Monitor>);
+		this._Mouse = default(EntityRef<Mouse>);
+		this._OperatingSystem = default(EntityRef<OperatingSystem>);
+		this._PCCase = default(EntityRef<PCCase>);
+		this._PcStock = default(EntityRef<PcStock>);
+		this._PSU = default(EntityRef<PSU>);
+		this._RAM = default(EntityRef<RAM>);
+		this._Speaker = default(EntityRef<Speaker>);
+		this._SSD = default(EntityRef<SSD>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PC_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int PC_ID
+	{
+		get
+		{
+			return this._PC_ID;
+		}
+		set
+		{
+			if ((this._PC_ID != value))
+			{
+				if (this._PcStock.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnPC_IDChanging(value);
+				this.SendPropertyChanging();
+				this._PC_ID = value;
+				this.SendPropertyChanged("PC_ID");
+				this.OnPC_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PC_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string PC_Type
+	{
+		get
+		{
+			return this._PC_Type;
+		}
+		set
+		{
+			if ((this._PC_Type != value))
+			{
+				this.OnPC_TypeChanging(value);
+				this.SendPropertyChanging();
+				this._PC_Type = value;
+				this.SendPropertyChanged("PC_Type");
+				this.OnPC_TypeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Case_ID", DbType="Int NOT NULL")]
+	public int Case_ID
+	{
+		get
+		{
+			return this._Case_ID;
+		}
+		set
+		{
+			if ((this._Case_ID != value))
+			{
+				if (this._PCCase.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnCase_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Case_ID = value;
+				this.SendPropertyChanged("Case_ID");
+				this.OnCase_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobo_ID", DbType="Int NOT NULL")]
+	public int Mobo_ID
+	{
+		get
+		{
+			return this._Mobo_ID;
+		}
+		set
+		{
+			if ((this._Mobo_ID != value))
+			{
+				if (this._Motherboard.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnMobo_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Mobo_ID = value;
+				this.SendPropertyChanged("Mobo_ID");
+				this.OnMobo_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPU_ID", DbType="Int NOT NULL")]
+	public int CPU_ID
+	{
+		get
+		{
+			return this._CPU_ID;
+		}
+		set
+		{
+			if ((this._CPU_ID != value))
+			{
+				if (this._CPU.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnCPU_IDChanging(value);
+				this.SendPropertyChanging();
+				this._CPU_ID = value;
+				this.SendPropertyChanged("CPU_ID");
+				this.OnCPU_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RAM_ID", DbType="Int NOT NULL")]
+	public int RAM_ID
+	{
+		get
+		{
+			return this._RAM_ID;
+		}
+		set
+		{
+			if ((this._RAM_ID != value))
+			{
+				if (this._RAM.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnRAM_IDChanging(value);
+				this.SendPropertyChanging();
+				this._RAM_ID = value;
+				this.SendPropertyChanged("RAM_ID");
+				this.OnRAM_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GPU_ID", DbType="Int NOT NULL")]
+	public int GPU_ID
+	{
+		get
+		{
+			return this._GPU_ID;
+		}
+		set
+		{
+			if ((this._GPU_ID != value))
+			{
+				if (this._GPU.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnGPU_IDChanging(value);
+				this.SendPropertyChanging();
+				this._GPU_ID = value;
+				this.SendPropertyChanged("GPU_ID");
+				this.OnGPU_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cooler_ID", DbType="Int NOT NULL")]
+	public int Cooler_ID
+	{
+		get
+		{
+			return this._Cooler_ID;
+		}
+		set
+		{
+			if ((this._Cooler_ID != value))
+			{
+				if (this._LiquidCooler.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnCooler_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Cooler_ID = value;
+				this.SendPropertyChanged("Cooler_ID");
+				this.OnCooler_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SSD_ID", DbType="Int")]
+	public System.Nullable<int> SSD_ID
+	{
+		get
+		{
+			return this._SSD_ID;
+		}
+		set
+		{
+			if ((this._SSD_ID != value))
+			{
+				if (this._SSD.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnSSD_IDChanging(value);
+				this.SendPropertyChanging();
+				this._SSD_ID = value;
+				this.SendPropertyChanged("SSD_ID");
+				this.OnSSD_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fan_ID", DbType="Int NOT NULL")]
+	public int Fan_ID
+	{
+		get
+		{
+			return this._Fan_ID;
+		}
+		set
+		{
+			if ((this._Fan_ID != value))
+			{
+				if (this._Fan.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnFan_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Fan_ID = value;
+				this.SendPropertyChanged("Fan_ID");
+				this.OnFan_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HDD_ID", DbType="Int")]
+	public System.Nullable<int> HDD_ID
+	{
+		get
+		{
+			return this._HDD_ID;
+		}
+		set
+		{
+			if ((this._HDD_ID != value))
+			{
+				if (this._HDD.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnHDD_IDChanging(value);
+				this.SendPropertyChanging();
+				this._HDD_ID = value;
+				this.SendPropertyChanged("HDD_ID");
+				this.OnHDD_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PSU_ID", DbType="Int NOT NULL")]
+	public int PSU_ID
+	{
+		get
+		{
+			return this._PSU_ID;
+		}
+		set
+		{
+			if ((this._PSU_ID != value))
+			{
+				if (this._PSU.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnPSU_IDChanging(value);
+				this.SendPropertyChanging();
+				this._PSU_ID = value;
+				this.SendPropertyChanged("PSU_ID");
+				this.OnPSU_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OS_ID", DbType="Int NOT NULL")]
+	public int OS_ID
+	{
+		get
+		{
+			return this._OS_ID;
+		}
+		set
+		{
+			if ((this._OS_ID != value))
+			{
+				if (this._OperatingSystem.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnOS_IDChanging(value);
+				this.SendPropertyChanging();
+				this._OS_ID = value;
+				this.SendPropertyChanged("OS_ID");
+				this.OnOS_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_Fans", DbType="Int NOT NULL")]
+	public int Num_Fans
+	{
+		get
+		{
+			return this._Num_Fans;
+		}
+		set
+		{
+			if ((this._Num_Fans != value))
+			{
+				this.OnNum_FansChanging(value);
+				this.SendPropertyChanging();
+				this._Num_Fans = value;
+				this.SendPropertyChanged("Num_Fans");
+				this.OnNum_FansChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_SSD", DbType="Int NOT NULL")]
+	public int Num_SSD
+	{
+		get
+		{
+			return this._Num_SSD;
+		}
+		set
+		{
+			if ((this._Num_SSD != value))
+			{
+				this.OnNum_SSDChanging(value);
+				this.SendPropertyChanging();
+				this._Num_SSD = value;
+				this.SendPropertyChanged("Num_SSD");
+				this.OnNum_SSDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_HDD", DbType="Int NOT NULL")]
+	public int Num_HDD
+	{
+		get
+		{
+			return this._Num_HDD;
+		}
+		set
+		{
+			if ((this._Num_HDD != value))
+			{
+				this.OnNum_HDDChanging(value);
+				this.SendPropertyChanging();
+				this._Num_HDD = value;
+				this.SendPropertyChanged("Num_HDD");
+				this.OnNum_HDDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Monitor_ID", DbType="Int")]
+	public System.Nullable<int> Monitor_ID
+	{
+		get
+		{
+			return this._Monitor_ID;
+		}
+		set
+		{
+			if ((this._Monitor_ID != value))
+			{
+				if (this._Monitor.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnMonitor_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Monitor_ID = value;
+				this.SendPropertyChanged("Monitor_ID");
+				this.OnMonitor_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Headset_ID", DbType="Int")]
+	public System.Nullable<int> Headset_ID
+	{
+		get
+		{
+			return this._Headset_ID;
+		}
+		set
+		{
+			if ((this._Headset_ID != value))
+			{
+				if (this._Headset.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnHeadset_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Headset_ID = value;
+				this.SendPropertyChanged("Headset_ID");
+				this.OnHeadset_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Keyboard_ID", DbType="Int")]
+	public System.Nullable<int> Keyboard_ID
+	{
+		get
+		{
+			return this._Keyboard_ID;
+		}
+		set
+		{
+			if ((this._Keyboard_ID != value))
+			{
+				if (this._Keyboard.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnKeyboard_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Keyboard_ID = value;
+				this.SendPropertyChanged("Keyboard_ID");
+				this.OnKeyboard_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mouse_ID", DbType="Int")]
+	public System.Nullable<int> Mouse_ID
+	{
+		get
+		{
+			return this._Mouse_ID;
+		}
+		set
+		{
+			if ((this._Mouse_ID != value))
+			{
+				if (this._Mouse.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnMouse_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Mouse_ID = value;
+				this.SendPropertyChanged("Mouse_ID");
+				this.OnMouse_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Speaker_ID", DbType="Int")]
+	public System.Nullable<int> Speaker_ID
+	{
+		get
+		{
+			return this._Speaker_ID;
+		}
+		set
+		{
+			if ((this._Speaker_ID != value))
+			{
+				if (this._Speaker.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnSpeaker_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Speaker_ID = value;
+				this.SendPropertyChanged("Speaker_ID");
+				this.OnSpeaker_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Warranty
+	{
+		get
+		{
+			return this._Warranty;
+		}
+		set
+		{
+			if ((this._Warranty != value))
+			{
+				this.OnWarrantyChanging(value);
+				this.SendPropertyChanging();
+				this._Warranty = value;
+				this.SendPropertyChanged("Warranty");
+				this.OnWarrantyChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LiquidCooler_Pc", Storage="_LiquidCooler", ThisKey="Cooler_ID", OtherKey="ID", IsForeignKey=true)]
+	public LiquidCooler LiquidCooler
+	{
+		get
+		{
+			return this._LiquidCooler.Entity;
+		}
+		set
+		{
+			LiquidCooler previousValue = this._LiquidCooler.Entity;
+			if (((previousValue != value) 
+						|| (this._LiquidCooler.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._LiquidCooler.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._LiquidCooler.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._Cooler_ID = value.ID;
+				}
+				else
+				{
+					this._Cooler_ID = default(int);
+				}
+				this.SendPropertyChanged("LiquidCooler");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_Pc", Storage="_CPU", ThisKey="CPU_ID", OtherKey="ID", IsForeignKey=true)]
+	public CPU CPU
+	{
+		get
+		{
+			return this._CPU.Entity;
+		}
+		set
+		{
+			CPU previousValue = this._CPU.Entity;
+			if (((previousValue != value) 
+						|| (this._CPU.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._CPU.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._CPU.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._CPU_ID = value.ID;
+				}
+				else
+				{
+					this._CPU_ID = default(int);
+				}
+				this.SendPropertyChanged("CPU");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fan_Pc", Storage="_Fan", ThisKey="Fan_ID", OtherKey="ID", IsForeignKey=true)]
+	public Fan Fan
+	{
+		get
+		{
+			return this._Fan.Entity;
+		}
+		set
+		{
+			Fan previousValue = this._Fan.Entity;
+			if (((previousValue != value) 
+						|| (this._Fan.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Fan.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._Fan.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._Fan_ID = value.ID;
+				}
+				else
+				{
+					this._Fan_ID = default(int);
+				}
+				this.SendPropertyChanged("Fan");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GPU_Pc", Storage="_GPU", ThisKey="GPU_ID", OtherKey="ID", IsForeignKey=true)]
+	public GPU GPU
+	{
+		get
+		{
+			return this._GPU.Entity;
+		}
+		set
+		{
+			GPU previousValue = this._GPU.Entity;
+			if (((previousValue != value) 
+						|| (this._GPU.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._GPU.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._GPU.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._GPU_ID = value.ID;
+				}
+				else
+				{
+					this._GPU_ID = default(int);
+				}
+				this.SendPropertyChanged("GPU");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HDD_Pc", Storage="_HDD", ThisKey="HDD_ID", OtherKey="ID", IsForeignKey=true)]
+	public HDD HDD
+	{
+		get
+		{
+			return this._HDD.Entity;
+		}
+		set
+		{
+			HDD previousValue = this._HDD.Entity;
+			if (((previousValue != value) 
+						|| (this._HDD.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._HDD.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._HDD.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._HDD_ID = value.ID;
+				}
+				else
+				{
+					this._HDD_ID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("HDD");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Headset_Pc", Storage="_Headset", ThisKey="Headset_ID", OtherKey="ID", IsForeignKey=true)]
+	public Headset Headset
+	{
+		get
+		{
+			return this._Headset.Entity;
+		}
+		set
+		{
+			Headset previousValue = this._Headset.Entity;
+			if (((previousValue != value) 
+						|| (this._Headset.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Headset.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._Headset.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._Headset_ID = value.ID;
+				}
+				else
+				{
+					this._Headset_ID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("Headset");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Keyboard_Pc", Storage="_Keyboard", ThisKey="Keyboard_ID", OtherKey="ID", IsForeignKey=true)]
+	public Keyboard Keyboard
+	{
+		get
+		{
+			return this._Keyboard.Entity;
+		}
+		set
+		{
+			Keyboard previousValue = this._Keyboard.Entity;
+			if (((previousValue != value) 
+						|| (this._Keyboard.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Keyboard.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._Keyboard.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._Keyboard_ID = value.ID;
+				}
+				else
+				{
+					this._Keyboard_ID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("Keyboard");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_Pc", Storage="_Motherboard", ThisKey="Mobo_ID", OtherKey="ID", IsForeignKey=true)]
+	public Motherboard Motherboard
+	{
+		get
+		{
+			return this._Motherboard.Entity;
+		}
+		set
+		{
+			Motherboard previousValue = this._Motherboard.Entity;
+			if (((previousValue != value) 
+						|| (this._Motherboard.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Motherboard.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._Motherboard.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._Mobo_ID = value.ID;
+				}
+				else
+				{
+					this._Mobo_ID = default(int);
+				}
+				this.SendPropertyChanged("Motherboard");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Monitor_Pc", Storage="_Monitor", ThisKey="Monitor_ID", OtherKey="ID", IsForeignKey=true)]
+	public Monitor Monitor
+	{
+		get
+		{
+			return this._Monitor.Entity;
+		}
+		set
+		{
+			Monitor previousValue = this._Monitor.Entity;
+			if (((previousValue != value) 
+						|| (this._Monitor.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Monitor.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._Monitor.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._Monitor_ID = value.ID;
+				}
+				else
+				{
+					this._Monitor_ID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("Monitor");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mouse_Pc", Storage="_Mouse", ThisKey="Mouse_ID", OtherKey="ID", IsForeignKey=true)]
+	public Mouse Mouse
+	{
+		get
+		{
+			return this._Mouse.Entity;
+		}
+		set
+		{
+			Mouse previousValue = this._Mouse.Entity;
+			if (((previousValue != value) 
+						|| (this._Mouse.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Mouse.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._Mouse.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._Mouse_ID = value.ID;
+				}
+				else
+				{
+					this._Mouse_ID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("Mouse");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="OperatingSystem_Pc", Storage="_OperatingSystem", ThisKey="OS_ID", OtherKey="ID", IsForeignKey=true)]
+	public OperatingSystem OperatingSystem
+	{
+		get
+		{
+			return this._OperatingSystem.Entity;
+		}
+		set
+		{
+			OperatingSystem previousValue = this._OperatingSystem.Entity;
+			if (((previousValue != value) 
+						|| (this._OperatingSystem.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._OperatingSystem.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._OperatingSystem.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._OS_ID = value.ID;
+				}
+				else
+				{
+					this._OS_ID = default(int);
+				}
+				this.SendPropertyChanged("OperatingSystem");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PCCase_Pc", Storage="_PCCase", ThisKey="Case_ID", OtherKey="ID", IsForeignKey=true)]
+	public PCCase PCCase
+	{
+		get
+		{
+			return this._PCCase.Entity;
+		}
+		set
+		{
+			PCCase previousValue = this._PCCase.Entity;
+			if (((previousValue != value) 
+						|| (this._PCCase.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PCCase.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._PCCase.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._Case_ID = value.ID;
+				}
+				else
+				{
+					this._Case_ID = default(int);
+				}
+				this.SendPropertyChanged("PCCase");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_Pc", Storage="_PcStock", ThisKey="PC_ID", OtherKey="ID", IsForeignKey=true)]
+	public PcStock PcStock
+	{
+		get
+		{
+			return this._PcStock.Entity;
+		}
+		set
+		{
+			PcStock previousValue = this._PcStock.Entity;
+			if (((previousValue != value) 
+						|| (this._PcStock.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PcStock.Entity = null;
+					previousValue.Pc = null;
+				}
+				this._PcStock.Entity = value;
+				if ((value != null))
+				{
+					value.Pc = this;
+					this._PC_ID = value.ID;
+				}
+				else
+				{
+					this._PC_ID = default(int);
+				}
+				this.SendPropertyChanged("PcStock");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PSU_Pc", Storage="_PSU", ThisKey="PSU_ID", OtherKey="ID", IsForeignKey=true)]
+	public PSU PSU
+	{
+		get
+		{
+			return this._PSU.Entity;
+		}
+		set
+		{
+			PSU previousValue = this._PSU.Entity;
+			if (((previousValue != value) 
+						|| (this._PSU.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PSU.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._PSU.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._PSU_ID = value.ID;
+				}
+				else
+				{
+					this._PSU_ID = default(int);
+				}
+				this.SendPropertyChanged("PSU");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RAM_Pc", Storage="_RAM", ThisKey="RAM_ID", OtherKey="ID", IsForeignKey=true)]
+	public RAM RAM
+	{
+		get
+		{
+			return this._RAM.Entity;
+		}
+		set
+		{
+			RAM previousValue = this._RAM.Entity;
+			if (((previousValue != value) 
+						|| (this._RAM.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._RAM.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._RAM.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._RAM_ID = value.ID;
+				}
+				else
+				{
+					this._RAM_ID = default(int);
+				}
+				this.SendPropertyChanged("RAM");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Speaker_Pc", Storage="_Speaker", ThisKey="Speaker_ID", OtherKey="ID", IsForeignKey=true)]
+	public Speaker Speaker
+	{
+		get
+		{
+			return this._Speaker.Entity;
+		}
+		set
+		{
+			Speaker previousValue = this._Speaker.Entity;
+			if (((previousValue != value) 
+						|| (this._Speaker.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Speaker.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._Speaker.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._Speaker_ID = value.ID;
+				}
+				else
+				{
+					this._Speaker_ID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("Speaker");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SSD_Pc", Storage="_SSD", ThisKey="SSD_ID", OtherKey="ID", IsForeignKey=true)]
+	public SSD SSD
+	{
+		get
+		{
+			return this._SSD.Entity;
+		}
+		set
+		{
+			SSD previousValue = this._SSD.Entity;
+			if (((previousValue != value) 
+						|| (this._SSD.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._SSD.Entity = null;
+					previousValue.Pcs.Remove(this);
+				}
+				this._SSD.Entity = value;
+				if ((value != null))
+				{
+					value.Pcs.Add(this);
+					this._SSD_ID = value.ID;
+				}
+				else
+				{
+					this._SSD_ID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("SSD");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
 	}
 }
 
@@ -7379,8 +11540,6 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Colour;
 	
 	private string _Dimensions;
@@ -7391,11 +11550,9 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Side_Window;
 	
-	private string _Num_5_25__Drives;
+	private string _Num_HDD_Drives;
 	
-	private string _Num_3_5__Drives;
-	
-	private string _Num_2_5__Drives;
+	private string _Num_SSD_Drives;
 	
 	private string _Front_I_O;
 	
@@ -7419,9 +11576,9 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Warranty;
 	
-	private EntitySet<Pc> _Pcs;
-	
 	private EntitySet<MoboToCase> _MoboToCases;
+	
+	private EntitySet<Pc> _Pcs;
 	
 	private EntityRef<PartsStock> _PartsStock;
 	
@@ -7437,8 +11594,6 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnColourChanging(string value);
     partial void OnColourChanged();
     partial void OnDimensionsChanging(string value);
@@ -7449,12 +11604,10 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnMotherboard_Form_FactorChanged();
     partial void OnSide_WindowChanging(string value);
     partial void OnSide_WindowChanged();
-    partial void OnNum_5_25__DrivesChanging(string value);
-    partial void OnNum_5_25__DrivesChanged();
-    partial void OnNum_3_5__DrivesChanging(string value);
-    partial void OnNum_3_5__DrivesChanged();
-    partial void OnNum_2_5__DrivesChanging(string value);
-    partial void OnNum_2_5__DrivesChanged();
+    partial void OnNum_HDD_DrivesChanging(string value);
+    partial void OnNum_HDD_DrivesChanged();
+    partial void OnNum_SSD_DrivesChanging(string value);
+    partial void OnNum_SSD_DrivesChanged();
     partial void OnFront_I_OChanging(string value);
     partial void OnFront_I_OChanged();
     partial void OnExpansion_SlotsChanging(string value);
@@ -7481,8 +11634,8 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	public PCCase()
 	{
-		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
 		this._MoboToCases = new EntitySet<MoboToCase>(new Action<MoboToCase>(this.attach_MoboToCases), new Action<MoboToCase>(this.detach_MoboToCases));
+		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
 		this._PartsStock = default(EntityRef<PartsStock>);
 		OnCreated();
 	}
@@ -7567,26 +11720,6 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -7691,62 +11824,42 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Num_5.25\"_Drives]", Storage="_Num_5_25__Drives", DbType="NChar(50) NOT NULL", CanBeNull=false)]
-	public string Num_5_25__Drives
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_HDD_Drives", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+	public string Num_HDD_Drives
 	{
 		get
 		{
-			return this._Num_5_25__Drives;
+			return this._Num_HDD_Drives;
 		}
 		set
 		{
-			if ((this._Num_5_25__Drives != value))
+			if ((this._Num_HDD_Drives != value))
 			{
-				this.OnNum_5_25__DrivesChanging(value);
+				this.OnNum_HDD_DrivesChanging(value);
 				this.SendPropertyChanging();
-				this._Num_5_25__Drives = value;
-				this.SendPropertyChanged("Num_5_25__Drives");
-				this.OnNum_5_25__DrivesChanged();
+				this._Num_HDD_Drives = value;
+				this.SendPropertyChanged("Num_HDD_Drives");
+				this.OnNum_HDD_DrivesChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Num_3.5\"_Drives]", Storage="_Num_3_5__Drives", DbType="NChar(50) NOT NULL", CanBeNull=false)]
-	public string Num_3_5__Drives
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_SSD_Drives", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+	public string Num_SSD_Drives
 	{
 		get
 		{
-			return this._Num_3_5__Drives;
+			return this._Num_SSD_Drives;
 		}
 		set
 		{
-			if ((this._Num_3_5__Drives != value))
+			if ((this._Num_SSD_Drives != value))
 			{
-				this.OnNum_3_5__DrivesChanging(value);
+				this.OnNum_SSD_DrivesChanging(value);
 				this.SendPropertyChanging();
-				this._Num_3_5__Drives = value;
-				this.SendPropertyChanged("Num_3_5__Drives");
-				this.OnNum_3_5__DrivesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Num_2.5\"_Drives]", Storage="_Num_2_5__Drives", DbType="NChar(50) NOT NULL", CanBeNull=false)]
-	public string Num_2_5__Drives
-	{
-		get
-		{
-			return this._Num_2_5__Drives;
-		}
-		set
-		{
-			if ((this._Num_2_5__Drives != value))
-			{
-				this.OnNum_2_5__DrivesChanging(value);
-				this.SendPropertyChanging();
-				this._Num_2_5__Drives = value;
-				this.SendPropertyChanged("Num_2_5__Drives");
-				this.OnNum_2_5__DrivesChanged();
+				this._Num_SSD_Drives = value;
+				this.SendPropertyChanged("Num_SSD_Drives");
+				this.OnNum_SSD_DrivesChanged();
 			}
 		}
 	}
@@ -7971,19 +12084,6 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PCCase_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="Case_ID")]
-	public EntitySet<Pc> Pcs
-	{
-		get
-		{
-			return this._Pcs;
-		}
-		set
-		{
-			this._Pcs.Assign(value);
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PCCase_MoboToCase", Storage="_MoboToCases", ThisKey="ID", OtherKey="Case_ID")]
 	public EntitySet<MoboToCase> MoboToCases
 	{
@@ -7994,6 +12094,19 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 		set
 		{
 			this._MoboToCases.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PCCase_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="Case_ID")]
+	public EntitySet<Pc> Pcs
+	{
+		get
+		{
+			return this._Pcs;
+		}
+		set
+		{
+			this._Pcs.Assign(value);
 		}
 	}
 	
@@ -8051,18 +12164,6 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	private void attach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.PCCase = this;
-	}
-	
-	private void detach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.PCCase = null;
-	}
-	
 	private void attach_MoboToCases(MoboToCase entity)
 	{
 		this.SendPropertyChanging();
@@ -8070,6 +12171,18 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 	
 	private void detach_MoboToCases(MoboToCase entity)
+	{
+		this.SendPropertyChanging();
+		entity.PCCase = null;
+	}
+	
+	private void attach_Pcs(Pc entity)
+	{
+		this.SendPropertyChanging();
+		entity.PCCase = this;
+	}
+	
+	private void detach_Pcs(Pc entity)
 	{
 		this.SendPropertyChanging();
 		entity.PCCase = null;
@@ -8227,6 +12340,332 @@ public partial class PcSold : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 }
 
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PcStock")]
+public partial class PcStock : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private int _Quantity;
+	
+	private string _PC_Type;
+	
+	private decimal _Price;
+	
+	private string _Image;
+	
+	private int _Active;
+	
+	private int _Discount;
+	
+	private EntityRef<Pc> _Pc;
+	
+	private EntityRef<PcSold> _PcSold;
+	
+	private EntitySet<PcInvoice> _PcInvoices;
+	
+	private EntitySet<PcCart> _PcCarts;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanged();
+    partial void OnPC_TypeChanging(string value);
+    partial void OnPC_TypeChanged();
+    partial void OnPriceChanging(decimal value);
+    partial void OnPriceChanged();
+    partial void OnImageChanging(string value);
+    partial void OnImageChanged();
+    partial void OnActiveChanging(int value);
+    partial void OnActiveChanged();
+    partial void OnDiscountChanging(int value);
+    partial void OnDiscountChanged();
+    #endregion
+	
+	public PcStock()
+	{
+		this._Pc = default(EntityRef<Pc>);
+		this._PcSold = default(EntityRef<PcSold>);
+		this._PcInvoices = new EntitySet<PcInvoice>(new Action<PcInvoice>(this.attach_PcInvoices), new Action<PcInvoice>(this.detach_PcInvoices));
+		this._PcCarts = new EntitySet<PcCart>(new Action<PcCart>(this.attach_PcCarts), new Action<PcCart>(this.detach_PcCarts));
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+	public int Quantity
+	{
+		get
+		{
+			return this._Quantity;
+		}
+		set
+		{
+			if ((this._Quantity != value))
+			{
+				this.OnQuantityChanging(value);
+				this.SendPropertyChanging();
+				this._Quantity = value;
+				this.SendPropertyChanged("Quantity");
+				this.OnQuantityChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PC_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string PC_Type
+	{
+		get
+		{
+			return this._PC_Type;
+		}
+		set
+		{
+			if ((this._PC_Type != value))
+			{
+				this.OnPC_TypeChanging(value);
+				this.SendPropertyChanging();
+				this._PC_Type = value;
+				this.SendPropertyChanged("PC_Type");
+				this.OnPC_TypeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
+	public decimal Price
+	{
+		get
+		{
+			return this._Price;
+		}
+		set
+		{
+			if ((this._Price != value))
+			{
+				this.OnPriceChanging(value);
+				this.SendPropertyChanging();
+				this._Price = value;
+				this.SendPropertyChanged("Price");
+				this.OnPriceChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string Image
+	{
+		get
+		{
+			return this._Image;
+		}
+		set
+		{
+			if ((this._Image != value))
+			{
+				this.OnImageChanging(value);
+				this.SendPropertyChanging();
+				this._Image = value;
+				this.SendPropertyChanged("Image");
+				this.OnImageChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Int NOT NULL")]
+	public int Active
+	{
+		get
+		{
+			return this._Active;
+		}
+		set
+		{
+			if ((this._Active != value))
+			{
+				this.OnActiveChanging(value);
+				this.SendPropertyChanging();
+				this._Active = value;
+				this.SendPropertyChanged("Active");
+				this.OnActiveChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Int NOT NULL")]
+	public int Discount
+	{
+		get
+		{
+			return this._Discount;
+		}
+		set
+		{
+			if ((this._Discount != value))
+			{
+				this.OnDiscountChanging(value);
+				this.SendPropertyChanging();
+				this._Discount = value;
+				this.SendPropertyChanged("Discount");
+				this.OnDiscountChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_Pc", Storage="_Pc", ThisKey="ID", OtherKey="PC_ID", IsUnique=true, IsForeignKey=false)]
+	public Pc Pc
+	{
+		get
+		{
+			return this._Pc.Entity;
+		}
+		set
+		{
+			Pc previousValue = this._Pc.Entity;
+			if (((previousValue != value) 
+						|| (this._Pc.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Pc.Entity = null;
+					previousValue.PcStock = null;
+				}
+				this._Pc.Entity = value;
+				if ((value != null))
+				{
+					value.PcStock = this;
+				}
+				this.SendPropertyChanged("Pc");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcSold", Storage="_PcSold", ThisKey="ID", OtherKey="PC_ID", IsUnique=true, IsForeignKey=false)]
+	public PcSold PcSold
+	{
+		get
+		{
+			return this._PcSold.Entity;
+		}
+		set
+		{
+			PcSold previousValue = this._PcSold.Entity;
+			if (((previousValue != value) 
+						|| (this._PcSold.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PcSold.Entity = null;
+					previousValue.PcStock = null;
+				}
+				this._PcSold.Entity = value;
+				if ((value != null))
+				{
+					value.PcStock = this;
+				}
+				this.SendPropertyChanged("PcSold");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcInvoice", Storage="_PcInvoices", ThisKey="ID", OtherKey="PC_ID")]
+	public EntitySet<PcInvoice> PcInvoices
+	{
+		get
+		{
+			return this._PcInvoices;
+		}
+		set
+		{
+			this._PcInvoices.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcCart", Storage="_PcCarts", ThisKey="ID", OtherKey="Pc_ID")]
+	public EntitySet<PcCart> PcCarts
+	{
+		get
+		{
+			return this._PcCarts;
+		}
+		set
+		{
+			this._PcCarts.Assign(value);
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_PcInvoices(PcInvoice entity)
+	{
+		this.SendPropertyChanging();
+		entity.PcStock = this;
+	}
+	
+	private void detach_PcInvoices(PcInvoice entity)
+	{
+		this.SendPropertyChanging();
+		entity.PcStock = null;
+	}
+	
+	private void attach_PcCarts(PcCart entity)
+	{
+		this.SendPropertyChanging();
+		entity.PcStock = this;
+	}
+	
+	private void detach_PcCarts(PcCart entity)
+	{
+		this.SendPropertyChanging();
+		entity.PcStock = null;
+	}
+}
+
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PSU")]
 public partial class PSU : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -8240,8 +12679,6 @@ public partial class PSU : INotifyPropertyChanging, INotifyPropertyChanged
 	private string _Brand;
 	
 	private string _Series;
-	
-	private decimal _Price;
 	
 	private string _Power;
 	
@@ -8277,8 +12714,6 @@ public partial class PSU : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnPowerChanging(string value);
     partial void OnPowerChanged();
     partial void OnCertificationChanging(string value);
@@ -8386,26 +12821,6 @@ public partial class PSU : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -8684,8 +13099,6 @@ public partial class RAM : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Capacity;
 	
 	private string _Type;
@@ -8720,8 +13133,6 @@ public partial class RAM : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnCapacityChanging(string value);
     partial void OnCapacityChanged();
     partial void OnTypeChanging(string value);
@@ -8828,26 +13239,6 @@ public partial class RAM : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -9488,1867 +13879,6 @@ public partial class Speaker : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AirCooler")]
-public partial class AirCooler : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _ID;
-	
-	private string _Model;
-	
-	private string _Brand;
-	
-	private string _Series;
-	
-	private decimal _Price;
-	
-	private string _Fan_Size;
-	
-	private string _Compatibility;
-	
-	private string _Fan_RPM;
-	
-	private string _Air_Flow;
-	
-	private string _Noise_Level;
-	
-	private string _Power_Connector;
-	
-	private string _Colour;
-	
-	private string _Materials;
-	
-	private string _Length;
-	
-	private string _Height;
-	
-	private string _Width;
-	
-	private string _Weight;
-	
-	private string _Features;
-	
-	private string _Warranty;
-	
-	private EntitySet<CpuToAirCooler> _CpuToAirCoolers;
-	
-	private EntityRef<PartsStock> _PartsStock;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnModelChanging(string value);
-    partial void OnModelChanged();
-    partial void OnBrandChanging(string value);
-    partial void OnBrandChanged();
-    partial void OnSeriesChanging(string value);
-    partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
-    partial void OnFan_SizeChanging(string value);
-    partial void OnFan_SizeChanged();
-    partial void OnCompatibilityChanging(string value);
-    partial void OnCompatibilityChanged();
-    partial void OnFan_RPMChanging(string value);
-    partial void OnFan_RPMChanged();
-    partial void OnAir_FlowChanging(string value);
-    partial void OnAir_FlowChanged();
-    partial void OnNoise_LevelChanging(string value);
-    partial void OnNoise_LevelChanged();
-    partial void OnPower_ConnectorChanging(string value);
-    partial void OnPower_ConnectorChanged();
-    partial void OnColourChanging(string value);
-    partial void OnColourChanged();
-    partial void OnMaterialsChanging(string value);
-    partial void OnMaterialsChanged();
-    partial void OnLengthChanging(string value);
-    partial void OnLengthChanged();
-    partial void OnHeightChanging(string value);
-    partial void OnHeightChanged();
-    partial void OnWidthChanging(string value);
-    partial void OnWidthChanged();
-    partial void OnWeightChanging(string value);
-    partial void OnWeightChanged();
-    partial void OnFeaturesChanging(string value);
-    partial void OnFeaturesChanged();
-    partial void OnWarrantyChanging(string value);
-    partial void OnWarrantyChanged();
-    #endregion
-	
-	public AirCooler()
-	{
-		this._CpuToAirCoolers = new EntitySet<CpuToAirCooler>(new Action<CpuToAirCooler>(this.attach_CpuToAirCoolers), new Action<CpuToAirCooler>(this.detach_CpuToAirCoolers));
-		this._PartsStock = default(EntityRef<PartsStock>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int ID
-	{
-		get
-		{
-			return this._ID;
-		}
-		set
-		{
-			if ((this._ID != value))
-			{
-				if (this._PartsStock.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnIDChanging(value);
-				this.SendPropertyChanging();
-				this._ID = value;
-				this.SendPropertyChanged("ID");
-				this.OnIDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Model
-	{
-		get
-		{
-			return this._Model;
-		}
-		set
-		{
-			if ((this._Model != value))
-			{
-				this.OnModelChanging(value);
-				this.SendPropertyChanging();
-				this._Model = value;
-				this.SendPropertyChanged("Model");
-				this.OnModelChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Brand
-	{
-		get
-		{
-			return this._Brand;
-		}
-		set
-		{
-			if ((this._Brand != value))
-			{
-				this.OnBrandChanging(value);
-				this.SendPropertyChanging();
-				this._Brand = value;
-				this.SendPropertyChanged("Brand");
-				this.OnBrandChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Series
-	{
-		get
-		{
-			return this._Series;
-		}
-		set
-		{
-			if ((this._Series != value))
-			{
-				this.OnSeriesChanging(value);
-				this.SendPropertyChanging();
-				this._Series = value;
-				this.SendPropertyChanged("Series");
-				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fan_Size", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Fan_Size
-	{
-		get
-		{
-			return this._Fan_Size;
-		}
-		set
-		{
-			if ((this._Fan_Size != value))
-			{
-				this.OnFan_SizeChanging(value);
-				this.SendPropertyChanging();
-				this._Fan_Size = value;
-				this.SendPropertyChanged("Fan_Size");
-				this.OnFan_SizeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Compatibility", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Compatibility
-	{
-		get
-		{
-			return this._Compatibility;
-		}
-		set
-		{
-			if ((this._Compatibility != value))
-			{
-				this.OnCompatibilityChanging(value);
-				this.SendPropertyChanging();
-				this._Compatibility = value;
-				this.SendPropertyChanged("Compatibility");
-				this.OnCompatibilityChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fan_RPM", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Fan_RPM
-	{
-		get
-		{
-			return this._Fan_RPM;
-		}
-		set
-		{
-			if ((this._Fan_RPM != value))
-			{
-				this.OnFan_RPMChanging(value);
-				this.SendPropertyChanging();
-				this._Fan_RPM = value;
-				this.SendPropertyChanged("Fan_RPM");
-				this.OnFan_RPMChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Air_Flow", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Air_Flow
-	{
-		get
-		{
-			return this._Air_Flow;
-		}
-		set
-		{
-			if ((this._Air_Flow != value))
-			{
-				this.OnAir_FlowChanging(value);
-				this.SendPropertyChanging();
-				this._Air_Flow = value;
-				this.SendPropertyChanged("Air_Flow");
-				this.OnAir_FlowChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Noise_Level", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Noise_Level
-	{
-		get
-		{
-			return this._Noise_Level;
-		}
-		set
-		{
-			if ((this._Noise_Level != value))
-			{
-				this.OnNoise_LevelChanging(value);
-				this.SendPropertyChanging();
-				this._Noise_Level = value;
-				this.SendPropertyChanged("Noise_Level");
-				this.OnNoise_LevelChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Power_Connector", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Power_Connector
-	{
-		get
-		{
-			return this._Power_Connector;
-		}
-		set
-		{
-			if ((this._Power_Connector != value))
-			{
-				this.OnPower_ConnectorChanging(value);
-				this.SendPropertyChanging();
-				this._Power_Connector = value;
-				this.SendPropertyChanged("Power_Connector");
-				this.OnPower_ConnectorChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Colour", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Colour
-	{
-		get
-		{
-			return this._Colour;
-		}
-		set
-		{
-			if ((this._Colour != value))
-			{
-				this.OnColourChanging(value);
-				this.SendPropertyChanging();
-				this._Colour = value;
-				this.SendPropertyChanged("Colour");
-				this.OnColourChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Materials", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Materials
-	{
-		get
-		{
-			return this._Materials;
-		}
-		set
-		{
-			if ((this._Materials != value))
-			{
-				this.OnMaterialsChanging(value);
-				this.SendPropertyChanging();
-				this._Materials = value;
-				this.SendPropertyChanged("Materials");
-				this.OnMaterialsChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Length
-	{
-		get
-		{
-			return this._Length;
-		}
-		set
-		{
-			if ((this._Length != value))
-			{
-				this.OnLengthChanging(value);
-				this.SendPropertyChanging();
-				this._Length = value;
-				this.SendPropertyChanged("Length");
-				this.OnLengthChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Height
-	{
-		get
-		{
-			return this._Height;
-		}
-		set
-		{
-			if ((this._Height != value))
-			{
-				this.OnHeightChanging(value);
-				this.SendPropertyChanging();
-				this._Height = value;
-				this.SendPropertyChanged("Height");
-				this.OnHeightChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Width", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Width
-	{
-		get
-		{
-			return this._Width;
-		}
-		set
-		{
-			if ((this._Width != value))
-			{
-				this.OnWidthChanging(value);
-				this.SendPropertyChanging();
-				this._Width = value;
-				this.SendPropertyChanged("Width");
-				this.OnWidthChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Weight
-	{
-		get
-		{
-			return this._Weight;
-		}
-		set
-		{
-			if ((this._Weight != value))
-			{
-				this.OnWeightChanging(value);
-				this.SendPropertyChanging();
-				this._Weight = value;
-				this.SendPropertyChanged("Weight");
-				this.OnWeightChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Features", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Features
-	{
-		get
-		{
-			return this._Features;
-		}
-		set
-		{
-			if ((this._Features != value))
-			{
-				this.OnFeaturesChanging(value);
-				this.SendPropertyChanging();
-				this._Features = value;
-				this.SendPropertyChanged("Features");
-				this.OnFeaturesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Warranty
-	{
-		get
-		{
-			return this._Warranty;
-		}
-		set
-		{
-			if ((this._Warranty != value))
-			{
-				this.OnWarrantyChanging(value);
-				this.SendPropertyChanging();
-				this._Warranty = value;
-				this.SendPropertyChanged("Warranty");
-				this.OnWarrantyChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AirCooler_CpuToAirCooler", Storage="_CpuToAirCoolers", ThisKey="ID", OtherKey="AC_ID")]
-	public EntitySet<CpuToAirCooler> CpuToAirCoolers
-	{
-		get
-		{
-			return this._CpuToAirCoolers;
-		}
-		set
-		{
-			this._CpuToAirCoolers.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_AirCooler", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
-	public PartsStock PartsStock
-	{
-		get
-		{
-			return this._PartsStock.Entity;
-		}
-		set
-		{
-			PartsStock previousValue = this._PartsStock.Entity;
-			if (((previousValue != value) 
-						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PartsStock.Entity = null;
-					previousValue.AirCooler = null;
-				}
-				this._PartsStock.Entity = value;
-				if ((value != null))
-				{
-					value.AirCooler = this;
-					this._ID = value.ID;
-				}
-				else
-				{
-					this._ID = default(int);
-				}
-				this.SendPropertyChanged("PartsStock");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-	
-	private void attach_CpuToAirCoolers(CpuToAirCooler entity)
-	{
-		this.SendPropertyChanging();
-		entity.AirCooler = this;
-	}
-	
-	private void detach_CpuToAirCoolers(CpuToAirCooler entity)
-	{
-		this.SendPropertyChanging();
-		entity.AirCooler = null;
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PartCart")]
-public partial class PartCart : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _User_ID;
-	
-	private int _Part_ID;
-	
-	private int _Qua;
-	
-	private EntityRef<PartsStock> _PartsStock;
-	
-	private EntityRef<Client> _Client;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUser_IDChanging(int value);
-    partial void OnUser_IDChanged();
-    partial void OnPart_IDChanging(int value);
-    partial void OnPart_IDChanged();
-    partial void OnQuaChanging(int value);
-    partial void OnQuaChanged();
-    #endregion
-	
-	public PartCart()
-	{
-		this._PartsStock = default(EntityRef<PartsStock>);
-		this._Client = default(EntityRef<Client>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int User_ID
-	{
-		get
-		{
-			return this._User_ID;
-		}
-		set
-		{
-			if ((this._User_ID != value))
-			{
-				if (this._Client.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnUser_IDChanging(value);
-				this.SendPropertyChanging();
-				this._User_ID = value;
-				this.SendPropertyChanged("User_ID");
-				this.OnUser_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Part_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int Part_ID
-	{
-		get
-		{
-			return this._Part_ID;
-		}
-		set
-		{
-			if ((this._Part_ID != value))
-			{
-				if (this._PartsStock.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnPart_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Part_ID = value;
-				this.SendPropertyChanged("Part_ID");
-				this.OnPart_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qua", DbType="Int NOT NULL")]
-	public int Qua
-	{
-		get
-		{
-			return this._Qua;
-		}
-		set
-		{
-			if ((this._Qua != value))
-			{
-				this.OnQuaChanging(value);
-				this.SendPropertyChanging();
-				this._Qua = value;
-				this.SendPropertyChanged("Qua");
-				this.OnQuaChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartCart", Storage="_PartsStock", ThisKey="Part_ID", OtherKey="ID", IsForeignKey=true)]
-	public PartsStock PartsStock
-	{
-		get
-		{
-			return this._PartsStock.Entity;
-		}
-		set
-		{
-			PartsStock previousValue = this._PartsStock.Entity;
-			if (((previousValue != value) 
-						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PartsStock.Entity = null;
-					previousValue.PartCarts.Remove(this);
-				}
-				this._PartsStock.Entity = value;
-				if ((value != null))
-				{
-					value.PartCarts.Add(this);
-					this._Part_ID = value.ID;
-				}
-				else
-				{
-					this._Part_ID = default(int);
-				}
-				this.SendPropertyChanged("PartsStock");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PartCart", Storage="_Client", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
-	public Client Client
-	{
-		get
-		{
-			return this._Client.Entity;
-		}
-		set
-		{
-			Client previousValue = this._Client.Entity;
-			if (((previousValue != value) 
-						|| (this._Client.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Client.Entity = null;
-					previousValue.PartCarts.Remove(this);
-				}
-				this._Client.Entity = value;
-				if ((value != null))
-				{
-					value.PartCarts.Add(this);
-					this._User_ID = value.User_ID;
-				}
-				else
-				{
-					this._User_ID = default(int);
-				}
-				this.SendPropertyChanged("Client");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GPU")]
-public partial class GPU : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _ID;
-	
-	private string _Model;
-	
-	private string _Manufacturer;
-	
-	private string _Brand;
-	
-	private string _Series;
-	
-	private decimal _Price;
-	
-	private string _Base_Clock_Speed;
-	
-	private string _Boost_Clock_Speed;
-	
-	private string _Stream_Processors;
-	
-	private string _Memory_Clock;
-	
-	private string _Memory_Size;
-	
-	private string _Memory_Type;
-	
-	private string _Ports;
-	
-	private string _Max_Digital_Resolution;
-	
-	private string _VR_Ready;
-	
-	private string _Recommended_Power_Supply;
-	
-	private string _Form_Factor;
-	
-	private string _Slot_Width;
-	
-	private string _Length;
-	
-	private string _Height;
-	
-	private string _Warranty;
-	
-	private EntitySet<GpuToMonitor> _GpuToMonitors;
-	
-	private EntitySet<Pc> _Pcs;
-	
-	private EntityRef<PartsStock> _PartsStock;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnModelChanging(string value);
-    partial void OnModelChanged();
-    partial void OnManufacturerChanging(string value);
-    partial void OnManufacturerChanged();
-    partial void OnBrandChanging(string value);
-    partial void OnBrandChanged();
-    partial void OnSeriesChanging(string value);
-    partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
-    partial void OnBase_Clock_SpeedChanging(string value);
-    partial void OnBase_Clock_SpeedChanged();
-    partial void OnBoost_Clock_SpeedChanging(string value);
-    partial void OnBoost_Clock_SpeedChanged();
-    partial void OnStream_ProcessorsChanging(string value);
-    partial void OnStream_ProcessorsChanged();
-    partial void OnMemory_ClockChanging(string value);
-    partial void OnMemory_ClockChanged();
-    partial void OnMemory_SizeChanging(string value);
-    partial void OnMemory_SizeChanged();
-    partial void OnMemory_TypeChanging(string value);
-    partial void OnMemory_TypeChanged();
-    partial void OnPortsChanging(string value);
-    partial void OnPortsChanged();
-    partial void OnMax_Digital_ResolutionChanging(string value);
-    partial void OnMax_Digital_ResolutionChanged();
-    partial void OnVR_ReadyChanging(string value);
-    partial void OnVR_ReadyChanged();
-    partial void OnRecommended_Power_SupplyChanging(string value);
-    partial void OnRecommended_Power_SupplyChanged();
-    partial void OnForm_FactorChanging(string value);
-    partial void OnForm_FactorChanged();
-    partial void OnSlot_WidthChanging(string value);
-    partial void OnSlot_WidthChanged();
-    partial void OnLengthChanging(string value);
-    partial void OnLengthChanged();
-    partial void OnHeightChanging(string value);
-    partial void OnHeightChanged();
-    partial void OnWarrantyChanging(string value);
-    partial void OnWarrantyChanged();
-    #endregion
-	
-	public GPU()
-	{
-		this._GpuToMonitors = new EntitySet<GpuToMonitor>(new Action<GpuToMonitor>(this.attach_GpuToMonitors), new Action<GpuToMonitor>(this.detach_GpuToMonitors));
-		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
-		this._PartsStock = default(EntityRef<PartsStock>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int ID
-	{
-		get
-		{
-			return this._ID;
-		}
-		set
-		{
-			if ((this._ID != value))
-			{
-				if (this._PartsStock.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnIDChanging(value);
-				this.SendPropertyChanging();
-				this._ID = value;
-				this.SendPropertyChanged("ID");
-				this.OnIDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Model
-	{
-		get
-		{
-			return this._Model;
-		}
-		set
-		{
-			if ((this._Model != value))
-			{
-				this.OnModelChanging(value);
-				this.SendPropertyChanging();
-				this._Model = value;
-				this.SendPropertyChanged("Model");
-				this.OnModelChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manufacturer", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Manufacturer
-	{
-		get
-		{
-			return this._Manufacturer;
-		}
-		set
-		{
-			if ((this._Manufacturer != value))
-			{
-				this.OnManufacturerChanging(value);
-				this.SendPropertyChanging();
-				this._Manufacturer = value;
-				this.SendPropertyChanged("Manufacturer");
-				this.OnManufacturerChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Brand
-	{
-		get
-		{
-			return this._Brand;
-		}
-		set
-		{
-			if ((this._Brand != value))
-			{
-				this.OnBrandChanging(value);
-				this.SendPropertyChanging();
-				this._Brand = value;
-				this.SendPropertyChanged("Brand");
-				this.OnBrandChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Series
-	{
-		get
-		{
-			return this._Series;
-		}
-		set
-		{
-			if ((this._Series != value))
-			{
-				this.OnSeriesChanging(value);
-				this.SendPropertyChanging();
-				this._Series = value;
-				this.SendPropertyChanged("Series");
-				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Base_Clock_Speed", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Base_Clock_Speed
-	{
-		get
-		{
-			return this._Base_Clock_Speed;
-		}
-		set
-		{
-			if ((this._Base_Clock_Speed != value))
-			{
-				this.OnBase_Clock_SpeedChanging(value);
-				this.SendPropertyChanging();
-				this._Base_Clock_Speed = value;
-				this.SendPropertyChanged("Base_Clock_Speed");
-				this.OnBase_Clock_SpeedChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Boost_Clock_Speed", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Boost_Clock_Speed
-	{
-		get
-		{
-			return this._Boost_Clock_Speed;
-		}
-		set
-		{
-			if ((this._Boost_Clock_Speed != value))
-			{
-				this.OnBoost_Clock_SpeedChanging(value);
-				this.SendPropertyChanging();
-				this._Boost_Clock_Speed = value;
-				this.SendPropertyChanged("Boost_Clock_Speed");
-				this.OnBoost_Clock_SpeedChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Stream_Processors", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Stream_Processors
-	{
-		get
-		{
-			return this._Stream_Processors;
-		}
-		set
-		{
-			if ((this._Stream_Processors != value))
-			{
-				this.OnStream_ProcessorsChanging(value);
-				this.SendPropertyChanging();
-				this._Stream_Processors = value;
-				this.SendPropertyChanged("Stream_Processors");
-				this.OnStream_ProcessorsChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memory_Clock", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Memory_Clock
-	{
-		get
-		{
-			return this._Memory_Clock;
-		}
-		set
-		{
-			if ((this._Memory_Clock != value))
-			{
-				this.OnMemory_ClockChanging(value);
-				this.SendPropertyChanging();
-				this._Memory_Clock = value;
-				this.SendPropertyChanged("Memory_Clock");
-				this.OnMemory_ClockChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memory_Size", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Memory_Size
-	{
-		get
-		{
-			return this._Memory_Size;
-		}
-		set
-		{
-			if ((this._Memory_Size != value))
-			{
-				this.OnMemory_SizeChanging(value);
-				this.SendPropertyChanging();
-				this._Memory_Size = value;
-				this.SendPropertyChanged("Memory_Size");
-				this.OnMemory_SizeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memory_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Memory_Type
-	{
-		get
-		{
-			return this._Memory_Type;
-		}
-		set
-		{
-			if ((this._Memory_Type != value))
-			{
-				this.OnMemory_TypeChanging(value);
-				this.SendPropertyChanging();
-				this._Memory_Type = value;
-				this.SendPropertyChanged("Memory_Type");
-				this.OnMemory_TypeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ports", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Ports
-	{
-		get
-		{
-			return this._Ports;
-		}
-		set
-		{
-			if ((this._Ports != value))
-			{
-				this.OnPortsChanging(value);
-				this.SendPropertyChanging();
-				this._Ports = value;
-				this.SendPropertyChanged("Ports");
-				this.OnPortsChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Max_Digital_Resolution", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Max_Digital_Resolution
-	{
-		get
-		{
-			return this._Max_Digital_Resolution;
-		}
-		set
-		{
-			if ((this._Max_Digital_Resolution != value))
-			{
-				this.OnMax_Digital_ResolutionChanging(value);
-				this.SendPropertyChanging();
-				this._Max_Digital_Resolution = value;
-				this.SendPropertyChanged("Max_Digital_Resolution");
-				this.OnMax_Digital_ResolutionChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VR_Ready", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string VR_Ready
-	{
-		get
-		{
-			return this._VR_Ready;
-		}
-		set
-		{
-			if ((this._VR_Ready != value))
-			{
-				this.OnVR_ReadyChanging(value);
-				this.SendPropertyChanging();
-				this._VR_Ready = value;
-				this.SendPropertyChanged("VR_Ready");
-				this.OnVR_ReadyChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Recommended_Power_Supply", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Recommended_Power_Supply
-	{
-		get
-		{
-			return this._Recommended_Power_Supply;
-		}
-		set
-		{
-			if ((this._Recommended_Power_Supply != value))
-			{
-				this.OnRecommended_Power_SupplyChanging(value);
-				this.SendPropertyChanging();
-				this._Recommended_Power_Supply = value;
-				this.SendPropertyChanged("Recommended_Power_Supply");
-				this.OnRecommended_Power_SupplyChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Form_Factor", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Form_Factor
-	{
-		get
-		{
-			return this._Form_Factor;
-		}
-		set
-		{
-			if ((this._Form_Factor != value))
-			{
-				this.OnForm_FactorChanging(value);
-				this.SendPropertyChanging();
-				this._Form_Factor = value;
-				this.SendPropertyChanged("Form_Factor");
-				this.OnForm_FactorChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Slot_Width", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Slot_Width
-	{
-		get
-		{
-			return this._Slot_Width;
-		}
-		set
-		{
-			if ((this._Slot_Width != value))
-			{
-				this.OnSlot_WidthChanging(value);
-				this.SendPropertyChanging();
-				this._Slot_Width = value;
-				this.SendPropertyChanged("Slot_Width");
-				this.OnSlot_WidthChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Length
-	{
-		get
-		{
-			return this._Length;
-		}
-		set
-		{
-			if ((this._Length != value))
-			{
-				this.OnLengthChanging(value);
-				this.SendPropertyChanging();
-				this._Length = value;
-				this.SendPropertyChanged("Length");
-				this.OnLengthChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Height
-	{
-		get
-		{
-			return this._Height;
-		}
-		set
-		{
-			if ((this._Height != value))
-			{
-				this.OnHeightChanging(value);
-				this.SendPropertyChanging();
-				this._Height = value;
-				this.SendPropertyChanged("Height");
-				this.OnHeightChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Warranty
-	{
-		get
-		{
-			return this._Warranty;
-		}
-		set
-		{
-			if ((this._Warranty != value))
-			{
-				this.OnWarrantyChanging(value);
-				this.SendPropertyChanging();
-				this._Warranty = value;
-				this.SendPropertyChanged("Warranty");
-				this.OnWarrantyChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GPU_GpuToMonitor", Storage="_GpuToMonitors", ThisKey="ID", OtherKey="GPU_ID")]
-	public EntitySet<GpuToMonitor> GpuToMonitors
-	{
-		get
-		{
-			return this._GpuToMonitors;
-		}
-		set
-		{
-			this._GpuToMonitors.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GPU_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="GPU_ID")]
-	public EntitySet<Pc> Pcs
-	{
-		get
-		{
-			return this._Pcs;
-		}
-		set
-		{
-			this._Pcs.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_GPU", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
-	public PartsStock PartsStock
-	{
-		get
-		{
-			return this._PartsStock.Entity;
-		}
-		set
-		{
-			PartsStock previousValue = this._PartsStock.Entity;
-			if (((previousValue != value) 
-						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PartsStock.Entity = null;
-					previousValue.GPU = null;
-				}
-				this._PartsStock.Entity = value;
-				if ((value != null))
-				{
-					value.GPU = this;
-					this._ID = value.ID;
-				}
-				else
-				{
-					this._ID = default(int);
-				}
-				this.SendPropertyChanged("PartsStock");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-	
-	private void attach_GpuToMonitors(GpuToMonitor entity)
-	{
-		this.SendPropertyChanging();
-		entity.GPU = this;
-	}
-	
-	private void detach_GpuToMonitors(GpuToMonitor entity)
-	{
-		this.SendPropertyChanging();
-		entity.GPU = null;
-	}
-	
-	private void attach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.GPU = this;
-	}
-	
-	private void detach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.GPU = null;
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HDD")]
-public partial class HDD : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _ID;
-	
-	private string _Model;
-	
-	private string _Brand;
-	
-	private string _Series;
-	
-	private decimal _Price;
-	
-	private string _Interface;
-	
-	private string _Max_Sustained_Transfer_Rate;
-	
-	private string _Rotational_Speed;
-	
-	private string _Load_Unload_Cycles;
-	
-	private string _Workload_Rate_Limit;
-	
-	private string _Power_Usage;
-	
-	private string _Operating_Temp;
-	
-	private string _Size;
-	
-	private string _Weight;
-	
-	private string _Warranty;
-	
-	private EntitySet<Pc> _Pcs;
-	
-	private EntityRef<PartsStock> _PartsStock;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnModelChanging(string value);
-    partial void OnModelChanged();
-    partial void OnBrandChanging(string value);
-    partial void OnBrandChanged();
-    partial void OnSeriesChanging(string value);
-    partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
-    partial void OnInterfaceChanging(string value);
-    partial void OnInterfaceChanged();
-    partial void OnMax_Sustained_Transfer_RateChanging(string value);
-    partial void OnMax_Sustained_Transfer_RateChanged();
-    partial void OnRotational_SpeedChanging(string value);
-    partial void OnRotational_SpeedChanged();
-    partial void OnLoad_Unload_CyclesChanging(string value);
-    partial void OnLoad_Unload_CyclesChanged();
-    partial void OnWorkload_Rate_LimitChanging(string value);
-    partial void OnWorkload_Rate_LimitChanged();
-    partial void OnPower_UsageChanging(string value);
-    partial void OnPower_UsageChanged();
-    partial void OnOperating_TempChanging(string value);
-    partial void OnOperating_TempChanged();
-    partial void OnSizeChanging(string value);
-    partial void OnSizeChanged();
-    partial void OnWeightChanging(string value);
-    partial void OnWeightChanged();
-    partial void OnWarrantyChanging(string value);
-    partial void OnWarrantyChanged();
-    #endregion
-	
-	public HDD()
-	{
-		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
-		this._PartsStock = default(EntityRef<PartsStock>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int ID
-	{
-		get
-		{
-			return this._ID;
-		}
-		set
-		{
-			if ((this._ID != value))
-			{
-				if (this._PartsStock.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnIDChanging(value);
-				this.SendPropertyChanging();
-				this._ID = value;
-				this.SendPropertyChanged("ID");
-				this.OnIDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Model
-	{
-		get
-		{
-			return this._Model;
-		}
-		set
-		{
-			if ((this._Model != value))
-			{
-				this.OnModelChanging(value);
-				this.SendPropertyChanging();
-				this._Model = value;
-				this.SendPropertyChanged("Model");
-				this.OnModelChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Brand
-	{
-		get
-		{
-			return this._Brand;
-		}
-		set
-		{
-			if ((this._Brand != value))
-			{
-				this.OnBrandChanging(value);
-				this.SendPropertyChanging();
-				this._Brand = value;
-				this.SendPropertyChanged("Brand");
-				this.OnBrandChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Series
-	{
-		get
-		{
-			return this._Series;
-		}
-		set
-		{
-			if ((this._Series != value))
-			{
-				this.OnSeriesChanging(value);
-				this.SendPropertyChanging();
-				this._Series = value;
-				this.SendPropertyChanged("Series");
-				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Interface", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Interface
-	{
-		get
-		{
-			return this._Interface;
-		}
-		set
-		{
-			if ((this._Interface != value))
-			{
-				this.OnInterfaceChanging(value);
-				this.SendPropertyChanging();
-				this._Interface = value;
-				this.SendPropertyChanged("Interface");
-				this.OnInterfaceChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Max_Sustained_Transfer_Rate", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Max_Sustained_Transfer_Rate
-	{
-		get
-		{
-			return this._Max_Sustained_Transfer_Rate;
-		}
-		set
-		{
-			if ((this._Max_Sustained_Transfer_Rate != value))
-			{
-				this.OnMax_Sustained_Transfer_RateChanging(value);
-				this.SendPropertyChanging();
-				this._Max_Sustained_Transfer_Rate = value;
-				this.SendPropertyChanged("Max_Sustained_Transfer_Rate");
-				this.OnMax_Sustained_Transfer_RateChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rotational_Speed", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Rotational_Speed
-	{
-		get
-		{
-			return this._Rotational_Speed;
-		}
-		set
-		{
-			if ((this._Rotational_Speed != value))
-			{
-				this.OnRotational_SpeedChanging(value);
-				this.SendPropertyChanging();
-				this._Rotational_Speed = value;
-				this.SendPropertyChanged("Rotational_Speed");
-				this.OnRotational_SpeedChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Load_Unload_Cycles", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Load_Unload_Cycles
-	{
-		get
-		{
-			return this._Load_Unload_Cycles;
-		}
-		set
-		{
-			if ((this._Load_Unload_Cycles != value))
-			{
-				this.OnLoad_Unload_CyclesChanging(value);
-				this.SendPropertyChanging();
-				this._Load_Unload_Cycles = value;
-				this.SendPropertyChanged("Load_Unload_Cycles");
-				this.OnLoad_Unload_CyclesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Workload_Rate_Limit", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Workload_Rate_Limit
-	{
-		get
-		{
-			return this._Workload_Rate_Limit;
-		}
-		set
-		{
-			if ((this._Workload_Rate_Limit != value))
-			{
-				this.OnWorkload_Rate_LimitChanging(value);
-				this.SendPropertyChanging();
-				this._Workload_Rate_Limit = value;
-				this.SendPropertyChanged("Workload_Rate_Limit");
-				this.OnWorkload_Rate_LimitChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Power_Usage", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Power_Usage
-	{
-		get
-		{
-			return this._Power_Usage;
-		}
-		set
-		{
-			if ((this._Power_Usage != value))
-			{
-				this.OnPower_UsageChanging(value);
-				this.SendPropertyChanging();
-				this._Power_Usage = value;
-				this.SendPropertyChanged("Power_Usage");
-				this.OnPower_UsageChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Operating_Temp", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Operating_Temp
-	{
-		get
-		{
-			return this._Operating_Temp;
-		}
-		set
-		{
-			if ((this._Operating_Temp != value))
-			{
-				this.OnOperating_TempChanging(value);
-				this.SendPropertyChanging();
-				this._Operating_Temp = value;
-				this.SendPropertyChanged("Operating_Temp");
-				this.OnOperating_TempChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Size
-	{
-		get
-		{
-			return this._Size;
-		}
-		set
-		{
-			if ((this._Size != value))
-			{
-				this.OnSizeChanging(value);
-				this.SendPropertyChanging();
-				this._Size = value;
-				this.SendPropertyChanged("Size");
-				this.OnSizeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Weight
-	{
-		get
-		{
-			return this._Weight;
-		}
-		set
-		{
-			if ((this._Weight != value))
-			{
-				this.OnWeightChanging(value);
-				this.SendPropertyChanging();
-				this._Weight = value;
-				this.SendPropertyChanged("Weight");
-				this.OnWeightChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Warranty
-	{
-		get
-		{
-			return this._Warranty;
-		}
-		set
-		{
-			if ((this._Warranty != value))
-			{
-				this.OnWarrantyChanging(value);
-				this.SendPropertyChanging();
-				this._Warranty = value;
-				this.SendPropertyChanged("Warranty");
-				this.OnWarrantyChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HDD_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="HDD_ID")]
-	public EntitySet<Pc> Pcs
-	{
-		get
-		{
-			return this._Pcs;
-		}
-		set
-		{
-			this._Pcs.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_HDD", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
-	public PartsStock PartsStock
-	{
-		get
-		{
-			return this._PartsStock.Entity;
-		}
-		set
-		{
-			PartsStock previousValue = this._PartsStock.Entity;
-			if (((previousValue != value) 
-						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PartsStock.Entity = null;
-					previousValue.HDD = null;
-				}
-				this._PartsStock.Entity = value;
-				if ((value != null))
-				{
-					value.HDD = this;
-					this._ID = value.ID;
-				}
-				else
-				{
-					this._ID = default(int);
-				}
-				this.SendPropertyChanged("PartsStock");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-	
-	private void attach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.HDD = this;
-	}
-	
-	private void detach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.HDD = null;
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SSD")]
 public partial class SSD : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -11362,8 +13892,6 @@ public partial class SSD : INotifyPropertyChanging, INotifyPropertyChanged
 	private string _Brand;
 	
 	private string _Series;
-	
-	private decimal _Price;
 	
 	private string _Form_Factor;
 	
@@ -11407,8 +13935,6 @@ public partial class SSD : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnForm_FactorChanging(string value);
     partial void OnForm_FactorChanged();
     partial void OnCapacityChanging(string value);
@@ -11524,26 +14050,6 @@ public partial class SSD : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -11888,161 +14394,283 @@ public partial class SSD : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Pc")]
-public partial class Pc : INotifyPropertyChanging, INotifyPropertyChanged
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PartInvoice")]
+public partial class PartInvoice : INotifyPropertyChanging, INotifyPropertyChanged
 {
 	
 	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 	
-	private int _PC_ID;
+	private int _User_ID;
 	
-	private string _PC_Type;
+	private int _Part_ID;
 	
-	private decimal _Price;
+	private int _Qua;
 	
-	private int _Case_ID;
+	private decimal _Total_Price;
 	
-	private int _Mobo_ID;
+	private EntityRef<PartsStock> _PartsStock;
 	
-	private int _CPU_ID;
-	
-	private int _RAM_ID;
-	
-	private int _GPU_ID;
-	
-	private int _Cooler_ID;
-	
-	private System.Nullable<int> _SSD_ID;
-	
-	private int _Fan_ID;
-	
-	private System.Nullable<int> _HDD_ID;
-	
-	private int _PSU_ID;
-	
-	private int _OS_ID;
-	
-	private int _Num_Fans;
-	
-	private int _Num_SSD;
-	
-	private int _Num_HDD;
-	
-	private System.Nullable<int> _Monitor_ID;
-	
-	private System.Nullable<int> _Headset_ID;
-	
-	private System.Nullable<int> _Keyboard_ID;
-	
-	private System.Nullable<int> _Mouse_ID;
-	
-	private System.Nullable<int> _Speaker_ID;
-	
-	private string _Warranty;
-	
-	private EntityRef<PCCase> _PCCase;
-	
-	private EntityRef<LiquidCooler> _LiquidCooler;
-	
-	private EntityRef<GPU> _GPU;
-	
-	private EntityRef<HDD> _HDD;
-	
-	private EntityRef<Headset> _Headset;
-	
-	private EntityRef<Keyboard> _Keyboard;
-	
-	private EntityRef<Motherboard> _Motherboard;
-	
-	private EntityRef<Monitor> _Monitor;
-	
-	private EntityRef<Mouse> _Mouse;
-	
-	private EntityRef<PSU> _PSU;
-	
-	private EntityRef<RAM> _RAM;
-	
-	private EntityRef<Speaker> _Speaker;
-	
-	private EntityRef<SSD> _SSD;
-	
-	private EntityRef<CPU> _CPU;
-	
-	private EntityRef<Fan> _Fan;
-	
-	private EntityRef<PcStock> _PcStock;
+	private EntityRef<Client> _Client;
 	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnPC_IDChanging(int value);
-    partial void OnPC_IDChanged();
-    partial void OnPC_TypeChanging(string value);
-    partial void OnPC_TypeChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
-    partial void OnCase_IDChanging(int value);
-    partial void OnCase_IDChanged();
-    partial void OnMobo_IDChanging(int value);
-    partial void OnMobo_IDChanged();
-    partial void OnCPU_IDChanging(int value);
-    partial void OnCPU_IDChanged();
-    partial void OnRAM_IDChanging(int value);
-    partial void OnRAM_IDChanged();
-    partial void OnGPU_IDChanging(int value);
-    partial void OnGPU_IDChanged();
-    partial void OnCooler_IDChanging(int value);
-    partial void OnCooler_IDChanged();
-    partial void OnSSD_IDChanging(System.Nullable<int> value);
-    partial void OnSSD_IDChanged();
-    partial void OnFan_IDChanging(int value);
-    partial void OnFan_IDChanged();
-    partial void OnHDD_IDChanging(System.Nullable<int> value);
-    partial void OnHDD_IDChanged();
-    partial void OnPSU_IDChanging(int value);
-    partial void OnPSU_IDChanged();
-    partial void OnOS_IDChanging(int value);
-    partial void OnOS_IDChanged();
-    partial void OnNum_FansChanging(int value);
-    partial void OnNum_FansChanged();
-    partial void OnNum_SSDChanging(int value);
-    partial void OnNum_SSDChanged();
-    partial void OnNum_HDDChanging(int value);
-    partial void OnNum_HDDChanged();
-    partial void OnMonitor_IDChanging(System.Nullable<int> value);
-    partial void OnMonitor_IDChanged();
-    partial void OnHeadset_IDChanging(System.Nullable<int> value);
-    partial void OnHeadset_IDChanged();
-    partial void OnKeyboard_IDChanging(System.Nullable<int> value);
-    partial void OnKeyboard_IDChanged();
-    partial void OnMouse_IDChanging(System.Nullable<int> value);
-    partial void OnMouse_IDChanged();
-    partial void OnSpeaker_IDChanging(System.Nullable<int> value);
-    partial void OnSpeaker_IDChanged();
-    partial void OnWarrantyChanging(string value);
-    partial void OnWarrantyChanged();
+    partial void OnUser_IDChanging(int value);
+    partial void OnUser_IDChanged();
+    partial void OnPart_IDChanging(int value);
+    partial void OnPart_IDChanged();
+    partial void OnQuaChanging(int value);
+    partial void OnQuaChanged();
+    partial void OnTotal_PriceChanging(decimal value);
+    partial void OnTotal_PriceChanged();
     #endregion
 	
-	public Pc()
+	public PartInvoice()
 	{
-		this._PCCase = default(EntityRef<PCCase>);
-		this._LiquidCooler = default(EntityRef<LiquidCooler>);
-		this._GPU = default(EntityRef<GPU>);
-		this._HDD = default(EntityRef<HDD>);
-		this._Headset = default(EntityRef<Headset>);
-		this._Keyboard = default(EntityRef<Keyboard>);
-		this._Motherboard = default(EntityRef<Motherboard>);
-		this._Monitor = default(EntityRef<Monitor>);
-		this._Mouse = default(EntityRef<Mouse>);
-		this._PSU = default(EntityRef<PSU>);
-		this._RAM = default(EntityRef<RAM>);
-		this._Speaker = default(EntityRef<Speaker>);
-		this._SSD = default(EntityRef<SSD>);
-		this._CPU = default(EntityRef<CPU>);
-		this._Fan = default(EntityRef<Fan>);
-		this._PcStock = default(EntityRef<PcStock>);
+		this._PartsStock = default(EntityRef<PartsStock>);
+		this._Client = default(EntityRef<Client>);
 		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int User_ID
+	{
+		get
+		{
+			return this._User_ID;
+		}
+		set
+		{
+			if ((this._User_ID != value))
+			{
+				if (this._Client.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnUser_IDChanging(value);
+				this.SendPropertyChanging();
+				this._User_ID = value;
+				this.SendPropertyChanged("User_ID");
+				this.OnUser_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Part_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int Part_ID
+	{
+		get
+		{
+			return this._Part_ID;
+		}
+		set
+		{
+			if ((this._Part_ID != value))
+			{
+				if (this._PartsStock.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnPart_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Part_ID = value;
+				this.SendPropertyChanged("Part_ID");
+				this.OnPart_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qua", DbType="Int NOT NULL")]
+	public int Qua
+	{
+		get
+		{
+			return this._Qua;
+		}
+		set
+		{
+			if ((this._Qua != value))
+			{
+				this.OnQuaChanging(value);
+				this.SendPropertyChanging();
+				this._Qua = value;
+				this.SendPropertyChanged("Qua");
+				this.OnQuaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total_Price", DbType="Money NOT NULL")]
+	public decimal Total_Price
+	{
+		get
+		{
+			return this._Total_Price;
+		}
+		set
+		{
+			if ((this._Total_Price != value))
+			{
+				this.OnTotal_PriceChanging(value);
+				this.SendPropertyChanging();
+				this._Total_Price = value;
+				this.SendPropertyChanged("Total_Price");
+				this.OnTotal_PriceChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartInvoice", Storage="_PartsStock", ThisKey="Part_ID", OtherKey="ID", IsForeignKey=true)]
+	public PartsStock PartsStock
+	{
+		get
+		{
+			return this._PartsStock.Entity;
+		}
+		set
+		{
+			PartsStock previousValue = this._PartsStock.Entity;
+			if (((previousValue != value) 
+						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PartsStock.Entity = null;
+					previousValue.PartInvoices.Remove(this);
+				}
+				this._PartsStock.Entity = value;
+				if ((value != null))
+				{
+					value.PartInvoices.Add(this);
+					this._Part_ID = value.ID;
+				}
+				else
+				{
+					this._Part_ID = default(int);
+				}
+				this.SendPropertyChanged("PartsStock");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PartInvoice", Storage="_Client", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
+	public Client Client
+	{
+		get
+		{
+			return this._Client.Entity;
+		}
+		set
+		{
+			Client previousValue = this._Client.Entity;
+			if (((previousValue != value) 
+						|| (this._Client.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Client.Entity = null;
+					previousValue.PartInvoices.Remove(this);
+				}
+				this._Client.Entity = value;
+				if ((value != null))
+				{
+					value.PartInvoices.Add(this);
+					this._User_ID = value.User_ID;
+				}
+				else
+				{
+					this._User_ID = default(int);
+				}
+				this.SendPropertyChanged("Client");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PcInvoice")]
+public partial class PcInvoice : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _User_ID;
+	
+	private int _PC_ID;
+	
+	private int _Qua;
+	
+	private decimal _Total_Price;
+	
+	private EntityRef<PcStock> _PcStock;
+	
+	private EntityRef<Client> _Client;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUser_IDChanging(int value);
+    partial void OnUser_IDChanged();
+    partial void OnPC_IDChanging(int value);
+    partial void OnPC_IDChanged();
+    partial void OnQuaChanging(int value);
+    partial void OnQuaChanged();
+    partial void OnTotal_PriceChanging(decimal value);
+    partial void OnTotal_PriceChanged();
+    #endregion
+	
+	public PcInvoice()
+	{
+		this._PcStock = default(EntityRef<PcStock>);
+		this._Client = default(EntityRef<Client>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int User_ID
+	{
+		get
+		{
+			return this._User_ID;
+		}
+		set
+		{
+			if ((this._User_ID != value))
+			{
+				if (this._Client.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnUser_IDChanging(value);
+				this.SendPropertyChanging();
+				this._User_ID = value;
+				this.SendPropertyChanged("User_ID");
+				this.OnUser_IDChanged();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PC_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
@@ -12069,1017 +14697,47 @@ public partial class Pc : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PC_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string PC_Type
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qua", DbType="Int NOT NULL")]
+	public int Qua
 	{
 		get
 		{
-			return this._PC_Type;
+			return this._Qua;
 		}
 		set
 		{
-			if ((this._PC_Type != value))
+			if ((this._Qua != value))
 			{
-				this.OnPC_TypeChanging(value);
+				this.OnQuaChanging(value);
 				this.SendPropertyChanging();
-				this._PC_Type = value;
-				this.SendPropertyChanged("PC_Type");
-				this.OnPC_TypeChanged();
+				this._Qua = value;
+				this.SendPropertyChanged("Qua");
+				this.OnQuaChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total_Price", DbType="Money NOT NULL")]
+	public decimal Total_Price
 	{
 		get
 		{
-			return this._Price;
+			return this._Total_Price;
 		}
 		set
 		{
-			if ((this._Price != value))
+			if ((this._Total_Price != value))
 			{
-				this.OnPriceChanging(value);
+				this.OnTotal_PriceChanging(value);
 				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
+				this._Total_Price = value;
+				this.SendPropertyChanged("Total_Price");
+				this.OnTotal_PriceChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Case_ID", DbType="Int NOT NULL")]
-	public int Case_ID
-	{
-		get
-		{
-			return this._Case_ID;
-		}
-		set
-		{
-			if ((this._Case_ID != value))
-			{
-				if (this._PCCase.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnCase_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Case_ID = value;
-				this.SendPropertyChanged("Case_ID");
-				this.OnCase_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobo_ID", DbType="Int NOT NULL")]
-	public int Mobo_ID
-	{
-		get
-		{
-			return this._Mobo_ID;
-		}
-		set
-		{
-			if ((this._Mobo_ID != value))
-			{
-				if (this._Motherboard.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnMobo_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Mobo_ID = value;
-				this.SendPropertyChanged("Mobo_ID");
-				this.OnMobo_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPU_ID", DbType="Int NOT NULL")]
-	public int CPU_ID
-	{
-		get
-		{
-			return this._CPU_ID;
-		}
-		set
-		{
-			if ((this._CPU_ID != value))
-			{
-				if (this._CPU.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnCPU_IDChanging(value);
-				this.SendPropertyChanging();
-				this._CPU_ID = value;
-				this.SendPropertyChanged("CPU_ID");
-				this.OnCPU_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RAM_ID", DbType="Int NOT NULL")]
-	public int RAM_ID
-	{
-		get
-		{
-			return this._RAM_ID;
-		}
-		set
-		{
-			if ((this._RAM_ID != value))
-			{
-				if (this._RAM.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnRAM_IDChanging(value);
-				this.SendPropertyChanging();
-				this._RAM_ID = value;
-				this.SendPropertyChanged("RAM_ID");
-				this.OnRAM_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GPU_ID", DbType="Int NOT NULL")]
-	public int GPU_ID
-	{
-		get
-		{
-			return this._GPU_ID;
-		}
-		set
-		{
-			if ((this._GPU_ID != value))
-			{
-				if (this._GPU.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnGPU_IDChanging(value);
-				this.SendPropertyChanging();
-				this._GPU_ID = value;
-				this.SendPropertyChanged("GPU_ID");
-				this.OnGPU_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cooler_ID", DbType="Int NOT NULL")]
-	public int Cooler_ID
-	{
-		get
-		{
-			return this._Cooler_ID;
-		}
-		set
-		{
-			if ((this._Cooler_ID != value))
-			{
-				if (this._LiquidCooler.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnCooler_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Cooler_ID = value;
-				this.SendPropertyChanged("Cooler_ID");
-				this.OnCooler_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SSD_ID", DbType="Int")]
-	public System.Nullable<int> SSD_ID
-	{
-		get
-		{
-			return this._SSD_ID;
-		}
-		set
-		{
-			if ((this._SSD_ID != value))
-			{
-				if (this._SSD.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnSSD_IDChanging(value);
-				this.SendPropertyChanging();
-				this._SSD_ID = value;
-				this.SendPropertyChanged("SSD_ID");
-				this.OnSSD_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fan_ID", DbType="Int NOT NULL")]
-	public int Fan_ID
-	{
-		get
-		{
-			return this._Fan_ID;
-		}
-		set
-		{
-			if ((this._Fan_ID != value))
-			{
-				if (this._Fan.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnFan_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Fan_ID = value;
-				this.SendPropertyChanged("Fan_ID");
-				this.OnFan_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HDD_ID", DbType="Int")]
-	public System.Nullable<int> HDD_ID
-	{
-		get
-		{
-			return this._HDD_ID;
-		}
-		set
-		{
-			if ((this._HDD_ID != value))
-			{
-				if (this._HDD.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnHDD_IDChanging(value);
-				this.SendPropertyChanging();
-				this._HDD_ID = value;
-				this.SendPropertyChanged("HDD_ID");
-				this.OnHDD_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PSU_ID", DbType="Int NOT NULL")]
-	public int PSU_ID
-	{
-		get
-		{
-			return this._PSU_ID;
-		}
-		set
-		{
-			if ((this._PSU_ID != value))
-			{
-				if (this._PSU.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnPSU_IDChanging(value);
-				this.SendPropertyChanging();
-				this._PSU_ID = value;
-				this.SendPropertyChanged("PSU_ID");
-				this.OnPSU_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OS_ID", DbType="Int NOT NULL")]
-	public int OS_ID
-	{
-		get
-		{
-			return this._OS_ID;
-		}
-		set
-		{
-			if ((this._OS_ID != value))
-			{
-				this.OnOS_IDChanging(value);
-				this.SendPropertyChanging();
-				this._OS_ID = value;
-				this.SendPropertyChanged("OS_ID");
-				this.OnOS_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_Fans", DbType="Int NOT NULL")]
-	public int Num_Fans
-	{
-		get
-		{
-			return this._Num_Fans;
-		}
-		set
-		{
-			if ((this._Num_Fans != value))
-			{
-				this.OnNum_FansChanging(value);
-				this.SendPropertyChanging();
-				this._Num_Fans = value;
-				this.SendPropertyChanged("Num_Fans");
-				this.OnNum_FansChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_SSD", DbType="Int NOT NULL")]
-	public int Num_SSD
-	{
-		get
-		{
-			return this._Num_SSD;
-		}
-		set
-		{
-			if ((this._Num_SSD != value))
-			{
-				this.OnNum_SSDChanging(value);
-				this.SendPropertyChanging();
-				this._Num_SSD = value;
-				this.SendPropertyChanged("Num_SSD");
-				this.OnNum_SSDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_HDD", DbType="Int NOT NULL")]
-	public int Num_HDD
-	{
-		get
-		{
-			return this._Num_HDD;
-		}
-		set
-		{
-			if ((this._Num_HDD != value))
-			{
-				this.OnNum_HDDChanging(value);
-				this.SendPropertyChanging();
-				this._Num_HDD = value;
-				this.SendPropertyChanged("Num_HDD");
-				this.OnNum_HDDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Monitor_ID", DbType="Int")]
-	public System.Nullable<int> Monitor_ID
-	{
-		get
-		{
-			return this._Monitor_ID;
-		}
-		set
-		{
-			if ((this._Monitor_ID != value))
-			{
-				if (this._Monitor.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnMonitor_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Monitor_ID = value;
-				this.SendPropertyChanged("Monitor_ID");
-				this.OnMonitor_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Headset_ID", DbType="Int")]
-	public System.Nullable<int> Headset_ID
-	{
-		get
-		{
-			return this._Headset_ID;
-		}
-		set
-		{
-			if ((this._Headset_ID != value))
-			{
-				if (this._Headset.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnHeadset_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Headset_ID = value;
-				this.SendPropertyChanged("Headset_ID");
-				this.OnHeadset_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Keyboard_ID", DbType="Int")]
-	public System.Nullable<int> Keyboard_ID
-	{
-		get
-		{
-			return this._Keyboard_ID;
-		}
-		set
-		{
-			if ((this._Keyboard_ID != value))
-			{
-				if (this._Keyboard.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnKeyboard_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Keyboard_ID = value;
-				this.SendPropertyChanged("Keyboard_ID");
-				this.OnKeyboard_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mouse_ID", DbType="Int")]
-	public System.Nullable<int> Mouse_ID
-	{
-		get
-		{
-			return this._Mouse_ID;
-		}
-		set
-		{
-			if ((this._Mouse_ID != value))
-			{
-				if (this._Mouse.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnMouse_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Mouse_ID = value;
-				this.SendPropertyChanged("Mouse_ID");
-				this.OnMouse_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Speaker_ID", DbType="Int")]
-	public System.Nullable<int> Speaker_ID
-	{
-		get
-		{
-			return this._Speaker_ID;
-		}
-		set
-		{
-			if ((this._Speaker_ID != value))
-			{
-				if (this._Speaker.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnSpeaker_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Speaker_ID = value;
-				this.SendPropertyChanged("Speaker_ID");
-				this.OnSpeaker_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Warranty
-	{
-		get
-		{
-			return this._Warranty;
-		}
-		set
-		{
-			if ((this._Warranty != value))
-			{
-				this.OnWarrantyChanging(value);
-				this.SendPropertyChanging();
-				this._Warranty = value;
-				this.SendPropertyChanged("Warranty");
-				this.OnWarrantyChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PCCase_Pc", Storage="_PCCase", ThisKey="Case_ID", OtherKey="ID", IsForeignKey=true)]
-	public PCCase PCCase
-	{
-		get
-		{
-			return this._PCCase.Entity;
-		}
-		set
-		{
-			PCCase previousValue = this._PCCase.Entity;
-			if (((previousValue != value) 
-						|| (this._PCCase.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PCCase.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._PCCase.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._Case_ID = value.ID;
-				}
-				else
-				{
-					this._Case_ID = default(int);
-				}
-				this.SendPropertyChanged("PCCase");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LiquidCooler_Pc", Storage="_LiquidCooler", ThisKey="Cooler_ID", OtherKey="ID", IsForeignKey=true)]
-	public LiquidCooler LiquidCooler
-	{
-		get
-		{
-			return this._LiquidCooler.Entity;
-		}
-		set
-		{
-			LiquidCooler previousValue = this._LiquidCooler.Entity;
-			if (((previousValue != value) 
-						|| (this._LiquidCooler.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._LiquidCooler.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._LiquidCooler.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._Cooler_ID = value.ID;
-				}
-				else
-				{
-					this._Cooler_ID = default(int);
-				}
-				this.SendPropertyChanged("LiquidCooler");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GPU_Pc", Storage="_GPU", ThisKey="GPU_ID", OtherKey="ID", IsForeignKey=true)]
-	public GPU GPU
-	{
-		get
-		{
-			return this._GPU.Entity;
-		}
-		set
-		{
-			GPU previousValue = this._GPU.Entity;
-			if (((previousValue != value) 
-						|| (this._GPU.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._GPU.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._GPU.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._GPU_ID = value.ID;
-				}
-				else
-				{
-					this._GPU_ID = default(int);
-				}
-				this.SendPropertyChanged("GPU");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HDD_Pc", Storage="_HDD", ThisKey="HDD_ID", OtherKey="ID", IsForeignKey=true)]
-	public HDD HDD
-	{
-		get
-		{
-			return this._HDD.Entity;
-		}
-		set
-		{
-			HDD previousValue = this._HDD.Entity;
-			if (((previousValue != value) 
-						|| (this._HDD.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._HDD.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._HDD.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._HDD_ID = value.ID;
-				}
-				else
-				{
-					this._HDD_ID = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("HDD");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Headset_Pc", Storage="_Headset", ThisKey="Headset_ID", OtherKey="ID", IsForeignKey=true)]
-	public Headset Headset
-	{
-		get
-		{
-			return this._Headset.Entity;
-		}
-		set
-		{
-			Headset previousValue = this._Headset.Entity;
-			if (((previousValue != value) 
-						|| (this._Headset.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Headset.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._Headset.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._Headset_ID = value.ID;
-				}
-				else
-				{
-					this._Headset_ID = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("Headset");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Keyboard_Pc", Storage="_Keyboard", ThisKey="Keyboard_ID", OtherKey="ID", IsForeignKey=true)]
-	public Keyboard Keyboard
-	{
-		get
-		{
-			return this._Keyboard.Entity;
-		}
-		set
-		{
-			Keyboard previousValue = this._Keyboard.Entity;
-			if (((previousValue != value) 
-						|| (this._Keyboard.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Keyboard.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._Keyboard.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._Keyboard_ID = value.ID;
-				}
-				else
-				{
-					this._Keyboard_ID = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("Keyboard");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_Pc", Storage="_Motherboard", ThisKey="Mobo_ID", OtherKey="ID", IsForeignKey=true)]
-	public Motherboard Motherboard
-	{
-		get
-		{
-			return this._Motherboard.Entity;
-		}
-		set
-		{
-			Motherboard previousValue = this._Motherboard.Entity;
-			if (((previousValue != value) 
-						|| (this._Motherboard.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Motherboard.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._Motherboard.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._Mobo_ID = value.ID;
-				}
-				else
-				{
-					this._Mobo_ID = default(int);
-				}
-				this.SendPropertyChanged("Motherboard");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Monitor_Pc", Storage="_Monitor", ThisKey="Monitor_ID", OtherKey="ID", IsForeignKey=true)]
-	public Monitor Monitor
-	{
-		get
-		{
-			return this._Monitor.Entity;
-		}
-		set
-		{
-			Monitor previousValue = this._Monitor.Entity;
-			if (((previousValue != value) 
-						|| (this._Monitor.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Monitor.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._Monitor.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._Monitor_ID = value.ID;
-				}
-				else
-				{
-					this._Monitor_ID = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("Monitor");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mouse_Pc", Storage="_Mouse", ThisKey="Mouse_ID", OtherKey="ID", IsForeignKey=true)]
-	public Mouse Mouse
-	{
-		get
-		{
-			return this._Mouse.Entity;
-		}
-		set
-		{
-			Mouse previousValue = this._Mouse.Entity;
-			if (((previousValue != value) 
-						|| (this._Mouse.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Mouse.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._Mouse.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._Mouse_ID = value.ID;
-				}
-				else
-				{
-					this._Mouse_ID = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("Mouse");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PSU_Pc", Storage="_PSU", ThisKey="PSU_ID", OtherKey="ID", IsForeignKey=true)]
-	public PSU PSU
-	{
-		get
-		{
-			return this._PSU.Entity;
-		}
-		set
-		{
-			PSU previousValue = this._PSU.Entity;
-			if (((previousValue != value) 
-						|| (this._PSU.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PSU.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._PSU.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._PSU_ID = value.ID;
-				}
-				else
-				{
-					this._PSU_ID = default(int);
-				}
-				this.SendPropertyChanged("PSU");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RAM_Pc", Storage="_RAM", ThisKey="RAM_ID", OtherKey="ID", IsForeignKey=true)]
-	public RAM RAM
-	{
-		get
-		{
-			return this._RAM.Entity;
-		}
-		set
-		{
-			RAM previousValue = this._RAM.Entity;
-			if (((previousValue != value) 
-						|| (this._RAM.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._RAM.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._RAM.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._RAM_ID = value.ID;
-				}
-				else
-				{
-					this._RAM_ID = default(int);
-				}
-				this.SendPropertyChanged("RAM");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Speaker_Pc", Storage="_Speaker", ThisKey="Speaker_ID", OtherKey="ID", IsForeignKey=true)]
-	public Speaker Speaker
-	{
-		get
-		{
-			return this._Speaker.Entity;
-		}
-		set
-		{
-			Speaker previousValue = this._Speaker.Entity;
-			if (((previousValue != value) 
-						|| (this._Speaker.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Speaker.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._Speaker.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._Speaker_ID = value.ID;
-				}
-				else
-				{
-					this._Speaker_ID = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("Speaker");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SSD_Pc", Storage="_SSD", ThisKey="SSD_ID", OtherKey="ID", IsForeignKey=true)]
-	public SSD SSD
-	{
-		get
-		{
-			return this._SSD.Entity;
-		}
-		set
-		{
-			SSD previousValue = this._SSD.Entity;
-			if (((previousValue != value) 
-						|| (this._SSD.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._SSD.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._SSD.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._SSD_ID = value.ID;
-				}
-				else
-				{
-					this._SSD_ID = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("SSD");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_Pc", Storage="_CPU", ThisKey="CPU_ID", OtherKey="ID", IsForeignKey=true)]
-	public CPU CPU
-	{
-		get
-		{
-			return this._CPU.Entity;
-		}
-		set
-		{
-			CPU previousValue = this._CPU.Entity;
-			if (((previousValue != value) 
-						|| (this._CPU.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._CPU.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._CPU.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._CPU_ID = value.ID;
-				}
-				else
-				{
-					this._CPU_ID = default(int);
-				}
-				this.SendPropertyChanged("CPU");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fan_Pc", Storage="_Fan", ThisKey="Fan_ID", OtherKey="ID", IsForeignKey=true)]
-	public Fan Fan
-	{
-		get
-		{
-			return this._Fan.Entity;
-		}
-		set
-		{
-			Fan previousValue = this._Fan.Entity;
-			if (((previousValue != value) 
-						|| (this._Fan.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Fan.Entity = null;
-					previousValue.Pcs.Remove(this);
-				}
-				this._Fan.Entity = value;
-				if ((value != null))
-				{
-					value.Pcs.Add(this);
-					this._Fan_ID = value.ID;
-				}
-				else
-				{
-					this._Fan_ID = default(int);
-				}
-				this.SendPropertyChanged("Fan");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_Pc", Storage="_PcStock", ThisKey="PC_ID", OtherKey="ID", IsForeignKey=true)]
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcInvoice", Storage="_PcStock", ThisKey="PC_ID", OtherKey="ID", IsForeignKey=true)]
 	public PcStock PcStock
 	{
 		get
@@ -13096,12 +14754,12 @@ public partial class Pc : INotifyPropertyChanging, INotifyPropertyChanged
 				if ((previousValue != null))
 				{
 					this._PcStock.Entity = null;
-					previousValue.Pc = null;
+					previousValue.PcInvoices.Remove(this);
 				}
 				this._PcStock.Entity = value;
 				if ((value != null))
 				{
-					value.Pc = this;
+					value.PcInvoices.Add(this);
 					this._PC_ID = value.ID;
 				}
 				else
@@ -13113,170 +14771,36 @@ public partial class Pc : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MoboToCase")]
-public partial class MoboToCase : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _Mobo_ID;
-	
-	private int _Case_ID;
-	
-	private EntityRef<PCCase> _PCCase;
-	
-	private EntityRef<Motherboard> _Motherboard;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMobo_IDChanging(int value);
-    partial void OnMobo_IDChanged();
-    partial void OnCase_IDChanging(int value);
-    partial void OnCase_IDChanged();
-    #endregion
-	
-	public MoboToCase()
-	{
-		this._PCCase = default(EntityRef<PCCase>);
-		this._Motherboard = default(EntityRef<Motherboard>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobo_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int Mobo_ID
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PcInvoice", Storage="_Client", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
+	public Client Client
 	{
 		get
 		{
-			return this._Mobo_ID;
+			return this._Client.Entity;
 		}
 		set
 		{
-			if ((this._Mobo_ID != value))
-			{
-				if (this._Motherboard.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnMobo_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Mobo_ID = value;
-				this.SendPropertyChanged("Mobo_ID");
-				this.OnMobo_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Case_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int Case_ID
-	{
-		get
-		{
-			return this._Case_ID;
-		}
-		set
-		{
-			if ((this._Case_ID != value))
-			{
-				if (this._PCCase.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnCase_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Case_ID = value;
-				this.SendPropertyChanged("Case_ID");
-				this.OnCase_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PCCase_MoboToCase", Storage="_PCCase", ThisKey="Case_ID", OtherKey="ID", IsForeignKey=true)]
-	public PCCase PCCase
-	{
-		get
-		{
-			return this._PCCase.Entity;
-		}
-		set
-		{
-			PCCase previousValue = this._PCCase.Entity;
+			Client previousValue = this._Client.Entity;
 			if (((previousValue != value) 
-						|| (this._PCCase.HasLoadedOrAssignedValue == false)))
+						|| (this._Client.HasLoadedOrAssignedValue == false)))
 			{
 				this.SendPropertyChanging();
 				if ((previousValue != null))
 				{
-					this._PCCase.Entity = null;
-					previousValue.MoboToCases.Remove(this);
+					this._Client.Entity = null;
+					previousValue.PcInvoices.Remove(this);
 				}
-				this._PCCase.Entity = value;
+				this._Client.Entity = value;
 				if ((value != null))
 				{
-					value.MoboToCases.Add(this);
-					this._Case_ID = value.ID;
+					value.PcInvoices.Add(this);
+					this._User_ID = value.User_ID;
 				}
 				else
 				{
-					this._Case_ID = default(int);
+					this._User_ID = default(int);
 				}
-				this.SendPropertyChanged("PCCase");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_MoboToCase", Storage="_Motherboard", ThisKey="Mobo_ID", OtherKey="ID", IsForeignKey=true)]
-	public Motherboard Motherboard
-	{
-		get
-		{
-			return this._Motherboard.Entity;
-		}
-		set
-		{
-			Motherboard previousValue = this._Motherboard.Entity;
-			if (((previousValue != value) 
-						|| (this._Motherboard.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Motherboard.Entity = null;
-					previousValue.MoboToCases.Remove(this);
-				}
-				this._Motherboard.Entity = value;
-				if ((value != null))
-				{
-					value.MoboToCases.Add(this);
-					this._Mobo_ID = value.ID;
-				}
-				else
-				{
-					this._Mobo_ID = default(int);
-				}
-				this.SendPropertyChanged("Motherboard");
+				this.SendPropertyChanged("Client");
 			}
 		}
 	}
@@ -13302,671 +14826,134 @@ public partial class MoboToCase : INotifyPropertyChanging, INotifyPropertyChange
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MoboToCpu")]
-public partial class MoboToCpu : INotifyPropertyChanging, INotifyPropertyChanged
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PartCart")]
+public partial class PartCart : INotifyPropertyChanging, INotifyPropertyChanged
 {
 	
 	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 	
-	private int _Mobo_ID;
+	private int _User_ID;
 	
-	private int _CPU_ID;
+	private int _Part_ID;
 	
-	private EntityRef<Motherboard> _Motherboard;
+	private int _Qua;
 	
-	private EntityRef<CPU> _CPU;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMobo_IDChanging(int value);
-    partial void OnMobo_IDChanged();
-    partial void OnCPU_IDChanging(int value);
-    partial void OnCPU_IDChanged();
-    #endregion
-	
-	public MoboToCpu()
-	{
-		this._Motherboard = default(EntityRef<Motherboard>);
-		this._CPU = default(EntityRef<CPU>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobo_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int Mobo_ID
-	{
-		get
-		{
-			return this._Mobo_ID;
-		}
-		set
-		{
-			if ((this._Mobo_ID != value))
-			{
-				if (this._Motherboard.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnMobo_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Mobo_ID = value;
-				this.SendPropertyChanged("Mobo_ID");
-				this.OnMobo_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPU_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int CPU_ID
-	{
-		get
-		{
-			return this._CPU_ID;
-		}
-		set
-		{
-			if ((this._CPU_ID != value))
-			{
-				if (this._CPU.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnCPU_IDChanging(value);
-				this.SendPropertyChanging();
-				this._CPU_ID = value;
-				this.SendPropertyChanged("CPU_ID");
-				this.OnCPU_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motherboard_MoboToCpu", Storage="_Motherboard", ThisKey="Mobo_ID", OtherKey="ID", IsForeignKey=true)]
-	public Motherboard Motherboard
-	{
-		get
-		{
-			return this._Motherboard.Entity;
-		}
-		set
-		{
-			Motherboard previousValue = this._Motherboard.Entity;
-			if (((previousValue != value) 
-						|| (this._Motherboard.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Motherboard.Entity = null;
-					previousValue.MoboToCpus.Remove(this);
-				}
-				this._Motherboard.Entity = value;
-				if ((value != null))
-				{
-					value.MoboToCpus.Add(this);
-					this._Mobo_ID = value.ID;
-				}
-				else
-				{
-					this._Mobo_ID = default(int);
-				}
-				this.SendPropertyChanged("Motherboard");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_MoboToCpu", Storage="_CPU", ThisKey="CPU_ID", OtherKey="ID", IsForeignKey=true)]
-	public CPU CPU
-	{
-		get
-		{
-			return this._CPU.Entity;
-		}
-		set
-		{
-			CPU previousValue = this._CPU.Entity;
-			if (((previousValue != value) 
-						|| (this._CPU.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._CPU.Entity = null;
-					previousValue.MoboToCpus.Remove(this);
-				}
-				this._CPU.Entity = value;
-				if ((value != null))
-				{
-					value.MoboToCpus.Add(this);
-					this._CPU_ID = value.ID;
-				}
-				else
-				{
-					this._CPU_ID = default(int);
-				}
-				this.SendPropertyChanged("CPU");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CPU")]
-public partial class CPU : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _ID;
-	
-	private string _Model;
-	
-	private string _Brand;
-	
-	private string _Series;
-	
-	private decimal _Price;
-	
-	private string _Cores;
-	
-	private string _Threads;
-	
-	private string _Base_Clock;
-	
-	private string _Boost_Clock;
-	
-	private string _Total_Cache;
-	
-	private string _Chipset;
-	
-	private string _TDP;
-	
-	private string _Max_Temp;
-	
-	private int _System_Memory_Speed;
-	
-	private string _System_Memory_Type;
-	
-	private string _Memory_Channels;
-	
-	private string _Warranty;
-	
-	private EntitySet<CpuToAirCooler> _CpuToAirCoolers;
-	
-	private EntitySet<CpuToLiquidCooler> _CpuToLiquidCoolers;
-	
-	private EntitySet<Pc> _Pcs;
-	
-	private EntitySet<MoboToCpu> _MoboToCpus;
+	private decimal _Total_Price;
 	
 	private EntityRef<PartsStock> _PartsStock;
 	
+	private EntityRef<Client> _Client;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnModelChanging(string value);
-    partial void OnModelChanged();
-    partial void OnBrandChanging(string value);
-    partial void OnBrandChanged();
-    partial void OnSeriesChanging(string value);
-    partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
-    partial void OnCoresChanging(string value);
-    partial void OnCoresChanged();
-    partial void OnThreadsChanging(string value);
-    partial void OnThreadsChanged();
-    partial void OnBase_ClockChanging(string value);
-    partial void OnBase_ClockChanged();
-    partial void OnBoost_ClockChanging(string value);
-    partial void OnBoost_ClockChanged();
-    partial void OnTotal_CacheChanging(string value);
-    partial void OnTotal_CacheChanged();
-    partial void OnChipsetChanging(string value);
-    partial void OnChipsetChanged();
-    partial void OnTDPChanging(string value);
-    partial void OnTDPChanged();
-    partial void OnMax_TempChanging(string value);
-    partial void OnMax_TempChanged();
-    partial void OnSystem_Memory_SpeedChanging(int value);
-    partial void OnSystem_Memory_SpeedChanged();
-    partial void OnSystem_Memory_TypeChanging(string value);
-    partial void OnSystem_Memory_TypeChanged();
-    partial void OnMemory_ChannelsChanging(string value);
-    partial void OnMemory_ChannelsChanged();
-    partial void OnWarrantyChanging(string value);
-    partial void OnWarrantyChanged();
+    partial void OnUser_IDChanging(int value);
+    partial void OnUser_IDChanged();
+    partial void OnPart_IDChanging(int value);
+    partial void OnPart_IDChanged();
+    partial void OnQuaChanging(int value);
+    partial void OnQuaChanged();
+    partial void OnTotal_PriceChanging(decimal value);
+    partial void OnTotal_PriceChanged();
     #endregion
 	
-	public CPU()
+	public PartCart()
 	{
-		this._CpuToAirCoolers = new EntitySet<CpuToAirCooler>(new Action<CpuToAirCooler>(this.attach_CpuToAirCoolers), new Action<CpuToAirCooler>(this.detach_CpuToAirCoolers));
-		this._CpuToLiquidCoolers = new EntitySet<CpuToLiquidCooler>(new Action<CpuToLiquidCooler>(this.attach_CpuToLiquidCoolers), new Action<CpuToLiquidCooler>(this.detach_CpuToLiquidCoolers));
-		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
-		this._MoboToCpus = new EntitySet<MoboToCpu>(new Action<MoboToCpu>(this.attach_MoboToCpus), new Action<MoboToCpu>(this.detach_MoboToCpus));
 		this._PartsStock = default(EntityRef<PartsStock>);
+		this._Client = default(EntityRef<Client>);
 		OnCreated();
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int ID
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int User_ID
 	{
 		get
 		{
-			return this._ID;
+			return this._User_ID;
 		}
 		set
 		{
-			if ((this._ID != value))
+			if ((this._User_ID != value))
+			{
+				if (this._Client.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnUser_IDChanging(value);
+				this.SendPropertyChanging();
+				this._User_ID = value;
+				this.SendPropertyChanged("User_ID");
+				this.OnUser_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Part_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int Part_ID
+	{
+		get
+		{
+			return this._Part_ID;
+		}
+		set
+		{
+			if ((this._Part_ID != value))
 			{
 				if (this._PartsStock.HasLoadedOrAssignedValue)
 				{
 					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 				}
-				this.OnIDChanging(value);
+				this.OnPart_IDChanging(value);
 				this.SendPropertyChanging();
-				this._ID = value;
-				this.SendPropertyChanged("ID");
-				this.OnIDChanged();
+				this._Part_ID = value;
+				this.SendPropertyChanged("Part_ID");
+				this.OnPart_IDChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Model
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qua", DbType="Int NOT NULL")]
+	public int Qua
 	{
 		get
 		{
-			return this._Model;
+			return this._Qua;
 		}
 		set
 		{
-			if ((this._Model != value))
+			if ((this._Qua != value))
 			{
-				this.OnModelChanging(value);
+				this.OnQuaChanging(value);
 				this.SendPropertyChanging();
-				this._Model = value;
-				this.SendPropertyChanged("Model");
-				this.OnModelChanged();
+				this._Qua = value;
+				this.SendPropertyChanged("Qua");
+				this.OnQuaChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Brand
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total_Price", DbType="Money NOT NULL")]
+	public decimal Total_Price
 	{
 		get
 		{
-			return this._Brand;
+			return this._Total_Price;
 		}
 		set
 		{
-			if ((this._Brand != value))
+			if ((this._Total_Price != value))
 			{
-				this.OnBrandChanging(value);
+				this.OnTotal_PriceChanging(value);
 				this.SendPropertyChanging();
-				this._Brand = value;
-				this.SendPropertyChanged("Brand");
-				this.OnBrandChanged();
+				this._Total_Price = value;
+				this.SendPropertyChanged("Total_Price");
+				this.OnTotal_PriceChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Series
-	{
-		get
-		{
-			return this._Series;
-		}
-		set
-		{
-			if ((this._Series != value))
-			{
-				this.OnSeriesChanging(value);
-				this.SendPropertyChanging();
-				this._Series = value;
-				this.SendPropertyChanged("Series");
-				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cores", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Cores
-	{
-		get
-		{
-			return this._Cores;
-		}
-		set
-		{
-			if ((this._Cores != value))
-			{
-				this.OnCoresChanging(value);
-				this.SendPropertyChanging();
-				this._Cores = value;
-				this.SendPropertyChanged("Cores");
-				this.OnCoresChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Threads", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Threads
-	{
-		get
-		{
-			return this._Threads;
-		}
-		set
-		{
-			if ((this._Threads != value))
-			{
-				this.OnThreadsChanging(value);
-				this.SendPropertyChanging();
-				this._Threads = value;
-				this.SendPropertyChanged("Threads");
-				this.OnThreadsChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Base_Clock", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Base_Clock
-	{
-		get
-		{
-			return this._Base_Clock;
-		}
-		set
-		{
-			if ((this._Base_Clock != value))
-			{
-				this.OnBase_ClockChanging(value);
-				this.SendPropertyChanging();
-				this._Base_Clock = value;
-				this.SendPropertyChanged("Base_Clock");
-				this.OnBase_ClockChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Boost_Clock", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Boost_Clock
-	{
-		get
-		{
-			return this._Boost_Clock;
-		}
-		set
-		{
-			if ((this._Boost_Clock != value))
-			{
-				this.OnBoost_ClockChanging(value);
-				this.SendPropertyChanging();
-				this._Boost_Clock = value;
-				this.SendPropertyChanged("Boost_Clock");
-				this.OnBoost_ClockChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total_Cache", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Total_Cache
-	{
-		get
-		{
-			return this._Total_Cache;
-		}
-		set
-		{
-			if ((this._Total_Cache != value))
-			{
-				this.OnTotal_CacheChanging(value);
-				this.SendPropertyChanging();
-				this._Total_Cache = value;
-				this.SendPropertyChanged("Total_Cache");
-				this.OnTotal_CacheChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Chipset", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Chipset
-	{
-		get
-		{
-			return this._Chipset;
-		}
-		set
-		{
-			if ((this._Chipset != value))
-			{
-				this.OnChipsetChanging(value);
-				this.SendPropertyChanging();
-				this._Chipset = value;
-				this.SendPropertyChanged("Chipset");
-				this.OnChipsetChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TDP", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string TDP
-	{
-		get
-		{
-			return this._TDP;
-		}
-		set
-		{
-			if ((this._TDP != value))
-			{
-				this.OnTDPChanging(value);
-				this.SendPropertyChanging();
-				this._TDP = value;
-				this.SendPropertyChanged("TDP");
-				this.OnTDPChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Max_Temp", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Max_Temp
-	{
-		get
-		{
-			return this._Max_Temp;
-		}
-		set
-		{
-			if ((this._Max_Temp != value))
-			{
-				this.OnMax_TempChanging(value);
-				this.SendPropertyChanging();
-				this._Max_Temp = value;
-				this.SendPropertyChanged("Max_Temp");
-				this.OnMax_TempChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_System_Memory_Speed", DbType="Int NOT NULL")]
-	public int System_Memory_Speed
-	{
-		get
-		{
-			return this._System_Memory_Speed;
-		}
-		set
-		{
-			if ((this._System_Memory_Speed != value))
-			{
-				this.OnSystem_Memory_SpeedChanging(value);
-				this.SendPropertyChanging();
-				this._System_Memory_Speed = value;
-				this.SendPropertyChanged("System_Memory_Speed");
-				this.OnSystem_Memory_SpeedChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_System_Memory_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string System_Memory_Type
-	{
-		get
-		{
-			return this._System_Memory_Type;
-		}
-		set
-		{
-			if ((this._System_Memory_Type != value))
-			{
-				this.OnSystem_Memory_TypeChanging(value);
-				this.SendPropertyChanging();
-				this._System_Memory_Type = value;
-				this.SendPropertyChanged("System_Memory_Type");
-				this.OnSystem_Memory_TypeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Memory_Channels", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Memory_Channels
-	{
-		get
-		{
-			return this._Memory_Channels;
-		}
-		set
-		{
-			if ((this._Memory_Channels != value))
-			{
-				this.OnMemory_ChannelsChanging(value);
-				this.SendPropertyChanging();
-				this._Memory_Channels = value;
-				this.SendPropertyChanged("Memory_Channels");
-				this.OnMemory_ChannelsChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Warranty
-	{
-		get
-		{
-			return this._Warranty;
-		}
-		set
-		{
-			if ((this._Warranty != value))
-			{
-				this.OnWarrantyChanging(value);
-				this.SendPropertyChanging();
-				this._Warranty = value;
-				this.SendPropertyChanged("Warranty");
-				this.OnWarrantyChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_CpuToAirCooler", Storage="_CpuToAirCoolers", ThisKey="ID", OtherKey="CPU_ID")]
-	public EntitySet<CpuToAirCooler> CpuToAirCoolers
-	{
-		get
-		{
-			return this._CpuToAirCoolers;
-		}
-		set
-		{
-			this._CpuToAirCoolers.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_CpuToLiquidCooler", Storage="_CpuToLiquidCoolers", ThisKey="ID", OtherKey="CPU_ID")]
-	public EntitySet<CpuToLiquidCooler> CpuToLiquidCoolers
-	{
-		get
-		{
-			return this._CpuToLiquidCoolers;
-		}
-		set
-		{
-			this._CpuToLiquidCoolers.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="CPU_ID")]
-	public EntitySet<Pc> Pcs
-	{
-		get
-		{
-			return this._Pcs;
-		}
-		set
-		{
-			this._Pcs.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CPU_MoboToCpu", Storage="_MoboToCpus", ThisKey="ID", OtherKey="CPU_ID")]
-	public EntitySet<MoboToCpu> MoboToCpus
-	{
-		get
-		{
-			return this._MoboToCpus;
-		}
-		set
-		{
-			this._MoboToCpus.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_CPU", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartCart", Storage="_PartsStock", ThisKey="Part_ID", OtherKey="ID", IsForeignKey=true)]
 	public PartsStock PartsStock
 	{
 		get
@@ -13983,522 +14970,53 @@ public partial class CPU : INotifyPropertyChanging, INotifyPropertyChanged
 				if ((previousValue != null))
 				{
 					this._PartsStock.Entity = null;
-					previousValue.CPU = null;
+					previousValue.PartCarts.Remove(this);
 				}
 				this._PartsStock.Entity = value;
 				if ((value != null))
 				{
-					value.CPU = this;
-					this._ID = value.ID;
+					value.PartCarts.Add(this);
+					this._Part_ID = value.ID;
 				}
 				else
 				{
-					this._ID = default(int);
+					this._Part_ID = default(int);
 				}
 				this.SendPropertyChanged("PartsStock");
 			}
 		}
 	}
 	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-	
-	private void attach_CpuToAirCoolers(CpuToAirCooler entity)
-	{
-		this.SendPropertyChanging();
-		entity.CPU = this;
-	}
-	
-	private void detach_CpuToAirCoolers(CpuToAirCooler entity)
-	{
-		this.SendPropertyChanging();
-		entity.CPU = null;
-	}
-	
-	private void attach_CpuToLiquidCoolers(CpuToLiquidCooler entity)
-	{
-		this.SendPropertyChanging();
-		entity.CPU = this;
-	}
-	
-	private void detach_CpuToLiquidCoolers(CpuToLiquidCooler entity)
-	{
-		this.SendPropertyChanging();
-		entity.CPU = null;
-	}
-	
-	private void attach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.CPU = this;
-	}
-	
-	private void detach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.CPU = null;
-	}
-	
-	private void attach_MoboToCpus(MoboToCpu entity)
-	{
-		this.SendPropertyChanging();
-		entity.CPU = this;
-	}
-	
-	private void detach_MoboToCpus(MoboToCpu entity)
-	{
-		this.SendPropertyChanging();
-		entity.CPU = null;
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Fans")]
-public partial class Fan : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _ID;
-	
-	private string _Model;
-	
-	private string _Brand;
-	
-	private string _Series;
-	
-	private decimal _Price;
-	
-	private string _Size;
-	
-	private string _RPM;
-	
-	private string _Max_Air_Flow;
-	
-	private string _Noise;
-	
-	private string _Static_Pressure;
-	
-	private string _Input_Voltage;
-	
-	private string _MTBF;
-	
-	private string _Cable_Length;
-	
-	private int _Num_Fans;
-	
-	private string _Warranty;
-	
-	private EntitySet<Pc> _Pcs;
-	
-	private EntityRef<PartsStock> _PartsStock;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnModelChanging(string value);
-    partial void OnModelChanged();
-    partial void OnBrandChanging(string value);
-    partial void OnBrandChanged();
-    partial void OnSeriesChanging(string value);
-    partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
-    partial void OnSizeChanging(string value);
-    partial void OnSizeChanged();
-    partial void OnRPMChanging(string value);
-    partial void OnRPMChanged();
-    partial void OnMax_Air_FlowChanging(string value);
-    partial void OnMax_Air_FlowChanged();
-    partial void OnNoiseChanging(string value);
-    partial void OnNoiseChanged();
-    partial void OnStatic_PressureChanging(string value);
-    partial void OnStatic_PressureChanged();
-    partial void OnInput_VoltageChanging(string value);
-    partial void OnInput_VoltageChanged();
-    partial void OnMTBFChanging(string value);
-    partial void OnMTBFChanged();
-    partial void OnCable_LengthChanging(string value);
-    partial void OnCable_LengthChanged();
-    partial void OnNum_FansChanging(int value);
-    partial void OnNum_FansChanged();
-    partial void OnWarrantyChanging(string value);
-    partial void OnWarrantyChanged();
-    #endregion
-	
-	public Fan()
-	{
-		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
-		this._PartsStock = default(EntityRef<PartsStock>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int ID
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PartCart", Storage="_Client", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
+	public Client Client
 	{
 		get
 		{
-			return this._ID;
+			return this._Client.Entity;
 		}
 		set
 		{
-			if ((this._ID != value))
-			{
-				if (this._PartsStock.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnIDChanging(value);
-				this.SendPropertyChanging();
-				this._ID = value;
-				this.SendPropertyChanged("ID");
-				this.OnIDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Model
-	{
-		get
-		{
-			return this._Model;
-		}
-		set
-		{
-			if ((this._Model != value))
-			{
-				this.OnModelChanging(value);
-				this.SendPropertyChanging();
-				this._Model = value;
-				this.SendPropertyChanged("Model");
-				this.OnModelChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Brand
-	{
-		get
-		{
-			return this._Brand;
-		}
-		set
-		{
-			if ((this._Brand != value))
-			{
-				this.OnBrandChanging(value);
-				this.SendPropertyChanging();
-				this._Brand = value;
-				this.SendPropertyChanged("Brand");
-				this.OnBrandChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Series
-	{
-		get
-		{
-			return this._Series;
-		}
-		set
-		{
-			if ((this._Series != value))
-			{
-				this.OnSeriesChanging(value);
-				this.SendPropertyChanging();
-				this._Series = value;
-				this.SendPropertyChanged("Series");
-				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Size
-	{
-		get
-		{
-			return this._Size;
-		}
-		set
-		{
-			if ((this._Size != value))
-			{
-				this.OnSizeChanging(value);
-				this.SendPropertyChanging();
-				this._Size = value;
-				this.SendPropertyChanged("Size");
-				this.OnSizeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RPM", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string RPM
-	{
-		get
-		{
-			return this._RPM;
-		}
-		set
-		{
-			if ((this._RPM != value))
-			{
-				this.OnRPMChanging(value);
-				this.SendPropertyChanging();
-				this._RPM = value;
-				this.SendPropertyChanged("RPM");
-				this.OnRPMChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Max_Air_Flow", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Max_Air_Flow
-	{
-		get
-		{
-			return this._Max_Air_Flow;
-		}
-		set
-		{
-			if ((this._Max_Air_Flow != value))
-			{
-				this.OnMax_Air_FlowChanging(value);
-				this.SendPropertyChanging();
-				this._Max_Air_Flow = value;
-				this.SendPropertyChanged("Max_Air_Flow");
-				this.OnMax_Air_FlowChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Noise", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Noise
-	{
-		get
-		{
-			return this._Noise;
-		}
-		set
-		{
-			if ((this._Noise != value))
-			{
-				this.OnNoiseChanging(value);
-				this.SendPropertyChanging();
-				this._Noise = value;
-				this.SendPropertyChanged("Noise");
-				this.OnNoiseChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Static_Pressure", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Static_Pressure
-	{
-		get
-		{
-			return this._Static_Pressure;
-		}
-		set
-		{
-			if ((this._Static_Pressure != value))
-			{
-				this.OnStatic_PressureChanging(value);
-				this.SendPropertyChanging();
-				this._Static_Pressure = value;
-				this.SendPropertyChanged("Static_Pressure");
-				this.OnStatic_PressureChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Input_Voltage", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Input_Voltage
-	{
-		get
-		{
-			return this._Input_Voltage;
-		}
-		set
-		{
-			if ((this._Input_Voltage != value))
-			{
-				this.OnInput_VoltageChanging(value);
-				this.SendPropertyChanging();
-				this._Input_Voltage = value;
-				this.SendPropertyChanged("Input_Voltage");
-				this.OnInput_VoltageChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MTBF", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string MTBF
-	{
-		get
-		{
-			return this._MTBF;
-		}
-		set
-		{
-			if ((this._MTBF != value))
-			{
-				this.OnMTBFChanging(value);
-				this.SendPropertyChanging();
-				this._MTBF = value;
-				this.SendPropertyChanged("MTBF");
-				this.OnMTBFChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cable_Length", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Cable_Length
-	{
-		get
-		{
-			return this._Cable_Length;
-		}
-		set
-		{
-			if ((this._Cable_Length != value))
-			{
-				this.OnCable_LengthChanging(value);
-				this.SendPropertyChanging();
-				this._Cable_Length = value;
-				this.SendPropertyChanged("Cable_Length");
-				this.OnCable_LengthChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_Fans", DbType="Int NOT NULL")]
-	public int Num_Fans
-	{
-		get
-		{
-			return this._Num_Fans;
-		}
-		set
-		{
-			if ((this._Num_Fans != value))
-			{
-				this.OnNum_FansChanging(value);
-				this.SendPropertyChanging();
-				this._Num_Fans = value;
-				this.SendPropertyChanged("Num_Fans");
-				this.OnNum_FansChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Warranty
-	{
-		get
-		{
-			return this._Warranty;
-		}
-		set
-		{
-			if ((this._Warranty != value))
-			{
-				this.OnWarrantyChanging(value);
-				this.SendPropertyChanging();
-				this._Warranty = value;
-				this.SendPropertyChanged("Warranty");
-				this.OnWarrantyChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fan_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="Fan_ID")]
-	public EntitySet<Pc> Pcs
-	{
-		get
-		{
-			return this._Pcs;
-		}
-		set
-		{
-			this._Pcs.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_Fan", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
-	public PartsStock PartsStock
-	{
-		get
-		{
-			return this._PartsStock.Entity;
-		}
-		set
-		{
-			PartsStock previousValue = this._PartsStock.Entity;
+			Client previousValue = this._Client.Entity;
 			if (((previousValue != value) 
-						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
+						|| (this._Client.HasLoadedOrAssignedValue == false)))
 			{
 				this.SendPropertyChanging();
 				if ((previousValue != null))
 				{
-					this._PartsStock.Entity = null;
-					previousValue.Fan = null;
+					this._Client.Entity = null;
+					previousValue.PartCarts.Remove(this);
 				}
-				this._PartsStock.Entity = value;
+				this._Client.Entity = value;
 				if ((value != null))
 				{
-					value.Fan = this;
-					this._ID = value.ID;
+					value.PartCarts.Add(this);
+					this._User_ID = value.User_ID;
 				}
 				else
 				{
-					this._ID = default(int);
+					this._User_ID = default(int);
 				}
-				this.SendPropertyChanged("PartsStock");
+				this.SendPropertyChanged("Client");
 			}
 		}
 	}
@@ -14521,220 +15039,6 @@ public partial class Fan : INotifyPropertyChanging, INotifyPropertyChanged
 		{
 			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
-	}
-	
-	private void attach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.Fan = this;
-	}
-	
-	private void detach_Pcs(Pc entity)
-	{
-		this.SendPropertyChanging();
-		entity.Fan = null;
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PcStock")]
-public partial class PcStock : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _ID;
-	
-	private int _Quantity;
-	
-	private string _PC_Type;
-	
-	private EntityRef<PcSold> _PcSold;
-	
-	private EntityRef<Pc> _Pc;
-	
-	private EntitySet<PcCart> _PcCarts;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnQuantityChanging(int value);
-    partial void OnQuantityChanged();
-    partial void OnPC_TypeChanging(string value);
-    partial void OnPC_TypeChanged();
-    #endregion
-	
-	public PcStock()
-	{
-		this._PcSold = default(EntityRef<PcSold>);
-		this._Pc = default(EntityRef<Pc>);
-		this._PcCarts = new EntitySet<PcCart>(new Action<PcCart>(this.attach_PcCarts), new Action<PcCart>(this.detach_PcCarts));
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int ID
-	{
-		get
-		{
-			return this._ID;
-		}
-		set
-		{
-			if ((this._ID != value))
-			{
-				this.OnIDChanging(value);
-				this.SendPropertyChanging();
-				this._ID = value;
-				this.SendPropertyChanged("ID");
-				this.OnIDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
-	public int Quantity
-	{
-		get
-		{
-			return this._Quantity;
-		}
-		set
-		{
-			if ((this._Quantity != value))
-			{
-				this.OnQuantityChanging(value);
-				this.SendPropertyChanging();
-				this._Quantity = value;
-				this.SendPropertyChanged("Quantity");
-				this.OnQuantityChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PC_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string PC_Type
-	{
-		get
-		{
-			return this._PC_Type;
-		}
-		set
-		{
-			if ((this._PC_Type != value))
-			{
-				this.OnPC_TypeChanging(value);
-				this.SendPropertyChanging();
-				this._PC_Type = value;
-				this.SendPropertyChanged("PC_Type");
-				this.OnPC_TypeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcSold", Storage="_PcSold", ThisKey="ID", OtherKey="PC_ID", IsUnique=true, IsForeignKey=false)]
-	public PcSold PcSold
-	{
-		get
-		{
-			return this._PcSold.Entity;
-		}
-		set
-		{
-			PcSold previousValue = this._PcSold.Entity;
-			if (((previousValue != value) 
-						|| (this._PcSold.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PcSold.Entity = null;
-					previousValue.PcStock = null;
-				}
-				this._PcSold.Entity = value;
-				if ((value != null))
-				{
-					value.PcStock = this;
-				}
-				this.SendPropertyChanged("PcSold");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_Pc", Storage="_Pc", ThisKey="ID", OtherKey="PC_ID", IsUnique=true, IsForeignKey=false)]
-	public Pc Pc
-	{
-		get
-		{
-			return this._Pc.Entity;
-		}
-		set
-		{
-			Pc previousValue = this._Pc.Entity;
-			if (((previousValue != value) 
-						|| (this._Pc.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Pc.Entity = null;
-					previousValue.PcStock = null;
-				}
-				this._Pc.Entity = value;
-				if ((value != null))
-				{
-					value.PcStock = this;
-				}
-				this.SendPropertyChanged("Pc");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcCart", Storage="_PcCarts", ThisKey="ID", OtherKey="Pc_ID")]
-	public EntitySet<PcCart> PcCarts
-	{
-		get
-		{
-			return this._PcCarts;
-		}
-		set
-		{
-			this._PcCarts.Assign(value);
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-	
-	private void attach_PcCarts(PcCart entity)
-	{
-		this.SendPropertyChanging();
-		entity.PcStock = this;
-	}
-	
-	private void detach_PcCarts(PcCart entity)
-	{
-		this.SendPropertyChanging();
-		entity.PcStock = null;
 	}
 }
 
@@ -14750,6 +15054,8 @@ public partial class PcCart : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private int _Qua;
 	
+	private decimal _Total_Price;
+	
 	private EntityRef<PcStock> _PcStock;
 	
 	private EntityRef<Client> _Client;
@@ -14764,6 +15070,8 @@ public partial class PcCart : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnPc_IDChanged();
     partial void OnQuaChanging(int value);
     partial void OnQuaChanged();
+    partial void OnTotal_PriceChanging(decimal value);
+    partial void OnTotal_PriceChanged();
     #endregion
 	
 	public PcCart()
@@ -14837,6 +15145,26 @@ public partial class PcCart : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Qua = value;
 				this.SendPropertyChanged("Qua");
 				this.OnQuaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total_Price", DbType="Money NOT NULL")]
+	public decimal Total_Price
+	{
+		get
+		{
+			return this._Total_Price;
+		}
+		set
+		{
+			if ((this._Total_Price != value))
+			{
+				this.OnTotal_PriceChanging(value);
+				this.SendPropertyChanging();
+				this._Total_Price = value;
+				this.SendPropertyChanged("Total_Price");
+				this.OnTotal_PriceChanged();
 			}
 		}
 	}

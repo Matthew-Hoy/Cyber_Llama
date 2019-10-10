@@ -22,4 +22,6 @@ public class cLiquidCooler
     public String tube_mats;
     public String rgb;
     public String warranty;
+    public int active;
+    public int discount;
 }

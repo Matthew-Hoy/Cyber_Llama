@@ -23,4 +23,6 @@ public class cAirCooler
     public String width;
     public String features;
     public String warranty;
+    public int active;
+    public int discount;
 }

@@ -28,4 +28,6 @@ public class cCase
     public String front_io;
     public String cpu_cooler_max_height;
     public String warranty;
+    public int active;
+    public int discount;
 }

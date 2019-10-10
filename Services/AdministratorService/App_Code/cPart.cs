@@ -12,4 +12,6 @@ public class cPart
     public String model;
     public String type;
     public int Quantity;
+    public int active;
+    public int discount;
 }
