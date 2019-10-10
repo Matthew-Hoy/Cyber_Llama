@@ -70,12 +70,33 @@ public interface IService
     cPC getPC(int ID);
 
 
-    //Select types
+    //Select PC by Type or Price
     [OperationContract]
     List<cPC> getPC(String Type);
 
     [OperationContract]
     List<cPC> getPC(Double minPrice, Double maxPrice);
+
+    //Get compatible parts
+    List<cAirCooler> getAirCoolersForCPU(int cpu_ID);
+
+    List<cLiquidCooler> getLiquidCoolersForCPU(int cpu_ID);
+
+    List<cCPU> getCPUForAirCooler(int ac_ID);
+
+    List<cCPU> getCPUForLiquidCooler(int lc_ID);
+
+    List<cCPU> getCPUForMotherboard(int mobo_ID);
+
+    List<cCase> getCaseForMotherboard(int mobo_ID);
+
+    List<cRAM> getRAMForMotherboard(int mobo_ID);
+
+    List<cMobo> getMotherboardForCPU(int cpu_ID);
+
+    List<cMobo> getMotherboardForRAM(int ram_ID);
+
+    List<cMobo> getMotherboardForCase(int case_ID);
 
     //Entire Table
     [OperationContract]
@@ -114,7 +135,7 @@ public interface IService
     [OperationContract]
     List<cPC> getAllPC();
 
-    //Add to bridging table
+    //Add 
 
     //Shopping Cart Operations
     [OperationContract]

@@ -364,6 +364,17 @@ public class Service : IService
             }
         }
 
+        //Motherboard Copatability
+        dynamic moboList = (from c in db.Motherboards where (cpu.Chipset).Equals(c.Chipset) select c);
+
+        foreach (Motherboard c in moboList)
+        {
+            bool link = linkMoboToCPU(c.ID, cpu.ID);
+            if (link == false)
+            {
+                continue;
+            }
+        }
 
         try
         {
@@ -627,10 +638,36 @@ public class Service : IService
             Warranty = newMobo.warranty
         };
 
-        //Check for the compatible chipsets
+        //Check for the compatible Parts
+
+        //Cases
         dynamic CaseList = (from c in db.PCCases where c.Motherboard_Form_Factor.Equals(mobo.Form_Factor) select c);
 
         foreach (PCCase c in CaseList)
+        {
+            bool link = linkMoboToCase(mobo.ID, c.ID);
+            if (link == false)
+            {
+                continue;
+            }
+        }
+
+        //RAM
+        dynamic RamList = (from c in db.RAMs where ((Convert.ToInt32(c.Capacity)<=mobo.Max_Memory_Size) && c.Type.Equals(mobo.Memory_Type)) select c);
+
+        foreach (RAM c in RamList)
+        {
+            bool link = linkMoboToCase(mobo.ID, c.ID);
+            if (link == false)
+            {
+                continue;
+            }
+        }
+
+        //CPU
+        dynamic CpuList = (from c in db.CPUs where c.Chipset.Equals(mobo.Chipset) select c);
+
+        foreach (CPU c in CpuList)
         {
             bool link = linkMoboToCase(mobo.ID, c.ID);
             if (link == false)
@@ -729,6 +766,18 @@ public class Service : IService
             Height = newRAM.height,
             Warranty = newRAM.warranty
         };
+
+        //RAM Copatability
+        dynamic moboList = (from c in db.Motherboards where ((Convert.ToInt32(ram.Capacity) <= c.Max_Memory_Size) && ram.Type.Equals(c.Memory_Type)) select c);
+
+        foreach (Motherboard c in moboList)
+        {
+            bool link = linkMoboToRAM(c.ID, ram.ID);
+            if (link == false)
+            {
+                continue;
+            }
+        }
 
         db.RAMs.InsertOnSubmit(ram);
         db.PartsStocks.InsertOnSubmit(part);
@@ -909,7 +958,7 @@ public class Service : IService
 
     //The following functions are used to retrieve a part from a particular table.
     //For now they are private, but if the getPart() function doesn't work, feel free to make these functions public.
-    private cAirCooler getAirCooler(int ID)
+    public cAirCooler getAirCooler(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.AirCoolers where p.ID == ID select p).FirstOrDefault();
@@ -941,7 +990,7 @@ public class Service : IService
         return temp;
     }
 
-    private cCase getCase(int ID)
+    public cCase getCase(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.PCCases where p.ID == ID select p).FirstOrDefault();
@@ -976,7 +1025,7 @@ public class Service : IService
         return temp;
     }
 
-    private cCPU getCPU(int ID)
+    public cCPU getCPU(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.CPUs where p.ID == ID select p).FirstOrDefault();
@@ -1006,7 +1055,7 @@ public class Service : IService
         return temp;
     }
 
-    private cFan getFan(int ID)
+    public cFan getFan(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.Fans where p.ID == ID select p).FirstOrDefault();
@@ -1035,7 +1084,7 @@ public class Service : IService
         return temp;
     }
 
-    private cGPU getGPU(int ID)
+    public cGPU getGPU(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.GPUs where p.ID == ID select p).FirstOrDefault();
@@ -1069,7 +1118,7 @@ public class Service : IService
         return temp;
     }
 
-    private cHDD getHDD(int ID)
+    public cHDD getHDD(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.HDDs where p.ID == ID select p).FirstOrDefault();
@@ -1097,7 +1146,38 @@ public class Service : IService
         return temp;
     }
 
-    private cLiquidCooler getLiquidCooler(int ID)
+    public cHeadset getHeadset(int ID)
+    {
+        var part = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
+
+        var headset = (from p in db.Headsets where p.ID == ID select p).FirstOrDefault();
+
+        cHeadset temp = new cHeadset
+        {
+            id = headset.ID,
+            model = headset.Model,
+            brand = headset.Brand,
+            series = headset.Series,
+            price = (double)part.Price,
+            active = part.Active,
+            cable_length = headset.Cable_Length,
+            connector = headset.Connector,
+            frequency_response = headset.Frequency_Response,
+            sound_pressure_level = headset.Sound_Pressure_Level,
+            microphone = headset.Microphone,
+            mp_frequency_response = headset.MP_Frequency_Response,
+            mp_pickup_pattern = headset.MP_Pickup_Pattern,
+            mp_sensitivity = headset.MP_Sensitivity,
+            colour = headset.Colour,
+            weight = headset.Weight,
+            features = headset.Features,
+            warranty = headset.Warranty,
+        };
+
+        return temp;
+    }
+
+    public cLiquidCooler getLiquidCooler(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.LiquidCoolers where p.ID == ID select p).FirstOrDefault();
@@ -1128,7 +1208,7 @@ public class Service : IService
         return temp;
     }
 
-    private cMobo getMobo(int ID)
+    public cMobo getMobo(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.Motherboards where p.ID == ID select p).FirstOrDefault();
@@ -1160,7 +1240,7 @@ public class Service : IService
         return temp;
     }
 
-    private cPSU getPSU(int ID)
+    public cPSU getPSU(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.PSUs where p.ID == ID select p).FirstOrDefault();
@@ -1188,7 +1268,7 @@ public class Service : IService
         return temp;
     }
 
-    private cRAM getRAM(int ID)
+    public cRAM getRAM(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.RAMs where p.ID == ID select p).FirstOrDefault();
@@ -1215,7 +1295,7 @@ public class Service : IService
         return temp;
     }
 
-    private cSSD getSSD(int ID)
+    public cSSD getSSD(int ID)
     {
         var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
         var part = (from p in db.SSDs where p.ID == ID select p).FirstOrDefault();
@@ -1284,42 +1364,178 @@ public class Service : IService
         return temp;
     }
 
+    //Return Compatable Parts
+    public List<cAirCooler> getAirCoolersForCPU(int cpu_ID)
+    {
+        List<cAirCooler> list = new List<cAirCooler>();
+
+        dynamic compACList = (from c in db.CpuToAirCoolers where c.CPU_ID == cpu_ID select c);
+
+        foreach(CpuToAirCooler compAC in compACList)
+        {
+            var part = getPart(compAC.AC_ID);
+            
+            list.Add(part);
+        }
+
+        return list;
+    }
+     
+    public List<cLiquidCooler> getLiquidCoolersForCPU(int cpu_ID)
+    {
+        List<cLiquidCooler> list = new List<cLiquidCooler>();
+
+        dynamic compLCList = (from c in db.CpuToLiquidCoolers where c.CPU_ID == cpu_ID select c);
+
+        foreach (CpuToLiquidCooler compLC in compLCList)
+        {
+            var part = getPart(compLC.LC_ID);
+
+            list.Add(part);
+        }
+
+        return list;
+    }
+
+    public List<cCPU> getCPUForAirCooler(int ac_ID)
+    {
+        List<cCPU> list = new List<cCPU>();
+
+        dynamic compACList = (from c in db.CpuToAirCoolers where c.AC_ID == ac_ID select c);
+
+        foreach (CpuToAirCooler compCPU in compACList)
+        {
+            var part = getPart(compCPU.CPU_ID);
+
+            list.Add(part);
+        }
+
+        return list;
+    }
+
+    public List<cCPU> getCPUForLiquidCooler(int lc_ID)
+    {
+        List<cCPU> list = new List<cCPU>();
+
+        dynamic compLCList = (from c in db.CpuToLiquidCoolers where c.LC_ID == lc_ID select c);
+
+        foreach (CpuToLiquidCooler compCPU in compLCList)
+        {
+            var part = getPart(compCPU.CPU_ID);
+
+            list.Add(part);
+        }
+
+        return list;
+    }
+
+    public List<cCPU> getCPUForMotherboard(int mobo_ID)
+    {
+        List<cCPU> list = new List<cCPU>();
+
+        dynamic compCPUList = (from c in db.MoboToCpus where c.Mobo_ID == mobo_ID select c);
+
+        foreach (MoboToCpu compCPU in compCPUList)
+        {
+            var part = getPart(compCPU.CPU_ID);
+
+            list.Add(part);
+        }
+
+        return list;
+    }
+
+    public List<cCase> getCaseForMotherboard(int mobo_ID)
+    {
+        List<cCase> list = new List<cCase>();
+
+        dynamic compCaseList = (from c in db.MoboToCases where c.Mobo_ID == mobo_ID select c);
+
+        foreach (MoboToCase compCase in compCaseList)
+        {
+            var part = getPart(compCase.Case_ID);
+
+            list.Add(part);
+        }
+
+        return list;
+    }
+
+    public List<cRAM> getRAMForMotherboard(int mobo_ID)
+    {
+        List<cRAM> list = new List<cRAM>();
+
+        dynamic compRAMList = (from c in db.MoboToCpus where c.Mobo_ID == mobo_ID select c);
+
+        foreach (MoboToRam compRAM in compRAMList)
+        {
+            var part = getPart(compRAM.RAM_ID);
+
+            list.Add(part);
+        }
+
+        return list;
+    }
+
+    public List<cMobo> getMotherboardForCPU(int cpu_ID)
+    {
+        List<cMobo> list = new List<cMobo>();
+
+        dynamic compMoboList = (from c in db.MoboToCpus where c.CPU_ID == cpu_ID select c);
+
+        foreach (MoboToCpu compMobo in compMoboList)
+        {
+            var part = getPart(compMobo.Mobo_ID);
+
+            list.Add(part);
+        }
+
+        return list;
+    }
+
+    public List<cMobo> getMotherboardForRAM(int ram_ID)
+    {
+        List<cMobo> list = new List<cMobo>();
+
+        dynamic compMoboList = (from c in db.MoboToRams where c.RAM_ID == ram_ID select c);
+
+        foreach (MoboToRam compMobo in compMoboList)
+        {
+            var part = getPart(compMobo.Mobo_ID);
+
+            list.Add(part);
+        }
+
+        return list;
+    }
+
+    public List<cMobo> getMotherboardForCase(int case_ID)
+    {
+        List<cMobo> list = new List<cMobo>();
+
+        dynamic compMoboList = (from c in db.MoboToCases where c.Case_ID == case_ID select c);
+
+        foreach (MoboToCase compMobo in compMoboList)
+        {
+            var part = getPart(compMobo.Mobo_ID);
+
+            list.Add(part);
+        }
+
+        return list;
+    }
+
 
     //Return Entire Table
     public List<cAirCooler> getAllAirCooler()
     {
         List<cAirCooler> list = new List<cAirCooler>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Air Cooler") select p).FirstOrDefault();
-
-        foreach (PartsStock part in parts) {
-            var p = getPart(parts.ID);
-
-            cAirCooler temp = new cAirCooler
-            {
-                id = p.ID,
-                model = p.Model,
-                brand = p.Brand,
-                series = p.Series,
-                price = (double)p.Price,
-                fan_size = p.Fan_Size,
-                chipset = p.Compatibility,
-                fan_rpm = p.Fan_RPM,
-                air_flow = p.Air_Flow,
-                noise_level = p.Noise_Level,
-                power_connector = p.Power_Connector,
-                colour = p.Colour,
-                materials = p.Materials,
-                length = p.Length,
-                height = p.Height,
-                width = p.Width,
-                features = p.Features,
-                warranty = p.Warranty,
-                discount = part.Discount,
-                active = part.Active
-            };
-
-            list.Add(temp);
-
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Air Cooler") select p);
+        
+        foreach (PartsStock p in parts) {
+            cAirCooler part = getAirCooler(parts.ID);
+            
+            list.Add(part);
         }
 
         return list;
@@ -1328,40 +1544,13 @@ public class Service : IService
     public List<cCase> getAllCase()
     {
         List<cCase> list = new List<cCase>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Case") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Case") select p);
 
-        foreach (PartsStock part in parts)
+        foreach (PartsStock p in parts)
         {
-            var p = getPart(parts.ID);
+            cCase part = getCase(parts.ID);
 
-            cCase temp = new cCase
-            {
-                id = p.ID,
-                model = p.Model,
-                brand = p.Brand,
-                series = p.Series,
-                price = (double)part.Price,
-                colour = p.Colour,
-                dimensions = p.Dimensions,
-                net_weight = p.Net_Weight,
-                mobo_form_factor = p.Motherboard_Form_Factor,
-                side_window = p.Side_Window,
-                num_front_fans = p.Num_Front_Fans,
-                num_back_fans = p.Num_Back_Fans,
-                num_top_fans = p.Num_Top_Fans,
-                num_bottom_fans = p.Num_Bottom_Fans,
-                top_rad_length = p.Top_Radiator_Support,
-                front_rad_length = p.Front_Radiator_Support,
-                gpu_max_length = p.GPU_Max_Length,
-                expansion_slots = p.Expansion_Slots,
-                front_io = p.Front_I_O,
-                cpu_cooler_max_height = p.CPU_Cooler_Height,
-                warranty = p.Warranty,
-                discount = part.Discount,
-                active = part.Active
-            };
-
-            list.Add(temp);
+            list.Add(part);
         }
 
         return list;
@@ -1370,35 +1559,13 @@ public class Service : IService
     public List<cCPU> getAllCPU()
     {
         List<cCPU> list = new List<cCPU>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("CPU") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("CPU") select p);
 
-        foreach (PartsStock part in parts)
+        foreach (PartsStock p in parts)
         {
-            var p = getPart(parts.ID);
-
-            cCPU temp = new cCPU
-            {
-                id = p.ID,
-                model = p.Model,
-                brand = p.Brand,
-                series = p.Series,
-                price = (double)part.Price,
-                cores = p.Cores,
-                threads = p.Threads,
-                base_clock = p.Base_Clock,
-                boost_clock = p.Boost_Clock,
-                total_cache = p.Total_Cache,
-                tdp = Convert.ToInt32(p.TDP),
-                max_temp = p.Max_Temp,
-                max_mem_speed = Convert.ToInt32(p.System_Memory_Speed),
-                mem_type = p.System_Memory_Type,
-                mem_channels = p.Memory_Channels,
-                warranty = p.Warranty,
-                discount = part.Discount,
-                active = part.Active,
-            };
-
-            list.Add(temp);
+            cCPU part = getCPU(parts.ID);
+            
+            list.Add(part);
         }
         return list;
     }
@@ -1406,34 +1573,13 @@ public class Service : IService
     public List<cFan> getAllFan()
     {
         List<cFan> list = new List<cFan>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Fan") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Fan") select p);
 
-        foreach (PartsStock part in parts)
+        foreach (PartsStock p in parts)
         {
-            var p = getPart(parts.ID);
-
-            cFan temp = new cFan
-            {
-                id = p.ID,
-                model = p.Model,
-                brand = p.Brand,
-                series = p.Series,
-                price = (double)part.Price,
-                size = p.Size,
-                rpm = p.RPM,
-                max_air_flow = p.Max_Air_Flow,
-                noise = p.Noise,
-                static_pressure = p.Static_Pressure,
-                input_voltage = p.Input_Voltage,
-                mtbf = p.MTBF,
-                cable_length = p.Cable_Length,
-                num_fans = p.Num_Fans,
-                warranty = p.Warranty,
-                discount = part.Discount,
-                active = part.Active
-            };
-
-            list.Add(temp);
+            cFan part = getFan(parts.ID);
+            
+            list.Add(part);
         }
 
         return list;
@@ -1442,39 +1588,13 @@ public class Service : IService
     public List<cGPU> getAllGPU()
     {
         List<cGPU> list = new List<cGPU>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("GPU") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("GPU") select p);
 
         foreach (PartsStock p in parts)
         {
-            var part = getPart(parts.ID);
-
-            cGPU temp = new cGPU
-            {
-                id = part.ID,
-                model = part.Model,
-                brand = part.Brand,
-                series = part.Series,
-                price = (double)p.Price,
-                base_clock = part.Base_Clock_Speed,
-                boost_clock = part.Boost_Clock_Speed,
-                stream_proccessors = part.Stream_Processors,
-                mem_speed = part.Memory_Clock,
-                mem_size = part.Memory_Size,
-                mem_type = part.Memory_Type,
-                ports = part.Ports,
-                max_resolution = part.Max_Digital_Resolution,
-                vr_ready = part.VR_Ready,
-                recommended_psu_power = part.Recommended_Power_Supply,
-                form_factor = part.Form_Factor,
-                slot_width = part.Slot_Width,
-                length = Convert.ToDouble(part.Length),
-                height = Convert.ToDouble(part.Height),
-                warranty = part.Warranty,
-                discount = p.Discount,
-                active = p.Active
-            };
-
-            list.Add(temp);
+            cGPU part = getGPU(parts.ID);
+            
+            list.Add(part);
         }
 
         return list;
@@ -1483,31 +1603,27 @@ public class Service : IService
     public List<cHDD> getAllHDD()
     {
         List<cHDD> list = new List<cHDD>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("HDD") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("HDD") select p);
 
         foreach (PartsStock p in parts)
         {
-            var part = getPart(parts.ID);
+            cHDD part = getHDD(parts.ID);
 
-            cHDD temp = new cHDD
-            {
-                id = part.ID,
-                model = part.Model,
-                brand = part.Brand,
-                series = part.Series,
-                price = (double)p.Price,
-                interface_type = part.Interface,
-                max_sustained_transfer_rate = part.Max_Sustained_Transfer_Rate,
-                rotational_speed = part.Rotational_Speed,
-                load_unload_cycles = part.Load_Unload_Cycles,
-                avg_power_usage = part.Power_Usage,
-                operation_temp = part.Operating_Temp,
-                size = part.Size,
-                weight = part.Weight,
-                warranty = part.Warranty,
-                discount = p.Discount,
-                active = p.Active
-            };
+            list.Add(part);
+        }
+
+        return list;
+    }
+
+    public List<cHeadset> getAllHeadset()
+    {
+        List<cHeadset> list = new List<cHeadset>();
+
+        dynamic headsetList = (from h in db.PartsStocks where h.Type.Equals("Headset") select h);
+
+        foreach(PartsStock hs in headsetList)
+        {
+            cHeadset temp = getHeadset(hs.ID);
 
             list.Add(temp);
         }
@@ -1518,35 +1634,13 @@ public class Service : IService
     public List<cLiquidCooler> getAllLiquidCooler()
     {
         List<cLiquidCooler> list = new List<cLiquidCooler>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Liquid Cooler") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Liquid Cooler") select p);
 
         foreach (PartsStock p in parts)
         {
-            var part = getPart(parts.ID);
-
-            cLiquidCooler temp = new cLiquidCooler
-            {
-                id = part.ID,
-                model = part.Model,
-                brand = part.Brand,
-                series = part.Series,
-                price = (double)p.Price,
-                sockets = part.Sockets_Supported,
-                fan_size = part.Fan_Size,
-                fan_height = part.Fan_Height,
-                color = part.Color,
-                rad_mats = part.Radiator_Mats,
-                rad_length = part.Radiator_Length,
-                rad_height = part.Radiator_Height,
-                rad_width = part.Radiator_Width,
-                tube_length = part.Tube_Length,
-                tube_mats = part.Tube_Mats,
-                rgb = part.RGB,
-                warranty = part.Warranty,
-                discount = p.Discount
-            };
-
-            list.Add(temp);
+            cLiquidCooler part = getPart(parts.ID);
+            
+            list.Add(part);
         }
 
         return list;
@@ -1555,37 +1649,13 @@ public class Service : IService
     public List<cMobo> getAllMobo()
     {
         List<cMobo> list = new List<cMobo>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Motherboard") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Motherboard") select p);
 
         foreach (PartsStock p in parts)
         {
-            var part = getPart(parts.ID);
-
-            cMobo temp = new cMobo
-            {
-                id = part.ID,
-                model = part.Model,
-                brand = part.Brand,
-                series = part.Series,
-                price = (double)p.Price,
-                chipset = part.Chipset,
-                memoryType = part.Memory_Type,
-                max_mem_size = part.Max_Memory_Size,
-                max_mem_speed = part.Max_Memory_Speed,
-                lan = part.LAN,
-                expansion_slots = part.Expansion_Slots,
-                storage = part.Storage,
-                internal_IO = part.Internal_I_O_Connectors,
-                back_panel_IO = part.Back_Panel_Connectors,
-                os_support = part.OS_Support,
-                form_factor = part.Form_Factor,
-                notes = part.Notes,
-                warranty = part.Warranty,
-                discount = p.Discount,
-                active = p.Active
-            };
-
-            list.Add(temp);
+            cMobo part = getPart(parts.ID);
+            
+            list.Add(part);
         }
 
         return list;
@@ -1594,33 +1664,13 @@ public class Service : IService
     public List<cPSU> getAllPSU()
     {
         List<cPSU> list = new List<cPSU>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("PSU") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("PSU") select p);
 
         foreach (PartsStock p in parts)
         {
-            var part = getPart(parts.ID);
+            cPSU part = getPart(parts.ID);
 
-            cPSU temp = new cPSU
-            {
-                id = part.ID,
-                model = part.Model,
-                brand = part.Brand,
-                series = part.Series,
-                price = (double)p.Price,
-                Power = part.Power,
-                certification = part.Certification,
-                modular = part.Modular,
-                connectors = part.Connectors,
-                mtbf = part.MTBF,
-                fan_size = part.Fan_Size,
-                cables = part.Cables,
-                dimensions = part.Dimensions,
-                warranty = part.Warranty,
-                discount = p.Discount,
-                active = p.Active
-            };
-
-            list.Add(temp);
+            list.Add(part);
         }
 
         return list;
@@ -1629,32 +1679,13 @@ public class Service : IService
     public List<cRAM> getAllRAM()
     {
         List<cRAM> list = new List<cRAM>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("RAM") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("RAM") select p);
 
         foreach (PartsStock p in parts)
         {
-            var part = getPart(parts.ID);
+            cRAM part = getPart(parts.ID);
 
-            cRAM temp = new cRAM
-            {
-                id = part.ID,
-                model = part.Model,
-                brand = part.Brand,
-                series = part.Series,
-                price = (double)p.Price,
-                capacity = part.Capacity,
-                type = part.Type,
-                speed = part.Speed,
-                latency = part.Latency,
-                voltage = part.Voltage,
-                channel_config = part.Channel_Config,
-                height = part.Height,
-                warranty = part.Warranty,
-                discount = p.Discount,
-                active = p.Active
-            };
-
-            list.Add(temp);
+            list.Add(part);
         }
 
         return list;
@@ -1663,37 +1694,13 @@ public class Service : IService
     public List<cSSD> getAllSSD()
     {
         List<cSSD> list = new List<cSSD>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("SSD") select p).FirstOrDefault();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("SSD") select p);
 
         foreach (PartsStock p in parts)
         {
-            var part = getPart(parts.ID);
-
-            cSSD temp = new cSSD
-            {
-                id = part.ID,
-                model = part.Model,
-                brand = part.Brand,
-                series = part.Series,
-                price = (double)p.Price,
-                form_factor = part.Form_Factor,
-                capacity = part.Capacity,
-                interface_type = part.Interface_Type,
-                length = part.Length,
-                width = part.Width,
-                max_seq_read = part.Max_Sequential_Read,
-                max_seq_write = part.Max_Sequential_Write,
-                random_read = part.Random_Read,
-                random_write = part.Random_Write,
-                mtbf = part.MTBF,
-                operating_temp = part.Operating_Temp,
-                max_power_usage = part.Max_Power_Usage,
-                warranty = part.Warranty,
-                discount = p.Discount,
-                active = p.Active
-            };
-
-            list.Add(temp);
+            cSSD part = getPart(parts.ID);
+            
+            list.Add(part);
         }
 
         return list;
@@ -1702,48 +1709,19 @@ public class Service : IService
     public List<cPC> getAllPC()
     {
         List<cPC> list = new List<cPC>();
-        dynamic pcs = (from p in db.PcStocks where p.Active == 1 select p).FirstOrDefault();
+        dynamic pcs = (from p in db.PcStocks where p.Active == 1 select p);
 
         foreach (PcStock p in pcs)
         {
-            var pc = getPC(pcs.ID);
-
-            cPC temp = new cPC
-            {
-                id = pc.PC_ID,
-                type = pc.PC_Type,
-                price = (double)pc.Price,
-                case_id = Convert.ToString(pc.Case_ID),
-                mobo_id = Convert.ToString(pc.Mobo_ID),
-                cpu_id = Convert.ToString(pc.CPU_ID),
-                ram_id = Convert.ToString(pc.RAM_ID),
-                gpu_id = Convert.ToString(pc.GPU_ID),
-                cooler_id = Convert.ToString(pc.Cooler_ID),
-                ssd_id = Convert.ToString(pc.SSD_ID),
-                hdd_id = Convert.ToString(pc.HDD_ID),
-                psu_id = Convert.ToString(pc.PSU_ID),
-                os_id = Convert.ToString(pc.OS_ID),
-                fan_id = Convert.ToString(pc.Fan_ID),
-                num_fans = pc.Num_Fans,
-                num_ssd = pc.Num_SSD,
-                num_hdd = pc.Num_HDD,
-                monitor_id = Convert.ToString(pc.Monitor_ID),
-                headset_id = Convert.ToString(pc.Headset_ID),
-                keyboard_id = Convert.ToString(pc.Keyboard_ID),
-                mouse_id = Convert.ToString(pc.Mouse_ID),
-                speaker_id = Convert.ToString(pc.Speaker_ID),
-                warranty = pc.Warranty,
-                discount = p.Discount,
-                active = p.Active
-            };
-
-            list.Add(temp);
+            cPC pc = getPC(pcs.ID);
+            
+            list.Add(pc);
         }
 
         return list;
     }
 
-    //Return Items Based on parameters
+    //Return PCs Based on parameters
     public List<cPC> getPC(String Type)
     {
         List<cPC> list = new List<cPC>();
