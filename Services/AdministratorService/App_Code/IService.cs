@@ -72,10 +72,10 @@ public interface IService
 
     //Select types
     [OperationContract]
-    List<cPC> getPC(String Type);
+    List<cPC> getPCbyType(String Type);
 
     [OperationContract]
-    List<cPC> getPC(Double minPrice, Double maxPrice);
+    List<cPC> getPCbyPrice(Double minPrice, Double maxPrice);
 
     //Entire Table
     [OperationContract]

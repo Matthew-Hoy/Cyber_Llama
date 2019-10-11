@@ -13,11 +13,11 @@ namespace CyberLlamaConsumerSite.Controllers
         public ActionResult Index(string fName, string sName, string eMail, string phone, string type, string UserName, string password, string confirm)
         {
             //if(Session["UserType"] == null)
-           // {
-               // return View("AccessDenied");
+            //{
+             //   return View();
            // }
             //else if(Convert.ToInt32(Session["UserType"]) <= 2)
-            {
+            //{
                 var positions = sr.getUserPositions();
 
                 UserPositionView view = new UserPositionView
@@ -25,8 +25,8 @@ namespace CyberLlamaConsumerSite.Controllers
                     userPosition = positions.ToList()
                 };
                 return View(view);
-            }
-            return View();
+            //}
+            //return View();
         }
 
         [HttpPost]
