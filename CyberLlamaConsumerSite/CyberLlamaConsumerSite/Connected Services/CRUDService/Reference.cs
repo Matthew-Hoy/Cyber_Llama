@@ -3765,6 +3765,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getUserPositions", ReplyAction="http://tempuri.org/IService/getUserPositionsResponse")]
         System.Threading.Tasks.Task<string[]> getUserPositionsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
+        string getAllEmployees();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
+        System.Threading.Tasks.Task<string> getAllEmployeesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addAirCooler", ReplyAction="http://tempuri.org/IService/addAirCoolerResponse")]
         bool addAirCooler(CyberLlamaConsumerSite.CRUDService.cAirCooler newAC, int qua);
         
@@ -3999,12 +4005,6 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/checkOut", ReplyAction="http://tempuri.org/IService/checkOutResponse")]
         System.Threading.Tasks.Task<bool> checkOutAsync(int user_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
-        string getAllEmployees();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
-        System.Threading.Tasks.Task<string> getAllEmployeesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4064,6 +4064,14 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<string[]> getUserPositionsAsync() {
             return base.Channel.getUserPositionsAsync();
+        }
+        
+        public string getAllEmployees() {
+            return base.Channel.getAllEmployees();
+        }
+        
+        public System.Threading.Tasks.Task<string> getAllEmployeesAsync() {
+            return base.Channel.getAllEmployeesAsync();
         }
         
         public bool addAirCooler(CyberLlamaConsumerSite.CRUDService.cAirCooler newAC, int qua) {
