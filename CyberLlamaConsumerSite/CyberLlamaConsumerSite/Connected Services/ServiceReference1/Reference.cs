@@ -15,6 +15,131 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cEmployee", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cEmployee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Admin_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Contact_NumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string First_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurnameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Admin_ID {
+            get {
+                return this.Admin_IDField;
+            }
+            set {
+                if ((this.Admin_IDField.Equals(value) != true)) {
+                    this.Admin_IDField = value;
+                    this.RaisePropertyChanged("Admin_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Contact_Number {
+            get {
+                return this.Contact_NumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Contact_NumberField, value) != true)) {
+                    this.Contact_NumberField = value;
+                    this.RaisePropertyChanged("Contact_Number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string First_Name {
+            get {
+                return this.First_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
+                    this.First_NameField = value;
+                    this.RaisePropertyChanged("First_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Position {
+            get {
+                return this.PositionField;
+            }
+            set {
+                if ((this.PositionField.Equals(value) != true)) {
+                    this.PositionField = value;
+                    this.RaisePropertyChanged("Position");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Surname {
+            get {
+                return this.SurnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
+                    this.SurnameField = value;
+                    this.RaisePropertyChanged("Surname");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="cAirCooler", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class cAirCooler : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -4278,6 +4403,131 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cAllCart", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cAllCart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imagelinkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int part_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int quaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int user_idField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
+                    this.descriptionField = value;
+                    this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string imagelink {
+            get {
+                return this.imagelinkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imagelinkField, value) != true)) {
+                    this.imagelinkField = value;
+                    this.RaisePropertyChanged("imagelink");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int part_id {
+            get {
+                return this.part_idField;
+            }
+            set {
+                if ((this.part_idField.Equals(value) != true)) {
+                    this.part_idField = value;
+                    this.RaisePropertyChanged("part_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int qua {
+            get {
+                return this.quaField;
+            }
+            set {
+                if ((this.quaField.Equals(value) != true)) {
+                    this.quaField = value;
+                    this.RaisePropertyChanged("qua");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int user_id {
+            get {
+                return this.user_idField;
+            }
+            set {
+                if ((this.user_idField.Equals(value) != true)) {
+                    this.user_idField = value;
+                    this.RaisePropertyChanged("user_id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService")]
     public interface IService {
@@ -4305,6 +4555,12 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getUserPositions", ReplyAction="http://tempuri.org/IService/getUserPositionsResponse")]
         System.Threading.Tasks.Task<string[]> getUserPositionsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cEmployee[] getAllEmployees();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cEmployee[]> getAllEmployeesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addAirCooler", ReplyAction="http://tempuri.org/IService/addAirCoolerResponse")]
         bool addAirCooler(CyberLlamaConsumerSite.ServiceReference1.cAirCooler newAC, int qua);
@@ -4379,6 +4635,8 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         System.Threading.Tasks.Task<bool> addPCAsync(CyberLlamaConsumerSite.ServiceReference1.cPC newPC, int qua);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPart", ReplyAction="http://tempuri.org/IService/getPartResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.ServiceReference1.cEmployee[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.ServiceReference1.cEmployee))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.ServiceReference1.cAirCooler))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.ServiceReference1.cCase))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.ServiceReference1.cCPU))]
@@ -4405,6 +4663,8 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.ServiceReference1.c_ProductPageInfo[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.ServiceReference1.c_ProductPageInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.ServiceReference1.cSSD[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.ServiceReference1.cAllCart[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.ServiceReference1.cAllCart))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
         object getPart(int ID);
         
@@ -4417,17 +4677,17 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/intgetPC", ReplyAction="http://tempuri.org/IService/intgetPCResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC> intgetPCAsync(int ID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/strgetPC", ReplyAction="http://tempuri.org/IService/strgetPCResponse")]
-        CyberLlamaConsumerSite.ServiceReference1.cPC[] strgetPC(string Type);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPCbyType", ReplyAction="http://tempuri.org/IService/getPCbyTypeResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cPC[] getPCbyType(string Type);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/strgetPC", ReplyAction="http://tempuri.org/IService/strgetPCResponse")]
-        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC[]> strgetPCAsync(string Type);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPCbyType", ReplyAction="http://tempuri.org/IService/getPCbyTypeResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC[]> getPCbyTypeAsync(string Type);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/dblgetPC", ReplyAction="http://tempuri.org/IService/dblgetPCResponse")]
-        CyberLlamaConsumerSite.ServiceReference1.cPC[] dblgetPC(double minPrice, double maxPrice);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPCbyPrice", ReplyAction="http://tempuri.org/IService/getPCbyPriceResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cPC[] getPCbyPrice(double minPrice, double maxPrice);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/dblgetPC", ReplyAction="http://tempuri.org/IService/dblgetPCResponse")]
-        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC[]> dblgetPCAsync(double minPrice, double maxPrice);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPCbyPrice", ReplyAction="http://tempuri.org/IService/getPCbyPriceResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC[]> getPCbyPriceAsync(double minPrice, double maxPrice);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllAirCooler", ReplyAction="http://tempuri.org/IService/getAllAirCoolerResponse")]
         CyberLlamaConsumerSite.ServiceReference1.cAirCooler[] getAllAirCooler();
@@ -4560,6 +4820,12 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/checkOut", ReplyAction="http://tempuri.org/IService/checkOutResponse")]
         System.Threading.Tasks.Task<bool> checkOutAsync(int user_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCartItems", ReplyAction="http://tempuri.org/IService/getCartItemsResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cAllCart[] getCartItems(int user_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCartItems", ReplyAction="http://tempuri.org/IService/getCartItemsResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAllCart[]> getCartItemsAsync(int user_ID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4619,6 +4885,14 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string[]> getUserPositionsAsync() {
             return base.Channel.getUserPositionsAsync();
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cEmployee[] getAllEmployees() {
+            return base.Channel.getAllEmployees();
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cEmployee[]> getAllEmployeesAsync() {
+            return base.Channel.getAllEmployeesAsync();
         }
         
         public bool addAirCooler(CyberLlamaConsumerSite.ServiceReference1.cAirCooler newAC, int qua) {
@@ -4733,20 +5007,20 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
             return base.Channel.intgetPCAsync(ID);
         }
         
-        public CyberLlamaConsumerSite.ServiceReference1.cPC[] strgetPC(string Type) {
-            return base.Channel.strgetPC(Type);
+        public CyberLlamaConsumerSite.ServiceReference1.cPC[] getPCbyType(string Type) {
+            return base.Channel.getPCbyType(Type);
         }
         
-        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC[]> strgetPCAsync(string Type) {
-            return base.Channel.strgetPCAsync(Type);
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC[]> getPCbyTypeAsync(string Type) {
+            return base.Channel.getPCbyTypeAsync(Type);
         }
         
-        public CyberLlamaConsumerSite.ServiceReference1.cPC[] dblgetPC(double minPrice, double maxPrice) {
-            return base.Channel.dblgetPC(minPrice, maxPrice);
+        public CyberLlamaConsumerSite.ServiceReference1.cPC[] getPCbyPrice(double minPrice, double maxPrice) {
+            return base.Channel.getPCbyPrice(minPrice, maxPrice);
         }
         
-        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC[]> dblgetPCAsync(double minPrice, double maxPrice) {
-            return base.Channel.dblgetPCAsync(minPrice, maxPrice);
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC[]> getPCbyPriceAsync(double minPrice, double maxPrice) {
+            return base.Channel.getPCbyPriceAsync(minPrice, maxPrice);
         }
         
         public CyberLlamaConsumerSite.ServiceReference1.cAirCooler[] getAllAirCooler() {
@@ -4923,6 +5197,14 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> checkOutAsync(int user_ID) {
             return base.Channel.checkOutAsync(user_ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cAllCart[] getCartItems(int user_ID) {
+            return base.Channel.getCartItems(user_ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAllCart[]> getCartItemsAsync(int user_ID) {
+            return base.Channel.getCartItemsAsync(user_ID);
         }
     }
 }

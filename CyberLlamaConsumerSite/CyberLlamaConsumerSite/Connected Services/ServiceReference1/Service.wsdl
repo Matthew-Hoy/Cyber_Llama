@@ -32,6 +32,12 @@
   <wsdl:message name="IService_getUserPositions_OutputMessage">
     <wsdl:part name="parameters" element="tns:getUserPositionsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getAllEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllEmployees" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllEmployeesResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_addAirCooler_InputMessage">
     <wsdl:part name="parameters" element="tns:addAirCooler" />
   </wsdl:message>
@@ -116,17 +122,17 @@
   <wsdl:message name="IService_intgetPC_OutputMessage">
     <wsdl:part name="parameters" element="tns:intgetPCResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_strgetPC_InputMessage">
-    <wsdl:part name="parameters" element="tns:strgetPC" />
+  <wsdl:message name="IService_getPCbyType_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPCbyType" />
   </wsdl:message>
-  <wsdl:message name="IService_strgetPC_OutputMessage">
-    <wsdl:part name="parameters" element="tns:strgetPCResponse" />
+  <wsdl:message name="IService_getPCbyType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPCbyTypeResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_dblgetPC_InputMessage">
-    <wsdl:part name="parameters" element="tns:dblgetPC" />
+  <wsdl:message name="IService_getPCbyPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPCbyPrice" />
   </wsdl:message>
-  <wsdl:message name="IService_dblgetPC_OutputMessage">
-    <wsdl:part name="parameters" element="tns:dblgetPCResponse" />
+  <wsdl:message name="IService_getPCbyPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPCbyPriceResponse" />
   </wsdl:message>
   <wsdl:message name="IService_getAllAirCooler_InputMessage">
     <wsdl:part name="parameters" element="tns:getAllAirCooler" />
@@ -260,6 +266,12 @@
   <wsdl:message name="IService_checkOut_OutputMessage">
     <wsdl:part name="parameters" element="tns:checkOutResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getCartItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCartItems" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCartItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCartItemsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
@@ -276,6 +288,10 @@
     <wsdl:operation name="getUserPositions">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getUserPositions" message="tns:IService_getUserPositions_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getUserPositionsResponse" message="tns:IService_getUserPositions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllEmployees" message="tns:IService_getAllEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllEmployeesResponse" message="tns:IService_getAllEmployees_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addAirCooler">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addAirCooler" message="tns:IService_addAirCooler_InputMessage" />
@@ -333,13 +349,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/intgetPC" message="tns:IService_intgetPC_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/intgetPCResponse" message="tns:IService_intgetPC_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="strgetPC">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/strgetPC" message="tns:IService_strgetPC_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/strgetPCResponse" message="tns:IService_strgetPC_OutputMessage" />
+    <wsdl:operation name="getPCbyType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPCbyType" message="tns:IService_getPCbyType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPCbyTypeResponse" message="tns:IService_getPCbyType_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="dblgetPC">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/dblgetPC" message="tns:IService_dblgetPC_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/dblgetPCResponse" message="tns:IService_dblgetPC_OutputMessage" />
+    <wsdl:operation name="getPCbyPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPCbyPrice" message="tns:IService_getPCbyPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPCbyPriceResponse" message="tns:IService_getPCbyPrice_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getAllAirCooler">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllAirCooler" message="tns:IService_getAllAirCooler_InputMessage" />
@@ -429,6 +445,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/checkOut" message="tns:IService_checkOut_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/checkOutResponse" message="tns:IService_checkOut_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getCartItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCartItems" message="tns:IService_getCartItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCartItemsResponse" message="tns:IService_getCartItems_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -461,6 +481,15 @@
     </wsdl:operation>
     <wsdl:operation name="getUserPositions">
       <soap:operation soapAction="http://tempuri.org/IService/getUserPositions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployees">
+      <soap:operation soapAction="http://tempuri.org/IService/getAllEmployees" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -594,8 +623,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="strgetPC">
-      <soap:operation soapAction="http://tempuri.org/IService/strgetPC" style="document" />
+    <wsdl:operation name="getPCbyType">
+      <soap:operation soapAction="http://tempuri.org/IService/getPCbyType" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -603,8 +632,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="dblgetPC">
-      <soap:operation soapAction="http://tempuri.org/IService/dblgetPC" style="document" />
+    <wsdl:operation name="getPCbyPrice">
+      <soap:operation soapAction="http://tempuri.org/IService/getPCbyPrice" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -803,6 +832,15 @@
     </wsdl:operation>
     <wsdl:operation name="checkOut">
       <soap:operation soapAction="http://tempuri.org/IService/checkOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCartItems">
+      <soap:operation soapAction="http://tempuri.org/IService/getCartItems" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

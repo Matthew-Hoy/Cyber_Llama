@@ -1,4 +1,3 @@
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-//using Newtonsoft.Json;
 
 
 // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service" in code, svc and config file together.
@@ -146,15 +144,18 @@ public class Service : IService
         return db.UserPositions.Select(x => x.Position).ToList();
     }
 
-    public string getAllEmployees()
+    public List<cEmployee> getAllEmployees()
     {
 
-        return JsonConvert.SerializeObject(db.Admins.Select(x => new { x.Admin_ID, x.First_Name, x.Surname, x.Email, x.Conrtact_Number, x.Position }).ToList(), Formatting.Indented,
-                new JsonSerializerSettings()
-                {
-                    ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-                }
-                );
+        return db.Admins.Select(x => new cEmployee
+        {
+            Admin_ID = x.Admin_ID,
+            First_Name = x.First_Name,
+            Surname = x.Surname,
+            Email = x.Email,
+            Contact_Number = x.Conrtact_Number,
+            Position = x.Position
+        }).ToList();     
     }
 
     //Adding new Products to the DB

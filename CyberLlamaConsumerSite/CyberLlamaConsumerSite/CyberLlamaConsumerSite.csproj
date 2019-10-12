@@ -193,6 +193,12 @@
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cAllCart.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cEmployee.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\CRUDService\Service.disco" />
     <None Include="Connected Services\CRUDService\configuration91.svcinfo" />
     <None Include="Connected Services\CRUDService\configuration.svcinfo" />
@@ -237,6 +243,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.c_ProductPageInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\CRUDService\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cAllCart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cEmployee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\Service.disco" />
@@ -309,6 +324,19 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\CRUDService\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
