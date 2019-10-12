@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using CyberLlamaConsumerSite.Models;
 using CyberLlamaConsumerSite.Models.ViewModels;
-using Newtonsoft.Json;
 
 namespace CyberLlamaConsumerSite.Controllers
 {
