@@ -2332,4 +2332,30 @@ public class Service : IService
 
         return partCart.Concat(pcCart).ToList();
     }
+
+    public List<c_ProductPageInfo> getAllParts(string type)
+    {
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
+        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals(type) select p);
+        foreach (PartsStock p in parts)
+        {
+            c_ProductPageInfo product = new c_ProductPageInfo
+            {
+                ID = p.ID,
+                active = p.Active,
+                discount = p.Discount,
+                image = p.Image,
+                model = p.Model,
+                Quantity = p.Quantity,
+                type = p.Type,
+                price = (int)p.Price
+            };
+
+            list.Add(product);
+        }
+
+        return list;
+
+
+    }
 }
