@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ using System.Text;
 public class Service : IService
 {
     CyberLlamaDatabaseDataContext db = new CyberLlamaDatabaseDataContext();
+
 
     //Login, registering of users
     public string Login(string strUserName, string strPassword)
@@ -37,11 +39,12 @@ public class Service : IService
 
     public int addEmployee(string fName, string sName, string eMail, string phone, int type, string UserName, string password, string confirm)
     {
-
+        //make sure the passwords match
         if (password.Equals(confirm))
         {
             if (db.LoginTables.Where(x => x.User_Name.Equals(UserName)).Select(y => y.User_Name).FirstOrDefault() == null)
             {
+                //add to the database the new employee
                 var newLogin = new LoginTable
                 {
                     User_Name = UserName,
@@ -73,7 +76,7 @@ public class Service : IService
             }
             else
             {
-                //the userName already exists
+                //the userName or email already exists
                 return -1;
             }
         }
@@ -86,9 +89,12 @@ public class Service : IService
 
     public int addClient(string fName, string sName, string eMail, string address, string city, string province, string zipCode, string UserName, string password, string confirm)
     {
+        //make sure the passwords match
         if (password.Equals(confirm))
         {
-            if (db.LoginTables.Where(x => x.User_Name.Equals(UserName)).Select(y => y.User_Name).FirstOrDefault() == null)
+            //make sure username or email dont already exist
+            if (db.LoginTables.Where(x => x.User_Name.Equals(UserName)).Select(y => y.User_Name).FirstOrDefault() == null
+                && db.Clients.Where(z => z.Email.Equals(eMail)).Select(p => p.Email).FirstOrDefault() == null)
             {
                 var newLogin = new LoginTable
                 {
@@ -140,6 +146,16 @@ public class Service : IService
         return db.UserPositions.Select(x => x.Position).ToList();
     }
 
+    public string getAllEmployees()
+    {
+
+        return JsonConvert.SerializeObject(db.Admins.Select(x => new { x.Admin_ID, x.First_Name, x.Surname, x.Email, x.Conrtact_Number, x.Position }).ToList(), Formatting.Indented,
+                new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                }
+                );
+    }
 
     //Adding new Products to the DB
     //Adding new Air Cooler
@@ -1219,7 +1235,7 @@ public class Service : IService
             model = part.Model,
             brand = part.Brand,
             series = part.Series,
-            price = (double)info.Price,
+            price = (double)part.Price,
             chipset = part.Chipset,
             memoryType = part.Memory_Type,
             max_mem_size = part.Max_Memory_Size,
@@ -1653,9 +1669,29 @@ public class Service : IService
 
         foreach (PartsStock p in parts)
         {
-            cMobo part = getPart(parts.ID);
-            
-            list.Add(part);
+            cMobo temp = new cMobo
+            {
+                id = part.ID,
+                model = part.Model,
+                brand = part.Brand,
+                series = part.Series,
+                price = (double)part.Price,
+                chipset = part.Chipset,
+                memoryType = part.Memory_Type,
+                max_mem_size = part.Max_Memory_Size,
+                max_mem_speed = part.Max_Memory_Speed,
+                lan = part.LAN,
+                expansion_slots = part.Expansion_Slots,
+                storage = part.Storage,
+                internal_IO = part.Internal_I_O_Connectors,
+                back_panel_IO = part.Back_Panel_Connectors,
+                os_support = part.OS_Support,
+                form_factor = part.Form_Factor,
+                notes = part.Notes,
+                warranty = part.Warranty
+            };
+
+            list.Add(temp);
         }
 
         return list;
@@ -2289,54 +2325,5 @@ public class Service : IService
             return false;
         }
         return true;
-    }
-
-    private Boolean addPcSold(int pc_ID, int qua_sold)
-    {
-        var pc = (from p in db.PcStocks where p.ID == pc_ID select p).FirstOrDefault();
-
-        var sold = new PcSold
-        {
-            PC_ID = pc.ID,
-            Type = pc.PC_Type,
-            Quantity_Sold = qua_sold
-        };
-        db.PcSolds.InsertOnSubmit(sold);
-
-        try
-        {
-            db.SubmitChanges();
-        }
-        catch
-        {
-            return false;
-        }
-        return true;
-    }
-
-    public List<c_ProductPageInfo> getAllParts(string type)
-    {
-        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals(type) select p);
-        foreach(PartsStock p in parts)
-        {
-            c_ProductPageInfo product = new c_ProductPageInfo
-            {
-                ID = p.ID,
-                active = p.Active,
-                discount = p.Discount,
-                image = p.Image,
-                model = p.Model,
-                Quantity = p.Quantity,
-                type = p.Type,
-                price = (int) p.Price
-            };
-
-            list.Add(product);
-        }
-        
-        return list;
-
-        
     }
 }

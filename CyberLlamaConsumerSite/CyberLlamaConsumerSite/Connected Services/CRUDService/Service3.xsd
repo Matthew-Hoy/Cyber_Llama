@@ -343,4 +343,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfcSSD" nillable="true" type="tns:ArrayOfcSSD" />
+  <xs:complexType name="ArrayOfcAllCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cAllCart" nillable="true" type="tns:cAllCart" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcAllCart" nillable="true" type="tns:ArrayOfcAllCart" />
+  <xs:complexType name="cAllCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imagelink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="part_id" type="xs:int" />
+      <xs:element minOccurs="0" name="price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="qua" type="xs:int" />
+      <xs:element minOccurs="0" name="user_id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cAllCart" nillable="true" type="tns:cAllCart" />
 </xs:schema>

@@ -211,6 +211,36 @@ textarea {
     padding-bottom:20px;
     width:300px;
 }
+/*
+    Data Tables Styles
+*/
+.data {
+    border: 1px solid grey;
+}
+table.data {
+
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+}
+thead.data {
+    color: white;
+
+    background-color: #535151;
+}
+td.data {
+    color: black;
+
+    padding: 5px;
+}
+th.data {
+
+    padding: 5px;
+}
+tbody.data {
+
+    background-color: #bdbdbd;
+}
 
 
 

@@ -73,6 +73,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getAllEmployees">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAllEmployeesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="addAirCooler">
     <xs:complexType>
       <xs:sequence>
@@ -555,6 +567,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="checkOutResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCartItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user_ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCartItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCartItemsResult" nillable="true" type="q29:ArrayOfcAllCart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
