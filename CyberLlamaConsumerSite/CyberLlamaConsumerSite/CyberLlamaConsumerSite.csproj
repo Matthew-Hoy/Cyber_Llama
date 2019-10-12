@@ -132,6 +132,7 @@
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\PoliciesAndReportingController.cs" />
     <Compile Include="Controllers\PrivacyAndTermsController.cs" />
+    <Compile Include="Controllers\PcBuildController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -309,6 +310,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Logout\" />
+    <Folder Include="Views\PcBuild\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
