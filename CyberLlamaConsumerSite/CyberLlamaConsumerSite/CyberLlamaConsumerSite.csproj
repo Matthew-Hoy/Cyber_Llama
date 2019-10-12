@@ -354,6 +354,10 @@
     <Content Include="Views\Shared\_LoginAdmin.cshtml" />
     <Content Include="Views\AddUser\Index.cshtml" />
     <Content Include="Views\Shared\AccessDenied.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\PrivacyAndTerms\Index.cshtml" />
+    <Content Include="Views\PoliciesAndReporting\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

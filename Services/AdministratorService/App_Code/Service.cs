@@ -30,7 +30,7 @@ public class Service : IService
                 return null;
             }
         }
-        catch (Exception ex) {
+        catch(Exception ex){
             return "EX";
         }
     }
