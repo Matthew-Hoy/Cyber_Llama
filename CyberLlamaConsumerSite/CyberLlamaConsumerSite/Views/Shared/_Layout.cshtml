@@ -303,15 +303,15 @@
             </nav>
 
 
-                <p align="left">
-                    &copy; @DateTime.Now.Year - Property of CyberLlama <br />
-                    All Rights Reserved
-                </p>
-                <p align="right">
-                    <a href="">Privacy & terms</a><br />
-                    <a href="">terms and Conditions</a><br />
-                    <a href="">Polices and Reporting</a>
-                </p>
+            <p align="left">
+                &copy; @DateTime.Now.Year - Property of CyberLlama <br />
+                All Rights Reserved
+            </p>
+            <p align="right">
+                <a href=@Url.Action("Index", "PrivacyAndTerms")>Privacy & terms</a><br />
+
+                <a href=@Url.Action("Index", "PoliciesAndReporting")>Polices and Reporting</a>
+            </p>
 
 
 
