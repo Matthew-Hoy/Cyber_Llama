@@ -19,4 +19,6 @@ public class cHDD
     public String size;
     public String weight;
     public String warranty;
+    public int active;
+    public int discount;
 }

@@ -67,15 +67,38 @@ public interface IService
     dynamic getPart(int ID);
 
     [OperationContract]
-    cPC getPC(int ID);
+    cPC intgetPC(int ID);
 
 
-    //Select types
+    //Select PC by Type or Price
     [OperationContract]
     List<cPC> getPCbyType(String Type);
+    List<cPC> strgetPC(String Type);
 
     [OperationContract]
     List<cPC> getPCbyPrice(Double minPrice, Double maxPrice);
+    List<cPC> dblgetPC(Double minPrice, Double maxPrice);
+
+    //Get compatible parts
+    List<cAirCooler> getAirCoolersForCPU(int cpu_ID);
+
+    List<cLiquidCooler> getLiquidCoolersForCPU(int cpu_ID);
+
+    List<cCPU> getCPUForAirCooler(int ac_ID);
+
+    List<cCPU> getCPUForLiquidCooler(int lc_ID);
+
+    List<cCPU> getCPUForMotherboard(int mobo_ID);
+
+    List<cCase> getCaseForMotherboard(int mobo_ID);
+
+    List<cRAM> getRAMForMotherboard(int mobo_ID);
+
+    List<cMobo> getMotherboardForCPU(int cpu_ID);
+
+    List<cMobo> getMotherboardForRAM(int ram_ID);
+
+    List<cMobo> getMotherboardForCase(int case_ID);
 
     //Entire Table
     [OperationContract]
@@ -109,20 +132,22 @@ public interface IService
     List<cRAM> getAllRAM();
 
     [OperationContract]
+    List<c_ProductPageInfo> getAllParts(string type);
+
+    [OperationContract]
     List<cSSD> getAllSSD();
 
     [OperationContract]
     List<cPC> getAllPC();
 
-    //Add to bridging table
-
-    //Reduce Product Quantity
-
-    //Add Amount Sold
+    //Add 
 
     //Shopping Cart Operations
     [OperationContract]
-    Boolean addToPartCart(int user_ID, int part_ID, int qua);
+    Boolean addToPartCart(int user_ID, int part_ID, int qua, Double total_price);
+
+    [OperationContract]
+    Boolean updatePartCart(int user_ID, int pc_ID, int qua, double total_price);
 
     [OperationContract]
     Boolean removeFromPartCart(int user_ID, int part_ID);
@@ -131,7 +156,10 @@ public interface IService
     Boolean clearPartCart(int user_ID);
 
     [OperationContract]
-    Boolean addToPcCart(int user_ID, int pc_ID, int qua);
+    Boolean addToPcCart(int user_ID, int pc_ID, int qua, Double total_price);
+
+    [OperationContract]
+    Boolean updatePcCart(int user_ID, int pc_ID, int qua, double total_price);
 
     [OperationContract]
     Boolean removeFromPcCart(int user_ID, int pc_ID);

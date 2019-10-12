@@ -22,4 +22,6 @@ public class cCPU
     public String mem_type;
     public String mem_channels;
     public String warranty;
+    public int active;
+    public int discount;
 }

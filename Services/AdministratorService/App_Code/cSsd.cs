@@ -23,4 +23,6 @@ public class cSSD
     public String operating_temp;
     public String max_power_usage;
     public String warranty;
+    public int active;
+    public int discount;
 }

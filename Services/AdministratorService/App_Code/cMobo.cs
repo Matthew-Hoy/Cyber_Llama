@@ -23,5 +23,6 @@ public class cMobo
     public String form_factor;
     public String notes;
     public String warranty;
-    
+    public int active;
+    public int discount;
 }

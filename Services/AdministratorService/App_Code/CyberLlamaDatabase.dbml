@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database" Class="CyberLlamaDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DatabaseConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.UserPosition" Member="UserPositions">
-    <Type Name="UserPosition">
-      <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Position" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="UserPosition_Admin" Member="Admins" ThisKey="PositionID" OtherKey="Position" Type="Admin" />
-    </Type>
-  </Table>
   <Table Name="dbo.Admin" Member="Admins">
     <Type Name="Admin">
       <Column Name="Admin_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -17,6 +10,42 @@
       <Column Name="Position" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="UserPosition_Admin" Member="UserPosition" ThisKey="Position" OtherKey="PositionID" Type="UserPosition" IsForeignKey="true" />
       <Association Name="LoginTable_Admin" Member="LoginTable" ThisKey="Admin_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
+      <Association Name="UserPosition1_Admin" Member="UserPosition1" ThisKey="Position" OtherKey="PositionID" Type="UserPosition1" IsForeignKey="true" />
+      <Association Name="LoginTable1_Admin" Member="LoginTable1" ThisKey="Admin_ID" OtherKey="User_ID" Type="LoginTable1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserPosition" Member="UserPositions">
+    <Type Name="UserPosition">
+      <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="UserPosition_Admin" Member="Admins" ThisKey="PositionID" OtherKey="Position" Type="Admin" />
+      <Association Name="UserPosition_Admin1" Member="Admin1s" ThisKey="PositionID" OtherKey="Position" Type="Admin1" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AirCooler" Member="AirCoolers">
+    <Type Name="AirCooler">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Fan_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Compatibility" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Fan_RPM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Air_Flow" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Noise_Level" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Power_Connector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Colour" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Materials" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Width" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Features" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="AirCooler_CpuToAirCooler" Member="CpuToAirCoolers" ThisKey="ID" OtherKey="AC_ID" Type="CpuToAirCooler" />
+      <Association Name="AirCooler_CpuToAirCooler1" Member="CpuToAirCooler1s" ThisKey="ID" OtherKey="AC_ID" Type="CpuToAirCooler1" />
+      <Association Name="PartsStock_AirCooler" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_AirCooler" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Client" Member="Clients">
@@ -29,9 +58,46 @@
       <Column Name="City" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Province" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="ZIP_Code" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Client_PartInvoice" Member="PartInvoices" ThisKey="User_ID" OtherKey="User_ID" Type="PartInvoice" />
+      <Association Name="Client_PcInvoice" Member="PcInvoices" ThisKey="User_ID" OtherKey="User_ID" Type="PcInvoice" />
       <Association Name="Client_PartCart" Member="PartCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PartCart" />
       <Association Name="Client_PcCart" Member="PcCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PcCart" />
+      <Association Name="Client_PartCart1" Member="PartCart1s" ThisKey="User_ID" OtherKey="User_ID" Type="PartCart1" />
+      <Association Name="Client_PartInvoice1" Member="PartInvoice1s" ThisKey="User_ID" OtherKey="User_ID" Type="PartInvoice1" />
+      <Association Name="Client_PcCart1" Member="PcCart1s" ThisKey="User_ID" OtherKey="User_ID" Type="PcCart1" />
+      <Association Name="Client_PcInvoice1" Member="PcInvoice1s" ThisKey="User_ID" OtherKey="User_ID" Type="PcInvoice1" />
       <Association Name="LoginTable_Client" Member="LoginTable" ThisKey="User_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
+      <Association Name="LoginTable1_Client" Member="LoginTable1" ThisKey="User_ID" OtherKey="User_ID" Type="LoginTable1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CPU" Member="CPUs">
+    <Type Name="CPU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Cores" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Threads" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Base_Clock" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Boost_Clock" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Cache" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Chipset" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TDP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Temp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="System_Memory_Speed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="System_Memory_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Memory_Channels" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CPU_CpuToAirCooler" Member="CpuToAirCoolers" ThisKey="ID" OtherKey="CPU_ID" Type="CpuToAirCooler" />
+      <Association Name="CPU_CpuToLiquidCooler" Member="CpuToLiquidCoolers" ThisKey="ID" OtherKey="CPU_ID" Type="CpuToLiquidCooler" />
+      <Association Name="CPU_MoboToCpu" Member="MoboToCpus" ThisKey="ID" OtherKey="CPU_ID" Type="MoboToCpu" />
+      <Association Name="CPU_Pc" Member="Pcs" ThisKey="ID" OtherKey="CPU_ID" Type="Pc" />
+      <Association Name="CPU_CpuToAirCooler1" Member="CpuToAirCooler1s" ThisKey="ID" OtherKey="CPU_ID" Type="CpuToAirCooler1" />
+      <Association Name="CPU_CpuToLiquidCooler1" Member="CpuToLiquidCooler1s" ThisKey="ID" OtherKey="CPU_ID" Type="CpuToLiquidCooler1" />
+      <Association Name="CPU_MoboToCpu1" Member="MoboToCpu1s" ThisKey="ID" OtherKey="CPU_ID" Type="MoboToCpu1" />
+      <Association Name="CPU_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="CPU_ID" Type="Pc1" />
+      <Association Name="PartsStock_CPU" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_CPU" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CpuToAirCooler" Member="CpuToAirCoolers">
@@ -40,22 +106,90 @@
       <Column Name="AC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="AirCooler_CpuToAirCooler" Member="AirCooler" ThisKey="AC_ID" OtherKey="ID" Type="AirCooler" IsForeignKey="true" />
       <Association Name="CPU_CpuToAirCooler" Member="CPU" ThisKey="CPU_ID" OtherKey="ID" Type="CPU" IsForeignKey="true" />
+      <Association Name="AirCooler1_CpuToAirCooler" Member="AirCooler1" ThisKey="AC_ID" OtherKey="ID" Type="AirCooler1" IsForeignKey="true" />
+      <Association Name="CPU1_CpuToAirCooler" Member="CPU1" ThisKey="CPU_ID" OtherKey="ID" Type="CPU1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CpuToLiquidCooler" Member="CpuToLiquidCoolers">
     <Type Name="CpuToLiquidCooler">
       <Column Name="CPU_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="LC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="LiquidCooler_CpuToLiquidCooler" Member="LiquidCooler" ThisKey="LC_ID" OtherKey="ID" Type="LiquidCooler" IsForeignKey="true" />
       <Association Name="CPU_CpuToLiquidCooler" Member="CPU" ThisKey="CPU_ID" OtherKey="ID" Type="CPU" IsForeignKey="true" />
+      <Association Name="LiquidCooler_CpuToLiquidCooler" Member="LiquidCooler" ThisKey="LC_ID" OtherKey="ID" Type="LiquidCooler" IsForeignKey="true" />
+      <Association Name="CPU1_CpuToLiquidCooler" Member="CPU1" ThisKey="CPU_ID" OtherKey="ID" Type="CPU1" IsForeignKey="true" />
+      <Association Name="LiquidCooler1_CpuToLiquidCooler" Member="LiquidCooler1" ThisKey="LC_ID" OtherKey="ID" Type="LiquidCooler1" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.GpuToMonitor" Member="GpuToMonitors">
-    <Type Name="GpuToMonitor">
-      <Column Name="GPU_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Monitor_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Monitor_GpuToMonitor" Member="Monitor" ThisKey="Monitor_ID" OtherKey="ID" Type="Monitor" IsForeignKey="true" />
-      <Association Name="GPU_GpuToMonitor" Member="GPU" ThisKey="GPU_ID" OtherKey="ID" Type="GPU" IsForeignKey="true" />
+  <Table Name="dbo.Fans" Member="Fans">
+    <Type Name="Fan">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RPM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Air_Flow" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Noise" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Static_Pressure" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Input_Voltage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MTBF" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cable_Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Num_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Fan_Pc" Member="Pcs" ThisKey="ID" OtherKey="Fan_ID" Type="Pc" />
+      <Association Name="Fan_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Fan_ID" Type="Pc1" />
+      <Association Name="PartsStock_Fan" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Fan" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GPU" Member="GPUs">
+    <Type Name="GPU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Manufacturer" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Base_Clock_Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Boost_Clock_Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Stream_Processors" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Memory_Clock" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Memory_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Memory_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ports" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Digital_Resolution" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="VR_Ready" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Recommended_Power_Supply" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Form_Factor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Slot_Width" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="GPU_Pc" Member="Pcs" ThisKey="ID" OtherKey="GPU_ID" Type="Pc" />
+      <Association Name="GPU_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="GPU_ID" Type="Pc1" />
+      <Association Name="PartsStock_GPU" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_GPU" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HDD" Member="HDDs">
+    <Type Name="HDD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Interface" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Sustained_Transfer_Rate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Rotational_Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Load_Unload_Cycles" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Workload_Rate_Limit" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Power_Usage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Operating_Temp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="HDD_Pc" Member="Pcs" ThisKey="ID" OtherKey="HDD_ID" Type="Pc" />
+      <Association Name="HDD_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="HDD_ID" Type="Pc1" />
+      <Association Name="PartsStock_HDD" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_HDD" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Headset" Member="Headsets">
@@ -79,7 +213,9 @@
       <Column Name="Features" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Headset_Pc" Member="Pcs" ThisKey="ID" OtherKey="Headset_ID" Type="Pc" />
+      <Association Name="Headset_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Headset_ID" Type="Pc1" />
       <Association Name="PartsStock_Headset" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Headset" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Keyboard" Member="Keyboards">
@@ -98,7 +234,9 @@
       <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Keyboard_Pc" Member="Pcs" ThisKey="ID" OtherKey="Keyboard_ID" Type="Pc" />
+      <Association Name="Keyboard_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Keyboard_ID" Type="Pc1" />
       <Association Name="PartsStock_Keyboard" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Keyboard" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LiquidCooler" Member="LiquidCoolers">
@@ -107,7 +245,6 @@
       <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="Fan_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Fan_Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Radiator_Mats" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -122,7 +259,10 @@
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="LiquidCooler_CpuToLiquidCooler" Member="CpuToLiquidCoolers" ThisKey="ID" OtherKey="LC_ID" Type="CpuToLiquidCooler" />
       <Association Name="LiquidCooler_Pc" Member="Pcs" ThisKey="ID" OtherKey="Cooler_ID" Type="Pc" />
+      <Association Name="LiquidCooler_CpuToLiquidCooler1" Member="CpuToLiquidCooler1s" ThisKey="ID" OtherKey="LC_ID" Type="CpuToLiquidCooler1" />
+      <Association Name="LiquidCooler_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Cooler_ID" Type="Pc1" />
       <Association Name="PartsStock_LiquidCooler" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_LiquidCooler" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LoginTable" Member="LoginTables">
@@ -133,6 +273,8 @@
       <Column Name="User_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="LoginTable_Admin" Member="Admin" ThisKey="User_ID" OtherKey="Admin_ID" Type="Admin" Cardinality="One" />
       <Association Name="LoginTable_Client" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" Cardinality="One" />
+      <Association Name="LoginTable_Admin1" Member="Admin1" ThisKey="User_ID" OtherKey="Admin_ID" Type="Admin1" Cardinality="One" />
+      <Association Name="LoginTable_Client1" Member="Client1" ThisKey="User_ID" OtherKey="User_ID" Type="Client1" Cardinality="One" />
     </Type>
   </Table>
   <Table Name="dbo.Microphone" Member="Microphones">
@@ -147,6 +289,27 @@
       <Column Name="Cable_Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="PartsStock_Microphone" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Microphone" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MoboToCase" Member="MoboToCases">
+    <Type Name="MoboToCase">
+      <Column Name="Mobo_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Case_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Motherboard_MoboToCase" Member="Motherboard" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard" IsForeignKey="true" />
+      <Association Name="PCCase_MoboToCase" Member="PCCase" ThisKey="Case_ID" OtherKey="ID" Type="PCCase" IsForeignKey="true" />
+      <Association Name="Motherboard1_MoboToCase" Member="Motherboard1" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard1" IsForeignKey="true" />
+      <Association Name="PCCase1_MoboToCase" Member="PCCase1" ThisKey="Case_ID" OtherKey="ID" Type="PCCase1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MoboToCpu" Member="MoboToCpus">
+    <Type Name="MoboToCpu">
+      <Column Name="Mobo_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CPU_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CPU_MoboToCpu" Member="CPU" ThisKey="CPU_ID" OtherKey="ID" Type="CPU" IsForeignKey="true" />
+      <Association Name="Motherboard_MoboToCpu" Member="Motherboard" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard" IsForeignKey="true" />
+      <Association Name="CPU1_MoboToCpu" Member="CPU1" ThisKey="CPU_ID" OtherKey="ID" Type="CPU1" IsForeignKey="true" />
+      <Association Name="Motherboard1_MoboToCpu" Member="Motherboard1" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.MoboToRam" Member="MoboToRams">
@@ -155,6 +318,8 @@
       <Column Name="RAM_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Motherboard_MoboToRam" Member="Motherboard" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard" IsForeignKey="true" />
       <Association Name="RAM_MoboToRam" Member="RAM" ThisKey="RAM_ID" OtherKey="ID" Type="RAM" IsForeignKey="true" />
+      <Association Name="Motherboard1_MoboToRam" Member="Motherboard1" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard1" IsForeignKey="true" />
+      <Association Name="RAM1_MoboToRam" Member="RAM1" ThisKey="RAM_ID" OtherKey="ID" Type="RAM1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Monitor" Member="Monitors">
@@ -186,9 +351,10 @@
       <Column Name="[Pivot]" Member="Pivot" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Regulations" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Monitor_GpuToMonitor" Member="GpuToMonitors" ThisKey="ID" OtherKey="Monitor_ID" Type="GpuToMonitor" />
       <Association Name="Monitor_Pc" Member="Pcs" ThisKey="ID" OtherKey="Monitor_ID" Type="Pc" />
+      <Association Name="Monitor_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Monitor_ID" Type="Pc1" />
       <Association Name="PartsStock_Monitor" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Monitor" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Motherboard" Member="Motherboards">
@@ -197,7 +363,6 @@
       <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Brand" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Series" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="Chipset" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Memory_Type" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Max_Memory_Size" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -211,11 +376,16 @@
       <Column Name="Form_Factor" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Notes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Warranty" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Association Name="Motherboard_MoboToRam" Member="MoboToRams" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToRam" />
-      <Association Name="Motherboard_Pc" Member="Pcs" ThisKey="ID" OtherKey="Mobo_ID" Type="Pc" />
       <Association Name="Motherboard_MoboToCase" Member="MoboToCases" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToCase" />
       <Association Name="Motherboard_MoboToCpu" Member="MoboToCpus" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToCpu" />
+      <Association Name="Motherboard_MoboToRam" Member="MoboToRams" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToRam" />
+      <Association Name="Motherboard_Pc" Member="Pcs" ThisKey="ID" OtherKey="Mobo_ID" Type="Pc" />
+      <Association Name="Motherboard_MoboToCase1" Member="MoboToCase1s" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToCase1" />
+      <Association Name="Motherboard_MoboToCpu1" Member="MoboToCpu1s" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToCpu1" />
+      <Association Name="Motherboard_MoboToRam1" Member="MoboToRam1s" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToRam1" />
+      <Association Name="Motherboard_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Mobo_ID" Type="Pc1" />
       <Association Name="PartsStock_Motherboard" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Motherboard" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Mouse" Member="Mouses">
@@ -238,7 +408,9 @@
       <Column Name="OS_Support" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Mouse_Pc" Member="Pcs" ThisKey="ID" OtherKey="Mouse_ID" Type="Pc" />
+      <Association Name="Mouse_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Mouse_ID" Type="Pc1" />
       <Association Name="PartsStock_Mouse" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Mouse" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.MousePad" Member="MousePads">
@@ -256,6 +428,7 @@
       <Column Name="Features" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="PartsStock_MousePad" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_MousePad" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.OperatingSystem" Member="OperatingSystems">
@@ -268,7 +441,10 @@
       <Column Name="OS_Version" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="System_Requirements" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="OperatingSystem_Pc" Member="Pcs" ThisKey="ID" OtherKey="OS_ID" Type="Pc" />
+      <Association Name="OperatingSystem_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="OS_ID" Type="Pc1" />
       <Association Name="PartsStock_OperatingSystem" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_OperatingSystem" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PartsSold" Member="PartsSolds">
@@ -278,6 +454,7 @@
       <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Quantity_Sold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="PartsStock_PartsSold" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_PartsSold" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PartsStock" Member="PartsStocks">
@@ -286,6 +463,15 @@
       <Column Name="Model" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_AirCooler" Member="AirCooler" ThisKey="ID" OtherKey="ID" Type="AirCooler" Cardinality="One" />
+      <Association Name="PartsStock_CPU" Member="CPU" ThisKey="ID" OtherKey="ID" Type="CPU" Cardinality="One" />
+      <Association Name="PartsStock_Fan" Member="Fan" ThisKey="ID" OtherKey="ID" Type="Fan" Cardinality="One" />
+      <Association Name="PartsStock_GPU" Member="GPU" ThisKey="ID" OtherKey="ID" Type="GPU" Cardinality="One" />
+      <Association Name="PartsStock_HDD" Member="HDD" ThisKey="ID" OtherKey="ID" Type="HDD" Cardinality="One" />
       <Association Name="PartsStock_Headset" Member="Headset" ThisKey="ID" OtherKey="ID" Type="Headset" Cardinality="One" />
       <Association Name="PartsStock_Keyboard" Member="Keyboard" ThisKey="ID" OtherKey="ID" Type="Keyboard" Cardinality="One" />
       <Association Name="PartsStock_LiquidCooler" Member="LiquidCooler" ThisKey="ID" OtherKey="ID" Type="LiquidCooler" Cardinality="One" />
@@ -300,223 +486,37 @@
       <Association Name="PartsStock_PSU" Member="PSU" ThisKey="ID" OtherKey="ID" Type="PSU" Cardinality="One" />
       <Association Name="PartsStock_RAM" Member="RAM" ThisKey="ID" OtherKey="ID" Type="RAM" Cardinality="One" />
       <Association Name="PartsStock_Speaker" Member="Speaker" ThisKey="ID" OtherKey="ID" Type="Speaker" Cardinality="One" />
-      <Association Name="PartsStock_AirCooler" Member="AirCooler" ThisKey="ID" OtherKey="ID" Type="AirCooler" Cardinality="One" />
-      <Association Name="PartsStock_PartCart" Member="PartCarts" ThisKey="ID" OtherKey="Part_ID" Type="PartCart" />
-      <Association Name="PartsStock_GPU" Member="GPU" ThisKey="ID" OtherKey="ID" Type="GPU" Cardinality="One" />
-      <Association Name="PartsStock_HDD" Member="HDD" ThisKey="ID" OtherKey="ID" Type="HDD" Cardinality="One" />
       <Association Name="PartsStock_SSD" Member="SSD" ThisKey="ID" OtherKey="ID" Type="SSD" Cardinality="One" />
-      <Association Name="PartsStock_CPU" Member="CPU" ThisKey="ID" OtherKey="ID" Type="CPU" Cardinality="One" />
-      <Association Name="PartsStock_Fan" Member="Fan" ThisKey="ID" OtherKey="ID" Type="Fan" Cardinality="One" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PCCase" Member="PCCases">
-    <Type Name="PCCase">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Brand" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Series" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="Colour" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Dimensions" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Net_Weight" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Motherboard_Form_Factor" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Side_Window" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="[Num_5.25&quot;_Drives]" Member="Num_5_25__Drives" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="[Num_3.5&quot;_Drives]" Member="Num_3_5__Drives" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="[Num_2.5&quot;_Drives]" Member="Num_2_5__Drives" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="[Front_I/O]" Member="Front_I_O" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Expansion_Slots" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Num_Top_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Num_Bottom_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Num_Front_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Num_Back_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Top_Radiator_Support" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Front_Radiator_Support" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="GPU_Max_Length" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="CPU_Cooler_Height" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Warranty" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="PCCase_Pc" Member="Pcs" ThisKey="ID" OtherKey="Case_ID" Type="Pc" />
-      <Association Name="PCCase_MoboToCase" Member="MoboToCases" ThisKey="ID" OtherKey="Case_ID" Type="MoboToCase" />
-      <Association Name="PartsStock_PCCase" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PcSold" Member="PcSolds">
-    <Type Name="PcSold">
-      <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Quantity_Sold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="PcStock_PcSold" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PSU" Member="PSUs">
-    <Type Name="PSU">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Brand" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Series" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="Power" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Certification" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Modular" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Connectors" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="MTBF" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Fan_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Cables" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="PSU_Pc" Member="Pcs" ThisKey="ID" OtherKey="PSU_ID" Type="Pc" />
-      <Association Name="PartsStock_PSU" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.RAM" Member="RAMs">
-    <Type Name="RAM">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Brand" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Series" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="Capacity" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Latency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Voltage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Channel_Config" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="RAM_MoboToRam" Member="MoboToRams" ThisKey="ID" OtherKey="RAM_ID" Type="MoboToRam" />
-      <Association Name="RAM_Pc" Member="Pcs" ThisKey="ID" OtherKey="RAM_ID" Type="Pc" />
-      <Association Name="PartsStock_RAM" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Speaker" Member="Speakers">
-    <Type Name="Speaker">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Satellite_Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Satellite_Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SubWoofer_Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SubWoofer_Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="controls" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="[System Requirements]" Member="System_Requirements" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Features" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Speaker_Pc" Member="Pcs" ThisKey="ID" OtherKey="Speaker_ID" Type="Pc" />
-      <Association Name="PartsStock_Speaker" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.AirCooler" Member="AirCoolers">
-    <Type Name="AirCooler">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="Fan_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Compatibility" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Fan_RPM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Air_Flow" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Noise_Level" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Power_Connector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Colour" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Materials" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Width" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Features" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="AirCooler_CpuToAirCooler" Member="CpuToAirCoolers" ThisKey="ID" OtherKey="AC_ID" Type="CpuToAirCooler" />
-      <Association Name="PartsStock_AirCooler" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PartCart" Member="PartCarts">
-    <Type Name="PartCart">
-      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Part_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="PartsStock_PartCart" Member="PartsStock" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-      <Association Name="Client_PartCart" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.GPU" Member="GPUs">
-    <Type Name="GPU">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Manufacturer" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="Base_Clock_Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Boost_Clock_Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Stream_Processors" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Memory_Clock" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Memory_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Memory_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Ports" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Max_Digital_Resolution" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="VR_Ready" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Recommended_Power_Supply" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Form_Factor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Slot_Width" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="GPU_GpuToMonitor" Member="GpuToMonitors" ThisKey="ID" OtherKey="GPU_ID" Type="GpuToMonitor" />
-      <Association Name="GPU_Pc" Member="Pcs" ThisKey="ID" OtherKey="GPU_ID" Type="Pc" />
-      <Association Name="PartsStock_GPU" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.HDD" Member="HDDs">
-    <Type Name="HDD">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="Interface" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Max_Sustained_Transfer_Rate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Rotational_Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Load_Unload_Cycles" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Workload_Rate_Limit" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Power_Usage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Operating_Temp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="HDD_Pc" Member="Pcs" ThisKey="ID" OtherKey="HDD_ID" Type="Pc" />
-      <Association Name="PartsStock_HDD" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SSD" Member="SSDs">
-    <Type Name="SSD">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="Form_Factor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Capacity" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Interface_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Width" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Max_Sequential_Read" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Max_Sequential_Write" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Random_Read" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Random_Write" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="MTBF" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Operating_Temp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Max_Power_Usage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="SSD_Pc" Member="Pcs" ThisKey="ID" OtherKey="SSD_ID" Type="Pc" />
-      <Association Name="PartsStock_SSD" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock_PartInvoice" Member="PartInvoices" ThisKey="ID" OtherKey="Part_ID" Type="PartInvoice" />
+      <Association Name="PartsStock_PartCart" Member="PartCarts" ThisKey="ID" OtherKey="Part_ID" Type="PartCart" />
+      <Association Name="PartsStock_AirCooler1" Member="AirCooler1" ThisKey="ID" OtherKey="ID" Type="AirCooler1" Cardinality="One" />
+      <Association Name="PartsStock_CPU1" Member="CPU1" ThisKey="ID" OtherKey="ID" Type="CPU1" Cardinality="One" />
+      <Association Name="PartsStock_Fan1" Member="Fan1" ThisKey="ID" OtherKey="ID" Type="Fan1" Cardinality="One" />
+      <Association Name="PartsStock_GPU1" Member="GPU1" ThisKey="ID" OtherKey="ID" Type="GPU1" Cardinality="One" />
+      <Association Name="PartsStock_HDD1" Member="HDD1" ThisKey="ID" OtherKey="ID" Type="HDD1" Cardinality="One" />
+      <Association Name="PartsStock_Headset1" Member="Headset1" ThisKey="ID" OtherKey="ID" Type="Headset1" Cardinality="One" />
+      <Association Name="PartsStock_Keyboard1" Member="Keyboard1" ThisKey="ID" OtherKey="ID" Type="Keyboard1" Cardinality="One" />
+      <Association Name="PartsStock_LiquidCooler1" Member="LiquidCooler1" ThisKey="ID" OtherKey="ID" Type="LiquidCooler1" Cardinality="One" />
+      <Association Name="PartsStock_Microphone1" Member="Microphone1" ThisKey="ID" OtherKey="ID" Type="Microphone1" Cardinality="One" />
+      <Association Name="PartsStock_Monitor1" Member="Monitor1" ThisKey="ID" OtherKey="ID" Type="Monitor1" Cardinality="One" />
+      <Association Name="PartsStock_Motherboard1" Member="Motherboard1" ThisKey="ID" OtherKey="ID" Type="Motherboard1" Cardinality="One" />
+      <Association Name="PartsStock_Mouse1" Member="Mouse1" ThisKey="ID" OtherKey="ID" Type="Mouse1" Cardinality="One" />
+      <Association Name="PartsStock_MousePad1" Member="MousePad1" ThisKey="ID" OtherKey="ID" Type="MousePad1" Cardinality="One" />
+      <Association Name="PartsStock_OperatingSystem1" Member="OperatingSystem1" ThisKey="ID" OtherKey="ID" Type="OperatingSystem1" Cardinality="One" />
+      <Association Name="PartsStock_PartCart1" Member="PartCart1s" ThisKey="ID" OtherKey="Part_ID" Type="PartCart1" />
+      <Association Name="PartsStock_PartInvoice1" Member="PartInvoice1s" ThisKey="ID" OtherKey="Part_ID" Type="PartInvoice1" />
+      <Association Name="PartsStock_PartsSold1" Member="PartsSold1" ThisKey="ID" OtherKey="ID" Type="PartsSold1" Cardinality="One" />
+      <Association Name="PartsStock_PCCase1" Member="PCCase1" ThisKey="ID" OtherKey="ID" Type="PCCase1" Cardinality="One" />
+      <Association Name="PartsStock_PSU1" Member="PSU1" ThisKey="ID" OtherKey="ID" Type="PSU1" Cardinality="One" />
+      <Association Name="PartsStock_RAM1" Member="RAM1" ThisKey="ID" OtherKey="ID" Type="RAM1" Cardinality="One" />
+      <Association Name="PartsStock_Speaker1" Member="Speaker1" ThisKey="ID" OtherKey="ID" Type="Speaker1" Cardinality="One" />
+      <Association Name="PartsStock_SSD1" Member="SSD1" ThisKey="ID" OtherKey="ID" Type="SSD1" Cardinality="One" />
     </Type>
   </Table>
   <Table Name="dbo.Pc" Member="Pcs">
     <Type Name="Pc">
       <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="PC_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="Case_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Mobo_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CPU_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -537,8 +537,9 @@
       <Column Name="Mouse_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Speaker_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="PCCase_Pc" Member="PCCase" ThisKey="Case_ID" OtherKey="ID" Type="PCCase" IsForeignKey="true" />
       <Association Name="LiquidCooler_Pc" Member="LiquidCooler" ThisKey="Cooler_ID" OtherKey="ID" Type="LiquidCooler" IsForeignKey="true" />
+      <Association Name="CPU_Pc" Member="CPU" ThisKey="CPU_ID" OtherKey="ID" Type="CPU" IsForeignKey="true" />
+      <Association Name="Fan_Pc" Member="Fan" ThisKey="Fan_ID" OtherKey="ID" Type="Fan" IsForeignKey="true" />
       <Association Name="GPU_Pc" Member="GPU" ThisKey="GPU_ID" OtherKey="ID" Type="GPU" IsForeignKey="true" />
       <Association Name="HDD_Pc" Member="HDD" ThisKey="HDD_ID" OtherKey="ID" Type="HDD" IsForeignKey="true" />
       <Association Name="Headset_Pc" Member="Headset" ThisKey="Headset_ID" OtherKey="ID" Type="Headset" IsForeignKey="true" />
@@ -546,38 +547,303 @@
       <Association Name="Motherboard_Pc" Member="Motherboard" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard" IsForeignKey="true" />
       <Association Name="Monitor_Pc" Member="Monitor" ThisKey="Monitor_ID" OtherKey="ID" Type="Monitor" IsForeignKey="true" />
       <Association Name="Mouse_Pc" Member="Mouse" ThisKey="Mouse_ID" OtherKey="ID" Type="Mouse" IsForeignKey="true" />
+      <Association Name="OperatingSystem_Pc" Member="OperatingSystem" ThisKey="OS_ID" OtherKey="ID" Type="OperatingSystem" IsForeignKey="true" />
+      <Association Name="PCCase_Pc" Member="PCCase" ThisKey="Case_ID" OtherKey="ID" Type="PCCase" IsForeignKey="true" />
+      <Association Name="PcStock_Pc" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
       <Association Name="PSU_Pc" Member="PSU" ThisKey="PSU_ID" OtherKey="ID" Type="PSU" IsForeignKey="true" />
       <Association Name="RAM_Pc" Member="RAM" ThisKey="RAM_ID" OtherKey="ID" Type="RAM" IsForeignKey="true" />
       <Association Name="Speaker_Pc" Member="Speaker" ThisKey="Speaker_ID" OtherKey="ID" Type="Speaker" IsForeignKey="true" />
       <Association Name="SSD_Pc" Member="SSD" ThisKey="SSD_ID" OtherKey="ID" Type="SSD" IsForeignKey="true" />
-      <Association Name="CPU_Pc" Member="CPU" ThisKey="CPU_ID" OtherKey="ID" Type="CPU" IsForeignKey="true" />
-      <Association Name="Fan_Pc" Member="Fan" ThisKey="Fan_ID" OtherKey="ID" Type="Fan" IsForeignKey="true" />
-      <Association Name="PcStock_Pc" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+      <Association Name="CPU1_Pc" Member="CPU1" ThisKey="CPU_ID" OtherKey="ID" Type="CPU1" IsForeignKey="true" />
+      <Association Name="Fan1_Pc" Member="Fan1" ThisKey="Fan_ID" OtherKey="ID" Type="Fan1" IsForeignKey="true" />
+      <Association Name="GPU1_Pc" Member="GPU1" ThisKey="GPU_ID" OtherKey="ID" Type="GPU1" IsForeignKey="true" />
+      <Association Name="HDD1_Pc" Member="HDD1" ThisKey="HDD_ID" OtherKey="ID" Type="HDD1" IsForeignKey="true" />
+      <Association Name="Headset1_Pc" Member="Headset1" ThisKey="Headset_ID" OtherKey="ID" Type="Headset1" IsForeignKey="true" />
+      <Association Name="Keyboard1_Pc" Member="Keyboard1" ThisKey="Keyboard_ID" OtherKey="ID" Type="Keyboard1" IsForeignKey="true" />
+      <Association Name="LiquidCooler1_Pc" Member="LiquidCooler1" ThisKey="Cooler_ID" OtherKey="ID" Type="LiquidCooler1" IsForeignKey="true" />
+      <Association Name="Monitor1_Pc" Member="Monitor1" ThisKey="Monitor_ID" OtherKey="ID" Type="Monitor1" IsForeignKey="true" />
+      <Association Name="Motherboard1_Pc" Member="Motherboard1" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard1" IsForeignKey="true" />
+      <Association Name="Mouse1_Pc" Member="Mouse1" ThisKey="Mouse_ID" OtherKey="ID" Type="Mouse1" IsForeignKey="true" />
+      <Association Name="OperatingSystem1_Pc" Member="OperatingSystem1" ThisKey="OS_ID" OtherKey="ID" Type="OperatingSystem1" IsForeignKey="true" />
+      <Association Name="PCCase1_Pc" Member="PCCase1" ThisKey="Case_ID" OtherKey="ID" Type="PCCase1" IsForeignKey="true" />
+      <Association Name="PcStock1_Pc" Member="PcStock1" ThisKey="PC_ID" OtherKey="ID" Type="PcStock1" IsForeignKey="true" />
+      <Association Name="PSU1_Pc" Member="PSU1" ThisKey="PSU_ID" OtherKey="ID" Type="PSU1" IsForeignKey="true" />
+      <Association Name="RAM1_Pc" Member="RAM1" ThisKey="RAM_ID" OtherKey="ID" Type="RAM1" IsForeignKey="true" />
+      <Association Name="Speaker1_Pc" Member="Speaker1" ThisKey="Speaker_ID" OtherKey="ID" Type="Speaker1" IsForeignKey="true" />
+      <Association Name="SSD1_Pc" Member="SSD1" ThisKey="SSD_ID" OtherKey="ID" Type="SSD1" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.MoboToCase" Member="MoboToCases">
-    <Type Name="MoboToCase">
-      <Column Name="Mobo_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Case_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="PCCase_MoboToCase" Member="PCCase" ThisKey="Case_ID" OtherKey="ID" Type="PCCase" IsForeignKey="true" />
-      <Association Name="Motherboard_MoboToCase" Member="Motherboard" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard" IsForeignKey="true" />
+  <Table Name="dbo.PCCase" Member="PCCases">
+    <Type Name="PCCase">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Colour" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Dimensions" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Net_Weight" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Motherboard_Form_Factor" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Side_Window" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Num_HDD_Drives" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Num_SSD_Drives" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Front_I/O]" Member="Front_I_O" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Expansion_Slots" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Num_Top_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Num_Bottom_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Num_Front_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Num_Back_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Top_Radiator_Support" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Front_Radiator_Support" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GPU_Max_Length" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CPU_Cooler_Height" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PCCase_MoboToCase" Member="MoboToCases" ThisKey="ID" OtherKey="Case_ID" Type="MoboToCase" />
+      <Association Name="PCCase_Pc" Member="Pcs" ThisKey="ID" OtherKey="Case_ID" Type="Pc" />
+      <Association Name="PCCase_MoboToCase1" Member="MoboToCase1s" ThisKey="ID" OtherKey="Case_ID" Type="MoboToCase1" />
+      <Association Name="PCCase_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Case_ID" Type="Pc1" />
+      <Association Name="PartsStock_PCCase" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_PCCase" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.MoboToCpu" Member="MoboToCpus">
-    <Type Name="MoboToCpu">
-      <Column Name="Mobo_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="CPU_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Motherboard_MoboToCpu" Member="Motherboard" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard" IsForeignKey="true" />
-      <Association Name="CPU_MoboToCpu" Member="CPU" ThisKey="CPU_ID" OtherKey="ID" Type="CPU" IsForeignKey="true" />
+  <Table Name="dbo.PcSold" Member="PcSolds">
+    <Type Name="PcSold">
+      <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity_Sold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock_PcSold" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+      <Association Name="PcStock1_PcSold" Member="PcStock1" ThisKey="PC_ID" OtherKey="ID" Type="PcStock1" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CPU" Member="CPUs">
-    <Type Name="CPU">
+  <Table Name="dbo.PcStock" Member="PcStocks">
+    <Type Name="PcStock">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PC_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock_Pc" Member="Pc" ThisKey="ID" OtherKey="PC_ID" Type="Pc" Cardinality="One" />
+      <Association Name="PcStock_PcSold" Member="PcSold" ThisKey="ID" OtherKey="PC_ID" Type="PcSold" Cardinality="One" />
+      <Association Name="PcStock_PcInvoice" Member="PcInvoices" ThisKey="ID" OtherKey="PC_ID" Type="PcInvoice" />
+      <Association Name="PcStock_PcCart" Member="PcCarts" ThisKey="ID" OtherKey="Pc_ID" Type="PcCart" />
+      <Association Name="PcStock_Pc1" Member="Pc1" ThisKey="ID" OtherKey="PC_ID" Type="Pc1" Cardinality="One" />
+      <Association Name="PcStock_PcCart1" Member="PcCart1s" ThisKey="ID" OtherKey="Pc_ID" Type="PcCart1" />
+      <Association Name="PcStock_PcInvoice1" Member="PcInvoice1s" ThisKey="ID" OtherKey="PC_ID" Type="PcInvoice1" />
+      <Association Name="PcStock_PcSold1" Member="PcSold1" ThisKey="ID" OtherKey="PC_ID" Type="PcSold1" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PSU" Member="PSUs">
+    <Type Name="PSU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Power" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Certification" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Modular" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Connectors" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="MTBF" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fan_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cables" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PSU_Pc" Member="Pcs" ThisKey="ID" OtherKey="PSU_ID" Type="Pc" />
+      <Association Name="PSU_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="PSU_ID" Type="Pc1" />
+      <Association Name="PartsStock_PSU" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_PSU" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RAM" Member="RAMs">
+    <Type Name="RAM">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Capacity" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Latency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Voltage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Channel_Config" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="RAM_MoboToRam" Member="MoboToRams" ThisKey="ID" OtherKey="RAM_ID" Type="MoboToRam" />
+      <Association Name="RAM_Pc" Member="Pcs" ThisKey="ID" OtherKey="RAM_ID" Type="Pc" />
+      <Association Name="RAM_MoboToRam1" Member="MoboToRam1s" ThisKey="ID" OtherKey="RAM_ID" Type="MoboToRam1" />
+      <Association Name="RAM_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="RAM_ID" Type="Pc1" />
+      <Association Name="PartsStock_RAM" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_RAM" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Speaker" Member="Speakers">
+    <Type Name="Speaker">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Satellite_Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Satellite_Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubWoofer_Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubWoofer_Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="controls" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[System Requirements]" Member="System_Requirements" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Features" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Speaker_Pc" Member="Pcs" ThisKey="ID" OtherKey="Speaker_ID" Type="Pc" />
+      <Association Name="Speaker_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Speaker_ID" Type="Pc1" />
+      <Association Name="PartsStock_Speaker" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Speaker" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SSD" Member="SSDs">
+    <Type Name="SSD">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Form_Factor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Capacity" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Interface_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Width" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Sequential_Read" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Sequential_Write" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Random_Read" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Random_Write" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MTBF" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Operating_Temp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Power_Usage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="SSD_Pc" Member="Pcs" ThisKey="ID" OtherKey="SSD_ID" Type="Pc" />
+      <Association Name="SSD_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="SSD_ID" Type="Pc1" />
+      <Association Name="PartsStock_SSD" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_SSD" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartInvoice" Member="PartInvoices">
+    <Type Name="PartInvoice">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Part_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_PartInvoice" Member="PartsStock" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="Client_PartInvoice" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+      <Association Name="Client1_PartInvoice" Member="Client1" ThisKey="User_ID" OtherKey="User_ID" Type="Client1" IsForeignKey="true" />
+      <Association Name="PartsStock1_PartInvoice" Member="PartsStock1" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PcInvoice" Member="PcInvoices">
+    <Type Name="PcInvoice">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock_PcInvoice" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+      <Association Name="Client_PcInvoice" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+      <Association Name="Client1_PcInvoice" Member="Client1" ThisKey="User_ID" OtherKey="User_ID" Type="Client1" IsForeignKey="true" />
+      <Association Name="PcStock1_PcInvoice" Member="PcStock1" ThisKey="PC_ID" OtherKey="ID" Type="PcStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartCart" Member="PartCarts">
+    <Type Name="PartCart">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Part_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_PartCart" Member="PartsStock" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="Client_PartCart" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+      <Association Name="Client1_PartCart" Member="Client1" ThisKey="User_ID" OtherKey="User_ID" Type="Client1" IsForeignKey="true" />
+      <Association Name="PartsStock1_PartCart" Member="PartsStock1" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PcCart" Member="PcCarts">
+    <Type Name="PcCart">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Pc_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock_PcCart" Member="PcStock" ThisKey="Pc_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+      <Association Name="Client_PcCart" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+      <Association Name="Client1_PcCart" Member="Client1" ThisKey="User_ID" OtherKey="User_ID" Type="Client1" IsForeignKey="true" />
+      <Association Name="PcStock1_PcCart" Member="PcStock1" ThisKey="Pc_ID" OtherKey="ID" Type="PcStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserPosition" Member="UserPosition1s">
+    <Type Name="UserPosition1">
+      <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="UserPosition1_Admin" Member="Admins" ThisKey="PositionID" OtherKey="Position" Type="Admin" />
+      <Association Name="UserPosition1_Admin1" Member="Admin1s" ThisKey="PositionID" OtherKey="Position" Type="Admin1" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admin1s">
+    <Type Name="Admin1">
+      <Column Name="Admin_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Conrtact_Number" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LoginTable_Admin1" Member="LoginTable" ThisKey="Admin_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
+      <Association Name="UserPosition_Admin1" Member="UserPosition" ThisKey="Position" OtherKey="PositionID" Type="UserPosition" IsForeignKey="true" />
+      <Association Name="UserPosition1_Admin1" Member="UserPosition1" ThisKey="Position" OtherKey="PositionID" Type="UserPosition1" IsForeignKey="true" />
+      <Association Name="LoginTable1_Admin1" Member="LoginTable1" ThisKey="Admin_ID" OtherKey="User_ID" Type="LoginTable1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AirCooler" Member="AirCooler1s">
+    <Type Name="AirCooler1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Fan_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Compatibility" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Fan_RPM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Air_Flow" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Noise_Level" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Power_Connector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Colour" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Materials" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Width" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Features" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="AirCooler1_CpuToAirCooler" Member="CpuToAirCoolers" ThisKey="ID" OtherKey="AC_ID" Type="CpuToAirCooler" />
+      <Association Name="AirCooler1_CpuToAirCooler1" Member="CpuToAirCooler1s" ThisKey="ID" OtherKey="AC_ID" Type="CpuToAirCooler1" />
+      <Association Name="PartsStock_AirCooler1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_AirCooler1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Client" Member="Client1s">
+    <Type Name="Client1">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Province" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ZIP_Code" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Client1_PartInvoice" Member="PartInvoices" ThisKey="User_ID" OtherKey="User_ID" Type="PartInvoice" />
+      <Association Name="Client1_PcInvoice" Member="PcInvoices" ThisKey="User_ID" OtherKey="User_ID" Type="PcInvoice" />
+      <Association Name="Client1_PartCart" Member="PartCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PartCart" />
+      <Association Name="Client1_PcCart" Member="PcCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PcCart" />
+      <Association Name="Client1_PartCart1" Member="PartCart1s" ThisKey="User_ID" OtherKey="User_ID" Type="PartCart1" />
+      <Association Name="Client1_PartInvoice1" Member="PartInvoice1s" ThisKey="User_ID" OtherKey="User_ID" Type="PartInvoice1" />
+      <Association Name="Client1_PcCart1" Member="PcCart1s" ThisKey="User_ID" OtherKey="User_ID" Type="PcCart1" />
+      <Association Name="Client1_PcInvoice1" Member="PcInvoice1s" ThisKey="User_ID" OtherKey="User_ID" Type="PcInvoice1" />
+      <Association Name="LoginTable_Client1" Member="LoginTable" ThisKey="User_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
+      <Association Name="LoginTable1_Client1" Member="LoginTable1" ThisKey="User_ID" OtherKey="User_ID" Type="LoginTable1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CPU" Member="CPU1s">
+    <Type Name="CPU1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Cores" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Threads" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Base_Clock" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -590,20 +856,44 @@
       <Column Name="System_Memory_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Memory_Channels" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="CPU_CpuToAirCooler" Member="CpuToAirCoolers" ThisKey="ID" OtherKey="CPU_ID" Type="CpuToAirCooler" />
-      <Association Name="CPU_CpuToLiquidCooler" Member="CpuToLiquidCoolers" ThisKey="ID" OtherKey="CPU_ID" Type="CpuToLiquidCooler" />
-      <Association Name="CPU_Pc" Member="Pcs" ThisKey="ID" OtherKey="CPU_ID" Type="Pc" />
-      <Association Name="CPU_MoboToCpu" Member="MoboToCpus" ThisKey="ID" OtherKey="CPU_ID" Type="MoboToCpu" />
-      <Association Name="PartsStock_CPU" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="CPU1_CpuToAirCooler" Member="CpuToAirCoolers" ThisKey="ID" OtherKey="CPU_ID" Type="CpuToAirCooler" />
+      <Association Name="CPU1_CpuToLiquidCooler" Member="CpuToLiquidCoolers" ThisKey="ID" OtherKey="CPU_ID" Type="CpuToLiquidCooler" />
+      <Association Name="CPU1_MoboToCpu" Member="MoboToCpus" ThisKey="ID" OtherKey="CPU_ID" Type="MoboToCpu" />
+      <Association Name="CPU1_Pc" Member="Pcs" ThisKey="ID" OtherKey="CPU_ID" Type="Pc" />
+      <Association Name="CPU1_CpuToAirCooler1" Member="CpuToAirCooler1s" ThisKey="ID" OtherKey="CPU_ID" Type="CpuToAirCooler1" />
+      <Association Name="CPU1_CpuToLiquidCooler1" Member="CpuToLiquidCooler1s" ThisKey="ID" OtherKey="CPU_ID" Type="CpuToLiquidCooler1" />
+      <Association Name="CPU1_MoboToCpu1" Member="MoboToCpu1s" ThisKey="ID" OtherKey="CPU_ID" Type="MoboToCpu1" />
+      <Association Name="CPU1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="CPU_ID" Type="Pc1" />
+      <Association Name="PartsStock_CPU1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_CPU1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Fans" Member="Fans">
-    <Type Name="Fan">
+  <Table Name="dbo.CpuToAirCooler" Member="CpuToAirCooler1s">
+    <Type Name="CpuToAirCooler1">
+      <Column Name="CPU_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AirCooler_CpuToAirCooler1" Member="AirCooler" ThisKey="AC_ID" OtherKey="ID" Type="AirCooler" IsForeignKey="true" />
+      <Association Name="AirCooler1_CpuToAirCooler1" Member="AirCooler1" ThisKey="AC_ID" OtherKey="ID" Type="AirCooler1" IsForeignKey="true" />
+      <Association Name="CPU_CpuToAirCooler1" Member="CPU" ThisKey="CPU_ID" OtherKey="ID" Type="CPU" IsForeignKey="true" />
+      <Association Name="CPU1_CpuToAirCooler1" Member="CPU1" ThisKey="CPU_ID" OtherKey="ID" Type="CPU1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CpuToLiquidCooler" Member="CpuToLiquidCooler1s">
+    <Type Name="CpuToLiquidCooler1">
+      <Column Name="CPU_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CPU_CpuToLiquidCooler1" Member="CPU" ThisKey="CPU_ID" OtherKey="ID" Type="CPU" IsForeignKey="true" />
+      <Association Name="CPU1_CpuToLiquidCooler1" Member="CPU1" ThisKey="CPU_ID" OtherKey="ID" Type="CPU1" IsForeignKey="true" />
+      <Association Name="LiquidCooler_CpuToLiquidCooler1" Member="LiquidCooler" ThisKey="LC_ID" OtherKey="ID" Type="LiquidCooler" IsForeignKey="true" />
+      <Association Name="LiquidCooler1_CpuToLiquidCooler1" Member="LiquidCooler1" ThisKey="LC_ID" OtherKey="ID" Type="LiquidCooler1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fans" Member="Fan1s">
+    <Type Name="Fan1">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="RPM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Max_Air_Flow" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -614,27 +904,627 @@
       <Column Name="Cable_Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Num_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Fan_Pc" Member="Pcs" ThisKey="ID" OtherKey="Fan_ID" Type="Pc" />
-      <Association Name="PartsStock_Fan" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="Fan1_Pc" Member="Pcs" ThisKey="ID" OtherKey="Fan_ID" Type="Pc" />
+      <Association Name="Fan1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Fan_ID" Type="Pc1" />
+      <Association Name="PartsStock_Fan1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Fan1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PcStock" Member="PcStocks">
-    <Type Name="PcStock">
+  <Table Name="dbo.GPU" Member="GPU1s">
+    <Type Name="GPU1">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PC_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="PcStock_PcSold" Member="PcSold" ThisKey="ID" OtherKey="PC_ID" Type="PcSold" Cardinality="One" />
-      <Association Name="PcStock_Pc" Member="Pc" ThisKey="ID" OtherKey="PC_ID" Type="Pc" Cardinality="One" />
-      <Association Name="PcStock_PcCart" Member="PcCarts" ThisKey="ID" OtherKey="Pc_ID" Type="PcCart" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Manufacturer" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Base_Clock_Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Boost_Clock_Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Stream_Processors" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Memory_Clock" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Memory_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Memory_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ports" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Digital_Resolution" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="VR_Ready" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Recommended_Power_Supply" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Form_Factor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Slot_Width" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="GPU1_Pc" Member="Pcs" ThisKey="ID" OtherKey="GPU_ID" Type="Pc" />
+      <Association Name="GPU1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="GPU_ID" Type="Pc1" />
+      <Association Name="PartsStock_GPU1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_GPU1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PcCart" Member="PcCarts">
-    <Type Name="PcCart">
+  <Table Name="dbo.HDD" Member="HDD1s">
+    <Type Name="HDD1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Interface" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Sustained_Transfer_Rate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Rotational_Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Load_Unload_Cycles" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Workload_Rate_Limit" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Power_Usage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Operating_Temp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="HDD1_Pc" Member="Pcs" ThisKey="ID" OtherKey="HDD_ID" Type="Pc" />
+      <Association Name="HDD1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="HDD_ID" Type="Pc1" />
+      <Association Name="PartsStock_HDD1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_HDD1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Headset" Member="Headset1s">
+    <Type Name="Headset1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Cable_Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Connector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Frequency_Response" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sound_Pressure_Level" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Microphone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MP_Frequency_Response" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MP_Pickup_Pattern" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MP_Sensitivity" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Colour" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Features" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Headset1_Pc" Member="Pcs" ThisKey="ID" OtherKey="Headset_ID" Type="Pc" />
+      <Association Name="Headset1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Headset_ID" Type="Pc1" />
+      <Association Name="PartsStock_Headset1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Headset1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Keyboard" Member="Keyboard1s">
+    <Type Name="Keyboard1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Switches" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Programmable_Macros" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Connector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LED_BackLight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Multimedia_Keys" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Material" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Keyboard1_Pc" Member="Pcs" ThisKey="ID" OtherKey="Keyboard_ID" Type="Pc" />
+      <Association Name="Keyboard1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Keyboard_ID" Type="Pc1" />
+      <Association Name="PartsStock_Keyboard1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Keyboard1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LiquidCooler" Member="LiquidCooler1s">
+    <Type Name="LiquidCooler1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Fan_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fan_Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Radiator_Mats" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Radiator_Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Radiator_Width" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Radiator_Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tube_Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tube_Mats" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sockets_Supported" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RGB" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="LiquidCooler1_CpuToLiquidCooler" Member="CpuToLiquidCoolers" ThisKey="ID" OtherKey="LC_ID" Type="CpuToLiquidCooler" />
+      <Association Name="LiquidCooler1_CpuToLiquidCooler1" Member="CpuToLiquidCooler1s" ThisKey="ID" OtherKey="LC_ID" Type="CpuToLiquidCooler1" />
+      <Association Name="LiquidCooler1_Pc" Member="Pcs" ThisKey="ID" OtherKey="Cooler_ID" Type="Pc" />
+      <Association Name="LiquidCooler1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Cooler_ID" Type="Pc1" />
+      <Association Name="PartsStock_LiquidCooler1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_LiquidCooler1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoginTable" Member="LoginTable1s">
+    <Type Name="LoginTable1">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LoginTable1_Admin" Member="Admin" ThisKey="User_ID" OtherKey="Admin_ID" Type="Admin" Cardinality="One" />
+      <Association Name="LoginTable1_Admin1" Member="Admin1" ThisKey="User_ID" OtherKey="Admin_ID" Type="Admin1" Cardinality="One" />
+      <Association Name="LoginTable1_Client" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" Cardinality="One" />
+      <Association Name="LoginTable1_Client1" Member="Client1" ThisKey="User_ID" OtherKey="User_ID" Type="Client1" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Microphone" Member="Microphone1s">
+    <Type Name="Microphone1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Pick_Up_Pattern" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Frequency_Response" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sensitivity" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cable_Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_Microphone1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Microphone1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MoboToCase" Member="MoboToCase1s">
+    <Type Name="MoboToCase1">
+      <Column Name="Mobo_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Case_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="PCCase_MoboToCase1" Member="PCCase" ThisKey="Case_ID" OtherKey="ID" Type="PCCase" IsForeignKey="true" />
+      <Association Name="Motherboard_MoboToCase1" Member="Motherboard" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard" IsForeignKey="true" />
+      <Association Name="Motherboard1_MoboToCase1" Member="Motherboard1" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard1" IsForeignKey="true" />
+      <Association Name="PCCase1_MoboToCase1" Member="PCCase1" ThisKey="Case_ID" OtherKey="ID" Type="PCCase1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MoboToCpu" Member="MoboToCpu1s">
+    <Type Name="MoboToCpu1">
+      <Column Name="Mobo_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CPU_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CPU_MoboToCpu1" Member="CPU" ThisKey="CPU_ID" OtherKey="ID" Type="CPU" IsForeignKey="true" />
+      <Association Name="CPU1_MoboToCpu1" Member="CPU1" ThisKey="CPU_ID" OtherKey="ID" Type="CPU1" IsForeignKey="true" />
+      <Association Name="Motherboard_MoboToCpu1" Member="Motherboard" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard" IsForeignKey="true" />
+      <Association Name="Motherboard1_MoboToCpu1" Member="Motherboard1" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MoboToRam" Member="MoboToRam1s">
+    <Type Name="MoboToRam1">
+      <Column Name="Mobo_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RAM_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Motherboard_MoboToRam1" Member="Motherboard" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard" IsForeignKey="true" />
+      <Association Name="RAM_MoboToRam1" Member="RAM" ThisKey="RAM_ID" OtherKey="ID" Type="RAM" IsForeignKey="true" />
+      <Association Name="Motherboard1_MoboToRam1" Member="Motherboard1" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard1" IsForeignKey="true" />
+      <Association Name="RAM1_MoboToRam1" Member="RAM1" ThisKey="RAM_ID" OtherKey="ID" Type="RAM1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Monitor" Member="Monitor1s">
+    <Type Name="Monitor1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Screen_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Screen_Ratio" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Brightness" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Contrast_Ratio" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Viewing_Angle" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Response_Time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Panel_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Refresh_Rate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Resolution" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Colours" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Display_Connectors" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Speakers" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Swivel" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tilt" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Pivot]" Member="Pivot" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Monitor1_Pc" Member="Pcs" ThisKey="ID" OtherKey="Monitor_ID" Type="Pc" />
+      <Association Name="Monitor1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Monitor_ID" Type="Pc1" />
+      <Association Name="PartsStock_Monitor1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Monitor1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Motherboard" Member="Motherboard1s">
+    <Type Name="Motherboard1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Chipset" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Memory_Type" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Memory_Size" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Memory_Speed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LAN" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Expansion_Slots" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Storage" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Internal_I/O_Connectors]" Member="Internal_I_O_Connectors" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Back_Panel_Connectors" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="OS_Support" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Form_Factor" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Warranty" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Motherboard1_MoboToCase" Member="MoboToCases" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToCase" />
+      <Association Name="Motherboard1_MoboToCase1" Member="MoboToCase1s" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToCase1" />
+      <Association Name="Motherboard1_MoboToCpu" Member="MoboToCpus" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToCpu" />
+      <Association Name="Motherboard1_MoboToCpu1" Member="MoboToCpu1s" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToCpu1" />
+      <Association Name="Motherboard1_MoboToRam" Member="MoboToRams" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToRam" />
+      <Association Name="Motherboard1_MoboToRam1" Member="MoboToRam1s" ThisKey="ID" OtherKey="Mobo_ID" Type="MoboToRam1" />
+      <Association Name="Motherboard1_Pc" Member="Pcs" ThisKey="ID" OtherKey="Mobo_ID" Type="Pc" />
+      <Association Name="Motherboard1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Mobo_ID" Type="Pc1" />
+      <Association Name="PartsStock_Motherboard1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Motherboard1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mouse" Member="Mouse1s">
+    <Type Name="Mouse1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Sensor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Resolution" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Acceleration" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Connection_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Durability" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PTFE_Feet" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Battery" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cable_Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OS_Support" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Mouse1_Pc" Member="Pcs" ThisKey="ID" OtherKey="Mouse_ID" Type="Pc" />
+      <Association Name="Mouse1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Mouse_ID" Type="Pc1" />
+      <Association Name="PartsStock_Mouse1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Mouse1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MousePad" Member="MousePad1s">
+    <Type Name="MousePad1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Colour" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Materials" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Base" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Features" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_MousePad1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_MousePad1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OperatingSystem" Member="OperatingSystem1s">
+    <Type Name="OperatingSystem1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Bit_Version" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OS_Version" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="System_Requirements" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="OperatingSystem1_Pc" Member="Pcs" ThisKey="ID" OtherKey="OS_ID" Type="Pc" />
+      <Association Name="OperatingSystem1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="OS_ID" Type="Pc1" />
+      <Association Name="PartsStock_OperatingSystem1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_OperatingSystem1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartCart" Member="PartCart1s">
+    <Type Name="PartCart1">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Part_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_PartCart1" Member="PartsStock" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="Client_PartCart1" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+      <Association Name="Client1_PartCart1" Member="Client1" ThisKey="User_ID" OtherKey="User_ID" Type="Client1" IsForeignKey="true" />
+      <Association Name="PartsStock1_PartCart1" Member="PartsStock1" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartInvoice" Member="PartInvoice1s">
+    <Type Name="PartInvoice1">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Part_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_PartInvoice1" Member="PartsStock" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="Client_PartInvoice1" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+      <Association Name="Client1_PartInvoice1" Member="Client1" ThisKey="User_ID" OtherKey="User_ID" Type="Client1" IsForeignKey="true" />
+      <Association Name="PartsStock1_PartInvoice1" Member="PartsStock1" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartsSold" Member="PartsSold1s">
+    <Type Name="PartsSold1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity_Sold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_PartsSold1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_PartsSold1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartsStock" Member="PartsStock1s">
+    <Type Name="PartsStock1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock1_AirCooler" Member="AirCooler" ThisKey="ID" OtherKey="ID" Type="AirCooler" Cardinality="One" />
+      <Association Name="PartsStock1_AirCooler1" Member="AirCooler1" ThisKey="ID" OtherKey="ID" Type="AirCooler1" Cardinality="One" />
+      <Association Name="PartsStock1_CPU" Member="CPU" ThisKey="ID" OtherKey="ID" Type="CPU" Cardinality="One" />
+      <Association Name="PartsStock1_CPU1" Member="CPU1" ThisKey="ID" OtherKey="ID" Type="CPU1" Cardinality="One" />
+      <Association Name="PartsStock1_Fan" Member="Fan" ThisKey="ID" OtherKey="ID" Type="Fan" Cardinality="One" />
+      <Association Name="PartsStock1_Fan1" Member="Fan1" ThisKey="ID" OtherKey="ID" Type="Fan1" Cardinality="One" />
+      <Association Name="PartsStock1_GPU" Member="GPU" ThisKey="ID" OtherKey="ID" Type="GPU" Cardinality="One" />
+      <Association Name="PartsStock1_GPU1" Member="GPU1" ThisKey="ID" OtherKey="ID" Type="GPU1" Cardinality="One" />
+      <Association Name="PartsStock1_HDD" Member="HDD" ThisKey="ID" OtherKey="ID" Type="HDD" Cardinality="One" />
+      <Association Name="PartsStock1_HDD1" Member="HDD1" ThisKey="ID" OtherKey="ID" Type="HDD1" Cardinality="One" />
+      <Association Name="PartsStock1_Headset" Member="Headset" ThisKey="ID" OtherKey="ID" Type="Headset" Cardinality="One" />
+      <Association Name="PartsStock1_Headset1" Member="Headset1" ThisKey="ID" OtherKey="ID" Type="Headset1" Cardinality="One" />
+      <Association Name="PartsStock1_Keyboard" Member="Keyboard" ThisKey="ID" OtherKey="ID" Type="Keyboard" Cardinality="One" />
+      <Association Name="PartsStock1_Keyboard1" Member="Keyboard1" ThisKey="ID" OtherKey="ID" Type="Keyboard1" Cardinality="One" />
+      <Association Name="PartsStock1_LiquidCooler" Member="LiquidCooler" ThisKey="ID" OtherKey="ID" Type="LiquidCooler" Cardinality="One" />
+      <Association Name="PartsStock1_LiquidCooler1" Member="LiquidCooler1" ThisKey="ID" OtherKey="ID" Type="LiquidCooler1" Cardinality="One" />
+      <Association Name="PartsStock1_Microphone" Member="Microphone" ThisKey="ID" OtherKey="ID" Type="Microphone" Cardinality="One" />
+      <Association Name="PartsStock1_Microphone1" Member="Microphone1" ThisKey="ID" OtherKey="ID" Type="Microphone1" Cardinality="One" />
+      <Association Name="PartsStock1_Monitor" Member="Monitor" ThisKey="ID" OtherKey="ID" Type="Monitor" Cardinality="One" />
+      <Association Name="PartsStock1_Monitor1" Member="Monitor1" ThisKey="ID" OtherKey="ID" Type="Monitor1" Cardinality="One" />
+      <Association Name="PartsStock1_Motherboard" Member="Motherboard" ThisKey="ID" OtherKey="ID" Type="Motherboard" Cardinality="One" />
+      <Association Name="PartsStock1_Motherboard1" Member="Motherboard1" ThisKey="ID" OtherKey="ID" Type="Motherboard1" Cardinality="One" />
+      <Association Name="PartsStock1_Mouse" Member="Mouse" ThisKey="ID" OtherKey="ID" Type="Mouse" Cardinality="One" />
+      <Association Name="PartsStock1_Mouse1" Member="Mouse1" ThisKey="ID" OtherKey="ID" Type="Mouse1" Cardinality="One" />
+      <Association Name="PartsStock1_MousePad" Member="MousePad" ThisKey="ID" OtherKey="ID" Type="MousePad" Cardinality="One" />
+      <Association Name="PartsStock1_MousePad1" Member="MousePad1" ThisKey="ID" OtherKey="ID" Type="MousePad1" Cardinality="One" />
+      <Association Name="PartsStock1_OperatingSystem" Member="OperatingSystem" ThisKey="ID" OtherKey="ID" Type="OperatingSystem" Cardinality="One" />
+      <Association Name="PartsStock1_OperatingSystem1" Member="OperatingSystem1" ThisKey="ID" OtherKey="ID" Type="OperatingSystem1" Cardinality="One" />
+      <Association Name="PartsStock1_PartsSold" Member="PartsSold" ThisKey="ID" OtherKey="ID" Type="PartsSold" Cardinality="One" />
+      <Association Name="PartsStock1_PartsSold1" Member="PartsSold1" ThisKey="ID" OtherKey="ID" Type="PartsSold1" Cardinality="One" />
+      <Association Name="PartsStock1_PCCase" Member="PCCase" ThisKey="ID" OtherKey="ID" Type="PCCase" Cardinality="One" />
+      <Association Name="PartsStock1_PSU" Member="PSU" ThisKey="ID" OtherKey="ID" Type="PSU" Cardinality="One" />
+      <Association Name="PartsStock1_RAM" Member="RAM" ThisKey="ID" OtherKey="ID" Type="RAM" Cardinality="One" />
+      <Association Name="PartsStock1_Speaker" Member="Speaker" ThisKey="ID" OtherKey="ID" Type="Speaker" Cardinality="One" />
+      <Association Name="PartsStock1_SSD" Member="SSD" ThisKey="ID" OtherKey="ID" Type="SSD" Cardinality="One" />
+      <Association Name="PartsStock1_PartInvoice" Member="PartInvoices" ThisKey="ID" OtherKey="Part_ID" Type="PartInvoice" />
+      <Association Name="PartsStock1_PartInvoice1" Member="PartInvoice1s" ThisKey="ID" OtherKey="Part_ID" Type="PartInvoice1" />
+      <Association Name="PartsStock1_PartCart" Member="PartCarts" ThisKey="ID" OtherKey="Part_ID" Type="PartCart" />
+      <Association Name="PartsStock1_PartCart1" Member="PartCart1s" ThisKey="ID" OtherKey="Part_ID" Type="PartCart1" />
+      <Association Name="PartsStock1_PCCase1" Member="PCCase1" ThisKey="ID" OtherKey="ID" Type="PCCase1" Cardinality="One" />
+      <Association Name="PartsStock1_PSU1" Member="PSU1" ThisKey="ID" OtherKey="ID" Type="PSU1" Cardinality="One" />
+      <Association Name="PartsStock1_RAM1" Member="RAM1" ThisKey="ID" OtherKey="ID" Type="RAM1" Cardinality="One" />
+      <Association Name="PartsStock1_Speaker1" Member="Speaker1" ThisKey="ID" OtherKey="ID" Type="Speaker1" Cardinality="One" />
+      <Association Name="PartsStock1_SSD1" Member="SSD1" ThisKey="ID" OtherKey="ID" Type="SSD1" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pc" Member="Pc1s">
+    <Type Name="Pc1">
+      <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PC_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Case_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mobo_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CPU_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RAM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GPU_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cooler_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SSD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fan_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HDD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PSU_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Num_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Num_SSD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Num_HDD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Monitor_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Headset_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Keyboard_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mouse_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Speaker_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PCCase_Pc1" Member="PCCase" ThisKey="Case_ID" OtherKey="ID" Type="PCCase" IsForeignKey="true" />
+      <Association Name="LiquidCooler_Pc1" Member="LiquidCooler" ThisKey="Cooler_ID" OtherKey="ID" Type="LiquidCooler" IsForeignKey="true" />
+      <Association Name="LiquidCooler1_Pc1" Member="LiquidCooler1" ThisKey="Cooler_ID" OtherKey="ID" Type="LiquidCooler1" IsForeignKey="true" />
+      <Association Name="CPU_Pc1" Member="CPU" ThisKey="CPU_ID" OtherKey="ID" Type="CPU" IsForeignKey="true" />
+      <Association Name="CPU1_Pc1" Member="CPU1" ThisKey="CPU_ID" OtherKey="ID" Type="CPU1" IsForeignKey="true" />
+      <Association Name="Fan_Pc1" Member="Fan" ThisKey="Fan_ID" OtherKey="ID" Type="Fan" IsForeignKey="true" />
+      <Association Name="Fan1_Pc1" Member="Fan1" ThisKey="Fan_ID" OtherKey="ID" Type="Fan1" IsForeignKey="true" />
+      <Association Name="GPU_Pc1" Member="GPU" ThisKey="GPU_ID" OtherKey="ID" Type="GPU" IsForeignKey="true" />
+      <Association Name="GPU1_Pc1" Member="GPU1" ThisKey="GPU_ID" OtherKey="ID" Type="GPU1" IsForeignKey="true" />
+      <Association Name="HDD_Pc1" Member="HDD" ThisKey="HDD_ID" OtherKey="ID" Type="HDD" IsForeignKey="true" />
+      <Association Name="HDD1_Pc1" Member="HDD1" ThisKey="HDD_ID" OtherKey="ID" Type="HDD1" IsForeignKey="true" />
+      <Association Name="Headset_Pc1" Member="Headset" ThisKey="Headset_ID" OtherKey="ID" Type="Headset" IsForeignKey="true" />
+      <Association Name="Headset1_Pc1" Member="Headset1" ThisKey="Headset_ID" OtherKey="ID" Type="Headset1" IsForeignKey="true" />
+      <Association Name="Keyboard_Pc1" Member="Keyboard" ThisKey="Keyboard_ID" OtherKey="ID" Type="Keyboard" IsForeignKey="true" />
+      <Association Name="Keyboard1_Pc1" Member="Keyboard1" ThisKey="Keyboard_ID" OtherKey="ID" Type="Keyboard1" IsForeignKey="true" />
+      <Association Name="Motherboard_Pc1" Member="Motherboard" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard" IsForeignKey="true" />
+      <Association Name="Motherboard1_Pc1" Member="Motherboard1" ThisKey="Mobo_ID" OtherKey="ID" Type="Motherboard1" IsForeignKey="true" />
+      <Association Name="Monitor_Pc1" Member="Monitor" ThisKey="Monitor_ID" OtherKey="ID" Type="Monitor" IsForeignKey="true" />
+      <Association Name="Monitor1_Pc1" Member="Monitor1" ThisKey="Monitor_ID" OtherKey="ID" Type="Monitor1" IsForeignKey="true" />
+      <Association Name="Mouse_Pc1" Member="Mouse" ThisKey="Mouse_ID" OtherKey="ID" Type="Mouse" IsForeignKey="true" />
+      <Association Name="Mouse1_Pc1" Member="Mouse1" ThisKey="Mouse_ID" OtherKey="ID" Type="Mouse1" IsForeignKey="true" />
+      <Association Name="OperatingSystem_Pc1" Member="OperatingSystem" ThisKey="OS_ID" OtherKey="ID" Type="OperatingSystem" IsForeignKey="true" />
+      <Association Name="OperatingSystem1_Pc1" Member="OperatingSystem1" ThisKey="OS_ID" OtherKey="ID" Type="OperatingSystem1" IsForeignKey="true" />
+      <Association Name="PcStock_Pc1" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+      <Association Name="PSU_Pc1" Member="PSU" ThisKey="PSU_ID" OtherKey="ID" Type="PSU" IsForeignKey="true" />
+      <Association Name="RAM_Pc1" Member="RAM" ThisKey="RAM_ID" OtherKey="ID" Type="RAM" IsForeignKey="true" />
+      <Association Name="Speaker_Pc1" Member="Speaker" ThisKey="Speaker_ID" OtherKey="ID" Type="Speaker" IsForeignKey="true" />
+      <Association Name="SSD_Pc1" Member="SSD" ThisKey="SSD_ID" OtherKey="ID" Type="SSD" IsForeignKey="true" />
+      <Association Name="PCCase1_Pc1" Member="PCCase1" ThisKey="Case_ID" OtherKey="ID" Type="PCCase1" IsForeignKey="true" />
+      <Association Name="PcStock1_Pc1" Member="PcStock1" ThisKey="PC_ID" OtherKey="ID" Type="PcStock1" IsForeignKey="true" />
+      <Association Name="PSU1_Pc1" Member="PSU1" ThisKey="PSU_ID" OtherKey="ID" Type="PSU1" IsForeignKey="true" />
+      <Association Name="RAM1_Pc1" Member="RAM1" ThisKey="RAM_ID" OtherKey="ID" Type="RAM1" IsForeignKey="true" />
+      <Association Name="Speaker1_Pc1" Member="Speaker1" ThisKey="Speaker_ID" OtherKey="ID" Type="Speaker1" IsForeignKey="true" />
+      <Association Name="SSD1_Pc1" Member="SSD1" ThisKey="SSD_ID" OtherKey="ID" Type="SSD1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PcCart" Member="PcCart1s">
+    <Type Name="PcCart1">
       <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Pc_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="PcStock_PcCart" Member="PcStock" ThisKey="Pc_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
-      <Association Name="Client_PcCart" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+      <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock_PcCart1" Member="PcStock" ThisKey="Pc_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+      <Association Name="Client_PcCart1" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+      <Association Name="Client1_PcCart1" Member="Client1" ThisKey="User_ID" OtherKey="User_ID" Type="Client1" IsForeignKey="true" />
+      <Association Name="PcStock1_PcCart1" Member="PcStock1" ThisKey="Pc_ID" OtherKey="ID" Type="PcStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PCCase" Member="PCCase1s">
+    <Type Name="PCCase1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Colour" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Dimensions" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Net_Weight" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Motherboard_Form_Factor" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Side_Window" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Num_HDD_Drives" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Num_SSD_Drives" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Front_I/O]" Member="Front_I_O" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Expansion_Slots" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Num_Top_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Num_Bottom_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Num_Front_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Num_Back_Fans" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Top_Radiator_Support" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Front_Radiator_Support" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GPU_Max_Length" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CPU_Cooler_Height" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PCCase1_MoboToCase" Member="MoboToCases" ThisKey="ID" OtherKey="Case_ID" Type="MoboToCase" />
+      <Association Name="PCCase1_MoboToCase1" Member="MoboToCase1s" ThisKey="ID" OtherKey="Case_ID" Type="MoboToCase1" />
+      <Association Name="PCCase1_Pc" Member="Pcs" ThisKey="ID" OtherKey="Case_ID" Type="Pc" />
+      <Association Name="PCCase1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Case_ID" Type="Pc1" />
+      <Association Name="PartsStock_PCCase1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_PCCase1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PcInvoice" Member="PcInvoice1s">
+    <Type Name="PcInvoice1">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock_PcInvoice1" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+      <Association Name="Client_PcInvoice1" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+      <Association Name="Client1_PcInvoice1" Member="Client1" ThisKey="User_ID" OtherKey="User_ID" Type="Client1" IsForeignKey="true" />
+      <Association Name="PcStock1_PcInvoice1" Member="PcStock1" ThisKey="PC_ID" OtherKey="ID" Type="PcStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PcSold" Member="PcSold1s">
+    <Type Name="PcSold1">
+      <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity_Sold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock_PcSold1" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+      <Association Name="PcStock1_PcSold1" Member="PcStock1" ThisKey="PC_ID" OtherKey="ID" Type="PcStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PcStock" Member="PcStock1s">
+    <Type Name="PcStock1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PC_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock1_Pc" Member="Pc" ThisKey="ID" OtherKey="PC_ID" Type="Pc" Cardinality="One" />
+      <Association Name="PcStock1_Pc1" Member="Pc1" ThisKey="ID" OtherKey="PC_ID" Type="Pc1" Cardinality="One" />
+      <Association Name="PcStock1_PcSold" Member="PcSold" ThisKey="ID" OtherKey="PC_ID" Type="PcSold" Cardinality="One" />
+      <Association Name="PcStock1_PcSold1" Member="PcSold1" ThisKey="ID" OtherKey="PC_ID" Type="PcSold1" Cardinality="One" />
+      <Association Name="PcStock1_PcInvoice" Member="PcInvoices" ThisKey="ID" OtherKey="PC_ID" Type="PcInvoice" />
+      <Association Name="PcStock1_PcInvoice1" Member="PcInvoice1s" ThisKey="ID" OtherKey="PC_ID" Type="PcInvoice1" />
+      <Association Name="PcStock1_PcCart" Member="PcCarts" ThisKey="ID" OtherKey="Pc_ID" Type="PcCart" />
+      <Association Name="PcStock1_PcCart1" Member="PcCart1s" ThisKey="ID" OtherKey="Pc_ID" Type="PcCart1" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PSU" Member="PSU1s">
+    <Type Name="PSU1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Power" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Certification" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Modular" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Connectors" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="MTBF" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fan_Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cables" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PSU1_Pc" Member="Pcs" ThisKey="ID" OtherKey="PSU_ID" Type="Pc" />
+      <Association Name="PSU1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="PSU_ID" Type="Pc1" />
+      <Association Name="PartsStock_PSU1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_PSU1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RAM" Member="RAM1s">
+    <Type Name="RAM1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Capacity" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Speed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Latency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Voltage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Channel_Config" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="RAM1_MoboToRam" Member="MoboToRams" ThisKey="ID" OtherKey="RAM_ID" Type="MoboToRam" />
+      <Association Name="RAM1_MoboToRam1" Member="MoboToRam1s" ThisKey="ID" OtherKey="RAM_ID" Type="MoboToRam1" />
+      <Association Name="RAM1_Pc" Member="Pcs" ThisKey="ID" OtherKey="RAM_ID" Type="Pc" />
+      <Association Name="RAM1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="RAM_ID" Type="Pc1" />
+      <Association Name="PartsStock_RAM1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_RAM1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Speaker" Member="Speaker1s">
+    <Type Name="Speaker1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Satellite_Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Satellite_Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubWoofer_Dimensions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubWoofer_Weight" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="controls" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="System_Requirements" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Features" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Speaker1_Pc" Member="Pcs" ThisKey="ID" OtherKey="Speaker_ID" Type="Pc" />
+      <Association Name="Speaker1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="Speaker_ID" Type="Pc1" />
+      <Association Name="PartsStock_Speaker1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_Speaker1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SSD" Member="SSD1s">
+    <Type Name="SSD1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Form_Factor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Capacity" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Interface_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Width" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Sequential_Read" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Sequential_Write" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Random_Read" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Random_Write" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MTBF" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Operating_Temp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Power_Usage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Warranty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="SSD1_Pc" Member="Pcs" ThisKey="ID" OtherKey="SSD_ID" Type="Pc" />
+      <Association Name="SSD1_Pc1" Member="Pc1s" ThisKey="ID" OtherKey="SSD_ID" Type="Pc1" />
+      <Association Name="PartsStock_SSD1" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="PartsStock1_SSD1" Member="PartsStock1" ThisKey="ID" OtherKey="ID" Type="PartsStock1" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

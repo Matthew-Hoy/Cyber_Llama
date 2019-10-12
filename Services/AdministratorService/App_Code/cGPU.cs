@@ -26,4 +26,6 @@ public class cGPU
     public Double length;
     public Double height;
     public String warranty;
+    public int active;
+    public int discount;
 }
