@@ -130,6 +130,7 @@
     </Compile>
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AddUserController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FAQsController.cs" />
@@ -271,9 +272,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\aboutIcon.png" />
+    <Content Include="Images\AddressIcon.png" />
     <Content Include="Images\adminIcon.png" />
     <Content Include="Images\buildIcon.png" />
     <Content Include="Images\carIcon.png" />
+    <Content Include="Images\CartIcon.png" />
     <Content Include="Images\ComponentsIcon.png" />
     <Content Include="Images\computerIcon.png" />
     <Content Include="Images\contactIcon.png" />
@@ -283,13 +286,16 @@
     <Content Include="Images\homeIcon.png" />
     <Content Include="Images\insta.png" />
     <Content Include="Images\JumboTron-Background.jpg" />
+    <Content Include="Images\LinkedInIcon.png" />
     <Content Include="Images\llama.jpg" />
     <Content Include="Images\llama.png" />
     <Content Include="Images\LoginIcon.png" />
     <Content Include="Images\ManagerIcon.png" />
     <Content Include="Images\moneyIcon.png" />
+    <Content Include="Images\RegisterIcon.png" />
     <Content Include="Images\shoppingCartIcon.png" />
     <Content Include="Images\signUpIcon.png" />
+    <Content Include="Images\SM.png" />
     <Content Include="Images\SocialMediaIcon.png" />
     <Content Include="Images\TestLogo.png" />
     <Content Include="Images\twitter.png" />
@@ -394,6 +400,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\PoliciesAndReporting\Index.cshtml" />
     <Content Include="Views\PrivacyAndTerms\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
