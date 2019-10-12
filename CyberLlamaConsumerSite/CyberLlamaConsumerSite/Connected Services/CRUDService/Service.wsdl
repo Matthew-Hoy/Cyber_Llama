@@ -248,6 +248,12 @@
   <wsdl:message name="IService_checkOut_OutputMessage">
     <wsdl:part name="parameters" element="tns:checkOutResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getCartItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCartItems" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCartItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCartItemsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
@@ -408,6 +414,10 @@
     <wsdl:operation name="checkOut">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/checkOut" message="tns:IService_checkOut_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/checkOutResponse" message="tns:IService_checkOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCartItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCartItems" message="tns:IService_getCartItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCartItemsResponse" message="tns:IService_getCartItems_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -765,6 +775,15 @@
     </wsdl:operation>
     <wsdl:operation name="checkOut">
       <soap:operation soapAction="http://tempuri.org/IService/checkOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCartItems">
+      <soap:operation soapAction="http://tempuri.org/IService/getCartItems" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

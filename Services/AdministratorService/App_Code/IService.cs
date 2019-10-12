@@ -144,6 +144,8 @@ public interface IService
     [OperationContract]
     Boolean checkOut(int user_ID);
 
+    [OperationContract]
+    List<cAllCart> getCartItems(int user_ID);
 
 
 }

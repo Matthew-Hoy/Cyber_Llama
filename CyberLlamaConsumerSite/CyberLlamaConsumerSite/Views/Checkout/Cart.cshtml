@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<CyberLlamaConsumerSite.Models.Cart>
+
+<h2>Checkout</h2>
+<table style="width:100%;">
+    <tr>
+        <!--used to select each item or all items to remove from cart-->
+        <th >Select</th>
+        <!--this will contail image and name of product with link to product page-->
+        <!--info needed is thus: product id, name, image link-->
+        <th >Image</th>
+        <th >Item Name</th>
+        <!--the price of the product-->
+        <th >Unit Price</th>
+        <!--this value should be changable-->
+        <th >Quantity</th>
+    </tr>
+    @{Html.RenderPartial("CartItem", Model);}
+        <!--needed -> an array of cart containing (product id, name, image link, price, quantity)-->
+</table>
+

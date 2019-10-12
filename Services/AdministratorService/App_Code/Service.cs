@@ -573,7 +573,6 @@ public class Service : IService
             Model = newMobo.model,
             Brand = newMobo.brand,
             Series = newMobo.series,
-            Price = (decimal)newMobo.price,
             Chipset = newMobo.chipset,
             Memory_Type = newMobo.memoryType,
             Max_Memory_Size = newMobo.max_mem_size,
@@ -1060,7 +1059,6 @@ public class Service : IService
             model = part.Model,
             brand = part.Brand,
             series = part.Series,
-            price = (double)part.Price,
             chipset = part.Chipset,
             memoryType = part.Memory_Type,
             max_mem_size = part.Max_Memory_Size,
@@ -1445,7 +1443,6 @@ public class Service : IService
                 model = part.Model,
                 brand = part.Brand,
                 series = part.Series,
-                price = (double)part.Price,
                 chipset = part.Chipset,
                 memoryType = part.Memory_Type,
                 max_mem_size = part.Max_Memory_Size,
@@ -2041,5 +2038,36 @@ public class Service : IService
         //Generate Invoice
 
         return true;
+    }
+
+    public List<cAllCart> getCartItems(int user_ID)
+    {
+        List<cAllCart> partCart = (from part in db.PartsStocks
+                        join cart in db.PartCarts.Where(x => x.User_ID.Equals(user_ID))
+                        on part.ID equals cart.Part_ID
+                        select new cAllCart{
+                        description = part.Model + " " + part.Type,
+                        imagelink = part.Image,
+                        part_id = part.ID,
+                        price = part.Price,
+                        qua = 1,
+                        user_id = user_ID
+                        }).ToList();
+
+        List<cAllCart> pcCart = (from part in db.PcStocks
+                                   join cart in db.PcCarts.Where(x => x.User_ID.Equals(user_ID))
+                                   on part.ID equals cart.Pc_ID
+                                   select new cAllCart
+                                   {
+                                       description = part.PC_Type,
+                                       imagelink = part.Image,
+                                       part_id = part.ID,
+                                       price = part.Price,
+                                       qua = 1,
+                                       user_id = user_ID
+                                   }).ToList();
+
+
+        return partCart.Concat(pcCart).ToList();
     }
 }

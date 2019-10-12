@@ -1,0 +1,14 @@
+﻿@model List<CyberLlamaConsumerSite.Models.Cart>
+<form method="post" action="@Url.Action("RemoveFromCart", "Checkout")">
+    @for(int i = 0; i < Model.Count; i++)
+    {
+    <tr>
+        <td><input type="checkbox" name="select" value=@Model[i].ProductID /></td>
+        <td>@Model[i].ImageLink</td>
+        <td>@Model[i].Name</td>
+        <td>@Model[i].Price</td>
+        <td>@Model[i].Quantity</td>
+    </tr>
+    <input type="submit"value="Remove from cart" />
+    }
+</form>
