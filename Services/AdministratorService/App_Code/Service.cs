@@ -1235,7 +1235,6 @@ public class Service : IService
             model = part.Model,
             brand = part.Brand,
             series = part.Series,
-            price = (double)part.Price,
             chipset = part.Chipset,
             memoryType = part.Memory_Type,
             max_mem_size = part.Max_Memory_Size,
