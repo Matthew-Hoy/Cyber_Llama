@@ -15,12 +15,140 @@ namespace CyberLlamaConsumerSite.CRUDService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cEmployee", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cEmployee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Admin_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Contact_NumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string First_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurnameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Admin_ID {
+            get {
+                return this.Admin_IDField;
+            }
+            set {
+                if ((this.Admin_IDField.Equals(value) != true)) {
+                    this.Admin_IDField = value;
+                    this.RaisePropertyChanged("Admin_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Contact_Number {
+            get {
+                return this.Contact_NumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Contact_NumberField, value) != true)) {
+                    this.Contact_NumberField = value;
+                    this.RaisePropertyChanged("Contact_Number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string First_Name {
+            get {
+                return this.First_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
+                    this.First_NameField = value;
+                    this.RaisePropertyChanged("First_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Position {
+            get {
+                return this.PositionField;
+            }
+            set {
+                if ((this.PositionField.Equals(value) != true)) {
+                    this.PositionField = value;
+                    this.RaisePropertyChanged("Position");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Surname {
+            get {
+                return this.SurnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
+                    this.SurnameField = value;
+                    this.RaisePropertyChanged("Surname");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="cAirCooler", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class cAirCooler : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string air_flowField;
@@ -33,6 +161,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string colourField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string fan_rpmField;
@@ -87,6 +218,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string air_flow {
             get {
                 return this.air_flowField;
@@ -134,6 +278,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.colourField, value) != true)) {
                     this.colourField = value;
                     this.RaisePropertyChanged("colour");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -340,6 +497,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string brandField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -350,6 +510,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string dimensionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string expansion_slotsField;
@@ -419,6 +582,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string brand {
             get {
                 return this.brandField;
@@ -466,6 +642,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
                     this.dimensionsField = value;
                     this.RaisePropertyChanged("dimensions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -740,6 +929,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private string ChipsetField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string base_clockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -750,6 +942,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string coresField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int idField;
@@ -811,6 +1006,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string base_clock {
             get {
                 return this.base_clockField;
@@ -858,6 +1066,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.coresField, value) != true)) {
                     this.coresField = value;
                     this.RaisePropertyChanged("cores");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -1038,10 +1259,16 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string brandField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string cable_lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int idField;
@@ -1093,6 +1320,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string brand {
             get {
                 return this.brandField;
@@ -1114,6 +1354,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.cable_lengthField, value) != true)) {
                     this.cable_lengthField = value;
                     this.RaisePropertyChanged("cable_length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -1307,6 +1560,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string base_clockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1314,6 +1570,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string form_factorField;
@@ -1380,6 +1639,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string base_clock {
             get {
                 return this.base_clockField;
@@ -1414,6 +1686,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.brandField, value) != true)) {
                     this.brandField = value;
                     this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -1672,10 +1957,16 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string avg_power_usageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int idField;
@@ -1724,6 +2015,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string avg_power_usage {
             get {
                 return this.avg_power_usageField;
@@ -1745,6 +2049,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.brandField, value) != true)) {
                     this.brandField = value;
                     this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -1925,10 +2242,16 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string brandField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string colorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string fan_heightField;
@@ -1986,6 +2309,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string brand {
             get {
                 return this.brandField;
@@ -2007,6 +2343,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.colorField, value) != true)) {
                     this.colorField = value;
                     this.RaisePropertyChanged("color");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -2226,6 +2575,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string back_panel_IOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2233,6 +2585,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string chipsetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string expansion_slotsField;
@@ -2290,6 +2645,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string back_panel_IO {
             get {
                 return this.back_panel_IOField;
@@ -2324,6 +2692,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.chipsetField, value) != true)) {
                     this.chipsetField = value;
                     this.RaisePropertyChanged("chipset");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -2546,6 +2927,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private string PowerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string brandField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2559,6 +2943,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string dimensionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string fan_sizeField;
@@ -2603,6 +2990,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.PowerField, value) != true)) {
                     this.PowerField = value;
                     this.RaisePropertyChanged("Power");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
                 }
             }
         }
@@ -2668,6 +3068,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
                     this.dimensionsField = value;
                     this.RaisePropertyChanged("dimensions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -2796,6 +3209,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string brandField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2803,6 +3219,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string channel_configField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string heightField;
@@ -2845,6 +3264,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string brand {
             get {
                 return this.brandField;
@@ -2879,6 +3311,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.channel_configField, value) != true)) {
                     this.channel_configField = value;
                     this.RaisePropertyChanged("channel_config");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -3033,10 +3478,16 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string brandField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string capacityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string form_factorField;
@@ -3097,6 +3548,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string brand {
             get {
                 return this.brandField;
@@ -3118,6 +3582,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.capacityField, value) != true)) {
                     this.capacityField = value;
                     this.RaisePropertyChanged("capacity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -3350,6 +3827,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string case_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3357,6 +3837,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string cpu_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string fan_idField;
@@ -3429,6 +3912,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string case_id {
             get {
                 return this.case_idField;
@@ -3463,6 +3959,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.cpu_idField, value) != true)) {
                     this.cpu_idField = value;
                     this.RaisePropertyChanged("cpu_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -3739,6 +4248,163 @@ namespace CyberLlamaConsumerSite.CRUDService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="c_ProductPageInfo", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class c_ProductPageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string image {
+            get {
+                return this.imageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imageField, value) != true)) {
+                    this.imageField = value;
+                    this.RaisePropertyChanged("image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typeField, value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="cAllCart", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class cAllCart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -3891,10 +4557,10 @@ namespace CyberLlamaConsumerSite.CRUDService {
         System.Threading.Tasks.Task<string[]> getUserPositionsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
-        string getAllEmployees();
+        CyberLlamaConsumerSite.CRUDService.cEmployee[] getAllEmployees();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
-        System.Threading.Tasks.Task<string> getAllEmployeesAsync();
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cEmployee[]> getAllEmployeesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addAirCooler", ReplyAction="http://tempuri.org/IService/addAirCoolerResponse")]
         bool addAirCooler(CyberLlamaConsumerSite.CRUDService.cAirCooler newAC, int qua);
@@ -3969,6 +4635,8 @@ namespace CyberLlamaConsumerSite.CRUDService {
         System.Threading.Tasks.Task<bool> addPCAsync(CyberLlamaConsumerSite.CRUDService.cPC newPC, int qua);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPart", ReplyAction="http://tempuri.org/IService/getPartResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cEmployee[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cEmployee))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cAirCooler))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cCase))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cCPU))]
@@ -3992,6 +4660,8 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cMobo[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cPSU[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cRAM[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cSSD[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cAllCart[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cAllCart))]
@@ -4001,11 +4671,11 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPart", ReplyAction="http://tempuri.org/IService/getPartResponse")]
         System.Threading.Tasks.Task<object> getPartAsync(int ID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPC", ReplyAction="http://tempuri.org/IService/getPCResponse")]
-        CyberLlamaConsumerSite.CRUDService.cPC getPC(int ID);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/intgetPC", ReplyAction="http://tempuri.org/IService/intgetPCResponse")]
+        CyberLlamaConsumerSite.CRUDService.cPC intgetPC(int ID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPC", ReplyAction="http://tempuri.org/IService/getPCResponse")]
-        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC> getPCAsync(int ID);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/intgetPC", ReplyAction="http://tempuri.org/IService/intgetPCResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC> intgetPCAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPCbyType", ReplyAction="http://tempuri.org/IService/getPCbyTypeResponse")]
         CyberLlamaConsumerSite.CRUDService.cPC[] getPCbyType(string Type);
@@ -4079,6 +4749,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllRAM", ReplyAction="http://tempuri.org/IService/getAllRAMResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cRAM[]> getAllRAMAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllParts", ReplyAction="http://tempuri.org/IService/getAllPartsResponse")]
+        CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo[] getAllParts(string type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllParts", ReplyAction="http://tempuri.org/IService/getAllPartsResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo[]> getAllPartsAsync(string type);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllSSD", ReplyAction="http://tempuri.org/IService/getAllSSDResponse")]
         CyberLlamaConsumerSite.CRUDService.cSSD[] getAllSSD();
         
@@ -4092,10 +4768,16 @@ namespace CyberLlamaConsumerSite.CRUDService {
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC[]> getAllPCAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartCart", ReplyAction="http://tempuri.org/IService/addToPartCartResponse")]
-        bool addToPartCart(int user_ID, int part_ID, int qua);
+        bool addToPartCart(int user_ID, int part_ID, int qua, double total_price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartCart", ReplyAction="http://tempuri.org/IService/addToPartCartResponse")]
-        System.Threading.Tasks.Task<bool> addToPartCartAsync(int user_ID, int part_ID, int qua);
+        System.Threading.Tasks.Task<bool> addToPartCartAsync(int user_ID, int part_ID, int qua, double total_price);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePartCart", ReplyAction="http://tempuri.org/IService/updatePartCartResponse")]
+        bool updatePartCart(int user_ID, int pc_ID, int qua, double total_price);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePartCart", ReplyAction="http://tempuri.org/IService/updatePartCartResponse")]
+        System.Threading.Tasks.Task<bool> updatePartCartAsync(int user_ID, int pc_ID, int qua, double total_price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeFromPartCart", ReplyAction="http://tempuri.org/IService/removeFromPartCartResponse")]
         bool removeFromPartCart(int user_ID, int part_ID);
@@ -4110,10 +4792,16 @@ namespace CyberLlamaConsumerSite.CRUDService {
         System.Threading.Tasks.Task<bool> clearPartCartAsync(int user_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcCart", ReplyAction="http://tempuri.org/IService/addToPcCartResponse")]
-        bool addToPcCart(int user_ID, int pc_ID, int qua);
+        bool addToPcCart(int user_ID, int pc_ID, int qua, double total_price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcCart", ReplyAction="http://tempuri.org/IService/addToPcCartResponse")]
-        System.Threading.Tasks.Task<bool> addToPcCartAsync(int user_ID, int pc_ID, int qua);
+        System.Threading.Tasks.Task<bool> addToPcCartAsync(int user_ID, int pc_ID, int qua, double total_price);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePcCart", ReplyAction="http://tempuri.org/IService/updatePcCartResponse")]
+        bool updatePcCart(int user_ID, int pc_ID, int qua, double total_price);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePcCart", ReplyAction="http://tempuri.org/IService/updatePcCartResponse")]
+        System.Threading.Tasks.Task<bool> updatePcCartAsync(int user_ID, int pc_ID, int qua, double total_price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeFromPcCart", ReplyAction="http://tempuri.org/IService/removeFromPcCartResponse")]
         bool removeFromPcCart(int user_ID, int pc_ID);
@@ -4199,11 +4887,11 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.getUserPositionsAsync();
         }
         
-        public string getAllEmployees() {
+        public CyberLlamaConsumerSite.CRUDService.cEmployee[] getAllEmployees() {
             return base.Channel.getAllEmployees();
         }
         
-        public System.Threading.Tasks.Task<string> getAllEmployeesAsync() {
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cEmployee[]> getAllEmployeesAsync() {
             return base.Channel.getAllEmployeesAsync();
         }
         
@@ -4311,12 +4999,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.getPartAsync(ID);
         }
         
-        public CyberLlamaConsumerSite.CRUDService.cPC getPC(int ID) {
-            return base.Channel.getPC(ID);
+        public CyberLlamaConsumerSite.CRUDService.cPC intgetPC(int ID) {
+            return base.Channel.intgetPC(ID);
         }
         
-        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC> getPCAsync(int ID) {
-            return base.Channel.getPCAsync(ID);
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC> intgetPCAsync(int ID) {
+            return base.Channel.intgetPCAsync(ID);
         }
         
         public CyberLlamaConsumerSite.CRUDService.cPC[] getPCbyType(string Type) {
@@ -4415,6 +5103,14 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.getAllRAMAsync();
         }
         
+        public CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo[] getAllParts(string type) {
+            return base.Channel.getAllParts(type);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo[]> getAllPartsAsync(string type) {
+            return base.Channel.getAllPartsAsync(type);
+        }
+        
         public CyberLlamaConsumerSite.CRUDService.cSSD[] getAllSSD() {
             return base.Channel.getAllSSD();
         }
@@ -4431,12 +5127,20 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.getAllPCAsync();
         }
         
-        public bool addToPartCart(int user_ID, int part_ID, int qua) {
-            return base.Channel.addToPartCart(user_ID, part_ID, qua);
+        public bool addToPartCart(int user_ID, int part_ID, int qua, double total_price) {
+            return base.Channel.addToPartCart(user_ID, part_ID, qua, total_price);
         }
         
-        public System.Threading.Tasks.Task<bool> addToPartCartAsync(int user_ID, int part_ID, int qua) {
-            return base.Channel.addToPartCartAsync(user_ID, part_ID, qua);
+        public System.Threading.Tasks.Task<bool> addToPartCartAsync(int user_ID, int part_ID, int qua, double total_price) {
+            return base.Channel.addToPartCartAsync(user_ID, part_ID, qua, total_price);
+        }
+        
+        public bool updatePartCart(int user_ID, int pc_ID, int qua, double total_price) {
+            return base.Channel.updatePartCart(user_ID, pc_ID, qua, total_price);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updatePartCartAsync(int user_ID, int pc_ID, int qua, double total_price) {
+            return base.Channel.updatePartCartAsync(user_ID, pc_ID, qua, total_price);
         }
         
         public bool removeFromPartCart(int user_ID, int part_ID) {
@@ -4455,12 +5159,20 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.clearPartCartAsync(user_ID);
         }
         
-        public bool addToPcCart(int user_ID, int pc_ID, int qua) {
-            return base.Channel.addToPcCart(user_ID, pc_ID, qua);
+        public bool addToPcCart(int user_ID, int pc_ID, int qua, double total_price) {
+            return base.Channel.addToPcCart(user_ID, pc_ID, qua, total_price);
         }
         
-        public System.Threading.Tasks.Task<bool> addToPcCartAsync(int user_ID, int pc_ID, int qua) {
-            return base.Channel.addToPcCartAsync(user_ID, pc_ID, qua);
+        public System.Threading.Tasks.Task<bool> addToPcCartAsync(int user_ID, int pc_ID, int qua, double total_price) {
+            return base.Channel.addToPcCartAsync(user_ID, pc_ID, qua, total_price);
+        }
+        
+        public bool updatePcCart(int user_ID, int pc_ID, int qua, double total_price) {
+            return base.Channel.updatePcCart(user_ID, pc_ID, qua, total_price);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updatePcCartAsync(int user_ID, int pc_ID, int qua, double total_price) {
+            return base.Channel.updatePcCartAsync(user_ID, pc_ID, qua, total_price);
         }
         
         public bool removeFromPcCart(int user_ID, int pc_ID) {

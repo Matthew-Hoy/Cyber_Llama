@@ -116,11 +116,11 @@
   <wsdl:message name="IService_getPart_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPartResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_getPC_InputMessage">
-    <wsdl:part name="parameters" element="tns:getPC" />
+  <wsdl:message name="IService_intgetPC_InputMessage">
+    <wsdl:part name="parameters" element="tns:intgetPC" />
   </wsdl:message>
-  <wsdl:message name="IService_getPC_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getPCResponse" />
+  <wsdl:message name="IService_intgetPC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:intgetPCResponse" />
   </wsdl:message>
   <wsdl:message name="IService_getPCbyType_InputMessage">
     <wsdl:part name="parameters" element="tns:getPCbyType" />
@@ -194,6 +194,12 @@
   <wsdl:message name="IService_getAllRAM_OutputMessage">
     <wsdl:part name="parameters" element="tns:getAllRAMResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getAllParts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllParts" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllParts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPartsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_getAllSSD_InputMessage">
     <wsdl:part name="parameters" element="tns:getAllSSD" />
   </wsdl:message>
@@ -212,6 +218,12 @@
   <wsdl:message name="IService_addToPartCart_OutputMessage">
     <wsdl:part name="parameters" element="tns:addToPartCartResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_updatePartCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePartCart" />
+  </wsdl:message>
+  <wsdl:message name="IService_updatePartCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePartCartResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_removeFromPartCart_InputMessage">
     <wsdl:part name="parameters" element="tns:removeFromPartCart" />
   </wsdl:message>
@@ -229,6 +241,12 @@
   </wsdl:message>
   <wsdl:message name="IService_addToPcCart_OutputMessage">
     <wsdl:part name="parameters" element="tns:addToPcCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updatePcCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePcCart" />
+  </wsdl:message>
+  <wsdl:message name="IService_updatePcCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePcCartResponse" />
   </wsdl:message>
   <wsdl:message name="IService_removeFromPcCart_InputMessage">
     <wsdl:part name="parameters" element="tns:removeFromPcCart" />
@@ -327,9 +345,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getPart" message="tns:IService_getPart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getPartResponse" message="tns:IService_getPart_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getPC">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPC" message="tns:IService_getPC_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPCResponse" message="tns:IService_getPC_OutputMessage" />
+    <wsdl:operation name="intgetPC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/intgetPC" message="tns:IService_intgetPC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/intgetPCResponse" message="tns:IService_intgetPC_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getPCbyType">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getPCbyType" message="tns:IService_getPCbyType_InputMessage" />
@@ -379,6 +397,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllRAM" message="tns:IService_getAllRAM_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllRAMResponse" message="tns:IService_getAllRAM_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getAllParts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllParts" message="tns:IService_getAllParts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllPartsResponse" message="tns:IService_getAllParts_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getAllSSD">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllSSD" message="tns:IService_getAllSSD_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllSSDResponse" message="tns:IService_getAllSSD_OutputMessage" />
@@ -391,6 +413,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPartCart" message="tns:IService_addToPartCart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPartCartResponse" message="tns:IService_addToPartCart_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="updatePartCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updatePartCart" message="tns:IService_updatePartCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updatePartCartResponse" message="tns:IService_updatePartCart_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="removeFromPartCart">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/removeFromPartCart" message="tns:IService_removeFromPartCart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/removeFromPartCartResponse" message="tns:IService_removeFromPartCart_OutputMessage" />
@@ -402,6 +428,10 @@
     <wsdl:operation name="addToPcCart">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPcCart" message="tns:IService_addToPcCart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPcCartResponse" message="tns:IService_addToPcCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePcCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updatePcCart" message="tns:IService_updatePcCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updatePcCartResponse" message="tns:IService_updatePcCart_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="removeFromPcCart">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/removeFromPcCart" message="tns:IService_removeFromPcCart_InputMessage" />
@@ -584,8 +614,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getPC">
-      <soap:operation soapAction="http://tempuri.org/IService/getPC" style="document" />
+    <wsdl:operation name="intgetPC">
+      <soap:operation soapAction="http://tempuri.org/IService/intgetPC" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -701,6 +731,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getAllParts">
+      <soap:operation soapAction="http://tempuri.org/IService/getAllParts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getAllSSD">
       <soap:operation soapAction="http://tempuri.org/IService/getAllSSD" style="document" />
       <wsdl:input>
@@ -728,6 +767,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="updatePartCart">
+      <soap:operation soapAction="http://tempuri.org/IService/updatePartCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="removeFromPartCart">
       <soap:operation soapAction="http://tempuri.org/IService/removeFromPartCart" style="document" />
       <wsdl:input>
@@ -748,6 +796,15 @@
     </wsdl:operation>
     <wsdl:operation name="addToPcCart">
       <soap:operation soapAction="http://tempuri.org/IService/addToPcCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePcCart">
+      <soap:operation soapAction="http://tempuri.org/IService/updatePcCart" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

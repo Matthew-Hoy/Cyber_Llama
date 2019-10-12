@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfcEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cEmployee" nillable="true" type="tns:cEmployee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcEmployee" nillable="true" type="tns:ArrayOfcEmployee" />
+  <xs:complexType name="cEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Admin_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Contact_Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="First_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Position" type="xs:int" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cEmployee" nillable="true" type="tns:cEmployee" />
   <xs:complexType name="cAirCooler">
     <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="air_flow" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="chipset" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="colour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="fan_rpm" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="fan_size" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="features" nillable="true" type="xs:string" />
@@ -25,10 +44,12 @@
   <xs:element name="cAirCooler" nillable="true" type="tns:cAirCooler" />
   <xs:complexType name="cCase">
     <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="colour" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="cpu_cooler_max_height" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="expansion_slots" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="front_io" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="front_rad_length" nillable="true" type="xs:string" />
@@ -54,10 +75,12 @@
   <xs:complexType name="cCPU">
     <xs:sequence>
       <xs:element minOccurs="0" name="Chipset" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="base_clock" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="boost_clock" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="cores" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="max_mem_speed" type="xs:int" />
       <xs:element minOccurs="0" name="max_temp" nillable="true" type="xs:string" />
@@ -75,8 +98,10 @@
   <xs:element name="cCPU" nillable="true" type="tns:cCPU" />
   <xs:complexType name="cFan">
     <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="cable_length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="input_voltage" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="max_air_flow" nillable="true" type="xs:string" />
@@ -95,9 +120,11 @@
   <xs:element name="cFan" nillable="true" type="tns:cFan" />
   <xs:complexType name="cGPU">
     <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="base_clock" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="boost_clock" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="form_factor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="height" type="xs:double" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
@@ -121,8 +148,10 @@
   <xs:element name="cGPU" nillable="true" type="tns:cGPU" />
   <xs:complexType name="cHDD">
     <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="avg_power_usage" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="interface_type" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="load_unload_cycles" nillable="true" type="xs:string" />
@@ -140,8 +169,10 @@
   <xs:element name="cHDD" nillable="true" type="tns:cHDD" />
   <xs:complexType name="cLiquidCooler">
     <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="fan_height" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="fan_size" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
@@ -162,9 +193,11 @@
   <xs:element name="cLiquidCooler" nillable="true" type="tns:cLiquidCooler" />
   <xs:complexType name="cMobo">
     <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="back_panel_IO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="chipset" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="expansion_slots" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="form_factor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
@@ -186,11 +219,13 @@
   <xs:complexType name="cPSU">
     <xs:sequence>
       <xs:element minOccurs="0" name="Power" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="cables" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="certification" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="connectors" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="fan_size" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
@@ -204,9 +239,11 @@
   <xs:element name="cPSU" nillable="true" type="tns:cPSU" />
   <xs:complexType name="cRAM">
     <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="capacity" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="channel_config" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="height" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="latency" nillable="true" type="xs:string" />
@@ -222,8 +259,10 @@
   <xs:element name="cRAM" nillable="true" type="tns:cRAM" />
   <xs:complexType name="cSSD">
     <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="capacity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="form_factor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="interface_type" nillable="true" type="xs:string" />
@@ -245,9 +284,11 @@
   <xs:element name="cSSD" nillable="true" type="tns:cSSD" />
   <xs:complexType name="cPC">
     <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
       <xs:element minOccurs="0" name="case_id" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="cooler_id" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="cpu_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="fan_id" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="gpu_id" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="hdd_id" nillable="true" type="xs:string" />
@@ -337,6 +378,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfcRAM" nillable="true" type="tns:ArrayOfcRAM" />
+  <xs:complexType name="ArrayOfc_ProductPageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="c_ProductPageInfo" nillable="true" type="tns:c_ProductPageInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfc_ProductPageInfo" nillable="true" type="tns:ArrayOfc_ProductPageInfo" />
+  <xs:complexType name="c_ProductPageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:int" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="c_ProductPageInfo" nillable="true" type="tns:c_ProductPageInfo" />
   <xs:complexType name="ArrayOfcSSD">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cSSD" nillable="true" type="tns:cSSD" />
