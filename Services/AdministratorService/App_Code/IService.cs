@@ -73,11 +73,9 @@ public interface IService
     //Select PC by Type or Price
     [OperationContract]
     List<cPC> getPCbyType(String Type);
-    List<cPC> strgetPC(String Type);
 
     [OperationContract]
     List<cPC> getPCbyPrice(Double minPrice, Double maxPrice);
-    List<cPC> dblgetPC(Double minPrice, Double maxPrice);
 
     //Get compatible parts
     List<cAirCooler> getAirCoolersForCPU(int cpu_ID);

@@ -59,7 +59,7 @@ namespace CyberLlamaConsumerSite.Controllers
                     info += "<p>Dimensions: " + c.dimensions + "</p>";
                     info += "<p>Form Factor: " + c.mobo_form_factor + "</p>";
                     //info += "<p>Price: " + Math.Round((c.price - (c.price*c.discount/100),2)+"</p>";
-                    info == "<a href='PcBuild.aspx?ID=" + c.id + "'> </a>";
+                    info += "<a href='PcBuild.aspx?ID=" + c.id + "'> </a>";
                 }
 
                 //Create session variable when a case is selected
