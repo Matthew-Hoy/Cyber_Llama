@@ -127,8 +127,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#"><img src="~/Images/contactIcon.png" class="MenuIcon" /></a>
-                    <a class="nav-link" href="#">
+                    <a href=@Url.Action("Index", "Contact")><img src="~/Images/contactIcon.png" class="MenuIcon" /></a>
+                    <a class="nav-link" href=@Url.Action("Index", "Contact")>
                         CONTACT
                     </a>
                 </li>
@@ -222,7 +222,7 @@
             </li>   -->
 
                         <li class="nav-item">
-                            <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                            <a href=@Url.Action("Index", "Login")><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
                             <a class="nav-link" href=@Url.Action("Index", "Login")>
                                 Login
                             </a>
@@ -287,9 +287,9 @@
                     All Rights Reserved
                 </p>
                 <p align="right">
-                    <a href="">Privacy & terms</a><br />
-                    <a href="">terms and Conditions</a><br />
-                    <a href="">Polices and Reporting</a>
+                    <a href=@Url.Action("Index", "PrivacyAndTerms")>Privacy & terms</a><br />
+            
+                    <a href=@Url.Action("Index", "PoliciesAndReporting")>Polices and Reporting</a>
                 </p>
 
               

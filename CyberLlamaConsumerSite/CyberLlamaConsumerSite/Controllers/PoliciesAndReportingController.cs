@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace CyberLlamaConsumerSite.Controllers
 {
-    public class ContactController : Controller
+    public class PoliciesAndReportingController : Controller
     {
-        // GET: Contact
+        // GET: PoliciesAndReporting
         public ActionResult Index()
         {
             return View();
