@@ -1669,29 +1669,9 @@ public class Service : IService
 
         foreach (PartsStock p in parts)
         {
-            cMobo temp = new cMobo
-            {
-                id = part.ID,
-                model = part.Model,
-                brand = part.Brand,
-                series = part.Series,
-                price = (double)part.Price,
-                chipset = part.Chipset,
-                memoryType = part.Memory_Type,
-                max_mem_size = part.Max_Memory_Size,
-                max_mem_speed = part.Max_Memory_Speed,
-                lan = part.LAN,
-                expansion_slots = part.Expansion_Slots,
-                storage = part.Storage,
-                internal_IO = part.Internal_I_O_Connectors,
-                back_panel_IO = part.Back_Panel_Connectors,
-                os_support = part.OS_Support,
-                form_factor = part.Form_Factor,
-                notes = part.Notes,
-                warranty = part.Warranty
-            };
+            cMobo part = getPart(parts.ID);
 
-            list.Add(temp);
+            list.Add(part);
         }
 
         return list;
@@ -1970,7 +1950,6 @@ public class Service : IService
                 User_ID = user_ID,
                 Part_ID = part_ID,
                 Qua = qua,
-                Total_Price = (decimal)total_price
             };
             db.PartCarts.InsertOnSubmit(cartItem);
             try
@@ -2019,7 +1998,6 @@ public class Service : IService
         if (part != null)
         {
             part.Qua = qua;
-            part.Total_Price = (decimal)total_price;
             db.PartCarts.InsertOnSubmit(part);
 
             try
@@ -2080,7 +2058,6 @@ public class Service : IService
             User_ID = user_ID,
             Pc_ID = pc_ID,
             Qua = qua,
-            Total_Price = (decimal)total_price,
         };
 
         db.PcCarts.InsertOnSubmit(pc);
@@ -2118,7 +2095,6 @@ public class Service : IService
         if (pc != null)
         {
             pc.Qua = qua;
-            pc.Total_Price = (decimal)total_price;
             db.PcCarts.InsertOnSubmit(pc);
 
             try
@@ -2180,17 +2156,16 @@ public class Service : IService
         //whatever needs to be done
         //Remove items from carts
         //Generate Invoice
-        dynamic cartPart = (from p in db.PartCarts select p);
-        dynamic cartPC = (from p in db.PcCarts select p);
+        //dynamic cartPart = (from p in db.PartCarts select p);
+        //dynamic cartPC = (from p in db.PcCarts select p);
 
-        foreach (PartCart p in cartPart)
-        {
-            var invoicePart = new PartInvoice
+        //foreach (PartCart p in cartPart)
+        //{
+            /*var invoicePart = new PartInvoice
             {
                 User_ID = p.User_ID,
                 Part_ID = p.Part_ID,
                 Qua = p.Qua,
-                Total_Price = p.Total_Price
             };
 
             bool sold = addPartSold(p.Part_ID, p.Qua);
@@ -2259,9 +2234,9 @@ public class Service : IService
             
         }
         catch
-        {
+        {*/
             return false;
-        }
+        //}
     }
 
     //Reduce Product Quantity
@@ -2325,5 +2300,37 @@ public class Service : IService
             return false;
         }
         return true;
+    }
+
+    public List<cAllCart> getCartItems(int user_ID)
+    {
+        List<cAllCart> partCart = (from part in db.PartsStocks
+                                   join cart in db.PartCarts.Where(x => x.User_ID.Equals(user_ID))
+                                   on part.ID equals cart.Part_ID
+                                   select new cAllCart
+                                   {
+                                       description = part.Model + " " + part.Type,
+                                       imagelink = part.Image,
+                                       part_id = part.ID,
+                                       price = part.Price,
+                                       qua = 1,
+                                       user_id = user_ID
+                                   }).ToList();
+
+        List<cAllCart> pcCart = (from part in db.PcStocks
+                                 join cart in db.PcCarts.Where(x => x.User_ID.Equals(user_ID))
+                                 on part.ID equals cart.Pc_ID
+                                 select new cAllCart
+                                 {
+                                     description = part.PC_Type,
+                                     imagelink = part.Image,
+                                     part_id = part.ID,
+                                     price = part.Price,
+                                     qua = 1,
+                                     user_id = user_ID
+                                 }).ToList();
+
+
+        return partCart.Concat(pcCart).ToList();
     }
 }
