@@ -1550,7 +1550,6 @@ public class Service : IService
             mp_pickup_pattern = headset.MP_Pickup_Pattern,
             mp_sensitivity = headset.MP_Sensitivity,
             colour = headset.Colour,
-            features = headset.Features,
             warranty = headset.Warranty,
         };
 
