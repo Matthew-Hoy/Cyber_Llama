@@ -11,6 +11,8 @@ public class cMonitor
     public int id;
     public string model;
     public string series;
+    public double price;
+    public int discount;
     public string brand;
     public string screen_size;
     public string screen_ratio;
@@ -22,10 +24,13 @@ public class cMonitor
     public string refresh_rate;
     public string resolution;
     public string colours;
-    public string display_connectors;
+    public string display_port;
+    public string hdmi;
+    public string vga;
     public string speakers;
     public string swivel;
     public string tilt;
     public string pivot;
     public string warranty;
+    public int active;
 }

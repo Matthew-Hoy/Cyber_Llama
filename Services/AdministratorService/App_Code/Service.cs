@@ -549,6 +549,99 @@ public class Service : IService
         }
     }
 
+    //Add new Headset
+    public bool addHeadset(cHeadset newHeadset, int qua)
+    {
+        //Add new part to PartsStock table
+        var part = new PartsStock
+        {
+            Model = newHeadset.model,
+            Type = "Headset",
+            Quantity = qua,
+            Price = (decimal)newHeadset.price,
+            Active = newHeadset.active,
+            Discount = newHeadset.discount
+        };
+
+        //Add new Part to its respective Table
+        Headset temp = new Headset
+        {
+            ID = part.ID,
+            Model = newHeadset.model,
+            Brand = newHeadset.brand,
+            Series = newHeadset.series,
+            Cable_Length = newHeadset.cable_length,
+            Connector = newHeadset.connector,
+            Frequency_Response = newHeadset.frequency_response,
+            Microphone = newHeadset.microphone,
+            MP_Frequency_Response = newHeadset.mp_frequency_response,
+            MP_Pickup_Pattern = newHeadset.mp_pickup_pattern,
+            MP_Sensitivity = newHeadset.mp_sensitivity,
+            Colour = newHeadset.colour,
+            Wearing_Style = newHeadset.wearing_style,
+            Warranty = newHeadset.warranty,
+        };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.Headsets.InsertOnSubmit(temp);
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    //Add new Keyboard
+    public bool addKeyboard(cKeyboard newKeyboard, int qua)
+    {
+        //Add new part to PartsStock table
+        var part = new PartsStock
+        {
+            Model = newKeyboard.model,
+            Type = "Keyboard",
+            Quantity = qua,
+            Price = (decimal)newKeyboard.price,
+            Active = newKeyboard.active,
+            Discount = newKeyboard.discount
+        };
+
+        //Add new Part to its respective Table
+        Keyboard temp = new Keyboard
+        {
+            ID = part.ID,
+            Model = newKeyboard.model,
+            Brand = newKeyboard.brand,
+            Series = newKeyboard.series,
+            Switches = newKeyboard.switches,
+            Programmable_Macros = newKeyboard.programmable_macros,
+            Connector = newKeyboard.connector,
+            LED_BackLight = newKeyboard.led_backlight,
+            Multimedia_Keys = newKeyboard.multimedia_keys,
+            Material = newKeyboard.material,
+            Dimensions = newKeyboard.dimensions,
+            Weight = newKeyboard.weight,
+            Warranty = newKeyboard.warranty
+        };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.Keyboards.InsertOnSubmit(temp);
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
     //Adding new Liquid Cooler
     public bool addLiquidCooler(cLiquidCooler newLC, int qua)
     {
@@ -572,7 +665,6 @@ public class Service : IService
             Series = newLC.series,
             Sockets_Supported = newLC.sockets,
             Fan_Size = newLC.fan_size,
-            Fan_Height = newLC.fan_height,
             Color = newLC.color,
             Radiator_Mats = newLC.rad_mats,
             Radiator_Length = newLC.rad_length,
@@ -607,6 +699,48 @@ public class Service : IService
 
         db.LiquidCoolers.InsertOnSubmit(LC);
         db.PartsStocks.InsertOnSubmit(part);
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    //Adding new Microphone
+    public bool addMicrophone(cMicrophone newMicrophone, int qua)
+    {
+        //Add new part to PartsStock table
+        var part = new PartsStock
+        {
+            Model = newMicrophone.model,
+            Type = "Microphone",
+            Quantity = qua,
+            Price = (decimal)newMicrophone.price,
+            Active = newMicrophone.active,
+            Discount = newMicrophone.discount
+        };
+
+        //Add new Part to its respective Table
+        Microphone temp = new Microphone
+        {
+            ID = part.ID,
+            Model = newMicrophone.model,
+            Brand = newMicrophone.brand,
+            Series = newMicrophone.series,
+            Pick_Up_Pattern = newMicrophone.pick_up_pattern,
+            Frequency_Response = newMicrophone.frequency_response,
+            Sensitivity = newMicrophone.sensitivity,
+            Cable_Length = newMicrophone.cable_length,
+            Warranty = newMicrophone.warranty
+        };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.Microphones.InsertOnSubmit(temp);
 
         try
         {
@@ -695,6 +829,193 @@ public class Service : IService
 
         db.Motherboards.InsertOnSubmit(mobo);
         db.PartsStocks.InsertOnSubmit(part);
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    
+    //Add new Monitor
+    public bool addMonitor(cMonitor newMonitor, int qua)
+    {
+        //Add new part to PartsStock table
+        var part = new PartsStock
+        {
+            Model = newMonitor.model,
+            Type = "Monitor",
+            Quantity = qua,
+            Price = (decimal)newMonitor.price,
+            Active = newMonitor.active,
+            Discount = newMonitor.discount
+        };
+
+        //Add new Part to its respective Table
+        Monitor temp = new Monitor
+        {
+            ID = part.ID,
+            Model = newMonitor.model,
+            Brand = newMonitor.brand,
+            Series = newMonitor.series,
+            ScreenSize = newMonitor.screen_size,
+            ScreenRatio = newMonitor.screen_ratio,
+            Brightness = newMonitor.brightness,
+            ContrastRatio = newMonitor.contrast_ratio,
+            ViewingAngle = newMonitor.viewing_angle,
+            ResponseTime = newMonitor.response_time,
+            Panel_Type = newMonitor.panel_type,
+            RefreshRate = newMonitor.refresh_rate,
+            Resolution = newMonitor.resolution,
+            Colours = newMonitor.colours,
+            DisplayPortInput = newMonitor.display_port,
+            HDMI = newMonitor.hdmi,
+            VGA = newMonitor.vga,
+            Speakers = newMonitor.speakers,
+            Swivel = newMonitor.swivel,
+            Tilt = newMonitor.tilt,
+            Pivot = newMonitor.pivot,
+            Warranty = newMonitor.warranty,
+        };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.Monitors.InsertOnSubmit(temp);
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    //Add new Mouse
+    public bool addMouse(cMouse newMouse, int qua)
+    {
+        //Add new part to PartsStock table
+        var part = new PartsStock
+        {
+            Model = newMouse.model,
+            Type = "Mouse",
+            Quantity = qua,
+            Price = (decimal)newMouse.price,
+            Active = newMouse.active,
+            Discount = newMouse.discount
+        };
+
+        //Add new Part to its respective Table
+        Mouse temp = new Mouse
+        {
+            ID = part.ID,
+            Model = newMouse.model,
+            Brand = newMouse.brand,
+            Series = newMouse.series,
+            Sensor = newMouse.sensor,
+            Resolution = newMouse.resolution,
+            Max_Acceleration = newMouse.max_acceleration,
+            Max_Speed = newMouse.max_speed,
+            Connection_Type = newMouse.connection_type,
+            PTFE_Feet = newMouse.ptfe_feet,
+            Battery = newMouse.battery,
+            Dimensions = newMouse.dimensions,
+            Weight = newMouse.weight,
+            Cable_Length = newMouse.cable_length,
+            Warranty = newMouse.warranty
+        };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.Mouses.InsertOnSubmit(temp);
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    //Add new Mousepad
+    public bool addMousepad(cMousePad newMousepad, int qua)
+    {
+        //Add new part to PartsStock table
+        var part = new PartsStock
+        {
+            Model = newMousepad.model,
+            Type = "Mousepad",
+            Quantity = qua,
+            Price = (decimal)newMousepad.price,
+            Active = newMousepad.active,
+            Discount = newMousepad.discount
+        };
+
+        //Add new Part to its respective Table
+        MousePad temp = new MousePad
+        {
+            ID = part.ID,
+            Model = newMousepad.model,
+            Brand = newMousepad.brand,
+            Series = newMousepad.series,
+            Colour = newMousepad.colour,
+            Materials = newMousepad.materials,
+            Base = newMousepad.pad_base,
+            Dimensions = newMousepad.dimensions,
+            Warranty = newMousepad.warranty
+        };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.MousePads.InsertOnSubmit(temp);
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    //Adding new OS
+    public bool addOS(cOS newOS, int qua)
+    {
+        //Add new part to PartsStock table
+        var part = new PartsStock
+        {
+            Model = newOS.model,
+            Type = "OS",
+            Quantity = qua,
+            Price = (decimal)newOS.price,
+            Active = newOS.active,
+            Discount = newOS.discount
+        };
+
+        //Add new Part to its respective Table
+        OperatingSystem temp = new OperatingSystem
+        {
+            ID = part.ID,
+            Model = newOS.model,
+            Brand = newOS.brand,
+            Series = newOS.series,
+            Bit_Version = newOS.bit_version,
+            OS_Version = newOS.os_version,
+            System_Requirements = newOS.system_requirements,
+            Warranty = newOS.warranty
+        };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.OperatingSystems.InsertOnSubmit(temp);
 
         try
         {
@@ -848,6 +1169,50 @@ public class Service : IService
 
         db.SSDs.InsertOnSubmit(ssd);
         db.PartsStocks.InsertOnSubmit(part);
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    //
+    public bool addSpeaker(cSpeaker newSpeaker, int qua)
+    {
+        //Add new part to PartsStock table
+        var part = new PartsStock
+        {
+            Model = newSpeaker.model,
+            Type = "Speaker",
+            Quantity = qua,
+            Price = (decimal)newSpeaker.price,
+            Active = newSpeaker.active,
+            Discount = newSpeaker.discount
+        };
+
+        //Add new Part to its respective Table
+        Speaker temp = new Speaker
+        {
+            ID = part.ID,
+            Model = newSpeaker.model,
+            Brand = newSpeaker.brand,
+            Satellite_Dimensions = newSpeaker.satellite_dimensions,
+            Satellite_Weight = newSpeaker.satellite_weight,
+            SubWoofer_Dimensions = newSpeaker.subwoofer_dimensions,
+            SubWoofer_Weight = newSpeaker.subwoofer_weight,
+            controls = newSpeaker.controls,
+            System_Requirements = newSpeaker.system_requirements,
+            Features = newSpeaker.features,
+            Warranty = newSpeaker.warranty,
+        };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.Speakers.InsertOnSubmit(temp);
 
         try
         {
@@ -1180,13 +1545,11 @@ public class Service : IService
             cable_length = headset.Cable_Length,
             connector = headset.Connector,
             frequency_response = headset.Frequency_Response,
-            sound_pressure_level = headset.Sound_Pressure_Level,
             microphone = headset.Microphone,
             mp_frequency_response = headset.MP_Frequency_Response,
             mp_pickup_pattern = headset.MP_Pickup_Pattern,
             mp_sensitivity = headset.MP_Sensitivity,
             colour = headset.Colour,
-            weight = headset.Weight,
             features = headset.Features,
             warranty = headset.Warranty,
         };
@@ -1208,7 +1571,6 @@ public class Service : IService
             price = (double)info.Price,
             sockets = part.Sockets_Supported,
             fan_size = part.Fan_Size,
-            fan_height = part.Fan_Height,
             color = part.Color,
             rad_mats = part.Radiator_Mats,
             rad_length = part.Radiator_Length,

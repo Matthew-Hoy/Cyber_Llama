@@ -9,17 +9,18 @@ public class cMouse
     public string model;
     public string brand;
     public string series;
+    public Double price;
     public string sensor;
     public string resolution;
     public string max_acceleration;
     public string max_speed;
     public string connection_type;
-    public string durability;
     public string ptfe_feet;
     public string battery;
     public string dimensions;
     public string weight;
     public string cable_length;
-    public string os_support;
     public string warranty;
+    public int active;
+    public int discount;
 }
