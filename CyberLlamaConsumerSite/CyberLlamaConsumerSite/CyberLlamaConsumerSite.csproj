@@ -158,10 +158,16 @@
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cAirCooler.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cAllCart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cCase.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cCPU.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cEmployee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cFan.datasource">
@@ -189,12 +195,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cSSD.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cAllCart.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cEmployee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo.datasource">
@@ -246,15 +246,25 @@
     <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.c_ProductPageInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\CRUDService\Service3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cAllCart.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cEmployee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\CRUDService\Service.wsdl" />
+    <None Include="Connected Services\CRUDService\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CRUDService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CRUDService\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CRUDService\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceReference1\Service.disco" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
@@ -322,16 +332,6 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <None Include="Connected Services\CRUDService\Service.wsdl" />
-    <None Include="Connected Services\CRUDService\Service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\CRUDService\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\CRUDService\Service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\ServiceReference1\Service.wsdl" />
     <None Include="Connected Services\ServiceReference1\Service.xsd">
       <SubType>Designer</SubType>

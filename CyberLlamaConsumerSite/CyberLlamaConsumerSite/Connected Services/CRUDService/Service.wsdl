@@ -74,17 +74,59 @@
   <wsdl:message name="IService_addHDD_OutputMessage">
     <wsdl:part name="parameters" element="tns:addHDDResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_addHeadset_InputMessage">
+    <wsdl:part name="parameters" element="tns:addHeadset" />
+  </wsdl:message>
+  <wsdl:message name="IService_addHeadset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addHeadsetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addKeyboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:addKeyboard" />
+  </wsdl:message>
+  <wsdl:message name="IService_addKeyboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addKeyboardResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_addLiquidCooler_InputMessage">
     <wsdl:part name="parameters" element="tns:addLiquidCooler" />
   </wsdl:message>
   <wsdl:message name="IService_addLiquidCooler_OutputMessage">
     <wsdl:part name="parameters" element="tns:addLiquidCoolerResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_addMicrophone_InputMessage">
+    <wsdl:part name="parameters" element="tns:addMicrophone" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMicrophone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addMicrophoneResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_addMobo_InputMessage">
     <wsdl:part name="parameters" element="tns:addMobo" />
   </wsdl:message>
   <wsdl:message name="IService_addMobo_OutputMessage">
     <wsdl:part name="parameters" element="tns:addMoboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMonitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:addMonitor" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMonitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:addMouse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addMouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMousepad_InputMessage">
+    <wsdl:part name="parameters" element="tns:addMousepad" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMousepad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addMousepadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:addOS" />
+  </wsdl:message>
+  <wsdl:message name="IService_addOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addOSResponse" />
   </wsdl:message>
   <wsdl:message name="IService_addPSU_InputMessage">
     <wsdl:part name="parameters" element="tns:addPSU" />
@@ -103,6 +145,12 @@
   </wsdl:message>
   <wsdl:message name="IService_addSSD_OutputMessage">
     <wsdl:part name="parameters" element="tns:addSSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addSpeaker_InputMessage">
+    <wsdl:part name="parameters" element="tns:addSpeaker" />
+  </wsdl:message>
+  <wsdl:message name="IService_addSpeaker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addSpeakerResponse" />
   </wsdl:message>
   <wsdl:message name="IService_addPC_InputMessage">
     <wsdl:part name="parameters" element="tns:addPC" />
@@ -317,13 +365,41 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addHDD" message="tns:IService_addHDD_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addHDDResponse" message="tns:IService_addHDD_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="addHeadset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addHeadset" message="tns:IService_addHeadset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addHeadsetResponse" message="tns:IService_addHeadset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addKeyboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addKeyboard" message="tns:IService_addKeyboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addKeyboardResponse" message="tns:IService_addKeyboard_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="addLiquidCooler">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addLiquidCooler" message="tns:IService_addLiquidCooler_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addLiquidCoolerResponse" message="tns:IService_addLiquidCooler_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="addMicrophone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addMicrophone" message="tns:IService_addMicrophone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addMicrophoneResponse" message="tns:IService_addMicrophone_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="addMobo">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addMobo" message="tns:IService_addMobo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addMoboResponse" message="tns:IService_addMobo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addMonitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addMonitor" message="tns:IService_addMonitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addMonitorResponse" message="tns:IService_addMonitor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addMouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addMouse" message="tns:IService_addMouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addMouseResponse" message="tns:IService_addMouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addMousepad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addMousepad" message="tns:IService_addMousepad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addMousepadResponse" message="tns:IService_addMousepad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addOS" message="tns:IService_addOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addOSResponse" message="tns:IService_addOS_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addPSU">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addPSU" message="tns:IService_addPSU_InputMessage" />
@@ -336,6 +412,10 @@
     <wsdl:operation name="addSSD">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addSSD" message="tns:IService_addSSD_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addSSDResponse" message="tns:IService_addSSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addSpeaker">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addSpeaker" message="tns:IService_addSpeaker_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addSpeakerResponse" message="tns:IService_addSpeaker_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addPC">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addPC" message="tns:IService_addPC_InputMessage" />
@@ -551,6 +631,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="addHeadset">
+      <soap:operation soapAction="http://tempuri.org/IService/addHeadset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addKeyboard">
+      <soap:operation soapAction="http://tempuri.org/IService/addKeyboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="addLiquidCooler">
       <soap:operation soapAction="http://tempuri.org/IService/addLiquidCooler" style="document" />
       <wsdl:input>
@@ -560,8 +658,53 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="addMicrophone">
+      <soap:operation soapAction="http://tempuri.org/IService/addMicrophone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="addMobo">
       <soap:operation soapAction="http://tempuri.org/IService/addMobo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMonitor">
+      <soap:operation soapAction="http://tempuri.org/IService/addMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMouse">
+      <soap:operation soapAction="http://tempuri.org/IService/addMouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMousepad">
+      <soap:operation soapAction="http://tempuri.org/IService/addMousepad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOS">
+      <soap:operation soapAction="http://tempuri.org/IService/addOS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -589,6 +732,15 @@
     </wsdl:operation>
     <wsdl:operation name="addSSD">
       <soap:operation soapAction="http://tempuri.org/IService/addSSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSpeaker">
+      <soap:operation soapAction="http://tempuri.org/IService/addSpeaker" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
