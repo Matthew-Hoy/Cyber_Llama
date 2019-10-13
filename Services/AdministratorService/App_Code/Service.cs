@@ -1991,14 +1991,13 @@ public class Service : IService
         }
     }
 
-    public Boolean updatePartCart(int user_ID, int part_ID, int qua, double total_price)
+    public Boolean updatePartCart(int user_ID, int part_ID, int qua)
     {
         var part = (from p in db.PartCarts where (p.User_ID == user_ID && p.Part_ID == part_ID) select p).FirstOrDefault();
 
         if (part != null)
         {
             part.Qua = qua;
-            db.PartCarts.InsertOnSubmit(part);
 
             try
             {
@@ -2088,14 +2087,13 @@ public class Service : IService
         }
     }
 
-    public Boolean updatePcCart(int user_ID, int pc_ID, int qua, double total_price)
+    public Boolean updatePcCart(int user_ID, int pc_ID, int qua)
     {
         var pc = (from p in db.PcCarts where (p.User_ID == user_ID && p.Pc_ID == pc_ID) select p).FirstOrDefault();
 
         if (pc != null)
         {
             pc.Qua = qua;
-            db.PcCarts.InsertOnSubmit(pc);
 
             try
             {
@@ -2313,8 +2311,9 @@ public class Service : IService
                                        imagelink = part.Image,
                                        part_id = part.ID,
                                        price = part.Price,
-                                       qua = 1,
-                                       user_id = user_ID
+                                       qua = cart.Qua,
+                                       user_id = user_ID,
+                                       Max_qua = part.Quantity
                                    }).ToList();
 
         List<cAllCart> pcCart = (from part in db.PcStocks
@@ -2326,8 +2325,9 @@ public class Service : IService
                                      imagelink = part.Image,
                                      part_id = part.ID,
                                      price = part.Price,
-                                     qua = 1,
-                                     user_id = user_ID
+                                     qua = cart.Qua,
+                                     user_id = user_ID,
+                                     Max_qua = part.Quantity
                                  }).ToList();
 
 

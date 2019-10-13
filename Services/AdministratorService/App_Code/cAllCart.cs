@@ -14,4 +14,5 @@ public class cAllCart
     public string imagelink;
     public decimal price;
     public int qua;
+    public int Max_qua;
 }

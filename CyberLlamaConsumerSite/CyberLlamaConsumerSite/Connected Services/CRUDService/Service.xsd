@@ -503,7 +503,6 @@
         <xs:element minOccurs="0" name="user_ID" type="xs:int" />
         <xs:element minOccurs="0" name="pc_ID" type="xs:int" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
-        <xs:element minOccurs="0" name="total_price" type="xs:double" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -566,7 +565,6 @@
         <xs:element minOccurs="0" name="user_ID" type="xs:int" />
         <xs:element minOccurs="0" name="pc_ID" type="xs:int" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
-        <xs:element minOccurs="0" name="total_price" type="xs:double" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
