@@ -147,6 +147,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\aboutIcon.png" />
+    <Content Include="Images\AddressIcon.png" />
     <Content Include="Images\buildIcon.png" />
     <Content Include="Images\ComponentsIcon.png" />
     <Content Include="Images\computerIcon.png" />
@@ -158,6 +159,7 @@
     <Content Include="Images\llama.png" />
     <Content Include="Images\shoppingCartIcon.png" />
     <Content Include="Images\signUpIcon.png" />
+    <Content Include="Images\SM.png" />
     <Content Include="Images\TestLogo.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

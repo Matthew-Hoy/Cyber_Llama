@@ -12,6 +12,9 @@ public class cKeyboard
     public string model;
     public string series;
     public string brand;
+    public double price;
+    public int active;
+    public int discount;
     public string switches;
     public string programmable_macros;
     public string connector;

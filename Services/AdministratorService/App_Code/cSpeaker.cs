@@ -9,6 +9,7 @@ public class cSpeaker
     public string model;
     public string brand;
     public string series;
+    public double price;
     public string satellite_dimensions;
     public string satellite_weight;
     public string subwoofer_dimensions;
@@ -17,4 +18,6 @@ public class cSpeaker
     public string system_requirements;
     public string features;
     public string warranty;
+    public int active;
+    public int discount;
 }

@@ -9,12 +9,13 @@ public class cMousePad
     public string model;
     public string brand;
     public string series;
+    public double price;
     public string colour;
     public string size;
     public string materials;
-   // public string base;
+    public string pad_base;
     public string dimensions;
-    public string weight;
-    public string features;
     public string warranty;
+    public int active;
+    public int discount;
 }

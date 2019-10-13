@@ -12,7 +12,6 @@ public class cLiquidCooler
     public Double price;
     public String sockets;
     public String fan_size;
-    public String fan_height;
     public String color;
     public String rad_mats;
     public String rad_length;

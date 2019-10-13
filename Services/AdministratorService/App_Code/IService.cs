@@ -45,10 +45,31 @@ public interface IService
     bool addHDD(cHDD newHDD, int qua);
 
     [OperationContract]
+    bool addHeadset(cHeadset newHeadset, int qua);
+
+    [OperationContract]
+    bool addKeyboard(cKeyboard newKeyboard, int qua);
+
+    [OperationContract]
     bool addLiquidCooler(cLiquidCooler newLC, int qua);
 
     [OperationContract]
+    bool addMicrophone(cMicrophone newMicrophone, int qua);
+
+    [OperationContract]
     bool addMobo(cMobo newMobo, int qua);
+
+    [OperationContract]
+    bool addMonitor(cMonitor newMonitor, int qua);
+
+    [OperationContract]
+    bool addMouse(cMouse newMouse, int qua);
+
+    [OperationContract]
+    bool addMousepad(cMousePad newMousepad, int qua);
+
+    [OperationContract]
+    bool addOS(cOS newOS, int qua);
 
     [OperationContract]
     bool addPSU(cPSU newPSU, int qua);
@@ -58,6 +79,9 @@ public interface IService
 
     [OperationContract]
     bool addSSD(cSSD newSSD, int qua);
+
+    [OperationContract]
+    bool addSpeaker(cSpeaker newSpeaker, int qua);
 
     [OperationContract]
     bool addPC(cPC newPC, int qua);

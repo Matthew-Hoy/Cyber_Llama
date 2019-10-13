@@ -85,7 +85,7 @@
                         <span class="caret"></span>
                     </a>
                     <!--maybe use a for loop if possible and pass data from the database for this bit-->
-                    <div class="dropdown-menu" aria-labelledby="dropdown_Components">                       
+                    <div class="dropdown-menu" aria-labelledby="dropdown_Components">
                         <a class="dropdown-item">Keyboards</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item">Mice</a>
@@ -139,6 +139,14 @@
                         <div class="dropdown-divider"></div>
 
                     </div>
+
+                <li class="nav-item">
+                    <a href=@Url.Action("Index", "Cart")><img src="~/Images/CartIcon.png" class="MenuIcon" /></a>
+                    <a class="nav-link" href=@Url.Action("Index", "Cart")>
+                        Cart
+                    </a>
+                </li>
+
                 </li>
                 <li class="nav-item">
                     <a href=@Url.Action("Index", "About")><img src="~/Images/aboutIcon.png" class="MenuIcon" /></a>
@@ -158,6 +166,17 @@
                         FAQ's
                     </a>
                 </li>
+
+
+
+                <li class="nav-item">
+                    <a href=@Url.Action("Index", "Register")><img src="~/Images/RegisterIcon.png" class="MenuIcon" /></a>
+                    <a class="nav-link" href=@Url.Action("Index", "Register")>
+                        Register
+                    </a>
+                </li>
+
+
                 @{ if (Session["UserID"] != null)
                     {
                         var id = Convert.ToInt32(Session["UserType"]);
@@ -220,17 +239,18 @@
                                 }
                             }
                         }
-                                    <li class="nav-item">
-                                        <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
-                                        <a class="nav-link" href=@Url.Action("Index", "Logout")>
-                                            Logout
-                                        </a>
-                                        @if(id == 1){
-                                            <a class="nav-link" href=@Url.Action("Index", "AddUser")>
-                                                Register
-                                            </a>
-                                        }
-                                    </li>
+                        <li class="nav-item">
+                            <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href=@Url.Action("Index", "Logout")>
+                                Logout
+                            </a>
+                            @if (id == 1)
+                            {
+                                <a class="nav-link" href=@Url.Action("Index", "AddUser")>
+                                    Register
+                                </a>
+                            }
+                        </li>
                     }
                     else
                     {
@@ -246,9 +266,7 @@
                             <a class="nav-link" href=@Url.Action("Index", "Login")>
                                 Login
                             </a>
-                            <a class="nav-link" href=@Url.Action("Index", "AddUser")>
-                                Register
-                            </a>
+
                         </li>
                     }
                 }
@@ -295,6 +313,13 @@
                             <a href="https://twitter.com/its_nyiko" target="_blank"><img src="~/Images/twitter.png" class="MenuIcon" /></a>
                             <a class="nav-link" href="https://twitter.com/its_nyiko" target="_blank">
                                 Twitter
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="https://www.linkedin.com/in/neo-mulaudzi-07407a171/" target="_blank"><img src="~/Images/LinkedInIcon.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href="https://www.linkedin.com/in/neo-mulaudzi-07407a171/" target="_blank">
+                                LinkedIn
                             </a>
                         </li>
 

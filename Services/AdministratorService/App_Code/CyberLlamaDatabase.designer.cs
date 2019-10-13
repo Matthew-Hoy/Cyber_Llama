@@ -56,9 +56,6 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
   partial void InsertGPU(GPU instance);
   partial void UpdateGPU(GPU instance);
   partial void DeleteGPU(GPU instance);
-  partial void InsertGpuToMonitor(GpuToMonitor instance);
-  partial void UpdateGpuToMonitor(GpuToMonitor instance);
-  partial void DeleteGpuToMonitor(GpuToMonitor instance);
   partial void InsertHDD(HDD instance);
   partial void UpdateHDD(HDD instance);
   partial void DeleteHDD(HDD instance);
@@ -238,14 +235,6 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		get
 		{
 			return this.GetTable<GPU>();
-		}
-	}
-	
-	public System.Data.Linq.Table<GpuToMonitor> GpuToMonitors
-	{
-		get
-		{
-			return this.GetTable<GpuToMonitor>();
 		}
 	}
 	
@@ -850,8 +839,6 @@ public partial class AirCooler : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Fan_Size;
 	
 	private string _Compatibility;
@@ -896,8 +883,6 @@ public partial class AirCooler : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnFan_SizeChanging(string value);
     partial void OnFan_SizeChanged();
     partial void OnCompatibilityChanging(string value);
@@ -1015,26 +1000,6 @@ public partial class AirCooler : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -1740,8 +1705,6 @@ public partial class CPU : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Cores;
 	
 	private string _Threads;
@@ -1788,8 +1751,6 @@ public partial class CPU : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnCoresChanging(string value);
     partial void OnCoresChanged();
     partial void OnThreadsChanging(string value);
@@ -1906,26 +1867,6 @@ public partial class CPU : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -2675,8 +2616,6 @@ public partial class Fan : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Size;
 	
 	private string _RPM;
@@ -2713,8 +2652,6 @@ public partial class Fan : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnSizeChanging(string value);
     partial void OnSizeChanged();
     partial void OnRPMChanging(string value);
@@ -2824,26 +2761,6 @@ public partial class Fan : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -3144,8 +3061,6 @@ public partial class GPU : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Base_Clock_Speed;
 	
 	private string _Boost_Clock_Speed;
@@ -3176,8 +3091,6 @@ public partial class GPU : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Warranty;
 	
-	private EntitySet<GpuToMonitor> _GpuToMonitors;
-	
 	private EntitySet<Pc> _Pcs;
 	
 	private EntityRef<PartsStock> _PartsStock;
@@ -3196,8 +3109,6 @@ public partial class GPU : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnBase_Clock_SpeedChanging(string value);
     partial void OnBase_Clock_SpeedChanged();
     partial void OnBoost_Clock_SpeedChanging(string value);
@@ -3232,7 +3143,6 @@ public partial class GPU : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	public GPU()
 	{
-		this._GpuToMonitors = new EntitySet<GpuToMonitor>(new Action<GpuToMonitor>(this.attach_GpuToMonitors), new Action<GpuToMonitor>(this.detach_GpuToMonitors));
 		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
 		this._PartsStock = default(EntityRef<PartsStock>);
 		OnCreated();
@@ -3338,26 +3248,6 @@ public partial class GPU : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -3662,19 +3552,6 @@ public partial class GPU : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GPU_GpuToMonitor", Storage="_GpuToMonitors", ThisKey="ID", OtherKey="GPU_ID")]
-	public EntitySet<GpuToMonitor> GpuToMonitors
-	{
-		get
-		{
-			return this._GpuToMonitors;
-		}
-		set
-		{
-			this._GpuToMonitors.Assign(value);
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GPU_Pc", Storage="_Pcs", ThisKey="ID", OtherKey="GPU_ID")]
 	public EntitySet<Pc> Pcs
 	{
@@ -3742,18 +3619,6 @@ public partial class GPU : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	private void attach_GpuToMonitors(GpuToMonitor entity)
-	{
-		this.SendPropertyChanging();
-		entity.GPU = this;
-	}
-	
-	private void detach_GpuToMonitors(GpuToMonitor entity)
-	{
-		this.SendPropertyChanging();
-		entity.GPU = null;
-	}
-	
 	private void attach_Pcs(Pc entity)
 	{
 		this.SendPropertyChanging();
@@ -3764,174 +3629,6 @@ public partial class GPU : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		this.SendPropertyChanging();
 		entity.GPU = null;
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GpuToMonitor")]
-public partial class GpuToMonitor : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _GPU_ID;
-	
-	private int _Monitor_ID;
-	
-	private EntityRef<GPU> _GPU;
-	
-	private EntityRef<Monitor> _Monitor;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnGPU_IDChanging(int value);
-    partial void OnGPU_IDChanged();
-    partial void OnMonitor_IDChanging(int value);
-    partial void OnMonitor_IDChanged();
-    #endregion
-	
-	public GpuToMonitor()
-	{
-		this._GPU = default(EntityRef<GPU>);
-		this._Monitor = default(EntityRef<Monitor>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GPU_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int GPU_ID
-	{
-		get
-		{
-			return this._GPU_ID;
-		}
-		set
-		{
-			if ((this._GPU_ID != value))
-			{
-				if (this._GPU.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnGPU_IDChanging(value);
-				this.SendPropertyChanging();
-				this._GPU_ID = value;
-				this.SendPropertyChanged("GPU_ID");
-				this.OnGPU_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Monitor_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int Monitor_ID
-	{
-		get
-		{
-			return this._Monitor_ID;
-		}
-		set
-		{
-			if ((this._Monitor_ID != value))
-			{
-				if (this._Monitor.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnMonitor_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Monitor_ID = value;
-				this.SendPropertyChanged("Monitor_ID");
-				this.OnMonitor_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GPU_GpuToMonitor", Storage="_GPU", ThisKey="GPU_ID", OtherKey="ID", IsForeignKey=true)]
-	public GPU GPU
-	{
-		get
-		{
-			return this._GPU.Entity;
-		}
-		set
-		{
-			GPU previousValue = this._GPU.Entity;
-			if (((previousValue != value) 
-						|| (this._GPU.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._GPU.Entity = null;
-					previousValue.GpuToMonitors.Remove(this);
-				}
-				this._GPU.Entity = value;
-				if ((value != null))
-				{
-					value.GpuToMonitors.Add(this);
-					this._GPU_ID = value.ID;
-				}
-				else
-				{
-					this._GPU_ID = default(int);
-				}
-				this.SendPropertyChanged("GPU");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Monitor_GpuToMonitor", Storage="_Monitor", ThisKey="Monitor_ID", OtherKey="ID", IsForeignKey=true)]
-	public Monitor Monitor
-	{
-		get
-		{
-			return this._Monitor.Entity;
-		}
-		set
-		{
-			Monitor previousValue = this._Monitor.Entity;
-			if (((previousValue != value) 
-						|| (this._Monitor.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Monitor.Entity = null;
-					previousValue.GpuToMonitors.Remove(this);
-				}
-				this._Monitor.Entity = value;
-				if ((value != null))
-				{
-					value.GpuToMonitors.Add(this);
-					this._Monitor_ID = value.ID;
-				}
-				else
-				{
-					this._Monitor_ID = default(int);
-				}
-				this.SendPropertyChanged("Monitor");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
 	}
 }
 
@@ -3949,7 +3646,7 @@ public partial class HDD : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
+	private string _Storage;
 	
 	private string _Interface;
 	
@@ -3987,8 +3684,8 @@ public partial class HDD : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
+    partial void OnStorageChanging(string value);
+    partial void OnStorageChanged();
     partial void OnInterfaceChanging(string value);
     partial void OnInterfaceChanged();
     partial void OnMax_Sustained_Transfer_RateChanging(string value);
@@ -4102,22 +3799,22 @@ public partial class HDD : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Storage", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Storage
 	{
 		get
 		{
-			return this._Price;
+			return this._Storage;
 		}
 		set
 		{
-			if ((this._Price != value))
+			if ((this._Storage != value))
 			{
-				this.OnPriceChanging(value);
+				this.OnStorageChanging(value);
 				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
+				this._Storage = value;
+				this.SendPropertyChanged("Storage");
+				this.OnStorageChanged();
 			}
 		}
 	}
@@ -4420,11 +4117,7 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Connector;
 	
-	private string _Compatibility;
-	
 	private string _Frequency_Response;
-	
-	private string _Sound_Pressure_Level;
 	
 	private string _Microphone;
 	
@@ -4437,10 +4130,6 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
 	private string _Colour;
 	
 	private string _Wearing_Style;
-	
-	private string _Weight;
-	
-	private string _Features;
 	
 	private string _Warranty;
 	
@@ -4464,12 +4153,8 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnCable_LengthChanged();
     partial void OnConnectorChanging(string value);
     partial void OnConnectorChanged();
-    partial void OnCompatibilityChanging(string value);
-    partial void OnCompatibilityChanged();
     partial void OnFrequency_ResponseChanging(string value);
     partial void OnFrequency_ResponseChanged();
-    partial void OnSound_Pressure_LevelChanging(string value);
-    partial void OnSound_Pressure_LevelChanged();
     partial void OnMicrophoneChanging(string value);
     partial void OnMicrophoneChanged();
     partial void OnMP_Frequency_ResponseChanging(string value);
@@ -4482,10 +4167,6 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnColourChanged();
     partial void OnWearing_StyleChanging(string value);
     partial void OnWearing_StyleChanged();
-    partial void OnWeightChanging(string value);
-    partial void OnWeightChanged();
-    partial void OnFeaturesChanging(string value);
-    partial void OnFeaturesChanged();
     partial void OnWarrantyChanging(string value);
     partial void OnWarrantyChanged();
     #endregion
@@ -4541,7 +4222,7 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255)")]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 	public string Brand
 	{
 		get
@@ -4561,7 +4242,7 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255)")]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Series", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 	public string Series
 	{
 		get
@@ -4581,7 +4262,7 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cable_Length", DbType="VarChar(50)")]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cable_Length", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 	public string Cable_Length
 	{
 		get
@@ -4601,7 +4282,7 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Connector", DbType="VarChar(50)")]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Connector", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 	public string Connector
 	{
 		get
@@ -4621,27 +4302,7 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Compatibility", DbType="VarChar(50)")]
-	public string Compatibility
-	{
-		get
-		{
-			return this._Compatibility;
-		}
-		set
-		{
-			if ((this._Compatibility != value))
-			{
-				this.OnCompatibilityChanging(value);
-				this.SendPropertyChanging();
-				this._Compatibility = value;
-				this.SendPropertyChanged("Compatibility");
-				this.OnCompatibilityChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Frequency_Response", DbType="VarChar(50)")]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Frequency_Response", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 	public string Frequency_Response
 	{
 		get
@@ -4657,26 +4318,6 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Frequency_Response = value;
 				this.SendPropertyChanged("Frequency_Response");
 				this.OnFrequency_ResponseChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sound_Pressure_Level", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Sound_Pressure_Level
-	{
-		get
-		{
-			return this._Sound_Pressure_Level;
-		}
-		set
-		{
-			if ((this._Sound_Pressure_Level != value))
-			{
-				this.OnSound_Pressure_LevelChanging(value);
-				this.SendPropertyChanging();
-				this._Sound_Pressure_Level = value;
-				this.SendPropertyChanged("Sound_Pressure_Level");
-				this.OnSound_Pressure_LevelChanged();
 			}
 		}
 	}
@@ -4797,46 +4438,6 @@ public partial class Headset : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Wearing_Style = value;
 				this.SendPropertyChanged("Wearing_Style");
 				this.OnWearing_StyleChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Weight
-	{
-		get
-		{
-			return this._Weight;
-		}
-		set
-		{
-			if ((this._Weight != value))
-			{
-				this.OnWeightChanging(value);
-				this.SendPropertyChanging();
-				this._Weight = value;
-				this.SendPropertyChanged("Weight");
-				this.OnWeightChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Features", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Features
-	{
-		get
-		{
-			return this._Features;
-		}
-		set
-		{
-			if ((this._Features != value))
-			{
-				this.OnFeaturesChanging(value);
-				this.SendPropertyChanging();
-				this._Features = value;
-				this.SendPropertyChanged("Features");
-				this.OnFeaturesChanged();
 			}
 		}
 	}
@@ -5180,7 +4781,7 @@ public partial class Keyboard : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Multimedia_Keys", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Multimedia_Keys", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 	public string Multimedia_Keys
 	{
 		get
@@ -5374,11 +4975,7 @@ public partial class LiquidCooler : INotifyPropertyChanging, INotifyPropertyChan
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Fan_Size;
-	
-	private string _Fan_Height;
 	
 	private string _Radiator_Mats;
 	
@@ -5418,12 +5015,8 @@ public partial class LiquidCooler : INotifyPropertyChanging, INotifyPropertyChan
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnFan_SizeChanging(string value);
     partial void OnFan_SizeChanged();
-    partial void OnFan_HeightChanging(string value);
-    partial void OnFan_HeightChanged();
     partial void OnRadiator_MatsChanging(string value);
     partial void OnRadiator_MatsChanged();
     partial void OnRadiator_LengthChanging(string value);
@@ -5538,26 +5131,6 @@ public partial class LiquidCooler : INotifyPropertyChanging, INotifyPropertyChan
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fan_Size", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 	public string Fan_Size
 	{
@@ -5574,26 +5147,6 @@ public partial class LiquidCooler : INotifyPropertyChanging, INotifyPropertyChan
 				this._Fan_Size = value;
 				this.SendPropertyChanged("Fan_Size");
 				this.OnFan_SizeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fan_Height", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Fan_Height
-	{
-		get
-		{
-			return this._Fan_Height;
-		}
-		set
-		{
-			if ((this._Fan_Height != value))
-			{
-				this.OnFan_HeightChanging(value);
-				this.SendPropertyChanging();
-				this._Fan_Height = value;
-				this.SendPropertyChanged("Fan_Height");
-				this.OnFan_HeightChanged();
 			}
 		}
 	}
@@ -6922,8 +6475,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _ContrastRatio;
 	
-	private string _DynamicContrastRatio;
-	
 	private string _ViewingAngle;
 	
 	private string _ResponseTime;
@@ -6944,23 +6495,13 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Speakers;
 	
-	private string _PowerSource;
-	
-	private string _PowerSupply;
-	
-	private string _EnergyClass;
-	
 	private string _Swivel;
 	
 	private string _Tilt;
 	
 	private string _Pivot;
 	
-	private string _Regulations;
-	
 	private string _Warranty;
-	
-	private EntitySet<GpuToMonitor> _GpuToMonitors;
 	
 	private EntitySet<Pc> _Pcs;
 	
@@ -6986,8 +6527,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrightnessChanged();
     partial void OnContrastRatioChanging(string value);
     partial void OnContrastRatioChanged();
-    partial void OnDynamicContrastRatioChanging(string value);
-    partial void OnDynamicContrastRatioChanged();
     partial void OnViewingAngleChanging(string value);
     partial void OnViewingAngleChanged();
     partial void OnResponseTimeChanging(string value);
@@ -7008,27 +6547,18 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnVGAChanged();
     partial void OnSpeakersChanging(string value);
     partial void OnSpeakersChanged();
-    partial void OnPowerSourceChanging(string value);
-    partial void OnPowerSourceChanged();
-    partial void OnPowerSupplyChanging(string value);
-    partial void OnPowerSupplyChanged();
-    partial void OnEnergyClassChanging(string value);
-    partial void OnEnergyClassChanged();
     partial void OnSwivelChanging(string value);
     partial void OnSwivelChanged();
     partial void OnTiltChanging(string value);
     partial void OnTiltChanged();
     partial void OnPivotChanging(string value);
     partial void OnPivotChanged();
-    partial void OnRegulationsChanging(string value);
-    partial void OnRegulationsChanged();
     partial void OnWarrantyChanging(string value);
     partial void OnWarrantyChanged();
     #endregion
 	
 	public Monitor()
 	{
-		this._GpuToMonitors = new EntitySet<GpuToMonitor>(new Action<GpuToMonitor>(this.attach_GpuToMonitors), new Action<GpuToMonitor>(this.detach_GpuToMonitors));
 		this._Pcs = new EntitySet<Pc>(new Action<Pc>(this.attach_Pcs), new Action<Pc>(this.detach_Pcs));
 		this._PartsStock = default(EntityRef<PartsStock>);
 		OnCreated();
@@ -7194,26 +6724,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 				this._ContrastRatio = value;
 				this.SendPropertyChanged("ContrastRatio");
 				this.OnContrastRatioChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DynamicContrastRatio", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string DynamicContrastRatio
-	{
-		get
-		{
-			return this._DynamicContrastRatio;
-		}
-		set
-		{
-			if ((this._DynamicContrastRatio != value))
-			{
-				this.OnDynamicContrastRatioChanging(value);
-				this.SendPropertyChanging();
-				this._DynamicContrastRatio = value;
-				this.SendPropertyChanged("DynamicContrastRatio");
-				this.OnDynamicContrastRatioChanged();
 			}
 		}
 	}
@@ -7418,66 +6928,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PowerSource", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string PowerSource
-	{
-		get
-		{
-			return this._PowerSource;
-		}
-		set
-		{
-			if ((this._PowerSource != value))
-			{
-				this.OnPowerSourceChanging(value);
-				this.SendPropertyChanging();
-				this._PowerSource = value;
-				this.SendPropertyChanged("PowerSource");
-				this.OnPowerSourceChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PowerSupply", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string PowerSupply
-	{
-		get
-		{
-			return this._PowerSupply;
-		}
-		set
-		{
-			if ((this._PowerSupply != value))
-			{
-				this.OnPowerSupplyChanging(value);
-				this.SendPropertyChanging();
-				this._PowerSupply = value;
-				this.SendPropertyChanged("PowerSupply");
-				this.OnPowerSupplyChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EnergyClass", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string EnergyClass
-	{
-		get
-		{
-			return this._EnergyClass;
-		}
-		set
-		{
-			if ((this._EnergyClass != value))
-			{
-				this.OnEnergyClassChanging(value);
-				this.SendPropertyChanging();
-				this._EnergyClass = value;
-				this.SendPropertyChanged("EnergyClass");
-				this.OnEnergyClassChanged();
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Swivel", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 	public string Swivel
 	{
@@ -7538,26 +6988,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Regulations", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Regulations
-	{
-		get
-		{
-			return this._Regulations;
-		}
-		set
-		{
-			if ((this._Regulations != value))
-			{
-				this.OnRegulationsChanging(value);
-				this.SendPropertyChanging();
-				this._Regulations = value;
-				this.SendPropertyChanged("Regulations");
-				this.OnRegulationsChanged();
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warranty", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 	public string Warranty
 	{
@@ -7575,19 +7005,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 				this.SendPropertyChanged("Warranty");
 				this.OnWarrantyChanged();
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Monitor_GpuToMonitor", Storage="_GpuToMonitors", ThisKey="ID", OtherKey="Monitor_ID")]
-	public EntitySet<GpuToMonitor> GpuToMonitors
-	{
-		get
-		{
-			return this._GpuToMonitors;
-		}
-		set
-		{
-			this._GpuToMonitors.Assign(value);
 		}
 	}
 	
@@ -7656,18 +7073,6 @@ public partial class Monitor : INotifyPropertyChanging, INotifyPropertyChanged
 		{
 			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
-	}
-	
-	private void attach_GpuToMonitors(GpuToMonitor entity)
-	{
-		this.SendPropertyChanging();
-		entity.Monitor = this;
-	}
-	
-	private void detach_GpuToMonitors(GpuToMonitor entity)
-	{
-		this.SendPropertyChanging();
-		entity.Monitor = null;
 	}
 	
 	private void attach_Pcs(Pc entity)
@@ -8306,8 +7711,6 @@ public partial class Mouse : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Connection_Type;
 	
-	private string _Durability;
-	
 	private string _PTFE_Feet;
 	
 	private string _Battery;
@@ -8317,8 +7720,6 @@ public partial class Mouse : INotifyPropertyChanging, INotifyPropertyChanged
 	private string _Weight;
 	
 	private string _Cable_Length;
-	
-	private string _OS_Support;
 	
 	private string _Warranty;
 	
@@ -8348,8 +7749,6 @@ public partial class Mouse : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnMax_SpeedChanged();
     partial void OnConnection_TypeChanging(string value);
     partial void OnConnection_TypeChanged();
-    partial void OnDurabilityChanging(string value);
-    partial void OnDurabilityChanged();
     partial void OnPTFE_FeetChanging(string value);
     partial void OnPTFE_FeetChanged();
     partial void OnBatteryChanging(string value);
@@ -8360,8 +7759,6 @@ public partial class Mouse : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnWeightChanged();
     partial void OnCable_LengthChanging(string value);
     partial void OnCable_LengthChanged();
-    partial void OnOS_SupportChanging(string value);
-    partial void OnOS_SupportChanged();
     partial void OnWarrantyChanging(string value);
     partial void OnWarrantyChanged();
     #endregion
@@ -8557,26 +7954,6 @@ public partial class Mouse : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Durability", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Durability
-	{
-		get
-		{
-			return this._Durability;
-		}
-		set
-		{
-			if ((this._Durability != value))
-			{
-				this.OnDurabilityChanging(value);
-				this.SendPropertyChanging();
-				this._Durability = value;
-				this.SendPropertyChanged("Durability");
-				this.OnDurabilityChanged();
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PTFE_Feet", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 	public string PTFE_Feet
 	{
@@ -8673,26 +8050,6 @@ public partial class Mouse : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Cable_Length = value;
 				this.SendPropertyChanged("Cable_Length");
 				this.OnCable_LengthChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OS_Support", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string OS_Support
-	{
-		get
-		{
-			return this._OS_Support;
-		}
-		set
-		{
-			if ((this._OS_Support != value))
-			{
-				this.OnOS_SupportChanging(value);
-				this.SendPropertyChanging();
-				this._OS_Support = value;
-				this.SendPropertyChanged("OS_Support");
-				this.OnOS_SupportChanged();
 			}
 		}
 	}
@@ -8813,17 +8170,11 @@ public partial class MousePad : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Colour;
 	
-	private string _Size;
-	
 	private string _Materials;
 	
 	private string _Base;
 	
 	private string _Dimensions;
-	
-	private string _Weight;
-	
-	private string _Features;
 	
 	private string _Warranty;
 	
@@ -8843,18 +8194,12 @@ public partial class MousePad : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnSeriesChanged();
     partial void OnColourChanging(string value);
     partial void OnColourChanged();
-    partial void OnSizeChanging(string value);
-    partial void OnSizeChanged();
     partial void OnMaterialsChanging(string value);
     partial void OnMaterialsChanged();
     partial void OnBaseChanging(string value);
     partial void OnBaseChanged();
     partial void OnDimensionsChanging(string value);
     partial void OnDimensionsChanged();
-    partial void OnWeightChanging(string value);
-    partial void OnWeightChanged();
-    partial void OnFeaturesChanging(string value);
-    partial void OnFeaturesChanged();
     partial void OnWarrantyChanging(string value);
     partial void OnWarrantyChanged();
     #endregion
@@ -8969,26 +8314,6 @@ public partial class MousePad : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Size
-	{
-		get
-		{
-			return this._Size;
-		}
-		set
-		{
-			if ((this._Size != value))
-			{
-				this.OnSizeChanging(value);
-				this.SendPropertyChanging();
-				this._Size = value;
-				this.SendPropertyChanged("Size");
-				this.OnSizeChanged();
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Materials", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 	public string Materials
 	{
@@ -9045,46 +8370,6 @@ public partial class MousePad : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Dimensions = value;
 				this.SendPropertyChanged("Dimensions");
 				this.OnDimensionsChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Weight
-	{
-		get
-		{
-			return this._Weight;
-		}
-		set
-		{
-			if ((this._Weight != value))
-			{
-				this.OnWeightChanging(value);
-				this.SendPropertyChanging();
-				this._Weight = value;
-				this.SendPropertyChanged("Weight");
-				this.OnWeightChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Features", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Features
-	{
-		get
-		{
-			return this._Features;
-		}
-		set
-		{
-			if ((this._Features != value))
-			{
-				this.OnFeaturesChanging(value);
-				this.SendPropertyChanging();
-				this._Features = value;
-				this.SendPropertyChanged("Features");
-				this.OnFeaturesChanged();
 			}
 		}
 	}
@@ -10738,8 +10023,6 @@ public partial class Pc : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _PC_Type;
 	
-	private decimal _Price;
-	
 	private int _Case_ID;
 	
 	private int _Mobo_ID;
@@ -10822,8 +10105,6 @@ public partial class Pc : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnPC_IDChanged();
     partial void OnPC_TypeChanging(string value);
     partial void OnPC_TypeChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnCase_IDChanging(int value);
     partial void OnCase_IDChanged();
     partial void OnMobo_IDChanging(int value);
@@ -10928,26 +10209,6 @@ public partial class Pc : INotifyPropertyChanging, INotifyPropertyChanged
 				this._PC_Type = value;
 				this.SendPropertyChanged("PC_Type");
 				this.OnPC_TypeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -12221,8 +11482,6 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Colour;
 	
 	private string _Dimensions;
@@ -12277,8 +11536,6 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnColourChanging(string value);
     partial void OnColourChanged();
     partial void OnDimensionsChanging(string value);
@@ -12409,26 +11666,6 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Colour", DbType="NChar(50) NOT NULL", CanBeNull=false)]
 	public string Colour
 	{
@@ -12449,7 +11686,7 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dimensions", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dimensions", DbType="NChar(50) NOT NULL", CanBeNull=false)]
 	public string Dimensions
 	{
 		get
@@ -13099,7 +12336,7 @@ public partial class PcStock : INotifyPropertyChanging, INotifyPropertyChanged
 		OnCreated();
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 	public int ID
 	{
 		get
@@ -13357,8 +12594,6 @@ public partial class PSU : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Power;
 	
 	private string _Certification;
@@ -13393,8 +12628,6 @@ public partial class PSU : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnPowerChanging(string value);
     partial void OnPowerChanged();
     partial void OnCertificationChanging(string value);
@@ -13502,26 +12735,6 @@ public partial class PSU : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -13800,8 +13013,6 @@ public partial class RAM : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Capacity;
 	
 	private string _Type;
@@ -13836,8 +13047,6 @@ public partial class RAM : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnCapacityChanging(string value);
     partial void OnCapacityChanged();
     partial void OnTypeChanging(string value);
@@ -13944,26 +13153,6 @@ public partial class RAM : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
@@ -14464,7 +13653,7 @@ public partial class Speaker : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[System Requirements]", Storage="_System_Requirements", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_System_Requirements", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 	public string System_Requirements
 	{
 		get
@@ -14618,8 +13807,6 @@ public partial class SSD : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _Series;
 	
-	private decimal _Price;
-	
 	private string _Form_Factor;
 	
 	private string _Capacity;
@@ -14662,8 +13849,6 @@ public partial class SSD : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnBrandChanged();
     partial void OnSeriesChanging(string value);
     partial void OnSeriesChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
     partial void OnForm_FactorChanging(string value);
     partial void OnForm_FactorChanged();
     partial void OnCapacityChanging(string value);
@@ -14779,26 +13964,6 @@ public partial class SSD : INotifyPropertyChanging, INotifyPropertyChanged
 				this._Series = value;
 				this.SendPropertyChanged("Series");
 				this.OnSeriesChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
-	public decimal Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
 			}
 		}
 	}
