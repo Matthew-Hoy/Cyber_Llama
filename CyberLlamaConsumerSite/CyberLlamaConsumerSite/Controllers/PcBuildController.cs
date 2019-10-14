@@ -48,7 +48,7 @@ namespace CyberLlamaConsumerSite.Controllers
             if (Session["Case"] == null)
             {
                 //Show all Cases
-                dynamic list = sr.getAllCase();
+               /* dynamic list = sr.getAllCase();
                 String info = ""; 
                 foreach(cCase c in list)
                 {
@@ -60,7 +60,7 @@ namespace CyberLlamaConsumerSite.Controllers
                     info += "<p>Form Factor: " + c.mobo_form_factor + "</p>";
                     //info += "<p>Price: " + Math.Round((c.price - (c.price*c.discount/100),2)+"</p>";
                     info += "<a href='PcBuild.aspx?ID=" + c.id + "'> </a>";
-                }
+                }*/
 
                 //Create session variable when a case is selected
                 
@@ -135,5 +135,11 @@ namespace CyberLlamaConsumerSite.Controllers
 
             return View();
         }
+
+        public void selectCase_Click(object sender, EventArgs e)
+        {
+            Session["Case"] ="";
+        }
+
     }
 }
