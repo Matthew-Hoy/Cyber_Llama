@@ -101,6 +101,9 @@ public interface IService
     List<cPC> getPCbyType(String Type);
 
     [OperationContract]
+    List<c_PcPageInfo> getAllPCInfo(String Type);
+
+    [OperationContract]
     List<cPC> getPCbyPrice(Double minPrice, Double maxPrice);
 
     //Get compatible parts

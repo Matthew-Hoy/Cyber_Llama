@@ -86,15 +86,15 @@
                     </a>
                     <!--maybe use a for loop if possible and pass data from the database for this bit-->
                     <div class="dropdown-menu" aria-labelledby="dropdown_Components">
-                        <a class="dropdown-item">Keyboards</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Keyboard" })>Keyboards</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Mice</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Mouse" })>Mice</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Mouse Pads</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Mousepad" })>Mouse Pads</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Headsets</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Headset" })>Headsets</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Speakers</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Speaker" })>Speakers</a>
                     </div>
                 </li>
 
@@ -106,13 +106,13 @@
                         <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown_desktop">
-                        <a class="dropdown-item">Gaming PC's</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "PcInfo", new { id = "Gaming" })>Gaming PC's</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Business PC's</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "PcInfo", new { id = "Business" })>Business PC's</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Home PC's</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "PcInfo", new { id = "Home" })>Home PC's</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Workstations</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "PcInfo", new { id = "Workstation" })>Workstations</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item">PC's by Brand</a>
                         <div class="dropdown-divider"></div>

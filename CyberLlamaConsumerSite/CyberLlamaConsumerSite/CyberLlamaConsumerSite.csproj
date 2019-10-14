@@ -137,6 +137,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
+    <Compile Include="Controllers\PcInfoController.cs" />
     <Compile Include="Controllers\PoliciesAndReportingController.cs" />
     <Compile Include="Controllers\PrivacyAndTermsController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
@@ -198,6 +199,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.c_PcPageInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\CRUDService\Service.disco" />
@@ -401,6 +405,8 @@
     <Content Include="Views\PoliciesAndReporting\Index.cshtml" />
     <Content Include="Views\PrivacyAndTerms\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Index.cshtml" />
+    <Content Include="Views\PcInfo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

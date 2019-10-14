@@ -2720,4 +2720,28 @@ public class Service : IService
 
 
     }
+
+    public List<c_PcPageInfo> getAllPCInfo(String Type)
+    {
+        List<c_PcPageInfo> list = new List<c_PcPageInfo>();
+        dynamic pcs = (from p in db.PcStocks where p.Active == 1 && p.PC_Type.Equals(Type) select p);
+
+        foreach(PcStock p in pcs)
+        {
+            c_PcPageInfo temp = new c_PcPageInfo
+            {
+                ID = p.ID,
+                active = p.Active,
+                discount = p.Discount,
+                image = p.Image,
+                Quantity = p.Quantity,
+                type = p.PC_Type,
+                price = (int)p.Price
+            };
+
+            list.Add(temp);
+        }
+
+        return list;
+    }
 }

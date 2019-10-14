@@ -6512,6 +6512,147 @@ namespace CyberLlamaConsumerSite.CRUDService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="c_PcPageInfo", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class c_PcPageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string image {
+            get {
+                return this.imageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imageField, value) != true)) {
+                    this.imageField = value;
+                    this.RaisePropertyChanged("image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typeField, value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="c_ProductPageInfo", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class c_ProductPageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -6970,6 +7111,8 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cSpeaker))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cPC))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cPC[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.c_PcPageInfo[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.c_PcPageInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cAirCooler[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cCase[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cCPU[]))]
@@ -7002,6 +7145,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPCbyType", ReplyAction="http://tempuri.org/IService/getPCbyTypeResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC[]> getPCbyTypeAsync(string Type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllPCInfo", ReplyAction="http://tempuri.org/IService/getAllPCInfoResponse")]
+        CyberLlamaConsumerSite.CRUDService.c_PcPageInfo[] getAllPCInfo(string Type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllPCInfo", ReplyAction="http://tempuri.org/IService/getAllPCInfoResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.c_PcPageInfo[]> getAllPCInfoAsync(string Type);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPCbyPrice", ReplyAction="http://tempuri.org/IService/getPCbyPriceResponse")]
         CyberLlamaConsumerSite.CRUDService.cPC[] getPCbyPrice(double minPrice, double maxPrice);
@@ -7397,6 +7546,14 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC[]> getPCbyTypeAsync(string Type) {
             return base.Channel.getPCbyTypeAsync(Type);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.c_PcPageInfo[] getAllPCInfo(string Type) {
+            return base.Channel.getAllPCInfo(Type);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.c_PcPageInfo[]> getAllPCInfoAsync(string Type) {
+            return base.Channel.getAllPCInfoAsync(Type);
         }
         
         public CyberLlamaConsumerSite.CRUDService.cPC[] getPCbyPrice(double minPrice, double maxPrice) {

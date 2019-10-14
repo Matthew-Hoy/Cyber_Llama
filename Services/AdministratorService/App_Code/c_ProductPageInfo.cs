@@ -8,7 +8,6 @@ using System.Web;
 /// </summary>
 public class c_ProductPageInfo
 {
-  
     public int ID;
     public String model;
     public String image;

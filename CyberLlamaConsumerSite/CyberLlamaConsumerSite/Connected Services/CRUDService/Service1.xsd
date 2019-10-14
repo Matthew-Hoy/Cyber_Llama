@@ -485,6 +485,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfcPC" nillable="true" type="tns:ArrayOfcPC" />
+  <xs:complexType name="ArrayOfc_PcPageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="c_PcPageInfo" nillable="true" type="tns:c_PcPageInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfc_PcPageInfo" nillable="true" type="tns:ArrayOfc_PcPageInfo" />
+  <xs:complexType name="c_PcPageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:int" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="c_PcPageInfo" nillable="true" type="tns:c_PcPageInfo" />
   <xs:complexType name="ArrayOfcAirCooler">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cAirCooler" nillable="true" type="tns:cAirCooler" />

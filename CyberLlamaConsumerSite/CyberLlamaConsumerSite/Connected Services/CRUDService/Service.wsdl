@@ -176,6 +176,12 @@
   <wsdl:message name="IService_getPCbyType_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPCbyTypeResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getAllPCInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPCInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllPCInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPCInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_getPCbyPrice_InputMessage">
     <wsdl:part name="parameters" element="tns:getPCbyPrice" />
   </wsdl:message>
@@ -432,6 +438,10 @@
     <wsdl:operation name="getPCbyType">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getPCbyType" message="tns:IService_getPCbyType_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getPCbyTypeResponse" message="tns:IService_getPCbyType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPCInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllPCInfo" message="tns:IService_getAllPCInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllPCInfoResponse" message="tns:IService_getAllPCInfo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getPCbyPrice">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getPCbyPrice" message="tns:IService_getPCbyPrice_InputMessage" />
@@ -777,6 +787,15 @@
     </wsdl:operation>
     <wsdl:operation name="getPCbyType">
       <soap:operation soapAction="http://tempuri.org/IService/getPCbyType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPCInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getAllPCInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
