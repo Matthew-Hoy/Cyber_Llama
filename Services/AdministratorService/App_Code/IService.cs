@@ -200,5 +200,9 @@ public interface IService
     [OperationContract]
     List<cAllCart> getCartItems(int user_ID);
 
+    //user oprations
+    [OperationContract]
+    cClient getClient(int id);
+
 
 }

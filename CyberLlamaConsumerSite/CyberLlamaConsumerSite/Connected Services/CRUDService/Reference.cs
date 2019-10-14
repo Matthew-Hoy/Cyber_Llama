@@ -6981,6 +6981,163 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cClient", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZipCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string emailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string firstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string provinceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Surname {
+            get {
+                return this.SurnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
+                    this.SurnameField = value;
+                    this.RaisePropertyChanged("Surname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string city {
+            get {
+                return this.cityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cityField, value) != true)) {
+                    this.cityField = value;
+                    this.RaisePropertyChanged("city");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.emailField, value) != true)) {
+                    this.emailField = value;
+                    this.RaisePropertyChanged("email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string firstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.firstNameField, value) != true)) {
+                    this.firstNameField = value;
+                    this.RaisePropertyChanged("firstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string province {
+            get {
+                return this.provinceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.provinceField, value) != true)) {
+                    this.provinceField = value;
+                    this.RaisePropertyChanged("province");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRUDService.IService")]
     public interface IService {
@@ -7176,6 +7333,7 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cSSD[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cAllCart[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cAllCart))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cClient))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
         object getPart(int ID);
         
@@ -7343,6 +7501,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCartItems", ReplyAction="http://tempuri.org/IService/getCartItemsResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cAllCart[]> getCartItemsAsync(int user_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getClient", ReplyAction="http://tempuri.org/IService/getClientResponse")]
+        CyberLlamaConsumerSite.CRUDService.cClient getClient(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getClient", ReplyAction="http://tempuri.org/IService/getClientResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cClient> getClientAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7794,6 +7958,14 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cAllCart[]> getCartItemsAsync(int user_ID) {
             return base.Channel.getCartItemsAsync(user_ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cClient getClient(int id) {
+            return base.Channel.getClient(id);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cClient> getClientAsync(int id) {
+            return base.Channel.getClientAsync(id);
         }
     }
 }

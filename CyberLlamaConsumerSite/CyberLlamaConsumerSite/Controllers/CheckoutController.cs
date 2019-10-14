@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -85,9 +86,60 @@ namespace CyberLlamaConsumerSite.Controllers
                     updated = sc.updatePcCart(Convert.ToInt32(Session["UserID"]), item.ProductID, item.Quantity);
                 }
             }
-            return View();
+            var client = sc.getClient(Convert.ToInt32(Session["UserID"]));
+            Delivery view = new Delivery
+            {
+                Address = client.Address,
+                City = client.city,
+                Method = "Collect",
+                Province = client.province,
+                ZipCode = client.ZipCode,
+                Products = getCart(client.ID),
+                Email = client.email,
+                FirstName = client.firstName,
+                Surname = client.Surname,
+            };
+            return View(view);
+        }
+        
+        public ActionResult Invoice(Delivery delivery)
+        {
+            CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
+            var client = sc.getClient(Convert.ToInt32(Session["UserID"]));
+            if (delivery.Address != null)
+            {
+                delivery.Method = "Deliver";
+            }
+            else
+            {
+                delivery.Method = "Collect";
+            }
+
+            delivery.Products = getCart(Convert.ToInt32(Session["UserID"]));
+            foreach(Cart product in delivery.Products)
+            {
+                delivery.SubTotal +=Math.Round(product.Price*product.Quantity, 2);
+                delivery.Discount += Math.Round(product.Discount * product.Price*product.Quantity/100, 2);
+            }
+            delivery.Tax = Math.Round(delivery.SubTotal * 15 / 100, 2);
+            delivery.Total = Math.Round(delivery.SubTotal + delivery.Tax - delivery.Discount, 2);
+            delivery.Email = client.email;
+            delivery.Surname = client.Surname;
+            delivery.FirstName = client.firstName;
+            return View(delivery);
         }
 
-        
+        public void BuyProduct(Delivery invoice)
+        {
+            CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
+            if (Session["UserID"] != null)
+            {
+                
+            }
+            else
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            }
+        }
     }
 }

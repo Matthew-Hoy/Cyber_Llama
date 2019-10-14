@@ -2756,4 +2756,21 @@ public class Service : IService
 
         return list;
     }
+
+    public cClient getClient(int id)
+    {
+        Client client = db.Clients.Where(x => x.User_ID.Equals(id)).Select(y => y).FirstOrDefault();
+        cClient returnClient = new cClient {
+            Address = client.Address,
+            city = client.City,
+            email = client.Email,
+            firstName = client.First_Name,
+            ID = client.User_ID,
+            province = client.Province,
+            Surname = client.Surname,
+            ZipCode = client.ZIP_Code
+
+        };
+        return returnClient;
+    }
 }
