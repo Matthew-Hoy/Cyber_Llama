@@ -39,7 +39,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#"><img src="~/Images/buildIcon.png" class="MenuIcon" /></a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href=@Url.Action("Index", "PcBuild")>
                         BUILD PC
                     </a>
                 </li>
@@ -73,7 +73,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Fan" })>Case Fans</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Monitors</a>
+                        <a class="dropdown-item"href=@Url.Action("Index", "ProductPage", new { id = "Monitor" })>Monitors</a>
                         <div class="dropdown-divider"></div>
                     </div>
                 </li>

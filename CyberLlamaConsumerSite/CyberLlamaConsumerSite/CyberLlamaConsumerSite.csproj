@@ -407,11 +407,11 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Index.cshtml" />
     <Content Include="Views\PcInfo\Index.cshtml" />
+    <Content Include="Views\PcBuild\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Logout\" />
-    <Folder Include="Views\PcBuild\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
