@@ -204,5 +204,17 @@ public interface IService
     [OperationContract]
     cClient getClient(int id);
 
+    [OperationContract]
+    List<cInvoice> getAllInvoices(int UserID);
+
+    [OperationContract]
+    bool addToPartInvoice(int UserID);
+    [OperationContract]
+    bool addToPcInvoice(int UserID);
+    [OperationContract]
+    List<cAllCart> getpcinvoice(int InvoiceID);
+    [OperationContract]
+    List<cAllCart> getPartInvoice(int InvoiceID);
+
 
 }

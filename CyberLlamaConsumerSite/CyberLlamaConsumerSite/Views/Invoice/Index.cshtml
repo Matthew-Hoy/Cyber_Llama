@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Invoices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<CyberLlamaConsumerSite.Models.Invoice>
+
+<h2>Index</h2>
+<table style="width:100%;">
+    <tr>
+        <th>Invoice</th>
+        <th>Date</th>
+        <th>View More</th>
+    </tr>
+
+    @foreach (var item in @Model.GroupBy(x => x.InvoiceId).Select(y =>y.FirstOrDefault()))
+    {
+    
+        <tr>
+            <td>@item.InvoiceId</td>
+            <td>@item.date.Day / @item.date.Month / @item.date.Year</td>
+            <td><a href=@Url.Action("Invoice", "Invoice", new {id = item.InvoiceId })>View More</a></td>
+        </tr>
+    
+    }
+
+</table>
+
+

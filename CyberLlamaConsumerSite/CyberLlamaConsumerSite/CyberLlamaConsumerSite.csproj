@@ -134,6 +134,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FAQsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\PoliciesAndReportingController.cs" />
@@ -149,6 +150,7 @@
     <Compile Include="Models\Delivery.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\UserPositionView.cs" />
     <Compile Include="Models\ViewModels\Employees.cs" />
@@ -204,6 +206,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cClient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cInvoice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\CRUDService\Service.disco" />
@@ -408,6 +413,9 @@
     <Content Include="Views\Checkout\Checkout.cshtml" />
     <Content Include="Views\ProductPage\Index.cshtml" />
     <Content Include="Views\Checkout\Invoice.cshtml" />
+    <Content Include="Views\Invoice\Index.cshtml" />
+    <Content Include="Views\Invoice\Empty.cshtml" />
+    <Content Include="Views\Invoice\Invoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
