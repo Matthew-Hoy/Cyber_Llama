@@ -4,22 +4,84 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model List<CyberLlamaConsumerSite.Models.Cart>
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Checkout</h1>
+<hr color="white" />
+<div style="display:grid;">
 
-<h2>Checkout</h2>
-<table style="width:100%;">
-    <tr>
-        <!--used to select each item or all items to remove from cart-->
-        <th >Select</th>
-        <!--this will contail image and name of product with link to product page-->
-        <!--info needed is thus: product id, name, image link-->
-        <th >Image</th>
-        <th >Item Name</th>
-        <!--the price of the product-->
-        <th >Unit Price</th>
-        <!--this value should be changable-->
-        <th >Quantity</th>
-    </tr>
-    @{Html.RenderPartial("CartItem", Model);}
-        <!--needed -> an array of cart containing (product id, name, image link, price, quantity)-->
-</table>
+</div>
+@using (Html.BeginForm("Checkout", "Checkout", FormMethod.Post))
+{
+    <div style="display:grid;grid-column-gap: 10px; grid-row-gap: 10px;">
+        <div style="grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;grid-row-end: 2;width: 100px; height: 40px;margin: 0 auto;color:white;"><b>Image</b></div>
+        <div style="grid-column-start: 2;grid-column-end: 3;grid-row-start: 1;grid-row-end: 2;width: 100px; height: 40px;margin: 0 auto;color:white;"><b>Description</b></div>
+        <div style="grid-column-start: 3;grid-column-end: 4;grid-row-start: 1;grid-row-end: 2;width: 100px;height: 40px;margin: 0 auto;color:white;"><b>Unit Price</b></div>
+        <div style="grid-column-start: 4;grid-column-end: 5;grid-row-start: 1;grid-row-end: 2;width: 100px;height: 40px;margin: 0 auto;color:white;"><b>Discount</b></div>
+        <div style="grid-column-start: 5;grid-column-end: 6;grid-row-start: 1;grid-row-end: 2;width: 100px;height: 40px;margin: 0 auto;color:white;"><b>Quantity</b></div>
+        <div style="grid-column-start: 6;grid-column-end: 7;grid-row-start: 1;grid-row-end: 2;width: 100px;height: 40px;margin: 0 auto;color:white;"><b>Remove</b></div>
 
+
+        @{decimal total = 0; }
+        @for (int i = 0; i < Model.Count; i++)
+        {
+
+            @Html.HiddenFor(m => m[i].ProductID)
+            <div style="grid-column-start: 1;grid-column-end: 2;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;"><img style="max-height:80px;" src=@Url.Content(Model[i].ImageLink)></div>
+            @Html.HiddenFor(m => m[i].ImageLink)
+            <div style="grid-column-start: 2;grid-column-end: 3;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;">@Model[i].Name</div>
+            @Html.HiddenFor(m => m[i].Name)
+            <div id="price @i" title="@Model[i].Price" style="grid-column-start: 3;grid-column-end: 4;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;">R @Math.Round(Model[i].Price, 2)</div>
+            @Html.HiddenFor(m => m[i].Price)
+            <div id="singlediscount @i" title="@Model[i].Discount" style="grid-column-start: 4;grid-column-end: 5;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;">@Model[i].Discount % </div>
+            @Html.HiddenFor(m => m[i].Price)
+            <div style="grid-column-start: 5;grid-column-end: 6;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;">
+                @Html.DropDownListFor(m => m[i].Quantity, new SelectList(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }), Convert.ToString(Model[i].Quantity), new { @id = "list" + i, @onchange = "getSelectValue()" })
+            </div>
+
+            <div style="grid-column-start: 6;grid-column-end: 7;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;"><a href=@Url.Action("RemoveFromCart", new { item = @Model[i].ProductID, cart = Model[i].cart})><img src="~/Images/cross-icon.png" style="max-width:30px;" /></a></div>
+            total += Model[i].Price * (Model[i].Quantity);
+        }
+
+        <script>
+            function getSelectValue() {
+                console.log("Hello");
+                var subTotal = 0;
+                var total = 0;
+                var discount = 0;
+                var totalDiscount = 0;
+                price = 0;
+                for (i = 0; i < @Model.Count; i++) {
+                    var e = document.getElementById("list" + i);
+                    var value = e.options[e.selectedIndex].text;
+                    price = parseFloat(document.getElementById("price " + i).title.replace(",",".")).toFixed(2);
+                    discount = document.getElementById("singlediscount " + i).title;
+                    value = Number(value);
+                    subTotal += parseFloat(value).toFixed(2) * price;
+                    totalDiscount = totalDiscount + ((parseFloat(discount).toFixed(2) * price*value)/100);
+
+                }
+
+                document.getElementById("subtotal").innerHTML = "<label>Sub-Total: </label> R" + subTotal.toFixed(2);
+                document.getElementById("tax").innerHTML = "<label>Tax: </label> R" + (subTotal * 15 / 100).toFixed(2);
+                document.getElementById("discount").innerHTML = "<label>Total Discount: </label> R" + totalDiscount.toFixed(2);
+                document.getElementById("total").innerHTML = "<label>Total: </label> R" + ((subTotal * 15 / 100) + subTotal + totalDiscount).toFixed(2);
+            }
+        </script>
+
+    </div>
+    <hr color="white" onload="getSelectValue()" />
+    <div onload="getSelectValue()">
+
+    </div>
+    <h2>Cart Summary</h2>
+    <p id="subtotal"></p>
+    <p id="discount"></p>
+
+    <p id="tax"></p>
+    <p id="total"></p>
+    <input type="submit" value="Proceed to checkout" />
+    <script>
+        window.onload = getSelectValue();
+    </script>
+}
+<!--needed -> an array of cart containing (product id, name, image link, price, quantity)-->

@@ -286,6 +286,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\aboutIcon.png" />
+    <Content Include="Images\Acer-Aspire-E-ES1-512-black-nontouch-glare-sku-main.png" />
     <Content Include="Images\AddressIcon.png" />
     <Content Include="Images\adminIcon.png" />
     <Content Include="Images\buildIcon.png" />
@@ -294,6 +295,7 @@
     <Content Include="Images\ComponentsIcon.png" />
     <Content Include="Images\computerIcon.png" />
     <Content Include="Images\contactIcon.png" />
+    <Content Include="Images\cross-icon.jpg" />
     <Content Include="Images\employeeIcon.png" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\faqIcon.png" />
@@ -408,6 +410,10 @@
     <Content Include="Views\Index.cshtml" />
     <Content Include="Views\PcInfo\Index.cshtml" />
     <Content Include="Views\PcBuild\Index.cshtml" />
+    <Content Include="Views\Checkout\Cart.cshtml" />
+    <Content Include="Views\Checkout\CartItem.cshtml" />
+    <Content Include="Views\Checkout\Index.cshtml" />
+    <Content Include="Views\Checkout\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

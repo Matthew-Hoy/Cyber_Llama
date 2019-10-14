@@ -174,7 +174,7 @@ public interface IService
     Boolean addToPartCart(int user_ID, int part_ID, int qua, Double total_price);
 
     [OperationContract]
-    Boolean updatePartCart(int user_ID, int pc_ID, int qua, double total_price);
+    Boolean updatePartCart(int user_ID, int pc_ID, int qua);
 
     [OperationContract]
     Boolean removeFromPartCart(int user_ID, int part_ID);
@@ -186,7 +186,7 @@ public interface IService
     Boolean addToPcCart(int user_ID, int pc_ID, int qua, Double total_price);
 
     [OperationContract]
-    Boolean updatePcCart(int user_ID, int pc_ID, int qua, double total_price);
+    Boolean updatePcCart(int user_ID, int pc_ID, int qua);
 
     [OperationContract]
     Boolean removeFromPcCart(int user_ID, int pc_ID);

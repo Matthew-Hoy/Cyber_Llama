@@ -6818,7 +6818,16 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Max_quaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cartField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string imagelinkField;
@@ -6846,6 +6855,32 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Max_qua {
+            get {
+                return this.Max_quaField;
+            }
+            set {
+                if ((this.Max_quaField.Equals(value) != true)) {
+                    this.Max_quaField = value;
+                    this.RaisePropertyChanged("Max_qua");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cart {
+            get {
+                return this.cartField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cartField, value) != true)) {
+                    this.cartField = value;
+                    this.RaisePropertyChanged("cart");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string description {
             get {
                 return this.descriptionField;
@@ -6854,6 +6889,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
                     this.descriptionField = value;
                     this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }
@@ -7243,10 +7291,10 @@ namespace CyberLlamaConsumerSite.CRUDService {
         System.Threading.Tasks.Task<bool> addToPartCartAsync(int user_ID, int part_ID, int qua, double total_price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePartCart", ReplyAction="http://tempuri.org/IService/updatePartCartResponse")]
-        bool updatePartCart(int user_ID, int pc_ID, int qua, double total_price);
+        bool updatePartCart(int user_ID, int pc_ID, int qua);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePartCart", ReplyAction="http://tempuri.org/IService/updatePartCartResponse")]
-        System.Threading.Tasks.Task<bool> updatePartCartAsync(int user_ID, int pc_ID, int qua, double total_price);
+        System.Threading.Tasks.Task<bool> updatePartCartAsync(int user_ID, int pc_ID, int qua);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeFromPartCart", ReplyAction="http://tempuri.org/IService/removeFromPartCartResponse")]
         bool removeFromPartCart(int user_ID, int part_ID);
@@ -7267,10 +7315,10 @@ namespace CyberLlamaConsumerSite.CRUDService {
         System.Threading.Tasks.Task<bool> addToPcCartAsync(int user_ID, int pc_ID, int qua, double total_price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePcCart", ReplyAction="http://tempuri.org/IService/updatePcCartResponse")]
-        bool updatePcCart(int user_ID, int pc_ID, int qua, double total_price);
+        bool updatePcCart(int user_ID, int pc_ID, int qua);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePcCart", ReplyAction="http://tempuri.org/IService/updatePcCartResponse")]
-        System.Threading.Tasks.Task<bool> updatePcCartAsync(int user_ID, int pc_ID, int qua, double total_price);
+        System.Threading.Tasks.Task<bool> updatePcCartAsync(int user_ID, int pc_ID, int qua);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeFromPcCart", ReplyAction="http://tempuri.org/IService/removeFromPcCartResponse")]
         bool removeFromPcCart(int user_ID, int pc_ID);
@@ -7676,12 +7724,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.addToPartCartAsync(user_ID, part_ID, qua, total_price);
         }
         
-        public bool updatePartCart(int user_ID, int pc_ID, int qua, double total_price) {
-            return base.Channel.updatePartCart(user_ID, pc_ID, qua, total_price);
+        public bool updatePartCart(int user_ID, int pc_ID, int qua) {
+            return base.Channel.updatePartCart(user_ID, pc_ID, qua);
         }
         
-        public System.Threading.Tasks.Task<bool> updatePartCartAsync(int user_ID, int pc_ID, int qua, double total_price) {
-            return base.Channel.updatePartCartAsync(user_ID, pc_ID, qua, total_price);
+        public System.Threading.Tasks.Task<bool> updatePartCartAsync(int user_ID, int pc_ID, int qua) {
+            return base.Channel.updatePartCartAsync(user_ID, pc_ID, qua);
         }
         
         public bool removeFromPartCart(int user_ID, int part_ID) {
@@ -7708,12 +7756,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.addToPcCartAsync(user_ID, pc_ID, qua, total_price);
         }
         
-        public bool updatePcCart(int user_ID, int pc_ID, int qua, double total_price) {
-            return base.Channel.updatePcCart(user_ID, pc_ID, qua, total_price);
+        public bool updatePcCart(int user_ID, int pc_ID, int qua) {
+            return base.Channel.updatePcCart(user_ID, pc_ID, qua);
         }
         
-        public System.Threading.Tasks.Task<bool> updatePcCartAsync(int user_ID, int pc_ID, int qua, double total_price) {
-            return base.Channel.updatePcCartAsync(user_ID, pc_ID, qua, total_price);
+        public System.Threading.Tasks.Task<bool> updatePcCartAsync(int user_ID, int pc_ID, int qua) {
+            return base.Channel.updatePcCartAsync(user_ID, pc_ID, qua);
         }
         
         public bool removeFromPcCart(int user_ID, int pc_ID) {
