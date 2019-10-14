@@ -130,14 +130,12 @@
     </Compile>
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AddUserController.cs" />
-    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FAQsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
-    <Compile Include="Controllers\PcInfoController.cs" />
     <Compile Include="Controllers\PoliciesAndReportingController.cs" />
     <Compile Include="Controllers\PrivacyAndTermsController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
@@ -159,16 +157,10 @@
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cAirCooler.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cAllCart.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cCase.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cCPU.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cEmployee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cFan.datasource">
@@ -198,10 +190,16 @@
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cSSD.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cAllCart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cEmployee.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.c_PcPageInfo.datasource">
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.c_PcPageInfo1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\CRUDService\Service.disco" />
@@ -250,25 +248,15 @@
     <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.c_ProductPageInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\CRUDService\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cAllCart.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cEmployee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\CRUDService\Service.wsdl" />
-    <None Include="Connected Services\CRUDService\Service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\CRUDService\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\CRUDService\Service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\CRUDService\Service3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\ServiceReference1\Service.disco" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
@@ -287,11 +275,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\aboutIcon.png" />
     <Content Include="Images\Acer-Aspire-E-ES1-512-black-nontouch-glare-sku-main.png" />
-    <Content Include="Images\AddressIcon.png" />
     <Content Include="Images\adminIcon.png" />
     <Content Include="Images\buildIcon.png" />
     <Content Include="Images\carIcon.png" />
-    <Content Include="Images\CartIcon.png" />
     <Content Include="Images\ComponentsIcon.png" />
     <Content Include="Images\computerIcon.png" />
     <Content Include="Images\contactIcon.png" />
@@ -302,16 +288,13 @@
     <Content Include="Images\homeIcon.png" />
     <Content Include="Images\insta.png" />
     <Content Include="Images\JumboTron-Background.jpg" />
-    <Content Include="Images\LinkedInIcon.png" />
     <Content Include="Images\llama.jpg" />
     <Content Include="Images\llama.png" />
     <Content Include="Images\LoginIcon.png" />
     <Content Include="Images\ManagerIcon.png" />
     <Content Include="Images\moneyIcon.png" />
-    <Content Include="Images\RegisterIcon.png" />
     <Content Include="Images\shoppingCartIcon.png" />
     <Content Include="Images\signUpIcon.png" />
-    <Content Include="Images\SM.png" />
     <Content Include="Images\SocialMediaIcon.png" />
     <Content Include="Images\TestLogo.png" />
     <Content Include="Images\twitter.png" />
@@ -338,6 +321,16 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Connected Services\CRUDService\Service.wsdl" />
+    <None Include="Connected Services\CRUDService\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CRUDService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CRUDService\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceReference1\Service.wsdl" />
     <None Include="Connected Services\ServiceReference1\Service.xsd">
       <SubType>Designer</SubType>
@@ -406,18 +399,15 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\PoliciesAndReporting\Index.cshtml" />
     <Content Include="Views\PrivacyAndTerms\Index.cshtml" />
-    <Content Include="Views\Cart\Index.cshtml" />
-    <Content Include="Views\Index.cshtml" />
-    <Content Include="Views\PcInfo\Index.cshtml" />
-    <Content Include="Views\PcBuild\Index.cshtml" />
     <Content Include="Views\Checkout\Cart.cshtml" />
-    <Content Include="Views\Checkout\CartItem.cshtml" />
     <Content Include="Views\Checkout\Index.cshtml" />
     <Content Include="Views\Checkout\Checkout.cshtml" />
+    <Content Include="Views\ProductPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Logout\" />
+    <Folder Include="Views\PcBuild\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
