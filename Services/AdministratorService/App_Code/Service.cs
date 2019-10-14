@@ -2304,7 +2304,7 @@ public class Service : IService
     //Part Cart
     public Boolean addToPartCart(int user_ID, int part_ID, int qua, Double total_price) {
         Boolean check = checkPartCart(user_ID, part_ID);
-        if (check != false)
+        if (check == false)
         {
             var cartItem = new PartCart
             {
@@ -2413,20 +2413,28 @@ public class Service : IService
     //Prebuilt PC Cart
     public Boolean addToPcCart(int user_ID, int pc_ID, int qua, Double total_price)
     {
-        var pc = new PcCart
+        Boolean check = checkPcCart(user_ID, pc_ID);
+        if (check == false)
         {
-            User_ID = user_ID,
-            Pc_ID = pc_ID,
-            Qua = qua,
-        };
+            var pc = new PcCart
+            {
+                User_ID = user_ID,
+                Pc_ID = pc_ID,
+                Qua = qua,
+            };
 
-        db.PcCarts.InsertOnSubmit(pc);
-        try
-        {
-            db.SubmitChanges();
-            return true;
+            db.PcCarts.InsertOnSubmit(pc);
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
-        catch
+        else
         {
             return false;
         }

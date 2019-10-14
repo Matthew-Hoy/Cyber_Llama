@@ -33,15 +33,30 @@
         int price = p.price;
         int quantity = p.Quantity;
 
-        <div class="card">
-            <img src="@(imageLink)" alt="Ram" style="width:100%">
-            <h1>@(model)</h1>
-            <p class="price">R@(price)</p>
-            <p>Quantity: @(quantity)</p>
-            <p><button>Add to Cart</button></p>
-        </div>
+    <div class="card">
+        <img src="@(imageLink)" alt="Ram" style="width:100%">
+        <h1>@(model)</h1>
+        <p class="price">R@(price)</p>
+        <p>Quantity: @(quantity)</p>
+        <p><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = p.ID })>Add to Cart</button></p>
+    </div>
     }
 }
+    <script>
+        $(".addCartLink").click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr("href"),
+                success: function () {
+                    alert("Added To Cart");
+                },
+                error: function () {
+                    alert("An error Occured, Login to access Cart");
+                }
+
+            });
+        });
+    </script>
 
 <style>
     .llamaImage {
