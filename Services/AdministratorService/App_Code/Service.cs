@@ -2307,10 +2307,12 @@ public class Service : IService
                                    on part.ID equals cart.Part_ID
                                    select new cAllCart
                                    {
+                                       cart = "part",
                                        description = part.Model + " " + part.Type,
                                        imagelink = part.Image,
                                        part_id = part.ID,
                                        price = part.Price,
+                                       discount = part.Discount,
                                        qua = cart.Qua,
                                        user_id = user_ID,
                                        Max_qua = part.Quantity
@@ -2321,10 +2323,12 @@ public class Service : IService
                                  on part.ID equals cart.Pc_ID
                                  select new cAllCart
                                  {
+                                     cart = "pc",
                                      description = part.PC_Type,
                                      imagelink = part.Image,
                                      part_id = part.ID,
                                      price = part.Price,
+                                     discount = part.Discount,
                                      qua = cart.Qua,
                                      user_id = user_ID,
                                      Max_qua = part.Quantity

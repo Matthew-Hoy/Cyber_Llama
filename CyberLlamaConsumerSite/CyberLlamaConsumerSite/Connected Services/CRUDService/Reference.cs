@@ -4416,7 +4416,13 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private int Max_quaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cartField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string imagelinkField;
@@ -4457,6 +4463,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cart {
+            get {
+                return this.cartField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cartField, value) != true)) {
+                    this.cartField = value;
+                    this.RaisePropertyChanged("cart");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string description {
             get {
                 return this.descriptionField;
@@ -4465,6 +4484,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
                     this.descriptionField = value;
                     this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
                 }
             }
         }

@@ -412,7 +412,9 @@
   <xs:complexType name="cAllCart">
     <xs:sequence>
       <xs:element minOccurs="0" name="Max_qua" type="xs:int" />
+      <xs:element minOccurs="0" name="cart" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
       <xs:element minOccurs="0" name="imagelink" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="part_id" type="xs:int" />
       <xs:element minOccurs="0" name="price" type="xs:decimal" />
