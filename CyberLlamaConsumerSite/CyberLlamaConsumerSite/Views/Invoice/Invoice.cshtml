@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Invoice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model CyberLlamaConsumerSite.Models.Delivery
+
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Invoice</h1>
+
+<hr color="white" />
+<div style="display:grid;grid-column-gap: 5px; grid-row-gap: 0px; ">
+    <div style="grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;grid-row-end: 2;width: 100px; height: 40px;margin: 0 auto;color:white;"><b>Image</b></div>
+    <div style="grid-column-start: 2;grid-column-end: 3;grid-row-start: 1;grid-row-end: 2;width: 100px; height: 40px;margin: 0 auto;color:white;"><b>Description</b></div>
+    <div style="grid-column-start: 3;grid-column-end: 4;grid-row-start: 1;grid-row-end: 2;width: 100px;height: 40px;margin: 0 auto;color:white;"><b>Unit Price</b></div>
+    <div style="grid-column-start: 4;grid-column-end: 5;grid-row-start: 1;grid-row-end: 2;width: 100px;height: 40px;margin: 0 auto;color:white;"><b>Discount</b></div>
+    <div style="grid-column-start: 5;grid-column-end: 6;grid-row-start: 1;grid-row-end: 2;width: 100px;height: 40px;margin: 0 auto;color:white;"><b>Quantity</b></div>
+
+
+    @for (int i = 0; i < Model.Products.Count; i++)
+    {
+        <div style="grid-column-start: 1;grid-column-end: 2;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 150px;height: 70px;margin: 0 auto;"><img style="max-height:50px;" src=@Url.Content(Model.Products[i].ImageLink)></div>
+        <div style="grid-column-start: 2;grid-column-end: 3;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 150px;height: 70px;margin: 0 auto;">@Model.Products[i].Name</div>
+        <div style="grid-column-start: 3;grid-column-end: 4;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 150px;height: 70px;margin: 0 auto;">R @Math.Round(Model.Products[i].Price, 2)</div>
+        <div style="grid-column-start: 4;grid-column-end: 5;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 150px;height: 70px;margin: 0 auto;">@Model.Products[i].Discount % </div>
+        <div style="grid-column-start: 5;grid-column-end: 6;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 150px;height: 70px;margin: 0 auto;">@Model.Products[i].Quantity</div>
+    }
+</div>
+<hr color="white" />
+<div style="text-align:right">
+    <h4>SubTotal: R @Model.SubTotal</h4>
+    <h4>Discount: R @Model.Discount</h4>
+    <h4>Tax: R @Model.Tax</h4>
+    <h4>Total: R @Model.Total</h4>
+</div>
+

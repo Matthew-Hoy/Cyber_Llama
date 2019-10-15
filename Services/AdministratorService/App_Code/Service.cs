@@ -2359,7 +2359,10 @@ public class Service : IService
         if (part != null)
         {
             part.Qua = qua;
-
+            if (qua.Equals(0))
+            {
+                db.PartCarts.DeleteOnSubmit(part);
+            }
             try
             {
                 db.SubmitChanges();
@@ -2459,13 +2462,16 @@ public class Service : IService
     public Boolean updatePcCart(int user_ID, int pc_ID, int qua)
     {
         var pc = (from p in db.PcCarts where (p.User_ID == user_ID && p.Pc_ID == pc_ID) select p).FirstOrDefault();
-
         if (pc != null)
         {
             pc.Qua = qua;
 
             try
             {
+                if (qua.Equals(0))
+                {
+                    db.PcCarts.DeleteOnSubmit(pc);
+                }
                 db.SubmitChanges();
                 return true;
             }
@@ -2755,5 +2761,334 @@ public class Service : IService
         }
 
         return list;
+    }
+
+    public cClient getClient(int id)
+    {
+        Client client = db.Clients.Where(x => x.User_ID.Equals(id)).Select(y => y).FirstOrDefault();
+        cClient returnClient = new cClient {
+            Address = client.Address,
+            city = client.City,
+            email = client.Email,
+            firstName = client.First_Name,
+            ID = client.User_ID,
+            province = client.Province,
+            Surname = client.Surname,
+            ZipCode = client.ZIP_Code
+
+        };
+        return returnClient;
+    }
+
+    public List<cInvoice> getAllInvoices(int UserID)
+    {
+        List<cInvoice> partInvoices  = db.PartInvoices.Where(x => x.User_ID.Equals(UserID)).Select(y =>new cInvoice{
+            date = y.Date,
+            InvoiceId = y.Invoice_ID,
+            numItems = y.NumProducts,
+            pc_ID = y.Part_ID,
+            type = "PartInvoice",
+            user_ID = UserID
+        }).ToList();
+
+        List<cInvoice> pcincoices = db.PcInvoices.Where(x => x.User_ID.Equals(UserID)).Select(y => new cInvoice
+        {
+            date = y.Date,
+            InvoiceId = y.Invoice_ID,
+            numItems = y.NumProducts,
+            pc_ID = y.Pc_ID,
+            type = "PcInvoice",
+            user_ID = UserID
+        }).ToList();
+
+        return pcincoices.Concat(partInvoices).ToList();
+    }
+
+    private int getLastPartInvoiceID()
+    {
+        var record = db.PartInvoices.OrderByDescending(x => x.Invoice_ID).FirstOrDefault();
+        if(record == null)
+        {
+            return 0;
+        }
+        else
+        {
+            return record.Invoice_ID;
+        }
+    }
+
+    //add from car to partInvoice
+    public bool addToPartInvoice(int UserID)
+    {
+        int InvoiceId = getLastPartInvoiceID() + 1;
+        List<cInvoice> partInvoice = (from part in db.PartsStocks
+                                   join cart in db.PartCarts.Where(x => x.User_ID.Equals(UserID))
+                                   on part.ID equals cart.Part_ID
+                                   select new cInvoice
+                                   {
+                                       user_ID = UserID,
+                                       date = DateTime.Now,
+                                       numItems = cart.Qua,
+                                       pc_ID = part.ID,
+                                       type = "PartInvoice"
+                                   }).ToList();
+
+        List<PartInvoice> dbInvoice = partInvoice.GroupBy(x => new { x.numItems, x.pc_ID, x.type, x.user_ID, x.date })
+            .Select(y => new PartInvoice
+            {
+                Date = y.Key.date,
+                NumProducts = y.Key.numItems,
+                Part_ID = y.Key.pc_ID,
+                User_ID = y.Key.user_ID,
+                Invoice_ID = InvoiceId
+
+            }).ToList();
+        if (partInvoice.Count() >= 1)
+        {
+            db.PartInvoices.InsertAllOnSubmit(dbInvoice);
+            try
+            {
+                db.SubmitChanges();
+            }
+            //catch exceptions
+            catch (Exception ex)
+            {
+                //error adding into database
+                ex.GetBaseException();
+                return false;
+            }
+        }
+        return true;
+
+        
+    }
+
+    public bool addToPcInvoice(int UserID)
+    {
+        int InvoiceId = getLastPartInvoiceID() + 1;
+        List<cInvoice> pcInvoice = (from part in db.PcStocks
+                                     join cart in db.PcCarts.Where(x => x.User_ID.Equals(UserID))
+                                     on part.ID equals cart.Pc_ID
+                                     select new cInvoice
+                                     {
+                                         user_ID = UserID,
+                                         date = DateTime.Now,
+                                         numItems = cart.Qua,
+                                         pc_ID = part.ID,
+                                         type = "PcInvoice"  
+                                     }).ToList();
+        List<PcInvoice> dbinvoice = pcInvoice.GroupBy(x => new { x.numItems, x.pc_ID, x.type, x.user_ID, x.date })
+            .Select(y => new PcInvoice
+            {
+                Date = y.Key.date,
+                NumProducts = y.Key.numItems,
+                Pc_ID = y.Key.pc_ID,
+                User_ID = y.Key.user_ID,
+                Invoice_ID = InvoiceId
+            }).ToList();
+        if(pcInvoice.Count() >= 1)
+        {
+            db.PcInvoices.InsertAllOnSubmit(dbinvoice);
+            try
+            {
+                db.SubmitChanges();
+            }
+            //catch exceptions
+            catch (Exception ex)
+            {
+                //error adding into database
+                ex.GetBaseException();
+                return false;
+            }
+        }
+        return true;
+    }
+
+ 
+    public List<cAllCart> getpcinvoice(int InvoiceID)
+    {
+
+        List<cAllCart> pcCart = (from inv in db.PcInvoices.Where(y => y.Invoice_ID.Equals(InvoiceID))
+                                   join stock in db.PcStocks
+                                   on inv.Pc_ID equals stock.ID
+                                   select new cAllCart
+                                   {
+                                       cart = "part",
+                                       description = stock.PC_Type,
+                                       imagelink = stock.Image,
+                                       part_id = stock.ID,
+                                       price = stock.Price,
+                                       discount = stock.Discount,
+                                       qua = inv.NumProducts,
+                                       user_id = 0
+                                   }).ToList();
+
+        return pcCart;
+    }
+
+    public List<cAllCart> getPartInvoice(int InvoiceID)
+    {
+        List<cAllCart> partCart = (from inv in db.PartInvoices.Where(y => y.Invoice_ID.Equals(InvoiceID))
+                                 join stock in db.PartsStocks
+                                 on inv.Part_ID equals stock.ID
+                                 select new cAllCart
+                                 {
+                                     cart = "part",
+                                     description = stock.Model + " " + stock.Type,
+                                     imagelink = stock.Image,
+                                     part_id = stock.ID,
+                                     price = stock.Price,
+                                     discount = stock.Discount,
+                                     qua = inv.NumProducts,
+                                     user_id = 0
+                                 }).ToList();
+
+        return partCart;
+    }
+
+
+    public bool addToPartSold(int UserID)
+    {
+        List<cPartSold> partSold = (from part in db.PartsStocks
+                               join cart in db.PartCarts.Where(x => x.User_ID.Equals(UserID))
+                               on part.ID equals cart.Part_ID
+                               select new cPartSold { 
+                                   Quantity = cart.Qua,
+                                   Model = part.Model,
+                                   Type = part.Type,
+                                   pc_ID = part.ID
+                               }).ToList();
+        PartsSold current;
+        foreach (cPartSold item in partSold)
+        {
+            current = db.PartsSolds.Where(x => x.ID.Equals(item.pc_ID)).Select(y => y).FirstOrDefault();
+            if (current == null)
+            {
+                PartsSold dbSold = new PartsSold
+               {
+                   ID = item.pc_ID,
+                   Model = item.Model,
+                    Quantity_Sold = item.Quantity,
+                   Type = item.Type
+               };
+
+                db.PartsSolds.InsertOnSubmit(dbSold);
+            }
+            else
+            {
+                current.Quantity_Sold += item.Quantity;
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            //catch exceptions
+            catch (Exception ex)
+            {
+                //error adding into database
+                ex.GetBaseException();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public bool addToPcSold(int UserID)
+    {
+        List<cPcSold> pcSold = (from part in db.PcStocks
+                                    join cart in db.PcCarts.Where(x => x.User_ID.Equals(UserID))
+                                    on part.ID equals cart.Pc_ID
+                                    select new cPcSold
+                                    {
+                                        Quantity = cart.Qua,
+                                        Type = part.PC_Type,
+                                        pc_ID = part.ID
+                                    }).ToList();
+        PcSold current;
+        foreach (cPcSold item in pcSold)
+        {
+            current = db.PcSolds.Where(x => x.PC_ID.Equals(item.pc_ID)).Select(y => y).FirstOrDefault();
+            if (current == null)
+            {
+                PcSold dbSold = new PcSold
+                {
+                    PC_ID = item.pc_ID,
+                    Quantity_Sold = item.Quantity,
+                    Type = item.Type
+                };
+                db.PcSolds.InsertOnSubmit(dbSold);
+            }
+            else
+            {
+                current.Quantity_Sold += item.Quantity;
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            //catch exceptions
+            catch (Exception ex)
+            {
+                //error adding into database
+                ex.GetBaseException();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public bool decreasePartStock(int userID)
+    {
+        List<cAllCart> cart =  getCartItems(userID);
+        PartsStock pStock;
+        foreach (cAllCart item in cart)
+        {
+            pStock = db.PartsStocks.Where(x => x.ID.Equals(item.part_id)).Select(y => y).FirstOrDefault();
+            if(pStock != null)
+            {
+                pStock.Quantity -= item.qua;
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            //catch exceptions
+            catch (Exception ex)
+            {
+                //error adding into database
+                ex.GetBaseException();
+                return false;
+            }
+
+        }
+        return true;
+       
+        
+    }
+
+   public bool decreasePcStock(int userID)
+   {
+        List<cAllCart> cart = getCartItems(userID);
+        PcStock pStock;
+        foreach (cAllCart item in cart)
+        {
+            pStock = db.PcStocks.Where(x => x.ID.Equals(item.part_id)).Select(y => y).FirstOrDefault();
+            if (pStock != null)
+            {
+                pStock.Quantity -= item.qua;
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            //catch exceptions
+            catch (Exception ex)
+            {
+                //error adding into database
+                ex.GetBaseException();
+                return false;
+            }
+        }
+        return true;
     }
 }

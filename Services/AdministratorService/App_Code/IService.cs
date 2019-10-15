@@ -200,5 +200,29 @@ public interface IService
     [OperationContract]
     List<cAllCart> getCartItems(int user_ID);
 
+    //user oprations
+    [OperationContract]
+    cClient getClient(int id);
+
+    [OperationContract]
+    List<cInvoice> getAllInvoices(int UserID);
+
+    [OperationContract]
+    bool addToPartInvoice(int UserID);
+    [OperationContract]
+    bool addToPcInvoice(int UserID);
+    [OperationContract]
+    List<cAllCart> getpcinvoice(int InvoiceID);
+    [OperationContract]
+    List<cAllCart> getPartInvoice(int InvoiceID);
+    [OperationContract]
+    bool addToPartSold(int UserID);
+    [OperationContract]
+    bool addToPcSold(int UserID);
+    [OperationContract]
+    bool decreasePartStock(int userID);
+    [OperationContract]
+    bool decreasePcStock(int userID);
+
 
 }

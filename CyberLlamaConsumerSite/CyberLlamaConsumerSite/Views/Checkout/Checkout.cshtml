@@ -1,8 +1,51 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Checkout";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model CyberLlamaConsumerSite.Models.Delivery
 
-<h2>Checkout</h2>
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Checkout</h1>
+<hr color="white" />
+<p>Please select your delivery option</p>
+
+<select class="deliveryMethod" id="deliveryMethod" name="deliveryMethod" onchange="toggleAddress()" style="width:20%">
+    <option class="deliver">Collect</option>
+    <option class="collect">Deliver</option>
+</select>
+
+<script>
+    function toggleAddress() {
+        var addressVisibility = document.getElementById("address").style.display;
+        var collectVisibility = document.getElementById("collect").style.display;
+
+        if (addressVisibility == "none") {
+            document.getElementById("address").style.display = "initial";
+        } else {
+            document.getElementById("address").style.display = "none";
+        }
+
+        if (collectVisibility == "none") {
+            document.getElementById("collect").style.display = "initial";
+        } else {
+            document.getElementById("collect").style.display = "none";
+        }
+    }
+
+
+</script>
+<div class="centerImage">
+        <div id="address" style="display:none;">
+            @using (Html.BeginForm("Invoice", "Checkout", FormMethod.Post))
+            {
+                <p><label>Address:</label>@Html.TextAreaFor(m => m.Address, new { value = Model.Address }) </p>
+                <P><label>City:</label>@Html.TextBoxFor(m => m.City, new { value = Model.City })</P>
+                <p><label>Province:</label>@Html.TextBoxFor(m => m.Province, new { value = Model.Province })</p>
+                <p><label>Zip_Code:</label>@Html.TextBoxFor(m => m.ZipCode, new {value = Model.ZipCode })</p>
+                <button type="submit"> Continue</button>
+            }
+        </div>
+        <p><button id="collect" style="margin-top:5%"> Continue</button></p>
+        </div>
+
 

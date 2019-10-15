@@ -27,7 +27,6 @@
 
             @Html.HiddenFor(m => m[i].ProductID)
             <div style="grid-column-start: 1;grid-column-end: 2;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;"><img style="max-height:80px;" src=@Url.Content(Model[i].ImageLink)></div>
-            @Html.HiddenFor(m => m[i].ImageLink)
             <div style="grid-column-start: 2;grid-column-end: 3;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;">@Model[i].Name</div>
             @Html.HiddenFor(m => m[i].Name)
             <div id="price @i" title="@Model[i].Price" style="grid-column-start: 3;grid-column-end: 4;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;">R @Math.Round(Model[i].Price, 2)</div>
@@ -35,7 +34,19 @@
             <div id="singlediscount @i" title="@Model[i].Discount" style="grid-column-start: 4;grid-column-end: 5;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;">@Model[i].Discount % </div>
             @Html.HiddenFor(m => m[i].Price)
             <div style="grid-column-start: 5;grid-column-end: 6;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;">
-                @Html.DropDownListFor(m => m[i].Quantity, new SelectList(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }), Convert.ToString(Model[i].Quantity), new { @id = "list" + i, @onchange = "getSelectValue()" })
+                @Html.DropDownListFor(m => m[i].Quantity, new List<SelectListItem> {
+               new SelectListItem {Text=Convert.ToString(@Model[i].Quantity),Value=Convert.ToString(@Model[i].Quantity), Selected=true},
+               new SelectListItem{Text="1",Value="1"},
+               new SelectListItem{Text="2", Value="2"},
+               new SelectListItem{Text="3",Value="3"},
+               new SelectListItem{Text="4", Value="4"},
+               new SelectListItem{Text="5",Value="5"},
+               new SelectListItem{Text="6", Value="6"},
+               new SelectListItem{Text="7",Value="7"},
+               new SelectListItem{Text="8", Value="8"},
+               new SelectListItem{Text="9",Value="9"},
+               new SelectListItem{Text="10", Value="10"},
+                }, "Quantity", new { @id = "list" + i, @onchange = "getSelectValue()" })
             </div>
 
             <div style="grid-column-start: 6;grid-column-end: 7;grid-row-start: @(i + 2);grid-row-end: @(i + 3);width: 100px;height: 100px;margin: 0 auto;"><a href=@Url.Action("RemoveFromCart", new { item = @Model[i].ProductID, cart = Model[i].cart})><img src="~/Images/cross-icon.png" style="max-width:30px;" /></a></div>
@@ -64,7 +75,7 @@
                 document.getElementById("subtotal").innerHTML = "<label>Sub-Total: </label> R" + subTotal.toFixed(2);
                 document.getElementById("tax").innerHTML = "<label>Tax: </label> R" + (subTotal * 15 / 100).toFixed(2);
                 document.getElementById("discount").innerHTML = "<label>Total Discount: </label> R" + totalDiscount.toFixed(2);
-                document.getElementById("total").innerHTML = "<label>Total: </label> R" + ((subTotal * 15 / 100) + subTotal + totalDiscount).toFixed(2);
+                document.getElementById("total").innerHTML = "<label>Total: </label> R" + ((subTotal * 15 / 100) + subTotal - totalDiscount).toFixed(2);
             }
         </script>
 
