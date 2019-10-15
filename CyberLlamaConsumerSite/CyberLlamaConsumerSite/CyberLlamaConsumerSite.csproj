@@ -144,7 +144,6 @@
     <Compile Include="cPart.cs" />
     <Compile Include="Controllers\PcBuildController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
-    <Compile Include="Controllers\ViewEmployeeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -152,9 +151,11 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Statistics.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\UserPositionView.cs" />
-    <Compile Include="Models\ViewModels\Employees.cs" />
+    <Compile Include="Models\ViewModels\Management.cs" />
+    <Compile Include="Models\UserStat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +211,18 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cInvoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cSold.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cStock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cLoginStat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cRegisterStat.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\CRUDService\Service.disco" />

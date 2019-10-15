@@ -14,6 +14,7 @@ namespace CyberLlamaConsumerSite.Controllers
         public ActionResult Index()
         {
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            
             if (Convert.ToInt32(Session["UserType"]) <= 2)
             {
                 var dbEmployees = sr.getAllEmployees().ToList();
@@ -28,11 +29,63 @@ namespace CyberLlamaConsumerSite.Controllers
                         Surname = y.Key.Surname
                     }).ToList();
 
-                Employees employeeView = new Employees
+                List<Statistics> partsold = sr.getpartSoldStats().Select(x => new Statistics
                 {
-                    listEmployees = employees
+                    Name = x.Name,
+                    ProductID = x.ProductID,
+                    Quantity = x.Quantity,
+                    Date = x.date
+                }).ToList();
+
+                List<Statistics> partstock = sr.getpartStockStats().Select(x => new Statistics
+                {
+                    Name = x.Name,
+                    ProductID = x.ProductID,
+                    Quantity = x.Quantity
+                }).ToList();
+
+                List<Statistics> pcsold = sr.getpcSoldStats().Select(x => new Statistics
+                {
+                    Name = x.Name,
+                    ProductID = x.ProductID,
+                    Quantity = x.Quantity,
+                   Date = x.date
+                }).ToList();
+
+                List<Statistics> pcStock = sr.getpcStockStats().Select(x => new Statistics
+                {
+                    Name = x.Name,
+                    ProductID = x.ProductID,
+                    Quantity = x.Quantity
+                }).ToList();
+
+                List<UserStat> reg = sr.getLoginStats().Select(x => new UserStat
+                {
+                    Date = x.Date,
+                    User_ID = x.User_ID
+                }).ToList();
+
+                List<UserStat> Usernew = sr.getRegisterStats().Select(x => new UserStat
+                {
+                    Date = x.Date,
+                    User_ID = x.User_ID
+                }).ToList();
+
+
+                Management view = new Management(){
+                    Employees = employees,
+                    partSold = partsold,
+                    partStock = partstock,
+                    pcSold = pcsold,
+                    pcStock = pcStock,
+                    newUser = Usernew,
+                    userReg = reg
+
                 };
-                return View(employeeView);
+               
+
+
+                return View(view);
             }
             else
             {

@@ -53,8 +53,6 @@
       <Column Name="City" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Province" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="ZIP_Code" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Client_PartCart" Member="PartCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PartCart" />
-      <Association Name="Client_PcCart" Member="PcCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PcCart" />
       <Association Name="Client_PcInvoice" Member="PcInvoices" ThisKey="User_ID" OtherKey="User_ID" Type="PcInvoice" />
       <Association Name="Client_PartInvoice" Member="PartInvoices" ThisKey="User_ID" OtherKey="User_ID" Type="PartInvoice" />
       <Association Name="LoginTable_Client" Member="LoginTable" ThisKey="User_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
@@ -237,6 +235,10 @@
       <Column Name="User_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="LoginTable_Admin" Member="Admin" ThisKey="User_ID" OtherKey="Admin_ID" Type="Admin" Cardinality="One" />
       <Association Name="LoginTable_Client" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" Cardinality="One" />
+      <Association Name="LoginTable_PartCart" Member="PartCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PartCart" />
+      <Association Name="LoginTable_PcCart" Member="PcCarts" ThisKey="User_ID" OtherKey="User_ID" Type="PcCart" />
+      <Association Name="LoginTable_loginStat" Member="loginStat" ThisKey="User_ID" OtherKey="User_Id" Type="loginStat" Cardinality="One" />
+      <Association Name="LoginTable_RegisterStat" Member="RegisterStat" ThisKey="User_ID" OtherKey="User_Id" Type="RegisterStat" Cardinality="One" />
     </Type>
   </Table>
   <Table Name="dbo.Microphone" Member="Microphones">
@@ -380,24 +382,6 @@
       <Association Name="PartsStock_OperatingSystem" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PartCart" Member="PartCarts">
-    <Type Name="PartCart">
-      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Part_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Client_PartCart" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
-      <Association Name="PartsStock_PartCart" Member="PartsStock" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PartsSold" Member="PartsSolds">
-    <Type Name="PartsSold">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Quantity_Sold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="PartsStock_PartsSold" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.PartsStock" Member="PartsStocks">
     <Type Name="PartsStock">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -422,14 +406,14 @@
       <Association Name="PartsStock_Mouse" Member="Mouse" ThisKey="ID" OtherKey="ID" Type="Mouse" Cardinality="One" />
       <Association Name="PartsStock_MousePad" Member="MousePad" ThisKey="ID" OtherKey="ID" Type="MousePad" Cardinality="One" />
       <Association Name="PartsStock_OperatingSystem" Member="OperatingSystem" ThisKey="ID" OtherKey="ID" Type="OperatingSystem" Cardinality="One" />
-      <Association Name="PartsStock_PartCart" Member="PartCarts" ThisKey="ID" OtherKey="Part_ID" Type="PartCart" />
-      <Association Name="PartsStock_PartsSold" Member="PartsSold" ThisKey="ID" OtherKey="ID" Type="PartsSold" Cardinality="One" />
       <Association Name="PartsStock_PCCase" Member="PCCase" ThisKey="ID" OtherKey="ID" Type="PCCase" Cardinality="One" />
       <Association Name="PartsStock_PSU" Member="PSU" ThisKey="ID" OtherKey="ID" Type="PSU" Cardinality="One" />
       <Association Name="PartsStock_RAM" Member="RAM" ThisKey="ID" OtherKey="ID" Type="RAM" Cardinality="One" />
       <Association Name="PartsStock_Speaker" Member="Speaker" ThisKey="ID" OtherKey="ID" Type="Speaker" Cardinality="One" />
       <Association Name="PartsStock_SSD" Member="SSD" ThisKey="ID" OtherKey="ID" Type="SSD" Cardinality="One" />
       <Association Name="PartsStock_PartInvoice" Member="PartInvoices" ThisKey="ID" OtherKey="Part_ID" Type="PartInvoice" />
+      <Association Name="PartsStock_PartsSold" Member="PartsSold" ThisKey="ID" OtherKey="ID" Type="PartsSold" Cardinality="One" />
+      <Association Name="PartsStock_PartCart" Member="PartCarts" ThisKey="ID" OtherKey="Part_ID" Type="PartCart" />
     </Type>
   </Table>
   <Table Name="dbo.Pc" Member="Pcs">
@@ -475,15 +459,6 @@
       <Association Name="SSD_Pc" Member="SSD" ThisKey="SSD_ID" OtherKey="ID" Type="SSD" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PcCart" Member="PcCarts">
-    <Type Name="PcCart">
-      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Pc_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Client_PcCart" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
-      <Association Name="PcStock_PcCart" Member="PcStock" ThisKey="Pc_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.PCCase" Member="PCCases">
     <Type Name="PCCase">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -513,14 +488,6 @@
       <Association Name="PartsStock_PCCase" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PcSold" Member="PcSolds">
-    <Type Name="PcSold">
-      <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Quantity_Sold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="PcStock_PcSold" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.PcStock" Member="PcStocks">
     <Type Name="PcStock">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -531,9 +498,9 @@
       <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Discount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="PcStock_Pc" Member="Pc" ThisKey="ID" OtherKey="PC_ID" Type="Pc" Cardinality="One" />
-      <Association Name="PcStock_PcCart" Member="PcCarts" ThisKey="ID" OtherKey="Pc_ID" Type="PcCart" />
-      <Association Name="PcStock_PcSold" Member="PcSold" ThisKey="ID" OtherKey="PC_ID" Type="PcSold" Cardinality="One" />
       <Association Name="PcStock_PcInvoice" Member="PcInvoices" ThisKey="ID" OtherKey="Pc_ID" Type="PcInvoice" />
+      <Association Name="PcStock_PcSold" Member="PcSold" ThisKey="ID" OtherKey="PC_ID" Type="PcSold" Cardinality="One" />
+      <Association Name="PcStock_PcCart" Member="PcCarts" ThisKey="ID" OtherKey="Pc_ID" Type="PcCart" />
     </Type>
   </Table>
   <Table Name="dbo.PSU" Member="PSUs">
@@ -634,6 +601,57 @@
       <Column Name="NumProducts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="PartsStock_PartInvoice" Member="PartsStock" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
       <Association Name="Client_PartInvoice" Member="Client" ThisKey="User_ID" OtherKey="User_ID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartsSold" Member="PartsSolds">
+    <Type Name="PartsSold">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity_Sold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_PartsSold" Member="PartsStock" ThisKey="ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PcSold" Member="PcSolds">
+    <Type Name="PcSold">
+      <Column Name="PC_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity_Sold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock_PcSold" Member="PcStock" ThisKey="PC_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartCart" Member="PartCarts">
+    <Type Name="PartCart">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Part_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PartsStock_PartCart" Member="PartsStock" ThisKey="Part_ID" OtherKey="ID" Type="PartsStock" IsForeignKey="true" />
+      <Association Name="LoginTable_PartCart" Member="LoginTable" ThisKey="User_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PcCart" Member="PcCarts">
+    <Type Name="PcCart">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Pc_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Qua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PcStock_PcCart" Member="PcStock" ThisKey="Pc_ID" OtherKey="ID" Type="PcStock" IsForeignKey="true" />
+      <Association Name="LoginTable_PcCart" Member="LoginTable" ThisKey="User_ID" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.loginStats" Member="loginStats">
+    <Type Name="loginStat">
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="LoginTable_loginStat" Member="LoginTable" ThisKey="User_Id" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegisterStats" Member="RegisterStats">
+    <Type Name="RegisterStat">
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="LoginTable_RegisterStat" Member="LoginTable" ThisKey="User_Id" OtherKey="User_ID" Type="LoginTable" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

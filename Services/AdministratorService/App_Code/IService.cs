@@ -233,6 +233,19 @@ public interface IService
     bool decreasePartStock(int userID);
     [OperationContract]
     bool decreasePcStock(int userID);
+    [OperationContract]
+    List<cStock> getpcStockStats();
+    [OperationContract]
+    List<cSold> getpcSoldStats();
+    [OperationContract]
+    List<cStock> getpartStockStats();
+    [OperationContract]
+    List<cSold> getpartSoldStats();
+    [OperationContract]
+    List<cLoginStat> getLoginStats();
+    [OperationContract]
+    List<cRegisterStat> getRegisterStats();
+
 
 
 }
