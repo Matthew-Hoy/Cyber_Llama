@@ -13,10 +13,18 @@
     <div class="col-md-6">
         <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
             <h3>Delivery Option:</h3>
-            <p><label style="font-size: 120%;margin:0">Address: </label> @Model.Address</p>
-            <p><label style="font-size: 120%;margin:0">City: </label> @Model.City</p>
-            <p><label style="font-size: 120%;margin:0">Province: </label> @Model.Province</p>
-            <p><label style="font-size: 120%;margin:0">Zip Code: </label> @Model.ZipCode</p>
+            @if (Model.Method == "Collect")
+            {
+                <p><label style="font-size: 120%;margin:0">Collection</label></p>
+            }
+            else
+            {
+                <p><label style="font-size: 120%;margin:0">Address: </label> @Model.Address</p>
+                <p><label style="font-size: 120%;margin:0">City: </label> @Model.City</p>
+                <p><label style="font-size: 120%;margin:0">Province: </label> @Model.Province</p>
+                <p><label style="font-size: 120%;margin:0">Zip Code: </label> @Model.ZipCode</p>
+            }
+
         </div>
     </div>
     <div class="col-md-6">

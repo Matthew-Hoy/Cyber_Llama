@@ -35,17 +35,17 @@
 
 </script>
 <div class="centerImage">
-        <div id="address" style="display:none;">
-            @using (Html.BeginForm("Invoice", "Checkout", FormMethod.Post))
-            {
-                <p><label>Address:</label>@Html.TextAreaFor(m => m.Address, new { value = Model.Address }) </p>
-                <P><label>City:</label>@Html.TextBoxFor(m => m.City, new { value = Model.City })</P>
-                <p><label>Province:</label>@Html.TextBoxFor(m => m.Province, new { value = Model.Province })</p>
-                <p><label>Zip_Code:</label>@Html.TextBoxFor(m => m.ZipCode, new {value = Model.ZipCode })</p>
-                <button type="submit"> Continue</button>
-            }
-        </div>
-        <p><button id="collect" style="margin-top:5%"> Continue</button></p>
-        </div>
+    <div id="address" style="display:none;">
+        @using (Html.BeginForm("Invoice", "Checkout", FormMethod.Post))
+        {
+            <p><label>Address:</label>@Html.TextAreaFor(m => m.Address, new { value = Model.Address }) </p>
+            <P><label>City:</label>@Html.TextBoxFor(m => m.City, new { value = Model.City })</P>
+            <p><label>Province:</label>@Html.TextBoxFor(m => m.Province, new { value = Model.Province })</p>
+            <p><label>Zip_Code:</label>@Html.TextBoxFor(m => m.ZipCode, new { value = Model.ZipCode })</p>
+            <button type="submit"> Continue</button>
+        }
+    </div>
+    <p><button type="button" onclick="location.href='@Url.Action("Invoice", "Checkout", new {delivery = @Model})'" id="collect" style="margin-top:5%"> Continue</button></p>
+</div>
 
 
