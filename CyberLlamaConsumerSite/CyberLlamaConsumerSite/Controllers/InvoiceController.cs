@@ -67,7 +67,7 @@ namespace CyberLlamaConsumerSite.Controllers
         {
             CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
             Delivery delivery = new Delivery();
-            delivery.Products = getCart(Convert.ToInt32(Session["UserID"]));
+            delivery.Products = getCart(id);
             foreach (Cart product in delivery.Products)
             {
                 delivery.SubTotal += Math.Round(product.Price * product.Quantity, 2);

@@ -134,7 +134,20 @@ namespace CyberLlamaConsumerSite.Controllers
             CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
             if (Session["UserID"] != null)
             {
-                
+                //add to sold
+                bool sold = sc.addToPartSold(Convert.ToInt32(Session["UserID"]));
+                sold = sc.addToPcSold(Convert.ToInt32(Session["UserID"]));
+                //add to deliveries
+
+                //add to invoices
+                bool added = sc.addToPartInvoice(Convert.ToInt32(Session["UserID"]));
+                added = sc.addToPcInvoice(Convert.ToInt32(Session["UserID"]));
+                //REMOVE FROM stock
+                bool removed = sc.decreasePartStock(Convert.ToInt32(Session["UserID"]));
+                removed = sc.decreasePcStock(Convert.ToInt32(Session["UserID"]));
+                //clear cart
+                bool cleared = sc.clearPartCart(Convert.ToInt32(Session["UserID"]));
+                cleared = sc.clearPcCart(Convert.ToInt32(Session["UserID"]));  
             }
             else
             {

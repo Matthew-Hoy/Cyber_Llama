@@ -38,6 +38,30 @@
   <wsdl:message name="IService_getPartInvoice_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPartInvoiceResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_addToPartSold_InputMessage">
+    <wsdl:part name="parameters" element="tns:addToPartSold" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPartSold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addToPartSoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPcSold_InputMessage">
+    <wsdl:part name="parameters" element="tns:addToPcSold" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPcSold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addToPcSoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_decreasePartStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:decreasePartStock" />
+  </wsdl:message>
+  <wsdl:message name="IService_decreasePartStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:decreasePartStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_decreasePcStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:decreasePcStock" />
+  </wsdl:message>
+  <wsdl:message name="IService_decreasePcStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:decreasePcStockResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
@@ -383,6 +407,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getPartInvoice" message="tns:IService_getPartInvoice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getPartInvoiceResponse" message="tns:IService_getPartInvoice_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="addToPartSold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPartSold" message="tns:IService_addToPartSold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPartSoldResponse" message="tns:IService_addToPartSold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addToPcSold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPcSold" message="tns:IService_addToPcSold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPcSoldResponse" message="tns:IService_addToPcSold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="decreasePartStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/decreasePartStock" message="tns:IService_decreasePartStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/decreasePartStockResponse" message="tns:IService_decreasePartStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="decreasePcStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/decreasePcStock" message="tns:IService_decreasePcStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/decreasePcStockResponse" message="tns:IService_decreasePcStock_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/LoginResponse" message="tns:IService_Login_OutputMessage" />
@@ -640,6 +680,42 @@
     </wsdl:operation>
     <wsdl:operation name="getPartInvoice">
       <soap:operation soapAction="http://tempuri.org/IService/getPartInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addToPartSold">
+      <soap:operation soapAction="http://tempuri.org/IService/addToPartSold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addToPcSold">
+      <soap:operation soapAction="http://tempuri.org/IService/addToPcSold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decreasePartStock">
+      <soap:operation soapAction="http://tempuri.org/IService/decreasePartStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decreasePcStock">
+      <soap:operation soapAction="http://tempuri.org/IService/decreasePcStock" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -7297,6 +7297,30 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPartInvoice", ReplyAction="http://tempuri.org/IService/getPartInvoiceResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cAllCart[]> getPartInvoiceAsync(int InvoiceID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartSold", ReplyAction="http://tempuri.org/IService/addToPartSoldResponse")]
+        bool addToPartSold(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartSold", ReplyAction="http://tempuri.org/IService/addToPartSoldResponse")]
+        System.Threading.Tasks.Task<bool> addToPartSoldAsync(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcSold", ReplyAction="http://tempuri.org/IService/addToPcSoldResponse")]
+        bool addToPcSold(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcSold", ReplyAction="http://tempuri.org/IService/addToPcSoldResponse")]
+        System.Threading.Tasks.Task<bool> addToPcSoldAsync(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePartStock", ReplyAction="http://tempuri.org/IService/decreasePartStockResponse")]
+        bool decreasePartStock(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePartStock", ReplyAction="http://tempuri.org/IService/decreasePartStockResponse")]
+        System.Threading.Tasks.Task<bool> decreasePartStockAsync(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePcStock", ReplyAction="http://tempuri.org/IService/decreasePcStockResponse")]
+        bool decreasePcStock(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePcStock", ReplyAction="http://tempuri.org/IService/decreasePcStockResponse")]
+        System.Threading.Tasks.Task<bool> decreasePcStockAsync(int userID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
         string Login(string strUserName, string strPassword);
         
@@ -7731,6 +7755,38 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cAllCart[]> getPartInvoiceAsync(int InvoiceID) {
             return base.Channel.getPartInvoiceAsync(InvoiceID);
+        }
+        
+        public bool addToPartSold(int UserID) {
+            return base.Channel.addToPartSold(UserID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addToPartSoldAsync(int UserID) {
+            return base.Channel.addToPartSoldAsync(UserID);
+        }
+        
+        public bool addToPcSold(int UserID) {
+            return base.Channel.addToPcSold(UserID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addToPcSoldAsync(int UserID) {
+            return base.Channel.addToPcSoldAsync(UserID);
+        }
+        
+        public bool decreasePartStock(int userID) {
+            return base.Channel.decreasePartStock(userID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> decreasePartStockAsync(int userID) {
+            return base.Channel.decreasePartStockAsync(userID);
+        }
+        
+        public bool decreasePcStock(int userID) {
+            return base.Channel.decreasePcStock(userID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> decreasePcStockAsync(int userID) {
+            return base.Channel.decreasePcStockAsync(userID);
         }
         
         public string Login(string strUserName, string strPassword) {

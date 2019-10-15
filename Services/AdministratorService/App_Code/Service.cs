@@ -2945,4 +2945,150 @@ public class Service : IService
 
         return partCart;
     }
+
+
+    public bool addToPartSold(int UserID)
+    {
+        List<cPartSold> partSold = (from part in db.PartsStocks
+                               join cart in db.PartCarts.Where(x => x.User_ID.Equals(UserID))
+                               on part.ID equals cart.Part_ID
+                               select new cPartSold { 
+                                   Quantity = cart.Qua,
+                                   Model = part.Model,
+                                   Type = part.Type,
+                                   pc_ID = part.ID
+                               }).ToList();
+        PartsSold current;
+        foreach (cPartSold item in partSold)
+        {
+            current = db.PartsSolds.Where(x => x.ID.Equals(item.pc_ID)).Select(y => y).FirstOrDefault();
+            if (current == null)
+            {
+                PartsSold dbSold = new PartsSold
+               {
+                   ID = item.pc_ID,
+                   Model = item.Model,
+                    Quantity_Sold = item.Quantity,
+                   Type = item.Type
+               };
+
+                db.PartsSolds.InsertOnSubmit(dbSold);
+            }
+            else
+            {
+                current.Quantity_Sold += item.Quantity;
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            //catch exceptions
+            catch (Exception ex)
+            {
+                //error adding into database
+                ex.GetBaseException();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public bool addToPcSold(int UserID)
+    {
+        List<cPcSold> pcSold = (from part in db.PcStocks
+                                    join cart in db.PcCarts.Where(x => x.User_ID.Equals(UserID))
+                                    on part.ID equals cart.Pc_ID
+                                    select new cPcSold
+                                    {
+                                        Quantity = cart.Qua,
+                                        Type = part.PC_Type,
+                                        pc_ID = part.ID
+                                    }).ToList();
+        PcSold current;
+        foreach (cPcSold item in pcSold)
+        {
+            current = db.PcSolds.Where(x => x.PC_ID.Equals(item.pc_ID)).Select(y => y).FirstOrDefault();
+            if (current == null)
+            {
+                PcSold dbSold = new PcSold
+                {
+                    PC_ID = item.pc_ID,
+                    Quantity_Sold = item.Quantity,
+                    Type = item.Type
+                };
+                db.PcSolds.InsertOnSubmit(dbSold);
+            }
+            else
+            {
+                current.Quantity_Sold += item.Quantity;
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            //catch exceptions
+            catch (Exception ex)
+            {
+                //error adding into database
+                ex.GetBaseException();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public bool decreasePartStock(int userID)
+    {
+        List<cAllCart> cart =  getCartItems(userID);
+        PartsStock pStock;
+        foreach (cAllCart item in cart)
+        {
+            pStock = db.PartsStocks.Where(x => x.ID.Equals(item.part_id)).Select(y => y).FirstOrDefault();
+            if(pStock != null)
+            {
+                pStock.Quantity -= item.qua;
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            //catch exceptions
+            catch (Exception ex)
+            {
+                //error adding into database
+                ex.GetBaseException();
+                return false;
+            }
+
+        }
+        return true;
+       
+        
+    }
+
+   public bool decreasePcStock(int userID)
+   {
+        List<cAllCart> cart = getCartItems(userID);
+        PcStock pStock;
+        foreach (cAllCart item in cart)
+        {
+            pStock = db.PcStocks.Where(x => x.ID.Equals(item.part_id)).Select(y => y).FirstOrDefault();
+            if (pStock != null)
+            {
+                pStock.Quantity -= item.qua;
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            //catch exceptions
+            catch (Exception ex)
+            {
+                //error adding into database
+                ex.GetBaseException();
+                return false;
+            }
+        }
+        return true;
+    }
 }

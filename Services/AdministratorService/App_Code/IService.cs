@@ -215,6 +215,14 @@ public interface IService
     List<cAllCart> getpcinvoice(int InvoiceID);
     [OperationContract]
     List<cAllCart> getPartInvoice(int InvoiceID);
+    [OperationContract]
+    bool addToPartSold(int UserID);
+    [OperationContract]
+    bool addToPcSold(int UserID);
+    [OperationContract]
+    bool decreasePartStock(int userID);
+    [OperationContract]
+    bool decreasePcStock(int userID);
 
 
 }
