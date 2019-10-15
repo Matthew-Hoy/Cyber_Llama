@@ -141,6 +141,7 @@
     <Compile Include="Controllers\PoliciesAndReportingController.cs" />
     <Compile Include="Controllers\PrivacyAndTermsController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="cPart.cs" />
     <Compile Include="Controllers\PcBuildController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
@@ -308,6 +309,7 @@
     <Content Include="Images\LoginIcon.png" />
     <Content Include="Images\ManagerIcon.png" />
     <Content Include="Images\moneyIcon.png" />
+    <Content Include="Images\ProfileIcon.png" />
     <Content Include="Images\RegisterIcon.png" />
     <Content Include="Images\shoppingCartIcon.png" />
     <Content Include="Images\signUpIcon.png" />
@@ -414,6 +416,7 @@
     <Content Include="Views\Checkout\CartItem.cshtml" />
     <Content Include="Views\Checkout\Index.cshtml" />
     <Content Include="Views\Checkout\Checkout.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

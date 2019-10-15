@@ -157,6 +157,7 @@
     <Content Include="Images\JumboTron-Background.jpg" />
     <Content Include="Images\llama.jpg" />
     <Content Include="Images\llama.png" />
+    <Content Include="Images\ProfileIcon.png" />
     <Content Include="Images\shoppingCartIcon.png" />
     <Content Include="Images\signUpIcon.png" />
     <Content Include="Images\SM.png" />

@@ -73,7 +73,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Fan" })>Case Fans</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item"href=@Url.Action("Index", "ProductPage", new { id = "Monitor" })>Monitors</a>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Monitor" })>Monitors</a>
                         <div class="dropdown-divider"></div>
                     </div>
                 </li>
@@ -173,6 +173,13 @@
                     <a href=@Url.Action("Index", "Register")><img src="~/Images/RegisterIcon.png" class="MenuIcon" /></a>
                     <a class="nav-link" href=@Url.Action("Index", "Register")>
                         Register
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href=@Url.Action("Index", "Profile")><img src="~/Images/ProfileIcon.png" class="MenuIcon" /></a>
+                    <a class="nav-link" href=@Url.Action("Index", "Profile")>
+                        Profile
                     </a>
                 </li>
 
