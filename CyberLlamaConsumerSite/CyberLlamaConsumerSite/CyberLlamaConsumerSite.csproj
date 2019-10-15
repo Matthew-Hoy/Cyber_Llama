@@ -296,6 +296,7 @@
     <Content Include="Images\faqIcon.png" />
     <Content Include="Images\homeIcon.png" />
     <Content Include="Images\insta.png" />
+    <Content Include="Images\Invoice_Icon.png" />
     <Content Include="Images\JumboTron-Background.jpg" />
     <Content Include="Images\llama.jpg" />
     <Content Include="Images\llama.png" />
