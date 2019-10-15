@@ -1,70 +1,433 @@
-﻿@using CyberLlamaConsumerSite.CRUDService;
+﻿@using CyberLlamaConsumerSite.ServiceReference1;
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-
+    ViewBag.Title = "Build Your own PC";
     ServiceClient sc = new ServiceClient();
+    /*Session["Case"] = 23;
+    Session["Mobo"] = 15;
+    Session["CPU"] = 7;
+    Session["Cooler"] = 6;
+    Session["RAM"] = 19;
+    Session["GPU"] = 10;
+    Session["PSU"] = 18;
+    Session["Fan"] = 32;
+    Session["HDD"] = 14;
+    Session["SSD"] = "None";*/
 
-    <h1 style="text-align:center">Build Your own PC</h1>
-
-    <p style="font-size:200%">1. Case</p>
-    dynamic cases = sc.getAllPCInfo("Case");
-    foreach (c_ProductPageInfo p in cases)
+    <h2>1. Case</h2>
+    if (Session["Case"] == null)
     {
-        String imageLink = p.image;
-        String model = p.model;
-        int price = p.price;
-        int quantity = p.Quantity;
+        //Show all Cases
+        dynamic list = sc.getAllParts("Case");
+        foreach (c_ProductPageInfo c in list)
+        {
+            String imageLink = c.image;
+            String model = c.model;
+            Double price = c.price;
+            int quantity = c.Quantity;  // <p><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = p.ID })>Add to Cart</button></p>
 
-        <div class="card">
-            <img src="@(imageLink)" alt="Ram" style="width:100%">
-            <h1>@(p.type) @(p.ID)</h1>
+            <div class="card" style="width:20%; height:20%">
+                <img src="@(imageLink)" alt="Ram" style="width:100%; height:30%">
+                <h1>@(model)</h1>
+                <p class="price">R@(price)</p>
+                <p>Quantity: @(quantity)</p>
+                <p><button onClick="SelectCase(c.ID)"> Select Case</button></p>
+            </div>
+        }
+
+    }
+    if (Session["Case"] != null)
+    {
+        c_ProductPageInfo c = sc.getPart(Convert.ToInt32(Session["Case"]));
+        String imageLink = c.image;
+        String model = c.model;
+        Double price = c.price;
+        int quantity = c.Quantity;
+
+        <div class="card" style="width:20%; height:20%">
+            <img src="@(imageLink)" alt="Ram" style="width:100%; height:30%">
             <h1>@(model)</h1>
             <p class="price">R@(price)</p>
             <p>Quantity: @(quantity)</p>
-            <p><button id="selectCase" runat="server" onclick="selectCase()">Select Case</button></p>
         </div>
-    }
 
+        <h2>2. Motherboard</h2>
+        if (Session["Mobo"] == null)
+        {
+            //Show all Motherboards
+            dynamic list2 = sc.getMotherboardForCase(c.ID);
+            foreach (c_ProductPageInfo m in list2)
+            {
+                String imageLink2 = m.image;
+                String model2 = m.model;
+                Double price2 = m.price;
+                int quantity2 = m.Quantity;
 
-    <div id="case">
-        <p style="font-size:200%">2. Motherboard</p>
-        <div id="SelectedMobo" runat="server"></div>
-    </div>
-
-    <div id="case">
-        <p style="font-size:200%">3. CPU</p>
-        <div id="SelectedCPU" runat="server"></div>
-    </div>
-
-    <div id="case">
-        <p style="font-size:200%">4. RAM</p>
-        <div id="SelectedRAM" runat="server"></div>
-    </div>
-
-    <div id="case">
-        <p style="font-size:200%">5. GPU</p>
-        <div id="SelectedGPU" runat="server"></div>
-    </div>
-
-    <div id="case">
-        <p style="font-size:200%">6. PSU</p>
-        <div id="SelectedPSU" runat="server"></div>
-    </div>
-
-    <div id="case">
-        <p style="font-size:200%">Other</p>
-        <div id="SelectedOther" runat="server"></div>
-    </div>
-
-    <script>
-        function selectCase() {
-
+                <div class="card" style="width:20%; height:20%">
+                    <img src="@(imageLink2)" alt="Ram" style="width:100%; height:30%">
+                    <h1>@(model2)</h1>
+                    <p class="price">R@(price2)</p>
+                    <p>Quantity: @(quantity2)</p>
+                    <p><button href=@Url.Action("SelectCMobo", new { SelectedMobo = m })> Select Motherboard</button></p>
+                </div>
+            }
         }
 
-    </script>
-}
-@{
+        if (Session["Mobo"] != null)
+        {
+            c_ProductPageInfo c2 = sc.getPart(Convert.ToInt32(Session["Mobo"]));
+            String imageLink2 = c2.image;
+            String model2 = c2.model;
+            Double price2 = c2.price;
+            int quantity2 = c2.Quantity;
+
+            <div class="card" style="width:20%; height:20%">
+                <img src="@(imageLink2)" alt="Ram" style="width:100%; height:30%">
+                <h1>@(model2)</h1>
+                <p class="price">R@(price2)</p>
+                <p>Quantity: @(quantity2)</p>
+            </div>
+
+            <h2>3. CPU</h2>
+            if (Session["CPU"] == null)
+            {
+                //Show all CPus
+                dynamic list3 = sc.getCPUForMotherboard(c2.ID);
+                foreach (c_ProductPageInfo cpu in list3)
+                {
+                    String imageLink3 = cpu.image;
+                    String model3 = cpu.model;
+                    Double price3 = cpu.price;
+                    int quantity3 = cpu.Quantity;
+
+                    <div class="card" style="width:20%; height:20%">
+                        <img src="@(imageLink3)" alt="Ram" style="width:100%; height:30%">
+                        <h1>@(model3)</h1>
+                        <p class="price">R@(price3)</p>
+                        <p>Quantity: @(quantity3)</p>
+                        <p><button href=@Url.Action("SelectCPU", new { SelectedCPU = cpu })> Select CPU</button></p>
+                    </div>
+                }
+            }
+
+            if (Session["CPU"] != null)
+            {
+                c_ProductPageInfo c3 = sc.getPart(Convert.ToInt32(Session["CPU"]));
+                String imageLink3 = c3.image;
+                String model3 = c3.model;
+                Double price3 = c3.price;
+                int quantity3 = c3.Quantity;
+
+                <div class="card" style="width:20%; height:20%">
+                    <img src="@(imageLink3)" alt="Ram" style="width:100%; height:30%">
+                    <h1>@(model3)</h1>
+                    <p class="price">R@(price3)</p>
+                    <p>Quantity: @(quantity3)</p>
+                </div>
+
+                <h2>4. Cooler</h2>
+                if (Session["Cooler"] == null)
+                {
+                    //Show all Air Coolers
+                    dynamic list4 = sc.getAirCoolersForCPU(c3.ID);
+                    foreach (c_ProductPageInfo c4 in list4)
+                    {
+                        String imageLink4 = c4.image;
+                        String model4 = c4.model;
+                        Double price4 = c4.price;
+                        int quantity4 = c4.Quantity;
+
+                        <div class="card" style="width:20%; height:20%">
+                            <img src="@(imageLink4)" alt="Ram" style="width:100%; height:30%">
+                            <h1>@(model4)</h1>
+                            <p class="price">R@(price4)</p>
+                            <p>Quantity: @(quantity4)</p>
+                            <p><button href=@Url.Action("SelectAC", new { SelectedAC = c4 })> Select Air Cooler</button></p>
+                        </div>
+                    }
+
+                    //Show all Liquid Coolers
+                    dynamic list5 = sc.getLiquidCoolersForCPU(c3.ID);
+                    foreach (c_ProductPageInfo c5 in list5)
+                    {
+                        String imageLink5 = c5.image;
+                        String model5 = c5.model;
+                        Double price5 = c5.price;
+                        int quantity5 = c5.Quantity;
+
+                        <div class="card" style="width:20%; height:20%">
+                            <img src="@(imageLink5)" alt="Ram" style="width:100%; height:30%">
+                            <h1>@(model5)</h1>
+                            <p class="price">R@(price5)</p>
+                            <p>Quantity: @(quantity5)</p>
+                            <p><button href=@Url.Action("SelectLC", new { SelectedLC = c5 })> Select Liquid Cooler</button></p>
+                        </div>
+                    }
+                }
+                if (Session["Cooler"] != null)
+                {
+                    c_ProductPageInfo cooler = sc.getPart(Convert.ToInt32(Session["Cooler"]));
+                    String imageLink5 = cooler.image;
+                    String model5 = cooler.model;
+                    Double price5 = cooler.price;
+                    int quantity5 = cooler.Quantity;
+
+                    <div class="card" style="width:20%; height:20%">
+                        <img src="@(imageLink5)" alt="Ram" style="width:100%; height:30%">
+                        <h1>@(model5)</h1>
+                        <p class="price">R@(price5)</p>
+                        <p>Quantity: @(quantity5)</p>
+                    </div>
+
+                    <h2>5. RAM</h2>
+                    if (Session["RAM"] == null)
+                    {
+                        //Show all RAM
+                        dynamic list6 = sc.getRAMForMotherboard(c2.ID);
+                        foreach (c_ProductPageInfo c6 in list6)
+                        {
+                            String imageLink6 = c6.image;
+                            String model6 = c6.model;
+                            Double price6 = c6.price;
+                            int quantity6 = c6.Quantity;
+
+                            <div class="card" style="width:20%; height:20%">
+                                <img src="@(imageLink6)" alt="Ram" style="width:100%; height:30%">
+                                <h1>@(model6)</h1>
+                                <p class="price">R@(price6)</p>
+                                <p>Quantity: @(quantity6)</p>
+                                <p><button href=@Url.Action("SelectRAM", new { SelectedLC = c6 })> Select RAM</button></p>
+                            </div>
+                        }
+                    }
+                    if (Session["RAM"] != null)
+                    {
+                        c_ProductPageInfo ram = sc.getPart(Convert.ToInt32(Session["RAM"]));
+                        String imageLink6 = ram.image;
+                        String model6 = ram.model;
+                        Double price6 = ram.price;
+                        int quantity6 = ram.Quantity;
+
+                        <div class="card" style="width:20%; height:20%">
+                            <img src="@(imageLink6)" alt="Ram" style="width:100%; height:30%">
+                            <h1>@(model6)</h1>
+                            <p class="price">R@(price6)</p>
+                            <p>Quantity: @(quantity6)</p>
+                        </div>
+
+                        <h2>6. GPU</h2>
+                        if (Session["GPU"] == null)
+                        {
+                            //Show all GPU
+                            dynamic list7 = sc.getAllParts("GPU");
+                            foreach (c_ProductPageInfo c7 in list7)
+                            {
+                                String imageLink7 = c7.image;
+                                String model7 = c7.model;
+                                Double price7 = c7.price;
+                                int quantity7 = c7.Quantity;
+
+                                <div class="card" style="width:20%; height:20%">
+                                    <img src="@(imageLink7)" alt="Ram" style="width:100%; height:30%">
+                                    <h1>@(model7)</h1>
+                                    <p class="price">R@(price7)</p>
+                                    <p>Quantity: @(quantity7)</p>
+                                    <p><button href=@Url.Action("SelectGPU", new { SelectedGPU = c7 })> Select GPU</button></p>
+                                </div>
+                            }
+                        }
+                        if (Session["GPU"] != null)
+                        {
+                            c_ProductPageInfo gpu = sc.getPart(Convert.ToInt32(Session["GPU"]));
+                            String imageLink7 = gpu.image;
+                            String model7 = gpu.model;
+                            Double price7 = gpu.price;
+                            int quantity7 = gpu.Quantity;
+
+                            <div class="card" style="width:20%; height:20%">
+                                <img src="@(imageLink7)" alt="Ram" style="width:100%; height:30%">
+                                <h1>@(model7)</h1>
+                                <p class="price">R@(price7)</p>
+                                <p>Quantity: @(quantity7)</p>
+                            </div>
+
+                            <h2>7. PSU</h2>
+                            if (Session["PSU"] == null)
+                            {
+                                //Show all PSU
+                                dynamic list8 = sc.getAllParts("PSU");
+                                foreach (c_ProductPageInfo c8 in list8)
+                                {
+                                    String imageLink8 = c8.image;
+                                    String model8 = c8.model;
+                                    Double price8 = c8.price;
+                                    int quantity8 = c8.Quantity;
+
+                                    <div class="card" style="width:20%; height:20%">
+                                        <img src="@(imageLink8)" alt="Ram" style="width:100%; height:30%">
+                                        <h1>@(model8)</h1>
+                                        <p class="price">R@(price8)</p>
+                                        <p>Quantity: @(quantity8)</p>
+                                        <p><button href=@Url.Action("SelectPSU", new { SelectedPSU = c8 })> Select GPU</button></p>
+                                    </div>
+                                }
+                            }
+                            if (Session["PSU"] != null)
+                            {
+                                c_ProductPageInfo psu = sc.getPart(Convert.ToInt32(Session["PSU"]));
+                                String imageLink8 = psu.image;
+                                String model8 = psu.model;
+                                Double price8 = psu.price;
+                                int quantity8 = psu.Quantity;
+
+                                <div class="card" style="width:20%; height:20%">
+                                    <img src="@(imageLink8)" alt="Ram" style="width:100%; height:30%">
+                                    <h1>@(model8)</h1>
+                                    <p class="price">R@(price8)</p>
+                                    <p>Quantity: @(quantity8)</p>
+                                </div>
+
+                                <h2>8. Fans</h2>
+                                if (Session["Fan"] == null)
+                                {
+                                    //Show all Fans
+                                    dynamic list9 = sc.getAllParts("Fan");
+                                    foreach (c_ProductPageInfo c9 in list9)
+                                    {
+                                        String imageLink9 = c9.image;
+                                        String model9 = c9.model;
+                                        Double price9 = c9.price;
+                                        int quantity9 = c9.Quantity;
+
+                                        <div class="card" style="width:20%; height:20%">
+                                            <img src="@(imageLink9)" alt="Ram" style="width:100%; height:30%">
+                                            <h1>@(model9)</h1>
+                                            <p class="price">R@(price9)</p>
+                                            <p>Quantity: @(quantity9)</p>
+                                            <p><button href=@Url.Action("SelectFans", new { SelectedFans = c9 })> Select Fan</button></p>
+                                        </div>
+                                    }
+                                }
+                                if (Session["Fan"] != null)
+                                {
+                                    c_ProductPageInfo fans = sc.getPart(Convert.ToInt32(Session["Fan"]));
+                                    String imageLink9 = fans.image;
+                                    String model9 = fans.model;
+                                    Double price9 = fans.price;
+                                    int quantity9 = fans.Quantity;
+
+                                    <div class="card" style="width:20%; height:20%">
+                                        <img src="@(imageLink9)" alt="Ram" style="width:100%; height:30%">
+                                        <h1>@(model9)</h1>
+                                        <p class="price">R@(price9)</p>
+                                        <p>Quantity: @(quantity9)</p>
+                                    </div>
+
+                                    <h2>9. Hard Drive</h2>
+                                    if (Session["HDD"] == null)
+                                    {
+                                        //Show all Fans
+                                        dynamic list10 = sc.getAllParts("HDD");
+                                        foreach (c_ProductPageInfo c10 in list10)
+                                        {
+                                            String imageLink10 = c10.image;
+                                            String model10 = c10.model;
+                                            Double price10 = c10.price;
+                                            int quantity10 = c10.Quantity;
+
+                                            <div class="card" style="width:20%; height:20%">
+                                                <img src="@(imageLink10)" alt="Ram" style="width:100%; height:30%">
+                                                <h1>@(model10)</h1>
+                                                <p class="price">R@(price10)</p>
+                                                <p>Quantity: @(quantity10)</p>
+                                                <p><button href=@Url.Action("SelectHDD", new { SelectedHDD = c10 })> Select HDD</button></p>
+                                            </div>
+                                        }
+                                    }
+                                    if (Session["HDD"] != null)
+                                    {
+                                        c_ProductPageInfo hdd = sc.getPart(Convert.ToInt32(Session["HDD"]));
+                                        String imageLink10 = hdd.image;
+                                        String model10 = hdd.model;
+                                        Double price10 = hdd.price;
+                                        int quantity10 = hdd.Quantity;
+
+                                        <div class="card" style="width:20%; height:20%">
+                                            <img src="@(imageLink10)" alt="Ram" style="width:100%; height:30%">
+                                            <h1>@(model10)</h1>
+                                            <p class="price">R@(price10)</p>
+                                            <p>Quantity: @(quantity10)</p>
+                                        </div>
+
+                                        <h2>10. SSD</h2>
+                                        if (Session["SSD"].Equals("None"))
+                                        {
+                                            <h3>Not supported by Motherboard</h3>
+                                        }
+                                        else if (Session["SSD"] == null)
+                                        {
+                                            //Show all Fans
+                                            dynamic list11 = sc.getAllParts("SSD");
+                                            foreach (c_ProductPageInfo c11 in list11)
+                                            {
+                                                String imageLink11 = c11.image;
+                                                String model11 = c11.model;
+                                                Double price11 = c11.price;
+                                                int quantity11 = c11.Quantity;
+
+                                                <div class="card" style="width:20%; height:20%">
+                                                    <img src="@(imageLink11)" alt="Ram" style="width:100%; height:30%">
+                                                    <h1>@(model11)</h1>
+                                                    <p class="price">R@(price11)</p>
+                                                    <p>Quantity: @(quantity11)</p>
+                                                    <p><button href=@Url.Action("SelectSSD", new { SelectedSSD = c11 })> Select SSD</button></p>
+                                                </div>
+                                            }
+                                        }
+                                        else if (Session["SSD"] != null)
+                                        {
+                                            c_ProductPageInfo ssd = sc.getPart(Convert.ToInt32(Session["SSD"]));
+                                            String imageLink11 = ssd.image;
+                                            String model11 = ssd.model;
+                                            Double price11 = ssd.price;
+                                            int quantity11 = ssd.Quantity;
+
+                                            <div class="card" style="width:20%; height:20%">
+                                                <img src="@(imageLink11)" alt="Ram" style="width:100%; height:30%">
+                                                <h1>@(model11)</h1>
+                                                <p class="price">R@(price11)</p>
+                                                <p>Quantity: @(quantity11)</p>
+                                            </div>
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    void SelectCase(int ID);
+    {
+        Session["Case"] = ID;
+        //location.href = '@Url.Action("Index", "PcBuild")';
+    }
 
 }
+@{ 
+
+    int Add(int x, int y)
+    {
+        return x + y;
+    }
+}
+
+<script>
+    function SelectCase(int) {
+        Session["Case"] = int;
+        location.href = '@Url.Action("Index", "PcBuild")';
+    };
+
+</script>
 
