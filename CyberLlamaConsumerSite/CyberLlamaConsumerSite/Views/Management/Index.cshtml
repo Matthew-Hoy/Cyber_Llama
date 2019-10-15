@@ -57,6 +57,55 @@
             document.getElementById("pcStockQua " + i).innerHTML = pcStock[i].Quantity;
         }
     }
+    //Thew Serting og the Sold Items
+    function sortSoldbyQua() {
+        console.log("Hello");
+        var partsold = @Html.Raw(Json.Encode(Model.partSold.OrderBy(x => x.Quantity).Select(y => y)));
+        for (var i = 0; i < partsold.length; i++) {
+            document.getElementById("partsoldID " + i).innerHTML = partsold[i].ProductID;
+            document.getElementById("partsoldName " + i).innerHTML = partsold[i].Name;
+            document.getElementById("partSoldQua " + i).innerHTML = partsold[i].Quantity;
+        }
+        var pcSold = @Html.Raw(Json.Encode(Model.pcSold.OrderBy(x => x.Quantity).Select(y => y)));
+        for (var i = 0; i < pcSold.length; i++) {
+            document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
+            document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
+            document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+        }
+    }
+
+    function sortSoldbyID() {
+        console.log("Hello");
+        var partsold = @Html.Raw(Json.Encode(Model.partSold.OrderBy(x => x.ProductID).Select(y => y)));
+        for (var i = 0; i < partsold.length; i++) {
+            document.getElementById("partsoldID " + i).innerHTML = partsold[i].ProductID;
+            document.getElementById("partsoldName " + i).innerHTML = partsold[i].Name;
+            document.getElementById("partSoldQua " + i).innerHTML = partsold[i].Quantity;
+        }
+        var pcSold = @Html.Raw(Json.Encode(Model.pcSold.OrderBy(x => x.ProductID).Select(y => y)));
+        for (var i = 0; i < pcSold.length; i++) {
+            document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
+            document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
+            document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+        }
+    }
+
+    function sortSoldbyName() {
+        console.log("Hello");
+        var partsold = @Html.Raw(Json.Encode(Model.partSold.OrderBy(x => x.Name.Trim()).Select(y => y)));
+        for (var i = 0; i < partsold.length; i++) {
+            document.getElementById("partsoldID " + i).innerHTML = partsold[i].ProductID;
+            document.getElementById("partsoldName " + i).innerHTML = partsold[i].Name;
+            document.getElementById("partSoldQua " + i).innerHTML = partsold[i].Quantity;
+        }
+        var pcSold = @Html.Raw(Json.Encode(Model.pcSold.OrderBy(x => x.Name.Trim()).Select(y => y)));
+        for (var i = 0; i < pcSold.length; i++) {
+            document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
+            document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
+            document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+        }
+    }
+    
 </script>
 
 
@@ -186,29 +235,30 @@
     <div class="col-md-4">
         <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
             <h4>
-                Total Sold Items
+                Part Sold Items
 
             </h4>
-            <select style="width:70%;margin-bottom:10px;">
-                <option class="today">today</option>
-                <option class="this Month">this Month</option>
-                <option class="this Year">this Year</option>
-                <option class="begining">the Beginning of time</option>
-            </select>
             <table class="data">
+                <thead class="data">
                 <tr class="data">
                     <th class="data">Product ID</th>
                     <th class="data">Product Name</th>
                     <th class="data">Number Sold</th>
                 </tr>
-                <tr class="data">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                </thead>
+                <tbody class="data">
+                    @for (int i = 0; i < Model.partSold.Count(); i++)
+                    {
+                        <tr>
+                            <td id="partsoldID @i" class="data">@Model.partSold[i].ProductID</td>
+                            <td id="partsoldName @i" class="data">@Model.partSold[i].Name</td>
+                            <td id="partSoldQua @i" class="data">@Model.partSold[i].Quantity</td>
+                        </tr>
+                    }
+                </tbody>
             </table>
             <p>
-                <b>Highest Selling Item: </b>
+                <b>Highest Selling Item: @Model.partSold.OrderByDescending(x => x.Quantity).Select(y => y.Name).FirstOrDefault()</b>
 
             </p>
         </div>
@@ -216,33 +266,46 @@
     <div class="col-md-4">
         <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
             <h4>Sort By:</h4>
-            <button>Product ID</button>
-            <button>Product Name</button>
-            <button>Quantity</button>
+            <button onclick="sortSoldbyID()">Product ID</button>
+            <button onclick="sortSoldbyName()">Product Name</button>
+            <button onclick="sortSoldbyQua()">Quantity</button>
         </div>
+
+        <select style="width:70%;margin-bottom:10px;margin-top:15px">
+            <option class="today">today</option>
+            <option class="this Month">this Month</option>
+            <option class="this Year">this Year</option>
+            <option class="begining">the Beginning of time</option>
+        </select>
     </div>
     <div class="col-md-4">
         <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
             <h4>
-                Pages Visited
-
+                PC Sold Items
             </h4>
-            <select style="width:70%;margin-bottom:10px;">
-                <option class="today">today</option>
-                <option class="this Month">this Month</option>
-                <option class="this Year">this Year</option>
-                <option class="begining">the Beginning of time</option>
-            </select>
             <table class="data">
-                <tr class="data">
-                    <th class="data">Page</th>
-                    <th class="data">Number of People</th>
-                </tr>
-                <tr class="data">
-                    <td></td>
-                    <td></td>
-                </tr>
+                <thead class="data">
+                    <tr class="data">
+                        <th class="data">Product ID</th>
+                        <th class="data">Product Name</th>
+                        <th class="data">Number Sold</th>
+                    </tr>
+                </thead>
+                <tbody class="data">
+                    @for (int i = 0; i < Model.pcSold.Count(); i++)
+                    {
+                        <tr>
+                            <td id="pcsoldID @i" class="data">@Model.pcSold[i].ProductID</td>
+                            <td id="pcsoldName @i" class="data">@Model.pcSold[i].Name</td>
+                            <td id="pcsoldQua @i" class="data">@Model.pcSold[i].Quantity</td>
+                        </tr>
+                    }
+                </tbody>
             </table>
+            <p>
+                <b>Highest Selling Item: @Model.pcSold.OrderByDescending(x => x.Quantity).Select(y => y.Name).FirstOrDefault() </b>
+
+            </p>
         </div>
     </div>
 </div>
