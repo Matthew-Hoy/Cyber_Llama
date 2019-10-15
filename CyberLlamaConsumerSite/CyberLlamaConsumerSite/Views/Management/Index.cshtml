@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model CyberLlamaConsumerSite.Models.ViewModels.Employees
+
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Management</h1>
+<hr color="white" />
+
+<table class="data">
+    <thead class="data">
+        <tr>
+            <th class="data">Employee ID</th>
+            <th class="data">Position</th>
+            <th class="data">First Name</th>
+            <th class="data">Surname</th>
+            <th class="data">E-Mail</th>
+            <th class="data">Phone Number</th>
+            <th class="data">Remove</th>
+            <th class="data">Edit</th>
+        </tr>
+    </thead>
+    <tbody class="data">
+        @foreach (var employee in Model.listEmployees)
+        {
+            <tr>
+                <td class="data">@employee.Admin_ID</td>
+                <td class="data">@employee.Position</td>
+                <td class="data">@employee.First_Name</td>
+                <td class="data">@employee.Surname</td>
+                <td class="data">@employee.Email</td>
+                <td class="data">@employee.Conrtact_Number</td>
+                <td class="data"><a href=@Url.Action("RemoveEmployee", new { item = employee.Admin_ID })><img src="~/Images/cross-icon.jpg" style="max-width:30px;" /></a></td>
+                <td class="data"><a href=@Url.Action("RemoveEmployee", new { item = employee.Admin_ID })><img src="~/Images/Edit_Icon.png" style="max-width:30px;" /></a></td>
+
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+
+    </tfoot>
+</table>
+
+
