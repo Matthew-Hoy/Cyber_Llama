@@ -90,11 +90,11 @@ public interface IService
     //Retrieving Products from the DB
     //One at a time
     [OperationContract]
-    dynamic getPart(int ID);
+    c_ProductPageInfo getPart(int ID);
 
     [OperationContract]
     cPC intgetPC(int ID);
-
+    
 
     //Select PC by Type or Price
     [OperationContract]
@@ -107,25 +107,35 @@ public interface IService
     List<cPC> getPCbyPrice(Double minPrice, Double maxPrice);
 
     //Get compatible parts
-    List<cAirCooler> getAirCoolersForCPU(int cpu_ID);
+    [OperationContract]
+    List<c_ProductPageInfo> getAirCoolersForCPU(int cpu_ID);
 
-    List<cLiquidCooler> getLiquidCoolersForCPU(int cpu_ID);
+    [OperationContract]
+    List<c_ProductPageInfo> getLiquidCoolersForCPU(int cpu_ID);
 
-    List<cCPU> getCPUForAirCooler(int ac_ID);
+    [OperationContract]
+    List<c_ProductPageInfo> getCPUForAirCooler(int ac_ID);
 
-    List<cCPU> getCPUForLiquidCooler(int lc_ID);
+    [OperationContract]
+    List<c_ProductPageInfo> getCPUForLiquidCooler(int lc_ID);
 
-    List<cCPU> getCPUForMotherboard(int mobo_ID);
+    [OperationContract]
+    List<c_ProductPageInfo> getCPUForMotherboard(int mobo_ID);
 
-    List<cCase> getCaseForMotherboard(int mobo_ID);
+    [OperationContract]
+    List<c_ProductPageInfo> getCaseForMotherboard(int mobo_ID);
 
-    List<cRAM> getRAMForMotherboard(int mobo_ID);
+    [OperationContract]
+    List<c_ProductPageInfo> getRAMForMotherboard(int mobo_ID);
 
-    List<cMobo> getMotherboardForCPU(int cpu_ID);
+    [OperationContract]
+    List<c_ProductPageInfo> getMotherboardForCPU(int cpu_ID);
 
-    List<cMobo> getMotherboardForRAM(int ram_ID);
+    [OperationContract]
+    List<c_ProductPageInfo> getMotherboardForRAM(int ram_ID);
 
-    List<cMobo> getMotherboardForCase(int case_ID);
+    [OperationContract]
+    List<c_ProductPageInfo> getMotherboardForCase(int case_ID);
 
     //Entire Table
     [OperationContract]
