@@ -32,15 +32,16 @@
         String model = p.model;
         int price = p.price;
         int quantity = p.Quantity;
-
-    <div class="card">
-        <img src="@(imageLink)" alt="Ram" style="width:100%">
-        <h1>@(model)</h1>
-        <p class="price">R@(price)</p>
-        <p>Quantity: @(quantity)</p>
-        <p><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = p.ID })>Add to Cart</button></p>
-    </div>
+    
+        <div class="card">
+            <img src="@(imageLink)" alt="Ram" style="width:100%">
+            <h1><a href="@Url.Action("Index", "PartInfo", new {id=p.ID })">@(model)</a></h1>
+            <p class="price">R@(price)</p>
+            <p>Quantity: @(quantity)</p>
+            <p><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = p.ID })>Add to Cart</button></p>
+        </div>
     }
+}
 }
     <script>
         $(".addCartLink").click(function (e) {

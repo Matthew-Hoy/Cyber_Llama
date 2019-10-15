@@ -10,6 +10,7 @@ public class cHDD
     public String brand;
     public String series;
     public Double price;
+    public String storage;
     public String interface_type;
     public String max_sustained_transfer_rate;
     public String rotational_speed;

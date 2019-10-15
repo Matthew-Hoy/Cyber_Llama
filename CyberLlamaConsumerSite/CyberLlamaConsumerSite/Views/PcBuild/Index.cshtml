@@ -1,15 +1,5 @@
 ﻿@using CyberLlamaConsumerSite.ServiceReference1;
 @{
-    <script>
-        function SelectCase(int) {
-            console.log("Hello");
-            Session["Case"] = int;
-            location.href = '@Url.Action("Index", "PcBuild")';
-        }
-
-    </script>
-
-
     ViewBag.Title = "Build Your own PC";
     ServiceClient sc = new ServiceClient();
     /*Session["Case"] = 23;
@@ -29,22 +19,24 @@
         //Show all Cases
         dynamic list = sc.getAllParts("Case");
 
-
-        foreach (c_ProductPageInfo c in list)
+        <div class="row">
+        @foreach (c_ProductPageInfo c in list)
         {
             String imageLink = c.image;
             String model = c.model;
             Double price = c.price;
             int quantity = c.Quantity;  // <p><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = p.ID })>Add to Cart</button></p>
-
-            <div class="card" style="width:20%; height:20%">
-                <img src="@(imageLink)" alt="Ram" style="width:100%; height:30%">
-                <h1>@(model)</h1>
-                <p class="price">R@(price)</p>
-                <p>Quantity: @(quantity)</p>
-               <p><button onClick="SelectCase(c.ID)"> Select Case</button></p>
+            <div class="col">
+                <div class="card" style="width:100%; height:80%; text-align:center">
+                    <img src="@(imageLink)" alt="Ram" style="width:60%; height:50%; ">
+                    <h1 style="font-size:100%">@(model)</h1>
+                    <p class="price">R@(price)</p>
+                    <p>Quantity: @(quantity)</p>
+                    <p><button class="selectPart" href="@Url.Action("SelectCase", new { ID = c.ID })"> Select Case</button></p>
+                </div>
             </div>
         }
+        </div>
 
     }
     if (Session["Case"] != null)
@@ -419,9 +411,22 @@
             }
         }
     }
-
-
+    
 }
 
+<script>
+    $(".selectPart").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                alert("Selected Part");
+            },
+            error: function () {
+                alert("An error Occured");
+            }
 
+        });
+    });
+</script>
 

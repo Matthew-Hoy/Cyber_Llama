@@ -1669,6 +1669,174 @@ public class Service : IService
         return temp;
     }
 
+    public cKeyboard getKeyboard(int ID)
+    {
+        var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
+        var part = (from p in db.Keyboards where p.ID == ID select p).FirstOrDefault();
+
+        cKeyboard temp = new cKeyboard
+        {
+            id = ID,
+            model = part.Model,
+            brand = part.Brand,
+            series = part.Series,
+            price = (double)info.Price,
+            switches = part.Switches,
+            programmable_macros = part.Programmable_Macros,
+            connector = part.Connector,
+            led_backlight = part.LED_BackLight,
+            multimedia_keys = part.Multimedia_Keys,
+            material = part.Material,
+            dimensions = part.Dimensions,
+            weight = part.Weight,
+            warranty = part.Warranty,
+            discount = info.Discount,
+            active = info.Active
+        };
+
+        return temp;
+    }
+
+    public cMicrophone getMicrophone(int ID)
+    {
+        var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
+        var part = (from p in db.Microphones where p.ID == ID select p).FirstOrDefault();
+
+        cMicrophone temp = new cMicrophone
+        {
+            id = ID,
+            model = part.Model,
+            brand = part.Brand,
+            series = part.Series,
+            price = (double)info.Price,
+            pick_up_pattern= part.Pick_Up_Pattern,
+            frequency_response= part.Frequency_Response,
+            sensitivity= part.Sensitivity,
+            cable_length = part.Cable_Length,
+            warranty = part.Warranty,
+            discount = info.Discount,
+            active = info.Active
+        };
+
+        return temp;
+    }
+
+    public cSpeaker getSpeaker(int ID)
+    {
+        var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
+        var part = (from p in db.Speakers where p.ID == ID select p).FirstOrDefault();
+
+        cSpeaker temp = new cSpeaker
+        {
+            id = ID,
+            model = part.Model,
+            brand = part.Brand,
+            price = (double)info.Price,
+            satellite_dimensions = part.Satellite_Dimensions,
+            satellite_weight = part.Satellite_Weight,
+            subwoofer_dimensions = part.SubWoofer_Dimensions,
+            subwoofer_weight = part.SubWoofer_Weight,
+            controls = part.controls,
+            system_requirements = part.System_Requirements,
+            features = part.Features,
+            warranty = part.Warranty,
+            discount = info.Discount,
+            active = info.Active
+        };
+
+        return temp;
+    }
+
+    public cMonitor getMonitor(int ID)
+    {
+        var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
+        var part = (from p in db.Monitors where p.ID == ID select p).FirstOrDefault();
+
+        cMonitor temp = new cMonitor
+        {
+            id = ID,
+            model = part.Model,
+            brand = part.Brand,
+            series = part.Series,
+            price = (double)info.Price,
+            screen_size = part.ScreenSize,
+            screen_ratio = part.ScreenRatio,
+            brightness = part.Brightness,
+            contrast_ratio = part.ContrastRatio,
+            viewing_angle = part.ViewingAngle,
+            response_time = part.ResponseTime,
+            panel_type = part.Panel_Type,
+            refresh_rate = part.RefreshRate,
+            resolution = part.Resolution,
+            colours = part.Colours,
+            display_port = part.DisplayPortInput,
+            hdmi = part.HDMI,
+            vga = part.VGA,
+            speakers = part.Speakers,
+            swivel = part.Swivel,
+            tilt = part.Tilt,
+            pivot = part.Pivot,
+            warranty = part.Warranty,
+            discount = info.Discount,
+            active = info.Active
+        };
+
+        return temp;
+    }
+
+    public cMouse getMouse(int ID)
+    {
+        var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
+        var part = (from p in db.Mouses where p.ID == ID select p).FirstOrDefault();
+
+        cMouse temp = new cMouse
+        {
+            id = ID,
+            model = part.Model,
+            brand = part.Brand,
+            series = part.Series,
+            price = (double)info.Price,
+            sensor = part.Sensor,
+            resolution = part.Resolution,
+            max_acceleration = part.Max_Acceleration,
+            max_speed = part.Max_Speed,
+            connection_type = part.Connection_Type,
+            ptfe_feet = part.PTFE_Feet,
+            battery = part.Battery,
+            dimensions = part.Dimensions,
+            weight = part.Weight,
+            cable_length = part.Cable_Length,
+            warranty = part.Warranty,
+            discount = info.Discount,
+            active = info.Active
+        };
+
+        return temp;
+    }
+
+    public cMousePad getMousepad(int ID)
+    {
+        var info = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
+        var part = (from p in db.MousePads where p.ID == ID select p).FirstOrDefault();
+
+        cMousePad temp = new cMousePad
+        {
+            id = ID,
+            model = part.Model,
+            brand = part.Brand,
+            series = part.Series,
+            price = (double)info.Price,
+            colour = part.Colour,
+            materials = part.Materials,
+            pad_base = part.Base,
+            warranty = part.Warranty,
+            discount = info.Discount,
+            active = info.Active
+        };
+
+        return temp;
+    }
+
     public cPC intgetPC(int ID)
     {
         var info = (from p in db.PcStocks where p.ID == ID select p).FirstOrDefault();

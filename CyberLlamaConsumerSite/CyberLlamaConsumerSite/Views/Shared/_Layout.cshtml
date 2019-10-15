@@ -94,6 +94,8 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Speaker" })>Speakers</a>
                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Microphone" })>Microphones</a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href=@Url.Action("Index", "ProductPage", new { id = "Monitor" })>Monitors</a>
                     </div>
                 </li>
@@ -114,31 +116,8 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href=@Url.Action("Index", "PcInfo", new { id = "Workstation" })>Workstations</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">PC's by Brand</a>
-                        <div class="dropdown-divider"></div>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#"><img src="~/Images/laptop_icon.png" class="MenuIcon" /></a>
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_laptop" href="#">
-                        LAPTOPS
-                        <span class="caret"></span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown_laptop">
-                        <a class="dropdown-item">i3 Laptops</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">i5 Laptops</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">i7 Laptops</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Gaming Laptops</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Business Laptops</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Workstations</a>
-                        <div class="dropdown-divider"></div>
-
-                    </div>
 
                 <li class="nav-item">
                     <a href=@Url.Action("Index", "Checkout")><img src="~/Images/CartIcon.png" class="MenuIcon" /></a>
@@ -147,13 +126,16 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href=@Url.Action("Index", "Invoice")><img src="~/Images/Invoice_Icon.png" class="MenuIcon" /></a>
-                    <a class="nav-link" href=@Url.Action("Index", "Checkout")>
-                        Invoices
-                    </a>
-                </li>
-
+                @{if (Session["UserID"] != null)
+                    {
+            <li class="nav-item">
+                <a href=@Url.Action("Index", "Invoice")><img src="~/Images/Invoice_Icon.png" class="MenuIcon" /></a>
+                <a class="nav-link" href=@Url.Action("Index", "Checkout")>
+                    Invoices
+                </a>
+            </li>
+}
+                }
 
                 <li class="nav-item">
                     <a href=@Url.Action("Index", "About")><img src="~/Images/aboutIcon.png" class="MenuIcon" /></a>
@@ -175,105 +157,112 @@
                 </li>
 
 
-
-                <li class="nav-item">
-                    <a href=@Url.Action("Index", "Register")><img src="~/Images/RegisterIcon.png" class="MenuIcon" /></a>
-                    <a class="nav-link" href=@Url.Action("Index", "Register")>
-                        Register
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href=@Url.Action("Index", "Profile")><img src="~/Images/ProfileIcon.png" class="MenuIcon" /></a>
-                    <a class="nav-link" href=@Url.Action("Index", "Profile")>
-                        Profile
-                    </a>
-                </li>
-
-
-
-                @{ if (Session["UserID"] != null)
+                @{if (Session["UserID"] == null)
                     {
-                        var id = Convert.ToInt32(Session["UserType"]);
-                        if (id < 7)
-                        {
-                            <li class="nav-item dropdown">
-                                <a href="#"><img src="~/Images/employeeIcon.png" class="MenuIcon" /></a>
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_laptop" href="#">
-                                    Employee
-                                    <span class="caret"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown_desktop">
-                                    @if (id < 7)
-                                    {
-                                        <a class="dropdown-item" href="#">Employee</a>
-                                        <div class="dropdown-divider"></div>
-                                    }
-
-                                    @if (id == 5 || id < 2)
-                                    {
-                                        <a class="dropdown-item" href="#" )>Finance</a>
-                                        <div class="dropdown-divider"></div>
-                                    }
-
-                                    @if (id == 4 || id < 2)
-                                    {
-                                        <a class="dropdown-item" href="#">Delivery</a>
-                                        <div class="dropdown-divider"></div>
-                                    }
-
-                                    @if (id == 3 || id < 2)
-                                    {
-                                        <a class="dropdown-item" href="#">Sales</a>
-                                        <div class="dropdown-divider"></div>
-                                    }
-
-                                    @if (id <= 2)
-                                    {
-                                        <a class="dropdown-item">Administration</a>
-                                        <div class="dropdown-divider"></div>
-                                    }
-
-                                    @if (id == 1)
-                                    {
-                                        <a class="dropdown-item" href=@Url.Action("Index", "Management")>Management</a>
-                                        <div class="dropdown-divider"></div>
-                                    }
-
-                                </div>
-                            </li>
-                        }
                         <li class="nav-item">
-                            <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
-                            <a class="nav-link" href=@Url.Action("Index", "Logout")>
-                                Logout
+                            <a href=@Url.Action("Index", "Register")><img src="~/Images/RegisterIcon.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href=@Url.Action("Index", "Register")>
+                                Register
                             </a>
-                            @if (id == 1)
-                            {
-                                <a class="nav-link" href=@Url.Action("Index", "AddUser")>
-                                    Register
-                                </a>
-                            }
-                        </li>
-                    }
-                    else
-                    {
-                        <!--<li class="nav-item">
-                <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
-                <a class="nav-link" href=@Url.Action("Index", "Login")>
-                    Login
-                </a>
-            </li>   -->
-
-                        <li class="nav-item">
-                            <a href=@Url.Action("Index", "Login")><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
-                            <a class="nav-link" href=@Url.Action("Index", "Login")>
-                                Login
-                            </a>
-
                         </li>
                     }
                 }
+
+                @{if (Session["UserID"] != null)
+                    {
+                        <li class="nav-item">
+                            <a href=@Url.Action("Index", "Profile")><img src="~/Images/ProfileIcon.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href=@Url.Action("Index", "Profile")>
+                                Profile
+                            </a>
+                        </li>
+                    }
+                }
+
+
+
+            @{ if (Session["UserID"] != null)
+    {
+        var id = Convert.ToInt32(Session["UserType"]);
+        if (id < 7)
+        {
+            <li class="nav-item dropdown">
+                <a href="#"><img src="~/Images/employeeIcon.png" class="MenuIcon" /></a>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_laptop" href="#">
+                    Employee
+                    <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdown_desktop">
+                    @if (id < 7)
+        {
+            <a class="dropdown-item" href="#">Employee</a>
+            <div class="dropdown-divider"></div>
+}
+
+                    @if (id == 5 || id < 2)
+        {
+            <a class="dropdown-item" href="#" )>Finance</a>
+            <div class="dropdown-divider"></div>
+}
+
+                    @if (id == 4 || id < 2)
+        {
+            <a class="dropdown-item" href="#">Delivery</a>
+            <div class="dropdown-divider"></div>
+}
+
+                    @if (id == 3 || id < 2)
+        {
+            <a class="dropdown-item" href="#">Sales</a>
+            <div class="dropdown-divider"></div>
+}
+
+                    @if (id <= 2)
+        {
+            <a class="dropdown-item">Administration</a>
+            <div class="dropdown-divider"></div>
+}
+
+                    @if (id == 1)
+        {
+            <a class="dropdown-item" href=@Url.Action("Index", "Management")>Management</a>
+            <div class="dropdown-divider"></div>
+}
+
+                </div>
+            </li>
+}
+            <li class="nav-item">
+                <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                <a class="nav-link" href=@Url.Action("Index", "Logout")>
+                    Logout
+                </a>
+                @if (id == 1)
+    {
+            <a class="nav-link" href=@Url.Action("Index", "AddUser")>
+                Register
+            </a>
+}
+            </li>
+}
+else
+{
+            <!--<li class="nav-item">
+    <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+    <a class="nav-link" href=@Url.Action("Index", "Login")>
+        Login
+    </a>
+</li>   -->
+
+            <li class="nav-item">
+                <a href=@Url.Action("Index", "Login")><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
+                <a class="nav-link" href=@Url.Action("Index", "Login")>
+                    Login
+                </a>
+
+            </li>
+}
+            }
             </ul>
         </div>
     </nav>
