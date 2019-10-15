@@ -231,6 +231,10 @@ public interface IService
     List<cStock> getpartStockStats();
     [OperationContract]
     List<cSold> getpartSoldStats();
+    [OperationContract]
+    List<cLoginStat> getLoginStats();
+    [OperationContract]
+    List<cRegisterStat> getRegisterStats();
 
 
 

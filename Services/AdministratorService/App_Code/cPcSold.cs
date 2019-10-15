@@ -11,4 +11,5 @@ public class cPcSold
     public int pc_ID;
     public string Type;
     public int Quantity;
+    public DateTime date;
 }

@@ -11,4 +11,5 @@ public class cSold
     public int ProductID;
     public string Name;
     public int Quantity;
+    public DateTime date;
 }

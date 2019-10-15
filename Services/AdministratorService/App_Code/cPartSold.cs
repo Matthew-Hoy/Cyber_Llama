@@ -12,4 +12,5 @@ public class cPartSold
     public string Model;
     public string Type;
     public int Quantity;
+    public DateTime date;
 }

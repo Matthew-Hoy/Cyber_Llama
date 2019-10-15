@@ -406,6 +406,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int QuantityField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dateField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -451,6 +454,141 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((this.QuantityField.Equals(value) != true)) {
                     this.QuantityField = value;
                     this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                if ((this.dateField.Equals(value) != true)) {
+                    this.dateField = value;
+                    this.RaisePropertyChanged("date");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cLoginStat", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cLoginStat : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int User_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int User_ID {
+            get {
+                return this.User_IDField;
+            }
+            set {
+                if ((this.User_IDField.Equals(value) != true)) {
+                    this.User_IDField = value;
+                    this.RaisePropertyChanged("User_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cRegisterStat", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cRegisterStat : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int User_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int User_ID {
+            get {
+                return this.User_IDField;
+            }
+            set {
+                if ((this.User_IDField.Equals(value) != true)) {
+                    this.User_IDField = value;
+                    this.RaisePropertyChanged("User_ID");
                 }
             }
         }
@@ -7499,6 +7637,18 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpartSoldStats", ReplyAction="http://tempuri.org/IService/getpartSoldStatsResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cSold[]> getpartSoldStatsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getLoginStats", ReplyAction="http://tempuri.org/IService/getLoginStatsResponse")]
+        CyberLlamaConsumerSite.CRUDService.cLoginStat[] getLoginStats();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getLoginStats", ReplyAction="http://tempuri.org/IService/getLoginStatsResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cLoginStat[]> getLoginStatsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRegisterStats", ReplyAction="http://tempuri.org/IService/getRegisterStatsResponse")]
+        CyberLlamaConsumerSite.CRUDService.cRegisterStat[] getRegisterStats();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRegisterStats", ReplyAction="http://tempuri.org/IService/getRegisterStatsResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cRegisterStat[]> getRegisterStatsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
         string Login(string strUserName, string strPassword);
         
@@ -7659,6 +7809,10 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cStock))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cSold[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cSold))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cLoginStat[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cLoginStat))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cRegisterStat[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cRegisterStat))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cEmployee[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cEmployee))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CyberLlamaConsumerSite.CRUDService.cAirCooler))]
@@ -8001,6 +8155,22 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cSold[]> getpartSoldStatsAsync() {
             return base.Channel.getpartSoldStatsAsync();
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cLoginStat[] getLoginStats() {
+            return base.Channel.getLoginStats();
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cLoginStat[]> getLoginStatsAsync() {
+            return base.Channel.getLoginStatsAsync();
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cRegisterStat[] getRegisterStats() {
+            return base.Channel.getRegisterStats();
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cRegisterStat[]> getRegisterStatsAsync() {
+            return base.Channel.getRegisterStatsAsync();
         }
         
         public string Login(string strUserName, string strPassword) {

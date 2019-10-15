@@ -98,27 +98,15 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
   partial void InsertOperatingSystem(OperatingSystem instance);
   partial void UpdateOperatingSystem(OperatingSystem instance);
   partial void DeleteOperatingSystem(OperatingSystem instance);
-  partial void InsertPartCart(PartCart instance);
-  partial void UpdatePartCart(PartCart instance);
-  partial void DeletePartCart(PartCart instance);
-  partial void InsertPartsSold(PartsSold instance);
-  partial void UpdatePartsSold(PartsSold instance);
-  partial void DeletePartsSold(PartsSold instance);
   partial void InsertPartsStock(PartsStock instance);
   partial void UpdatePartsStock(PartsStock instance);
   partial void DeletePartsStock(PartsStock instance);
   partial void InsertPc(Pc instance);
   partial void UpdatePc(Pc instance);
   partial void DeletePc(Pc instance);
-  partial void InsertPcCart(PcCart instance);
-  partial void UpdatePcCart(PcCart instance);
-  partial void DeletePcCart(PcCart instance);
   partial void InsertPCCase(PCCase instance);
   partial void UpdatePCCase(PCCase instance);
   partial void DeletePCCase(PCCase instance);
-  partial void InsertPcSold(PcSold instance);
-  partial void UpdatePcSold(PcSold instance);
-  partial void DeletePcSold(PcSold instance);
   partial void InsertPcStock(PcStock instance);
   partial void UpdatePcStock(PcStock instance);
   partial void DeletePcStock(PcStock instance);
@@ -140,6 +128,24 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
   partial void InsertPartInvoice(PartInvoice instance);
   partial void UpdatePartInvoice(PartInvoice instance);
   partial void DeletePartInvoice(PartInvoice instance);
+  partial void InsertPartsSold(PartsSold instance);
+  partial void UpdatePartsSold(PartsSold instance);
+  partial void DeletePartsSold(PartsSold instance);
+  partial void InsertPcSold(PcSold instance);
+  partial void UpdatePcSold(PcSold instance);
+  partial void DeletePcSold(PcSold instance);
+  partial void InsertPartCart(PartCart instance);
+  partial void UpdatePartCart(PartCart instance);
+  partial void DeletePartCart(PartCart instance);
+  partial void InsertPcCart(PcCart instance);
+  partial void UpdatePcCart(PcCart instance);
+  partial void DeletePcCart(PcCart instance);
+  partial void InsertloginStat(loginStat instance);
+  partial void UpdateloginStat(loginStat instance);
+  partial void DeleteloginStat(loginStat instance);
+  partial void InsertRegisterStat(RegisterStat instance);
+  partial void UpdateRegisterStat(RegisterStat instance);
+  partial void DeleteRegisterStat(RegisterStat instance);
   #endregion
 	
 	public CyberLlamaDatabaseDataContext() : 
@@ -356,22 +362,6 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		}
 	}
 	
-	public System.Data.Linq.Table<PartCart> PartCarts
-	{
-		get
-		{
-			return this.GetTable<PartCart>();
-		}
-	}
-	
-	public System.Data.Linq.Table<PartsSold> PartsSolds
-	{
-		get
-		{
-			return this.GetTable<PartsSold>();
-		}
-	}
-	
 	public System.Data.Linq.Table<PartsStock> PartsStocks
 	{
 		get
@@ -388,27 +378,11 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		}
 	}
 	
-	public System.Data.Linq.Table<PcCart> PcCarts
-	{
-		get
-		{
-			return this.GetTable<PcCart>();
-		}
-	}
-	
 	public System.Data.Linq.Table<PCCase> PCCases
 	{
 		get
 		{
 			return this.GetTable<PCCase>();
-		}
-	}
-	
-	public System.Data.Linq.Table<PcSold> PcSolds
-	{
-		get
-		{
-			return this.GetTable<PcSold>();
 		}
 	}
 	
@@ -465,6 +439,54 @@ public partial class CyberLlamaDatabaseDataContext : System.Data.Linq.DataContex
 		get
 		{
 			return this.GetTable<PartInvoice>();
+		}
+	}
+	
+	public System.Data.Linq.Table<PartsSold> PartsSolds
+	{
+		get
+		{
+			return this.GetTable<PartsSold>();
+		}
+	}
+	
+	public System.Data.Linq.Table<PcSold> PcSolds
+	{
+		get
+		{
+			return this.GetTable<PcSold>();
+		}
+	}
+	
+	public System.Data.Linq.Table<PartCart> PartCarts
+	{
+		get
+		{
+			return this.GetTable<PartCart>();
+		}
+	}
+	
+	public System.Data.Linq.Table<PcCart> PcCarts
+	{
+		get
+		{
+			return this.GetTable<PcCart>();
+		}
+	}
+	
+	public System.Data.Linq.Table<loginStat> loginStats
+	{
+		get
+		{
+			return this.GetTable<loginStat>();
+		}
+	}
+	
+	public System.Data.Linq.Table<RegisterStat> RegisterStats
+	{
+		get
+		{
+			return this.GetTable<RegisterStat>();
 		}
 	}
 }
@@ -1408,10 +1430,6 @@ public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _ZIP_Code;
 	
-	private EntitySet<PartCart> _PartCarts;
-	
-	private EntitySet<PcCart> _PcCarts;
-	
 	private EntitySet<PcInvoice> _PcInvoices;
 	
 	private EntitySet<PartInvoice> _PartInvoices;
@@ -1442,8 +1460,6 @@ public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	public Client()
 	{
-		this._PartCarts = new EntitySet<PartCart>(new Action<PartCart>(this.attach_PartCarts), new Action<PartCart>(this.detach_PartCarts));
-		this._PcCarts = new EntitySet<PcCart>(new Action<PcCart>(this.attach_PcCarts), new Action<PcCart>(this.detach_PcCarts));
 		this._PcInvoices = new EntitySet<PcInvoice>(new Action<PcInvoice>(this.attach_PcInvoices), new Action<PcInvoice>(this.detach_PcInvoices));
 		this._PartInvoices = new EntitySet<PartInvoice>(new Action<PartInvoice>(this.attach_PartInvoices), new Action<PartInvoice>(this.detach_PartInvoices));
 		this._LoginTable = default(EntityRef<LoginTable>);
@@ -1614,32 +1630,6 @@ public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PartCart", Storage="_PartCarts", ThisKey="User_ID", OtherKey="User_ID")]
-	public EntitySet<PartCart> PartCarts
-	{
-		get
-		{
-			return this._PartCarts;
-		}
-		set
-		{
-			this._PartCarts.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PcCart", Storage="_PcCarts", ThisKey="User_ID", OtherKey="User_ID")]
-	public EntitySet<PcCart> PcCarts
-	{
-		get
-		{
-			return this._PcCarts;
-		}
-		set
-		{
-			this._PcCarts.Assign(value);
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PcInvoice", Storage="_PcInvoices", ThisKey="User_ID", OtherKey="User_ID")]
 	public EntitySet<PcInvoice> PcInvoices
 	{
@@ -1718,30 +1708,6 @@ public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
 		{
 			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
-	}
-	
-	private void attach_PartCarts(PartCart entity)
-	{
-		this.SendPropertyChanging();
-		entity.Client = this;
-	}
-	
-	private void detach_PartCarts(PartCart entity)
-	{
-		this.SendPropertyChanging();
-		entity.Client = null;
-	}
-	
-	private void attach_PcCarts(PcCart entity)
-	{
-		this.SendPropertyChanging();
-		entity.Client = this;
-	}
-	
-	private void detach_PcCarts(PcCart entity)
-	{
-		this.SendPropertyChanging();
-		entity.Client = null;
 	}
 	
 	private void attach_PcInvoices(PcInvoice entity)
@@ -5552,6 +5518,14 @@ public partial class LoginTable : INotifyPropertyChanging, INotifyPropertyChange
 	
 	private EntityRef<Client> _Client;
 	
+	private EntitySet<PartCart> _PartCarts;
+	
+	private EntitySet<PcCart> _PcCarts;
+	
+	private EntityRef<loginStat> _loginStat;
+	
+	private EntityRef<RegisterStat> _RegisterStat;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -5570,6 +5544,10 @@ public partial class LoginTable : INotifyPropertyChanging, INotifyPropertyChange
 	{
 		this._Admin = default(EntityRef<Admin>);
 		this._Client = default(EntityRef<Client>);
+		this._PartCarts = new EntitySet<PartCart>(new Action<PartCart>(this.attach_PartCarts), new Action<PartCart>(this.detach_PartCarts));
+		this._PcCarts = new EntitySet<PcCart>(new Action<PcCart>(this.attach_PcCarts), new Action<PcCart>(this.detach_PcCarts));
+		this._loginStat = default(EntityRef<loginStat>);
+		this._RegisterStat = default(EntityRef<RegisterStat>);
 		OnCreated();
 	}
 	
@@ -5711,6 +5689,90 @@ public partial class LoginTable : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginTable_PartCart", Storage="_PartCarts", ThisKey="User_ID", OtherKey="User_ID")]
+	public EntitySet<PartCart> PartCarts
+	{
+		get
+		{
+			return this._PartCarts;
+		}
+		set
+		{
+			this._PartCarts.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginTable_PcCart", Storage="_PcCarts", ThisKey="User_ID", OtherKey="User_ID")]
+	public EntitySet<PcCart> PcCarts
+	{
+		get
+		{
+			return this._PcCarts;
+		}
+		set
+		{
+			this._PcCarts.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginTable_loginStat", Storage="_loginStat", ThisKey="User_ID", OtherKey="User_Id", IsUnique=true, IsForeignKey=false)]
+	public loginStat loginStat
+	{
+		get
+		{
+			return this._loginStat.Entity;
+		}
+		set
+		{
+			loginStat previousValue = this._loginStat.Entity;
+			if (((previousValue != value) 
+						|| (this._loginStat.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._loginStat.Entity = null;
+					previousValue.LoginTable = null;
+				}
+				this._loginStat.Entity = value;
+				if ((value != null))
+				{
+					value.LoginTable = this;
+				}
+				this.SendPropertyChanged("loginStat");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginTable_RegisterStat", Storage="_RegisterStat", ThisKey="User_ID", OtherKey="User_Id", IsUnique=true, IsForeignKey=false)]
+	public RegisterStat RegisterStat
+	{
+		get
+		{
+			return this._RegisterStat.Entity;
+		}
+		set
+		{
+			RegisterStat previousValue = this._RegisterStat.Entity;
+			if (((previousValue != value) 
+						|| (this._RegisterStat.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._RegisterStat.Entity = null;
+					previousValue.LoginTable = null;
+				}
+				this._RegisterStat.Entity = value;
+				if ((value != null))
+				{
+					value.LoginTable = this;
+				}
+				this.SendPropertyChanged("RegisterStat");
+			}
+		}
+	}
+	
 	public event PropertyChangingEventHandler PropertyChanging;
 	
 	public event PropertyChangedEventHandler PropertyChanged;
@@ -5729,6 +5791,30 @@ public partial class LoginTable : INotifyPropertyChanging, INotifyPropertyChange
 		{
 			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
+	}
+	
+	private void attach_PartCarts(PartCart entity)
+	{
+		this.SendPropertyChanging();
+		entity.LoginTable = this;
+	}
+	
+	private void detach_PartCarts(PartCart entity)
+	{
+		this.SendPropertyChanging();
+		entity.LoginTable = null;
+	}
+	
+	private void attach_PcCarts(PcCart entity)
+	{
+		this.SendPropertyChanging();
+		entity.LoginTable = this;
+	}
+	
+	private void detach_PcCarts(PcCart entity)
+	{
+		this.SendPropertyChanging();
+		entity.LoginTable = null;
 	}
 }
 
@@ -8826,373 +8912,6 @@ public partial class OperatingSystem : INotifyPropertyChanging, INotifyPropertyC
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PartCart")]
-public partial class PartCart : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _User_ID;
-	
-	private int _Part_ID;
-	
-	private int _Qua;
-	
-	private EntityRef<Client> _Client;
-	
-	private EntityRef<PartsStock> _PartsStock;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUser_IDChanging(int value);
-    partial void OnUser_IDChanged();
-    partial void OnPart_IDChanging(int value);
-    partial void OnPart_IDChanged();
-    partial void OnQuaChanging(int value);
-    partial void OnQuaChanged();
-    #endregion
-	
-	public PartCart()
-	{
-		this._Client = default(EntityRef<Client>);
-		this._PartsStock = default(EntityRef<PartsStock>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int User_ID
-	{
-		get
-		{
-			return this._User_ID;
-		}
-		set
-		{
-			if ((this._User_ID != value))
-			{
-				if (this._Client.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnUser_IDChanging(value);
-				this.SendPropertyChanging();
-				this._User_ID = value;
-				this.SendPropertyChanged("User_ID");
-				this.OnUser_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Part_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int Part_ID
-	{
-		get
-		{
-			return this._Part_ID;
-		}
-		set
-		{
-			if ((this._Part_ID != value))
-			{
-				if (this._PartsStock.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnPart_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Part_ID = value;
-				this.SendPropertyChanged("Part_ID");
-				this.OnPart_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qua", DbType="Int NOT NULL")]
-	public int Qua
-	{
-		get
-		{
-			return this._Qua;
-		}
-		set
-		{
-			if ((this._Qua != value))
-			{
-				this.OnQuaChanging(value);
-				this.SendPropertyChanging();
-				this._Qua = value;
-				this.SendPropertyChanged("Qua");
-				this.OnQuaChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PartCart", Storage="_Client", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
-	public Client Client
-	{
-		get
-		{
-			return this._Client.Entity;
-		}
-		set
-		{
-			Client previousValue = this._Client.Entity;
-			if (((previousValue != value) 
-						|| (this._Client.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Client.Entity = null;
-					previousValue.PartCarts.Remove(this);
-				}
-				this._Client.Entity = value;
-				if ((value != null))
-				{
-					value.PartCarts.Add(this);
-					this._User_ID = value.User_ID;
-				}
-				else
-				{
-					this._User_ID = default(int);
-				}
-				this.SendPropertyChanged("Client");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartCart", Storage="_PartsStock", ThisKey="Part_ID", OtherKey="ID", IsForeignKey=true)]
-	public PartsStock PartsStock
-	{
-		get
-		{
-			return this._PartsStock.Entity;
-		}
-		set
-		{
-			PartsStock previousValue = this._PartsStock.Entity;
-			if (((previousValue != value) 
-						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PartsStock.Entity = null;
-					previousValue.PartCarts.Remove(this);
-				}
-				this._PartsStock.Entity = value;
-				if ((value != null))
-				{
-					value.PartCarts.Add(this);
-					this._Part_ID = value.ID;
-				}
-				else
-				{
-					this._Part_ID = default(int);
-				}
-				this.SendPropertyChanged("PartsStock");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PartsSold")]
-public partial class PartsSold : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _ID;
-	
-	private string _Model;
-	
-	private string _Type;
-	
-	private int _Quantity_Sold;
-	
-	private EntityRef<PartsStock> _PartsStock;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnModelChanging(string value);
-    partial void OnModelChanged();
-    partial void OnTypeChanging(string value);
-    partial void OnTypeChanged();
-    partial void OnQuantity_SoldChanging(int value);
-    partial void OnQuantity_SoldChanged();
-    #endregion
-	
-	public PartsSold()
-	{
-		this._PartsStock = default(EntityRef<PartsStock>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int ID
-	{
-		get
-		{
-			return this._ID;
-		}
-		set
-		{
-			if ((this._ID != value))
-			{
-				if (this._PartsStock.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnIDChanging(value);
-				this.SendPropertyChanging();
-				this._ID = value;
-				this.SendPropertyChanged("ID");
-				this.OnIDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-	public string Model
-	{
-		get
-		{
-			return this._Model;
-		}
-		set
-		{
-			if ((this._Model != value))
-			{
-				this.OnModelChanging(value);
-				this.SendPropertyChanging();
-				this._Model = value;
-				this.SendPropertyChanged("Model");
-				this.OnModelChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Type
-	{
-		get
-		{
-			return this._Type;
-		}
-		set
-		{
-			if ((this._Type != value))
-			{
-				this.OnTypeChanging(value);
-				this.SendPropertyChanging();
-				this._Type = value;
-				this.SendPropertyChanged("Type");
-				this.OnTypeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity_Sold", DbType="Int NOT NULL")]
-	public int Quantity_Sold
-	{
-		get
-		{
-			return this._Quantity_Sold;
-		}
-		set
-		{
-			if ((this._Quantity_Sold != value))
-			{
-				this.OnQuantity_SoldChanging(value);
-				this.SendPropertyChanging();
-				this._Quantity_Sold = value;
-				this.SendPropertyChanged("Quantity_Sold");
-				this.OnQuantity_SoldChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartsSold", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
-	public PartsStock PartsStock
-	{
-		get
-		{
-			return this._PartsStock.Entity;
-		}
-		set
-		{
-			PartsStock previousValue = this._PartsStock.Entity;
-			if (((previousValue != value) 
-						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PartsStock.Entity = null;
-					previousValue.PartsSold = null;
-				}
-				this._PartsStock.Entity = value;
-				if ((value != null))
-				{
-					value.PartsSold = this;
-					this._ID = value.ID;
-				}
-				else
-				{
-					this._ID = default(int);
-				}
-				this.SendPropertyChanged("PartsStock");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PartsStock")]
 public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -9243,10 +8962,6 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 	
 	private EntityRef<OperatingSystem> _OperatingSystem;
 	
-	private EntitySet<PartCart> _PartCarts;
-	
-	private EntityRef<PartsSold> _PartsSold;
-	
 	private EntityRef<PCCase> _PCCase;
 	
 	private EntityRef<PSU> _PSU;
@@ -9258,6 +8973,10 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 	private EntityRef<SSD> _SSD;
 	
 	private EntitySet<PartInvoice> _PartInvoices;
+	
+	private EntityRef<PartsSold> _PartsSold;
+	
+	private EntitySet<PartCart> _PartCarts;
 	
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -9297,14 +9016,14 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 		this._Mouse = default(EntityRef<Mouse>);
 		this._MousePad = default(EntityRef<MousePad>);
 		this._OperatingSystem = default(EntityRef<OperatingSystem>);
-		this._PartCarts = new EntitySet<PartCart>(new Action<PartCart>(this.attach_PartCarts), new Action<PartCart>(this.detach_PartCarts));
-		this._PartsSold = default(EntityRef<PartsSold>);
 		this._PCCase = default(EntityRef<PCCase>);
 		this._PSU = default(EntityRef<PSU>);
 		this._RAM = default(EntityRef<RAM>);
 		this._Speaker = default(EntityRef<Speaker>);
 		this._SSD = default(EntityRef<SSD>);
 		this._PartInvoices = new EntitySet<PartInvoice>(new Action<PartInvoice>(this.attach_PartInvoices), new Action<PartInvoice>(this.detach_PartInvoices));
+		this._PartsSold = default(EntityRef<PartsSold>);
+		this._PartCarts = new EntitySet<PartCart>(new Action<PartCart>(this.attach_PartCarts), new Action<PartCart>(this.detach_PartCarts));
 		OnCreated();
 	}
 	
@@ -9874,48 +9593,6 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartCart", Storage="_PartCarts", ThisKey="ID", OtherKey="Part_ID")]
-	public EntitySet<PartCart> PartCarts
-	{
-		get
-		{
-			return this._PartCarts;
-		}
-		set
-		{
-			this._PartCarts.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartsSold", Storage="_PartsSold", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
-	public PartsSold PartsSold
-	{
-		get
-		{
-			return this._PartsSold.Entity;
-		}
-		set
-		{
-			PartsSold previousValue = this._PartsSold.Entity;
-			if (((previousValue != value) 
-						|| (this._PartsSold.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PartsSold.Entity = null;
-					previousValue.PartsStock = null;
-				}
-				this._PartsSold.Entity = value;
-				if ((value != null))
-				{
-					value.PartsStock = this;
-				}
-				this.SendPropertyChanged("PartsSold");
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PCCase", Storage="_PCCase", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
 	public PCCase PCCase
 	{
@@ -10074,6 +9751,48 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartsSold", Storage="_PartsSold", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
+	public PartsSold PartsSold
+	{
+		get
+		{
+			return this._PartsSold.Entity;
+		}
+		set
+		{
+			PartsSold previousValue = this._PartsSold.Entity;
+			if (((previousValue != value) 
+						|| (this._PartsSold.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PartsSold.Entity = null;
+					previousValue.PartsStock = null;
+				}
+				this._PartsSold.Entity = value;
+				if ((value != null))
+				{
+					value.PartsStock = this;
+				}
+				this.SendPropertyChanged("PartsSold");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartCart", Storage="_PartCarts", ThisKey="ID", OtherKey="Part_ID")]
+	public EntitySet<PartCart> PartCarts
+	{
+		get
+		{
+			return this._PartCarts;
+		}
+		set
+		{
+			this._PartCarts.Assign(value);
+		}
+	}
+	
 	public event PropertyChangingEventHandler PropertyChanging;
 	
 	public event PropertyChangedEventHandler PropertyChanged;
@@ -10094,18 +9813,6 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
-	private void attach_PartCarts(PartCart entity)
-	{
-		this.SendPropertyChanging();
-		entity.PartsStock = this;
-	}
-	
-	private void detach_PartCarts(PartCart entity)
-	{
-		this.SendPropertyChanging();
-		entity.PartsStock = null;
-	}
-	
 	private void attach_PartInvoices(PartInvoice entity)
 	{
 		this.SendPropertyChanging();
@@ -10113,6 +9820,18 @@ public partial class PartsStock : INotifyPropertyChanging, INotifyPropertyChange
 	}
 	
 	private void detach_PartInvoices(PartInvoice entity)
+	{
+		this.SendPropertyChanging();
+		entity.PartsStock = null;
+	}
+	
+	private void attach_PartCarts(PartCart entity)
+	{
+		this.SendPropertyChanging();
+		entity.PartsStock = this;
+	}
+	
+	private void detach_PartCarts(PartCart entity)
 	{
 		this.SendPropertyChanging();
 		entity.PartsStock = null;
@@ -11382,198 +11101,6 @@ public partial class Pc : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PcCart")]
-public partial class PcCart : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _User_ID;
-	
-	private int _Pc_ID;
-	
-	private int _Qua;
-	
-	private EntityRef<Client> _Client;
-	
-	private EntityRef<PcStock> _PcStock;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUser_IDChanging(int value);
-    partial void OnUser_IDChanged();
-    partial void OnPc_IDChanging(int value);
-    partial void OnPc_IDChanged();
-    partial void OnQuaChanging(int value);
-    partial void OnQuaChanged();
-    #endregion
-	
-	public PcCart()
-	{
-		this._Client = default(EntityRef<Client>);
-		this._PcStock = default(EntityRef<PcStock>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int User_ID
-	{
-		get
-		{
-			return this._User_ID;
-		}
-		set
-		{
-			if ((this._User_ID != value))
-			{
-				if (this._Client.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnUser_IDChanging(value);
-				this.SendPropertyChanging();
-				this._User_ID = value;
-				this.SendPropertyChanged("User_ID");
-				this.OnUser_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pc_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int Pc_ID
-	{
-		get
-		{
-			return this._Pc_ID;
-		}
-		set
-		{
-			if ((this._Pc_ID != value))
-			{
-				if (this._PcStock.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnPc_IDChanging(value);
-				this.SendPropertyChanging();
-				this._Pc_ID = value;
-				this.SendPropertyChanged("Pc_ID");
-				this.OnPc_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qua", DbType="Int NOT NULL")]
-	public int Qua
-	{
-		get
-		{
-			return this._Qua;
-		}
-		set
-		{
-			if ((this._Qua != value))
-			{
-				this.OnQuaChanging(value);
-				this.SendPropertyChanging();
-				this._Qua = value;
-				this.SendPropertyChanged("Qua");
-				this.OnQuaChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_PcCart", Storage="_Client", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
-	public Client Client
-	{
-		get
-		{
-			return this._Client.Entity;
-		}
-		set
-		{
-			Client previousValue = this._Client.Entity;
-			if (((previousValue != value) 
-						|| (this._Client.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._Client.Entity = null;
-					previousValue.PcCarts.Remove(this);
-				}
-				this._Client.Entity = value;
-				if ((value != null))
-				{
-					value.PcCarts.Add(this);
-					this._User_ID = value.User_ID;
-				}
-				else
-				{
-					this._User_ID = default(int);
-				}
-				this.SendPropertyChanged("Client");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcCart", Storage="_PcStock", ThisKey="Pc_ID", OtherKey="ID", IsForeignKey=true)]
-	public PcStock PcStock
-	{
-		get
-		{
-			return this._PcStock.Entity;
-		}
-		set
-		{
-			PcStock previousValue = this._PcStock.Entity;
-			if (((previousValue != value) 
-						|| (this._PcStock.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PcStock.Entity = null;
-					previousValue.PcCarts.Remove(this);
-				}
-				this._PcStock.Entity = value;
-				if ((value != null))
-				{
-					value.PcCarts.Add(this);
-					this._Pc_ID = value.ID;
-				}
-				else
-				{
-					this._Pc_ID = default(int);
-				}
-				this.SendPropertyChanged("PcStock");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PCCase")]
 public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -12237,157 +11764,6 @@ public partial class PCCase : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PcSold")]
-public partial class PcSold : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _PC_ID;
-	
-	private string _Type;
-	
-	private int _Quantity_Sold;
-	
-	private EntityRef<PcStock> _PcStock;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPC_IDChanging(int value);
-    partial void OnPC_IDChanged();
-    partial void OnTypeChanging(string value);
-    partial void OnTypeChanged();
-    partial void OnQuantity_SoldChanging(int value);
-    partial void OnQuantity_SoldChanged();
-    #endregion
-	
-	public PcSold()
-	{
-		this._PcStock = default(EntityRef<PcStock>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PC_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int PC_ID
-	{
-		get
-		{
-			return this._PC_ID;
-		}
-		set
-		{
-			if ((this._PC_ID != value))
-			{
-				if (this._PcStock.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnPC_IDChanging(value);
-				this.SendPropertyChanging();
-				this._PC_ID = value;
-				this.SendPropertyChanged("PC_ID");
-				this.OnPC_IDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string Type
-	{
-		get
-		{
-			return this._Type;
-		}
-		set
-		{
-			if ((this._Type != value))
-			{
-				this.OnTypeChanging(value);
-				this.SendPropertyChanging();
-				this._Type = value;
-				this.SendPropertyChanged("Type");
-				this.OnTypeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity_Sold", DbType="Int NOT NULL")]
-	public int Quantity_Sold
-	{
-		get
-		{
-			return this._Quantity_Sold;
-		}
-		set
-		{
-			if ((this._Quantity_Sold != value))
-			{
-				this.OnQuantity_SoldChanging(value);
-				this.SendPropertyChanging();
-				this._Quantity_Sold = value;
-				this.SendPropertyChanged("Quantity_Sold");
-				this.OnQuantity_SoldChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcSold", Storage="_PcStock", ThisKey="PC_ID", OtherKey="ID", IsForeignKey=true)]
-	public PcStock PcStock
-	{
-		get
-		{
-			return this._PcStock.Entity;
-		}
-		set
-		{
-			PcStock previousValue = this._PcStock.Entity;
-			if (((previousValue != value) 
-						|| (this._PcStock.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._PcStock.Entity = null;
-					previousValue.PcSold = null;
-				}
-				this._PcStock.Entity = value;
-				if ((value != null))
-				{
-					value.PcSold = this;
-					this._PC_ID = value.ID;
-				}
-				else
-				{
-					this._PC_ID = default(int);
-				}
-				this.SendPropertyChanged("PcStock");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PcStock")]
 public partial class PcStock : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -12410,11 +11786,11 @@ public partial class PcStock : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private EntityRef<Pc> _Pc;
 	
-	private EntitySet<PcCart> _PcCarts;
+	private EntitySet<PcInvoice> _PcInvoices;
 	
 	private EntityRef<PcSold> _PcSold;
 	
-	private EntitySet<PcInvoice> _PcInvoices;
+	private EntitySet<PcCart> _PcCarts;
 	
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -12439,9 +11815,9 @@ public partial class PcStock : INotifyPropertyChanging, INotifyPropertyChanged
 	public PcStock()
 	{
 		this._Pc = default(EntityRef<Pc>);
-		this._PcCarts = new EntitySet<PcCart>(new Action<PcCart>(this.attach_PcCarts), new Action<PcCart>(this.detach_PcCarts));
-		this._PcSold = default(EntityRef<PcSold>);
 		this._PcInvoices = new EntitySet<PcInvoice>(new Action<PcInvoice>(this.attach_PcInvoices), new Action<PcInvoice>(this.detach_PcInvoices));
+		this._PcSold = default(EntityRef<PcSold>);
+		this._PcCarts = new EntitySet<PcCart>(new Action<PcCart>(this.attach_PcCarts), new Action<PcCart>(this.detach_PcCarts));
 		OnCreated();
 	}
 	
@@ -12614,16 +11990,16 @@ public partial class PcStock : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcCart", Storage="_PcCarts", ThisKey="ID", OtherKey="Pc_ID")]
-	public EntitySet<PcCart> PcCarts
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcInvoice", Storage="_PcInvoices", ThisKey="ID", OtherKey="Pc_ID")]
+	public EntitySet<PcInvoice> PcInvoices
 	{
 		get
 		{
-			return this._PcCarts;
+			return this._PcInvoices;
 		}
 		set
 		{
-			this._PcCarts.Assign(value);
+			this._PcInvoices.Assign(value);
 		}
 	}
 	
@@ -12656,16 +12032,16 @@ public partial class PcStock : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcInvoice", Storage="_PcInvoices", ThisKey="ID", OtherKey="Pc_ID")]
-	public EntitySet<PcInvoice> PcInvoices
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcCart", Storage="_PcCarts", ThisKey="ID", OtherKey="Pc_ID")]
+	public EntitySet<PcCart> PcCarts
 	{
 		get
 		{
-			return this._PcInvoices;
+			return this._PcCarts;
 		}
 		set
 		{
-			this._PcInvoices.Assign(value);
+			this._PcCarts.Assign(value);
 		}
 	}
 	
@@ -12689,18 +12065,6 @@ public partial class PcStock : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	private void attach_PcCarts(PcCart entity)
-	{
-		this.SendPropertyChanging();
-		entity.PcStock = this;
-	}
-	
-	private void detach_PcCarts(PcCart entity)
-	{
-		this.SendPropertyChanging();
-		entity.PcStock = null;
-	}
-	
 	private void attach_PcInvoices(PcInvoice entity)
 	{
 		this.SendPropertyChanging();
@@ -12708,6 +12072,18 @@ public partial class PcStock : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 	
 	private void detach_PcInvoices(PcInvoice entity)
+	{
+		this.SendPropertyChanging();
+		entity.PcStock = null;
+	}
+	
+	private void attach_PcCarts(PcCart entity)
+	{
+		this.SendPropertyChanging();
+		entity.PcStock = this;
+	}
+	
+	private void detach_PcCarts(PcCart entity)
 	{
 		this.SendPropertyChanging();
 		entity.PcStock = null;
@@ -14897,6 +14273,1018 @@ public partial class PartInvoice : INotifyPropertyChanging, INotifyPropertyChang
 					this._User_ID = default(int);
 				}
 				this.SendPropertyChanged("Client");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PartsSold")]
+public partial class PartsSold : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private string _Model;
+	
+	private string _Type;
+	
+	private int _Quantity_Sold;
+	
+	private System.DateTime _date;
+	
+	private EntityRef<PartsStock> _PartsStock;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnModelChanging(string value);
+    partial void OnModelChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnQuantity_SoldChanging(int value);
+    partial void OnQuantity_SoldChanged();
+    partial void OndateChanging(System.DateTime value);
+    partial void OndateChanged();
+    #endregion
+	
+	public PartsSold()
+	{
+		this._PartsStock = default(EntityRef<PartsStock>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				if (this._PartsStock.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+	public string Model
+	{
+		get
+		{
+			return this._Model;
+		}
+		set
+		{
+			if ((this._Model != value))
+			{
+				this.OnModelChanging(value);
+				this.SendPropertyChanging();
+				this._Model = value;
+				this.SendPropertyChanged("Model");
+				this.OnModelChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Type
+	{
+		get
+		{
+			return this._Type;
+		}
+		set
+		{
+			if ((this._Type != value))
+			{
+				this.OnTypeChanging(value);
+				this.SendPropertyChanging();
+				this._Type = value;
+				this.SendPropertyChanged("Type");
+				this.OnTypeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity_Sold", DbType="Int NOT NULL")]
+	public int Quantity_Sold
+	{
+		get
+		{
+			return this._Quantity_Sold;
+		}
+		set
+		{
+			if ((this._Quantity_Sold != value))
+			{
+				this.OnQuantity_SoldChanging(value);
+				this.SendPropertyChanging();
+				this._Quantity_Sold = value;
+				this.SendPropertyChanged("Quantity_Sold");
+				this.OnQuantity_SoldChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date NOT NULL")]
+	public System.DateTime date
+	{
+		get
+		{
+			return this._date;
+		}
+		set
+		{
+			if ((this._date != value))
+			{
+				this.OndateChanging(value);
+				this.SendPropertyChanging();
+				this._date = value;
+				this.SendPropertyChanged("date");
+				this.OndateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartsSold", Storage="_PartsStock", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
+	public PartsStock PartsStock
+	{
+		get
+		{
+			return this._PartsStock.Entity;
+		}
+		set
+		{
+			PartsStock previousValue = this._PartsStock.Entity;
+			if (((previousValue != value) 
+						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PartsStock.Entity = null;
+					previousValue.PartsSold = null;
+				}
+				this._PartsStock.Entity = value;
+				if ((value != null))
+				{
+					value.PartsSold = this;
+					this._ID = value.ID;
+				}
+				else
+				{
+					this._ID = default(int);
+				}
+				this.SendPropertyChanged("PartsStock");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PcSold")]
+public partial class PcSold : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _PC_ID;
+	
+	private string _Type;
+	
+	private int _Quantity_Sold;
+	
+	private System.DateTime _Date;
+	
+	private EntityRef<PcStock> _PcStock;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPC_IDChanging(int value);
+    partial void OnPC_IDChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnQuantity_SoldChanging(int value);
+    partial void OnQuantity_SoldChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    #endregion
+	
+	public PcSold()
+	{
+		this._PcStock = default(EntityRef<PcStock>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PC_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int PC_ID
+	{
+		get
+		{
+			return this._PC_ID;
+		}
+		set
+		{
+			if ((this._PC_ID != value))
+			{
+				if (this._PcStock.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnPC_IDChanging(value);
+				this.SendPropertyChanging();
+				this._PC_ID = value;
+				this.SendPropertyChanged("PC_ID");
+				this.OnPC_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string Type
+	{
+		get
+		{
+			return this._Type;
+		}
+		set
+		{
+			if ((this._Type != value))
+			{
+				this.OnTypeChanging(value);
+				this.SendPropertyChanging();
+				this._Type = value;
+				this.SendPropertyChanged("Type");
+				this.OnTypeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity_Sold", DbType="Int NOT NULL")]
+	public int Quantity_Sold
+	{
+		get
+		{
+			return this._Quantity_Sold;
+		}
+		set
+		{
+			if ((this._Quantity_Sold != value))
+			{
+				this.OnQuantity_SoldChanging(value);
+				this.SendPropertyChanging();
+				this._Quantity_Sold = value;
+				this.SendPropertyChanged("Quantity_Sold");
+				this.OnQuantity_SoldChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+	public System.DateTime Date
+	{
+		get
+		{
+			return this._Date;
+		}
+		set
+		{
+			if ((this._Date != value))
+			{
+				this.OnDateChanging(value);
+				this.SendPropertyChanging();
+				this._Date = value;
+				this.SendPropertyChanged("Date");
+				this.OnDateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcSold", Storage="_PcStock", ThisKey="PC_ID", OtherKey="ID", IsForeignKey=true)]
+	public PcStock PcStock
+	{
+		get
+		{
+			return this._PcStock.Entity;
+		}
+		set
+		{
+			PcStock previousValue = this._PcStock.Entity;
+			if (((previousValue != value) 
+						|| (this._PcStock.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PcStock.Entity = null;
+					previousValue.PcSold = null;
+				}
+				this._PcStock.Entity = value;
+				if ((value != null))
+				{
+					value.PcSold = this;
+					this._PC_ID = value.ID;
+				}
+				else
+				{
+					this._PC_ID = default(int);
+				}
+				this.SendPropertyChanged("PcStock");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PartCart")]
+public partial class PartCart : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _User_ID;
+	
+	private int _Part_ID;
+	
+	private int _Qua;
+	
+	private EntityRef<PartsStock> _PartsStock;
+	
+	private EntityRef<LoginTable> _LoginTable;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUser_IDChanging(int value);
+    partial void OnUser_IDChanged();
+    partial void OnPart_IDChanging(int value);
+    partial void OnPart_IDChanged();
+    partial void OnQuaChanging(int value);
+    partial void OnQuaChanged();
+    #endregion
+	
+	public PartCart()
+	{
+		this._PartsStock = default(EntityRef<PartsStock>);
+		this._LoginTable = default(EntityRef<LoginTable>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int User_ID
+	{
+		get
+		{
+			return this._User_ID;
+		}
+		set
+		{
+			if ((this._User_ID != value))
+			{
+				if (this._LoginTable.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnUser_IDChanging(value);
+				this.SendPropertyChanging();
+				this._User_ID = value;
+				this.SendPropertyChanged("User_ID");
+				this.OnUser_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Part_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int Part_ID
+	{
+		get
+		{
+			return this._Part_ID;
+		}
+		set
+		{
+			if ((this._Part_ID != value))
+			{
+				if (this._PartsStock.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnPart_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Part_ID = value;
+				this.SendPropertyChanged("Part_ID");
+				this.OnPart_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qua", DbType="Int NOT NULL")]
+	public int Qua
+	{
+		get
+		{
+			return this._Qua;
+		}
+		set
+		{
+			if ((this._Qua != value))
+			{
+				this.OnQuaChanging(value);
+				this.SendPropertyChanging();
+				this._Qua = value;
+				this.SendPropertyChanged("Qua");
+				this.OnQuaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PartsStock_PartCart", Storage="_PartsStock", ThisKey="Part_ID", OtherKey="ID", IsForeignKey=true)]
+	public PartsStock PartsStock
+	{
+		get
+		{
+			return this._PartsStock.Entity;
+		}
+		set
+		{
+			PartsStock previousValue = this._PartsStock.Entity;
+			if (((previousValue != value) 
+						|| (this._PartsStock.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PartsStock.Entity = null;
+					previousValue.PartCarts.Remove(this);
+				}
+				this._PartsStock.Entity = value;
+				if ((value != null))
+				{
+					value.PartCarts.Add(this);
+					this._Part_ID = value.ID;
+				}
+				else
+				{
+					this._Part_ID = default(int);
+				}
+				this.SendPropertyChanged("PartsStock");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginTable_PartCart", Storage="_LoginTable", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
+	public LoginTable LoginTable
+	{
+		get
+		{
+			return this._LoginTable.Entity;
+		}
+		set
+		{
+			LoginTable previousValue = this._LoginTable.Entity;
+			if (((previousValue != value) 
+						|| (this._LoginTable.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._LoginTable.Entity = null;
+					previousValue.PartCarts.Remove(this);
+				}
+				this._LoginTable.Entity = value;
+				if ((value != null))
+				{
+					value.PartCarts.Add(this);
+					this._User_ID = value.User_ID;
+				}
+				else
+				{
+					this._User_ID = default(int);
+				}
+				this.SendPropertyChanged("LoginTable");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PcCart")]
+public partial class PcCart : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _User_ID;
+	
+	private int _Pc_ID;
+	
+	private int _Qua;
+	
+	private EntityRef<PcStock> _PcStock;
+	
+	private EntityRef<LoginTable> _LoginTable;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUser_IDChanging(int value);
+    partial void OnUser_IDChanged();
+    partial void OnPc_IDChanging(int value);
+    partial void OnPc_IDChanged();
+    partial void OnQuaChanging(int value);
+    partial void OnQuaChanged();
+    #endregion
+	
+	public PcCart()
+	{
+		this._PcStock = default(EntityRef<PcStock>);
+		this._LoginTable = default(EntityRef<LoginTable>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int User_ID
+	{
+		get
+		{
+			return this._User_ID;
+		}
+		set
+		{
+			if ((this._User_ID != value))
+			{
+				if (this._LoginTable.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnUser_IDChanging(value);
+				this.SendPropertyChanging();
+				this._User_ID = value;
+				this.SendPropertyChanged("User_ID");
+				this.OnUser_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pc_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int Pc_ID
+	{
+		get
+		{
+			return this._Pc_ID;
+		}
+		set
+		{
+			if ((this._Pc_ID != value))
+			{
+				if (this._PcStock.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnPc_IDChanging(value);
+				this.SendPropertyChanging();
+				this._Pc_ID = value;
+				this.SendPropertyChanged("Pc_ID");
+				this.OnPc_IDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qua", DbType="Int NOT NULL")]
+	public int Qua
+	{
+		get
+		{
+			return this._Qua;
+		}
+		set
+		{
+			if ((this._Qua != value))
+			{
+				this.OnQuaChanging(value);
+				this.SendPropertyChanging();
+				this._Qua = value;
+				this.SendPropertyChanged("Qua");
+				this.OnQuaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PcStock_PcCart", Storage="_PcStock", ThisKey="Pc_ID", OtherKey="ID", IsForeignKey=true)]
+	public PcStock PcStock
+	{
+		get
+		{
+			return this._PcStock.Entity;
+		}
+		set
+		{
+			PcStock previousValue = this._PcStock.Entity;
+			if (((previousValue != value) 
+						|| (this._PcStock.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._PcStock.Entity = null;
+					previousValue.PcCarts.Remove(this);
+				}
+				this._PcStock.Entity = value;
+				if ((value != null))
+				{
+					value.PcCarts.Add(this);
+					this._Pc_ID = value.ID;
+				}
+				else
+				{
+					this._Pc_ID = default(int);
+				}
+				this.SendPropertyChanged("PcStock");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginTable_PcCart", Storage="_LoginTable", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
+	public LoginTable LoginTable
+	{
+		get
+		{
+			return this._LoginTable.Entity;
+		}
+		set
+		{
+			LoginTable previousValue = this._LoginTable.Entity;
+			if (((previousValue != value) 
+						|| (this._LoginTable.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._LoginTable.Entity = null;
+					previousValue.PcCarts.Remove(this);
+				}
+				this._LoginTable.Entity = value;
+				if ((value != null))
+				{
+					value.PcCarts.Add(this);
+					this._User_ID = value.User_ID;
+				}
+				else
+				{
+					this._User_ID = default(int);
+				}
+				this.SendPropertyChanged("LoginTable");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.loginStats")]
+public partial class loginStat : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _User_Id;
+	
+	private System.DateTime _Date;
+	
+	private EntityRef<LoginTable> _LoginTable;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUser_IdChanging(int value);
+    partial void OnUser_IdChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    #endregion
+	
+	public loginStat()
+	{
+		this._LoginTable = default(EntityRef<LoginTable>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int User_Id
+	{
+		get
+		{
+			return this._User_Id;
+		}
+		set
+		{
+			if ((this._User_Id != value))
+			{
+				if (this._LoginTable.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnUser_IdChanging(value);
+				this.SendPropertyChanging();
+				this._User_Id = value;
+				this.SendPropertyChanged("User_Id");
+				this.OnUser_IdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+	public System.DateTime Date
+	{
+		get
+		{
+			return this._Date;
+		}
+		set
+		{
+			if ((this._Date != value))
+			{
+				this.OnDateChanging(value);
+				this.SendPropertyChanging();
+				this._Date = value;
+				this.SendPropertyChanged("Date");
+				this.OnDateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginTable_loginStat", Storage="_LoginTable", ThisKey="User_Id", OtherKey="User_ID", IsForeignKey=true)]
+	public LoginTable LoginTable
+	{
+		get
+		{
+			return this._LoginTable.Entity;
+		}
+		set
+		{
+			LoginTable previousValue = this._LoginTable.Entity;
+			if (((previousValue != value) 
+						|| (this._LoginTable.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._LoginTable.Entity = null;
+					previousValue.loginStat = null;
+				}
+				this._LoginTable.Entity = value;
+				if ((value != null))
+				{
+					value.loginStat = this;
+					this._User_Id = value.User_ID;
+				}
+				else
+				{
+					this._User_Id = default(int);
+				}
+				this.SendPropertyChanged("LoginTable");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RegisterStats")]
+public partial class RegisterStat : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _User_Id;
+	
+	private System.DateTime _Date;
+	
+	private EntityRef<LoginTable> _LoginTable;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUser_IdChanging(int value);
+    partial void OnUser_IdChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    #endregion
+	
+	public RegisterStat()
+	{
+		this._LoginTable = default(EntityRef<LoginTable>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int User_Id
+	{
+		get
+		{
+			return this._User_Id;
+		}
+		set
+		{
+			if ((this._User_Id != value))
+			{
+				if (this._LoginTable.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnUser_IdChanging(value);
+				this.SendPropertyChanging();
+				this._User_Id = value;
+				this.SendPropertyChanged("User_Id");
+				this.OnUser_IdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+	public System.DateTime Date
+	{
+		get
+		{
+			return this._Date;
+		}
+		set
+		{
+			if ((this._Date != value))
+			{
+				this.OnDateChanging(value);
+				this.SendPropertyChanging();
+				this._Date = value;
+				this.SendPropertyChanged("Date");
+				this.OnDateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginTable_RegisterStat", Storage="_LoginTable", ThisKey="User_Id", OtherKey="User_ID", IsForeignKey=true)]
+	public LoginTable LoginTable
+	{
+		get
+		{
+			return this._LoginTable.Entity;
+		}
+		set
+		{
+			LoginTable previousValue = this._LoginTable.Entity;
+			if (((previousValue != value) 
+						|| (this._LoginTable.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._LoginTable.Entity = null;
+					previousValue.RegisterStat = null;
+				}
+				this._LoginTable.Entity = value;
+				if ((value != null))
+				{
+					value.RegisterStat = this;
+					this._User_Id = value.User_ID;
+				}
+				else
+				{
+					this._User_Id = default(int);
+				}
+				this.SendPropertyChanged("LoginTable");
 			}
 		}
 	}

@@ -33,7 +33,8 @@ namespace CyberLlamaConsumerSite.Controllers
                 {
                     Name = x.Name,
                     ProductID = x.ProductID,
-                    Quantity = x.Quantity
+                    Quantity = x.Quantity,
+                    Date = x.date
                 }).ToList();
 
                 List<Statistics> partstock = sr.getpartStockStats().Select(x => new Statistics
@@ -47,7 +48,8 @@ namespace CyberLlamaConsumerSite.Controllers
                 {
                     Name = x.Name,
                     ProductID = x.ProductID,
-                    Quantity = x.Quantity
+                    Quantity = x.Quantity,
+                   Date = x.date
                 }).ToList();
 
                 List<Statistics> pcStock = sr.getpcStockStats().Select(x => new Statistics
@@ -57,13 +59,29 @@ namespace CyberLlamaConsumerSite.Controllers
                     Quantity = x.Quantity
                 }).ToList();
 
+                List<UserStat> reg = sr.getLoginStats().Select(x => new UserStat
+                {
+                    Date = x.Date,
+                    User_ID = x.User_ID
+                }).ToList();
+
+                List<UserStat> Usernew = sr.getRegisterStats().Select(x => new UserStat
+                {
+                    Date = x.Date,
+                    User_ID = x.User_ID
+                }).ToList();
+
+
                 Management view = new Management(){
                     Employees = employees,
                     partSold = partsold,
                     partStock = partstock,
                     pcSold = pcsold,
-                    pcStock = pcStock
-                    };
+                    pcStock = pcStock,
+                    newUser = Usernew,
+                    userReg = reg
+
+                };
                
 
 

@@ -86,6 +86,18 @@
   <wsdl:message name="IService_getpartSoldStats_OutputMessage">
     <wsdl:part name="parameters" element="tns:getpartSoldStatsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getLoginStats_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLoginStats" />
+  </wsdl:message>
+  <wsdl:message name="IService_getLoginStats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLoginStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRegisterStats_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRegisterStats" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRegisterStats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRegisterStatsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
@@ -463,6 +475,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getpartSoldStats" message="tns:IService_getpartSoldStats_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getpartSoldStatsResponse" message="tns:IService_getpartSoldStats_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getLoginStats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getLoginStats" message="tns:IService_getLoginStats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getLoginStatsResponse" message="tns:IService_getLoginStats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRegisterStats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getRegisterStats" message="tns:IService_getRegisterStats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getRegisterStatsResponse" message="tns:IService_getRegisterStats_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/LoginResponse" message="tns:IService_Login_OutputMessage" />
@@ -792,6 +812,24 @@
     </wsdl:operation>
     <wsdl:operation name="getpartSoldStats">
       <soap:operation soapAction="http://tempuri.org/IService/getpartSoldStats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLoginStats">
+      <soap:operation soapAction="http://tempuri.org/IService/getLoginStats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRegisterStats">
+      <soap:operation soapAction="http://tempuri.org/IService/getRegisterStats" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

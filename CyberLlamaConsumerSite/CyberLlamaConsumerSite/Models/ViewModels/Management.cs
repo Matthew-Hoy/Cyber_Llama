@@ -12,5 +12,7 @@ namespace CyberLlamaConsumerSite.Models.ViewModels
         public List<Statistics> pcStock { get; set; }
         public List<Statistics> partSold { get; set; }
         public List<Statistics> partStock { get; set; }
+        public List<UserStat> userReg { get; set; }
+        public List<UserStat> newUser { get; set; }
     }
 }

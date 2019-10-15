@@ -62,9 +62,36 @@
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductID" type="xs:int" />
       <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="cSold" nillable="true" type="tns:cSold" />
+  <xs:complexType name="ArrayOfcLoginStat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cLoginStat" nillable="true" type="tns:cLoginStat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcLoginStat" nillable="true" type="tns:ArrayOfcLoginStat" />
+  <xs:complexType name="cLoginStat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cLoginStat" nillable="true" type="tns:cLoginStat" />
+  <xs:complexType name="ArrayOfcRegisterStat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cRegisterStat" nillable="true" type="tns:cRegisterStat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcRegisterStat" nillable="true" type="tns:ArrayOfcRegisterStat" />
+  <xs:complexType name="cRegisterStat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cRegisterStat" nillable="true" type="tns:cRegisterStat" />
   <xs:complexType name="ArrayOfcEmployee">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cEmployee" nillable="true" type="tns:cEmployee" />

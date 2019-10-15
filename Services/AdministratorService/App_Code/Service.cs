@@ -23,6 +23,10 @@ public class Service : IService
                     .Select(y => y).FirstOrDefault();
             if (User != null)
             {
+                
+                var newLogin = db.loginStats.Where(x => x.User_Id.Equals(User.User_ID)).Select(y => y).FirstOrDefault();
+                newLogin.Date = DateTime.Now;
+                db.SubmitChanges();
                 return User.User_ID + "," + User.User_Name + "," + User.User_Type;
             }
             else
@@ -112,9 +116,18 @@ public class Service : IService
                     }
                 };
                 db.LoginTables.InsertOnSubmit(newLogin);
+                
                 try
                 {
                     db.SubmitChanges();
+                    var newRegister = new RegisterStat
+                    {
+                        User_Id = newLogin.User_ID,
+                        Date = DateTime.Now
+                    };
+                    db.RegisterStats.InsertOnSubmit(newRegister);
+                    db.SubmitChanges();
+
                 }
                 //catch exceptions
                 catch (Exception ex)
@@ -2956,7 +2969,8 @@ public class Service : IService
                                    Quantity = cart.Qua,
                                    Model = part.Model,
                                    Type = part.Type,
-                                   pc_ID = part.ID
+                                   pc_ID = part.ID,
+                                   date = DateTime.Now
                                }).ToList();
         PartsSold current;
         foreach (cPartSold item in partSold)
@@ -2968,8 +2982,9 @@ public class Service : IService
                {
                    ID = item.pc_ID,
                    Model = item.Model,
-                    Quantity_Sold = item.Quantity,
-                   Type = item.Type
+                   Quantity_Sold = item.Quantity,
+                   Type = item.Type,
+                   date = item.date
                };
 
                 db.PartsSolds.InsertOnSubmit(dbSold);
@@ -3002,7 +3017,8 @@ public class Service : IService
                                     {
                                         Quantity = cart.Qua,
                                         Type = part.PC_Type,
-                                        pc_ID = part.ID
+                                        pc_ID = part.ID,
+                                        date = DateTime.Now
                                     }).ToList();
         PcSold current;
         foreach (cPcSold item in pcSold)
@@ -3014,7 +3030,8 @@ public class Service : IService
                 {
                     PC_ID = item.pc_ID,
                     Quantity_Sold = item.Quantity,
-                    Type = item.Type
+                    Type = item.Type,
+                    Date = item.date
                 };
                 db.PcSolds.InsertOnSubmit(dbSold);
             }
@@ -3109,7 +3126,8 @@ public class Service : IService
         {
             Name = x.Model + " " + x.Type,
             ProductID = x.ID,
-            Quantity = x.Quantity_Sold
+            Quantity = x.Quantity_Sold,
+            date = x.date
         }).ToList();
         return partSold;
     }
@@ -3134,10 +3152,32 @@ public class Service : IService
         {
             Name = x.Type,
             ProductID = x.PC_ID,
-            Quantity = x.Quantity_Sold
+            Quantity = x.Quantity_Sold,
+            date = x.Date
+            
 
         }).ToList();
 
         return pcSold;
     }
+
+    public List<cLoginStat> getLoginStats()
+    {
+        return db.loginStats.Select(x => new cLoginStat
+        {
+            User_ID = x.User_Id,
+            Date = x.Date
+        }).ToList();
+    }
+
+    public List<cRegisterStat> getRegisterStats()
+    {
+        return db.RegisterStats.Select(x => new cRegisterStat
+        {
+            User_ID = x.User_Id,
+            Date = x.Date
+        }).ToList();
+    }
+
+
 }
