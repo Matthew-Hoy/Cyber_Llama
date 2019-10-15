@@ -1284,58 +1284,23 @@ public class Service : IService
 
     //One at a time
     //This is the function that the wesite call to retrieve a single Part
-    public dynamic getPart(int ID)
+    public c_ProductPageInfo getPart(int ID)
     {
         var part = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
 
-        if ((part.Type).Equals("AirCooler"))
+        c_ProductPageInfo temp = new c_ProductPageInfo()
         {
-            return getAirCooler(ID);
-        }
-        else if ((part.Type).Equals("Case"))
-        {
-            return getCase(ID);
-        }
-        else if ((part.Type).Equals("CPU"))
-        {
-            return getCPU(ID);
-        }
-        else if ((part.Type).Equals("Fan"))
-        {
-            return getFan(ID);
-        }
-        else if ((part.Type).Equals("GPU"))
-        {
-            return getGPU(ID);
-        }
-        else if ((part.Type).Equals("HDD"))
-        {
-            return getHDD(ID);
-        }
-        else if ((part.Type).Equals("LiquidCooler"))
-        {
-            return getLiquidCooler(ID);
-        }
-        else if ((part.Type).Equals("Motherboard"))
-        {
-            return getMobo(ID);
-        }
-        else if ((part.Type).Equals("PSU"))
-        {
-            return getPSU(ID);
-        }
-        else if ((part.Type).Equals("RAM"))
-        {
-            return getRAM(ID);
-        }
-        else if ((part.Type).Equals("SSD"))
-        {
-            return getSSD(ID);
-        }
-        else
-        {
-            return null;
-        }
+            ID = part.ID,
+            model = part.Model,
+            image = part.Image,
+            type = part.Type,
+            Quantity = part.Quantity,
+            active = part.Active,
+            discount = part.Discount,
+            price = (int)part.Price,
+};
+
+        return temp;
     }
 
     //The following functions are used to retrieve a part from a particular table.
@@ -1742,9 +1707,9 @@ public class Service : IService
     }
 
     //Return Compatable Parts
-    public List<cAirCooler> getAirCoolersForCPU(int cpu_ID)
+    public List<c_ProductPageInfo> getAirCoolersForCPU(int cpu_ID)
     {
-        List<cAirCooler> list = new List<cAirCooler>();
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
 
         dynamic compACList = (from c in db.CpuToAirCoolers where c.CPU_ID == cpu_ID select c);
 
@@ -1758,9 +1723,9 @@ public class Service : IService
         return list;
     }
      
-    public List<cLiquidCooler> getLiquidCoolersForCPU(int cpu_ID)
+    public List<c_ProductPageInfo> getLiquidCoolersForCPU(int cpu_ID)
     {
-        List<cLiquidCooler> list = new List<cLiquidCooler>();
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
 
         dynamic compLCList = (from c in db.CpuToLiquidCoolers where c.CPU_ID == cpu_ID select c);
 
@@ -1774,9 +1739,9 @@ public class Service : IService
         return list;
     }
 
-    public List<cCPU> getCPUForAirCooler(int ac_ID)
+    public List<c_ProductPageInfo> getCPUForAirCooler(int ac_ID)
     {
-        List<cCPU> list = new List<cCPU>();
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
 
         dynamic compACList = (from c in db.CpuToAirCoolers where c.AC_ID == ac_ID select c);
 
@@ -1790,9 +1755,9 @@ public class Service : IService
         return list;
     }
 
-    public List<cCPU> getCPUForLiquidCooler(int lc_ID)
+    public List<c_ProductPageInfo> getCPUForLiquidCooler(int lc_ID)
     {
-        List<cCPU> list = new List<cCPU>();
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
 
         dynamic compLCList = (from c in db.CpuToLiquidCoolers where c.LC_ID == lc_ID select c);
 
@@ -1806,9 +1771,9 @@ public class Service : IService
         return list;
     }
 
-    public List<cCPU> getCPUForMotherboard(int mobo_ID)
+    public List<c_ProductPageInfo> getCPUForMotherboard(int mobo_ID)
     {
-        List<cCPU> list = new List<cCPU>();
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
 
         dynamic compCPUList = (from c in db.MoboToCpus where c.Mobo_ID == mobo_ID select c);
 
@@ -1822,9 +1787,9 @@ public class Service : IService
         return list;
     }
 
-    public List<cCase> getCaseForMotherboard(int mobo_ID)
+    public List<c_ProductPageInfo> getCaseForMotherboard(int mobo_ID)
     {
-        List<cCase> list = new List<cCase>();
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
 
         dynamic compCaseList = (from c in db.MoboToCases where c.Mobo_ID == mobo_ID select c);
 
@@ -1838,25 +1803,23 @@ public class Service : IService
         return list;
     }
 
-    public List<cRAM> getRAMForMotherboard(int mobo_ID)
+    public List<c_ProductPageInfo> getRAMForMotherboard(int mobo_ID)
     {
-        List<cRAM> list = new List<cRAM>();
-
-        dynamic compRAMList = (from c in db.MoboToCpus where c.Mobo_ID == mobo_ID select c);
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
+        dynamic compRAMList = (from c in db.MoboToRams where c.Mobo_ID == mobo_ID select c);
 
         foreach (MoboToRam compRAM in compRAMList)
         {
             var part = getPart(compRAM.RAM_ID);
-
             list.Add(part);
         }
 
         return list;
     }
 
-    public List<cMobo> getMotherboardForCPU(int cpu_ID)
+    public List<c_ProductPageInfo> getMotherboardForCPU(int cpu_ID)
     {
-        List<cMobo> list = new List<cMobo>();
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
 
         dynamic compMoboList = (from c in db.MoboToCpus where c.CPU_ID == cpu_ID select c);
 
@@ -1870,9 +1833,9 @@ public class Service : IService
         return list;
     }
 
-    public List<cMobo> getMotherboardForRAM(int ram_ID)
+    public List<c_ProductPageInfo> getMotherboardForRAM(int ram_ID)
     {
-        List<cMobo> list = new List<cMobo>();
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
 
         dynamic compMoboList = (from c in db.MoboToRams where c.RAM_ID == ram_ID select c);
 
@@ -1886,9 +1849,9 @@ public class Service : IService
         return list;
     }
 
-    public List<cMobo> getMotherboardForCase(int case_ID)
+    public List<c_ProductPageInfo> getMotherboardForCase(int case_ID)
     {
-        List<cMobo> list = new List<cMobo>();
+        List<c_ProductPageInfo> list = new List<c_ProductPageInfo>();
 
         dynamic compMoboList = (from c in db.MoboToCases where c.Case_ID == case_ID select c);
 
@@ -2060,7 +2023,7 @@ public class Service : IService
 
         foreach (PartsStock p in parts)
         {
-            cRAM part = getPart(p.ID);
+            cRAM part = getRAM(p.ID);
 
             list.Add(part);
         }

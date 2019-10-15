@@ -74,17 +74,59 @@
   <wsdl:message name="IService_addHDD_OutputMessage">
     <wsdl:part name="parameters" element="tns:addHDDResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_addHeadset_InputMessage">
+    <wsdl:part name="parameters" element="tns:addHeadset" />
+  </wsdl:message>
+  <wsdl:message name="IService_addHeadset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addHeadsetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addKeyboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:addKeyboard" />
+  </wsdl:message>
+  <wsdl:message name="IService_addKeyboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addKeyboardResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_addLiquidCooler_InputMessage">
     <wsdl:part name="parameters" element="tns:addLiquidCooler" />
   </wsdl:message>
   <wsdl:message name="IService_addLiquidCooler_OutputMessage">
     <wsdl:part name="parameters" element="tns:addLiquidCoolerResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_addMicrophone_InputMessage">
+    <wsdl:part name="parameters" element="tns:addMicrophone" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMicrophone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addMicrophoneResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_addMobo_InputMessage">
     <wsdl:part name="parameters" element="tns:addMobo" />
   </wsdl:message>
   <wsdl:message name="IService_addMobo_OutputMessage">
     <wsdl:part name="parameters" element="tns:addMoboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMonitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:addMonitor" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMonitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:addMouse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addMouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMousepad_InputMessage">
+    <wsdl:part name="parameters" element="tns:addMousepad" />
+  </wsdl:message>
+  <wsdl:message name="IService_addMousepad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addMousepadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:addOS" />
+  </wsdl:message>
+  <wsdl:message name="IService_addOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addOSResponse" />
   </wsdl:message>
   <wsdl:message name="IService_addPSU_InputMessage">
     <wsdl:part name="parameters" element="tns:addPSU" />
@@ -103,6 +145,12 @@
   </wsdl:message>
   <wsdl:message name="IService_addSSD_OutputMessage">
     <wsdl:part name="parameters" element="tns:addSSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addSpeaker_InputMessage">
+    <wsdl:part name="parameters" element="tns:addSpeaker" />
+  </wsdl:message>
+  <wsdl:message name="IService_addSpeaker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addSpeakerResponse" />
   </wsdl:message>
   <wsdl:message name="IService_addPC_InputMessage">
     <wsdl:part name="parameters" element="tns:addPC" />
@@ -128,11 +176,77 @@
   <wsdl:message name="IService_getPCbyType_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPCbyTypeResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getAllPCInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPCInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllPCInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPCInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_getPCbyPrice_InputMessage">
     <wsdl:part name="parameters" element="tns:getPCbyPrice" />
   </wsdl:message>
   <wsdl:message name="IService_getPCbyPrice_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPCbyPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAirCoolersForCPU_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAirCoolersForCPU" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAirCoolersForCPU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAirCoolersForCPUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getLiquidCoolersForCPU_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLiquidCoolersForCPU" />
+  </wsdl:message>
+  <wsdl:message name="IService_getLiquidCoolersForCPU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLiquidCoolersForCPUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCPUForAirCooler_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCPUForAirCooler" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCPUForAirCooler_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCPUForAirCoolerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCPUForLiquidCooler_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCPUForLiquidCooler" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCPUForLiquidCooler_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCPUForLiquidCoolerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCPUForMotherboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCPUForMotherboard" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCPUForMotherboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCPUForMotherboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCaseForMotherboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseForMotherboard" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCaseForMotherboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseForMotherboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRAMForMotherboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRAMForMotherboard" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRAMForMotherboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRAMForMotherboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMotherboardForCPU_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMotherboardForCPU" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMotherboardForCPU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMotherboardForCPUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMotherboardForRAM_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMotherboardForRAM" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMotherboardForRAM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMotherboardForRAMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMotherboardForCase_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMotherboardForCase" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMotherboardForCase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMotherboardForCaseResponse" />
   </wsdl:message>
   <wsdl:message name="IService_getAllAirCooler_InputMessage">
     <wsdl:part name="parameters" element="tns:getAllAirCooler" />
@@ -272,6 +386,66 @@
   <wsdl:message name="IService_getCartItems_OutputMessage">
     <wsdl:part name="parameters" element="tns:getCartItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:getClient" />
+  </wsdl:message>
+  <wsdl:message name="IService_getClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllInvoices_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllInvoices" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllInvoices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPartInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:addToPartInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPartInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addToPartInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPcInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:addToPcInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPcInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addToPcInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getpcinvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:getpcinvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_getpcinvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getpcinvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPartInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPartInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPartInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPartInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPartSold_InputMessage">
+    <wsdl:part name="parameters" element="tns:addToPartSold" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPartSold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addToPartSoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPcSold_InputMessage">
+    <wsdl:part name="parameters" element="tns:addToPcSold" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPcSold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addToPcSoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_decreasePartStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:decreasePartStock" />
+  </wsdl:message>
+  <wsdl:message name="IService_decreasePartStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:decreasePartStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_decreasePcStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:decreasePcStock" />
+  </wsdl:message>
+  <wsdl:message name="IService_decreasePcStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:decreasePcStockResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
@@ -317,13 +491,41 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addHDD" message="tns:IService_addHDD_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addHDDResponse" message="tns:IService_addHDD_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="addHeadset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addHeadset" message="tns:IService_addHeadset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addHeadsetResponse" message="tns:IService_addHeadset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addKeyboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addKeyboard" message="tns:IService_addKeyboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addKeyboardResponse" message="tns:IService_addKeyboard_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="addLiquidCooler">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addLiquidCooler" message="tns:IService_addLiquidCooler_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addLiquidCoolerResponse" message="tns:IService_addLiquidCooler_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="addMicrophone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addMicrophone" message="tns:IService_addMicrophone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addMicrophoneResponse" message="tns:IService_addMicrophone_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="addMobo">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addMobo" message="tns:IService_addMobo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addMoboResponse" message="tns:IService_addMobo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addMonitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addMonitor" message="tns:IService_addMonitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addMonitorResponse" message="tns:IService_addMonitor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addMouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addMouse" message="tns:IService_addMouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addMouseResponse" message="tns:IService_addMouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addMousepad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addMousepad" message="tns:IService_addMousepad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addMousepadResponse" message="tns:IService_addMousepad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addOS" message="tns:IService_addOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addOSResponse" message="tns:IService_addOS_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addPSU">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addPSU" message="tns:IService_addPSU_InputMessage" />
@@ -336,6 +538,10 @@
     <wsdl:operation name="addSSD">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addSSD" message="tns:IService_addSSD_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addSSDResponse" message="tns:IService_addSSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addSpeaker">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addSpeaker" message="tns:IService_addSpeaker_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addSpeakerResponse" message="tns:IService_addSpeaker_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addPC">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addPC" message="tns:IService_addPC_InputMessage" />
@@ -353,9 +559,53 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getPCbyType" message="tns:IService_getPCbyType_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getPCbyTypeResponse" message="tns:IService_getPCbyType_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getAllPCInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllPCInfo" message="tns:IService_getAllPCInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllPCInfoResponse" message="tns:IService_getAllPCInfo_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getPCbyPrice">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getPCbyPrice" message="tns:IService_getPCbyPrice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getPCbyPriceResponse" message="tns:IService_getPCbyPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAirCoolersForCPU">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAirCoolersForCPU" message="tns:IService_getAirCoolersForCPU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAirCoolersForCPUResponse" message="tns:IService_getAirCoolersForCPU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLiquidCoolersForCPU">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getLiquidCoolersForCPU" message="tns:IService_getLiquidCoolersForCPU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getLiquidCoolersForCPUResponse" message="tns:IService_getLiquidCoolersForCPU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCPUForAirCooler">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCPUForAirCooler" message="tns:IService_getCPUForAirCooler_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCPUForAirCoolerResponse" message="tns:IService_getCPUForAirCooler_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCPUForLiquidCooler">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCPUForLiquidCooler" message="tns:IService_getCPUForLiquidCooler_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCPUForLiquidCoolerResponse" message="tns:IService_getCPUForLiquidCooler_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCPUForMotherboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCPUForMotherboard" message="tns:IService_getCPUForMotherboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCPUForMotherboardResponse" message="tns:IService_getCPUForMotherboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCaseForMotherboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCaseForMotherboard" message="tns:IService_getCaseForMotherboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCaseForMotherboardResponse" message="tns:IService_getCaseForMotherboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRAMForMotherboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getRAMForMotherboard" message="tns:IService_getRAMForMotherboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getRAMForMotherboardResponse" message="tns:IService_getRAMForMotherboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMotherboardForCPU">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getMotherboardForCPU" message="tns:IService_getMotherboardForCPU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getMotherboardForCPUResponse" message="tns:IService_getMotherboardForCPU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMotherboardForRAM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getMotherboardForRAM" message="tns:IService_getMotherboardForRAM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getMotherboardForRAMResponse" message="tns:IService_getMotherboardForRAM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMotherboardForCase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getMotherboardForCase" message="tns:IService_getMotherboardForCase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getMotherboardForCaseResponse" message="tns:IService_getMotherboardForCase_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getAllAirCooler">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllAirCooler" message="tns:IService_getAllAirCooler_InputMessage" />
@@ -448,6 +698,46 @@
     <wsdl:operation name="getCartItems">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getCartItems" message="tns:IService_getCartItems_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getCartItemsResponse" message="tns:IService_getCartItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getClient" message="tns:IService_getClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getClientResponse" message="tns:IService_getClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllInvoices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllInvoices" message="tns:IService_getAllInvoices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllInvoicesResponse" message="tns:IService_getAllInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addToPartInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPartInvoice" message="tns:IService_addToPartInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPartInvoiceResponse" message="tns:IService_addToPartInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addToPcInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPcInvoice" message="tns:IService_addToPcInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPcInvoiceResponse" message="tns:IService_addToPcInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getpcinvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getpcinvoice" message="tns:IService_getpcinvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getpcinvoiceResponse" message="tns:IService_getpcinvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPartInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPartInvoice" message="tns:IService_getPartInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPartInvoiceResponse" message="tns:IService_getPartInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addToPartSold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPartSold" message="tns:IService_addToPartSold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPartSoldResponse" message="tns:IService_addToPartSold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addToPcSold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPcSold" message="tns:IService_addToPcSold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPcSoldResponse" message="tns:IService_addToPcSold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="decreasePartStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/decreasePartStock" message="tns:IService_decreasePartStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/decreasePartStockResponse" message="tns:IService_decreasePartStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="decreasePcStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/decreasePcStock" message="tns:IService_decreasePcStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/decreasePcStockResponse" message="tns:IService_decreasePcStock_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -551,6 +841,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="addHeadset">
+      <soap:operation soapAction="http://tempuri.org/IService/addHeadset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addKeyboard">
+      <soap:operation soapAction="http://tempuri.org/IService/addKeyboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="addLiquidCooler">
       <soap:operation soapAction="http://tempuri.org/IService/addLiquidCooler" style="document" />
       <wsdl:input>
@@ -560,8 +868,53 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="addMicrophone">
+      <soap:operation soapAction="http://tempuri.org/IService/addMicrophone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="addMobo">
       <soap:operation soapAction="http://tempuri.org/IService/addMobo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMonitor">
+      <soap:operation soapAction="http://tempuri.org/IService/addMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMouse">
+      <soap:operation soapAction="http://tempuri.org/IService/addMouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMousepad">
+      <soap:operation soapAction="http://tempuri.org/IService/addMousepad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOS">
+      <soap:operation soapAction="http://tempuri.org/IService/addOS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -589,6 +942,15 @@
     </wsdl:operation>
     <wsdl:operation name="addSSD">
       <soap:operation soapAction="http://tempuri.org/IService/addSSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSpeaker">
+      <soap:operation soapAction="http://tempuri.org/IService/addSpeaker" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -632,8 +994,107 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getAllPCInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getAllPCInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getPCbyPrice">
       <soap:operation soapAction="http://tempuri.org/IService/getPCbyPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAirCoolersForCPU">
+      <soap:operation soapAction="http://tempuri.org/IService/getAirCoolersForCPU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLiquidCoolersForCPU">
+      <soap:operation soapAction="http://tempuri.org/IService/getLiquidCoolersForCPU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCPUForAirCooler">
+      <soap:operation soapAction="http://tempuri.org/IService/getCPUForAirCooler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCPUForLiquidCooler">
+      <soap:operation soapAction="http://tempuri.org/IService/getCPUForLiquidCooler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCPUForMotherboard">
+      <soap:operation soapAction="http://tempuri.org/IService/getCPUForMotherboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseForMotherboard">
+      <soap:operation soapAction="http://tempuri.org/IService/getCaseForMotherboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRAMForMotherboard">
+      <soap:operation soapAction="http://tempuri.org/IService/getRAMForMotherboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotherboardForCPU">
+      <soap:operation soapAction="http://tempuri.org/IService/getMotherboardForCPU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotherboardForRAM">
+      <soap:operation soapAction="http://tempuri.org/IService/getMotherboardForRAM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotherboardForCase">
+      <soap:operation soapAction="http://tempuri.org/IService/getMotherboardForCase" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -841,6 +1302,96 @@
     </wsdl:operation>
     <wsdl:operation name="getCartItems">
       <soap:operation soapAction="http://tempuri.org/IService/getCartItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <soap:operation soapAction="http://tempuri.org/IService/getClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllInvoices">
+      <soap:operation soapAction="http://tempuri.org/IService/getAllInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addToPartInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/addToPartInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addToPcInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/addToPcInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getpcinvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/getpcinvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPartInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/getPartInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addToPartSold">
+      <soap:operation soapAction="http://tempuri.org/IService/addToPartSold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addToPcSold">
+      <soap:operation soapAction="http://tempuri.org/IService/addToPcSold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decreasePartStock">
+      <soap:operation soapAction="http://tempuri.org/IService/decreasePartStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decreasePcStock">
+      <soap:operation soapAction="http://tempuri.org/IService/decreasePcStock" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
