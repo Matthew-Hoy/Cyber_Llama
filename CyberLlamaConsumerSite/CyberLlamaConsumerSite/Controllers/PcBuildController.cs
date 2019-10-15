@@ -16,5 +16,11 @@ namespace CyberLlamaConsumerSite.Controllers
         {
             return View();
         }
+
+        public void SelectCase(int ID)
+        {
+            Session["Case"] = ID;
+            Url.Action("Index", "PcBuild");
+        }
     }
 }
