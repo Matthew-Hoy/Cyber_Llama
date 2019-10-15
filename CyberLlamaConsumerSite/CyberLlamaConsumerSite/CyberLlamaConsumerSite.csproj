@@ -137,6 +137,7 @@
     <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Controllers\PoliciesAndReportingController.cs" />
     <Compile Include="Controllers\PrivacyAndTermsController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
@@ -291,6 +292,7 @@
     <Content Include="Images\computerIcon.png" />
     <Content Include="Images\contactIcon.png" />
     <Content Include="Images\cross-icon.jpg" />
+    <Content Include="Images\Edit_Icon.png" />
     <Content Include="Images\employeeIcon.png" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\faqIcon.png" />
@@ -417,6 +419,7 @@
     <Content Include="Views\Invoice\Index.cshtml" />
     <Content Include="Views\Invoice\Empty.cshtml" />
     <Content Include="Views\Invoice\Invoice.cshtml" />
+    <Content Include="Views\Management\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
