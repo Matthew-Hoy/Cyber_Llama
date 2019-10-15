@@ -1,5 +1,15 @@
 ﻿@using CyberLlamaConsumerSite.ServiceReference1;
 @{
+    <script>
+        function SelectCase(int) {
+            console.log("Hello");
+            Session["Case"] = int;
+            location.href = '@Url.Action("Index", "PcBuild")';
+        }
+
+    </script>
+
+
     ViewBag.Title = "Build Your own PC";
     ServiceClient sc = new ServiceClient();
     /*Session["Case"] = 23;
@@ -18,6 +28,8 @@
     {
         //Show all Cases
         dynamic list = sc.getAllParts("Case");
+
+
         foreach (c_ProductPageInfo c in list)
         {
             String imageLink = c.image;
@@ -30,7 +42,7 @@
                 <h1>@(model)</h1>
                 <p class="price">R@(price)</p>
                 <p>Quantity: @(quantity)</p>
-                <p><button onClick="SelectCase(c.ID)"> Select Case</button></p>
+               <p><button onClick="SelectCase(c.ID)"> Select Case</button></p>
             </div>
         }
 
@@ -408,26 +420,8 @@
         }
     }
 
-    void SelectCase(int ID);
-    {
-        Session["Case"] = ID;
-        //location.href = '@Url.Action("Index", "PcBuild")';
-    }
 
 }
-@{ 
 
-    int Add(int x, int y)
-    {
-        return x + y;
-    }
-}
 
-<script>
-    function SelectCase(int) {
-        Session["Case"] = int;
-        location.href = '@Url.Action("Index", "PcBuild")';
-    };
-
-</script>
 
