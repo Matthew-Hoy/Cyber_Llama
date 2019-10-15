@@ -3091,4 +3091,53 @@ public class Service : IService
         }
         return true;
     }
+
+    public List<cStock> getpartStockStats()
+    {
+        List<cStock> partStock = db.PartsStocks.Select(x => new cStock
+        {
+            Name = x.Model + " " + x.Type,
+            ProductID = x.ID,
+            Quantity = x.Quantity
+        }).ToList();
+        return partStock;
+    }
+
+    public List<cSold> getpartSoldStats()
+    {
+        List<cSold> partSold = db.PartsSolds.Select(x => new cSold
+        {
+            Name = x.Model + " " + x.Type,
+            ProductID = x.ID,
+            Quantity = x.Quantity_Sold
+        }).ToList();
+        return partSold;
+    }
+
+    public List<cStock> getpcStockStats()
+    {
+
+        List<cStock> pcStock = db.PcStocks.Select(x => new cStock
+        {
+            Name = x.PC_Type,
+            ProductID = x.ID,
+            Quantity = x.Quantity
+
+        }).ToList();
+
+        return pcStock;
+    }
+
+    public List<cSold> getpcSoldStats()
+    {
+        List<cSold> pcSold = db.PcSolds.Select(x => new cSold
+        {
+            Name = x.Type,
+            ProductID = x.PC_ID,
+            Quantity = x.Quantity_Sold
+
+        }).ToList();
+
+        return pcSold;
+    }
 }
