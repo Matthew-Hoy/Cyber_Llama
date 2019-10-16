@@ -1,0 +1,103 @@
+﻿@using CyberLlamaConsumerSite.ServiceReference1;
+@{
+    string id = (string)ViewContext.RouteData.Values["id"];
+    ViewBag.Title = id;
+    ServiceClient sc = new ServiceClient();
+    dynamic products = sc.getAllPCInfo(id);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<c_PcPageInfo> pcs = new List<c_PcPageInfo>();
+
+
+    foreach (c_PcPageInfo p in products)
+    {
+        pcs.Add(p);
+    }
+
+    if (pcs.Count == 0)
+    {
+        <h1 style="text-align:center">Woops!</h1>
+        <p style="text-align:center">You caught us, we have no products of this kind in stock...</p>
+        <hr />
+        <img src="~/Images/woops.png" alt="llama" class="llamaImage" />
+        <hr />
+        <p style="text-align:center">Hold on! Products are on there way!</p>
+    }
+}
+
+@{
+    <hr />
+    foreach (c_PcPageInfo p in pcs)
+    {
+        String imageLink = p.image;
+        String model = Convert.ToString(p.ID);
+        int price = p.price;
+        int quantity = p.Quantity;
+
+        <div class="card">
+            <img src="@(imageLink)" alt="Ram" style="width:100%">
+            <h1><a href="@Url.Action("Index", "PcInfo", new {id=p.ID })">@(model)</a></h1>
+            <p class="price">R@(price)</p>
+            <p>Quantity: @(quantity)</p>
+            <p><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = p.ID })>Add to Cart</button></p>
+        </div>
+    }
+}
+
+
+<script>
+    $(".addCartLink").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                alert("Added To Cart");
+            },
+            error: function () {
+                alert("An error Occured, Login to access Cart");
+            }
+
+        });
+    });
+</script>
+
+<style>
+    .llamaImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        width: 15%;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+</style>
+
+

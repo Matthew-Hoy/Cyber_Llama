@@ -139,6 +139,8 @@
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Controllers\PartinfoController.cs" />
+    <Compile Include="Controllers\PcInfoController.cs" />
+    <Compile Include="Controllers\PcPageController.cs" />
     <Compile Include="Controllers\PoliciesAndReportingController.cs" />
     <Compile Include="Controllers\PrivacyAndTermsController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
@@ -477,6 +479,8 @@
     <Content Include="Views\PcBuild\Index.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Partinfo\Index.cshtml" />
+    <Content Include="Views\PcPage\Index.cshtml" />
+    <Content Include="Views\PcInfo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
