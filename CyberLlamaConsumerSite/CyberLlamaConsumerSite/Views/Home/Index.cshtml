@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@using CyberLlamaConsumerSite.ServiceReference1;
 
 <style>
     .slideshowContainer {
@@ -78,7 +79,7 @@
     }
 </style>
 
-<hr/>
+<hr />
 <h1 style="text-align:center">Welcome to CyberLlamas!</h1>
 <p style="text-align:center">A newly opened computer retailer, that simply makes your life easier!</p>
 <p style="text-align:center">Welcome to the Cyber Family!</p>
@@ -100,6 +101,144 @@
     </div>
 
 </div>
+
+@{
+    ServiceClient sc = new ServiceClient();
+    dynamic gpu = sc.getAllParts("GPU");
+    dynamic Motherboard = sc.getAllParts("Motherboard");
+    dynamic RAM = sc.getAllParts("RAM");
+    dynamic CPU = sc.getAllParts("CPU");
+    dynamic AirCooler = sc.getAllParts("AirCooler");
+    dynamic LiquidCooler = sc.getAllParts("LiquidCooler");
+    dynamic SSD = sc.getAllParts("SSD");
+    dynamic HDD = sc.getAllParts("HDD");
+    dynamic Case = sc.getAllParts("Case");
+    ;
+    List<c_ProductPageInfo> prods = new List<c_ProductPageInfo>();
+    foreach (c_ProductPageInfo p in gpu)
+    {
+        prods.Add(p);
+    }
+    foreach (c_ProductPageInfo p in Motherboard)
+    {
+        prods.Add(p);
+    }
+    foreach (c_ProductPageInfo p in RAM)
+    {
+        prods.Add(p);
+    }
+    foreach (c_ProductPageInfo p in CPU)
+    {
+        prods.Add(p);
+    }
+    foreach (c_ProductPageInfo p in AirCooler)
+    {
+        prods.Add(p);
+    }
+    foreach (c_ProductPageInfo p in LiquidCooler)
+    {
+        prods.Add(p);
+    }
+    foreach (c_ProductPageInfo p in SSD)
+    {
+        prods.Add(p);
+    }
+    foreach (c_ProductPageInfo p in HDD)
+    {
+        prods.Add(p);
+    }
+    foreach (c_ProductPageInfo p in Case)
+    {
+        prods.Add(p);
+    }
+
+
+    if (prods.Count == 0)
+    {
+        <h1 style="text-align:center">Woops!</h1>
+        <p style="text-align:center">You caught us, we have no products of this kind in stock...</p>
+        <hr />
+        <img src="~/Images/woops.png" alt="llama" class="llamaImage" />
+        <hr />
+        <p style="text-align:center">Hold on! Products are on there way!</p>
+    }
+}
+
+@{
+    <hr />
+    foreach (c_ProductPageInfo p in prods)
+    {
+        String imageLink = p.image;
+        String model = p.model;
+        int price = p.price;
+        int quantity = p.Quantity;
+
+        <div class="card">
+            <img src="@(imageLink)" alt="Ram" style="width:100%;">
+            <h1>@(model)</h1>
+            <p class="price">R@(price)</p>
+            <p>Quantity: @(quantity)</p>
+            <p><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = p.ID })>Add to Cart</button></p>
+        </div>
+    }
+}
+<script>
+    $(".addCartLink").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                alert("Added To Cart");
+            },
+            error: function () {
+                alert("An error Occured, Login to access Cart");
+            }
+
+        });
+    });
+</script>
+
+<style>
+    .llamaImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        width: 15%;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        display: inline-block;
+        
+    }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+</style>
+
 
 
 <script>
