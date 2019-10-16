@@ -348,6 +348,7 @@
       <xs:sequence>
         <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newGPU" nillable="true" type="q16:cGPU" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
+        <xs:element minOccurs="0" name="price" type="xs:decimal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

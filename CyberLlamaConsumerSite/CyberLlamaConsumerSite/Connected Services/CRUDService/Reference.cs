@@ -7704,10 +7704,10 @@ namespace CyberLlamaConsumerSite.CRUDService {
         System.Threading.Tasks.Task<bool> addFanAsync(CyberLlamaConsumerSite.CRUDService.cFan newFan, int qua);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addGPU", ReplyAction="http://tempuri.org/IService/addGPUResponse")]
-        bool addGPU(CyberLlamaConsumerSite.CRUDService.cGPU newGPU, int qua);
+        bool addGPU(CyberLlamaConsumerSite.CRUDService.cGPU newGPU, int qua, decimal price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addGPU", ReplyAction="http://tempuri.org/IService/addGPUResponse")]
-        System.Threading.Tasks.Task<bool> addGPUAsync(CyberLlamaConsumerSite.CRUDService.cGPU newGPU, int qua);
+        System.Threading.Tasks.Task<bool> addGPUAsync(CyberLlamaConsumerSite.CRUDService.cGPU newGPU, int qua, decimal price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addHDD", ReplyAction="http://tempuri.org/IService/addHDDResponse")]
         bool addHDD(CyberLlamaConsumerSite.CRUDService.cHDD newHDD, int qua);
@@ -8253,12 +8253,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.addFanAsync(newFan, qua);
         }
         
-        public bool addGPU(CyberLlamaConsumerSite.CRUDService.cGPU newGPU, int qua) {
-            return base.Channel.addGPU(newGPU, qua);
+        public bool addGPU(CyberLlamaConsumerSite.CRUDService.cGPU newGPU, int qua, decimal price) {
+            return base.Channel.addGPU(newGPU, qua, price);
         }
         
-        public System.Threading.Tasks.Task<bool> addGPUAsync(CyberLlamaConsumerSite.CRUDService.cGPU newGPU, int qua) {
-            return base.Channel.addGPUAsync(newGPU, qua);
+        public System.Threading.Tasks.Task<bool> addGPUAsync(CyberLlamaConsumerSite.CRUDService.cGPU newGPU, int qua, decimal price) {
+            return base.Channel.addGPUAsync(newGPU, qua, price);
         }
         
         public bool addHDD(CyberLlamaConsumerSite.CRUDService.cHDD newHDD, int qua) {
