@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfcInvoice">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cInvoice" nillable="true" type="tns:cInvoice" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcInvoice" nillable="true" type="tns:ArrayOfcInvoice" />
-  <xs:complexType name="cInvoice">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="InvoiceId" type="xs:int" />
-      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="numItems" type="xs:int" />
-      <xs:element minOccurs="0" name="pc_ID" type="xs:int" />
-      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="user_ID" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="cInvoice" nillable="true" type="tns:cInvoice" />
   <xs:complexType name="ArrayOfcAllCart">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cAllCart" nillable="true" type="tns:cAllCart" />
@@ -254,6 +237,7 @@
       <xs:element minOccurs="0" name="rotational_speed" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="storage" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -584,18 +568,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="c_ProductPageInfo" nillable="true" type="tns:c_ProductPageInfo" />
-  <xs:complexType name="ArrayOfcPC">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cPC" nillable="true" type="tns:cPC" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcPC" nillable="true" type="tns:ArrayOfcPC" />
-  <xs:complexType name="ArrayOfc_PcPageInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="c_PcPageInfo" nillable="true" type="tns:c_PcPageInfo" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfc_PcPageInfo" nillable="true" type="tns:ArrayOfc_PcPageInfo" />
   <xs:complexType name="c_PcPageInfo">
     <xs:sequence>
       <xs:element minOccurs="0" name="ID" type="xs:int" />
@@ -608,6 +580,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="c_PcPageInfo" nillable="true" type="tns:c_PcPageInfo" />
+  <xs:complexType name="ArrayOfcPC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cPC" nillable="true" type="tns:cPC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcPC" nillable="true" type="tns:ArrayOfcPC" />
+  <xs:complexType name="ArrayOfc_PcPageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="c_PcPageInfo" nillable="true" type="tns:c_PcPageInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfc_PcPageInfo" nillable="true" type="tns:ArrayOfc_PcPageInfo" />
   <xs:complexType name="ArrayOfc_ProductPageInfo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="c_ProductPageInfo" nillable="true" type="tns:c_ProductPageInfo" />
@@ -693,4 +677,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="cClient" nillable="true" type="tns:cClient" />
+  <xs:complexType name="ArrayOfcInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cInvoice" nillable="true" type="tns:cInvoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcInvoice" nillable="true" type="tns:ArrayOfcInvoice" />
+  <xs:complexType name="cInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InvoiceId" type="xs:int" />
+      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="numItems" type="xs:int" />
+      <xs:element minOccurs="0" name="pc_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="user_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cInvoice" nillable="true" type="tns:cInvoice" />
 </xs:schema>

@@ -231,6 +231,27 @@
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cRegisterStat.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cHeadset1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cKeyboard1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cMicrophone1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cMonitor1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cMouse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cMousePad1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cSpeaker1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\CRUDService\Service.disco" />
     <None Include="Connected Services\CRUDService\configuration91.svcinfo" />
     <None Include="Connected Services\CRUDService\configuration.svcinfo" />
@@ -314,6 +335,18 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cSpeaker.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cLoginStat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cRegisterStat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cSold.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CyberLlamaConsumerSite.ServiceReference1.cStock.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\Service.disco" />
