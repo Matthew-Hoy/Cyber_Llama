@@ -30,7 +30,7 @@
     foreach (c_PcPageInfo p in pcs)
     {
         String imageLink = p.image;
-        String model = Convert.ToString(p.ID);
+        String model = Convert.ToString(p.type + " "+ p.ID);
         int price = p.price;
         int quantity = p.Quantity;
 

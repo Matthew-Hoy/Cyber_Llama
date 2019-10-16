@@ -96,6 +96,9 @@ public interface IService
     cPC intgetPC(int ID);
 
     [OperationContract]
+    c_PcPageInfo getPcInfo(int ID);
+
+    [OperationContract]
     cAirCooler getAirCooler(int ID);
 
     [OperationContract]

@@ -35,7 +35,7 @@
     
         <div class="card">
             <img src="@(imageLink)" alt="Ram" style="width:100%">
-            <h1><a href="@Url.Action("Index", "PartInfo", new {id=p.ID })">@(model)</a></h1>
+            <h1><a href="@Url.Action("Index", "PartInfo", new {id=p.ID})">@(model)</a></h1>
             <p class="price">R@(price)</p>
             <p>Quantity: @(quantity)</p>
             <p><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = p.ID })>Add to Cart</button></p>

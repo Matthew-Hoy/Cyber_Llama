@@ -9,16 +9,17 @@
     int points = 0;
 
     dynamic list = sc.getAllInvoices(Convert.ToInt32(Session["UserID"]));
-    foreach (cInvoice i in list)
-    {
-        c_ProductPageInfo part = sc.getPart(i.pc_ID);
+    if (list != null){
+        foreach (cInvoice i in list)
+        {
+            c_ProductPageInfo part = sc.getPart(i.pc_ID);
 
-        NIB++;
-        spent += (part.price*part.Quantity);
+            NIB++;
+            spent += (part.price*part.Quantity);
+        }
+
+        points = (int)(spent / 1000);
     }
-
-    points = (int)(spent / 100);
-
 
     <figure class="card-profile-image">
         <img class="centerImage" Style="margin-top:4%;" src="~/Images/llama.png" />

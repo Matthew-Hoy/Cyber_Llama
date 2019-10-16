@@ -4,8 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ServiceClient sc = new ServiceClient();
     string id = (string)ViewContext.RouteData.Values["id"];
-
-
+    int ID = 0;
     c_ProductPageInfo part = sc.getPart(Convert.ToInt32(id));
 
     String imageLink = part.image;

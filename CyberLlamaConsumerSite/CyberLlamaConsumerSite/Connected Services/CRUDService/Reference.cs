@@ -7283,6 +7283,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRUDService.IService")]
     public interface IService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcInvoice", ReplyAction="http://tempuri.org/IService/addToPcInvoiceResponse")]
+        bool addToPcInvoice(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcInvoice", ReplyAction="http://tempuri.org/IService/addToPcInvoiceResponse")]
+        System.Threading.Tasks.Task<bool> addToPcInvoiceAsync(int UserID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpcinvoice", ReplyAction="http://tempuri.org/IService/getpcinvoiceResponse")]
         CyberLlamaConsumerSite.CRUDService.cAllCart[] getpcinvoice(int InvoiceID);
         
@@ -7480,6 +7486,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/intgetPC", ReplyAction="http://tempuri.org/IService/intgetPCResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC> intgetPCAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPcInfo", ReplyAction="http://tempuri.org/IService/getPcInfoResponse")]
+        CyberLlamaConsumerSite.CRUDService.c_PcPageInfo getPcInfo(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPcInfo", ReplyAction="http://tempuri.org/IService/getPcInfoResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.c_PcPageInfo> getPcInfoAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAirCooler", ReplyAction="http://tempuri.org/IService/getAirCoolerResponse")]
         CyberLlamaConsumerSite.CRUDService.cAirCooler getAirCooler(int ID);
@@ -7822,12 +7834,6 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartInvoice", ReplyAction="http://tempuri.org/IService/addToPartInvoiceResponse")]
         System.Threading.Tasks.Task<bool> addToPartInvoiceAsync(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcInvoice", ReplyAction="http://tempuri.org/IService/addToPcInvoiceResponse")]
-        bool addToPcInvoice(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcInvoice", ReplyAction="http://tempuri.org/IService/addToPcInvoiceResponse")]
-        System.Threading.Tasks.Task<bool> addToPcInvoiceAsync(int UserID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7855,6 +7861,14 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public bool addToPcInvoice(int UserID) {
+            return base.Channel.addToPcInvoice(UserID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addToPcInvoiceAsync(int UserID) {
+            return base.Channel.addToPcInvoiceAsync(UserID);
         }
         
         public CyberLlamaConsumerSite.CRUDService.cAllCart[] getpcinvoice(int InvoiceID) {
@@ -8119,6 +8133,14 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC> intgetPCAsync(int ID) {
             return base.Channel.intgetPCAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.c_PcPageInfo getPcInfo(int ID) {
+            return base.Channel.getPcInfo(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.c_PcPageInfo> getPcInfoAsync(int ID) {
+            return base.Channel.getPcInfoAsync(ID);
         }
         
         public CyberLlamaConsumerSite.CRUDService.cAirCooler getAirCooler(int ID) {
@@ -8575,14 +8597,6 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<bool> addToPartInvoiceAsync(int UserID) {
             return base.Channel.addToPartInvoiceAsync(UserID);
-        }
-        
-        public bool addToPcInvoice(int UserID) {
-            return base.Channel.addToPcInvoice(UserID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> addToPcInvoiceAsync(int UserID) {
-            return base.Channel.addToPcInvoiceAsync(UserID);
         }
     }
 }

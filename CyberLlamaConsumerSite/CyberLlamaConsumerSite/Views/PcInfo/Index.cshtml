@@ -6,12 +6,24 @@
     string id = (string)ViewContext.RouteData.Values["id"];
 
 
-    c_ProductPageInfo part = sc.getPart(Convert.ToInt32(id));
+    c_PcPageInfo part = sc.getPcInfo(Convert.ToInt32(id));
+    cPC pc = sc.intgetPC(Convert.ToInt32(id));
 
     String imageLink = part.image;
-    String model = part.model;
-    int price = part.price;
+    int price = (int)part.price;
     int quantity = part.Quantity;
+    
+    c_ProductPageInfo Case = sc.getPart(Convert.ToInt32(pc.case_id));
+    c_ProductPageInfo Mobo = sc.getPart(Convert.ToInt32(pc.mobo_id));
+    c_ProductPageInfo CPU = sc.getPart(Convert.ToInt32(pc.cpu_id));
+    c_ProductPageInfo RAM = sc.getPart(Convert.ToInt32(pc.ram_id));
+    c_ProductPageInfo GPU = sc.getPart(Convert.ToInt32(pc.gpu_id));
+    c_ProductPageInfo Cooler = sc.getPart(Convert.ToInt32(pc.cooler_id));
+    c_ProductPageInfo SSD = sc.getPart(Convert.ToInt32(pc.ssd_id));
+    c_ProductPageInfo HDD = sc.getPart(Convert.ToInt32(pc.hdd_id));
+    c_ProductPageInfo Fan = sc.getPart(Convert.ToInt32(pc.fan_id));
+    c_ProductPageInfo PSU = sc.getPart(Convert.ToInt32(pc.psu_id));
+    
 
     <h2 style="text-align:center"> Product Info </h2>
     <hr style="color:white;" />
@@ -19,13 +31,48 @@
     <div class="row">
         <div class="col" style="text-align:center">
             <img src="@(imageLink)" alt="Ram" style="width:80%; height:60%">
-
             <p class="price" style="font-size:200%">R@(price)</p>
             <p style="font-size:150%">Quantity: @(quantity)</p>
             <p style="font-size:150%"><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = part.ID })>Add to Cart</button></p>
         </div>
         <div class="col">
             <h3 style="text-align:center">Details</h3>
+            <div class="row">
+                <div class="col">Case:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = Case.ID})">@(Case.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">Motherboard:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = Mobo.ID})">@(Mobo.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">CPU:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = CPU.ID})">@(CPU.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">RAM:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = RAM.ID})">@(RAM.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">Cooler:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = Cooler.ID})">@(Cooler.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">GPU:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = GPU.ID})">@(GPU.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">PSU:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = PSU.ID})">@(PSU.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">SSD:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = SSD.ID})">@(SSD.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">HDD:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = HDD.ID})">@(HDD.model)</a></div>
+            </div>
 
         </div>
     </div>

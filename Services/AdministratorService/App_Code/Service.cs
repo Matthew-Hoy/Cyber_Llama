@@ -1379,7 +1379,7 @@ public class Service : IService
 
         cCPU temp = new cCPU
         {
-            id = ID,
+            id = info.ID,
             model = part.Model,
             brand = part.Brand,
             series = part.Series,
@@ -1869,6 +1869,24 @@ public class Service : IService
             warranty = pc.Warranty,
             discount = info.Discount,
             active = info.Active
+        };
+
+        return temp;
+    }
+
+    public c_PcPageInfo getPcInfo(int ID)
+    {
+        var part = (from p in db.PcStocks where p.ID == ID select p).FirstOrDefault();
+
+        c_PcPageInfo temp = new c_PcPageInfo()
+        {
+            ID = part.ID,
+            image = part.Image,
+            type = part.PC_Type,
+            Quantity = part.Quantity,
+            active = part.Active,
+            discount = part.Discount,
+            price = (int)part.Price,
         };
 
         return temp;
