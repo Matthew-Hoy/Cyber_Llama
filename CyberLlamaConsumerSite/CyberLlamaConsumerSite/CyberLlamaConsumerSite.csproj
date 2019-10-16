@@ -129,9 +129,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AddNewProductController.cs" />
     <Compile Include="Controllers\AddUserController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\EditProductController.cs" />
     <Compile Include="Controllers\FAQsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
@@ -148,7 +150,6 @@
     <Compile Include="cPart.cs" />
     <Compile Include="Controllers\PcBuildController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
-    <Compile Include="Controllers\ViewEmployeeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -156,9 +157,11 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Statistics.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\UserPositionView.cs" />
-    <Compile Include="Models\ViewModels\Employees.cs" />
+    <Compile Include="Models\ViewModels\Management.cs" />
+    <Compile Include="Models\UserStat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -216,25 +219,16 @@
     <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cInvoice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cHeadset.datasource">
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cSold.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cKeyboard.datasource">
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cStock.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cMicrophone.datasource">
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cLoginStat.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cMonitor.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cMouse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cMousePad.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cSpeaker.datasource">
+    <Content Include="Connected Services\CRUDService\CyberLlamaConsumerSite.CRUDService.cRegisterStat.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\CRUDService\Service.disco" />
@@ -477,10 +471,10 @@
     <Content Include="Views\Invoice\Invoice.cshtml" />
     <Content Include="Views\Management\Index.cshtml" />
     <Content Include="Views\PcBuild\Index.cshtml" />
-    <Content Include="Views\Profile\Index.cshtml" />
-    <Content Include="Views\Partinfo\Index.cshtml" />
-    <Content Include="Views\PcPage\Index.cshtml" />
-    <Content Include="Views\PcInfo\Index.cshtml" />
+    <Content Include="Views\AddNewProduct\Index.cshtml" />
+    <Content Include="Views\AddNewProduct\GPU.cshtml" />
+    <Content Include="Views\AddNewProduct\Complete.cshtml" />
+    <Content Include="Views\EditProduct\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

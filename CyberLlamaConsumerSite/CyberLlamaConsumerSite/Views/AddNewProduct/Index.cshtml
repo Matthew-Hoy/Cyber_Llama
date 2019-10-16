@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Add Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Add a Product</h1>
+<hr color="white" />
+<div class="row" style="margin-top:3%;">
+    <form method="post" action="@Url.Action("addProduct", "AddNewProduct")" style="width:100%">
+        <div class="col-md-6">
+            <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
+                <h3 class="centerText">Pc Parts: </h3>
+
+                <select style="width:70%" id="selectPart" name="product">
+                    <option>Graphics processing Unit</option>
+                    <option>Motherboard</option>
+                    <option>Random Access Memory</option>
+                    <option>Computer Processing Unit</option>
+                    <option>Air Cooler</option>
+                    <option>Liquid Cooler</option>
+                    <option>Solid State Drive</option>
+                    <option>Hard Drive</option>
+                    <option>PC Chassis</option>
+                    <option>Power Supply</option>
+                    <option>Case Fan</option>
+                    <option>Computer Processing Unit</option>
+                    <option>Graphics processing Unit</option>
+                    <option>Motherboard</option>
+                    <option>Random Access Memory</option>
+                    <option>Computer Processing Unit</option>
+                </select>
+                <button type="submit">Add Part</button>
+            </div>
+        </div>
+    </form>
+</div>

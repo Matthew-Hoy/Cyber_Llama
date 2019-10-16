@@ -106,12 +106,13 @@ namespace CyberLlamaConsumerSite.Controllers
         {
             CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
             var client = sc.getClient(Convert.ToInt32(Session["UserID"]));
-            if (delivery.Address != null)
+            if (delivery != null)
             {
                 delivery.Method = "Deliver";
             }
             else
             {
+                delivery = new Delivery();
                 delivery.Method = "Collect";
             }
 

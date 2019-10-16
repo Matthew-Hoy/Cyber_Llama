@@ -3,11 +3,216 @@
     ViewBag.Title = "Management";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model CyberLlamaConsumerSite.Models.ViewModels.Employees
+@model CyberLlamaConsumerSite.Models.ViewModels.Management
 
 <img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
 <h1 class="centerText" style="margin:10px 0px 40px 0px">Management</h1>
 <hr color="white" />
+
+<script>
+    function sortStockbyQua() {
+        var partstock = @Html.Raw(Json.Encode(Model.partStock.OrderBy(x => x.Quantity).Select(y => y)));
+        for (var i = 0; i < partstock.length; i++) {
+            document.getElementById("partstockID " + i).innerHTML = partstock[i].ProductID;
+            document.getElementById("partstockName " + i).innerHTML = partstock[i].Name;
+            document.getElementById("partStockQua " + i).innerHTML = partstock[i].Quantity;
+        }
+        var pcStock = @Html.Raw(Json.Encode(Model.pcStock.OrderBy(x => x.Quantity).Select(y => y)));
+        for (var i = 0; i < pcStock.length; i++) {
+            document.getElementById("pcstockID " + i).innerHTML = pcStock[i].ProductID;
+            document.getElementById("pcstockName " + i).innerHTML = pcStock[i].Name;
+            document.getElementById("pcStockQua " + i).innerHTML = pcStock[i].Quantity;
+        }
+    }
+
+    function sortStockbyID() {
+        var partstock = @Html.Raw(Json.Encode(Model.partStock.OrderBy(x => x.ProductID).Select(y => y)));
+        for (var i = 0; i < partstock.length; i++) {
+            document.getElementById("partstockID " + i).innerHTML = partstock[i].ProductID;
+            document.getElementById("partstockName " + i).innerHTML = partstock[i].Name;
+            document.getElementById("partStockQua " + i).innerHTML = partstock[i].Quantity;
+        }
+        var pcStock = @Html.Raw(Json.Encode(Model.pcStock.OrderBy(x => x.ProductID).Select(y => y)));
+        for (var i = 0; i < pcStock.length; i++) {
+            document.getElementById("pcstockID " + i).innerHTML = pcStock[i].ProductID;
+            document.getElementById("pcstockName " + i).innerHTML = pcStock[i].Name;
+            document.getElementById("pcStockQua " + i).innerHTML = pcStock[i].Quantity;
+        }
+    }
+
+    function sortStockbyName() {
+        var partstock = @Html.Raw(Json.Encode(Model.partStock.OrderBy(x => x.Name.Trim()).Select(y => y)));
+        for (var i = 0; i < partstock.length; i++) {
+            document.getElementById("partstockID " + i).innerHTML = partstock[i].ProductID;
+            document.getElementById("partstockName " + i).innerHTML = partstock[i].Name;
+            document.getElementById("partStockQua " + i).innerHTML = partstock[i].Quantity;
+        }
+        var pcStock = @Html.Raw(Json.Encode(Model.pcStock.OrderBy(x => x.Name.Trim()).Select(y => y)));
+        for (var i = 0; i < pcStock.length; i++) {
+            document.getElementById("pcstockID " + i).innerHTML = pcStock[i].ProductID;
+            document.getElementById("pcstockName " + i).innerHTML = pcStock[i].Name;
+            document.getElementById("pcStockQua " + i).innerHTML = pcStock[i].Quantity;
+        }
+    }
+    //Thew Serting og the Sold Items
+    function sortSoldbyQua() {
+        var partsold = @Html.Raw(Json.Encode(Model.partSold.OrderBy(x => x.Quantity).Select(y => y)));
+        for (var i = 0; i < partsold.length; i++) {
+            document.getElementById("partsoldID " + i).innerHTML = partsold[i].ProductID;
+            document.getElementById("partsoldName " + i).innerHTML = partsold[i].Name;
+            document.getElementById("partSoldQua " + i).innerHTML = partsold[i].Quantity;
+        }
+        var pcSold = @Html.Raw(Json.Encode(Model.pcSold.OrderBy(x => x.Quantity).Select(y => y)));
+        for (var i = 0; i < pcSold.length; i++) {
+            document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
+            document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
+            document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+        }
+    }
+
+    function sortSoldbyID() {
+        var partsold = @Html.Raw(Json.Encode(Model.partSold.OrderBy(x => x.ProductID).Select(y => y)));
+        for (var i = 0; i < partsold.length; i++) {
+            document.getElementById("partsoldID " + i).innerHTML = partsold[i].ProductID;
+            document.getElementById("partsoldName " + i).innerHTML = partsold[i].Name;
+            document.getElementById("partSoldQua " + i).innerHTML = partsold[i].Quantity;
+        }
+        var pcSold = @Html.Raw(Json.Encode(Model.pcSold.OrderBy(x => x.ProductID).Select(y => y)));
+        for (var i = 0; i < pcSold.length; i++) {
+            document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
+            document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
+            document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+        }
+    }
+
+    function sortSoldbyName() {
+        var partsold = @Html.Raw(Json.Encode(Model.partSold.OrderBy(x => x.Name.Trim()).Select(y => y)));
+        for (var i = 0; i < partsold.length; i++) {
+            document.getElementById("partsoldID " + i).innerHTML = partsold[i].ProductID;
+            document.getElementById("partsoldName " + i).innerHTML = partsold[i].Name;
+            document.getElementById("partSoldQua " + i).innerHTML = partsold[i].Quantity;
+        }
+        var pcSold = @Html.Raw(Json.Encode(Model.pcSold.OrderBy(x => x.Name.Trim()).Select(y => y)));
+        for (var i = 0; i < pcSold.length; i++) {
+            document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
+            document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
+            document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+        }
+    }
+    //Date for sales filter
+            function getDateValue() {
+                var partsold = @Html.Raw(Json.Encode(Model.partSold));
+                var pcSold = @Html.Raw(Json.Encode(Model.pcSold));
+                for (var i = 0; i < partsold.length; i++) {
+                    document.getElementById("partsoldID " + i).innerHTML = "";
+                    document.getElementById("partsoldName " + i).innerHTML = "";
+                    document.getElementById("partSoldQua " + i).innerHTML = "";
+                }
+                for (var i = 0; i < pcSold.length; i++) {
+                    document.getElementById("partsoldID " + i).innerHTML = "";
+                    document.getElementById("partsoldName " + i).innerHTML = "";
+                    document.getElementById("partSoldQua " + i).innerHTML = "";
+                }
+
+                var e = document.getElementById("list");
+                
+                var value = e.options[e.selectedIndex].text;
+                if (value == "this Month") {
+                    partsold = @Html.Raw(Json.Encode(Model.partSold.Where(x => x.Date.Month == DateTime.Now.Date.Month)));
+                    for (var i = 0; i < partsold.length; i++) {
+                        document.getElementById("partsoldID " + i).innerHTML = partsold[i].ProductID;
+                        document.getElementById("partsoldName " + i).innerHTML = partsold[i].Name;
+                        document.getElementById("partSoldQua " + i).innerHTML = partsold[i].Quantity;
+                    }
+                    pcSold = @Html.Raw(Json.Encode(Model.pcSold.Where(x => x.Date.Month == DateTime.Now.Date.Month)));
+                    for (var i = 0; i < pcSold.length; i++) {
+                        document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
+                        document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
+                        document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+                    }
+                } else if (value == "this Year") {
+                    partsold = @Html.Raw(Json.Encode(Model.partSold.Where(x => x.Date.Year == DateTime.Now.Date.Year)));
+                    for (var i = 0; i < partsold.length; i++) {
+                        document.getElementById("partsoldID " + i).innerHTML = partsold[i].ProductID;
+                        document.getElementById("partsoldName " + i).innerHTML = partsold[i].Name;
+                        document.getElementById("partSoldQua " + i).innerHTML = partsold[i].Quantity;
+                    }
+                    pcSold = @Html.Raw(Json.Encode(Model.pcSold.Where(x => x.Date.Year == DateTime.Now.Date.Year)));
+                    for (var i = 0; i < pcSold.length; i++) {
+                        document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
+                        document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
+                        document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+                    }
+                }
+                else if (value == "the Beginning of time") {
+                    partsold = @Html.Raw(Json.Encode(Model.partSold));
+                    for (var i = 0; i < partsold.length; i++) {
+                        document.getElementById("partsoldID " + i).innerHTML = partsold[i].ProductID;
+                        document.getElementById("partsoldName " + i).innerHTML = partsold[i].Name;
+                        document.getElementById("partSoldQua " + i).innerHTML = partsold[i].Quantity;
+                    }
+                    pcSold = @Html.Raw(Json.Encode(Model.pcSold));
+                    for (var i = 0; i < pcSold.length; i++) {
+                        document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
+                        document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
+                        document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+                    }
+                }
+                else if (value == "today") {
+                    partsold = @Html.Raw(Json.Encode(Model.partSold.Where(x => x.Date.Day == DateTime.Now.Date.Day)));
+                    for (var i = 0; i < partsold.length; i++) {
+                        document.getElementById("partsoldID " + i).innerHTML = partsold[i].ProductID;
+                        document.getElementById("partsoldName " + i).innerHTML = partsold[i].Name;
+                        document.getElementById("partSoldQua " + i).innerHTML = partsold[i].Quantity;
+                    }
+                    pcSold = @Html.Raw(Json.Encode(Model.pcSold.Where(x => x.Date.Day == DateTime.Now.Date.Day)));
+                    for (var i = 0; i < pcSold.length; i++) {
+                        document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
+                        document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
+                        document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+                    }
+                }
+                console.log(value);
+                    
+    }
+
+    function changeDateUsers() {
+        var userReg = @Html.Raw(Json.Encode(Model.userReg));
+        var newUser= @Html.Raw(Json.Encode(Model.newUser));
+        document.getElementById("regUsers").innerHTML = "Number of Already Registered Users that logged in: ";
+        document.getElementById("newUsers").innerHTML = "Number of New Users: ";
+        var e = document.getElementById("userList");
+                
+        var value = e.options[e.selectedIndex].text;
+        if (value == "this Month") {
+            userReg = @Html.Raw(Json.Encode(Model.userReg.Where(x => x.Date.Month == DateTime.Now.Date.Month).Count()));
+            newUser = @Html.Raw(Json.Encode(Model.newUser.Where(x => x.Date.Month == DateTime.Now.Date.Month).Count()));
+            document.getElementById("regUsers").innerHTML += userReg;
+            document.getElementById("newUsers").innerHTML += newUser;
+ 
+        } else if (value == "this Year") {
+            userReg = @Html.Raw(Json.Encode(Model.userReg.Where(x => x.Date.Year == DateTime.Now.Date.Year).Count()));
+            newUser = @Html.Raw(Json.Encode(Model.newUser.Where(x => x.Date.Year == DateTime.Now.Date.Year).Count()));
+            document.getElementById("regUsers").innerHTML += userReg;
+            document.getElementById("newUsers").innerHTML += newUser;
+        }
+        else if (value == "the Beginning of time") {
+            userReg = @Html.Raw(Json.Encode(Model.userReg.Count()));
+            newUser = @Html.Raw(Json.Encode(Model.newUser.Count()));
+            document.getElementById("regUsers").innerHTML += userReg;
+            document.getElementById("newUsers").innerHTML += newUser;
+ 
+        }
+        else if (value == "today") {
+            userReg = @Html.Raw(Json.Encode(Model.userReg.Where(x => x.Date.Day == DateTime.Now.Date.Day).Count()));
+            newUser = @Html.Raw(Json.Encode(Model.newUser.Where(x => x.Date.Day == DateTime.Now.Date.Day).Count()));
+            document.getElementById("regUsers").innerHTML += userReg;
+            document.getElementById("newUsers").innerHTML += newUser;
+        }
+        console.log(value);  
+    }
+</script>
+
 
 <table class="data">
     <thead class="data">
@@ -23,7 +228,7 @@
         </tr>
     </thead>
     <tbody class="data">
-        @foreach (var employee in Model.listEmployees)
+        @foreach (var employee in Model.Employees)
         {
             <tr>
                 <td class="data">@employee.Admin_ID</td>
@@ -42,5 +247,197 @@
 
     </tfoot>
 </table>
+<hr color="white" />
+<h2 class="centerText" style="margin:10px 0px 40px 0px">Stock</h2>
+<hr color="white" />
+<div class="row" style="margin-top:3%;">
+
+    <div class="col-md-4">
+        <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
+            <h4>Sort Inventories By:</h4>
+            <button onclick="sortStockbyID()">Product ID</button>
+            <button onclick="sortStockbyName()">Product Name</button>
+            <button onclick="sortStockbyQua()">Quantity</button>
+        </div>
+        <h4 class="centerText" style="margin-top:30px;">Out Of Stock</h4>
+        <table class="data">
+            <thead class="data">
+                <tr>
+                    <th class="data">Product ID</th>
+                    <th class="data">Product Name</th>
+                </tr>
+            </thead>
+            <tbody class="data">
+                @for (int i = 0; i < Model.partStock.Count(); i++)
+                {
+                    if (Model.partStock[i].Quantity <= 0)
+                    {
+                        <tr>
+                            <td class="data">@Model.partStock[i].ProductID</td>
+                            <td class="data">@Model.partStock[i].Name</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-4">
+        <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
+            <h4>PC Parts Inventory</h4>
+            <table class="data">
+                <thead class="data">
+                    <tr>
+                        <th class="data">Product ID</th>
+                        <th class="data">Product Name</th>
+                        <th class="data">Product Quantity</th>
+                    </tr>
+                </thead>
+                <tbody class="data">
+                    @for (int i = 0; i < Model.partStock.Count(); i++)
+                    {
+                        <tr>
+                            <td id="partstockID @i" class="data">@Model.partStock[i].ProductID</td>
+                            <td id="partstockName @i" class="data">@Model.partStock[i].Name</td>
+                            <td id="partStockQua @i" class="data">@Model.partStock[i].Quantity</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p><b>Highest Stock Available: </b>@Model.partStock.OrderByDescending(x => x.Quantity).FirstOrDefault().Name</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
+            <h4 class="centerText">PC Inventory</h4>
+            <table class="data">
+                <thead class="data">
+                    <tr>
+                        <th class="data">Product ID</th>
+                        <th class="data">Product Name</th>
+                        <th class="data">Product Quantity</th>
+                    </tr>
+                </thead>
+                <tbody class="data">
+                    @for (int i = 0; i < Model.pcStock.Count(); i++)
+                    {
+                        <tr>
+                            <td id="pcstockID @i" class="data">@Model.pcStock[i].ProductID</td>
+                            <td id="pcstockName @i" class="data">@Model.pcStock[i].Name</td>
+                            <td id="pcStockQua @i" class="data">@Model.pcStock[i].Quantity</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p><b>Highest Stock Available: </b>@Model.pcStock.OrderByDescending(x => x.Quantity).FirstOrDefault().Name</p>
+
+        </div>
+    </div>
+</div>
+<!--Sales Section-->
+<h2 class="centerText" style="margin:10px 0px 40px 0px">Sales</h2>
+<hr color="white" />
+<div class="row" style="margin-top:3%;">
+
+    <div class="col-md-4">
+        <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
+            <h4>Sort By:</h4>
+            <button onclick="sortSoldbyID()">Product ID</button>
+            <button onclick="sortSoldbyName()">Product Name</button>
+            <button onclick="sortSoldbyQua()">Quantity</button>
+            <select style="width:70%;margin-bottom:10px;margin-top:15px" id="list" onchange="getDateValue()">
+                <option class="today">today</option>
+                <option class="this Month">this Month</option>
+                <option class="this Year">this Year</option>
+                <option class="begining">the Beginning of time</option>
+            </select>
+        </div>
+
+
+    </div>
+    <div class="col-md-4">
+        <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
+            <h4>
+                Part Sold Items
+
+            </h4>
+            <table class="data">
+                <thead class="data">
+                    <tr class="data">
+                        <th class="data">Product ID</th>
+                        <th class="data">Product Name</th>
+                        <th class="data">Number Sold</th>
+                    </tr>
+                </thead>
+                <tbody class="data">
+                    @for (int i = 0; i < Model.partSold.Count(); i++)
+                    {
+                        <tr>
+                            <td id="partsoldID @i" class="data">@Model.partSold[i].ProductID</td>
+                            <td id="partsoldName @i" class="data">@Model.partSold[i].Name</td>
+                            <td id="partSoldQua @i" class="data">@Model.partSold[i].Quantity</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p>
+                <b>Highest Selling Item: @Model.partSold.OrderByDescending(x => x.Quantity).Select(y => y.Name).FirstOrDefault()</b>
+
+            </p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
+            <h4>
+                PC Sold Items
+            </h4>
+            <table class="data">
+                <thead class="data">
+                    <tr class="data">
+                        <th class="data">Product ID</th>
+                        <th class="data">Product Name</th>
+                        <th class="data">Number Sold</th>
+                    </tr>
+                </thead>
+                <tbody class="data">
+                    @for (int i = 0; i < Model.pcSold.Count(); i++)
+                    {
+                        <tr>
+                            <td id="pcsoldID @i" class="data">@Model.pcSold[i].ProductID</td>
+                            <td id="pcsoldName @i" class="data">@Model.pcSold[i].Name</td>
+                            <td id="pcsoldQua @i" class="data">@Model.pcSold[i].Quantity</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p>
+                <b>Highest Selling Item: @Model.pcSold.OrderByDescending(x => x.Quantity).Select(y => y.Name).FirstOrDefault() </b>
+
+            </p>
+        </div>
+    </div>
+</div>
+
+<h2 class="centerText" style="margin:10px 0px 40px 0px">User Stats</h2>
+<hr color="white" />
+<div class="row" style="margin-top:3%;">
+    <div class="col-md-6">
+        <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
+            <h4>Sort By</h4>
+            <select style="width:70%" id="userList" onchange="changeDateUsers()">
+                <option class="begining">the Beginning of time</option>
+                <option class="today">today</option>
+                <option class="this Month">this Month</option>
+                <option class="this Year">this Year</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
+            <p id="newUsers">Number of New Users: @Model.newUser.Count()</p>
+            <p id="regUsers">Number of Already Registered Users that logged in: @Model.userReg.Count()</p>
+        </div>
+    </div>
+</div>
 
 

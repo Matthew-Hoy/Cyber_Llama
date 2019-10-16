@@ -39,7 +39,7 @@ public interface IService
     bool addFan(cFan newFan, int qua);
 
     [OperationContract]
-    bool addGPU(cGPU newGPU, int qua);
+    bool addGPU(cGPU newGPU, int qua, decimal price);
 
     [OperationContract]
     bool addHDD(cHDD newHDD, int qua);
@@ -289,6 +289,19 @@ public interface IService
     bool decreasePartStock(int userID);
     [OperationContract]
     bool decreasePcStock(int userID);
+    [OperationContract]
+    List<cStock> getpcStockStats();
+    [OperationContract]
+    List<cSold> getpcSoldStats();
+    [OperationContract]
+    List<cStock> getpartStockStats();
+    [OperationContract]
+    List<cSold> getpartSoldStats();
+    [OperationContract]
+    List<cLoginStat> getLoginStats();
+    [OperationContract]
+    List<cRegisterStat> getRegisterStats();
+
 
 
 }

@@ -23,6 +23,10 @@ public class Service : IService
                     .Select(y => y).FirstOrDefault();
             if (User != null)
             {
+                
+                var newLogin = db.loginStats.Where(x => x.User_Id.Equals(User.User_ID)).Select(y => y).FirstOrDefault();
+                newLogin.Date = DateTime.Now;
+                db.SubmitChanges();
                 return User.User_ID + "," + User.User_Name + "," + User.User_Type;
             }
             else
@@ -112,9 +116,18 @@ public class Service : IService
                     }
                 };
                 db.LoginTables.InsertOnSubmit(newLogin);
+                
                 try
                 {
                     db.SubmitChanges();
+                    var newRegister = new RegisterStat
+                    {
+                        User_Id = newLogin.User_ID,
+                        Date = DateTime.Now
+                    };
+                    db.RegisterStats.InsertOnSubmit(newRegister);
+                    db.SubmitChanges();
+
                 }
                 //catch exceptions
                 catch (Exception ex)
@@ -452,7 +465,7 @@ public class Service : IService
     }
 
     //Adding new GPU
-    public bool addGPU(cGPU newGPU, int qua)
+    public bool addGPU(cGPU newGPU, int qua, decimal price)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -460,14 +473,17 @@ public class Service : IService
             Model = newGPU.model,
             Type = "GPU",
             Quantity = qua,
-            Price = (decimal)newGPU.price,
+            Price = (decimal)price,
             Active = newGPU.active,
-            Discount = newGPU.discount
+            Discount = newGPU.discount,
+            Image = "Image",
+            
         };
 
         //Add new Part to its respective Table
         var gpu = new GPU
         {
+            Manufacturer = newGPU.manufacturer,
             ID = part.ID,
             Model = newGPU.model,
             Brand = newGPU.brand,
@@ -486,7 +502,9 @@ public class Service : IService
             Slot_Width = newGPU.slot_width,
             Length = Convert.ToString(newGPU.length),
             Height = Convert.ToString(newGPU.height),
-            Warranty = newGPU.warranty
+            Warranty = newGPU.warranty,
+            PartsStock = part
+
         };
 
         db.GPUs.InsertOnSubmit(gpu);
@@ -653,7 +671,7 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newLC.price,
             Active = newLC.active,
-            Discount = newLC.discount
+            Discount = newLC.discount  
         };
 
         //Add new Part to its respective Table
@@ -3105,7 +3123,8 @@ public class Service : IService
                                    Quantity = cart.Qua,
                                    Model = part.Model,
                                    Type = part.Type,
-                                   pc_ID = part.ID
+                                   pc_ID = part.ID,
+                                   date = DateTime.Now
                                }).ToList();
         PartsSold current;
         foreach (cPartSold item in partSold)
@@ -3117,8 +3136,9 @@ public class Service : IService
                {
                    ID = item.pc_ID,
                    Model = item.Model,
-                    Quantity_Sold = item.Quantity,
-                   Type = item.Type
+                   Quantity_Sold = item.Quantity,
+                   Type = item.Type,
+                   date = item.date
                };
 
                 db.PartsSolds.InsertOnSubmit(dbSold);
@@ -3151,7 +3171,8 @@ public class Service : IService
                                     {
                                         Quantity = cart.Qua,
                                         Type = part.PC_Type,
-                                        pc_ID = part.ID
+                                        pc_ID = part.ID,
+                                        date = DateTime.Now
                                     }).ToList();
         PcSold current;
         foreach (cPcSold item in pcSold)
@@ -3163,7 +3184,8 @@ public class Service : IService
                 {
                     PC_ID = item.pc_ID,
                     Quantity_Sold = item.Quantity,
-                    Type = item.Type
+                    Type = item.Type,
+                    Date = item.date
                 };
                 db.PcSolds.InsertOnSubmit(dbSold);
             }
@@ -3240,4 +3262,76 @@ public class Service : IService
         }
         return true;
     }
+
+    public List<cStock> getpartStockStats()
+    {
+        List<cStock> partStock = db.PartsStocks.Select(x => new cStock
+        {
+            Name = x.Model + " " + x.Type,
+            ProductID = x.ID,
+            Quantity = x.Quantity
+        }).ToList();
+        return partStock;
+    }
+
+    public List<cSold> getpartSoldStats()
+    {
+        List<cSold> partSold = db.PartsSolds.Select(x => new cSold
+        {
+            Name = x.Model + " " + x.Type,
+            ProductID = x.ID,
+            Quantity = x.Quantity_Sold,
+            date = x.date
+        }).ToList();
+        return partSold;
+    }
+
+    public List<cStock> getpcStockStats()
+    {
+
+        List<cStock> pcStock = db.PcStocks.Select(x => new cStock
+        {
+            Name = x.PC_Type,
+            ProductID = x.ID,
+            Quantity = x.Quantity
+
+        }).ToList();
+
+        return pcStock;
+    }
+
+    public List<cSold> getpcSoldStats()
+    {
+        List<cSold> pcSold = db.PcSolds.Select(x => new cSold
+        {
+            Name = x.Type,
+            ProductID = x.PC_ID,
+            Quantity = x.Quantity_Sold,
+            date = x.Date
+            
+
+        }).ToList();
+
+        return pcSold;
+    }
+
+    public List<cLoginStat> getLoginStats()
+    {
+        return db.loginStats.Select(x => new cLoginStat
+        {
+            User_ID = x.User_Id,
+            Date = x.Date
+        }).ToList();
+    }
+
+    public List<cRegisterStat> getRegisterStats()
+    {
+        return db.RegisterStats.Select(x => new cRegisterStat
+        {
+            User_ID = x.User_Id,
+            Date = x.Date
+        }).ToList();
+    }
+
+
 }
