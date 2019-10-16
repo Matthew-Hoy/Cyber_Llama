@@ -465,7 +465,7 @@ public class Service : IService
     }
 
     //Adding new GPU
-    public bool addGPU(cGPU newGPU, int qua)
+    public bool addGPU(cGPU newGPU, int qua, decimal price)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -473,14 +473,17 @@ public class Service : IService
             Model = newGPU.model,
             Type = "GPU",
             Quantity = qua,
-            Price = (decimal)newGPU.price,
+            Price = (decimal)price,
             Active = newGPU.active,
-            Discount = newGPU.discount
+            Discount = newGPU.discount,
+            Image = "Image",
+            
         };
 
         //Add new Part to its respective Table
         var gpu = new GPU
         {
+            Manufacturer = newGPU.manufacturer,
             ID = part.ID,
             Model = newGPU.model,
             Brand = newGPU.brand,
@@ -499,7 +502,9 @@ public class Service : IService
             Slot_Width = newGPU.slot_width,
             Length = Convert.ToString(newGPU.length),
             Height = Convert.ToString(newGPU.height),
-            Warranty = newGPU.warranty
+            Warranty = newGPU.warranty,
+            PartsStock = part
+
         };
 
         db.GPUs.InsertOnSubmit(gpu);
@@ -666,7 +671,7 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newLC.price,
             Active = newLC.active,
-            Discount = newLC.discount
+            Discount = newLC.discount  
         };
 
         //Add new Part to its respective Table
