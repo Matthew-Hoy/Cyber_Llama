@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "Add CPU";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model CyberLlamaConsumerSite.CRUDService.cGPU
+
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Add a Product</h1>
+<hr color="white" />
+
+@using (Html.BeginForm("addGPU", "AddNewProduct", FormMethod.Post))
+{
+    <div class="form-Input centerImage">
+        <label>Model:</label>
+        @Html.TextBoxFor(m => m.model);
+    </div>
+    <div class="form-Input centerImage">
+        <label>Manufacturuer:</label>
+        @Html.TextBoxFor(m => m.manufacturer);
+    </div>
+    <div class="form-Input centerImage">
+        <label>Brand:</label>
+        @Html.TextBoxFor(m => m.brand);
+    </div>
+    <div class="form-Input centerImage">
+        <label>Series:</label>
+        @Html.TextBoxFor(m => m.series);
+    </div>
+    <div class="form-Input centerImage">
+        <label>base clock speed:</label>
+        @Html.TextBoxFor(m => m.base_clock);
+    </div>
+    <div class="form-Input centerImage">
+        <label>boost clock speed:</label>
+        @Html.TextBoxFor(m => m.boost_clock);
+    </div>
+    <div class="form-Input centerImage">
+        <label>stream processor:</label>
+        @Html.TextBoxFor(m => m.stream_proccessors);
+    </div>
+    <div class="form-Input centerImage">
+        <label>Memory clock:</label>
+        @Html.TextBoxFor(m => m.mem_speed);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Memory size:</label>
+        @Html.TextBoxFor(m => m.mem_size);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Memory type:</label>
+        @Html.TextBoxFor(m => m.mem_type);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Ports:</label>
+        @Html.TextBoxFor(m => m.ports);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Max-digital resolution:</label>
+        @Html.TextBoxFor(m => m.max_resolution);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>vr ready:</label>
+        @Html.TextBoxFor(m => m.vr_ready);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>recomended power:</label>
+        @Html.TextBoxFor(m => m.recommended_psu_power);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>form factor:</label>
+        @Html.TextBoxFor(m => m.form_factor);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>slot width:</label>
+        @Html.TextBoxFor(m => m.slot_width);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>length:</label>
+        @Html.TextBoxFor(m => m.length);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>height:</label>
+        @Html.TextBoxFor(m => m.height);
+    </div>
+
+
+    <div class="form-Input centerImage">
+        <label>warranty:</label>
+        @Html.TextBoxFor(m => m.warranty);
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Active:</label>
+        @Html.TextBoxFor(m => m.active);
+    </div>
+
+
+    <div class="form-Input centerImage">
+        <label>Price:</label>
+        <input type="number" name="price" />
+    </div>
+    <div class="form-Input centerImage">
+        <label>Image:</label>
+        <input type="text" name="image" />
+    </div>
+
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input centerImage login">
+        <input type="submit" value="addGpu" />
+    </div>
+}
+

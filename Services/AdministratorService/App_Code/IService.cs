@@ -27,64 +27,145 @@ public interface IService
 
     //Adding new Products to the DB
     [OperationContract]
-    bool addAirCooler(cAirCooler newAC, int qua);
+    bool addAirCooler(cAirCooler newAC, int qua, string image);
+    [OperationContract]
+    bool EditAirCooler(cAirCooler newAC, PartsStock newPart, int id);
+    [OperationContract]
+    bool DeleteAirCooler(int id);
 
     [OperationContract]
-    bool addCase(cCase newCase, int qua);
+    bool addCase(cCase newCase, int qua, string image);
+    [OperationContract]
+    bool EditCase(cCase newCase, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteCase(int id);
+
 
     [OperationContract]
-    bool addCPU(cCPU newCPU, int qua);
+    bool addCPU(cCPU newCPU, int qua, string image);
+    [OperationContract]
+    bool EditCPU(cCPU newCPU, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteCPU(int id);
 
     [OperationContract]
-    bool addFan(cFan newFan, int qua);
+    bool addFan(cFan newFan, int qua, string image);
+    [OperationContract]
+    bool EditFan(cFan newFan, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteFan(int id);
 
     [OperationContract]
-    bool addGPU(cGPU newGPU, int qua, decimal price);
+    bool addGPU(cGPU newGPU, int qua, decimal price, string image);
+    [OperationContract]
+    bool EditGPU(cGPU newGPU, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteGPU(int id);
 
     [OperationContract]
-    bool addHDD(cHDD newHDD, int qua);
+    bool addHDD(cHDD newHDD, int qua, string image);
+    [OperationContract]
+    bool EditHDD(cHDD newHDD, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteHDD(int id);
 
     [OperationContract]
-    bool addHeadset(cHeadset newHeadset, int qua);
+    bool addHeadset(cHeadset newHeadset, int qua, string image);
+    [OperationContract]
+    bool EditHeadset(cHeadset newHeadset, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteHeadset(int id);
 
     [OperationContract]
-    bool addKeyboard(cKeyboard newKeyboard, int qua);
+    bool addKeyboard(cKeyboard newKeyboard, int qua, string image);
+    [OperationContract]
+    bool EditKeyboard(cKeyboard newKeyboard, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteKeyboard(int id);
 
     [OperationContract]
-    bool addLiquidCooler(cLiquidCooler newLC, int qua);
+    bool addLiquidCooler(cLiquidCooler newLC, int qua, string image);
+    [OperationContract]
+    bool EditLiquidCooler(cLiquidCooler newLC, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteLiquidCooler(int id);
 
     [OperationContract]
-    bool addMicrophone(cMicrophone newMicrophone, int qua);
+    bool addMicrophone(cMicrophone newMicrophone, int qua, string image);
+    [OperationContract]
+    bool EditMicrophone(cMicrophone newMicrophone, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteMicrophone(int id);
 
     [OperationContract]
-    bool addMobo(cMobo newMobo, int qua);
+    bool addMobo(cMobo newMobo, int qua, string image);
+    [OperationContract]
+    bool EditMobo(cMobo newMobo, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteMobo(int id);
 
     [OperationContract]
-    bool addMonitor(cMonitor newMonitor, int qua);
+    bool addMonitor(cMonitor newMonitor, int qua, string image);
+    [OperationContract]
+    bool EditMonitor(cMonitor newMonitor, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteMonitor(int id);
 
     [OperationContract]
-    bool addMouse(cMouse newMouse, int qua);
+    bool addMouse(cMouse newMouse, int qua, string image);
+    [OperationContract]
+    bool EditMouse(cMouse newMouse, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteMouse(int id);
 
     [OperationContract]
-    bool addMousepad(cMousePad newMousepad, int qua);
+    bool addMousepad(cMousePad newMousepad, int qua, string image);
+    [OperationContract]
+    bool EditMousepad(cMousePad newMousepad, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteMousepad(int id);
 
     [OperationContract]
-    bool addOS(cOS newOS, int qua);
+    bool addOS(cOS newOS, int qua, string image);
+    [OperationContract]
+    bool EditOS(cOS newOS, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteOS(int id);
 
     [OperationContract]
-    bool addPSU(cPSU newPSU, int qua);
+    bool addPSU(cPSU newPSU, int qua, string image);
+    [OperationContract]
+    bool EditPSU(cPSU newPSU, PartsStock newPart, int id);
+    [OperationContract]
+    bool deletePSU(int id);
 
     [OperationContract]
-    bool addRAM(cRAM newRAM, int qua);
+    bool addRAM(cRAM newRAM, int qua, string image);
+    [OperationContract]
+    bool EditRAM(cRAM newRAM, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteRAM(int id);
 
     [OperationContract]
-    bool addSSD(cSSD newSSD, int qua);
+    bool addSSD(cSSD newSSD, int qua, string image);
+    [OperationContract]
+    bool EditSSD(cSSD newSSD, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteSSD(int id);
 
     [OperationContract]
-    bool addSpeaker(cSpeaker newSpeaker, int qua);
+    bool addSpeaker(cSpeaker newSpeaker, int qua, string image);
+    [OperationContract]
+    bool EditSpeaker(cSpeaker newSpeaker, PartsStock newPart, int id);
+    [OperationContract]
+    bool deleteSpeaker(int id);
 
     [OperationContract]
-    bool addPC(cPC newPC, int qua);
+    bool addPC(cPC newPC, int qua, string image);
+    [OperationContract]
+    bool EditPC(cPC newPC, PartsStock newPart, int id);
+    [OperationContract]
+    bool deletePC(int id);
 
 
     //Retrieving Products from the DB

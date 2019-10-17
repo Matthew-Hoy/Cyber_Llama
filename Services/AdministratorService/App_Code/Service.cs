@@ -173,7 +173,7 @@ public class Service : IService
 
     //Adding new Products to the DB
     //Adding new Air Cooler
-    public bool addAirCooler(cAirCooler newAC, int qua)
+    public bool addAirCooler(cAirCooler newAC, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -183,7 +183,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newAC.price,
             Active = newAC.active,
-            Discount = newAC.discount
+            Discount = newAC.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -206,13 +207,27 @@ public class Service : IService
             Height = newAC.height,
             Width = newAC.width,
             Features = newAC.features,
-            Warranty = newAC.warranty
+            Warranty = newAC.warranty,
+            Weight = newAC.weight,
+            PartsStock = part
+            
         };
 
-        db.AirCoolers.InsertOnSubmit(AC);
+        
         db.PartsStocks.InsertOnSubmit(part);
+        db.AirCoolers.InsertOnSubmit(AC);
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
 
         
+
+
         //Check for the compatible chipsets
         String str = AC.Compatibility;
         char[] seperator = { ',', ' ' };
@@ -222,7 +237,7 @@ public class Service : IService
         for (int i = 0; i < strList.Length; i++)
         {
             chip = strList[i];
-            dynamic cpuList = (from c in db.CPUs where c.Chipset.Equals(chip) select c);
+            dynamic cpuList = (from c in db.CPUs where c.Chipset.Equals(chip) select c).ToList();
             
             foreach (CPU c in cpuList)
             {
@@ -233,21 +248,11 @@ public class Service : IService
                 }
             }
         }
-        
-
-        try
-        {
-            db.SubmitChanges();
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
+        return true;
     }
 
     //Adding new Pc Case
-    public bool addCase(cCase newCase, int qua)
+    public bool addCase(cCase newCase, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -257,7 +262,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newCase.price,
             Active = newCase.active,
-            Discount = newCase.discount
+            Discount = newCase.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -282,13 +288,25 @@ public class Service : IService
             Expansion_Slots = newCase.expansion_slots,
             Front_I_O = newCase.front_io,
             CPU_Cooler_Height = newCase.cpu_cooler_max_height,
-            Warranty = newCase.warranty
+            Warranty = newCase.warranty,
+            PartsStock = part,
+            Num_HDD_Drives = Convert.ToString(newCase.num_hdd_drives),
+            Num_SSD_Drives = Convert.ToString(newCase.num_ssd_drives)
+            
         };
 
-        db.PCCases.InsertOnSubmit(Case);
         db.PartsStocks.InsertOnSubmit(part);
+        db.PCCases.InsertOnSubmit(Case);
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
 
-        
+
         //Check for the compatible form Factors
         String ff = Case.Motherboard_Form_Factor;
 
@@ -302,21 +320,13 @@ public class Service : IService
                 return false;
             }
         }
-        
 
-        try
-        {
-            db.SubmitChanges();
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
+        return true;
+        
     }
 
     //Adding new CPU
-    public bool addCPU(cCPU newCPU, int qua)
+    public bool addCPU(cCPU newCPU, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -326,7 +336,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newCPU.price,
             Active = newCPU.active,
-            Discount = newCPU.discount
+            Discount = newCPU.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -346,13 +357,24 @@ public class Service : IService
             System_Memory_Speed = Convert.ToInt32(newCPU.max_mem_speed),
             System_Memory_Type = newCPU.mem_type,
             Memory_Channels = newCPU.mem_channels,
-            Warranty = newCPU.warranty
+            Warranty = newCPU.warranty,
+            Chipset = newCPU.Chipset,
+            PartsStock = part
         };
 
-        db.CPUs.InsertOnSubmit(cpu);
-        db.PartsStocks.InsertOnSubmit(part);
 
-        
+        db.PartsStocks.InsertOnSubmit(part);
+        db.CPUs.InsertOnSubmit(cpu);
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
+
+
         //Check for the compatible chipsets
         dynamic ACList = (from c in db.AirCoolers select c);
 
@@ -405,20 +427,12 @@ public class Service : IService
                 continue;
             }
         }
-
-        try
-        {
-            db.SubmitChanges();
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
+        return true;
+        
     }
 
     //Adding new  Fan
-    public bool addFan(cFan newFan, int qua)
+    public bool addFan(cFan newFan, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -428,7 +442,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newFan.price,
             Active = newFan.active,
-            Discount = newFan.discount
+            Discount = newFan.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -447,11 +462,12 @@ public class Service : IService
             MTBF = newFan.mtbf,
             Cable_Length = newFan.cable_length,
             Num_Fans = newFan.num_fans,
-            Warranty = newFan.warranty
+            Warranty = newFan.warranty,
+            PartsStock = part
         };
-
-        db.Fans.InsertOnSubmit(fan);
         db.PartsStocks.InsertOnSubmit(part);
+        db.Fans.InsertOnSubmit(fan);
+        
 
         try
         {
@@ -465,7 +481,7 @@ public class Service : IService
     }
 
     //Adding new GPU
-    public bool addGPU(cGPU newGPU, int qua, decimal price)
+    public bool addGPU(cGPU newGPU, int qua, decimal price, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -476,7 +492,7 @@ public class Service : IService
             Price = (decimal)price,
             Active = newGPU.active,
             Discount = newGPU.discount,
-            Image = "Image",
+            Image = image,
             
         };
 
@@ -522,7 +538,7 @@ public class Service : IService
     }
 
     //Adding new HDD
-    public bool addHDD(cHDD newHDD, int qua)
+    public bool addHDD(cHDD newHDD, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -532,7 +548,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newHDD.price,
             Active = newHDD.active,
-            Discount = newHDD.discount
+            Discount = newHDD.discount,
+            Image= image
         };
 
         //Add new Part to its respective Table
@@ -550,11 +567,15 @@ public class Service : IService
             Operating_Temp = newHDD.operation_temp,
             Size = newHDD.size,
             Weight = newHDD.weight,
-            Warranty = newHDD.warranty
+            Warranty = newHDD.warranty,
+            Storage = newHDD.storage,
+            Workload_Rate_Limit = newHDD.Workload_Rate_Limit,
+            PartsStock = part
         };
 
-        db.HDDs.InsertOnSubmit(hdd);
         db.PartsStocks.InsertOnSubmit(part);
+        db.HDDs.InsertOnSubmit(hdd);
+        
 
         try
         {
@@ -568,7 +589,7 @@ public class Service : IService
     }
 
     //Add new Headset
-    public bool addHeadset(cHeadset newHeadset, int qua)
+    public bool addHeadset(cHeadset newHeadset, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -578,7 +599,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newHeadset.price,
             Active = newHeadset.active,
-            Discount = newHeadset.discount
+            Discount = newHeadset.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -598,6 +620,7 @@ public class Service : IService
             Colour = newHeadset.colour,
             Wearing_Style = newHeadset.wearing_style,
             Warranty = newHeadset.warranty,
+            PartsStock = part
         };
 
         db.PartsStocks.InsertOnSubmit(part);
@@ -615,7 +638,7 @@ public class Service : IService
     }
 
     //Add new Keyboard
-    public bool addKeyboard(cKeyboard newKeyboard, int qua)
+    public bool addKeyboard(cKeyboard newKeyboard, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -625,7 +648,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newKeyboard.price,
             Active = newKeyboard.active,
-            Discount = newKeyboard.discount
+            Discount = newKeyboard.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -643,7 +667,8 @@ public class Service : IService
             Material = newKeyboard.material,
             Dimensions = newKeyboard.dimensions,
             Weight = newKeyboard.weight,
-            Warranty = newKeyboard.warranty
+            Warranty = newKeyboard.warranty,
+            PartsStock = part
         };
 
         db.PartsStocks.InsertOnSubmit(part);
@@ -661,7 +686,7 @@ public class Service : IService
     }
 
     //Adding new Liquid Cooler
-    public bool addLiquidCooler(cLiquidCooler newLC, int qua)
+    public bool addLiquidCooler(cLiquidCooler newLC, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -671,7 +696,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newLC.price,
             Active = newLC.active,
-            Discount = newLC.discount  
+            Discount = newLC.discount  ,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -691,8 +717,23 @@ public class Service : IService
             Tube_Length = newLC.tube_length,
             Tube_Mats = newLC.tube_mats,
             RGB = newLC.rgb,
-            Warranty = newLC.warranty
+            Warranty = newLC.warranty,
+            PartsStock = part
         };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.LiquidCoolers.InsertOnSubmit(LC);
+        
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
+
 
         //Check for the compatible chipsets
         String str = LC.Sockets_Supported;
@@ -715,22 +756,11 @@ public class Service : IService
             }
         }
 
-        db.LiquidCoolers.InsertOnSubmit(LC);
-        db.PartsStocks.InsertOnSubmit(part);
-
-        try
-        {
-            db.SubmitChanges();
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
+        return true;
     }
 
     //Adding new Microphone
-    public bool addMicrophone(cMicrophone newMicrophone, int qua)
+    public bool addMicrophone(cMicrophone newMicrophone, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -740,7 +770,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newMicrophone.price,
             Active = newMicrophone.active,
-            Discount = newMicrophone.discount
+            Discount = newMicrophone.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -754,7 +785,8 @@ public class Service : IService
             Frequency_Response = newMicrophone.frequency_response,
             Sensitivity = newMicrophone.sensitivity,
             Cable_Length = newMicrophone.cable_length,
-            Warranty = newMicrophone.warranty
+            Warranty = newMicrophone.warranty,
+            PartsStock = part
         };
 
         db.PartsStocks.InsertOnSubmit(part);
@@ -772,7 +804,7 @@ public class Service : IService
     }
 
     //Adding new Motherboard
-    public bool addMobo(cMobo newMobo, int qua)
+    public bool addMobo(cMobo newMobo, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -782,7 +814,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newMobo.price,
             Active = newMobo.active,
-            Discount = newMobo.discount
+            Discount = newMobo.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -804,8 +837,22 @@ public class Service : IService
             OS_Support = newMobo.os_support,
             Form_Factor = newMobo.form_factor,
             Notes = newMobo.notes,
-            Warranty = newMobo.warranty
+            Warranty = newMobo.warranty,
+            PartsStock = part
         };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.Motherboards.InsertOnSubmit(mobo);
+        
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
 
         //Check for the compatible Parts
 
@@ -845,23 +892,12 @@ public class Service : IService
             }
         }
 
-        db.Motherboards.InsertOnSubmit(mobo);
-        db.PartsStocks.InsertOnSubmit(part);
-
-        try
-        {
-            db.SubmitChanges();
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
+        return true;
     }
 
     
     //Add new Monitor
-    public bool addMonitor(cMonitor newMonitor, int qua)
+    public bool addMonitor(cMonitor newMonitor, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -871,7 +907,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newMonitor.price,
             Active = newMonitor.active,
-            Discount = newMonitor.discount
+            Discount = newMonitor.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -899,6 +936,7 @@ public class Service : IService
             Tilt = newMonitor.tilt,
             Pivot = newMonitor.pivot,
             Warranty = newMonitor.warranty,
+            PartsStock = part
         };
 
         db.PartsStocks.InsertOnSubmit(part);
@@ -916,7 +954,7 @@ public class Service : IService
     }
 
     //Add new Mouse
-    public bool addMouse(cMouse newMouse, int qua)
+    public bool addMouse(cMouse newMouse, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -926,7 +964,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newMouse.price,
             Active = newMouse.active,
-            Discount = newMouse.discount
+            Discount = newMouse.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -946,7 +985,8 @@ public class Service : IService
             Dimensions = newMouse.dimensions,
             Weight = newMouse.weight,
             Cable_Length = newMouse.cable_length,
-            Warranty = newMouse.warranty
+            Warranty = newMouse.warranty,
+            PartsStock = part
         };
 
         db.PartsStocks.InsertOnSubmit(part);
@@ -964,7 +1004,7 @@ public class Service : IService
     }
 
     //Add new Mousepad
-    public bool addMousepad(cMousePad newMousepad, int qua)
+    public bool addMousepad(cMousePad newMousepad, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -974,7 +1014,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newMousepad.price,
             Active = newMousepad.active,
-            Discount = newMousepad.discount
+            Discount = newMousepad.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -988,7 +1029,8 @@ public class Service : IService
             Materials = newMousepad.materials,
             Base = newMousepad.pad_base,
             Dimensions = newMousepad.dimensions,
-            Warranty = newMousepad.warranty
+            Warranty = newMousepad.warranty,
+            PartsStock = part
         };
 
         db.PartsStocks.InsertOnSubmit(part);
@@ -1006,7 +1048,7 @@ public class Service : IService
     }
 
     //Adding new OS
-    public bool addOS(cOS newOS, int qua)
+    public bool addOS(cOS newOS, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -1016,7 +1058,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newOS.price,
             Active = newOS.active,
-            Discount = newOS.discount
+            Discount = newOS.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -1029,7 +1072,8 @@ public class Service : IService
             Bit_Version = newOS.bit_version,
             OS_Version = newOS.os_version,
             System_Requirements = newOS.system_requirements,
-            Warranty = newOS.warranty
+            Warranty = newOS.warranty,
+            PartsStock = part
         };
 
         db.PartsStocks.InsertOnSubmit(part);
@@ -1047,7 +1091,7 @@ public class Service : IService
     }
 
     //Adding new PSU
-    public bool addPSU(cPSU newPSU, int qua)
+    public bool addPSU(cPSU newPSU, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -1057,7 +1101,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newPSU.price,
             Active = newPSU.active,
-            Discount = newPSU.discount
+            Discount = newPSU.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -1075,11 +1120,13 @@ public class Service : IService
             Fan_Size = newPSU.fan_size,
             Cables = newPSU.cables,
             Dimensions = newPSU.dimensions,
-            Warranty = newPSU.warranty
+            Warranty = newPSU.warranty,
+            PartsStock = part
         };
 
-        db.PSUs.InsertOnSubmit(psu);
         db.PartsStocks.InsertOnSubmit(part);
+        db.PSUs.InsertOnSubmit(psu);
+        
 
         try
         {
@@ -1093,7 +1140,7 @@ public class Service : IService
     }
 
     //Adding new RAM
-    public bool addRAM(cRAM newRAM, int qua)
+    public bool addRAM(cRAM newRAM, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -1103,7 +1150,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newRAM.price,
             Active = newRAM.active,
-            Discount = newRAM.discount
+            Discount = newRAM.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -1120,8 +1168,21 @@ public class Service : IService
             Voltage = newRAM.voltage,
             Channel_Config = newRAM.channel_config,
             Height = newRAM.height,
-            Warranty = newRAM.warranty
+            Warranty = newRAM.warranty,
+            PartsStock = part
         };
+
+        db.PartsStocks.InsertOnSubmit(part);
+        db.RAMs.InsertOnSubmit(ram);
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
 
         //RAM Copatability
         dynamic moboList = (from c in db.Motherboards where ((Convert.ToInt32(ram.Capacity) <= c.Max_Memory_Size) && ram.Type.Equals(c.Memory_Type)) select c);
@@ -1135,22 +1196,13 @@ public class Service : IService
             }
         }
 
-        db.RAMs.InsertOnSubmit(ram);
-        db.PartsStocks.InsertOnSubmit(part);
+        return true;
 
-        try
-        {
-            db.SubmitChanges();
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
+        
     }
 
     //Adding new SSD
-    public bool addSSD(cSSD newSSD, int qua)
+    public bool addSSD(cSSD newSSD, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -1160,7 +1212,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newSSD.price,
             Active = newSSD.active,
-            Discount = newSSD.discount
+            Discount = newSSD.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -1182,11 +1235,13 @@ public class Service : IService
             MTBF = newSSD.mtbf,
             Operating_Temp = newSSD.operating_temp,
             Max_Power_Usage = newSSD.max_power_usage,
-            Warranty = newSSD.warranty
+            Warranty = newSSD.warranty,
+            PartsStock = part
         };
 
-        db.SSDs.InsertOnSubmit(ssd);
         db.PartsStocks.InsertOnSubmit(part);
+        db.SSDs.InsertOnSubmit(ssd);
+        
 
         try
         {
@@ -1200,7 +1255,7 @@ public class Service : IService
     }
 
     //
-    public bool addSpeaker(cSpeaker newSpeaker, int qua)
+    public bool addSpeaker(cSpeaker newSpeaker, int qua, string image)
     {
         //Add new part to PartsStock table
         var part = new PartsStock
@@ -1210,7 +1265,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newSpeaker.price,
             Active = newSpeaker.active,
-            Discount = newSpeaker.discount
+            Discount = newSpeaker.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -1227,6 +1283,7 @@ public class Service : IService
             System_Requirements = newSpeaker.system_requirements,
             Features = newSpeaker.features,
             Warranty = newSpeaker.warranty,
+            PartsStock = part
         };
 
         db.PartsStocks.InsertOnSubmit(part);
@@ -1244,7 +1301,7 @@ public class Service : IService
     }
 
     //Adding new PC
-    public bool addPC(cPC newPC, int qua)
+    public bool addPC(cPC newPC, int qua, string image)
     {
         //Add new part to PartsStock table
         var temp = new PcStock
@@ -1253,7 +1310,8 @@ public class Service : IService
             Quantity = qua,
             Price = (decimal)newPC.price,
             Active = newPC.active,
-            Discount = newPC.discount
+            Discount = newPC.discount,
+            Image = image
         };
 
         //Add new Part to its respective Table
@@ -1281,6 +1339,7 @@ public class Service : IService
             Mouse_ID = Convert.ToInt32(newPC.mouse_id),
             Speaker_ID = Convert.ToInt32(newPC.speaker_id),
             Warranty = newPC.warranty
+            
         };
 
         db.Pcs.InsertOnSubmit(pc);
@@ -1349,7 +1408,8 @@ public class Service : IService
             features = part.Features,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            weight = part.Weight
         };
 
         return temp;
@@ -1384,7 +1444,9 @@ public class Service : IService
             cpu_cooler_max_height = part.CPU_Cooler_Height,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            num_hdd_drives = Convert.ToInt32(part.Num_HDD_Drives),
+            num_ssd_drives = Convert.ToInt32(part.Num_SSD_Drives)
         };
 
         return temp;
@@ -1414,7 +1476,8 @@ public class Service : IService
             mem_channels = part.Memory_Channels,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            Chipset = part.Chipset
         };
 
         return temp;
@@ -1443,7 +1506,8 @@ public class Service : IService
             num_fans = part.Num_Fans,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            
         };
 
         return temp;
@@ -1477,7 +1541,8 @@ public class Service : IService
             height = Convert.ToDouble(part.Height),
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            manufacturer = part.Manufacturer
         };
 
         return temp;
@@ -1505,7 +1570,9 @@ public class Service : IService
             weight = part.Weight,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            storage = part.Storage,
+            Workload_Rate_Limit = part.Workload_Rate_Limit
         };
 
         return temp;
@@ -1534,6 +1601,8 @@ public class Service : IService
             mp_sensitivity = headset.MP_Sensitivity,
             colour = headset.Colour,
             warranty = headset.Warranty,
+            discount = part.Discount,
+            wearing_style = headset.Wearing_Style,
         };
 
         return temp;
@@ -1563,7 +1632,8 @@ public class Service : IService
             rgb = part.RGB,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            
         };
 
         return temp;
@@ -1594,7 +1664,8 @@ public class Service : IService
             notes = part.Notes,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            price = Convert.ToDouble(info.Price)
         };
 
         return temp;
@@ -1622,7 +1693,8 @@ public class Service : IService
             dimensions = part.Dimensions,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            
         };
 
         return temp;
@@ -1649,7 +1721,8 @@ public class Service : IService
             height = part.Height,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            
         };
 
         return temp;
@@ -1681,7 +1754,8 @@ public class Service : IService
             max_power_usage = part.Max_Power_Usage,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            
         };
 
         return temp;
@@ -1709,7 +1783,8 @@ public class Service : IService
             weight = part.Weight,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            
         };
 
         return temp;
@@ -1733,7 +1808,8 @@ public class Service : IService
             cable_length = part.Cable_Length,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            
         };
 
         return temp;
@@ -1796,7 +1872,8 @@ public class Service : IService
             pivot = part.Pivot,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            
         };
 
         return temp;
@@ -1826,7 +1903,8 @@ public class Service : IService
             cable_length = part.Cable_Length,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            
         };
 
         return temp;
@@ -1849,7 +1927,8 @@ public class Service : IService
             pad_base = part.Base,
             warranty = part.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            dimensions = part.Dimensions,
         };
 
         return temp;
@@ -1886,7 +1965,8 @@ public class Service : IService
             speaker_id = Convert.ToString(pc.Speaker_ID),
             warranty = pc.Warranty,
             discount = info.Discount,
-            active = info.Active
+            active = info.Active,
+            
         };
 
         return temp;
@@ -1905,6 +1985,7 @@ public class Service : IService
             active = part.Active,
             discount = part.Discount,
             price = (int)part.Price,
+            
         };
 
         return temp;
@@ -3333,5 +3414,1570 @@ public class Service : IService
         }).ToList();
     }
 
+    public bool EditAirCooler(cAirCooler newAC,PartsStock newPart , int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var AC = db.AirCoolers.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+        
+        part.Model = newAC.model;
+        part.Type = "Air Cooler";
+        part.Quantity = newPart.Quantity;
+        part.Price = (decimal)newAC.price;
+        part.Active = newAC.active;
+        part.Discount = newAC.discount;
+        part.Image = newPart.Image;
 
+        AC.ID = part.ID;
+        AC.Model = newAC.model;
+        AC.Brand = newAC.brand;
+        AC.Series = newAC.series;
+        AC.Fan_Size = newAC.fan_size;
+        AC.Compatibility = newAC.chipset;
+        AC.Fan_RPM = newAC.fan_rpm;
+        AC.Air_Flow = newAC.air_flow;
+        AC.Noise_Level = newAC.noise_level;
+        AC.Power_Connector = newAC.power_connector;
+        AC.Colour = newAC.colour;
+        AC.Materials = newAC.materials;
+        AC.Length = newAC.length;
+        AC.Height = newAC.height;
+        AC.Width = newAC.width;
+        AC.Features = newAC.features;
+        AC.Warranty = newAC.warranty;
+        AC.Weight = newAC.weight;
+        AC.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
+
+        String str = AC.Compatibility;
+        char[] seperator = { ',', ' ' };
+        String[] strList = str.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+        String chip = null;
+
+        for (int i = 0; i < strList.Length; i++)
+        {
+            chip = strList[i];
+            dynamic cpuList = (from c in db.CPUs where c.Chipset.Equals(chip) select c).ToList();
+
+            foreach (CPU c in cpuList)
+            {
+                bool link = linkAcToCPU(c.ID, AC.ID);
+                if (link == false)
+                {
+                    continue;
+                }
+            }
+        }
+        return true;
+
+    }
+
+    public bool DeleteAirCooler(int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var AC = db.AirCoolers.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.AirCoolers.DeleteOnSubmit(AC);
+        db.PartsStocks.DeleteOnSubmit(part);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }catch(Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        } 
+    }
+
+    public bool EditCase(cCase newCase, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var Case = db.PCCases.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var mclink = db.MoboToCases.Where(x => x.Case_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+        if (mclink != null)
+        {
+            mclink.Case_ID = id;
+        }
+
+        part.Model = newCase.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newCase.price;
+        part.Active = newCase.active;
+        part.Discount = newCase.discount;
+        part.Image = part.Image;
+
+        Case.ID = part.ID;
+        Case.Model = newCase.model;
+        Case.Brand = newCase.brand;
+        Case.Series = newCase.series;
+        Case.Colour = newCase.colour;
+        Case.Dimensions = newCase.dimensions;
+        Case.Net_Weight = newCase.net_weight;
+        Case.Motherboard_Form_Factor = newCase.mobo_form_factor;
+        Case.Side_Window = newCase.side_window;
+        Case.Num_Front_Fans = newCase.num_front_fans;
+        Case.Num_Back_Fans = newCase.num_back_fans;
+        Case.Num_Top_Fans = newCase.num_top_fans;
+        Case.Num_Bottom_Fans = newCase.num_bottom_fans;
+        Case.Top_Radiator_Support = newCase.top_rad_length;
+        Case.Front_Radiator_Support = newCase.front_rad_length;
+        Case.GPU_Max_Length = newCase.gpu_max_length;
+        Case.Expansion_Slots = newCase.expansion_slots;
+        Case.Front_I_O = newCase.front_io;
+        Case.CPU_Cooler_Height = newCase.cpu_cooler_max_height;
+        Case.Warranty = newCase.warranty;
+        Case.PartsStock = part;
+        Case.Num_HDD_Drives = Convert.ToString(newCase.num_hdd_drives);
+        Case.Num_SSD_Drives = Convert.ToString(newCase.num_ssd_drives);
+
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
+
+        String ff = Case.Motherboard_Form_Factor;
+
+        dynamic moboList = (from c in db.Motherboards where (c.Form_Factor).Equals(ff) select c);
+
+        foreach (Motherboard m in moboList)
+        {
+            bool link = linkMoboToCase(m.ID, Case.ID);
+            if (link == false)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public bool deleteCase(int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var Case = db.PCCases.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.PCCases.DeleteOnSubmit(Case);
+        db.PartsStocks.DeleteOnSubmit(part);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditCPU(cCPU newCPU, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var CPU = db.CPUs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var mclink = db.MoboToCpus.Where(x => x.CPU_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var aclink = db.CpuToAirCoolers.Where(x => x.CPU_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var lclink = db.CpuToLiquidCoolers.Where(x => x.CPU_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+        if (mclink != null)
+        {
+            mclink.CPU_ID = id;
+        }
+        if (aclink != null)
+        {
+            aclink.CPU_ID = id;
+        }
+        if (lclink != null)
+        {
+            lclink.CPU_ID = id;
+        }
+
+        part.Model = newCPU.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newCPU.price;
+        part.Active = newCPU.active;
+        part.Discount = newCPU.discount;
+        part.Image = part.Image;
+
+        CPU.ID = part.ID;
+        CPU.Model = newCPU.model;
+        CPU.Brand = newCPU.brand;
+        CPU.Series = newCPU.series;
+        CPU.Cores = newCPU.cores;
+        CPU.Threads = newCPU.threads;
+        CPU.Base_Clock = newCPU.base_clock;
+        CPU.Boost_Clock = newCPU.boost_clock;
+        CPU.Total_Cache = newCPU.total_cache;
+        CPU.TDP = Convert.ToString(newCPU.tdp);
+        CPU.Max_Temp = newCPU.max_temp;
+        CPU.System_Memory_Speed = Convert.ToInt32(newCPU.max_mem_speed);
+        CPU.System_Memory_Type = newCPU.mem_type;
+        CPU.Memory_Channels = newCPU.mem_channels;
+        CPU.Warranty = newCPU.warranty;
+        CPU.Chipset = newCPU.Chipset;
+        CPU.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
+
+        //Check for the compatible chipsets
+        dynamic ACList = (from c in db.AirCoolers select c);
+
+        foreach (AirCooler ac in ACList)
+        {
+            String str = ac.Compatibility;
+            char[] seperator = { ',', ' ' };
+            String[] strList = str.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+            String chip = null;
+
+            for (int i = 0; i < strList.Length; i++)
+            {
+                chip = strList[i];
+                bool link = linkAcToCPU(ac.ID, CPU.ID);
+                if (link == false)
+                {
+                    continue;
+                }
+            }
+        }
+
+        dynamic LCList = (from c in db.LiquidCoolers select c);
+
+        foreach (LiquidCooler lc in LCList)
+        {
+            String str = lc.Sockets_Supported;
+            char[] seperator = { ',', ' ' };
+            String[] strList = str.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+            String chip = null;
+
+            for (int i = 0; i < strList.Length; i++)
+            {
+                chip = strList[i];
+                bool link = linkLcToCPU(lc.ID, CPU.ID);
+                if (link == false)
+                {
+                    continue;
+                }
+            }
+        }
+
+        //Motherboard Copatability
+        dynamic moboList = (from c in db.Motherboards where (CPU.Chipset).Equals(c.Chipset) select c);
+
+        foreach (Motherboard c in moboList)
+        {
+            bool link = linkMoboToCPU(c.ID, CPU.ID);
+            if (link == false)
+            {
+                continue;
+            }
+        }
+        return true;
+    }
+
+    public bool deleteCPU(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.CPUs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.CPUs.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditFan(cFan newFan, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var fan = db.Fans.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newFan.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newFan.price;
+        part.Active = newFan.active;
+        part.Discount = newFan.discount;
+        part.Image = part.Image;
+
+
+        fan.ID = part.ID;
+        fan.Model = newFan.model;
+        fan.Brand = newFan.brand;
+        fan.Series = newFan.series;
+        fan.Size = newFan.size;
+        fan.RPM = newFan.rpm; 
+        fan.Max_Air_Flow = newFan.max_air_flow;
+        fan.Noise = newFan.noise;
+        fan.Static_Pressure = newFan.static_pressure;
+        fan.Input_Voltage = newFan.input_voltage;
+        fan.MTBF = newFan.mtbf;
+        fan.Cable_Length = newFan.cable_length;
+        fan.Num_Fans = newFan.num_fans;
+        fan.Warranty = newFan.warranty;
+        fan.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteFan(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.Fans.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if(cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.Fans.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditGPU(cGPU newGPU, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var GPU = db.GPUs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newGPU.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newGPU.price;
+        part.Active = newGPU.active;
+        part.Discount = newGPU.discount;
+        part.Image = part.Image;
+
+        GPU.Manufacturer = newGPU.manufacturer;
+        GPU.ID = part.ID;
+        GPU.Model = newGPU.model;
+        GPU.Brand = newGPU.brand;
+        GPU.Series = newGPU.series;
+        GPU.Base_Clock_Speed = newGPU.base_clock;
+        GPU.Boost_Clock_Speed = newGPU.boost_clock;
+        GPU.Stream_Processors = newGPU.stream_proccessors;
+        GPU.Memory_Clock = newGPU.mem_speed;
+        GPU.Memory_Size = newGPU.mem_size;
+        GPU.Memory_Type = newGPU.mem_type;
+        GPU.Ports = newGPU.ports;
+        GPU.Max_Digital_Resolution = newGPU.max_resolution;
+        GPU.VR_Ready = newGPU.vr_ready;
+        GPU.Recommended_Power_Supply = newGPU.recommended_psu_power;
+        GPU.Form_Factor = newGPU.form_factor;
+        GPU.Slot_Width = newGPU.slot_width;
+        GPU.Length = Convert.ToString(newGPU.length);
+        GPU.Height = Convert.ToString(newGPU.height);
+        GPU.Warranty = newGPU.warranty;
+        GPU.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteGPU(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.GPUs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+
+        db.GPUs.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditHDD(cHDD newHDD, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var HDD = db.HDDs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newHDD.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newHDD.price;
+        part.Active = newHDD.active;
+        part.Discount = newHDD.discount;
+        part.Image = part.Image;
+
+
+        HDD.ID = part.ID;
+        HDD.Model = newHDD.model;
+        HDD.Brand = newHDD.brand;
+        HDD.Series = newHDD.series;
+        HDD.Interface = newHDD.interface_type;
+        HDD.Max_Sustained_Transfer_Rate = newHDD.max_sustained_transfer_rate;
+        HDD.Rotational_Speed = newHDD.rotational_speed;
+        HDD.Load_Unload_Cycles = newHDD.load_unload_cycles;
+        HDD.Power_Usage = newHDD.avg_power_usage;
+        HDD.Operating_Temp = newHDD.operation_temp;
+        HDD.Size = newHDD.size;
+        HDD.Weight = newHDD.weight;
+        HDD.Warranty = newHDD.warranty;
+        HDD.Storage = newHDD.storage;
+        HDD.Workload_Rate_Limit = newHDD.Workload_Rate_Limit;
+        HDD.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteHDD(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.HDDs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.HDDs.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditHeadset(cHeadset newHeadset, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var headset = db.Headsets.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newHeadset.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newHeadset.price;
+        part.Active = newHeadset.active;
+        part.Discount = newHeadset.discount;
+        part.Image = part.Image;
+
+
+        headset.ID = part.ID;
+        headset.Model = newHeadset.model;
+        headset.Brand = newHeadset.brand;
+        headset.Series = newHeadset.series;
+        headset.Cable_Length = newHeadset.cable_length;
+        headset.Connector = newHeadset.connector;
+        headset.Frequency_Response = newHeadset.frequency_response;
+        headset.Microphone = newHeadset.microphone;
+        headset.MP_Frequency_Response = newHeadset.mp_frequency_response;
+        headset.MP_Pickup_Pattern = newHeadset.mp_pickup_pattern;
+        headset.MP_Sensitivity = newHeadset.mp_sensitivity;
+        headset.Colour = newHeadset.colour;
+        headset.Wearing_Style = newHeadset.wearing_style;
+        headset.Warranty = newHeadset.warranty;
+        headset.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteHeadset(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.Headsets.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.Headsets.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditKeyboard(cKeyboard newKeyboard, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var Keyboard = db.Keyboards.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+
+        part.Model = newKeyboard.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newKeyboard.price;
+        part.Active = newKeyboard.active;
+        part.Discount = newKeyboard.discount;
+        part.Image = part.Image;
+
+
+        Keyboard.ID = part.ID;
+        Keyboard.Model = newKeyboard.model;
+        Keyboard.Brand = newKeyboard.brand;
+        Keyboard.Series = newKeyboard.series;
+        Keyboard.Switches = newKeyboard.switches;
+        Keyboard.Programmable_Macros = newKeyboard.programmable_macros;
+        Keyboard.Connector = newKeyboard.connector;
+        Keyboard.LED_BackLight = newKeyboard.led_backlight;
+        Keyboard.Multimedia_Keys = newKeyboard.multimedia_keys;
+        Keyboard.Material = newKeyboard.material;
+        Keyboard.Dimensions = newKeyboard.dimensions;
+        Keyboard.Weight = newKeyboard.weight;
+        Keyboard.Warranty = newKeyboard.warranty;
+        Keyboard.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteKeyboard(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.Keyboards.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.Keyboards.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditLiquidCooler(cLiquidCooler newLC, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var liquidCooler = db.LiquidCoolers.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var mclink = db.CpuToLiquidCoolers.Where(x => x.LC_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+        if (mclink != null)
+        {
+            mclink.LC_ID = id;
+        }
+
+        part.Model = newLC.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newLC.price;
+        part.Active = newLC.active;
+        part.Discount = newLC.discount;
+        part.Image = part.Image;
+
+        liquidCooler.ID = part.ID;
+        liquidCooler.Model = newLC.model;
+        liquidCooler.Brand = newLC.brand;
+        liquidCooler.Series = newLC.series;
+        liquidCooler.Sockets_Supported = newLC.sockets;
+        liquidCooler.Fan_Size = newLC.fan_size;
+        liquidCooler.Color = newLC.color;
+        liquidCooler.Radiator_Mats = newLC.rad_mats;
+        liquidCooler.Radiator_Length = newLC.rad_length;
+        liquidCooler.Radiator_Height = newLC.rad_height;
+        liquidCooler.Radiator_Width = newLC.rad_width;
+        liquidCooler.Tube_Length = newLC.tube_length;
+        liquidCooler.Tube_Mats = newLC.tube_mats;
+        liquidCooler.RGB = newLC.rgb;
+        liquidCooler.Warranty = newLC.warranty;
+        liquidCooler. PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
+
+
+        //Check for the compatible chipsets
+        String str = liquidCooler.Sockets_Supported;
+        char[] seperator = { ',', ' ' };
+        String[] strList = str.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+        String chip = null;
+
+        for (int i = 0; i < strList.Length; i++)
+        {
+            chip = strList[i];
+            dynamic cpuList = (from c in db.CPUs where c.Chipset.Equals(chip) select c);
+
+            foreach (CPU c in cpuList)
+            {
+                bool link = linkLcToCPU(c.ID, liquidCooler.ID);
+                if (link == false)
+                {
+                    continue;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public bool deleteLiquidCooler(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.LiquidCoolers.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.LiquidCoolers.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditMicrophone(cMicrophone newMicrophone, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var Micraphone = db.Microphones.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newMicrophone.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newMicrophone.price;
+        part.Active = newMicrophone.active;
+        part.Discount = newMicrophone.discount;
+        part.Image = part.Image;
+
+        Micraphone.ID = part.ID;
+        Micraphone.Model = newMicrophone.model;
+        Micraphone.Brand = newMicrophone.brand;
+        Micraphone.Series = newMicrophone.series;
+        Micraphone.Pick_Up_Pattern = newMicrophone.pick_up_pattern;
+        Micraphone.Frequency_Response = newMicrophone.frequency_response;
+        Micraphone.Sensitivity = newMicrophone.sensitivity;
+        Micraphone.Cable_Length = newMicrophone.cable_length;
+        Micraphone.Warranty = newMicrophone.warranty;
+        Micraphone.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+
+    }
+
+    public bool deleteMicrophone(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.Microphones.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.Microphones.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditMobo(cMobo newMobo, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var Motherboard = db.Motherboards.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var mclink = db.MoboToCases.Where(x => x.Mobo_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var mcpulink = db.MoboToCpus.Where(x => x.Mobo_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var mrlink = db.MoboToRams.Where(x => x.Mobo_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+        if (mclink != null)
+        {
+            mclink.Mobo_ID = id;
+        }
+        if (mcpulink != null)
+        {
+            mcpulink.Mobo_ID = id;
+        }
+        if (mrlink != null)
+        {
+            mcpulink.Mobo_ID = id;
+        }
+
+        part.Model = newMobo.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newMobo.price;
+        part.Active = newMobo.active;
+        part.Discount = newMobo.discount;
+        part.Image = part.Image;
+
+        Motherboard.ID = part.ID;
+        Motherboard.Model = newMobo.model;
+        Motherboard.Brand = newMobo.brand;
+        Motherboard.Series = newMobo.series;
+        Motherboard.Chipset = newMobo.chipset;
+        Motherboard.Memory_Type = newMobo.memoryType;
+        Motherboard.Max_Memory_Size = newMobo.max_mem_size;
+        Motherboard.Max_Memory_Speed = newMobo.max_mem_speed;
+        Motherboard.LAN = newMobo.lan;
+        Motherboard.Expansion_Slots = newMobo.expansion_slots;
+        Motherboard.Storage = newMobo.storage;
+        Motherboard.Internal_I_O_Connectors = newMobo.internal_IO;
+        Motherboard.Back_Panel_Connectors = newMobo.back_panel_IO;
+        Motherboard.OS_Support = newMobo.os_support;
+        Motherboard.Form_Factor = newMobo.form_factor;
+        Motherboard.Notes = newMobo.notes;
+        Motherboard.Warranty = newMobo.warranty;
+        Motherboard.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
+
+        //Check for the compatible Parts
+
+        //Cases
+        dynamic CaseList = (from c in db.PCCases where c.Motherboard_Form_Factor.Equals(Motherboard.Form_Factor) select c);
+
+        foreach (PCCase c in CaseList)
+        {
+            bool link = linkMoboToCase(Motherboard.ID, c.ID);
+            if (link == false)
+            {
+                continue;
+            }
+        }
+
+        //RAM
+        dynamic RamList = (from c in db.RAMs where ((Convert.ToInt32(c.Capacity) <= Motherboard.Max_Memory_Size) && c.Type.Equals(Motherboard.Memory_Type)) select c);
+
+        foreach (RAM c in RamList)
+        {
+            bool link = linkMoboToCase(Motherboard.ID, c.ID);
+            if (link == false)
+            {
+                continue;
+            }
+        }
+
+        //CPU
+        dynamic CpuList = (from c in db.CPUs where c.Chipset.Equals(Motherboard.Chipset) select c);
+
+        foreach (CPU c in CpuList)
+        {
+            bool link = linkMoboToCase(Motherboard.ID, c.ID);
+            if (link == false)
+            {
+                continue;
+            }
+        }
+
+        return true;
+
+    }
+
+    public bool deleteMobo(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.Motherboards.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.Motherboards.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditMonitor(cMonitor newMonitor, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var monitor = db.Monitors.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newMonitor.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newMonitor.price;
+        part.Active = newMonitor.active;
+        part.Discount = newMonitor.discount;
+        part.Image = part.Image;
+
+        monitor.ID = part.ID;
+        monitor.Model = newMonitor.model;
+        monitor.Brand = newMonitor.brand;
+        monitor.Series = newMonitor.series;
+        monitor.ScreenSize = newMonitor.screen_size;
+        monitor.ScreenRatio = newMonitor.screen_ratio;
+        monitor.Brightness = newMonitor.brightness;
+        monitor.ContrastRatio = newMonitor.contrast_ratio;
+        monitor.ViewingAngle = newMonitor.viewing_angle;
+        monitor.ResponseTime = newMonitor.response_time;
+        monitor.Panel_Type = newMonitor.panel_type;
+        monitor.RefreshRate = newMonitor.refresh_rate;
+        monitor.Resolution = newMonitor.resolution;
+           monitor.Colours = newMonitor.colours;
+        monitor.DisplayPortInput = newMonitor.display_port;
+           monitor.HDMI = newMonitor.hdmi;
+        monitor.VGA = newMonitor.vga;
+        monitor.Speakers = newMonitor.speakers;
+        monitor.Swivel = newMonitor.swivel;
+        monitor.Tilt = newMonitor.tilt;
+        monitor.Pivot = newMonitor.pivot;
+        monitor.Warranty = newMonitor.warranty;
+        monitor.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteMonitor(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.Monitors.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.Monitors.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditMouse(cMouse newMouse, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var Mouse = db.Mouses.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newMouse.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newMouse.price;
+        part.Active = newMouse.active;
+        part.Discount = newMouse.discount;
+        part.Image = part.Image;
+
+        Mouse.ID = part.ID;
+        Mouse.Model = newMouse.model;
+        Mouse.Brand = newMouse.brand;
+        Mouse.Series = newMouse.series;
+        Mouse.Sensor = newMouse.sensor;
+        Mouse.Resolution = newMouse.resolution;
+        Mouse.Max_Acceleration = newMouse.max_acceleration; 
+        Mouse.Max_Speed = newMouse.max_speed;
+        Mouse.Connection_Type = newMouse.connection_type;
+        Mouse.PTFE_Feet = newMouse.ptfe_feet;
+        Mouse.Battery = newMouse.battery;
+        Mouse.Dimensions = newMouse.dimensions;
+        Mouse.Weight = newMouse.weight;
+        Mouse.Cable_Length = newMouse.cable_length;
+        Mouse.Warranty = newMouse.warranty;
+        Mouse.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteMouse(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.Mouses.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.Mouses.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditMousepad(cMousePad newMousepad, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var Mousepad = db.MousePads.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newMousepad.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newMousepad.price;
+        part.Active = newMousepad.active;
+        part.Discount = newMousepad.discount;
+        part.Image = part.Image;
+
+        Mousepad.ID = part.ID;
+        Mousepad.Model = newMousepad.model;
+        Mousepad.Brand = newMousepad.brand;
+        Mousepad.Series = newMousepad.series;
+        Mousepad.Colour = newMousepad.colour;
+        Mousepad.Materials = newMousepad.materials;
+        Mousepad.Base = newMousepad.pad_base;
+        Mousepad.Dimensions = newMousepad.dimensions;
+        Mousepad.Warranty = newMousepad.warranty;
+        Mousepad.PartsStock = part;
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteMousepad(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.MousePads.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.MousePads.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditOS(cOS newOS, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var oS = db.OperatingSystems.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newOS.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newOS.price;
+        part.Active = newOS.active;
+        part.Discount = newOS.discount;
+        part.Image = part.Image;
+
+        oS.ID = part.ID;
+        oS.Model = newOS.model;
+        oS.Brand = newOS.brand;
+        oS.Series = newOS.series;
+        oS.Bit_Version = newOS.bit_version;
+        oS.OS_Version = newOS.os_version;
+        oS.System_Requirements = newOS.system_requirements;
+        oS.Warranty = newOS.warranty;
+        oS.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteOS(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.OperatingSystems.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.OperatingSystems.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditPSU(cPSU newPSU, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var psu = db.PSUs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newPSU.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newPSU.price;
+        part.Active = newPSU.active;
+        part.Discount = newPSU.discount;
+        part.Image = part.Image;
+
+
+        psu.ID = part.ID;
+        psu.Model = newPSU.model;
+        psu.Brand = newPSU.brand;
+        psu.Series = newPSU.series;
+        psu.Power = newPSU.Power;
+        psu.Certification = newPSU.certification;
+        psu.Modular = newPSU.modular;
+        psu.Connectors = newPSU.connectors;
+        psu.MTBF = newPSU.mtbf;
+        psu.Fan_Size = newPSU.fan_size;
+        psu.Cables = newPSU.cables;
+        psu.Dimensions = newPSU.dimensions;
+        psu.Warranty = newPSU.warranty;
+        psu.PartsStock = part;
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deletePSU(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.PSUs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.PSUs.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditRAM(cRAM newRAM, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var ram = db.RAMs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var mclink = db.MoboToRams.Where(x => x.RAM_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+        if (mclink != null)
+        {
+            mclink.RAM_ID = id;
+        }
+
+        part.Model = newRAM.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newRAM.price;
+        part.Active = newRAM.active;
+        part.Discount = newRAM.discount;
+        part.Image = part.Image;
+
+        ram.ID = part.ID;
+        ram.Model = newRAM.model;
+        ram.Brand = newRAM.brand;
+        ram.Series = newRAM.series;
+        ram.Capacity = newRAM.capacity;
+        ram.Type = newRAM.type;
+        ram.Speed = newRAM.speed;
+        ram.Latency = newRAM.latency;
+        ram.Voltage = newRAM.voltage;
+        ram.Channel_Config = newRAM.channel_config;
+        ram.Height = newRAM.height;
+        ram.Warranty = newRAM.warranty;
+        ram.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
+
+        //RAM Copatability
+        dynamic moboList = (from c in db.Motherboards where ((Convert.ToInt32(ram.Capacity) <= c.Max_Memory_Size) && ram.Type.Equals(c.Memory_Type)) select c);
+
+        foreach (Motherboard c in moboList)
+        {
+            bool link = linkMoboToRAM(c.ID, ram.ID);
+            if (link == false)
+            {
+                continue;
+            }
+        }
+
+        return true;
+    }
+
+    public bool deleteRAM(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.RAMs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.RAMs.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditSSD(cSSD newSSD, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var ssd = db.SSDs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newSSD.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newSSD.price;
+        part.Active = newSSD.active;
+        part.Discount = newSSD.discount;
+        part.Image = part.Image;
+
+        ssd.ID = part.ID;
+        ssd.Model = newSSD.model;
+        ssd.Brand = newSSD.brand;
+        ssd.Series = newSSD.series;
+        ssd.Form_Factor = newSSD.form_factor;
+        ssd.Capacity = newSSD.capacity;
+        ssd.Interface_Type = newSSD.interface_type;
+        ssd.Length = newSSD.length;
+        ssd.Width = newSSD.width;
+        ssd.Max_Sequential_Read = newSSD.max_seq_read;
+        ssd.Max_Sequential_Write = newSSD.max_seq_write;
+        ssd.Random_Read = newSSD.random_read;
+        ssd.Random_Write = newSSD.random_write;
+        ssd.MTBF = newSSD.mtbf;
+        ssd.Operating_Temp = newSSD.operating_temp;
+        ssd.Max_Power_Usage = newSSD.max_power_usage;
+        ssd.Warranty = newSSD.warranty;
+        ssd.PartsStock = part;
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteSSD(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.SSDs.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.SSDs.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditSpeaker(cSpeaker newSpeaker, PartsStock newPart, int id)
+    {
+        var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var speaker = db.Speakers.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Part_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.Model = newSpeaker.model;
+        part.Type = "Case";
+        part.Quantity = part.Quantity;
+        part.Price = (decimal)newSpeaker.price;
+        part.Active = newSpeaker.active;
+        part.Discount = newSpeaker.discount;
+        part.Image = part.Image;
+
+        speaker.ID = part.ID;
+        speaker.Model = newSpeaker.model;
+        speaker.Brand = newSpeaker.brand;
+        speaker.Satellite_Dimensions = newSpeaker.satellite_dimensions;
+        speaker.Satellite_Weight = newSpeaker.satellite_weight;
+        speaker.SubWoofer_Dimensions = newSpeaker.subwoofer_dimensions;
+        speaker.SubWoofer_Weight = newSpeaker.subwoofer_weight;
+        speaker.controls = newSpeaker.controls;
+        speaker.System_Requirements = newSpeaker.system_requirements;
+        speaker.Features = newSpeaker.features;
+        speaker.Warranty = newSpeaker.warranty;
+        speaker.PartsStock = part;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool deleteSpeaker(int id)
+    {
+        var stock = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var part = db.Speakers.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        if (cart != null)
+        {
+            db.PartCarts.DeleteOnSubmit(cart);
+        }
+        db.Speakers.DeleteOnSubmit(part);
+        db.PartsStocks.DeleteOnSubmit(stock);
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+    }
+
+    public bool EditPC(cPC newPC, PartsStock newPart, int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool deletePC(int id)
+    {
+        throw new NotImplementedException();
+    }
 }

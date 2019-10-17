@@ -3,6 +3,116 @@
     ViewBag.Title = "Case";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model CyberLlamaConsumerSite.CRUDService.cCase
 
-<h2>Case</h2>
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Add an Air Cooler</h1>
+<hr color="white" />
+
+@using (Html.BeginForm("addCase", "AddNewProduct", FormMethod.Post))
+{
+    <div class="form-Input centerImage">
+        <label>Model:</label>
+        @Html.TextBoxFor(m => m.model)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Brand:</label>
+        @Html.TextBoxFor(m => m.brand)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Series:</label>
+        @Html.TextBoxFor(m => m.series)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Dimensions:</label>
+        @Html.TextBoxFor(m => m.dimensions)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Net Weight:</label>
+        @Html.TextBoxFor(m => m.net_weight)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Motherboard form factor:</label>
+        @Html.TextBoxFor(m => m.mobo_form_factor)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Side Window:</label>
+        @Html.TextBoxFor(m => m.side_window)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Number of hard drives:</label>
+        @Html.TextBoxFor(m => m.num_hdd_drives)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Number of ssd,s:</label>
+        @Html.TextBoxFor(m => m.num_ssd_drives)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Colour:</label>
+        @Html.TextBoxFor(m => m.colour)
+    </div>
+    <div class="form-Input centerImage">
+        <label>front I/O:</label>
+        @Html.TextBoxFor(m => m.front_io)
+    </div>
+    <div class="form-Input centerImage">
+        <label>expansion Slots:</label>
+        @Html.TextBoxFor(m => m.expansion_slots)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>number of Top Fans:</label>
+        @Html.TextBoxFor(m => m.num_top_fans)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Number of bottom fans:</label>
+        @Html.TextBoxFor(m => m.num_bottom_fans)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Number of Fromt fans:</label>
+        @Html.TextBoxFor(m => m.num_front_fans)
+    </div>
+    <div class="form-Input centerImage">
+        <label>number of back Fans:</label>
+        @Html.TextBoxFor(m => m.num_back_fans)
+    </div>
+    <div class="form-Input centerImage">
+        <label>top radiator support length:</label>
+        @Html.TextBoxFor(m => m.top_rad_length)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Front radiator support length:</label>
+        @Html.TextBoxFor(m => m.front_rad_length)
+    </div>
+    <div class="form-Input centerImage">
+        <label>gpu max length:</label>
+        @Html.TextBoxFor(m => m.gpu_max_length)
+    </div>
+    <div class="form-Input centerImage">
+        <label>cpu cooler height:</label>
+        @Html.TextBoxFor(m => m.cpu_cooler_max_height)
+    </div>
+    <div class="form-Input centerImage">
+        <label>warranty:</label>
+        @Html.TextBoxFor(m => m.warranty)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Active:</label>
+        @Html.TextBoxFor(m => m.active)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Price:</label>
+        @Html.TextBoxFor(m => m.price)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Image Link:</label>
+        <input name="image" id="image" />
+    </div>
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input centerImage login">
+        <input type="submit" value="addGpu" />
+    </div>
+}
 

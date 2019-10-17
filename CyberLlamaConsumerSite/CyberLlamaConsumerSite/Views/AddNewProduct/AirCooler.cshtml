@@ -4,5 +4,102 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>AirCooler</h2>
+@model CyberLlamaConsumerSite.CRUDService.cAirCooler
+
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Add an Air Cooler</h1>
+<hr color="white" />
+
+@using (Html.BeginForm("addAirCooler", "AddNewProduct", FormMethod.Post))
+{
+    <div class="form-Input centerImage">
+        <label>Model:</label>
+        @Html.TextBoxFor(m => m.model)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Brand:</label>
+        @Html.TextBoxFor(m => m.brand)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Series:</label>
+        @Html.TextBoxFor(m => m.series)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Compatability:</label>
+        @Html.TextBoxFor(m => m.chipset)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Fan Size:</label>
+        @Html.TextBoxFor(m => m.fan_size)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Fan RPM:</label>
+        @Html.TextBoxFor(m => m.fan_rpm)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Air Flow:</label>
+        @Html.TextBoxFor(m => m.air_flow)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Noise level:</label>
+        @Html.TextBoxFor(m => m.noise_level)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Power Connector:</label>
+        @Html.TextBoxFor(m => m.power_connector)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Colour:</label>
+        @Html.TextBoxFor(m => m.colour)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Materials:</label>
+        @Html.TextBoxFor(m => m.materials)
+    </div>
+    <div class="form-Input centerImage">
+        <label>length:</label>
+        @Html.TextBoxFor(m => m.length)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>height:</label>
+        @Html.TextBoxFor(m => m.height)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Width:</label>
+        @Html.TextBoxFor(m => m.width)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Weight:</label>
+        @Html.TextBoxFor(m => m.weight)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Features:</label>
+        @Html.TextBoxFor(m => m.features)
+    </div>
+
+
+    <div class="form-Input centerImage">
+        <label>warranty:</label>
+        @Html.TextBoxFor(m => m.warranty)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Active:</label>
+        @Html.TextBoxFor(m => m.active)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Price:</label>
+        @Html.TextBoxFor(m => m.price)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Image Link:</label>
+        <input name="image" id="image"/>
+    </div>
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input centerImage login">
+        <input type="submit" value="addGpu" />
+    </div>
+}
 

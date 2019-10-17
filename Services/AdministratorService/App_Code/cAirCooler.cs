@@ -25,4 +25,5 @@ public class cAirCooler
     public String warranty;
     public int active;
     public int discount;
+    public string weight;
 }

@@ -22,4 +22,5 @@ public class cHDD
     public String warranty;
     public int active;
     public int discount;
+    public string Workload_Rate_Limit;
 }

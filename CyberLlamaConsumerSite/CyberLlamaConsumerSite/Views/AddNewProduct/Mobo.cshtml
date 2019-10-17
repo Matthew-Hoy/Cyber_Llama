@@ -3,6 +3,96 @@
     ViewBag.Title = "Mobo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model CyberLlamaConsumerSite.CRUDService.cMobo
 
-<h2>Mobo</h2>
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Add Motherboard</h1>
+<hr color="white" />
+
+@using (Html.BeginForm("addMobo", "AddNewProduct", FormMethod.Post))
+{
+    <div class="form-Input centerImage">
+        <label>Model:</label>
+        @Html.TextBoxFor(m => m.model)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Brand:</label>
+        @Html.TextBoxFor(m => m.brand)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Series:</label>
+        @Html.TextBoxFor(m => m.series)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Chpset:</label>
+        @Html.TextBoxFor(m => m.chipset)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Memory Type:</label>
+        @Html.TextBoxFor(m => m.memoryType)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Max Memory Speed:</label>
+        @Html.TextBoxFor(m => m.max_mem_speed)
+    </div>
+    <div class="form-Input centerImage">
+        <label>max memory size:</label>
+        @Html.TextBoxFor(m => m.max_mem_size)
+    </div>
+    <div class="form-Input centerImage">
+        <label>LAN:</label>
+        @Html.TextBoxFor(m => m.lan)
+    </div>
+    <div class="form-Input centerImage">
+        <label>expansion slots:</label>
+        @Html.TextBoxFor(m => m.expansion_slots)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Storage:</label>
+        @Html.TextBoxFor(m => m.storage)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Internal I/O connectors:</label>
+        @Html.TextBoxFor(m => m.internal_IO)
+    </div>
+    <div class="form-Input centerImage">
+        <label>back Panel connectors:</label>
+        @Html.TextBoxFor(m => m.back_panel_IO)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>OS Supported:</label>
+        @Html.TextBoxFor(m => m.os_support)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Form factor:</label>
+        @Html.TextBoxFor(m => m.form_factor)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Notes:</label>
+        @Html.TextBoxFor(m => m.notes)
+    </div>
+    <div class="form-Input centerImage">
+        <label>warranty:</label>
+        @Html.TextBoxFor(m => m.warranty)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Active:</label>
+        @Html.TextBoxFor(m => m.active)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Price:</label>
+        @Html.TextBoxFor(m => m.price)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Image Link:</label>
+        <input name="image" id="image" />
+    </div>
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input centerImage login">
+        <input type="submit" value="addGpu" />
+    </div>
+}
 
