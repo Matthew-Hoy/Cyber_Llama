@@ -15,6 +15,471 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cAllCart", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cAllCart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Max_quaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cartField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imagelinkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int part_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int quaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int user_idField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Max_qua {
+            get {
+                return this.Max_quaField;
+            }
+            set {
+                if ((this.Max_quaField.Equals(value) != true)) {
+                    this.Max_quaField = value;
+                    this.RaisePropertyChanged("Max_qua");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cart {
+            get {
+                return this.cartField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cartField, value) != true)) {
+                    this.cartField = value;
+                    this.RaisePropertyChanged("cart");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
+                    this.descriptionField = value;
+                    this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string imagelink {
+            get {
+                return this.imagelinkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imagelinkField, value) != true)) {
+                    this.imagelinkField = value;
+                    this.RaisePropertyChanged("imagelink");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int part_id {
+            get {
+                return this.part_idField;
+            }
+            set {
+                if ((this.part_idField.Equals(value) != true)) {
+                    this.part_idField = value;
+                    this.RaisePropertyChanged("part_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int qua {
+            get {
+                return this.quaField;
+            }
+            set {
+                if ((this.quaField.Equals(value) != true)) {
+                    this.quaField = value;
+                    this.RaisePropertyChanged("qua");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int user_id {
+            get {
+                return this.user_idField;
+            }
+            set {
+                if ((this.user_idField.Equals(value) != true)) {
+                    this.user_idField = value;
+                    this.RaisePropertyChanged("user_id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cStock", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cStock : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cSold", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cSold : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                if ((this.dateField.Equals(value) != true)) {
+                    this.dateField = value;
+                    this.RaisePropertyChanged("date");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cLoginStat", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cLoginStat : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int User_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int User_ID {
+            get {
+                return this.User_IDField;
+            }
+            set {
+                if ((this.User_IDField.Equals(value) != true)) {
+                    this.User_IDField = value;
+                    this.RaisePropertyChanged("User_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cRegisterStat", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cRegisterStat : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int User_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int User_ID {
+            get {
+                return this.User_IDField;
+            }
+            set {
+                if ((this.User_IDField.Equals(value) != true)) {
+                    this.User_IDField = value;
+                    this.RaisePropertyChanged("User_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="cEmployee", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class cEmployee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1999,6 +2464,9 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         private string sizeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string storageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string warrantyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2192,6 +2660,19 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
                 if ((object.ReferenceEquals(this.sizeField, value) != true)) {
                     this.sizeField = value;
                     this.RaisePropertyChanged("size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string storage {
+            get {
+                return this.storageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.storageField, value) != true)) {
+                    this.storageField = value;
+                    this.RaisePropertyChanged("storage");
                 }
             }
         }
@@ -6810,179 +7291,6 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cAllCart", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cAllCart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Max_quaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cartField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string descriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string imagelinkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int part_idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int quaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int user_idField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Max_qua {
-            get {
-                return this.Max_quaField;
-            }
-            set {
-                if ((this.Max_quaField.Equals(value) != true)) {
-                    this.Max_quaField = value;
-                    this.RaisePropertyChanged("Max_qua");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cart {
-            get {
-                return this.cartField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cartField, value) != true)) {
-                    this.cartField = value;
-                    this.RaisePropertyChanged("cart");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
-                    this.descriptionField = value;
-                    this.RaisePropertyChanged("description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string imagelink {
-            get {
-                return this.imagelinkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.imagelinkField, value) != true)) {
-                    this.imagelinkField = value;
-                    this.RaisePropertyChanged("imagelink");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int part_id {
-            get {
-                return this.part_idField;
-            }
-            set {
-                if ((this.part_idField.Equals(value) != true)) {
-                    this.part_idField = value;
-                    this.RaisePropertyChanged("part_id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int qua {
-            get {
-                return this.quaField;
-            }
-            set {
-                if ((this.quaField.Equals(value) != true)) {
-                    this.quaField = value;
-                    this.RaisePropertyChanged("qua");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int user_id {
-            get {
-                return this.user_idField;
-            }
-            set {
-                if ((this.user_idField.Equals(value) != true)) {
-                    this.user_idField = value;
-                    this.RaisePropertyChanged("user_id");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="cClient", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class cClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -7267,6 +7575,84 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService")]
     public interface IService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcInvoice", ReplyAction="http://tempuri.org/IService/addToPcInvoiceResponse")]
+        bool addToPcInvoice(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcInvoice", ReplyAction="http://tempuri.org/IService/addToPcInvoiceResponse")]
+        System.Threading.Tasks.Task<bool> addToPcInvoiceAsync(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpcinvoice", ReplyAction="http://tempuri.org/IService/getpcinvoiceResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cAllCart[] getpcinvoice(int InvoiceID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpcinvoice", ReplyAction="http://tempuri.org/IService/getpcinvoiceResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAllCart[]> getpcinvoiceAsync(int InvoiceID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPartInvoice", ReplyAction="http://tempuri.org/IService/getPartInvoiceResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cAllCart[] getPartInvoice(int InvoiceID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPartInvoice", ReplyAction="http://tempuri.org/IService/getPartInvoiceResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAllCart[]> getPartInvoiceAsync(int InvoiceID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartSold", ReplyAction="http://tempuri.org/IService/addToPartSoldResponse")]
+        bool addToPartSold(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartSold", ReplyAction="http://tempuri.org/IService/addToPartSoldResponse")]
+        System.Threading.Tasks.Task<bool> addToPartSoldAsync(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcSold", ReplyAction="http://tempuri.org/IService/addToPcSoldResponse")]
+        bool addToPcSold(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcSold", ReplyAction="http://tempuri.org/IService/addToPcSoldResponse")]
+        System.Threading.Tasks.Task<bool> addToPcSoldAsync(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePartStock", ReplyAction="http://tempuri.org/IService/decreasePartStockResponse")]
+        bool decreasePartStock(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePartStock", ReplyAction="http://tempuri.org/IService/decreasePartStockResponse")]
+        System.Threading.Tasks.Task<bool> decreasePartStockAsync(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePcStock", ReplyAction="http://tempuri.org/IService/decreasePcStockResponse")]
+        bool decreasePcStock(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePcStock", ReplyAction="http://tempuri.org/IService/decreasePcStockResponse")]
+        System.Threading.Tasks.Task<bool> decreasePcStockAsync(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpcStockStats", ReplyAction="http://tempuri.org/IService/getpcStockStatsResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cStock[] getpcStockStats();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpcStockStats", ReplyAction="http://tempuri.org/IService/getpcStockStatsResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cStock[]> getpcStockStatsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpcSoldStats", ReplyAction="http://tempuri.org/IService/getpcSoldStatsResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cSold[] getpcSoldStats();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpcSoldStats", ReplyAction="http://tempuri.org/IService/getpcSoldStatsResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cSold[]> getpcSoldStatsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpartStockStats", ReplyAction="http://tempuri.org/IService/getpartStockStatsResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cStock[] getpartStockStats();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpartStockStats", ReplyAction="http://tempuri.org/IService/getpartStockStatsResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cStock[]> getpartStockStatsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpartSoldStats", ReplyAction="http://tempuri.org/IService/getpartSoldStatsResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cSold[] getpartSoldStats();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpartSoldStats", ReplyAction="http://tempuri.org/IService/getpartSoldStatsResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cSold[]> getpartSoldStatsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getLoginStats", ReplyAction="http://tempuri.org/IService/getLoginStatsResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cLoginStat[] getLoginStats();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getLoginStats", ReplyAction="http://tempuri.org/IService/getLoginStatsResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cLoginStat[]> getLoginStatsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRegisterStats", ReplyAction="http://tempuri.org/IService/getRegisterStatsResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cRegisterStat[] getRegisterStats();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRegisterStats", ReplyAction="http://tempuri.org/IService/getRegisterStatsResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cRegisterStat[]> getRegisterStatsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
         string Login(string strUserName, string strPassword);
         
@@ -7322,10 +7708,10 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         System.Threading.Tasks.Task<bool> addFanAsync(CyberLlamaConsumerSite.ServiceReference1.cFan newFan, int qua);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addGPU", ReplyAction="http://tempuri.org/IService/addGPUResponse")]
-        bool addGPU(CyberLlamaConsumerSite.ServiceReference1.cGPU newGPU, int qua);
+        bool addGPU(CyberLlamaConsumerSite.ServiceReference1.cGPU newGPU, int qua, decimal price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addGPU", ReplyAction="http://tempuri.org/IService/addGPUResponse")]
-        System.Threading.Tasks.Task<bool> addGPUAsync(CyberLlamaConsumerSite.ServiceReference1.cGPU newGPU, int qua);
+        System.Threading.Tasks.Task<bool> addGPUAsync(CyberLlamaConsumerSite.ServiceReference1.cGPU newGPU, int qua, decimal price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addHDD", ReplyAction="http://tempuri.org/IService/addHDDResponse")]
         bool addHDD(CyberLlamaConsumerSite.ServiceReference1.cHDD newHDD, int qua);
@@ -7428,6 +7814,120 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/intgetPC", ReplyAction="http://tempuri.org/IService/intgetPCResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC> intgetPCAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPcInfo", ReplyAction="http://tempuri.org/IService/getPcInfoResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.c_PcPageInfo getPcInfo(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPcInfo", ReplyAction="http://tempuri.org/IService/getPcInfoResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.c_PcPageInfo> getPcInfoAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAirCooler", ReplyAction="http://tempuri.org/IService/getAirCoolerResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cAirCooler getAirCooler(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAirCooler", ReplyAction="http://tempuri.org/IService/getAirCoolerResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAirCooler> getAirCoolerAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCase", ReplyAction="http://tempuri.org/IService/getCaseResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cCase getCase(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCase", ReplyAction="http://tempuri.org/IService/getCaseResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cCase> getCaseAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCPU", ReplyAction="http://tempuri.org/IService/getCPUResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cCPU getCPU(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCPU", ReplyAction="http://tempuri.org/IService/getCPUResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cCPU> getCPUAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getFan", ReplyAction="http://tempuri.org/IService/getFanResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cFan getFan(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getFan", ReplyAction="http://tempuri.org/IService/getFanResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cFan> getFanAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getGPU", ReplyAction="http://tempuri.org/IService/getGPUResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cGPU getGPU(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getGPU", ReplyAction="http://tempuri.org/IService/getGPUResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cGPU> getGPUAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getHDD", ReplyAction="http://tempuri.org/IService/getHDDResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cHDD getHDD(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getHDD", ReplyAction="http://tempuri.org/IService/getHDDResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cHDD> getHDDAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getHeadset", ReplyAction="http://tempuri.org/IService/getHeadsetResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cHeadset getHeadset(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getHeadset", ReplyAction="http://tempuri.org/IService/getHeadsetResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cHeadset> getHeadsetAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getLiquidCooler", ReplyAction="http://tempuri.org/IService/getLiquidCoolerResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cLiquidCooler getLiquidCooler(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getLiquidCooler", ReplyAction="http://tempuri.org/IService/getLiquidCoolerResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cLiquidCooler> getLiquidCoolerAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMobo", ReplyAction="http://tempuri.org/IService/getMoboResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cMobo getMobo(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMobo", ReplyAction="http://tempuri.org/IService/getMoboResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cMobo> getMoboAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPSU", ReplyAction="http://tempuri.org/IService/getPSUResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cPSU getPSU(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPSU", ReplyAction="http://tempuri.org/IService/getPSUResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPSU> getPSUAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRAM", ReplyAction="http://tempuri.org/IService/getRAMResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cRAM getRAM(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRAM", ReplyAction="http://tempuri.org/IService/getRAMResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cRAM> getRAMAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSSD", ReplyAction="http://tempuri.org/IService/getSSDResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cSSD getSSD(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSSD", ReplyAction="http://tempuri.org/IService/getSSDResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cSSD> getSSDAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getKeyboard", ReplyAction="http://tempuri.org/IService/getKeyboardResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cKeyboard getKeyboard(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getKeyboard", ReplyAction="http://tempuri.org/IService/getKeyboardResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cKeyboard> getKeyboardAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMicrophone", ReplyAction="http://tempuri.org/IService/getMicrophoneResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cMicrophone getMicrophone(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMicrophone", ReplyAction="http://tempuri.org/IService/getMicrophoneResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cMicrophone> getMicrophoneAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSpeaker", ReplyAction="http://tempuri.org/IService/getSpeakerResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cSpeaker getSpeaker(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSpeaker", ReplyAction="http://tempuri.org/IService/getSpeakerResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cSpeaker> getSpeakerAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMonitor", ReplyAction="http://tempuri.org/IService/getMonitorResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cMonitor getMonitor(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMonitor", ReplyAction="http://tempuri.org/IService/getMonitorResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cMonitor> getMonitorAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMouse", ReplyAction="http://tempuri.org/IService/getMouseResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cMouse getMouse(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMouse", ReplyAction="http://tempuri.org/IService/getMouseResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cMouse> getMouseAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMousepad", ReplyAction="http://tempuri.org/IService/getMousepadResponse")]
+        CyberLlamaConsumerSite.ServiceReference1.cMousePad getMousepad(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMousepad", ReplyAction="http://tempuri.org/IService/getMousepadResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cMousePad> getMousepadAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPCbyType", ReplyAction="http://tempuri.org/IService/getPCbyTypeResponse")]
         CyberLlamaConsumerSite.ServiceReference1.cPC[] getPCbyType(string Type);
@@ -7662,48 +8162,6 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartInvoice", ReplyAction="http://tempuri.org/IService/addToPartInvoiceResponse")]
         System.Threading.Tasks.Task<bool> addToPartInvoiceAsync(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcInvoice", ReplyAction="http://tempuri.org/IService/addToPcInvoiceResponse")]
-        bool addToPcInvoice(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcInvoice", ReplyAction="http://tempuri.org/IService/addToPcInvoiceResponse")]
-        System.Threading.Tasks.Task<bool> addToPcInvoiceAsync(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpcinvoice", ReplyAction="http://tempuri.org/IService/getpcinvoiceResponse")]
-        CyberLlamaConsumerSite.ServiceReference1.cAllCart[] getpcinvoice(int InvoiceID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getpcinvoice", ReplyAction="http://tempuri.org/IService/getpcinvoiceResponse")]
-        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAllCart[]> getpcinvoiceAsync(int InvoiceID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPartInvoice", ReplyAction="http://tempuri.org/IService/getPartInvoiceResponse")]
-        CyberLlamaConsumerSite.ServiceReference1.cAllCart[] getPartInvoice(int InvoiceID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPartInvoice", ReplyAction="http://tempuri.org/IService/getPartInvoiceResponse")]
-        System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAllCart[]> getPartInvoiceAsync(int InvoiceID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartSold", ReplyAction="http://tempuri.org/IService/addToPartSoldResponse")]
-        bool addToPartSold(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartSold", ReplyAction="http://tempuri.org/IService/addToPartSoldResponse")]
-        System.Threading.Tasks.Task<bool> addToPartSoldAsync(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcSold", ReplyAction="http://tempuri.org/IService/addToPcSoldResponse")]
-        bool addToPcSold(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcSold", ReplyAction="http://tempuri.org/IService/addToPcSoldResponse")]
-        System.Threading.Tasks.Task<bool> addToPcSoldAsync(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePartStock", ReplyAction="http://tempuri.org/IService/decreasePartStockResponse")]
-        bool decreasePartStock(int userID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePartStock", ReplyAction="http://tempuri.org/IService/decreasePartStockResponse")]
-        System.Threading.Tasks.Task<bool> decreasePartStockAsync(int userID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePcStock", ReplyAction="http://tempuri.org/IService/decreasePcStockResponse")]
-        bool decreasePcStock(int userID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/decreasePcStock", ReplyAction="http://tempuri.org/IService/decreasePcStockResponse")]
-        System.Threading.Tasks.Task<bool> decreasePcStockAsync(int userID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7731,6 +8189,110 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         
         public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public bool addToPcInvoice(int UserID) {
+            return base.Channel.addToPcInvoice(UserID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addToPcInvoiceAsync(int UserID) {
+            return base.Channel.addToPcInvoiceAsync(UserID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cAllCart[] getpcinvoice(int InvoiceID) {
+            return base.Channel.getpcinvoice(InvoiceID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAllCart[]> getpcinvoiceAsync(int InvoiceID) {
+            return base.Channel.getpcinvoiceAsync(InvoiceID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cAllCart[] getPartInvoice(int InvoiceID) {
+            return base.Channel.getPartInvoice(InvoiceID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAllCart[]> getPartInvoiceAsync(int InvoiceID) {
+            return base.Channel.getPartInvoiceAsync(InvoiceID);
+        }
+        
+        public bool addToPartSold(int UserID) {
+            return base.Channel.addToPartSold(UserID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addToPartSoldAsync(int UserID) {
+            return base.Channel.addToPartSoldAsync(UserID);
+        }
+        
+        public bool addToPcSold(int UserID) {
+            return base.Channel.addToPcSold(UserID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addToPcSoldAsync(int UserID) {
+            return base.Channel.addToPcSoldAsync(UserID);
+        }
+        
+        public bool decreasePartStock(int userID) {
+            return base.Channel.decreasePartStock(userID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> decreasePartStockAsync(int userID) {
+            return base.Channel.decreasePartStockAsync(userID);
+        }
+        
+        public bool decreasePcStock(int userID) {
+            return base.Channel.decreasePcStock(userID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> decreasePcStockAsync(int userID) {
+            return base.Channel.decreasePcStockAsync(userID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cStock[] getpcStockStats() {
+            return base.Channel.getpcStockStats();
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cStock[]> getpcStockStatsAsync() {
+            return base.Channel.getpcStockStatsAsync();
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cSold[] getpcSoldStats() {
+            return base.Channel.getpcSoldStats();
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cSold[]> getpcSoldStatsAsync() {
+            return base.Channel.getpcSoldStatsAsync();
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cStock[] getpartStockStats() {
+            return base.Channel.getpartStockStats();
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cStock[]> getpartStockStatsAsync() {
+            return base.Channel.getpartStockStatsAsync();
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cSold[] getpartSoldStats() {
+            return base.Channel.getpartSoldStats();
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cSold[]> getpartSoldStatsAsync() {
+            return base.Channel.getpartSoldStatsAsync();
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cLoginStat[] getLoginStats() {
+            return base.Channel.getLoginStats();
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cLoginStat[]> getLoginStatsAsync() {
+            return base.Channel.getLoginStatsAsync();
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cRegisterStat[] getRegisterStats() {
+            return base.Channel.getRegisterStats();
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cRegisterStat[]> getRegisterStatsAsync() {
+            return base.Channel.getRegisterStatsAsync();
         }
         
         public string Login(string strUserName, string strPassword) {
@@ -7805,12 +8367,12 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
             return base.Channel.addFanAsync(newFan, qua);
         }
         
-        public bool addGPU(CyberLlamaConsumerSite.ServiceReference1.cGPU newGPU, int qua) {
-            return base.Channel.addGPU(newGPU, qua);
+        public bool addGPU(CyberLlamaConsumerSite.ServiceReference1.cGPU newGPU, int qua, decimal price) {
+            return base.Channel.addGPU(newGPU, qua, price);
         }
         
-        public System.Threading.Tasks.Task<bool> addGPUAsync(CyberLlamaConsumerSite.ServiceReference1.cGPU newGPU, int qua) {
-            return base.Channel.addGPUAsync(newGPU, qua);
+        public System.Threading.Tasks.Task<bool> addGPUAsync(CyberLlamaConsumerSite.ServiceReference1.cGPU newGPU, int qua, decimal price) {
+            return base.Channel.addGPUAsync(newGPU, qua, price);
         }
         
         public bool addHDD(CyberLlamaConsumerSite.ServiceReference1.cHDD newHDD, int qua) {
@@ -7947,6 +8509,158 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         
         public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPC> intgetPCAsync(int ID) {
             return base.Channel.intgetPCAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.c_PcPageInfo getPcInfo(int ID) {
+            return base.Channel.getPcInfo(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.c_PcPageInfo> getPcInfoAsync(int ID) {
+            return base.Channel.getPcInfoAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cAirCooler getAirCooler(int ID) {
+            return base.Channel.getAirCooler(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAirCooler> getAirCoolerAsync(int ID) {
+            return base.Channel.getAirCoolerAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cCase getCase(int ID) {
+            return base.Channel.getCase(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cCase> getCaseAsync(int ID) {
+            return base.Channel.getCaseAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cCPU getCPU(int ID) {
+            return base.Channel.getCPU(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cCPU> getCPUAsync(int ID) {
+            return base.Channel.getCPUAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cFan getFan(int ID) {
+            return base.Channel.getFan(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cFan> getFanAsync(int ID) {
+            return base.Channel.getFanAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cGPU getGPU(int ID) {
+            return base.Channel.getGPU(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cGPU> getGPUAsync(int ID) {
+            return base.Channel.getGPUAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cHDD getHDD(int ID) {
+            return base.Channel.getHDD(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cHDD> getHDDAsync(int ID) {
+            return base.Channel.getHDDAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cHeadset getHeadset(int ID) {
+            return base.Channel.getHeadset(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cHeadset> getHeadsetAsync(int ID) {
+            return base.Channel.getHeadsetAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cLiquidCooler getLiquidCooler(int ID) {
+            return base.Channel.getLiquidCooler(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cLiquidCooler> getLiquidCoolerAsync(int ID) {
+            return base.Channel.getLiquidCoolerAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cMobo getMobo(int ID) {
+            return base.Channel.getMobo(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cMobo> getMoboAsync(int ID) {
+            return base.Channel.getMoboAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cPSU getPSU(int ID) {
+            return base.Channel.getPSU(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cPSU> getPSUAsync(int ID) {
+            return base.Channel.getPSUAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cRAM getRAM(int ID) {
+            return base.Channel.getRAM(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cRAM> getRAMAsync(int ID) {
+            return base.Channel.getRAMAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cSSD getSSD(int ID) {
+            return base.Channel.getSSD(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cSSD> getSSDAsync(int ID) {
+            return base.Channel.getSSDAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cKeyboard getKeyboard(int ID) {
+            return base.Channel.getKeyboard(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cKeyboard> getKeyboardAsync(int ID) {
+            return base.Channel.getKeyboardAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cMicrophone getMicrophone(int ID) {
+            return base.Channel.getMicrophone(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cMicrophone> getMicrophoneAsync(int ID) {
+            return base.Channel.getMicrophoneAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cSpeaker getSpeaker(int ID) {
+            return base.Channel.getSpeaker(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cSpeaker> getSpeakerAsync(int ID) {
+            return base.Channel.getSpeakerAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cMonitor getMonitor(int ID) {
+            return base.Channel.getMonitor(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cMonitor> getMonitorAsync(int ID) {
+            return base.Channel.getMonitorAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cMouse getMouse(int ID) {
+            return base.Channel.getMouse(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cMouse> getMouseAsync(int ID) {
+            return base.Channel.getMouseAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.ServiceReference1.cMousePad getMousepad(int ID) {
+            return base.Channel.getMousepad(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cMousePad> getMousepadAsync(int ID) {
+            return base.Channel.getMousepadAsync(ID);
         }
         
         public CyberLlamaConsumerSite.ServiceReference1.cPC[] getPCbyType(string Type) {
@@ -8259,62 +8973,6 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> addToPartInvoiceAsync(int UserID) {
             return base.Channel.addToPartInvoiceAsync(UserID);
-        }
-        
-        public bool addToPcInvoice(int UserID) {
-            return base.Channel.addToPcInvoice(UserID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> addToPcInvoiceAsync(int UserID) {
-            return base.Channel.addToPcInvoiceAsync(UserID);
-        }
-        
-        public CyberLlamaConsumerSite.ServiceReference1.cAllCart[] getpcinvoice(int InvoiceID) {
-            return base.Channel.getpcinvoice(InvoiceID);
-        }
-        
-        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAllCart[]> getpcinvoiceAsync(int InvoiceID) {
-            return base.Channel.getpcinvoiceAsync(InvoiceID);
-        }
-        
-        public CyberLlamaConsumerSite.ServiceReference1.cAllCart[] getPartInvoice(int InvoiceID) {
-            return base.Channel.getPartInvoice(InvoiceID);
-        }
-        
-        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.ServiceReference1.cAllCart[]> getPartInvoiceAsync(int InvoiceID) {
-            return base.Channel.getPartInvoiceAsync(InvoiceID);
-        }
-        
-        public bool addToPartSold(int UserID) {
-            return base.Channel.addToPartSold(UserID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> addToPartSoldAsync(int UserID) {
-            return base.Channel.addToPartSoldAsync(UserID);
-        }
-        
-        public bool addToPcSold(int UserID) {
-            return base.Channel.addToPcSold(UserID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> addToPcSoldAsync(int UserID) {
-            return base.Channel.addToPcSoldAsync(UserID);
-        }
-        
-        public bool decreasePartStock(int userID) {
-            return base.Channel.decreasePartStock(userID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> decreasePartStockAsync(int userID) {
-            return base.Channel.decreasePartStockAsync(userID);
-        }
-        
-        public bool decreasePcStock(int userID) {
-            return base.Channel.decreasePcStock(userID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> decreasePcStockAsync(int userID) {
-            return base.Channel.decreasePcStockAsync(userID);
         }
     }
 }

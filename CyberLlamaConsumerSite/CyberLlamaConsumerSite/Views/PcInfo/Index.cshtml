@@ -1,68 +1,108 @@
-﻿@using CyberLlamaConsumerSite.CRUDService;
+﻿@using CyberLlamaConsumerSite.ServiceReference1;
 @{
-    string id = (string)ViewContext.RouteData.Values["id"];
-    ViewBag.Title = id;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ServiceClient sc = new ServiceClient();
-    dynamic products = sc.getAllPCInfo(id);
-
-    List<c_PcPageInfo> prods = new List<c_PcPageInfo>();
+    string id = (string)ViewContext.RouteData.Values["id"];
 
 
-    foreach (c_PcPageInfo p in products)
-    {
-        prods.Add(p);
-    }
+    c_PcPageInfo part = sc.getPcInfo(Convert.ToInt32(id));
+    cPC pc = sc.intgetPC(Convert.ToInt32(id));
 
-    if (prods.Count == 0)
-    {
-        <h1 style="text-align:center">Woops!</h1>
-        <p style="text-align:center">You caught us, we have no products of this kind in stock...</p>
-        <hr />
-        <img src="~/Images/woops.png" alt="llama" class="llamaImage" />
-        <hr />
-        <p style="text-align:center">Hold on! Products are on their way!</p>
-    }
-}
-@{
-    <hr />
-    foreach (c_PcPageInfo p in prods)
-    {
-        String imageLink = p.image;
-        int price = p.price;
-        int quantity = p.Quantity;
+    String imageLink = part.image;
+    int price = (int)part.price;
+    int quantity = part.Quantity;
 
-        <div class="card">
-            <img src="@(imageLink)" alt="Ram" style="width:100%">
-            <h1>@(p.type) @(p.ID)</h1>
-            <p class="price">R@(price)</p>
-            <p>Quantity: @(quantity)</p>
-            <p><button>Add to Cart</button></p>
+    c_ProductPageInfo Case = sc.getPart(Convert.ToInt32(pc.case_id));
+    c_ProductPageInfo Mobo = sc.getPart(Convert.ToInt32(pc.mobo_id));
+    c_ProductPageInfo CPU = sc.getPart(Convert.ToInt32(pc.cpu_id));
+    c_ProductPageInfo RAM = sc.getPart(Convert.ToInt32(pc.ram_id));
+    c_ProductPageInfo GPU = sc.getPart(Convert.ToInt32(pc.gpu_id));
+    c_ProductPageInfo Cooler = sc.getPart(Convert.ToInt32(pc.cooler_id));
+    c_ProductPageInfo SSD = sc.getPart(Convert.ToInt32(pc.ssd_id));
+    c_ProductPageInfo HDD = sc.getPart(Convert.ToInt32(pc.hdd_id));
+    c_ProductPageInfo Fan = sc.getPart(Convert.ToInt32(pc.fan_id));
+    c_ProductPageInfo PSU = sc.getPart(Convert.ToInt32(pc.psu_id));
+
+
+    <h2 style="text-align:center"> Product Info </h2>
+    <hr style="color:white;" />
+
+    <div class="row">
+        <div class="col" style="text-align:center">
+            <div class="card">
+                <img src="@(imageLink)" alt="Ram" style="width:80%; height:60%">
+                <p class="price" style="font-size:200%">R@(price)</p>
+                <p style="font-size:150%">Quantity: @(quantity)</p>
+                <p style="font-size:150%"><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = pc.id })>Add to Cart</button></p>
+            </div>
         </div>
-    }
-}
-<h2>Index</h2>
+        <div class="col">
+            <h3 style="text-align:center">Details</h3>
+            <div class="row">
+                <div class="col">Case:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = Case.ID})">@(Case.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">Motherboard:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = Mobo.ID})">@(Mobo.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">CPU:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = CPU.ID})">@(CPU.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">RAM:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = RAM.ID})">@(RAM.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">Cooler:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = Cooler.ID})">@(Cooler.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">GPU:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = GPU.ID})">@(GPU.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">PSU:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = PSU.ID})">@(PSU.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">SSD:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = SSD.ID})">@(SSD.model)</a></div>
+            </div>
+            <div class="row">
+                <div class="col">HDD:</div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = HDD.ID})">@(HDD.model)</a></div>
+            </div>
 
+        </div>
+    </div>
+}
+
+<script>
+        $(".addCartLink").click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr("href"),
+                success: function () {
+                    alert("Added To Cart");
+                },
+                error: function () {
+                    alert("An error Occured, Login to access Cart");
+                }
+
+            });
+        });
+</script>
 
 <style>
-    .llamaImage {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        height: auto;
-        width: 15%;
-    }
-
     .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         max-width: 300px;
         margin: auto;
         text-align: center;
         font-family: arial;
-    }
-
-    .price {
-        color: grey;
-        font-size: 22px;
     }
 
     .card button {
@@ -77,8 +117,7 @@
         font-size: 18px;
     }
 
-        .card button:hover {
+       .card button:hover {
             opacity: 0.7;
         }
 </style>
-

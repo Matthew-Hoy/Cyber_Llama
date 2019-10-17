@@ -15,131 +15,6 @@ namespace CyberLlamaConsumerSite.CRUDService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cInvoice", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cInvoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int InvoiceIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime dateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int numItemsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int pc_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int user_IDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InvoiceId {
-            get {
-                return this.InvoiceIdField;
-            }
-            set {
-                if ((this.InvoiceIdField.Equals(value) != true)) {
-                    this.InvoiceIdField = value;
-                    this.RaisePropertyChanged("InvoiceId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime date {
-            get {
-                return this.dateField;
-            }
-            set {
-                if ((this.dateField.Equals(value) != true)) {
-                    this.dateField = value;
-                    this.RaisePropertyChanged("date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int numItems {
-            get {
-                return this.numItemsField;
-            }
-            set {
-                if ((this.numItemsField.Equals(value) != true)) {
-                    this.numItemsField = value;
-                    this.RaisePropertyChanged("numItems");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int pc_ID {
-            get {
-                return this.pc_IDField;
-            }
-            set {
-                if ((this.pc_IDField.Equals(value) != true)) {
-                    this.pc_IDField = value;
-                    this.RaisePropertyChanged("pc_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typeField, value) != true)) {
-                    this.typeField = value;
-                    this.RaisePropertyChanged("type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int user_ID {
-            get {
-                return this.user_IDField;
-            }
-            set {
-                if ((this.user_IDField.Equals(value) != true)) {
-                    this.user_IDField = value;
-                    this.RaisePropertyChanged("user_ID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="cAllCart", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class cAllCart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2589,6 +2464,9 @@ namespace CyberLlamaConsumerSite.CRUDService {
         private string sizeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string storageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string warrantyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2782,6 +2660,19 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.sizeField, value) != true)) {
                     this.sizeField = value;
                     this.RaisePropertyChanged("size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string storage {
+            get {
+                return this.storageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.storageField, value) != true)) {
+                    this.storageField = value;
+                    this.RaisePropertyChanged("storage");
                 }
             }
         }
@@ -7555,21 +7446,134 @@ namespace CyberLlamaConsumerSite.CRUDService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cInvoice", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cInvoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int InvoiceIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int numItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int pc_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int user_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InvoiceId {
+            get {
+                return this.InvoiceIdField;
+            }
+            set {
+                if ((this.InvoiceIdField.Equals(value) != true)) {
+                    this.InvoiceIdField = value;
+                    this.RaisePropertyChanged("InvoiceId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                if ((this.dateField.Equals(value) != true)) {
+                    this.dateField = value;
+                    this.RaisePropertyChanged("date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int numItems {
+            get {
+                return this.numItemsField;
+            }
+            set {
+                if ((this.numItemsField.Equals(value) != true)) {
+                    this.numItemsField = value;
+                    this.RaisePropertyChanged("numItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int pc_ID {
+            get {
+                return this.pc_IDField;
+            }
+            set {
+                if ((this.pc_IDField.Equals(value) != true)) {
+                    this.pc_IDField = value;
+                    this.RaisePropertyChanged("pc_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typeField, value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int user_ID {
+            get {
+                return this.user_IDField;
+            }
+            set {
+                if ((this.user_IDField.Equals(value) != true)) {
+                    this.user_IDField = value;
+                    this.RaisePropertyChanged("user_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRUDService.IService")]
     public interface IService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllInvoices", ReplyAction="http://tempuri.org/IService/getAllInvoicesResponse")]
-        CyberLlamaConsumerSite.CRUDService.cInvoice[] getAllInvoices(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllInvoices", ReplyAction="http://tempuri.org/IService/getAllInvoicesResponse")]
-        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cInvoice[]> getAllInvoicesAsync(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartInvoice", ReplyAction="http://tempuri.org/IService/addToPartInvoiceResponse")]
-        bool addToPartInvoice(int UserID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartInvoice", ReplyAction="http://tempuri.org/IService/addToPartInvoiceResponse")]
-        System.Threading.Tasks.Task<bool> addToPartInvoiceAsync(int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcInvoice", ReplyAction="http://tempuri.org/IService/addToPcInvoiceResponse")]
         bool addToPcInvoice(int UserID);
@@ -7811,6 +7815,120 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/intgetPC", ReplyAction="http://tempuri.org/IService/intgetPCResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC> intgetPCAsync(int ID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPcInfo", ReplyAction="http://tempuri.org/IService/getPcInfoResponse")]
+        CyberLlamaConsumerSite.CRUDService.c_PcPageInfo getPcInfo(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPcInfo", ReplyAction="http://tempuri.org/IService/getPcInfoResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.c_PcPageInfo> getPcInfoAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAirCooler", ReplyAction="http://tempuri.org/IService/getAirCoolerResponse")]
+        CyberLlamaConsumerSite.CRUDService.cAirCooler getAirCooler(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAirCooler", ReplyAction="http://tempuri.org/IService/getAirCoolerResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cAirCooler> getAirCoolerAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCase", ReplyAction="http://tempuri.org/IService/getCaseResponse")]
+        CyberLlamaConsumerSite.CRUDService.cCase getCase(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCase", ReplyAction="http://tempuri.org/IService/getCaseResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cCase> getCaseAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCPU", ReplyAction="http://tempuri.org/IService/getCPUResponse")]
+        CyberLlamaConsumerSite.CRUDService.cCPU getCPU(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCPU", ReplyAction="http://tempuri.org/IService/getCPUResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cCPU> getCPUAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getFan", ReplyAction="http://tempuri.org/IService/getFanResponse")]
+        CyberLlamaConsumerSite.CRUDService.cFan getFan(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getFan", ReplyAction="http://tempuri.org/IService/getFanResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cFan> getFanAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getGPU", ReplyAction="http://tempuri.org/IService/getGPUResponse")]
+        CyberLlamaConsumerSite.CRUDService.cGPU getGPU(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getGPU", ReplyAction="http://tempuri.org/IService/getGPUResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cGPU> getGPUAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getHDD", ReplyAction="http://tempuri.org/IService/getHDDResponse")]
+        CyberLlamaConsumerSite.CRUDService.cHDD getHDD(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getHDD", ReplyAction="http://tempuri.org/IService/getHDDResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cHDD> getHDDAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getHeadset", ReplyAction="http://tempuri.org/IService/getHeadsetResponse")]
+        CyberLlamaConsumerSite.CRUDService.cHeadset getHeadset(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getHeadset", ReplyAction="http://tempuri.org/IService/getHeadsetResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cHeadset> getHeadsetAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getLiquidCooler", ReplyAction="http://tempuri.org/IService/getLiquidCoolerResponse")]
+        CyberLlamaConsumerSite.CRUDService.cLiquidCooler getLiquidCooler(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getLiquidCooler", ReplyAction="http://tempuri.org/IService/getLiquidCoolerResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cLiquidCooler> getLiquidCoolerAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMobo", ReplyAction="http://tempuri.org/IService/getMoboResponse")]
+        CyberLlamaConsumerSite.CRUDService.cMobo getMobo(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMobo", ReplyAction="http://tempuri.org/IService/getMoboResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cMobo> getMoboAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPSU", ReplyAction="http://tempuri.org/IService/getPSUResponse")]
+        CyberLlamaConsumerSite.CRUDService.cPSU getPSU(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPSU", ReplyAction="http://tempuri.org/IService/getPSUResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPSU> getPSUAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRAM", ReplyAction="http://tempuri.org/IService/getRAMResponse")]
+        CyberLlamaConsumerSite.CRUDService.cRAM getRAM(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRAM", ReplyAction="http://tempuri.org/IService/getRAMResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cRAM> getRAMAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSSD", ReplyAction="http://tempuri.org/IService/getSSDResponse")]
+        CyberLlamaConsumerSite.CRUDService.cSSD getSSD(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSSD", ReplyAction="http://tempuri.org/IService/getSSDResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cSSD> getSSDAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getKeyboard", ReplyAction="http://tempuri.org/IService/getKeyboardResponse")]
+        CyberLlamaConsumerSite.CRUDService.cKeyboard getKeyboard(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getKeyboard", ReplyAction="http://tempuri.org/IService/getKeyboardResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cKeyboard> getKeyboardAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMicrophone", ReplyAction="http://tempuri.org/IService/getMicrophoneResponse")]
+        CyberLlamaConsumerSite.CRUDService.cMicrophone getMicrophone(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMicrophone", ReplyAction="http://tempuri.org/IService/getMicrophoneResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cMicrophone> getMicrophoneAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSpeaker", ReplyAction="http://tempuri.org/IService/getSpeakerResponse")]
+        CyberLlamaConsumerSite.CRUDService.cSpeaker getSpeaker(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSpeaker", ReplyAction="http://tempuri.org/IService/getSpeakerResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cSpeaker> getSpeakerAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMonitor", ReplyAction="http://tempuri.org/IService/getMonitorResponse")]
+        CyberLlamaConsumerSite.CRUDService.cMonitor getMonitor(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMonitor", ReplyAction="http://tempuri.org/IService/getMonitorResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cMonitor> getMonitorAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMouse", ReplyAction="http://tempuri.org/IService/getMouseResponse")]
+        CyberLlamaConsumerSite.CRUDService.cMouse getMouse(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMouse", ReplyAction="http://tempuri.org/IService/getMouseResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cMouse> getMouseAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMousepad", ReplyAction="http://tempuri.org/IService/getMousepadResponse")]
+        CyberLlamaConsumerSite.CRUDService.cMousePad getMousepad(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMousepad", ReplyAction="http://tempuri.org/IService/getMousepadResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cMousePad> getMousepadAsync(int ID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPCbyType", ReplyAction="http://tempuri.org/IService/getPCbyTypeResponse")]
         CyberLlamaConsumerSite.CRUDService.cPC[] getPCbyType(string Type);
         
@@ -8032,6 +8150,18 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getClient", ReplyAction="http://tempuri.org/IService/getClientResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cClient> getClientAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllInvoices", ReplyAction="http://tempuri.org/IService/getAllInvoicesResponse")]
+        CyberLlamaConsumerSite.CRUDService.cInvoice[] getAllInvoices(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllInvoices", ReplyAction="http://tempuri.org/IService/getAllInvoicesResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cInvoice[]> getAllInvoicesAsync(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartInvoice", ReplyAction="http://tempuri.org/IService/addToPartInvoiceResponse")]
+        bool addToPartInvoice(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPartInvoice", ReplyAction="http://tempuri.org/IService/addToPartInvoiceResponse")]
+        System.Threading.Tasks.Task<bool> addToPartInvoiceAsync(int UserID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8059,22 +8189,6 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public CyberLlamaConsumerSite.CRUDService.cInvoice[] getAllInvoices(int UserID) {
-            return base.Channel.getAllInvoices(UserID);
-        }
-        
-        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cInvoice[]> getAllInvoicesAsync(int UserID) {
-            return base.Channel.getAllInvoicesAsync(UserID);
-        }
-        
-        public bool addToPartInvoice(int UserID) {
-            return base.Channel.addToPartInvoice(UserID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> addToPartInvoiceAsync(int UserID) {
-            return base.Channel.addToPartInvoiceAsync(UserID);
         }
         
         public bool addToPcInvoice(int UserID) {
@@ -8397,6 +8511,158 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.intgetPCAsync(ID);
         }
         
+        public CyberLlamaConsumerSite.CRUDService.c_PcPageInfo getPcInfo(int ID) {
+            return base.Channel.getPcInfo(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.c_PcPageInfo> getPcInfoAsync(int ID) {
+            return base.Channel.getPcInfoAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cAirCooler getAirCooler(int ID) {
+            return base.Channel.getAirCooler(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cAirCooler> getAirCoolerAsync(int ID) {
+            return base.Channel.getAirCoolerAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cCase getCase(int ID) {
+            return base.Channel.getCase(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cCase> getCaseAsync(int ID) {
+            return base.Channel.getCaseAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cCPU getCPU(int ID) {
+            return base.Channel.getCPU(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cCPU> getCPUAsync(int ID) {
+            return base.Channel.getCPUAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cFan getFan(int ID) {
+            return base.Channel.getFan(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cFan> getFanAsync(int ID) {
+            return base.Channel.getFanAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cGPU getGPU(int ID) {
+            return base.Channel.getGPU(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cGPU> getGPUAsync(int ID) {
+            return base.Channel.getGPUAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cHDD getHDD(int ID) {
+            return base.Channel.getHDD(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cHDD> getHDDAsync(int ID) {
+            return base.Channel.getHDDAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cHeadset getHeadset(int ID) {
+            return base.Channel.getHeadset(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cHeadset> getHeadsetAsync(int ID) {
+            return base.Channel.getHeadsetAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cLiquidCooler getLiquidCooler(int ID) {
+            return base.Channel.getLiquidCooler(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cLiquidCooler> getLiquidCoolerAsync(int ID) {
+            return base.Channel.getLiquidCoolerAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cMobo getMobo(int ID) {
+            return base.Channel.getMobo(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cMobo> getMoboAsync(int ID) {
+            return base.Channel.getMoboAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cPSU getPSU(int ID) {
+            return base.Channel.getPSU(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPSU> getPSUAsync(int ID) {
+            return base.Channel.getPSUAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cRAM getRAM(int ID) {
+            return base.Channel.getRAM(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cRAM> getRAMAsync(int ID) {
+            return base.Channel.getRAMAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cSSD getSSD(int ID) {
+            return base.Channel.getSSD(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cSSD> getSSDAsync(int ID) {
+            return base.Channel.getSSDAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cKeyboard getKeyboard(int ID) {
+            return base.Channel.getKeyboard(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cKeyboard> getKeyboardAsync(int ID) {
+            return base.Channel.getKeyboardAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cMicrophone getMicrophone(int ID) {
+            return base.Channel.getMicrophone(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cMicrophone> getMicrophoneAsync(int ID) {
+            return base.Channel.getMicrophoneAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cSpeaker getSpeaker(int ID) {
+            return base.Channel.getSpeaker(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cSpeaker> getSpeakerAsync(int ID) {
+            return base.Channel.getSpeakerAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cMonitor getMonitor(int ID) {
+            return base.Channel.getMonitor(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cMonitor> getMonitorAsync(int ID) {
+            return base.Channel.getMonitorAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cMouse getMouse(int ID) {
+            return base.Channel.getMouse(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cMouse> getMouseAsync(int ID) {
+            return base.Channel.getMouseAsync(ID);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cMousePad getMousepad(int ID) {
+            return base.Channel.getMousepad(ID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cMousePad> getMousepadAsync(int ID) {
+            return base.Channel.getMousepadAsync(ID);
+        }
+        
         public CyberLlamaConsumerSite.CRUDService.cPC[] getPCbyType(string Type) {
             return base.Channel.getPCbyType(Type);
         }
@@ -8691,6 +8957,22 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cClient> getClientAsync(int id) {
             return base.Channel.getClientAsync(id);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cInvoice[] getAllInvoices(int UserID) {
+            return base.Channel.getAllInvoices(UserID);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cInvoice[]> getAllInvoicesAsync(int UserID) {
+            return base.Channel.getAllInvoicesAsync(UserID);
+        }
+        
+        public bool addToPartInvoice(int UserID) {
+            return base.Channel.addToPartInvoice(UserID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addToPartInvoiceAsync(int UserID) {
+            return base.Channel.addToPartInvoiceAsync(UserID);
         }
     }
 }

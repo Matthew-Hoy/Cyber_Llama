@@ -15,7 +15,6 @@ namespace CyberLlamaConsumerSite.Controllers
             return View();
         }
 
-
         public void AddToCart(int ID)
         {
             CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
