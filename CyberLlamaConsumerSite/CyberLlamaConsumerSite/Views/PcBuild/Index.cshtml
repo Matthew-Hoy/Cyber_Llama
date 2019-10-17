@@ -173,7 +173,7 @@ Session["Case"] = 23;
                                 <p><button class="selectPart" href=@Url.Action("SelectCooler", new { id=c4.ID })> Select Air Cooler</button></p>
                             </div>
                         }
-                        /*
+                        
                         //Show all Liquid Coolers
                         dynamic list5 = sc.getLiquidCoolersForCPU(c3.ID);
                         foreach (c_ProductPageInfo c5 in list5)
@@ -190,7 +190,7 @@ Session["Case"] = 23;
                             <p>Quantity: @(quantity5)</p>
                             <p><button class="selectClass" href=@Url.Action("SelectCooler", new { id=c5.ID })> Select Liquid Cooler</button></p>
                         </div>
-                        }*/
+                        }
                     }
                     if (Session["Cooler"] != null)
                     {
@@ -215,6 +215,7 @@ Session["Case"] = 23;
                             dynamic list6 = sc.getRAMForMotherboard(c2.ID);
                             foreach (c_ProductPageInfo c6 in list6)
                             {
+                                        
                                 String imageLink6 = c6.image;
                                 String model6 = c6.model;
                                 Double price6 = c6.price;
@@ -283,33 +284,41 @@ Session["Case"] = 23;
                                 </div>
 
                                 <h2>7. PSU</h2>
-                                if (Session["PSU"] == null)
-                                {
-                                    //Show all PSU
-                                    dynamic list8 = sc.getAllParts("PSU");
-                                    foreach (c_ProductPageInfo c8 in list8)
-                                    {
-                                        String imageLink8 = c8.image;
-                                        String model8 = c8.model;
-                                        Double price8 = c8.price;
-                                        int quantity8 = c8.Quantity;
+                                        if (Session["PSU"] == null)
+                                        {
+                                            //Show all PSU
+                                            dynamic list8 = sc.getAllParts("PSU");
+                                            foreach (c_ProductPageInfo c8 in list8)
+                                            {
+                                                cPSU temp = sc.getPSU(c8.ID);
+                                                cGPU tgpu = sc.getGPU(gpu.ID);
+                                                cCPU tCpu = sc.getCPU(c3.ID);
 
-                                        <div class="card" style="width:20%; height:20%">
-                                            <img src="@(imageLink8)" alt="Ram" style="width:100%; height:30%">
-                                            <h1><a href="@Url.Action("Index", "PartInfo", new {id=c8.ID})">@(model8)</a></h1>
-                                            <p class="price">R@(price8)</p>
-                                            <p>Quantity: @(quantity8)</p>
-                                            <p><button class="selectPart" href=@Url.Action("SelectPSU", new { id=c8.ID })> Select GPU</button></p>
-                                        </div>
-                                    }
-                                }
-                                if (Session["PSU"] != null)
-                                {
-                                    c_ProductPageInfo psu = sc.getPart(Convert.ToInt32(Session["PSU"]));
-                                    String imageLink8 = psu.image;
-                                    String model8 = psu.model;
-                                    Double price8 = psu.price;
-                                    int quantity8 = psu.Quantity;
+                                                int Power = Convert.ToInt32(tgpu.recommended_psu_power) + Convert.ToInt32(tCpu.tdp);
+
+                                                if(Convert.ToInt32(temp.Power)>Power){ 
+                                                    String imageLink8 = c8.image;
+                                                    String model8 = c8.model;
+                                                    Double price8 = c8.price;
+                                                    int quantity8 = c8.Quantity;
+
+                                                    <div class="card" style="width:20%; height:20%">
+                                                        <img src="@(imageLink8)" alt="Ram" style="width:100%; height:30%">
+                                                        <h1><a href="@Url.Action("Index", "PartInfo", new {id=c8.ID})">@(model8)</a></h1>
+                                                        <p class="price">R@(price8)</p>
+                                                        <p>Quantity: @(quantity8)</p>
+                                                        <p><button class="selectPart" href=@Url.Action("SelectPSU", new { id=c8.ID })> Select GPU</button></p>
+                                                    </div>
+                                                }
+                                            }
+                                        }
+                                        if (Session["PSU"] != null)
+                                        {
+                                            c_ProductPageInfo psu = sc.getPart(Convert.ToInt32(Session["PSU"]));
+                                            String imageLink8 = psu.image;
+                                            String model8 = psu.model;
+                                            Double price8 = psu.price;
+                                            int quantity8 = psu.Quantity;
 
                                     <div class="card" style="width:20%; height:20%">
                                         <img src="@(imageLink8)" alt="Ram" style="width:100%; height:30%">
@@ -432,6 +441,7 @@ Session["Case"] = 23;
                                                     <p><button class="clearPart" href=@Url.Action("ClearSSD")> Clear SSD</button></p>
                                                 </div>
                                             }
+                                                    <p><button class="checkout" href=@Url.Action("CheckoutParts")>Checkout All Parts</button></p>
                                         }
                                     }
                                 }
@@ -479,6 +489,20 @@ Session["Case"] = 23;
             url: $(this).attr("href"),
             success: function () {
                 alert("Cleared All Parts");
+                window.location.reload(false);
+            },
+            error: function () {
+                alert("An error Occured");
+            }
+        });
+    });
+
+    $(".checkout").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                alert("Added All Parts To The Cart");
                 window.location.reload(false);
             },
             error: function () {

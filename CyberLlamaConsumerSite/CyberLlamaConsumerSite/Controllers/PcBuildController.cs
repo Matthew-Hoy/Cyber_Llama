@@ -94,7 +94,6 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public void ClearCase()
         {
-            RemoveFromCart(Convert.ToInt32(Session["Case"]));
             Session["Case"] = null;
             Session["Mobo"] = null;
             Session["CPU"] = null;
@@ -188,6 +187,21 @@ namespace CyberLlamaConsumerSite.Controllers
             Session["SSD"] = null;
         }
 
+        public void CheackoutParts()
+        {
+            AddToCart(Convert.ToInt32(Session["Case"]));
+            AddToCart(Convert.ToInt32(Session["Mobo"]));
+            AddToCart(Convert.ToInt32(Session["CPU"]));
+            AddToCart(Convert.ToInt32(Session["Cooler"]));
+            AddToCart(Convert.ToInt32(Session["RAM"]));
+            AddToCart(Convert.ToInt32(Session["GPU"]));
+            AddToCart(Convert.ToInt32(Session["PSU"]));
+            AddToCart(Convert.ToInt32(Session["Fan"]));
+            AddToCart(Convert.ToInt32(Session["HDD"]));
+            AddToCart(Convert.ToInt32(Session["SSD"]));
+
+        } 
+
         public void AddToCart(int ID)
         {
             CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
@@ -202,33 +216,5 @@ namespace CyberLlamaConsumerSite.Controllers
             }
 
         }
-
-        public void RemoveFromCart(int item)
-        {
-            CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
-            bool isRemoved = sc.removeFromPartCart(Convert.ToInt32(Session["UserID"]), item);
-            
-
-        }
-        /*
-        public ActionResult RemoveFromCart(int item, string cart)
-        {
-            CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
-            if (Session["UserID"] == null)
-            {
-                return this.Redirect(Url.Action("Index", "Login"));
-            }
-            if (cart == "part")
-            {
-                bool isRemoved = sc.removeFromPartCart(Convert.ToInt32(Session["UserID"]), item);
-            }
-            if (cart == "pc")
-            {
-                bool isRemoved = sc.removeFromPcCart(Convert.ToInt32(Session["UserID"]), item);
-            }
-
-            return View("cart", getCart(Convert.ToInt32(Session["UserID"])));
-
-        }*/
     }
 }
