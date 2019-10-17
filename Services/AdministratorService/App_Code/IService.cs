@@ -94,7 +94,63 @@ public interface IService
 
     [OperationContract]
     cPC intgetPC(int ID);
-    
+
+    [OperationContract]
+    c_PcPageInfo getPcInfo(int ID);
+
+    [OperationContract]
+    cAirCooler getAirCooler(int ID);
+
+    [OperationContract]
+    cCase getCase(int ID);
+
+    [OperationContract]
+    cCPU getCPU(int ID);
+
+    [OperationContract]
+    cFan getFan(int ID);
+
+    [OperationContract]
+    cGPU getGPU(int ID);
+
+    [OperationContract]
+    cHDD getHDD(int ID);
+
+    [OperationContract]
+    cHeadset getHeadset(int ID);
+
+    [OperationContract]
+    cLiquidCooler getLiquidCooler(int ID);
+
+    [OperationContract]
+    cMobo getMobo(int ID);
+
+    [OperationContract]
+    cPSU getPSU(int ID);
+
+    [OperationContract]
+    cRAM getRAM(int ID);
+
+    [OperationContract]
+    cSSD getSSD(int ID);
+
+    [OperationContract]
+    cKeyboard getKeyboard(int ID);
+
+    [OperationContract]
+    cMicrophone getMicrophone(int ID);
+
+    [OperationContract]
+    cSpeaker getSpeaker(int ID);
+
+    [OperationContract]
+    cMonitor getMonitor(int ID);
+
+    [OperationContract]
+    cMouse getMouse(int ID);
+
+    [OperationContract]
+    cMousePad getMousepad(int ID);
 
     //Select PC by Type or Price
     [OperationContract]
