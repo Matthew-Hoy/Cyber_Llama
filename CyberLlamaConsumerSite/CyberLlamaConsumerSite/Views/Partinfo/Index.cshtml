@@ -287,11 +287,11 @@ cGPU c = sc.getGPU(part.ID);
             <div class="col" style="text-align:right"> Warranty: </div>
             <div class="col">@(c.warranty)</div>
         </div>
-}
+                }
 
-if (part.type.Equals("CPU"))
-{
-cCPU c = sc.getCPU(part.ID);
+                if (part.type.Equals("CPU"))
+                {
+                    cCPU c = sc.getCPU(part.ID);
 
         <div class="row">
             <div class="col" style="text-align:right">Brand: </div>
@@ -349,11 +349,11 @@ cCPU c = sc.getCPU(part.ID);
             <div class="col" style="text-align:right"> Warranty: </div>
             <div class="col">@(c.warranty)</div>
         </div>
-}
+                }
 
-if (part.type.Equals("AirCooler"))
-{
-cAirCooler c = sc.getAirCooler(part.ID);
+                if (part.type.Equals("AirCooler"))
+                {
+                    cAirCooler c = sc.getAirCooler(part.ID);
 
         <div class="row">
             <div class="col" style="text-align:right">Brand: </div>
