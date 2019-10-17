@@ -40,6 +40,8 @@ namespace CyberLlamaConsumerSite.Controllers
                     return this.Redirect(@Url.Action("PSU", "AddNewProduct"));
                 case "Case Fan":
                     return this.Redirect(@Url.Action("Fan", "AddNewProduct"));
+                case "PC":
+                    return this.Redirect(@Url.Action("PC", "AddNewProduct"));
                 default:
                     break;
             }

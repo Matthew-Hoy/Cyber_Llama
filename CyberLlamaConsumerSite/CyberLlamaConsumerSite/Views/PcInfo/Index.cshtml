@@ -12,7 +12,7 @@
     String imageLink = part.image;
     int price = (int)part.price;
     int quantity = part.Quantity;
-    
+
     c_ProductPageInfo Case = sc.getPart(Convert.ToInt32(pc.case_id));
     c_ProductPageInfo Mobo = sc.getPart(Convert.ToInt32(pc.mobo_id));
     c_ProductPageInfo CPU = sc.getPart(Convert.ToInt32(pc.cpu_id));
@@ -23,17 +23,19 @@
     c_ProductPageInfo HDD = sc.getPart(Convert.ToInt32(pc.hdd_id));
     c_ProductPageInfo Fan = sc.getPart(Convert.ToInt32(pc.fan_id));
     c_ProductPageInfo PSU = sc.getPart(Convert.ToInt32(pc.psu_id));
-    
+
 
     <h2 style="text-align:center"> Product Info </h2>
     <hr style="color:white;" />
 
     <div class="row">
         <div class="col" style="text-align:center">
-            <img src="@(imageLink)" alt="Ram" style="width:80%; height:60%">
-            <p class="price" style="font-size:200%">R@(price)</p>
-            <p style="font-size:150%">Quantity: @(quantity)</p>
-            <p style="font-size:150%"><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = part.ID })>Add to Cart</button></p>
+            <div class="card">
+                <img src="@(imageLink)" alt="Ram" style="width:80%; height:60%">
+                <p class="price" style="font-size:200%">R@(price)</p>
+                <p style="font-size:150%">Quantity: @(quantity)</p>
+                <p style="font-size:150%"><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = pc.id })>Add to Cart</button></p>
+            </div>
         </div>
         <div class="col">
             <h3 style="text-align:center">Details</h3>
@@ -78,3 +80,44 @@
     </div>
 }
 
+<script>
+        $(".addCartLink").click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr("href"),
+                success: function () {
+                    alert("Added To Cart");
+                },
+                error: function () {
+                    alert("An error Occured, Login to access Cart");
+                }
+
+            });
+        });
+</script>
+
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
+
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+       .card button:hover {
+            opacity: 0.7;
+        }
+</style>

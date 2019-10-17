@@ -21,73 +21,80 @@ namespace CyberLlamaConsumerSite.Controllers
         public void SelectCase(int ID)
         {
             Session["Case"] = ID;
-            //AddToCart(ID);
-            Url.Action("Index", "PcBuild");
+            AddToCart(ID);
         }
 
         public void SelectMobo(int ID)
         {
             Session["Mobo"] = ID;
-            Url.Action("Index", "PcBuild");
+            AddToCart(ID);
         }
 
         public void SelectCPU(int ID)
         {
             Session["CPU"] = ID;
-            Url.Action("Index", "PcBuild");
+            AddToCart(ID);
         }
 
         public void SelectRAM(int ID)
         {
             Session["RAM"] = ID;
-            Url.Action("Index", "PcBuild");
+            AddToCart(ID);
         }
 
-        public void SelectAC(int ID)
+        public void SelectCooler(int ID)
         {
             Session["Cooler"] = ID;
-            Url.Action("Index", "PcBuild");
-        }
-
-        public void SelectLC(int ID)
-        {
-            Session["Cooler"] = ID;
-            Url.Action("Index", "PcBuild");
+            AddToCart(ID);
         }
 
         public void SelectSSD(int ID)
         {
             Session["SSD"] = ID;
-            Url.Action("Index", "PcBuild");
+            AddToCart(ID);
         }
 
         public void SelectHDD(int ID)
         {
             Session["HDD"] = ID;
-            Url.Action("Index", "PcBuild");
+            AddToCart(ID);
         }
 
         public void SelectPSU(int ID)
         {
             Session["PSU"] = ID;
-            Url.Action("Index", "PcBuild");
+            AddToCart(ID);
         }
 
         public void SelectGPU(int ID)
         {
             Session["GPU"] = ID;
-            Url.Action("Index", "PcBuild");
+            AddToCart(ID);
         }
 
         public void SelectFan(int ID)
         {
             Session["Fan"] = ID;
-            Url.Action("Index", "PcBuild");
+            AddToCart(ID);
+        }
+
+        public void ClearAll()
+        {
+            Session["Case"] = null;
+            Session["Mobo"] = null;
+            Session["CPU"] = null;
+            Session["RAM"] = null;
+            Session["Cooler"] = null;
+            Session["GPU"] = null;
+            Session["PSU"] = null;
+            Session["Fan"] = null;
+            Session["HDD"] = null;
+            Session["SSD"] = null;
         }
 
         public void ClearCase()
         {
-            //RemoveFromCart(Convert.ToInt32(Session["Case"]));
+            RemoveFromCart(Convert.ToInt32(Session["Case"]));
             Session["Case"] = null;
             Session["Mobo"] = null;
             Session["CPU"] = null;
@@ -203,5 +210,25 @@ namespace CyberLlamaConsumerSite.Controllers
             
 
         }
+        /*
+        public ActionResult RemoveFromCart(int item, string cart)
+        {
+            CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
+            if (Session["UserID"] == null)
+            {
+                return this.Redirect(Url.Action("Index", "Login"));
+            }
+            if (cart == "part")
+            {
+                bool isRemoved = sc.removeFromPartCart(Convert.ToInt32(Session["UserID"]), item);
+            }
+            if (cart == "pc")
+            {
+                bool isRemoved = sc.removeFromPcCart(Convert.ToInt32(Session["UserID"]), item);
+            }
+
+            return View("cart", getCart(Convert.ToInt32(Session["UserID"])));
+
+        }*/
     }
 }

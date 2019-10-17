@@ -11,9 +11,9 @@
     <div class=" @((Convert.ToInt32(Session["UserType"]) ==1 || Convert.ToInt32(Session["UserType"]) ==2) ? "col-md-6" : "centerImage" )">
         <div class="borderedElement">
             <h3 class="titleText centerText">@((Convert.ToInt32(Session["UserType"]) == 2 || Convert.ToInt32(Session["UserType"]) == 1) ? "Add Client" : "New User" )</h3>
-            <form method="post" action="@Url.Action("SubmitClient", "AddUser")">
+            <form method="post" action="@Url.Action("SubmitClient", "AddUser")" style="width:120%">
                 <div class="registerLabel">
-                    <label for="FirstNameClient" class="required">First_Name:</label>
+                    <label for="FirstNameClient" class="required">First Name:</label>
                     <input type="text" name="fName" id="FirstNameClient" placeholder="Neo" style="margin-right:10px" />
                 </div>
                 <div class="registerLabel">
@@ -21,6 +21,7 @@
                     <input type="text" name="sName" id="SurnameClient" placeholder="Mulaudzi" style="margin-right:10px" />
                 </div>
 
+                <!--         
                 <div class="registerLabel">
                     <label for="text" class="required">Card Number:</label>
                     <input type="text" name="strCardNumber" id="cardnumber" placeholder="1111-2222-3333-4444" style="margin-right:10px" />
@@ -40,9 +41,7 @@
                     <label for="text" class="required">Exp Year:</label>
                     <input type="text" name="strExpYear" id="expyear" placeholder="2020" style="margin-right:10px" />
                 </div>
-
-
-
+                -->
 
                 <div class="registerLabel">
                     <label for="EmailClient" class="required">Email:</label>
@@ -76,11 +75,11 @@
                     <label for="ConfirmClient" class="required">Confirm Password:</label>
                     <input type="password" name="confirm" id="ConfirmClient" placeholder="Neo199" style="margin-right:10px" />
                 </div>
-
                 <div class="registerLabel">
                     <label><input type="checkbox" checked="checked" name="strSameAdr" />Delivery Address same as postal Address</label>
                 </div>
-                <div class="registerLabel" style="margin-top:20px;">
+
+                <div class="registerLabel" style="margin-top:20px;" >
                     <input type="submit" value="Register" />
                 </div>
             </form>
@@ -133,7 +132,7 @@
                         </div>
 
 
-                        <div class="registerLabel" style="margin-top:20px">
+                        <div class="registerLabel" style="margin-top:20px;" >
                             <input type="submit" value="Submit new Employee" />
                         </div>
                     </form>
@@ -142,3 +141,10 @@
         }
     }
 </div>
+
+<style>
+    .registerLabel input {
+        width: 150px
+    }
+
+</style>
