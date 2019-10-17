@@ -131,6 +131,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AddNewProductController.cs" />
     <Compile Include="Controllers\AddUserController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\EditProductController.cs" />
@@ -508,6 +509,22 @@
     <Content Include="Views\AddNewProduct\GPU.cshtml" />
     <Content Include="Views\AddNewProduct\Complete.cshtml" />
     <Content Include="Views\EditProduct\Index.cshtml" />
+    <Content Include="Views\Partinfo\Index.cshtml" />
+    <Content Include="Views\PcInfo\Index.cshtml" />
+    <Content Include="Views\PcPage\Index.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\AddNewProduct\Mobo.cshtml" />
+    <Content Include="Views\AddNewProduct\RAM.cshtml" />
+    <Content Include="Views\AddNewProduct\CPU.cshtml" />
+    <Content Include="Views\AddNewProduct\PSU.cshtml" />
+    <Content Include="Views\AddNewProduct\AirCooler.cshtml" />
+    <Content Include="Views\AddNewProduct\LiquidCoooler.cshtml" />
+    <Content Include="Views\AddNewProduct\SSD.cshtml" />
+    <Content Include="Views\AddNewProduct\HDD.cshtml" />
+    <Content Include="Views\AddNewProduct\Case.cshtml" />
+    <Content Include="Views\AddNewProduct\Fan.cshtml" />
+    <Content Include="Views\AddNewProduct\PC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

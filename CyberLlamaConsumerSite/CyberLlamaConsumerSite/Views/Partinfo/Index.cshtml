@@ -1056,9 +1056,43 @@ cMicrophone c = sc.getMicrophone(part.ID);
             <div class="col" style="text-align:right">Warranty: </div>
             <div class="col">@(c.warranty)</div>
         </div>
-}
+    }
             }
         </div>
     </div>
 }
+
+    <script>
+        $(".addCartLink").click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr("href"),
+                success: function () {
+                    alert("Added To Cart");
+                },
+                error: function () {
+                    alert("An error Occured, Login to access Cart");
+                }
+
+            });
+        });
+    </script>
+
+    <style>
+        button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        button:hover {
+            opacity: 0.7;
+        }
+    </style>
 
