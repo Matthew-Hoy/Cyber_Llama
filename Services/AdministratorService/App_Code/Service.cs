@@ -1537,8 +1537,8 @@ public class Service : IService
             recommended_psu_power = part.Recommended_Power_Supply,
             form_factor = part.Form_Factor,
             slot_width = part.Slot_Width,
-            length = Convert.ToDouble(part.Length),
-            height = Convert.ToDouble(part.Height),
+            length = part.Length,
+            height = part.Height,
             warranty = part.Warranty,
             discount = info.Discount,
             active = info.Active,
@@ -2154,11 +2154,12 @@ public class Service : IService
     //Return Entire Table
     public List<cAirCooler> getAllAirCooler()
     {
+
         List<cAirCooler> list = new List<cAirCooler>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Air Cooler") select p);
+        List<int> ids = db.AirCoolers.Select(x => x.ID).ToList();
         
-        foreach (PartsStock p in parts) {
-            cAirCooler part = getAirCooler(parts.ID);
+        foreach (int p in ids) {
+            cAirCooler part = getAirCooler(p);
             
             list.Add(part);
         }
@@ -2169,11 +2170,11 @@ public class Service : IService
     public List<cCase> getAllCase()
     {
         List<cCase> list = new List<cCase>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Case") select p);
+        dynamic parts = (from p in db.PartsStocks where p.Type.Equals("Case") select p);
 
         foreach (PartsStock p in parts)
         {
-            cCase part = getCase(parts.ID);
+            cCase part = getCase(p.ID);
 
             list.Add(part);
         }
@@ -2184,11 +2185,11 @@ public class Service : IService
     public List<cCPU> getAllCPU()
     {
         List<cCPU> list = new List<cCPU>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("CPU") select p);
+        dynamic parts = (from p in db.PartsStocks where p.Type.Equals("CPU") select p);
 
         foreach (PartsStock p in parts)
         {
-            cCPU part = getCPU(parts.ID);
+            cCPU part = getCPU(p.ID);
             
             list.Add(part);
         }
@@ -2198,11 +2199,11 @@ public class Service : IService
     public List<cFan> getAllFan()
     {
         List<cFan> list = new List<cFan>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Fan") select p);
+        dynamic parts = (from p in db.PartsStocks where p.Type.Equals("Fan") select p);
 
         foreach (PartsStock p in parts)
         {
-            cFan part = getFan(parts.ID);
+            cFan part = getFan(p.ID);
             
             list.Add(part);
         }
@@ -2213,11 +2214,10 @@ public class Service : IService
     public List<cGPU> getAllGPU()
     {
         List<cGPU> list = new List<cGPU>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("GPU") select p);
+        List<int> parts = db.GPUs.Select(x => x.ID).ToList();
 
-        foreach (PartsStock p in parts)
-        {
-            cGPU part = getGPU(parts.ID);
+        foreach (int p in parts) {
+            cGPU part = getGPU(p);
             
             list.Add(part);
         }
@@ -2228,11 +2228,11 @@ public class Service : IService
     public List<cHDD> getAllHDD()
     {
         List<cHDD> list = new List<cHDD>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("HDD") select p);
+        dynamic parts = (from p in db.PartsStocks where p.Type.Equals("HDD") select p);
 
         foreach (PartsStock p in parts)
         {
-            cHDD part = getHDD(parts.ID);
+            cHDD part = getHDD(p.ID);
 
             list.Add(part);
         }
@@ -2259,11 +2259,11 @@ public class Service : IService
     public List<cLiquidCooler> getAllLiquidCooler()
     {
         List<cLiquidCooler> list = new List<cLiquidCooler>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Liquid Cooler") select p);
+        dynamic parts = (from p in db.PartsStocks where p.Type.Equals("LiquidCooler") select p);
 
         foreach (PartsStock p in parts)
         {
-            cLiquidCooler part = getPart(parts.ID);
+            cLiquidCooler part = getLiquidCooler(p.ID);
             
             list.Add(part);
         }
@@ -2274,11 +2274,11 @@ public class Service : IService
     public List<cMobo> getAllMobo()
     {
         List<cMobo> list = new List<cMobo>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("Motherboard") select p);
+        dynamic parts = (from p in db.PartsStocks where p.Type.Equals("Motherboard") select p);
 
         foreach (PartsStock p in parts)
         {
-            cMobo part = getPart(parts.ID);
+            cMobo part = getMobo(p.ID);
 
             list.Add(part);
         }
@@ -2289,11 +2289,11 @@ public class Service : IService
     public List<cPSU> getAllPSU()
     {
         List<cPSU> list = new List<cPSU>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("PSU") select p);
+        dynamic parts = (from p in db.PartsStocks where p.Type.Equals("PSU") select p);
 
         foreach (PartsStock p in parts)
         {
-            cPSU part = getPart(parts.ID);
+            cPSU part = getPSU(p.ID);
 
             list.Add(part);
         }
@@ -2304,7 +2304,7 @@ public class Service : IService
     public List<cRAM> getAllRAM()
     {
         List<cRAM> list = new List<cRAM>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("RAM") select p);
+        dynamic parts = (from p in db.PartsStocks where p.Type.Equals("RAM") select p);
 
         foreach (PartsStock p in parts)
         {
@@ -2319,11 +2319,11 @@ public class Service : IService
     public List<cSSD> getAllSSD()
     {
         List<cSSD> list = new List<cSSD>();
-        dynamic parts = (from p in db.PartsStocks where p.Active == 1 && p.Type.Equals("SSD") select p);
+        dynamic parts = (from p in db.PartsStocks where p.Type.Equals("SSD") select p);
 
         foreach (PartsStock p in parts)
         {
-            cSSD part = getPart(parts.ID);
+            cSSD part = getSSD(p.ID);
             
             list.Add(part);
         }
@@ -2334,11 +2334,11 @@ public class Service : IService
     public List<cPC> getAllPC()
     {
         List<cPC> list = new List<cPC>();
-        dynamic pcs = (from p in db.PcStocks where p.Active == 1 select p);
+        dynamic pcs = (from p in db.PcStocks select p);
 
         foreach (PcStock p in pcs)
         {
-            cPC pc = intgetPC(pcs.ID);
+            cPC pc = intgetPC(p.ID);
             
             list.Add(pc);
         }
@@ -3426,7 +3426,7 @@ public class Service : IService
         }
         
         part.Model = newAC.model;
-        part.Type = "Air Cooler";
+        part.Type = "AirCooler";
         part.Quantity = newPart.Quantity;
         part.Price = (decimal)newAC.price;
         part.Active = newAC.active;
@@ -3526,11 +3526,11 @@ public class Service : IService
 
         part.Model = newCase.model;
         part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newCase.price;
         part.Active = newCase.active;
         part.Discount = newCase.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         Case.ID = part.ID;
         Case.Model = newCase.model;
@@ -3633,12 +3633,12 @@ public class Service : IService
         }
 
         part.Model = newCPU.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "CPU";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newCPU.price;
         part.Active = newCPU.active;
         part.Discount = newCPU.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         CPU.ID = part.ID;
         CPU.Model = newCPU.model;
@@ -3758,12 +3758,12 @@ public class Service : IService
         }
 
         part.Model = newFan.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "Fan";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newFan.price;
         part.Active = newFan.active;
         part.Discount = newFan.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
 
         fan.ID = part.ID;
@@ -3829,12 +3829,12 @@ public class Service : IService
         }
 
         part.Model = newGPU.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "GPU";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newGPU.price;
         part.Active = newGPU.active;
         part.Discount = newGPU.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         GPU.Manufacturer = newGPU.manufacturer;
         GPU.ID = part.ID;
@@ -3906,12 +3906,12 @@ public class Service : IService
         }
 
         part.Model = newHDD.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "HDD";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newHDD.price;
         part.Active = newHDD.active;
         part.Discount = newHDD.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
 
         HDD.ID = part.ID;
@@ -3978,12 +3978,12 @@ public class Service : IService
         }
 
         part.Model = newHeadset.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "Headset";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newHeadset.price;
         part.Active = newHeadset.active;
         part.Discount = newHeadset.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
 
         headset.ID = part.ID;
@@ -4050,12 +4050,12 @@ public class Service : IService
 
 
         part.Model = newKeyboard.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "Keyboard";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newKeyboard.price;
         part.Active = newKeyboard.active;
         part.Discount = newKeyboard.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
 
         Keyboard.ID = part.ID;
@@ -4125,12 +4125,12 @@ public class Service : IService
         }
 
         part.Model = newLC.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "LiquidCooler";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newLC.price;
         part.Active = newLC.active;
         part.Discount = newLC.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         liquidCooler.ID = part.ID;
         liquidCooler.Model = newLC.model;
@@ -4219,12 +4219,12 @@ public class Service : IService
         }
 
         part.Model = newMicrophone.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "Microphone";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newMicrophone.price;
         part.Active = newMicrophone.active;
         part.Discount = newMicrophone.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         Micraphone.ID = part.ID;
         Micraphone.Model = newMicrophone.model;
@@ -4300,12 +4300,12 @@ public class Service : IService
         }
 
         part.Model = newMobo.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "Motherboard";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newMobo.price;
         part.Active = newMobo.active;
         part.Discount = newMobo.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         Motherboard.ID = part.ID;
         Motherboard.Model = newMobo.model;
@@ -4413,12 +4413,12 @@ public class Service : IService
         }
 
         part.Model = newMonitor.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "Monitor";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newMonitor.price;
         part.Active = newMonitor.active;
         part.Discount = newMonitor.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         monitor.ID = part.ID;
         monitor.Model = newMonitor.model;
@@ -4491,12 +4491,12 @@ public class Service : IService
         }
 
         part.Model = newMouse.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "Mouse";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newMouse.price;
         part.Active = newMouse.active;
         part.Discount = newMouse.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         Mouse.ID = part.ID;
         Mouse.Model = newMouse.model;
@@ -4562,12 +4562,12 @@ public class Service : IService
         }
 
         part.Model = newMousepad.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "Mousepad";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newMousepad.price;
         part.Active = newMousepad.active;
         part.Discount = newMousepad.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         Mousepad.ID = part.ID;
         Mousepad.Model = newMousepad.model;
@@ -4626,12 +4626,12 @@ public class Service : IService
         }
 
         part.Model = newOS.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "OS";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newOS.price;
         part.Active = newOS.active;
         part.Discount = newOS.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         oS.ID = part.ID;
         oS.Model = newOS.model;
@@ -4690,12 +4690,12 @@ public class Service : IService
         }
 
         part.Model = newPSU.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "PSU";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newPSU.price;
         part.Active = newPSU.active;
         part.Discount = newPSU.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
 
         psu.ID = part.ID;
@@ -4764,12 +4764,12 @@ public class Service : IService
         }
 
         part.Model = newRAM.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "RAM";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newRAM.price;
         part.Active = newRAM.active;
         part.Discount = newRAM.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         ram.ID = part.ID;
         ram.Model = newRAM.model;
@@ -4845,12 +4845,12 @@ public class Service : IService
         }
 
         part.Model = newSSD.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "SSD";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newSSD.price;
         part.Active = newSSD.active;
         part.Discount = newSSD.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         ssd.ID = part.ID;
         ssd.Model = newSSD.model;
@@ -4917,12 +4917,12 @@ public class Service : IService
         }
 
         part.Model = newSpeaker.model;
-        part.Type = "Case";
-        part.Quantity = part.Quantity;
+        part.Type = "Speaker";
+        part.Quantity = newPart.Quantity;
         part.Price = (decimal)newSpeaker.price;
         part.Active = newSpeaker.active;
         part.Discount = newSpeaker.discount;
-        part.Image = part.Image;
+        part.Image = newPart.Image;
 
         speaker.ID = part.ID;
         speaker.Model = newSpeaker.model;
