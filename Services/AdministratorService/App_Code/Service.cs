@@ -2256,6 +2256,104 @@ public class Service : IService
         return list;
     }
 
+    public List<cMouse> getAllMouse()
+    {
+        List<cMouse> list = new List<cMouse>();
+
+        dynamic mouseList = (from h in db.PartsStocks where h.Type.Equals("Mouse") select h);
+
+        foreach (PartsStock hs in mouseList)
+        {
+            cMouse temp = getMouse(hs.ID);
+
+            list.Add(temp);
+        }
+
+        return list;
+    }
+
+    public List<cMousePad> getAllMousepad()
+    {
+        List<cMousePad> list = new List<cMousePad>();
+
+        dynamic headsetList = (from h in db.PartsStocks where h.Type.Equals("Mousepad") select h);
+
+        foreach (PartsStock hs in headsetList)
+        {
+            cMousePad temp = getMousepad(hs.ID);
+
+            list.Add(temp);
+        }
+
+        return list;
+    }
+
+    public List<cKeyboard> getAllKeyboard()
+    {
+        List<cKeyboard> list = new List<cKeyboard>();
+
+        dynamic headsetList = (from h in db.PartsStocks where h.Type.Equals("Keyboard") select h);
+
+        foreach (PartsStock hs in headsetList)
+        {
+            cKeyboard temp = getKeyboard(hs.ID);
+
+            list.Add(temp);
+        }
+
+        return list;
+    }
+
+    public List<cSpeaker> getAllSpeaker()
+    {
+        List<cSpeaker> list = new List<cSpeaker>();
+
+        dynamic headsetList = (from h in db.PartsStocks where h.Type.Equals("Speaker") select h);
+
+        foreach (PartsStock hs in headsetList)
+        {
+            cSpeaker temp = getSpeaker(hs.ID);
+
+            list.Add(temp);
+        }
+
+        return list;
+    }
+
+    public List<cMicrophone> getAllMicrophone()
+    {
+        List<cMicrophone> list = new List<cMicrophone>();
+
+        dynamic headsetList = (from h in db.PartsStocks where h.Type.Equals("Microphone") select h);
+
+        foreach (PartsStock hs in headsetList)
+        {
+            cMicrophone temp = getMicrophone(hs.ID);
+
+            list.Add(temp);
+        }
+
+        return list;
+    }
+
+    public List<cMonitor> getAllMonitor()
+    {
+        List<cMonitor> list = new List<cMonitor>();
+
+        dynamic headsetList = (from h in db.PartsStocks where h.Type.Equals("Monitor") select h);
+
+        foreach (PartsStock hs in headsetList)
+        {
+            cMonitor temp = getMonitor(hs.ID);
+
+            list.Add(temp);
+        }
+
+        return list;
+    }
+
+
+
     public List<cLiquidCooler> getAllLiquidCooler()
     {
         List<cLiquidCooler> list = new List<cLiquidCooler>();

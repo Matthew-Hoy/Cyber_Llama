@@ -494,6 +494,30 @@ namespace CyberLlamaConsumerSite.Controllers
             }
         }
 
+        public ActionResult PC()
+        {
+
+            cPC part = new cPC
+            {
+                active = 0
+            };
+
+            return View(part);
+        }
+        public ActionResult addPC(cPC part, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            bool added = sr.addPC(part, 1, image);
+            if (added)
+            {
+                return this.Redirect(Url.Action("Complete", "AddNewProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("PC", "AddNewProduct"));
+            }
+        }
+
         public ActionResult Complete()
         {
             return View();

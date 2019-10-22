@@ -8,6 +8,48 @@
       <xsd:import schemaLocation="http://localhost:53884/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService_getCartItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCartItems" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCartItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCartItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:getClient" />
+  </wsdl:message>
+  <wsdl:message name="IService_getClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllInvoices_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllInvoices" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllInvoices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPartInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:addToPartInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPartInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addToPartInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPcInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:addToPcInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_addToPcInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addToPcInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getpcinvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:getpcinvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_getpcinvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getpcinvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPartInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPartInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPartInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPartInvoiceResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_addToPartSold_InputMessage">
     <wsdl:part name="parameters" element="tns:addToPartSold" />
   </wsdl:message>
@@ -410,48 +452,6 @@
   <wsdl:message name="IService_checkOut_OutputMessage">
     <wsdl:part name="parameters" element="tns:checkOutResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_getCartItems_InputMessage">
-    <wsdl:part name="parameters" element="tns:getCartItems" />
-  </wsdl:message>
-  <wsdl:message name="IService_getCartItems_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getCartItemsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_getClient_InputMessage">
-    <wsdl:part name="parameters" element="tns:getClient" />
-  </wsdl:message>
-  <wsdl:message name="IService_getClient_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getClientResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_getAllInvoices_InputMessage">
-    <wsdl:part name="parameters" element="tns:getAllInvoices" />
-  </wsdl:message>
-  <wsdl:message name="IService_getAllInvoices_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getAllInvoicesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_addToPartInvoice_InputMessage">
-    <wsdl:part name="parameters" element="tns:addToPartInvoice" />
-  </wsdl:message>
-  <wsdl:message name="IService_addToPartInvoice_OutputMessage">
-    <wsdl:part name="parameters" element="tns:addToPartInvoiceResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_addToPcInvoice_InputMessage">
-    <wsdl:part name="parameters" element="tns:addToPcInvoice" />
-  </wsdl:message>
-  <wsdl:message name="IService_addToPcInvoice_OutputMessage">
-    <wsdl:part name="parameters" element="tns:addToPcInvoiceResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_getpcinvoice_InputMessage">
-    <wsdl:part name="parameters" element="tns:getpcinvoice" />
-  </wsdl:message>
-  <wsdl:message name="IService_getpcinvoice_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getpcinvoiceResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_getPartInvoice_InputMessage">
-    <wsdl:part name="parameters" element="tns:getPartInvoice" />
-  </wsdl:message>
-  <wsdl:message name="IService_getPartInvoice_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getPartInvoiceResponse" />
-  </wsdl:message>
   <wsdl:message name="IService_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
@@ -837,6 +837,34 @@
     <wsdl:part name="parameters" element="tns:EditPCResponse" />
   </wsdl:message>
   <wsdl:portType name="IService">
+    <wsdl:operation name="getCartItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCartItems" message="tns:IService_getCartItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCartItemsResponse" message="tns:IService_getCartItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getClient" message="tns:IService_getClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getClientResponse" message="tns:IService_getClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllInvoices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllInvoices" message="tns:IService_getAllInvoices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllInvoicesResponse" message="tns:IService_getAllInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addToPartInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPartInvoice" message="tns:IService_addToPartInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPartInvoiceResponse" message="tns:IService_addToPartInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addToPcInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPcInvoice" message="tns:IService_addToPcInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPcInvoiceResponse" message="tns:IService_addToPcInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getpcinvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getpcinvoice" message="tns:IService_getpcinvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getpcinvoiceResponse" message="tns:IService_getpcinvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPartInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPartInvoice" message="tns:IService_getPartInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPartInvoiceResponse" message="tns:IService_getPartInvoice_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="addToPartSold">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPartSold" message="tns:IService_addToPartSold_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPartSoldResponse" message="tns:IService_addToPartSold_OutputMessage" />
@@ -1105,34 +1133,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/checkOut" message="tns:IService_checkOut_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/checkOutResponse" message="tns:IService_checkOut_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getCartItems">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCartItems" message="tns:IService_getCartItems_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCartItemsResponse" message="tns:IService_getCartItems_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="getClient">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/getClient" message="tns:IService_getClient_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/getClientResponse" message="tns:IService_getClient_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="getAllInvoices">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllInvoices" message="tns:IService_getAllInvoices_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllInvoicesResponse" message="tns:IService_getAllInvoices_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="addToPartInvoice">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPartInvoice" message="tns:IService_addToPartInvoice_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPartInvoiceResponse" message="tns:IService_addToPartInvoice_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="addToPcInvoice">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPcInvoice" message="tns:IService_addToPcInvoice_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPcInvoiceResponse" message="tns:IService_addToPcInvoice_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="getpcinvoice">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/getpcinvoice" message="tns:IService_getpcinvoice_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/getpcinvoiceResponse" message="tns:IService_getpcinvoice_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="getPartInvoice">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPartInvoice" message="tns:IService_getPartInvoice_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPartInvoiceResponse" message="tns:IService_getPartInvoice_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/LoginResponse" message="tns:IService_Login_OutputMessage" />
@@ -1392,6 +1392,69 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCartItems">
+      <soap:operation soapAction="http://tempuri.org/IService/getCartItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <soap:operation soapAction="http://tempuri.org/IService/getClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllInvoices">
+      <soap:operation soapAction="http://tempuri.org/IService/getAllInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addToPartInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/addToPartInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addToPcInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/addToPcInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getpcinvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/getpcinvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPartInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/getPartInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="addToPartSold">
       <soap:operation soapAction="http://tempuri.org/IService/addToPartSold" style="document" />
       <wsdl:input>
@@ -1988,69 +2051,6 @@
     </wsdl:operation>
     <wsdl:operation name="checkOut">
       <soap:operation soapAction="http://tempuri.org/IService/checkOut" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getCartItems">
-      <soap:operation soapAction="http://tempuri.org/IService/getCartItems" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getClient">
-      <soap:operation soapAction="http://tempuri.org/IService/getClient" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getAllInvoices">
-      <soap:operation soapAction="http://tempuri.org/IService/getAllInvoices" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="addToPartInvoice">
-      <soap:operation soapAction="http://tempuri.org/IService/addToPartInvoice" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="addToPcInvoice">
-      <soap:operation soapAction="http://tempuri.org/IService/addToPcInvoice" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getpcinvoice">
-      <soap:operation soapAction="http://tempuri.org/IService/getpcinvoice" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getPartInvoice">
-      <soap:operation soapAction="http://tempuri.org/IService/getPartInvoice" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
