@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CyberLlamaConsumerSite.CRUDService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,7 +20,7 @@ namespace CyberLlamaConsumerSite.Controllers
             switch (product)
             {
                 case "Graphics processing Unit":
-                    return this.Redirect(@Url.Action("AddGPU", "AddNewProduct"));
+                    return this.Redirect(@Url.Action("EditGPU", "EditProduct"));
                 case "Motherboard":
                     return this.Redirect(@Url.Action("AddMobo", "AddNewProduct"));
                 case "Random Access Memory":
@@ -60,6 +61,20 @@ namespace CyberLlamaConsumerSite.Controllers
                     break;
             }
             return View();
+        }
+
+        public ActionResult EditGPU()
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            List<cGPU> gpu = sr.getAllGPU().ToList();
+            
+            return View(gpu);
+        }
+        public ActionResult GPU(int id)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cGPU gpu = sr.getGPU(id);
+            return View(gpu);
         }
     }
 }
