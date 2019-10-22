@@ -549,6 +549,13 @@
     <Content Include="Views\EditProduct\EditPSU.cshtml" />
     <Content Include="Views\EditProduct\EditRAM.cshtml" />
     <Content Include="Views\EditProduct\EditSSD.cshtml" />
+    <Content Include="Views\AddNewProduct\Keyboard.cshtml" />
+    <Content Include="Views\AddNewProduct\Mouse.cshtml" />
+    <Content Include="Views\AddNewProduct\Mousepad.cshtml" />
+    <Content Include="Views\AddNewProduct\Headset.cshtml" />
+    <Content Include="Views\AddNewProduct\Speaker.cshtml" />
+    <Content Include="Views\AddNewProduct\Microphone.cshtml" />
+    <Content Include="Views\AddNewProduct\Monitor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -42,14 +42,23 @@ namespace CyberLlamaConsumerSite.Controllers
                     return this.Redirect(@Url.Action("Fan", "AddNewProduct"));
                 case "PC":
                     return this.Redirect(@Url.Action("PC", "AddNewProduct"));
+                case "Keyboard":
+                    return this.Redirect(@Url.Action("Keyboard", "AddNewProduct"));
+                case "Mouse":
+                    return this.Redirect(@Url.Action("Mouse", "AddNewProduct"));
+                case "Mousepad":
+                    return this.Redirect(@Url.Action("Mousepad", "AddNewProduct"));
+                case "Headset":
+                    return this.Redirect(@Url.Action("Headset", "AddNewProduct"));
+                case "Speaker":
+                    return this.Redirect(@Url.Action("Speaker", "AddNewProduct"));
+                case "Microphone":
+                    return this.Redirect(@Url.Action("Microphone", "AddNewProduct"));
+                case "Monitor":
+                    return this.Redirect(@Url.Action("Monitor", "AddNewProduct"));
                 default:
                     break;
             }
-            return View();
-        }
-
-        public ActionResult addPeripheral(string product)
-        {
             return View();
         }
 
@@ -193,7 +202,7 @@ namespace CyberLlamaConsumerSite.Controllers
             }
             else
             {
-                return this.Redirect(Url.Action("CPU", "AddNewProduct"));
+                return this.Redirect(Url.Action("HDD", "AddNewProduct"));
             }
         }
 
@@ -217,7 +226,7 @@ namespace CyberLlamaConsumerSite.Controllers
             }
             else
             {
-                return this.Redirect(Url.Action("CPU", "AddNewProduct"));
+                return this.Redirect(Url.Action("LiquidCooler", "AddNewProduct"));
             }
         }
 
@@ -241,7 +250,7 @@ namespace CyberLlamaConsumerSite.Controllers
             }
             else
             {
-                return this.Redirect(Url.Action("CPU", "AddNewProduct"));
+                return this.Redirect(Url.Action("Mobo", "AddNewProduct"));
             }
         }
 
@@ -265,7 +274,7 @@ namespace CyberLlamaConsumerSite.Controllers
             }
             else
             {
-                return this.Redirect(Url.Action("CPU", "AddNewProduct"));
+                return this.Redirect(Url.Action("PSU", "AddNewProduct"));
             }
         }
 
@@ -289,7 +298,7 @@ namespace CyberLlamaConsumerSite.Controllers
             }
             else
             {
-                return this.Redirect(Url.Action("CPU", "AddNewProduct"));
+                return this.Redirect(Url.Action("RAM", "AddNewProduct"));
             }
         }
 
@@ -313,7 +322,175 @@ namespace CyberLlamaConsumerSite.Controllers
             }
             else
             {
-                return this.Redirect(Url.Action("CPU", "AddNewProduct"));
+                return this.Redirect(Url.Action("SSD", "AddNewProduct"));
+            }
+        }
+
+        public ActionResult Keyboard()
+        {
+
+            cKeyboard part = new cKeyboard
+            {
+                active = 0
+            };
+
+            return View(part);
+        }
+        public ActionResult addKeyboard(cKeyboard part, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            bool added = sr.addKeyboard(part, 1, image);
+            if (added)
+            {
+                return this.Redirect(Url.Action("Complete", "AddNewProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Keyboard", "AddNewProduct"));
+            }
+        }
+
+        public ActionResult Mouse()
+        {
+
+            cMouse part = new cMouse
+            {
+                active = 0
+            };
+
+            return View(part);
+        }
+        public ActionResult addMouse(cMouse part, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            bool added = sr.addMouse(part, 1, image);
+            if (added)
+            {
+                return this.Redirect(Url.Action("Complete", "AddNewProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Mouse", "AddNewProduct"));
+            }
+        }
+
+        public ActionResult Mousepad()
+        {
+
+            cMousePad part = new cMousePad
+            {
+                active = 0
+            };
+
+            return View(part);
+        }
+        public ActionResult addMousepad(cMousePad part, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            bool added = sr.addMousepad(part, 1, image);
+            if (added)
+            {
+                return this.Redirect(Url.Action("Complete", "AddNewProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Mousepad", "AddNewProduct"));
+            }
+        }
+
+        public ActionResult Headset()
+        {
+
+            cHeadset part = new cHeadset
+            {
+                active = 0
+            };
+
+            return View(part);
+        }
+        public ActionResult addHeadset(cHeadset part, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            bool added = sr.addHeadset(part, 1, image);
+            if (added)
+            {
+                return this.Redirect(Url.Action("Complete", "AddNewProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Headset", "AddNewProduct"));
+            }
+        }
+
+        public ActionResult Speaker()
+        {
+
+            cSpeaker part = new cSpeaker
+            {
+                active = 0
+            };
+
+            return View(part);
+        }
+        public ActionResult addSpeaker(cSpeaker part, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            bool added = sr.addSpeaker(part, 1, image);
+            if (added)
+            {
+                return this.Redirect(Url.Action("Complete", "AddNewProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Speaker", "AddNewProduct"));
+            }
+        }
+
+        public ActionResult Microphone()
+        {
+
+            cMicrophone part = new cMicrophone
+            {
+                active = 0
+            };
+
+            return View(part);
+        }
+        public ActionResult addMicrophone(cMicrophone part, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            bool added = sr.addMicrophone(part, 1, image);
+            if (added)
+            {
+                return this.Redirect(Url.Action("Complete", "AddNewProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Microphone", "AddNewProduct"));
+            }
+        }
+
+        public ActionResult Monitor()
+        {
+
+            cMonitor part = new cMonitor
+            {
+                active = 0
+            };
+
+            return View(part);
+        }
+        public ActionResult addMonitor(cMonitor part, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            bool added = sr.addMonitor(part, 1, image);
+            if (added)
+            {
+                return this.Redirect(Url.Action("Complete", "AddNewProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Monitor", "AddNewProduct"));
             }
         }
 

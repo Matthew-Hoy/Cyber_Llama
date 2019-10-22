@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Keyboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model CyberLlamaConsumerSite.CRUDService.cKeyboard
+
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Add a Keyboard </h1>
+<hr color="white" />
+
+@using (Html.BeginForm("addKeyboard", "AddNewProduct", FormMethod.Post))
+{
+    <div class="form-Input centerImage">
+        <label>Model:</label>
+        @Html.TextBoxFor(m => m.model)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Brand:</label>
+        @Html.TextBoxFor(m => m.brand)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Series:</label>
+        @Html.TextBoxFor(m => m.series)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Switches:</label>
+        @Html.TextBoxFor(m => m.switches)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Programmable Macros:</label>
+        @Html.TextBoxFor(m => m.programmable_macros)
+    </div>
+    <div class="form-Input centerImage">
+        <label> Connector:</label>
+        @Html.TextBoxFor(m => m.connector)
+    </div>
+    <div class="form-Input centerImage">
+        <label>LED backlight:</label>
+        @Html.TextBoxFor(m => m.led_backlight)
+    </div>
+    <div class="form-Input centerImage">
+        <label>MultiMedia Keys:</label>
+        @Html.TextBoxFor(m => m.multimedia_keys)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Material:</label>
+        @Html.TextBoxFor(m => m.material)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Dimension:</label>
+        @Html.TextBoxFor(m => m.dimensions)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Weight:</label>
+        @Html.TextBoxFor(m => m.weight)
+    </div>
+    <div class="form-Input centerImage">
+        <label>warranty:</label>
+        @Html.TextBoxFor(m => m.warranty)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Active:</label>
+        @Html.TextBoxFor(m => m.active)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Price:</label>
+        @Html.TextBoxFor(m => m.price)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Image Link:</label>
+        <input name="image" id="image" />
+    </div>
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input centerImage login">
+        <input type="submit" value="Add Keyboard" />
+    </div>
+}
+
