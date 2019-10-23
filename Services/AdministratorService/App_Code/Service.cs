@@ -3588,9 +3588,18 @@ public class Service : IService
         var part = db.PartsStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
         var AC = db.AirCoolers.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
         var cart = db.PartCarts.Where(x => x.Part_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cputoAC = db.CpuToAirCoolers.Where(x => x.AC_ID.Equals(id)).Select(x => x);
+        var partsSold = db.PartsSolds.Where(x => x.ID.Equals(id)).Select(x => x);
         if (cart != null)
         {
             db.PartCarts.DeleteOnSubmit(cart);
+        }if(cputoAC != null)
+        {
+            db.CpuToAirCoolers.DeleteAllOnSubmit(cputoAC);
+        }
+        if (partsSold != null)
+        {
+            db.PartsSolds.DeleteAllOnSubmit(partsSold);
         }
         db.AirCoolers.DeleteOnSubmit(AC);
         db.PartsStocks.DeleteOnSubmit(part);
