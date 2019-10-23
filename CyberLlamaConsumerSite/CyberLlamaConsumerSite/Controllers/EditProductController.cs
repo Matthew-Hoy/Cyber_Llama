@@ -13,11 +13,19 @@ namespace CyberLlamaConsumerSite.Controllers
         // GET: EditProduct
         public ActionResult Index()
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             return View();
         }
 
         public ActionResult EditProduct(string product)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             switch (product)
             {
                 case "Graphics processing Unit":
@@ -858,6 +866,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public void Delete(string type, int id)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             switch (type)
             {

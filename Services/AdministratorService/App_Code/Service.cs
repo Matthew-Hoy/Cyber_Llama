@@ -25,7 +25,10 @@ public class Service : IService
             {
                 
                 var newLogin = db.loginStats.Where(x => x.User_Id.Equals(User.User_ID)).Select(y => y).FirstOrDefault();
-                newLogin.Date = DateTime.Now;
+                if(newLogin != null)
+                {
+                    newLogin.Date = DateTime.Now;
+                }
                 db.SubmitChanges();
                 return User.User_ID + "," + User.User_Name + "," + User.User_Type;
             }

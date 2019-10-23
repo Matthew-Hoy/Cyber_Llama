@@ -12,11 +12,19 @@ namespace CyberLlamaConsumerSite.Controllers
         // GET: AddNewProduct
         public ActionResult Index()
         {
+            if(Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             return View();
         }
 
         public ActionResult addProduct(string product)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             switch (product) {
                 case "Graphics processing Unit":
                     return this.Redirect(@Url.Action("GPU", "AddNewProduct"));
@@ -64,7 +72,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult GPU()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cGPU gpu = new cGPU
             {
                 active = 0
@@ -74,6 +85,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addGPU(cGPU gpu, decimal price, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addGPU(gpu, 1, price, image);
             if (added)
@@ -88,7 +103,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult AirCooler()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cAirCooler airCooler = new cAirCooler
             {
                 active = 0
@@ -98,6 +116,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addAirCooler(cAirCooler airCooler, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addAirCooler(airCooler, 1, image);
             if (added)
@@ -112,7 +134,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Case()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cCase Case = new cCase
             {
                 active = 0
@@ -122,6 +147,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addCase(cCase Case, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addCase(Case, 1, image);
             if (added)
@@ -136,7 +165,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult CPU()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cCPU part = new cCPU
             {
                 active = 0
@@ -146,6 +178,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addCPU(cCPU part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addCPU(part, 1, image);
             if (added)
@@ -160,7 +196,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Fan()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cFan part = new cFan
             {
                 active = 0
@@ -170,6 +209,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addFan(cFan part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addFan(part, 1, image);
             if (added)
@@ -184,7 +227,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult HDD()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cHDD part = new cHDD
             {
                 active = 0
@@ -194,6 +240,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addHDD(cHDD part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addHDD(part, 1, image);
             if (added)
@@ -208,7 +258,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult LiquidCooler()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cLiquidCooler part = new cLiquidCooler
             {
                 active = 0
@@ -218,6 +271,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addLiquidCooler(cLiquidCooler part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addLiquidCooler(part, 1, image);
             if (added)
@@ -232,7 +289,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Mobo()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cMobo part = new cMobo
             {
                 active = 0
@@ -242,6 +302,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addMobo(cMobo part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addMobo(part, 1, image);
             if (added)
@@ -256,7 +320,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult PSU()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cPSU part = new cPSU
             {
                 active = 0
@@ -266,6 +333,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addPSU(cPSU part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addPSU(part, 1, image);
             if (added)
@@ -280,7 +351,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult RAM()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cRAM part = new cRAM
             {
                 active = 0
@@ -290,6 +364,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addRAM(cRAM part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addRAM(part, 1, image);
             if (added)
@@ -304,7 +382,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult SSD()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cSSD part = new cSSD
             {
                 active = 0
@@ -314,6 +395,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addSSD(cSSD part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addSSD(part, 1, image);
             if (added)
@@ -328,7 +413,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Keyboard()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cKeyboard part = new cKeyboard
             {
                 active = 0
@@ -338,6 +426,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addKeyboard(cKeyboard part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addKeyboard(part, 1, image);
             if (added)
@@ -352,7 +444,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Mouse()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cMouse part = new cMouse
             {
                 active = 0
@@ -362,6 +457,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addMouse(cMouse part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addMouse(part, 1, image);
             if (added)
@@ -376,7 +475,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Mousepad()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cMousePad part = new cMousePad
             {
                 active = 0
@@ -386,6 +488,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addMousepad(cMousePad part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addMousepad(part, 1, image);
             if (added)
@@ -400,7 +506,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Headset()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cHeadset part = new cHeadset
             {
                 active = 0
@@ -410,6 +519,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addHeadset(cHeadset part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addHeadset(part, 1, image);
             if (added)
@@ -424,7 +537,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Speaker()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cSpeaker part = new cSpeaker
             {
                 active = 0
@@ -434,6 +550,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addSpeaker(cSpeaker part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addSpeaker(part, 1, image);
             if (added)
@@ -448,7 +568,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Microphone()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cMicrophone part = new cMicrophone
             {
                 active = 0
@@ -458,6 +581,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addMicrophone(cMicrophone part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addMicrophone(part, 1, image);
             if (added)
@@ -472,7 +599,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Monitor()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cMonitor part = new cMonitor
             {
                 active = 0
@@ -482,6 +612,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addMonitor(cMonitor part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addMonitor(part, 1, image);
             if (added)
@@ -496,7 +630,10 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult PC()
         {
-
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             cPC part = new cPC
             {
                 active = 0
@@ -506,6 +643,10 @@ namespace CyberLlamaConsumerSite.Controllers
         }
         public ActionResult addPC(cPC part, string image)
         {
+            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
+            {
+                return this.Redirect(@Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool added = sr.addPC(part, 1, image);
             if (added)
