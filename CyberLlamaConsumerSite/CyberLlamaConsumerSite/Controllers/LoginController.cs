@@ -48,6 +48,27 @@ namespace CyberLlamaConsumerSite.Controllers
                 this.Session["UserID"] = splitUser[0];
                 this.Session["UserName"] = splitUser[1];
                 this.Session["UserType"] = splitUser[2];
+
+                if(Session["Cart"] != null)
+                {
+                    List<int> ids = (List<int>)Session["Cart"];
+                    foreach (int id in ids)
+                    {
+                        sc.addToPartCart(Convert.ToInt32(Session["UserID"]), id, 1, 100);
+                    }
+                    Session["Cart"] = null;
+                }
+
+                if (Session["PartCart"] != null)
+                {
+                    List<int> ids = (List<int>)Session["PartCart"];
+                    foreach (int id in ids)
+                    {
+                        sc.addToPcCart(Convert.ToInt32(Session["UserID"]), id, 1, 100);
+                    }
+                    Session["PartCart"] = null;
+                }
+
                 return this.Redirect(Url.Action("Index", "Home"));
             }
         }
