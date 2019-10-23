@@ -1,4 +1,5 @@
-﻿using CyberLlamaConsumerSite.Models;
+﻿using CyberLlamaConsumerSite.CRUDService;
+using CyberLlamaConsumerSite.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,14 @@ namespace CyberLlamaConsumerSite.Controllers
             if(Session["UserID"] != null)
             {
                return this.Redirect(Url.Action("Cart", "Checkout", new { ID = Convert.ToInt32(Session["UserID"]) }));
+            }
+            else if (Session["Cart"] != null)
+            {
+                return this.Redirect(Url.Action("Cart", "Checkout", new { ID = 0 }));
+            }
+            else if (Session["Cart"] == null)
+            {
+                return this.Redirect(Url.Action("Cart", "Checkout", new { ID = 0 }));
             }
             else
             {
@@ -43,11 +52,58 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult Cart()
         {
-            if (Session["UserID"] == null)
+            CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
+            List<Cart> cart = new List<Cart>();
+            if (Session["UserID"] != null)
             {
-                return this.Redirect(Url.Action("Index", "Login"));
+                cart = getCart(Convert.ToInt32(Session["UserID"]));
             }
-            List<Cart> cart = getCart(Convert.ToInt32(Session["UserID"]));
+            if (Session["Cart"] != null)
+            {
+                c_ProductPageInfo part;
+                cart = new List<Cart>();
+                List<int> ids = (List<int>)Session["Cart"];
+                foreach(int id in ids)
+                {
+                    part = sc.getPart(id);
+                    cart.Add(new Cart
+                    {
+                        Discount = part.discount,
+                        ImageLink = part.image,
+                        MaxQuantity = part.Quantity,
+                        Quantity = 1,
+                        Name = part.model,
+                        Price = part.price,
+                       ProductID = part.ID,
+                       cart = "part"
+                    });
+                   
+                }
+            }
+            if (Session["PartCart"] != null)
+            {
+                c_PcPageInfo part;
+                if(cart == null)
+                {
+                    cart = new List<Cart>();
+                }
+                List<int> ids = (List<int>)Session["PartCart"];
+                foreach (int id in ids)
+                {
+                    part = sc.getPcInfo(id);
+                    cart.Add(new Cart
+                    {
+                        Discount = part.discount,
+                        ImageLink = part.image,
+                        MaxQuantity = part.Quantity,
+                        Quantity = 1,
+                        Name = part.type,
+                        Price = part.price,
+                        ProductID = part.ID,
+                        cart = "pc"
+                    });
+                }
+            }
             return View(cart);
         }
 
