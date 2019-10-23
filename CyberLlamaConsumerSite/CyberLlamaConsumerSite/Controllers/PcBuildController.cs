@@ -21,61 +21,51 @@ namespace CyberLlamaConsumerSite.Controllers
         public void SelectCase(int ID)
         {
             Session["Case"] = ID;
-            AddToCart(ID);
         }
 
         public void SelectMobo(int ID)
         {
             Session["Mobo"] = ID;
-            AddToCart(ID);
         }
 
         public void SelectCPU(int ID)
         {
             Session["CPU"] = ID;
-            AddToCart(ID);
         }
 
         public void SelectRAM(int ID)
         {
             Session["RAM"] = ID;
-            AddToCart(ID);
         }
 
         public void SelectCooler(int ID)
         {
             Session["Cooler"] = ID;
-            AddToCart(ID);
         }
 
         public void SelectSSD(int ID)
         {
             Session["SSD"] = ID;
-            AddToCart(ID);
         }
 
         public void SelectHDD(int ID)
         {
             Session["HDD"] = ID;
-            AddToCart(ID);
         }
 
         public void SelectPSU(int ID)
         {
             Session["PSU"] = ID;
-            AddToCart(ID);
         }
 
         public void SelectGPU(int ID)
         {
             Session["GPU"] = ID;
-            AddToCart(ID);
         }
 
         public void SelectFan(int ID)
         {
             Session["Fan"] = ID;
-            AddToCart(ID);
         }
 
         public void ClearAll()
@@ -203,6 +193,32 @@ namespace CyberLlamaConsumerSite.Controllers
 
         }
 
+        public void AddAllToCart()
+        {
+            CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
+            if (Session["UserID"] != null)
+            {
+                sc.addToPartCart(Convert.ToInt32(Session["UserID"]), Convert.ToInt32(Session["Case"]), 1, 100);
+                sc.addToPartCart(Convert.ToInt32(Session["UserID"]), Convert.ToInt32(Session["Mobo"]), 1, 100);
+                sc.addToPartCart(Convert.ToInt32(Session["UserID"]), Convert.ToInt32(Session["CPU"]), 1, 100);
+                sc.addToPartCart(Convert.ToInt32(Session["UserID"]), Convert.ToInt32(Session["Cooler"]), 1, 100);
+                sc.addToPartCart(Convert.ToInt32(Session["UserID"]), Convert.ToInt32(Session["RAM"]), 1, 100);
+                sc.addToPartCart(Convert.ToInt32(Session["UserID"]), Convert.ToInt32(Session["GPU"]), 1, 100);
+                sc.addToPartCart(Convert.ToInt32(Session["UserID"]), Convert.ToInt32(Session["PSU"]), 1, 100);
+                sc.addToPartCart(Convert.ToInt32(Session["UserID"]), Convert.ToInt32(Session["Fan"]), 1, 100);
+                sc.addToPartCart(Convert.ToInt32(Session["UserID"]), Convert.ToInt32(Session["HDD"]), 1, 100);
+
+                if (Session["SSD"] != null)
+                {
+                    sc.addToPartCart(Convert.ToInt32(Session["UserID"]), Convert.ToInt32(Session["SSD"]), 1, 100);
+                }
+            }
+            else
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            }
+        }
+
         public void RemoveFromCart(int item)
         {
             CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
@@ -210,25 +226,6 @@ namespace CyberLlamaConsumerSite.Controllers
             
 
         }
-        /*
-        public ActionResult RemoveFromCart(int item, string cart)
-        {
-            CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
-            if (Session["UserID"] == null)
-            {
-                return this.Redirect(Url.Action("Index", "Login"));
-            }
-            if (cart == "part")
-            {
-                bool isRemoved = sc.removeFromPartCart(Convert.ToInt32(Session["UserID"]), item);
-            }
-            if (cart == "pc")
-            {
-                bool isRemoved = sc.removeFromPcCart(Convert.ToInt32(Session["UserID"]), item);
-            }
-
-            return View("cart", getCart(Convert.ToInt32(Session["UserID"])));
-
-        }*/
+        
     }
 }
