@@ -24,6 +24,19 @@ namespace CyberLlamaConsumerSite.Controllers
                 sc.addToPartCart(Convert.ToInt32(Session["UserID"]), ID, 1, 100);
 
             }
+            else if (Session["Cart"] != null)
+            {
+                List<int> cartIds = (List<int>)Session["Cart"];
+                if(cartIds.Where(x => x.Equals(ID)).Select(y => y) == null)
+                {
+                    cartIds.Add(ID);
+                }
+                
+            }
+            else if (Session["Cart"] == null)
+            {
+                Session["Cart"] = new List<int> { ID };
+            }
             else
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
