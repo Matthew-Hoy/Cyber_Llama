@@ -292,6 +292,21 @@ public interface IService
 
     [OperationContract]
     List<cHDD> getAllHDD();
+    [OperationContract]
+    List<cHeadset> getAllHeadset();
+    [OperationContract]
+    List<cMouse> getAllMouse();
+    [OperationContract]
+    List<cMousePad> getAllMousepad();
+    [OperationContract]
+    List<cKeyboard> getAllKeyboard();
+    [OperationContract]
+    List<cSpeaker> getAllSpeaker();
+    [OperationContract]
+    List<cMicrophone> getAllMicrophone();
+    [OperationContract]
+    List<cMonitor> getAllMonitor();
+
 
     [OperationContract]
     List<cLiquidCooler> getAllLiquidCooler();

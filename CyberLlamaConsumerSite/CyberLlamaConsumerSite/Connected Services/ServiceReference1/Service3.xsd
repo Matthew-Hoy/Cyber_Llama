@@ -1,5 +1,605 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="cMousePad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="colour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="materials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pad_base" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cMousePad" nillable="true" type="tns:cMousePad" />
+  <xs:complexType name="ArrayOfcPC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cPC" nillable="true" type="tns:cPC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcPC" nillable="true" type="tns:ArrayOfcPC" />
+  <xs:complexType name="cPC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="case_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cooler_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cpu_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="fan_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gpu_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hdd_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="headset_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="keyboard_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobo_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monitor_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mouse_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="num_fans" type="xs:int" />
+      <xs:element minOccurs="0" name="num_hdd" type="xs:int" />
+      <xs:element minOccurs="0" name="num_ssd" type="xs:int" />
+      <xs:element minOccurs="0" name="os_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="psu_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ram_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="speaker_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ssd_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cPC" nillable="true" type="tns:cPC" />
+  <xs:complexType name="ArrayOfc_PcPageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="c_PcPageInfo" nillable="true" type="tns:c_PcPageInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfc_PcPageInfo" nillable="true" type="tns:ArrayOfc_PcPageInfo" />
+  <xs:complexType name="c_PcPageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:int" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="c_PcPageInfo" nillable="true" type="tns:c_PcPageInfo" />
+  <xs:complexType name="ArrayOfc_ProductPageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="c_ProductPageInfo" nillable="true" type="tns:c_ProductPageInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfc_ProductPageInfo" nillable="true" type="tns:ArrayOfc_ProductPageInfo" />
+  <xs:complexType name="c_ProductPageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:int" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="c_ProductPageInfo" nillable="true" type="tns:c_ProductPageInfo" />
+  <xs:complexType name="ArrayOfcAirCooler">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cAirCooler" nillable="true" type="tns:cAirCooler" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcAirCooler" nillable="true" type="tns:ArrayOfcAirCooler" />
+  <xs:complexType name="cAirCooler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="air_flow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="chipset" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="colour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="fan_rpm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fan_size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="features" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="materials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="noise_level" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="power_connector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="width" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cAirCooler" nillable="true" type="tns:cAirCooler" />
+  <xs:complexType name="ArrayOfcCase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cCase" nillable="true" type="tns:cCase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcCase" nillable="true" type="tns:ArrayOfcCase" />
+  <xs:complexType name="cCase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="colour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cpu_cooler_max_height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="expansion_slots" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="front_io" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="front_rad_length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gpu_max_length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="mobo_form_factor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="net_weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="num_back_fans" type="xs:int" />
+      <xs:element minOccurs="0" name="num_bottom_fans" type="xs:int" />
+      <xs:element minOccurs="0" name="num_front_fans" type="xs:int" />
+      <xs:element minOccurs="0" name="num_hdd_drives" type="xs:int" />
+      <xs:element minOccurs="0" name="num_ssd_drives" type="xs:int" />
+      <xs:element minOccurs="0" name="num_top_fans" type="xs:int" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="side_window" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="top_rad_length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cCase" nillable="true" type="tns:cCase" />
+  <xs:complexType name="ArrayOfcCPU">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cCPU" nillable="true" type="tns:cCPU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcCPU" nillable="true" type="tns:ArrayOfcCPU" />
+  <xs:complexType name="cCPU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Chipset" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="base_clock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="boost_clock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cores" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="max_mem_speed" type="xs:int" />
+      <xs:element minOccurs="0" name="max_temp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mem_channels" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mem_type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tdp" type="xs:int" />
+      <xs:element minOccurs="0" name="threads" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="total_cache" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cCPU" nillable="true" type="tns:cCPU" />
+  <xs:complexType name="ArrayOfcFan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cFan" nillable="true" type="tns:cFan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcFan" nillable="true" type="tns:ArrayOfcFan" />
+  <xs:complexType name="cFan">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cable_length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="input_voltage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="max_air_flow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mtbf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="noise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="num_fans" type="xs:int" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="rpm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="static_pressure" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cFan" nillable="true" type="tns:cFan" />
+  <xs:complexType name="ArrayOfcGPU">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cGPU" nillable="true" type="tns:cGPU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcGPU" nillable="true" type="tns:ArrayOfcGPU" />
+  <xs:complexType name="cGPU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="base_clock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="boost_clock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="form_factor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="max_resolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mem_size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mem_speed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mem_type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ports" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="recommended_psu_power" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="slot_width" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stream_proccessors" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="vr_ready" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cGPU" nillable="true" type="tns:cGPU" />
+  <xs:complexType name="ArrayOfcHDD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cHDD" nillable="true" type="tns:cHDD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcHDD" nillable="true" type="tns:ArrayOfcHDD" />
+  <xs:complexType name="cHDD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Workload_Rate_Limit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="avg_power_usage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="interface_type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="load_unload_cycles" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="max_sustained_transfer_rate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="operation_temp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="rotational_speed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="storage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cHDD" nillable="true" type="tns:cHDD" />
+  <xs:complexType name="ArrayOfcHeadset">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cHeadset" nillable="true" type="tns:cHeadset" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcHeadset" nillable="true" type="tns:ArrayOfcHeadset" />
+  <xs:complexType name="cHeadset">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cable_length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="colour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="connector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="features" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="frequency_response" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="microphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mp_frequency_response" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mp_pickup_pattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mp_sensitivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="wearing_style" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cHeadset" nillable="true" type="tns:cHeadset" />
+  <xs:complexType name="ArrayOfcMouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cMouse" nillable="true" type="tns:cMouse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcMouse" nillable="true" type="tns:ArrayOfcMouse" />
+  <xs:complexType name="cMouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="battery" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cable_length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="connection_type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="max_acceleration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="max_speed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="ptfe_feet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="resolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sensor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cMouse" nillable="true" type="tns:cMouse" />
+  <xs:complexType name="ArrayOfcMousePad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cMousePad" nillable="true" type="tns:cMousePad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcMousePad" nillable="true" type="tns:ArrayOfcMousePad" />
+  <xs:complexType name="ArrayOfcKeyboard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cKeyboard" nillable="true" type="tns:cKeyboard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcKeyboard" nillable="true" type="tns:ArrayOfcKeyboard" />
+  <xs:complexType name="cKeyboard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="connector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="led_backlight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="material" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="multimedia_keys" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="programmable_macros" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="switches" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cKeyboard" nillable="true" type="tns:cKeyboard" />
+  <xs:complexType name="ArrayOfcSpeaker">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cSpeaker" nillable="true" type="tns:cSpeaker" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcSpeaker" nillable="true" type="tns:ArrayOfcSpeaker" />
+  <xs:complexType name="cSpeaker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="controls" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="features" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="satellite_dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="satellite_weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="subwoofer_dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="subwoofer_weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="system_requirements" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cSpeaker" nillable="true" type="tns:cSpeaker" />
+  <xs:complexType name="ArrayOfcMicrophone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cMicrophone" nillable="true" type="tns:cMicrophone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcMicrophone" nillable="true" type="tns:ArrayOfcMicrophone" />
+  <xs:complexType name="cMicrophone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cable_length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="frequency_response" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pick_up_pattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="sensitivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cMicrophone" nillable="true" type="tns:cMicrophone" />
+  <xs:complexType name="ArrayOfcMonitor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cMonitor" nillable="true" type="tns:cMonitor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcMonitor" nillable="true" type="tns:ArrayOfcMonitor" />
+  <xs:complexType name="cMonitor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="brightness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="colours" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contrast_ratio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="display_port" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hdmi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="panel_type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pivot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="refresh_rate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="resolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="response_time" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="screen_ratio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="screen_size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="speakers" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="swivel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tilt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="vga" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="viewing_angle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cMonitor" nillable="true" type="tns:cMonitor" />
+  <xs:complexType name="ArrayOfcLiquidCooler">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cLiquidCooler" nillable="true" type="tns:cLiquidCooler" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcLiquidCooler" nillable="true" type="tns:ArrayOfcLiquidCooler" />
+  <xs:complexType name="cLiquidCooler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="fan_size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="rad_height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rad_length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rad_mats" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rad_width" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rgb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sockets" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tube_length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tube_mats" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cLiquidCooler" nillable="true" type="tns:cLiquidCooler" />
+  <xs:complexType name="ArrayOfcMobo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cMobo" nillable="true" type="tns:cMobo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcMobo" nillable="true" type="tns:ArrayOfcMobo" />
+  <xs:complexType name="cMobo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="back_panel_IO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="chipset" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="expansion_slots" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="form_factor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="internal_IO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="max_mem_size" type="xs:int" />
+      <xs:element minOccurs="0" name="max_mem_speed" type="xs:int" />
+      <xs:element minOccurs="0" name="memoryType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="os_support" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="storage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cMobo" nillable="true" type="tns:cMobo" />
+  <xs:complexType name="ArrayOfcPSU">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cPSU" nillable="true" type="tns:cPSU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcPSU" nillable="true" type="tns:ArrayOfcPSU" />
+  <xs:complexType name="cPSU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Power" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cables" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="certification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="connectors" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="fan_size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="modular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mtbf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cPSU" nillable="true" type="tns:cPSU" />
+  <xs:complexType name="ArrayOfcRAM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cRAM" nillable="true" type="tns:cRAM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcRAM" nillable="true" type="tns:ArrayOfcRAM" />
+  <xs:complexType name="cRAM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="capacity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="channel_config" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="latency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="speed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="voltage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cRAM" nillable="true" type="tns:cRAM" />
+  <xs:complexType name="ArrayOfcSSD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cSSD" nillable="true" type="tns:cSSD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcSSD" nillable="true" type="tns:ArrayOfcSSD" />
+  <xs:complexType name="cSSD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int" />
+      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="capacity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discount" type="xs:int" />
+      <xs:element minOccurs="0" name="form_factor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="interface_type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="max_power_usage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="max_seq_read" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="max_seq_write" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mtbf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="operating_temp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+      <xs:element minOccurs="0" name="random_read" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="random_write" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="width" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cSSD" nillable="true" type="tns:cSSD" />
   <xs:complexType name="ArrayOfcAllCart">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cAllCart" nillable="true" type="tns:cAllCart" />
@@ -20,6 +620,36 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="cAllCart" nillable="true" type="tns:cAllCart" />
+  <xs:complexType name="cClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="province" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cClient" nillable="true" type="tns:cClient" />
+  <xs:complexType name="ArrayOfcInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cInvoice" nillable="true" type="tns:cInvoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcInvoice" nillable="true" type="tns:ArrayOfcInvoice" />
+  <xs:complexType name="cInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InvoiceId" type="xs:int" />
+      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="numItems" type="xs:int" />
+      <xs:element minOccurs="0" name="pc_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="user_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cInvoice" nillable="true" type="tns:cInvoice" />
   <xs:complexType name="ArrayOfcStock">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="cStock" nillable="true" type="tns:cStock" />
@@ -92,337 +722,765 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="cEmployee" nillable="true" type="tns:cEmployee" />
-  <xs:complexType name="cAirCooler">
+  <xs:complexType name="PartsStock">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="air_flow" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="chipset" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="colour" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="fan_rpm" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="fan_size" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="features" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="height" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="materials" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="noise_level" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="power_connector" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="width" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Active" type="xs:int" />
+      <xs:element minOccurs="0" name="AirCooler" nillable="true" type="tns:AirCooler" />
+      <xs:element minOccurs="0" name="CPU" nillable="true" type="tns:CPU" />
+      <xs:element minOccurs="0" name="Discount" type="xs:int" />
+      <xs:element minOccurs="0" name="Fan" nillable="true" type="tns:Fan" />
+      <xs:element minOccurs="0" name="GPU" nillable="true" type="tns:GPU" />
+      <xs:element minOccurs="0" name="HDD" nillable="true" type="tns:HDD" />
+      <xs:element minOccurs="0" name="Headset" nillable="true" type="tns:Headset" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Keyboard" nillable="true" type="tns:Keyboard" />
+      <xs:element minOccurs="0" name="LiquidCooler" nillable="true" type="tns:LiquidCooler" />
+      <xs:element minOccurs="0" name="Microphone" nillable="true" type="tns:Microphone" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Monitor" nillable="true" type="tns:Monitor" />
+      <xs:element minOccurs="0" name="Motherboard" nillable="true" type="tns:Motherboard" />
+      <xs:element minOccurs="0" name="Mouse" nillable="true" type="tns:Mouse" />
+      <xs:element minOccurs="0" name="MousePad" nillable="true" type="tns:MousePad" />
+      <xs:element minOccurs="0" name="OperatingSystem" nillable="true" type="tns:OperatingSystem" />
+      <xs:element minOccurs="0" name="PCCase" nillable="true" type="tns:PCCase" />
+      <xs:element minOccurs="0" name="PSU" nillable="true" type="tns:PSU" />
+      <xs:element minOccurs="0" name="PartCarts" nillable="true" type="tns:ArrayOfPartCart" />
+      <xs:element minOccurs="0" name="PartInvoices" nillable="true" type="tns:ArrayOfPartInvoice" />
+      <xs:element minOccurs="0" name="PartsSold" nillable="true" type="tns:PartsSold" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="RAM" nillable="true" type="tns:RAM" />
+      <xs:element minOccurs="0" name="SSD" nillable="true" type="tns:SSD" />
+      <xs:element minOccurs="0" name="Speaker" nillable="true" type="tns:Speaker" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cAirCooler" nillable="true" type="tns:cAirCooler" />
-  <xs:complexType name="cCase">
+  <xs:element name="PartsStock" nillable="true" type="tns:PartsStock" />
+  <xs:complexType name="AirCooler">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="colour" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cpu_cooler_max_height" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="expansion_slots" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="front_io" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="front_rad_length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="gpu_max_length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="mobo_form_factor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="net_weight" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="num_back_fans" type="xs:int" />
-      <xs:element minOccurs="0" name="num_bottom_fans" type="xs:int" />
-      <xs:element minOccurs="0" name="num_front_fans" type="xs:int" />
-      <xs:element minOccurs="0" name="num_hdd_drives" type="xs:int" />
-      <xs:element minOccurs="0" name="num_ssd_drives" type="xs:int" />
-      <xs:element minOccurs="0" name="num_top_fans" type="xs:int" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="side_window" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="top_rad_length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Air_Flow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Colour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Compatibility" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CpuToAirCoolers" nillable="true" type="tns:ArrayOfCpuToAirCooler" />
+      <xs:element minOccurs="0" name="Fan_RPM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fan_Size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Features" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Materials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Noise_Level" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Power_Connector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cCase" nillable="true" type="tns:cCase" />
-  <xs:complexType name="cCPU">
+  <xs:element name="AirCooler" nillable="true" type="tns:AirCooler" />
+  <xs:complexType name="ArrayOfCpuToAirCooler">
     <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CpuToAirCooler" nillable="true" type="tns:CpuToAirCooler" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCpuToAirCooler" nillable="true" type="tns:ArrayOfCpuToAirCooler" />
+  <xs:complexType name="CpuToAirCooler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AC_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="AirCooler" nillable="true" type="tns:AirCooler" />
+      <xs:element minOccurs="0" name="CPU" nillable="true" type="tns:CPU" />
+      <xs:element minOccurs="0" name="CPU_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CpuToAirCooler" nillable="true" type="tns:CpuToAirCooler" />
+  <xs:complexType name="CPU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Base_Clock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Boost_Clock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Chipset" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="base_clock" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="boost_clock" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cores" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="max_mem_speed" type="xs:int" />
-      <xs:element minOccurs="0" name="max_temp" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mem_channels" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mem_type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="tdp" type="xs:int" />
-      <xs:element minOccurs="0" name="threads" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="total_cache" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cores" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CpuToAirCoolers" nillable="true" type="tns:ArrayOfCpuToAirCooler" />
+      <xs:element minOccurs="0" name="CpuToLiquidCoolers" nillable="true" type="tns:ArrayOfCpuToLiquidCooler" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Max_Temp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Memory_Channels" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MoboToCpus" nillable="true" type="tns:ArrayOfMoboToCpu" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="System_Memory_Speed" type="xs:int" />
+      <xs:element minOccurs="0" name="System_Memory_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TDP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Threads" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total_Cache" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cCPU" nillable="true" type="tns:cCPU" />
-  <xs:complexType name="cFan">
+  <xs:element name="CPU" nillable="true" type="tns:CPU" />
+  <xs:complexType name="ArrayOfCpuToLiquidCooler">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cable_length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="input_voltage" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="max_air_flow" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mtbf" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="noise" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="num_fans" type="xs:int" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="rpm" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="static_pressure" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CpuToLiquidCooler" nillable="true" type="tns:CpuToLiquidCooler" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cFan" nillable="true" type="tns:cFan" />
-  <xs:complexType name="cGPU">
+  <xs:element name="ArrayOfCpuToLiquidCooler" nillable="true" type="tns:ArrayOfCpuToLiquidCooler" />
+  <xs:complexType name="CpuToLiquidCooler">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="base_clock" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="boost_clock" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="form_factor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="height" type="xs:double" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="length" type="xs:double" />
-      <xs:element minOccurs="0" name="manufacturer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="max_resolution" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mem_size" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mem_speed" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mem_type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ports" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="recommended_psu_power" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="slot_width" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="stream_proccessors" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="vr_ready" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPU" nillable="true" type="tns:CPU" />
+      <xs:element minOccurs="0" name="CPU_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LC_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LiquidCooler" nillable="true" type="tns:LiquidCooler" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cGPU" nillable="true" type="tns:cGPU" />
-  <xs:complexType name="cHDD">
+  <xs:element name="CpuToLiquidCooler" nillable="true" type="tns:CpuToLiquidCooler" />
+  <xs:complexType name="LiquidCooler">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="avg_power_usage" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="interface_type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="load_unload_cycles" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="max_sustained_transfer_rate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="operation_temp" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="rotational_speed" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="storage" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CpuToLiquidCoolers" nillable="true" type="tns:ArrayOfCpuToLiquidCooler" />
+      <xs:element minOccurs="0" name="Fan_Size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="RGB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Radiator_Height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Radiator_Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Radiator_Mats" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Radiator_Width" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sockets_Supported" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tube_Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tube_Mats" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cHDD" nillable="true" type="tns:cHDD" />
-  <xs:complexType name="cHeadset">
+  <xs:element name="LiquidCooler" nillable="true" type="tns:LiquidCooler" />
+  <xs:complexType name="ArrayOfPc">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cable_length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="colour" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="connector" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="features" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="frequency_response" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="microphone" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mp_frequency_response" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mp_pickup_pattern" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mp_sensitivity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="wearing_style" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pc" nillable="true" type="tns:Pc" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cHeadset" nillable="true" type="tns:cHeadset" />
-  <xs:complexType name="cKeyboard">
+  <xs:element name="ArrayOfPc" nillable="true" type="tns:ArrayOfPc" />
+  <xs:complexType name="Pc">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="connector" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="led_backlight" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="material" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="multimedia_keys" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="programmable_macros" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="switches" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPU" nillable="true" type="tns:CPU" />
+      <xs:element minOccurs="0" name="CPU_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Case_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Cooler_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Fan" nillable="true" type="tns:Fan" />
+      <xs:element minOccurs="0" name="Fan_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="GPU" nillable="true" type="tns:GPU" />
+      <xs:element minOccurs="0" name="GPU_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="HDD" nillable="true" type="tns:HDD" />
+      <xs:element minOccurs="0" name="HDD_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Headset" nillable="true" type="tns:Headset" />
+      <xs:element minOccurs="0" name="Headset_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Keyboard" nillable="true" type="tns:Keyboard" />
+      <xs:element minOccurs="0" name="Keyboard_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LiquidCooler" nillable="true" type="tns:LiquidCooler" />
+      <xs:element minOccurs="0" name="Mobo_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Monitor" nillable="true" type="tns:Monitor" />
+      <xs:element minOccurs="0" name="Monitor_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Motherboard" nillable="true" type="tns:Motherboard" />
+      <xs:element minOccurs="0" name="Mouse" nillable="true" type="tns:Mouse" />
+      <xs:element minOccurs="0" name="Mouse_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Num_Fans" type="xs:int" />
+      <xs:element minOccurs="0" name="Num_HDD" type="xs:int" />
+      <xs:element minOccurs="0" name="Num_SSD" type="xs:int" />
+      <xs:element minOccurs="0" name="OS_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="OperatingSystem" nillable="true" type="tns:OperatingSystem" />
+      <xs:element minOccurs="0" name="PCCase" nillable="true" type="tns:PCCase" />
+      <xs:element minOccurs="0" name="PC_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PC_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PSU" nillable="true" type="tns:PSU" />
+      <xs:element minOccurs="0" name="PSU_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PcStock" nillable="true" type="tns:PcStock" />
+      <xs:element minOccurs="0" name="RAM" nillable="true" type="tns:RAM" />
+      <xs:element minOccurs="0" name="RAM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="SSD" nillable="true" type="tns:SSD" />
+      <xs:element minOccurs="0" name="SSD_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Speaker" nillable="true" type="tns:Speaker" />
+      <xs:element minOccurs="0" name="Speaker_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cKeyboard" nillable="true" type="tns:cKeyboard" />
-  <xs:complexType name="cLiquidCooler">
+  <xs:element name="Pc" nillable="true" type="tns:Pc" />
+  <xs:complexType name="Fan">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="color" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="fan_size" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="rad_height" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="rad_length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="rad_mats" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="rad_width" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="rgb" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="sockets" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="tube_length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="tube_mats" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cable_Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Input_Voltage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MTBF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Max_Air_Flow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Noise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num_Fans" type="xs:int" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="RPM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Static_Pressure" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cLiquidCooler" nillable="true" type="tns:cLiquidCooler" />
-  <xs:complexType name="cMicrophone">
+  <xs:element name="Fan" nillable="true" type="tns:Fan" />
+  <xs:complexType name="GPU">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cable_length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="frequency_response" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="pick_up_pattern" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="sensitivity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Base_Clock_Speed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Boost_Clock_Speed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Form_Factor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Max_Digital_Resolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Memory_Clock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Memory_Size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Memory_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Ports" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Recommended_Power_Supply" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Slot_Width" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stream_Processors" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VR_Ready" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cMicrophone" nillable="true" type="tns:cMicrophone" />
-  <xs:complexType name="cMobo">
+  <xs:element name="GPU" nillable="true" type="tns:GPU" />
+  <xs:complexType name="HDD">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="back_panel_IO" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="chipset" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="expansion_slots" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="form_factor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="internal_IO" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="lan" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="max_mem_size" type="xs:int" />
-      <xs:element minOccurs="0" name="max_mem_speed" type="xs:int" />
-      <xs:element minOccurs="0" name="memoryType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="notes" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="os_support" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="storage" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Interface" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Load_Unload_Cycles" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Max_Sustained_Transfer_Rate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operating_Temp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Power_Usage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rotational_Speed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Storage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Workload_Rate_Limit" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cMobo" nillable="true" type="tns:cMobo" />
-  <xs:complexType name="cMonitor">
+  <xs:element name="HDD" nillable="true" type="tns:HDD" />
+  <xs:complexType name="Headset">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="brightness" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="colours" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="contrast_ratio" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="display_port" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="hdmi" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="panel_type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="pivot" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="refresh_rate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="resolution" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="response_time" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="screen_ratio" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="screen_size" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="speakers" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="swivel" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="tilt" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="vga" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="viewing_angle" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cable_Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Colour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Frequency_Response" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MP_Frequency_Response" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MP_Pickup_Pattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MP_Sensitivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Microphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Wearing_Style" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cMonitor" nillable="true" type="tns:cMonitor" />
-  <xs:complexType name="cMouse">
+  <xs:element name="Headset" nillable="true" type="tns:Headset" />
+  <xs:complexType name="Keyboard">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="battery" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cable_length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="connection_type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="max_acceleration" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="max_speed" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="ptfe_feet" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="resolution" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="sensor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LED_BackLight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Material" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Multimedia_Keys" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Programmable_Macros" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Switches" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cMouse" nillable="true" type="tns:cMouse" />
-  <xs:complexType name="cMousePad">
+  <xs:element name="Keyboard" nillable="true" type="tns:Keyboard" />
+  <xs:complexType name="Monitor">
     <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="colour" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="materials" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="pad_base" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brightness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Colours" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContrastRatio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayPortInput" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HDMI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Panel_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Pivot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefreshRate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Resolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScreenRatio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScreenSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Speakers" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Swivel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tilt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VGA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewingAngle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="cMousePad" nillable="true" type="tns:cMousePad" />
+  <xs:element name="Monitor" nillable="true" type="tns:Monitor" />
+  <xs:complexType name="Motherboard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Back_Panel_Connectors" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Chipset" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expansion_Slots" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Form_Factor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Internal_I_O_Connectors" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Max_Memory_Size" type="xs:int" />
+      <xs:element minOccurs="0" name="Max_Memory_Speed" type="xs:int" />
+      <xs:element minOccurs="0" name="Memory_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MoboToCases" nillable="true" type="tns:ArrayOfMoboToCase" />
+      <xs:element minOccurs="0" name="MoboToCpus" nillable="true" type="tns:ArrayOfMoboToCpu" />
+      <xs:element minOccurs="0" name="MoboToRams" nillable="true" type="tns:ArrayOfMoboToRam" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OS_Support" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Storage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Motherboard" nillable="true" type="tns:Motherboard" />
+  <xs:complexType name="ArrayOfMoboToCase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MoboToCase" nillable="true" type="tns:MoboToCase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMoboToCase" nillable="true" type="tns:ArrayOfMoboToCase" />
+  <xs:complexType name="MoboToCase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Case_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Mobo_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Motherboard" nillable="true" type="tns:Motherboard" />
+      <xs:element minOccurs="0" name="PCCase" nillable="true" type="tns:PCCase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoboToCase" nillable="true" type="tns:MoboToCase" />
+  <xs:complexType name="PCCase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPU_Cooler_Height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Colour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expansion_Slots" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Front_I_O" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Front_Radiator_Support" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GPU_Max_Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MoboToCases" nillable="true" type="tns:ArrayOfMoboToCase" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Motherboard_Form_Factor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Net_Weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num_Back_Fans" type="xs:int" />
+      <xs:element minOccurs="0" name="Num_Bottom_Fans" type="xs:int" />
+      <xs:element minOccurs="0" name="Num_Front_Fans" type="xs:int" />
+      <xs:element minOccurs="0" name="Num_HDD_Drives" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num_SSD_Drives" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num_Top_Fans" type="xs:int" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Side_Window" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Top_Radiator_Support" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCCase" nillable="true" type="tns:PCCase" />
+  <xs:complexType name="ArrayOfMoboToCpu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MoboToCpu" nillable="true" type="tns:MoboToCpu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMoboToCpu" nillable="true" type="tns:ArrayOfMoboToCpu" />
+  <xs:complexType name="MoboToCpu">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CPU" nillable="true" type="tns:CPU" />
+      <xs:element minOccurs="0" name="CPU_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Mobo_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Motherboard" nillable="true" type="tns:Motherboard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoboToCpu" nillable="true" type="tns:MoboToCpu" />
+  <xs:complexType name="ArrayOfMoboToRam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MoboToRam" nillable="true" type="tns:MoboToRam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMoboToRam" nillable="true" type="tns:ArrayOfMoboToRam" />
+  <xs:complexType name="MoboToRam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mobo_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Motherboard" nillable="true" type="tns:Motherboard" />
+      <xs:element minOccurs="0" name="RAM" nillable="true" type="tns:RAM" />
+      <xs:element minOccurs="0" name="RAM_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoboToRam" nillable="true" type="tns:MoboToRam" />
+  <xs:complexType name="RAM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Capacity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Channel_Config" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Latency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MoboToRams" nillable="true" type="tns:ArrayOfMoboToRam" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Speed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Voltage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RAM" nillable="true" type="tns:RAM" />
+  <xs:complexType name="Mouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Battery" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cable_Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Max_Acceleration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Max_Speed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PTFE_Feet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Resolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sensor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Mouse" nillable="true" type="tns:Mouse" />
+  <xs:complexType name="OperatingSystem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bit_Version" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OS_Version" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="System_Requirements" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperatingSystem" nillable="true" type="tns:OperatingSystem" />
+  <xs:complexType name="PSU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cables" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Certification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connectors" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fan_Size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MTBF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Power" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PSU" nillable="true" type="tns:PSU" />
+  <xs:complexType name="PcStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:int" />
+      <xs:element minOccurs="0" name="Discount" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PC_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pc" nillable="true" type="tns:Pc" />
+      <xs:element minOccurs="0" name="PcCarts" nillable="true" type="tns:ArrayOfPcCart" />
+      <xs:element minOccurs="0" name="PcInvoices" nillable="true" type="tns:ArrayOfPcInvoice" />
+      <xs:element minOccurs="0" name="PcSold" nillable="true" type="tns:PcSold" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PcStock" nillable="true" type="tns:PcStock" />
+  <xs:complexType name="ArrayOfPcCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PcCart" nillable="true" type="tns:PcCart" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPcCart" nillable="true" type="tns:ArrayOfPcCart" />
+  <xs:complexType name="PcCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LoginTable" nillable="true" type="tns:LoginTable" />
+      <xs:element minOccurs="0" name="PcStock" nillable="true" type="tns:PcStock" />
+      <xs:element minOccurs="0" name="Pc_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Qua" type="xs:int" />
+      <xs:element minOccurs="0" name="User_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PcCart" nillable="true" type="tns:PcCart" />
+  <xs:complexType name="LoginTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Admin" nillable="true" type="tns:Admin" />
+      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="PartCarts" nillable="true" type="tns:ArrayOfPartCart" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PcCarts" nillable="true" type="tns:ArrayOfPcCart" />
+      <xs:element minOccurs="0" name="RegisterStat" nillable="true" type="tns:RegisterStat" />
+      <xs:element minOccurs="0" name="User_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="User_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User_Type" type="xs:int" />
+      <xs:element minOccurs="0" name="loginStat" nillable="true" type="tns:loginStat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginTable" nillable="true" type="tns:LoginTable" />
+  <xs:complexType name="Admin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Admin_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Conrtact_Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="First_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginTable" nillable="true" type="tns:LoginTable" />
+      <xs:element minOccurs="0" name="Position" type="xs:int" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPosition" nillable="true" type="tns:UserPosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Admin" nillable="true" type="tns:Admin" />
+  <xs:complexType name="UserPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Admins" nillable="true" type="tns:ArrayOfAdmin" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PositionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserPosition" nillable="true" type="tns:UserPosition" />
+  <xs:complexType name="ArrayOfAdmin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Admin" nillable="true" type="tns:Admin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdmin" nillable="true" type="tns:ArrayOfAdmin" />
+  <xs:complexType name="Client">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="First_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginTable" nillable="true" type="tns:LoginTable" />
+      <xs:element minOccurs="0" name="PartInvoices" nillable="true" type="tns:ArrayOfPartInvoice" />
+      <xs:element minOccurs="0" name="PcInvoices" nillable="true" type="tns:ArrayOfPcInvoice" />
+      <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ZIP_Code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Client" nillable="true" type="tns:Client" />
+  <xs:complexType name="ArrayOfPartInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartInvoice" nillable="true" type="tns:PartInvoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartInvoice" nillable="true" type="tns:ArrayOfPartInvoice" />
+  <xs:complexType name="PartInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Invoice_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="NumProducts" type="xs:int" />
+      <xs:element minOccurs="0" name="Part_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="User_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartInvoice" nillable="true" type="tns:PartInvoice" />
+  <xs:complexType name="ArrayOfPcInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PcInvoice" nillable="true" type="tns:PcInvoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPcInvoice" nillable="true" type="tns:ArrayOfPcInvoice" />
+  <xs:complexType name="PcInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Invoice_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="NumProducts" type="xs:int" />
+      <xs:element minOccurs="0" name="PcStock" nillable="true" type="tns:PcStock" />
+      <xs:element minOccurs="0" name="Pc_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="User_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PcInvoice" nillable="true" type="tns:PcInvoice" />
+  <xs:complexType name="ArrayOfPartCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartCart" nillable="true" type="tns:PartCart" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartCart" nillable="true" type="tns:ArrayOfPartCart" />
+  <xs:complexType name="PartCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LoginTable" nillable="true" type="tns:LoginTable" />
+      <xs:element minOccurs="0" name="Part_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Qua" type="xs:int" />
+      <xs:element minOccurs="0" name="User_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartCart" nillable="true" type="tns:PartCart" />
+  <xs:complexType name="RegisterStat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LoginTable" nillable="true" type="tns:LoginTable" />
+      <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterStat" nillable="true" type="tns:RegisterStat" />
+  <xs:complexType name="loginStat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LoginTable" nillable="true" type="tns:LoginTable" />
+      <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="loginStat" nillable="true" type="tns:loginStat" />
+  <xs:complexType name="PcSold">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PC_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PcStock" nillable="true" type="tns:PcStock" />
+      <xs:element minOccurs="0" name="Quantity_Sold" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PcSold" nillable="true" type="tns:PcSold" />
+  <xs:complexType name="SSD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Capacity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Form_Factor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Interface_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MTBF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Max_Power_Usage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Max_Sequential_Read" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Max_Sequential_Write" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operating_Temp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Random_Read" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Random_Write" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SSD" nillable="true" type="tns:SSD" />
+  <xs:complexType name="Speaker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Features" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pcs" nillable="true" type="tns:ArrayOfPc" />
+      <xs:element minOccurs="0" name="Satellite_Dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Satellite_Weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubWoofer_Dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubWoofer_Weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="System_Requirements" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="controls" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Speaker" nillable="true" type="tns:Speaker" />
+  <xs:complexType name="Microphone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cable_Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Frequency_Response" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Pick_Up_Pattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sensitivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Microphone" nillable="true" type="tns:Microphone" />
+  <xs:complexType name="MousePad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Base" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Colour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimensions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Materials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warranty" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MousePad" nillable="true" type="tns:MousePad" />
+  <xs:complexType name="PartsSold">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartsStock" nillable="true" type="tns:PartsStock" />
+      <xs:element minOccurs="0" name="Quantity_Sold" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartsSold" nillable="true" type="tns:PartsSold" />
   <xs:complexType name="cOS">
     <xs:sequence>
       <xs:element minOccurs="0" name="active" type="xs:int" />
@@ -439,259 +1497,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="cOS" nillable="true" type="tns:cOS" />
-  <xs:complexType name="cPSU">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Power" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cables" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="certification" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="connectors" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="dimensions" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="fan_size" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="modular" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mtbf" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="cPSU" nillable="true" type="tns:cPSU" />
-  <xs:complexType name="cRAM">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="capacity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="channel_config" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="height" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="latency" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="speed" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="voltage" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="cRAM" nillable="true" type="tns:cRAM" />
-  <xs:complexType name="cSSD">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="capacity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="form_factor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="interface_type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="length" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="max_power_usage" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="max_seq_read" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="max_seq_write" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mtbf" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="operating_temp" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="random_read" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="random_write" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="width" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="cSSD" nillable="true" type="tns:cSSD" />
-  <xs:complexType name="cSpeaker">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="controls" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="features" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="satellite_dimensions" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="satellite_weight" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="series" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="subwoofer_dimensions" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="subwoofer_weight" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="system_requirements" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="cSpeaker" nillable="true" type="tns:cSpeaker" />
-  <xs:complexType name="cPC">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="case_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cooler_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cpu_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="fan_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="gpu_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="hdd_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="headset_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="keyboard_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mobo_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="monitor_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mouse_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="num_fans" type="xs:int" />
-      <xs:element minOccurs="0" name="num_hdd" type="xs:int" />
-      <xs:element minOccurs="0" name="num_ssd" type="xs:int" />
-      <xs:element minOccurs="0" name="os_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="psu_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ram_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="speaker_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ssd_id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warranty" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="cPC" nillable="true" type="tns:cPC" />
-  <xs:complexType name="c_ProductPageInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:int" />
-      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="c_ProductPageInfo" nillable="true" type="tns:c_ProductPageInfo" />
-  <xs:complexType name="c_PcPageInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
-      <xs:element minOccurs="0" name="active" type="xs:int" />
-      <xs:element minOccurs="0" name="discount" type="xs:int" />
-      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:int" />
-      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="c_PcPageInfo" nillable="true" type="tns:c_PcPageInfo" />
-  <xs:complexType name="ArrayOfcPC">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cPC" nillable="true" type="tns:cPC" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcPC" nillable="true" type="tns:ArrayOfcPC" />
-  <xs:complexType name="ArrayOfc_PcPageInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="c_PcPageInfo" nillable="true" type="tns:c_PcPageInfo" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfc_PcPageInfo" nillable="true" type="tns:ArrayOfc_PcPageInfo" />
-  <xs:complexType name="ArrayOfc_ProductPageInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="c_ProductPageInfo" nillable="true" type="tns:c_ProductPageInfo" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfc_ProductPageInfo" nillable="true" type="tns:ArrayOfc_ProductPageInfo" />
-  <xs:complexType name="ArrayOfcAirCooler">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cAirCooler" nillable="true" type="tns:cAirCooler" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcAirCooler" nillable="true" type="tns:ArrayOfcAirCooler" />
-  <xs:complexType name="ArrayOfcCase">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cCase" nillable="true" type="tns:cCase" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcCase" nillable="true" type="tns:ArrayOfcCase" />
-  <xs:complexType name="ArrayOfcCPU">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cCPU" nillable="true" type="tns:cCPU" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcCPU" nillable="true" type="tns:ArrayOfcCPU" />
-  <xs:complexType name="ArrayOfcFan">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cFan" nillable="true" type="tns:cFan" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcFan" nillable="true" type="tns:ArrayOfcFan" />
-  <xs:complexType name="ArrayOfcGPU">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cGPU" nillable="true" type="tns:cGPU" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcGPU" nillable="true" type="tns:ArrayOfcGPU" />
-  <xs:complexType name="ArrayOfcHDD">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cHDD" nillable="true" type="tns:cHDD" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcHDD" nillable="true" type="tns:ArrayOfcHDD" />
-  <xs:complexType name="ArrayOfcLiquidCooler">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cLiquidCooler" nillable="true" type="tns:cLiquidCooler" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcLiquidCooler" nillable="true" type="tns:ArrayOfcLiquidCooler" />
-  <xs:complexType name="ArrayOfcMobo">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cMobo" nillable="true" type="tns:cMobo" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcMobo" nillable="true" type="tns:ArrayOfcMobo" />
-  <xs:complexType name="ArrayOfcPSU">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cPSU" nillable="true" type="tns:cPSU" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcPSU" nillable="true" type="tns:ArrayOfcPSU" />
-  <xs:complexType name="ArrayOfcRAM">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cRAM" nillable="true" type="tns:cRAM" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcRAM" nillable="true" type="tns:ArrayOfcRAM" />
-  <xs:complexType name="ArrayOfcSSD">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cSSD" nillable="true" type="tns:cSSD" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcSSD" nillable="true" type="tns:ArrayOfcSSD" />
-  <xs:complexType name="cClient">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="province" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="cClient" nillable="true" type="tns:cClient" />
-  <xs:complexType name="ArrayOfcInvoice">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="cInvoice" nillable="true" type="tns:cInvoice" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfcInvoice" nillable="true" type="tns:ArrayOfcInvoice" />
-  <xs:complexType name="cInvoice">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="InvoiceId" type="xs:int" />
-      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="numItems" type="xs:int" />
-      <xs:element minOccurs="0" name="pc_ID" type="xs:int" />
-      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="user_ID" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="cInvoice" nillable="true" type="tns:cInvoice" />
 </xs:schema>

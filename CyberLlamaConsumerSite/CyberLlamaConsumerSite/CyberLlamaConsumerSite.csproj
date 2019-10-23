@@ -549,6 +549,27 @@
     <Content Include="Views\EditProduct\EditPSU.cshtml" />
     <Content Include="Views\EditProduct\EditRAM.cshtml" />
     <Content Include="Views\EditProduct\EditSSD.cshtml" />
+    <Content Include="Views\AddNewProduct\Keyboard.cshtml" />
+    <Content Include="Views\AddNewProduct\Mouse.cshtml" />
+    <Content Include="Views\AddNewProduct\Mousepad.cshtml" />
+    <Content Include="Views\AddNewProduct\Headset.cshtml" />
+    <Content Include="Views\AddNewProduct\Speaker.cshtml" />
+    <Content Include="Views\AddNewProduct\Microphone.cshtml" />
+    <Content Include="Views\AddNewProduct\Monitor.cshtml" />
+    <Content Include="Views\EditProduct\EditKeyboard.cshtml" />
+    <Content Include="Views\EditProduct\EditMouse.cshtml" />
+    <Content Include="Views\EditProduct\EditMousepad.cshtml" />
+    <Content Include="Views\EditProduct\EditHeadset.cshtml" />
+    <Content Include="Views\EditProduct\EditSpeaker.cshtml" />
+    <Content Include="Views\EditProduct\EditMicrophone.cshtml" />
+    <Content Include="Views\EditProduct\EditMonitor.cshtml" />
+    <Content Include="Views\EditProduct\Speaker.cshtml" />
+    <Content Include="Views\EditProduct\Mousepad.cshtml" />
+    <Content Include="Views\EditProduct\Mouse.cshtml" />
+    <Content Include="Views\EditProduct\Monitor.cshtml" />
+    <Content Include="Views\EditProduct\Microphone.cshtml" />
+    <Content Include="Views\EditProduct\Keyboard.cshtml" />
+    <Content Include="Views\EditProduct\Headset.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

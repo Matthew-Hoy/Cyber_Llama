@@ -23,8 +23,8 @@ public class cGPU
     public String recommended_psu_power;
     public String form_factor;
     public String slot_width;
-    public Double length;
-    public Double height;
+    public String length;
+    public String height;
     public String warranty;
     public int active;
     public int discount;

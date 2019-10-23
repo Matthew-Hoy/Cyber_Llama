@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Edit Speaker";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<CyberLlamaConsumerSite.CRUDService.cSpeaker>
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Edit Speaker</h1>
+<hr color="white" />
+<script>
+    function ModelSort() {
+        document.getElementById("product_body").innerHTML = "";
+        var products = @Html.Raw(Json.Encode(@Model.OrderBy(x => x.model.Trim()).Select(y => y)));
+        for (var i = 0; i < products.length; i++) {
+            document.getElementById("product_body").innerHTML += "<tr><td class=\"data\">" + products[i].model + "</td><td class=\"data\">" + products[i].active + "</td><td class=\"data\">" + products[i].discount + "</td><td class=\"data\">" + products[i].price + "</td class=\"data\"><td class=\"data\"><a href=\"/EditProduct/Speaker?id=" + products[i].id + "\"><img style=\"max-width: 50px;\" src=\"https://icon-library.net/images/icon-edit/icon-edit-1.jpg\" /></a></td ></tr > "
+        }
+    }
+    function PriceSort() {
+        document.getElementById("product_body").innerHTML = "";
+        var products = @Html.Raw(Json.Encode(@Model.OrderBy(x => x.price).Select(y => y)));
+        for (var i = 0; i < products.length; i++) {
+            document.getElementById("product_body").innerHTML += "<tr><td class=\"data\">" + products[i].model + "</td><td class=\"data\">" + products[i].active + "</td><td class=\"data\">" + products[i].discount + "</td><td class=\"data\">" + products[i].price + "</td><td class=\"data\"><a href=\"/EditProduct/Speaker?id=" + products[i].id + "\"><img style=\"max-width: 50px;\" src=\"https://icon-library.net/images/icon-edit/icon-edit-1.jpg\" /></a></td ></tr > "
+        }
+    }
+    function search() {
+        var searchval = document.getElementById("search");
+        var search = searchval.value;
+         document.getElementById("product_body").innerHTML = "";
+        var products = @Html.Raw(Json.Encode(@Model.OrderBy(x => x.model).Select(y => y)));
+        for (var i = 0; i < products.length; i++) {
+            if (products[i].model.trim() == search) {
+                document.getElementById("product_body").innerHTML +=
+                    "<tr><td class=\"data\">" +
+                products[i].model +
+                "</td ><td class=\"data\">" +
+                products[i].active + "</td><td class=\"data\">" +
+                    products[i].discount + "</td><td class=\"data\">" + products[i].price +
+                    "</td><td class=\"data\"><a href=\"/EditProduct/Speaker?id=" + products[i].id + "\"><img style=\"max-width: 50px;\" src=\"https://icon-library.net/images/icon-edit/icon-edit-1.jpg\" /></a></td ></tr > "
+
+            }
+        }
+
+    }
+
+</script>
+<button onclick="ModelSort()" style="margin-right:20px;">Sort by Model: </button>
+<button style="margin-right:20px;" onclick="PriceSort()">Sort by Price: </button>
+<br />
+<input style="margin-top:20px;margin-bottom:20px;" type="text" id="search" name="search" value="search" />
+<button onclick="search()">Search... </button>
+<br />
+
+<table class="data">
+    <thead class="data">
+        <tr>
+            <th class="data">Model</th>
+            <th class="data">Active</th>
+            <th class="data">Discount</th>
+            <th class="data">Price</th>
+            <th class="data">Edit</th>
+        </tr>
+    </thead>
+    <tbody id="product_body" class="data">
+    </tbody>
+</table>
+<script>
+    window.onload = ModelSort();
+</script>
+
