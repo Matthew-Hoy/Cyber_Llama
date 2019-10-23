@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Headset";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model CyberLlamaConsumerSite.CRUDService.cHeadset
+
+<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Edit a Headset</h1>
+<hr color="white" />
+
+@using (Html.BeginForm("ChangeHeadset", "EditProduct", FormMethod.Post))
+{
+
+    <div class="form-Input centerImage" style="display:none">
+        <label>id:</label>
+        @Html.TextBoxFor(m => m.id);
+    </div>
+    <div class="form-Input centerImage">
+        <label>Model:</label>
+        @Html.TextBoxFor(m => m.model)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Brand:</label>
+        @Html.TextBoxFor(m => m.brand)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Series:</label>
+        @Html.TextBoxFor(m => m.series)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Cable length:</label>
+        @Html.TextBoxFor(m => m.cable_length)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Connector:</label>
+        @Html.TextBoxFor(m => m.connector)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Frequency Response:</label>
+        @Html.TextBoxFor(m => m.frequency_response)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Microphone:</label>
+        @Html.TextBoxFor(m => m.microphone)
+    </div>
+    <div class="form-Input centerImage">
+        <label>MP Frequency response:</label>
+        @Html.TextBoxFor(m => m.mp_frequency_response)
+    </div>
+    <div class="form-Input centerImage">
+        <label>MP pickup pattern:</label>
+        @Html.TextBoxFor(m => m.mp_pickup_pattern)
+    </div>
+    <div class="form-Input centerImage">
+        <label>MP Sensitivity:</label>
+        @Html.TextBoxFor(m => m.mp_sensitivity)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Colour :</label>
+        @Html.TextBoxFor(m => m.colour)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Wearing Style:</label>
+        @Html.TextBoxFor(m => m.wearing_style)
+    </div>
+    <div class="form-Input centerImage">
+        <label>warranty:</label>
+        @Html.TextBoxFor(m => m.warranty)
+    </div>
+
+    <div class="form-Input centerImage">
+        <label>Active:</label>
+        @Html.TextBoxFor(m => m.active)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Price:</label>
+        @Html.TextBoxFor(m => m.price)
+    </div>
+    <div class="form-Input centerImage">
+        <label>Quantity:</label>
+        <input name="quantity" id="quantity" />
+    </div>
+    <div class="form-Input centerImage">
+        <label>Image Link:</label>
+        <input name="image" id="image" />
+    </div>
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input centerImage login">
+        <input type="submit" value="Edit headset" />
+    </div>
+}
+

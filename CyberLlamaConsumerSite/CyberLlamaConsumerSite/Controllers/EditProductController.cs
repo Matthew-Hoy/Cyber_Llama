@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -43,19 +44,19 @@ namespace CyberLlamaConsumerSite.Controllers
                     return this.Redirect(@Url.Action("EditFan", "EditProduct"));
                 case "PC":
                     return this.Redirect(@Url.Action("EditPC", "EditProduct"));
-                case "Case Microphone":
+                case "Microphone":
                     return this.Redirect(@Url.Action("EditMicrophone", "EditProduct"));
-                case "Case keyboard":
+                case "Keyboard":
                     return this.Redirect(@Url.Action("EditKeyboard", "EditProduct"));
-                case "Case Mouse":
+                case "Mouse":
                     return this.Redirect(@Url.Action("EditMouse", "EditProduct"));
-                case "Case Mousepad":
+                case "Mousepad":
                     return this.Redirect(@Url.Action("EditMousepad", "EditProduct"));
-                case "Case Headset":
+                case "Headset":
                     return this.Redirect(@Url.Action("EditHeadset", "EditProduct"));
-                case "Case Speaker":
+                case "Speaker":
                     return this.Redirect(@Url.Action("EditSpeaker", "EditProduct"));
-                case "Case Monitor":
+                case "Monitor":
                     return this.Redirect(@Url.Action("EditMonitor", "EditProduct"));
                 default:
                     break;
@@ -544,6 +545,382 @@ namespace CyberLlamaConsumerSite.Controllers
             else
             {
                 return this.Redirect(Url.Action("SSD", "EditProduct"));
+            }
+        }
+
+        public ActionResult EditKeyboard()
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            List<cKeyboard> part = sr.getAllKeyboard().ToList();
+
+            return View(part);
+        }
+        public ActionResult Keyboard(int id)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cKeyboard part = sr.getKeyboard(id);
+            return View(part);
+        }
+        public ActionResult ChangeKeyboard(cKeyboard keyboard, int? quantity, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            PartsStock part = new PartsStock();
+            if (quantity != null)
+            {
+                part.Quantity = (int)quantity;
+            }
+            else
+            {
+                part.Quantity = sr.getPart(keyboard.id).Quantity;
+            }
+            if (image != null && image != "")
+            {
+                part.Image = image;
+            }
+            else
+            {
+                part.Image = sr.getPart(keyboard.id).image;
+            }
+            bool done = sr.EditKeyboard(keyboard, part, keyboard.id);
+            if (done)
+            {
+                return this.Redirect(Url.Action("Complete", "EditProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Keyboard", "EditProduct"));
+            }
+        }
+
+        public ActionResult EditMouse()
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            List<cMouse> part = sr.getAllMouse().ToList();
+
+            return View(part);
+        }
+        public ActionResult Mouse(int id)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cMouse part = sr.getMouse(id);
+            return View(part);
+        }
+        public ActionResult ChangeMouse(cMouse mouse, int? quantity, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            PartsStock part = new PartsStock();
+            if (quantity != null)
+            {
+                part.Quantity = (int)quantity;
+            }
+            else
+            {
+                part.Quantity = sr.getPart(mouse.id).Quantity;
+            }
+            if (image != null && image != "")
+            {
+                part.Image = image;
+            }
+            else
+            {
+                part.Image = sr.getPart(mouse.id).image;
+            }
+            bool done = sr.EditMouse(mouse, part, mouse.id);
+            if (done)
+            {
+                return this.Redirect(Url.Action("Complete", "EditProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Mouse", "EditProduct"));
+            }
+        }
+
+        public ActionResult EditMousepad()
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            List<cMousePad> part = sr.getAllMousepad().ToList();
+
+            return View(part);
+        }
+        public ActionResult Mousepad(int id)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cMousePad part = sr.getMousepad(id);
+            return View(part);
+        }
+        public ActionResult ChangeMousepad(cMousePad mousepad, int? quantity, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            PartsStock part = new PartsStock();
+            if (quantity != null)
+            {
+                part.Quantity = (int)quantity;
+            }
+            else
+            {
+                part.Quantity = sr.getPart(mousepad.id).Quantity;
+            }
+            if (image != null && image != "")
+            {
+                part.Image = image;
+            }
+            else
+            {
+                part.Image = sr.getPart(mousepad.id).image;
+            }
+            bool done = sr.EditMousepad(mousepad, part, mousepad.id);
+            if (done)
+            {
+                return this.Redirect(Url.Action("Complete", "EditProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Mousepad", "EditProduct"));
+            }
+        }
+
+        public ActionResult EditHeadset()
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            List<cHeadset> part = sr.getAllHeadset().ToList();
+
+            return View(part);
+        }
+        public ActionResult Headset(int id)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cHeadset part = sr.getHeadset(id);
+            return View(part);
+        }
+        public ActionResult ChangeHeadset(cHeadset headset, int? quantity, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            PartsStock part = new PartsStock();
+            if (quantity != null)
+            {
+                part.Quantity = (int)quantity;
+            }
+            else
+            {
+                part.Quantity = sr.getPart(headset.id).Quantity;
+            }
+            if (image != null && image != "")
+            {
+                part.Image = image;
+            }
+            else
+            {
+                part.Image = sr.getPart(headset.id).image;
+            }
+            bool done = sr.EditHeadset(headset, part, headset.id);
+            if (done)
+            {
+                return this.Redirect(Url.Action("Complete", "EditProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Headset", "EditProduct"));
+            }
+        }
+
+        public ActionResult EditSpeaker()
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            List<cSpeaker> part = sr.getAllSpeaker().ToList();
+
+            return View(part);
+        }
+        public ActionResult Speaker(int id)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cSpeaker part = sr.getSpeaker(id);
+            return View(part);
+        }
+        public ActionResult ChangeSpeaker(cSpeaker speaker, int? quantity, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            PartsStock part = new PartsStock();
+            if (quantity != null)
+            {
+                part.Quantity = (int)quantity;
+            }
+            else
+            {
+                part.Quantity = sr.getPart(speaker.id).Quantity;
+            }
+            if (image != null && image != "")
+            {
+                part.Image = image;
+            }
+            else
+            {
+                part.Image = sr.getPart(speaker.id).image;
+            }
+            bool done = sr.EditSpeaker(speaker, part, speaker.id);
+            if (done)
+            {
+                return this.Redirect(Url.Action("Complete", "EditProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Speaker", "EditProduct"));
+            }
+        }
+
+        public ActionResult EditMicrophone()
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            List<cMicrophone> part = sr.getAllMicrophone().ToList();
+
+            return View(part);
+        }
+        public ActionResult Microphone(int id)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cMicrophone part = sr.getMicrophone(id);
+            return View(part);
+        }
+        public ActionResult ChangeMicrophone(cMicrophone mic, int? quantity, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            PartsStock part = new PartsStock();
+            if (quantity != null)
+            {
+                part.Quantity = (int)quantity;
+            }
+            else
+            {
+                part.Quantity = sr.getPart(mic.id).Quantity;
+            }
+            if (image != null && image != "")
+            {
+                part.Image = image;
+            }
+            else
+            {
+                part.Image = sr.getPart(mic.id).image;
+            }
+            bool done = sr.EditMicrophone(mic, part, mic.id);
+            if (done)
+            {
+                return this.Redirect(Url.Action("Complete", "EditProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Microphone", "EditProduct"));
+            }
+        }
+
+        public ActionResult EditMonitor()
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            List<cMonitor> part = sr.getAllMonitor().ToList();
+
+            return View(part);
+        }
+        public ActionResult Monitor(int id)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cMonitor part = sr.getMonitor(id);
+            return View(part);
+        }
+        public ActionResult ChangeMonitor(cMonitor monitor, int? quantity, string image)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            PartsStock part = new PartsStock();
+            if (quantity != null)
+            {
+                part.Quantity = (int)quantity;
+            }
+            else
+            {
+                part.Quantity = sr.getPart(monitor.id).Quantity;
+            }
+            if (image != null && image != "")
+            {
+                part.Image = image;
+            }
+            else
+            {
+                part.Image = sr.getPart(monitor.id).image;
+            }
+            bool done = sr.EditMonitor(monitor, part, monitor.id);
+            if (done)
+            {
+                return this.Redirect(Url.Action("Complete", "EditProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("Monitor", "EditProduct"));
+            }
+        }
+
+        public void Delete(string type, int id)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            switch (type)
+            {
+                case "Graphics processing Unit":
+                    sr.deleteGPU(id);
+                        break;
+                case "Motherboard":
+                    sr.deleteMobo(id);
+                    break;
+                case "Random Access Memory":
+                    sr.deleteRAM(id);
+                    break;
+                case "Computer Processing Unit":
+                    sr.deleteCPU(id);
+                    break;
+                case "Air Cooler":
+                    sr.DeleteAirCooler(id);
+                    break;
+                case "Liquid Cooler":
+                    sr.deleteLiquidCooler(id);
+                    break;
+                case "Solid State Drive":
+                    sr.deleteSSD(id);
+                    break;
+                case "Hard Drive":
+                    sr.deleteHDD(id);
+                    break;
+                case "PC Chassis":
+                    sr.deleteCase(id);
+                    break;
+                case "Power Supply":
+                    sr.deletePSU(id);
+                    break;
+                case "Case Fan":
+                    sr.deleteFan(id);
+                    break;
+                case "PC":
+                    sr.deletePC(id);
+                    break;
+                case "Microphone":
+                    sr.deleteMicrophone(id);
+                    break;
+                case "Keyboard":
+                    sr.deleteKeyboard(id);
+                    break;
+                case "Mouse":
+                    sr.deleteMouse(id);
+                    break;
+                case "Mousepad":
+                    sr.deleteMousepad(id);
+                    break;
+                case "Headset":
+                    sr.deleteHeadset(id);
+                    break;
+                case "Speaker":
+                    sr.deleteSpeaker(id);
+                    break;
+                case "Monitor":
+                    sr.deleteMonitor(id);
+                    break;
+                default:
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    break;
             }
         }
 
