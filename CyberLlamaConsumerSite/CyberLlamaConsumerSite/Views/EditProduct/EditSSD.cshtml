@@ -41,12 +41,30 @@
 
     }
 
+function activeSort() {
+        document.getElementById("product_body").innerHTML = "";
+        var products = @Html.Raw(Json.Encode(@Model.OrderBy(x => x.active).Select(y => y)));
+        for (var i = 0; i < products.length; i++) {
+            document.getElementById("product_body").innerHTML += "<tr><td class=\"data\">" + products[i].model + "</td><td class=\"data\">" + products[i].active + "</td><td class=\"data\">" + products[i].discount + "</td><td class=\"data\">" + products[i].price + "</td><td class=\"data\"><a href=\"/EditProduct/SSD?id=" + products[i].id + "\"><img style=\"max-width: 50px;\" src=\"https://icon-library.net/images/icon-edit/icon-edit-1.jpg\" /></a></td ></tr > "
+        }
+    }
+
+    function discountSort() {
+        document.getElementById("product_body").innerHTML = "";
+        var products = @Html.Raw(Json.Encode(@Model.OrderBy(x => x.discount).Select(y => y)));
+        for (var i = 0; i < products.length; i++) {
+            document.getElementById("product_body").innerHTML += "<tr><td class=\"data\">" + products[i].model + "</td><td class=\"data\">" + products[i].active + "</td><td class=\"data\">" + products[i].discount + "</td><td class=\"data\">" + products[i].price + "</td><td class=\"data\"><a href=\"/EditProduct/SSD?id=" + products[i].id + "\"><img style=\"max-width: 50px;\" src=\"https://icon-library.net/images/icon-edit/icon-edit-1.jpg\" /></a></td ></tr > "
+        }
+    }
+
 </script>
-<button onclick="ModelSort()" style="margin-right:20px;">Sort by Model: </button>
-<button style="margin-right:20px;" onclick="PriceSort()">Sort by Price: </button>
-<br />
-<input style="margin-top:20px;margin-bottom:20px;" type="text" id="search" name="search" value="search" />
-<button onclick="search()">Search... </button>
+
+<button class="FilterButton" onclick="activeSort()" style="margin-right:20px;">Sort by Active: </button>
+<button class="FilterButton" style="margin-right:20px;" onclick="discountSort()">Sort by Disount: </button>
+<button class="FilterButton" onclick="ModelSort()" style="margin-right:20px;">Sort by Model: </button>
+<button class="FilterButton" style="margin-right:20px;" onclick="PriceSort()">Sort by Price: </button>
+<input class="SearchFilter" style="margin-top:20px;margin-bottom:20px;" type="text" id="search" name="search" value="search" />
+<button class="FilterButton" onclick="search()">Search... </button>
 <br />
 
 <table class="data">
