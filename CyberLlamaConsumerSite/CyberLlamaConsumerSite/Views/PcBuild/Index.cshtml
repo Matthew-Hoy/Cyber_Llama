@@ -683,11 +683,11 @@
         $.ajax({
             url: $(this).attr("href"),
             success: function () {
-                alert("Selected Part");
+                alert("Added to Cart");
                 window.location.reload(false);
             },
             error: function () {
-                alert("An error Occured");
+                alert("Please Login to Add to Cart");
             }
         });
     });
