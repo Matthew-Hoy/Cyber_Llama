@@ -9,10 +9,10 @@
 <h1 class="centerText" style="margin:10px 0px 10px 0px">Add PC</h1>
 
 <form method="post" action="@Url.Action("addPC", "AddNewProduct")">
-    <div class="row" style="margin-top:3%;">
+    <div class="row">
         <div class="col-md-4 smallMargin-top">
-            <div class="borderedElement ">
-                <h4 class="centerText" style="margin:10px 0px 40px 0px">General</h4>
+            <div class="borderedAddEditElement ">
+                <h4 class="addEditFormTitle centerText" style="margin:10px 0px 10px 0px">General</h4>
                 <div class="form-Input">
                     <label>PC Type:</label>
                     <select required name="pcType" style="width:200px;float:right">
@@ -51,8 +51,8 @@
             </div>
         </div>
         <div class="col-md-4 smallMargin-top">
-            <div class="borderedElement">
-                <h4 class="centerText" style="margin:10px 0px 40px 0px">Specificaions</h4>
+            <div class="borderedAddEditElement">
+                <h4 class="addEditFormTitle centerText" style="margin:10px 0px 10px 0px">Specificaions</h4>
                 <div class="form-Input">
                     <label>Select a Case:</label>
                     <select required name="caseID" style="width:200px;float:right">
@@ -226,9 +226,9 @@
             </div>
         </div>
         <div class="col-md-4 smallMargin-top">
-            <div class="borderedElement">
+            <div class="borderedAddEditElement centerText">
                 <div class="form-Input ">
-                    <h4 class="centerText" style="margin:10px 0px 40px 0px">Quantities</h4>
+                    <h4 class="addEditFormTitle" style="margin:10px 0px 10px 0px">Quantities</h4>
                     <label>Number of HDDs:</label>
                     <select required name="numHDDs" style="width:200px;float:right">
                         @for (int x = 0; x <= 20; x++)
@@ -261,8 +261,8 @@
     </div>
         
     <p color="red" style="text-align:center">@ViewBag.status</p>
-    <div class="form-Input  login">
-        <input type="submit" value="Add PC" />
+    <div class="form-Input"style="margin-top:30px;">
+        <input class="AddEditButton centerImage" type="submit" value="Add PC" />
     </div>
 </form>
 
