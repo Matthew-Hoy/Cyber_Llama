@@ -203,6 +203,25 @@ textarea {
     margin-right: 30px;
 }
 
+.selectCategoryList {
+    border: 1px solid grey;
+    padding: 12px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    min-width: 100%;
+    background-color: #2c2c2c;
+}
+
+    .selectCategoryList option {
+        padding: 12px 12px 12px 12px;
+        text-align: center;
+        font-size: 18px;
+        min-width: 100%;
+        background-color: #2c2c2c;
+    }
+
 .borderedAddEditElement select {
     float: right;
     width: 200px;
