@@ -397,7 +397,9 @@ public interface IService
     List<cLoginStat> getLoginStats();
     [OperationContract]
     List<cRegisterStat> getRegisterStats();
+    [OperationContract]
+    cPCParts getAllPCparts();
 
 
 
-}
+    }

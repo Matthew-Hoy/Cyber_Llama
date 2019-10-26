@@ -1,8 +1,270 @@
 ﻿
 @{
-    ViewBag.Title = "PC";
+    ViewBag.Title = "Add a PC";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model CyberLlamaConsumerSite.Models.PCModel
+@using CyberLlamaConsumerSite.CRUDService
 
-<h2>PC</h2>
+<h1 class="centerText" style="margin:10px 0px 10px 0px">Add PC</h1>
+<hr color="white" />
+
+<form method="post" action="@Url.Action("addPC", "AddNewProduct")">
+    <div class="row" style="margin-top:3%;">
+        <!--Sign Up Box-->
+        <div class="col-md-4 smallMargin-top">
+            <div class="borderedElement ">
+                <h4 class="centerText" style="margin:10px 0px 40px 0px">General</h4>
+                <div class="form-Input">
+                    <label>PC Type:</label>
+                    <select required name="pcType" style="width:200px;float:right">
+                        <option>Gaming</option>
+                        <option>Home</option>
+                        <option>Business</option>
+                        <option>Workstation</option>
+                    </select>
+                </div>
+                <div class="form-Input ">
+                    <label>Warranty:</label>
+                    <input required name="Warranty" style="width:200px;float:right" />
+                </div>
+                <div class="form-Input ">
+                    <label>Price:</label>
+                    <input required name="Price" style="width:200px;float:right" />
+                </div>
+                <div class="form-Input ">
+                    <label>Discount:</label>
+                    <input type="number" required name="Discount" style="width:200px;float:right" />
+                </div>
+                <div class="form-Input ">
+                    <label>Quantity:</label>
+                    <input required name="Quantity" style="width:200px;float:right" />
+                </div>
+                <div class="form-Input ">
+                    <label>Image:</label>
+                    <input required name="Image" style="width:200px;float:right" />
+                </div>
+                <div class="form-Input ">
+                    <label>Active:</label>
+                    <input type="checkbox" checked name="Active" value="true" />
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-md-4 smallMargin-top">
+            <div class="borderedElement">
+                <h4 class="centerText" style="margin:10px 0px 40px 0px">Specificaions</h4>
+                <div class="form-Input">
+                    <label>Select a Case:</label>
+                    <select required name="caseID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.Allcase)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input">
+                    <label>Motherboard:</label>
+                    <select required name="moboID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllMobo)
+                        {    
+                            <option value=@part.ID>@part.model</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a CPU:</label>
+                    <select required name="CPUID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllCPU)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a RAM:</label>
+                    <select required name="RAMID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllRAM)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a GPU:</label>
+                    <select required name="GPUID" style="width:200px;float:right" >
+                        @foreach (cPart part in Model.parts.AllGPU)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Cooler:</label>
+                    <select required name="coolerID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllCooler)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a SSD:</label>
+                    <select name="SSDID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllSSD)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                        <option>None</option>
+                    </select>
+                </div>
+
+
+                <div class="form-Input ">
+                    <label>Select a Fan:</label>
+                    <select required name="fanID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllFan)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                    </select>
+                </div>
+
+
+                <div class="form-Input ">
+                    <label>Select a HDD:</label>
+                    <select name="HDDID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllHDD)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                        <option>None</option>
+                    </select>
+                </div>
+
+
+                <div class="form-Input ">
+                    <label>Select a PSU:</label>
+                    <select required name="PSUID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllPSU)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Operating system:</label>
+                    <select required name="OSID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllOS)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Monitor:</label>
+                    <select name="monitorID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllMonitor)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                        <option>None</option>
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Headset:</label>
+                    <select name="headsetID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllHeadset)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                        <option>None</option>
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Keyboard:</label>
+                    <select name="keyboardID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllKeyboard)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                        <option>None</option>
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Mouse:</label>
+                    <select name="mouseID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllMouse)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                        <option>None</option>
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Speaker:</label>
+                    <select name="speakerID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllSpeaker)
+                        {
+                            <option value=@part.ID>@part.model</option>
+                        }
+                        <option>None</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4 smallMargin-top">
+            <div class="borderedElement">
+                <div class="form-Input ">
+                    <h4 class="centerText" style="margin:10px 0px 40px 0px">Quantities</h4>
+                    <label>Number of HDDs:</label>
+                    <select required name="numHDDs" style="width:200px;float:right">
+                        @for (int x = 0; x <= 20; x++)
+                        {
+                            <option>@x</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-Input ">
+                    <label>Number of Fans:</label>
+                    <select required name="numFans" style="width:200px;float:right">
+                        @for (int x = 0; x <= 20; x++)
+                        {
+                            <option>@x</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-Input ">
+                    <label>Number of SSDs:</label>
+                    <select required name="numSSDs" style="width:200px;float:right">
+                        @for (int x = 0; x <= 20; x++)
+                        {
+                            <option>@x</option>
+                        }
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input  login">
+        <input type="submit" value="Add PC" />
+    </div>
+</form>
 
