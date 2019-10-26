@@ -182,7 +182,7 @@ public class Service : IService
         var part = new PartsStock
         {
             Model = newAC.model,
-            Type = "Air Cooler",
+            Type = "AirCooler",
             Quantity = qua,
             Price = (decimal)newAC.price,
             Active = newAC.active,
@@ -695,7 +695,7 @@ public class Service : IService
         var part = new PartsStock
         {
             Model = newLC.model,
-            Type = "Liquid Cooler",
+            Type = "LiquidCooler",
             Quantity = qua,
             Price = (decimal)newLC.price,
             Active = newLC.active,
