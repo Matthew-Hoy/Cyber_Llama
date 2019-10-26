@@ -182,7 +182,7 @@ public class Service : IService
         var part = new PartsStock
         {
             Model = newAC.model,
-            Type = "Air Cooler",
+            Type = "AirCooler",
             Quantity = qua,
             Price = (decimal)newAC.price,
             Active = newAC.active,
@@ -695,7 +695,7 @@ public class Service : IService
         var part = new PartsStock
         {
             Model = newLC.model,
-            Type = "Liquid Cooler",
+            Type = "LiquidCooler",
             Quantity = qua,
             Price = (decimal)newLC.price,
             Active = newLC.active,
@@ -1317,10 +1317,22 @@ public class Service : IService
             Image = image
         };
 
+        db.PcStocks.InsertOnSubmit(temp);
+        try
+        {
+            db.SubmitChanges();
+        }
+        catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+
         //Add new Part to its respective Table
         var pc = new Pc
         {
-            PC_ID = temp.ID,
+            
+            PC_ID = db.PcStocks.OrderByDescending(x => x.ID).FirstOrDefault().ID,
             PC_Type = temp.PC_Type,
             Case_ID = Convert.ToInt32(newPC.case_id),
             Mobo_ID = Convert.ToInt32(newPC.mobo_id),
@@ -1345,16 +1357,18 @@ public class Service : IService
             
         };
 
+        
         db.Pcs.InsertOnSubmit(pc);
-        db.PcStocks.InsertOnSubmit(temp);
+        
 
         try
         {
             db.SubmitChanges();
             return true;
         }
-        catch
+        catch (Exception ex)
         {
+            ex.GetBaseException();
             return false;
         }
     }
@@ -1975,6 +1989,8 @@ public class Service : IService
         return temp;
     }
 
+
+
     public c_PcPageInfo getPcInfo(int ID)
     {
         var part = (from p in db.PcStocks where p.ID == ID select p).FirstOrDefault();
@@ -2445,6 +2461,42 @@ public class Service : IService
         }
 
         return list;
+    }
+
+    public cPCParts getAllPCparts()
+    {
+        List<cPart> parts = db.PartsStocks.Select(x => new cPart
+        {
+                 ID = x.ID,
+                 type = x.Type,
+                 Quantity = x.Quantity,
+                 model = x.Model,
+                 active = x.Active,
+                 discount = x.Discount
+        }).ToList();
+
+        cPCParts PCParts = new cPCParts
+        {
+            Allcase = parts.Where(x => x.type.Equals("Case")).Select(y => y).ToList(),
+            AllCooler = parts.Where(x => x.type.Equals("AirCooler") || x.type.Equals("LiquidCooler")).Select(y => y).ToList(),
+            AllCPU = parts.Where(x => x.type.Equals("CPU")).Select(y => y).ToList(),
+            AllFan = parts.Where(x => x.type.Equals("Fan")).Select(y => y).ToList(),
+            AllGPU = parts.Where(x => x.type.Equals("GPU")).Select(y => y).ToList(),
+            AllHDD = parts.Where(x => x.type.Equals("HDD")).Select(y => y).ToList(),
+            AllHeadset = parts.Where(x => x.type.Equals("Headset")).Select(y => y).ToList(),
+            AllKeyboard= parts.Where(x => x.type.Equals("Keyboard")).Select(y => y).ToList(),
+            AllMobo = parts.Where(x => x.type.Equals("Motherboard")).Select(y => y).ToList(),
+            AllMonitor  = parts.Where(x => x.type.Equals("Monitor")).Select(y => y).ToList(),
+            AllMouse  = parts.Where(x => x.type.Equals("Mouse")).Select(y => y).ToList(),
+            AllOS = parts.Where(x => x.type.Equals("OS")).Select(y => y).ToList(),
+            AllPSU = parts.Where(x => x.type.Equals("PSU")).Select(y => y).ToList(),
+            AllRAM = parts.Where(x => x.type.Equals("RAM")).Select(y => y).ToList(),
+            AllSpeaker = parts.Where(x => x.type.Equals("Speaker")).Select(y => y).ToList(),
+            AllSSD = parts.Where(x => x.type.Equals("SSD")).Select(y => y).ToList(),
+        };
+        return PCParts;
+
+                             
     }
 
     //Return Items Based on parameters

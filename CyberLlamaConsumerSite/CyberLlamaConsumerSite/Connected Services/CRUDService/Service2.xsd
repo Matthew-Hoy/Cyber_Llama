@@ -2,6 +2,538 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:53884/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
   <xs:import schemaLocation="http://localhost:53884/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="getCartItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user_ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCartItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCartItemsResult" nillable="true" type="q1:ArrayOfcAllCart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getClientResult" nillable="true" type="q2:cClient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllInvoices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllInvoicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllInvoicesResult" nillable="true" type="q3:ArrayOfcInvoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addToPartInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addToPartInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addToPartInvoiceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addToPcInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addToPcInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addToPcInvoiceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpcinvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InvoiceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpcinvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getpcinvoiceResult" nillable="true" type="q4:ArrayOfcAllCart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPartInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InvoiceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPartInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPartInvoiceResult" nillable="true" type="q5:ArrayOfcAllCart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addToPartSold">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addToPartSoldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addToPartSoldResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addToPcSold">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addToPcSoldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addToPcSoldResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="decreasePartStock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="decreasePartStockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="decreasePartStockResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="decreasePcStock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="decreasePcStockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="decreasePcStockResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpcStockStats">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpcStockStatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getpcStockStatsResult" nillable="true" type="q6:ArrayOfcStock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpcSoldStats">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpcSoldStatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getpcSoldStatsResult" nillable="true" type="q7:ArrayOfcSold" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpartStockStats">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpartStockStatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getpartStockStatsResult" nillable="true" type="q8:ArrayOfcStock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpartSoldStats">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpartSoldStatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getpartSoldStatsResult" nillable="true" type="q9:ArrayOfcSold" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLoginStats">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLoginStatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getLoginStatsResult" nillable="true" type="q10:ArrayOfcLoginStat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRegisterStats">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRegisterStatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getRegisterStatsResult" nillable="true" type="q11:ArrayOfcRegisterStat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllPCparts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllPCpartsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllPCpartsResult" nillable="true" type="q12:cPCParts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deletePC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deletePCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deletePCResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPartResult" nillable="true" type="q13:c_ProductPageInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="intgetPC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="intgetPCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="intgetPCResult" nillable="true" type="q14:cPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPcInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPcInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPcInfoResult" nillable="true" type="q15:c_PcPageInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAirCooler">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAirCoolerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAirCoolerResult" nillable="true" type="q16:cAirCooler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCaseResult" nillable="true" type="q17:cCase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCPU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCPUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCPUResult" nillable="true" type="q18:cCPU" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getFanResult" nillable="true" type="q19:cFan" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGPU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGPUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getGPUResult" nillable="true" type="q20:cGPU" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHDD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHDDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getHDDResult" nillable="true" type="q21:cHDD" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHeadset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHeadsetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getHeadsetResult" nillable="true" type="q22:cHeadset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLiquidCooler">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLiquidCoolerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getLiquidCoolerResult" nillable="true" type="q23:cLiquidCooler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMobo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMoboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMoboResult" nillable="true" type="q24:cMobo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPSU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPSUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPSUResult" nillable="true" type="q25:cPSU" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRAM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRAMResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getRAMResult" nillable="true" type="q26:cRAM" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getSSDResult" nillable="true" type="q27:cSSD" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getKeyboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getKeyboardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getKeyboardResult" nillable="true" type="q28:cKeyboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMicrophone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMicrophoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMicrophoneResult" nillable="true" type="q29:cMicrophone" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSpeaker">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSpeakerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getSpeakerResult" nillable="true" type="q30:cSpeaker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMonitor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMonitorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMonitorResult" nillable="true" type="q31:cMonitor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMouseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMouseResult" nillable="true" type="q32:cMouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="getMousepad">
     <xs:complexType>
       <xs:sequence>
@@ -12,7 +544,7 @@
   <xs:element name="getMousepadResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMousepadResult" nillable="true" type="q1:cMousePad" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMousepadResult" nillable="true" type="q33:cMousePad" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -26,7 +558,7 @@
   <xs:element name="getPCbyTypeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPCbyTypeResult" nillable="true" type="q2:ArrayOfcPC" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPCbyTypeResult" nillable="true" type="q34:ArrayOfcPC" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -40,7 +572,7 @@
   <xs:element name="getAllPCInfoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllPCInfoResult" nillable="true" type="q3:ArrayOfc_PcPageInfo" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllPCInfoResult" nillable="true" type="q35:ArrayOfc_PcPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -55,7 +587,7 @@
   <xs:element name="getPCbyPriceResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPCbyPriceResult" nillable="true" type="q4:ArrayOfcPC" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPCbyPriceResult" nillable="true" type="q36:ArrayOfcPC" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -69,7 +601,7 @@
   <xs:element name="getAirCoolersForCPUResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAirCoolersForCPUResult" nillable="true" type="q5:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAirCoolersForCPUResult" nillable="true" type="q37:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -83,7 +615,7 @@
   <xs:element name="getLiquidCoolersForCPUResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getLiquidCoolersForCPUResult" nillable="true" type="q6:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getLiquidCoolersForCPUResult" nillable="true" type="q38:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -97,7 +629,7 @@
   <xs:element name="getCPUForAirCoolerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCPUForAirCoolerResult" nillable="true" type="q7:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCPUForAirCoolerResult" nillable="true" type="q39:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -111,7 +643,7 @@
   <xs:element name="getCPUForLiquidCoolerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCPUForLiquidCoolerResult" nillable="true" type="q8:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCPUForLiquidCoolerResult" nillable="true" type="q40:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -125,7 +657,7 @@
   <xs:element name="getCPUForMotherboardResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCPUForMotherboardResult" nillable="true" type="q9:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCPUForMotherboardResult" nillable="true" type="q41:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -139,7 +671,7 @@
   <xs:element name="getCaseForMotherboardResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCaseForMotherboardResult" nillable="true" type="q10:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCaseForMotherboardResult" nillable="true" type="q42:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -153,7 +685,7 @@
   <xs:element name="getRAMForMotherboardResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getRAMForMotherboardResult" nillable="true" type="q11:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getRAMForMotherboardResult" nillable="true" type="q43:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -167,7 +699,7 @@
   <xs:element name="getMotherboardForCPUResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMotherboardForCPUResult" nillable="true" type="q12:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMotherboardForCPUResult" nillable="true" type="q44:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -181,7 +713,7 @@
   <xs:element name="getMotherboardForRAMResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMotherboardForRAMResult" nillable="true" type="q13:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMotherboardForRAMResult" nillable="true" type="q45:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -195,7 +727,7 @@
   <xs:element name="getMotherboardForCaseResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMotherboardForCaseResult" nillable="true" type="q14:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMotherboardForCaseResult" nillable="true" type="q46:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -207,7 +739,7 @@
   <xs:element name="getAllAirCoolerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllAirCoolerResult" nillable="true" type="q15:ArrayOfcAirCooler" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllAirCoolerResult" nillable="true" type="q47:ArrayOfcAirCooler" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -219,7 +751,7 @@
   <xs:element name="getAllCaseResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllCaseResult" nillable="true" type="q16:ArrayOfcCase" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllCaseResult" nillable="true" type="q48:ArrayOfcCase" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -231,7 +763,7 @@
   <xs:element name="getAllCPUResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllCPUResult" nillable="true" type="q17:ArrayOfcCPU" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllCPUResult" nillable="true" type="q49:ArrayOfcCPU" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -243,7 +775,7 @@
   <xs:element name="getAllFanResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllFanResult" nillable="true" type="q18:ArrayOfcFan" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllFanResult" nillable="true" type="q50:ArrayOfcFan" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -255,7 +787,7 @@
   <xs:element name="getAllGPUResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllGPUResult" nillable="true" type="q19:ArrayOfcGPU" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllGPUResult" nillable="true" type="q51:ArrayOfcGPU" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -267,7 +799,7 @@
   <xs:element name="getAllHDDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllHDDResult" nillable="true" type="q20:ArrayOfcHDD" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllHDDResult" nillable="true" type="q52:ArrayOfcHDD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -279,7 +811,7 @@
   <xs:element name="getAllHeadsetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllHeadsetResult" nillable="true" type="q21:ArrayOfcHeadset" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllHeadsetResult" nillable="true" type="q53:ArrayOfcHeadset" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -291,7 +823,7 @@
   <xs:element name="getAllMouseResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllMouseResult" nillable="true" type="q22:ArrayOfcMouse" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllMouseResult" nillable="true" type="q54:ArrayOfcMouse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -303,7 +835,7 @@
   <xs:element name="getAllMousepadResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllMousepadResult" nillable="true" type="q23:ArrayOfcMousePad" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllMousepadResult" nillable="true" type="q55:ArrayOfcMousePad" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -315,7 +847,7 @@
   <xs:element name="getAllKeyboardResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllKeyboardResult" nillable="true" type="q24:ArrayOfcKeyboard" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllKeyboardResult" nillable="true" type="q56:ArrayOfcKeyboard" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -327,7 +859,7 @@
   <xs:element name="getAllSpeakerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllSpeakerResult" nillable="true" type="q25:ArrayOfcSpeaker" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllSpeakerResult" nillable="true" type="q57:ArrayOfcSpeaker" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -339,7 +871,7 @@
   <xs:element name="getAllMicrophoneResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllMicrophoneResult" nillable="true" type="q26:ArrayOfcMicrophone" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllMicrophoneResult" nillable="true" type="q58:ArrayOfcMicrophone" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -351,7 +883,7 @@
   <xs:element name="getAllMonitorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllMonitorResult" nillable="true" type="q27:ArrayOfcMonitor" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllMonitorResult" nillable="true" type="q59:ArrayOfcMonitor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -363,7 +895,7 @@
   <xs:element name="getAllLiquidCoolerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllLiquidCoolerResult" nillable="true" type="q28:ArrayOfcLiquidCooler" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllLiquidCoolerResult" nillable="true" type="q60:ArrayOfcLiquidCooler" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -375,7 +907,7 @@
   <xs:element name="getAllMoboResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllMoboResult" nillable="true" type="q29:ArrayOfcMobo" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllMoboResult" nillable="true" type="q61:ArrayOfcMobo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -387,7 +919,7 @@
   <xs:element name="getAllPSUResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllPSUResult" nillable="true" type="q30:ArrayOfcPSU" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllPSUResult" nillable="true" type="q62:ArrayOfcPSU" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -399,7 +931,7 @@
   <xs:element name="getAllRAMResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllRAMResult" nillable="true" type="q31:ArrayOfcRAM" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllRAMResult" nillable="true" type="q63:ArrayOfcRAM" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -413,7 +945,7 @@
   <xs:element name="getAllPartsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllPartsResult" nillable="true" type="q32:ArrayOfc_ProductPageInfo" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllPartsResult" nillable="true" type="q64:ArrayOfc_ProductPageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -425,7 +957,7 @@
   <xs:element name="getAllSSDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllSSDResult" nillable="true" type="q33:ArrayOfcSSD" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllSSDResult" nillable="true" type="q65:ArrayOfcSSD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -437,7 +969,7 @@
   <xs:element name="getAllPCResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllPCResult" nillable="true" type="q34:ArrayOfcPC" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllPCResult" nillable="true" type="q66:ArrayOfcPC" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -579,232 +1111,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getCartItems">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="user_ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getCartItemsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCartItemsResult" nillable="true" type="q35:ArrayOfcAllCart" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getClient">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getClientResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getClientResult" nillable="true" type="q36:cClient" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getAllInvoices">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="UserID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getAllInvoicesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllInvoicesResult" nillable="true" type="q37:ArrayOfcInvoice" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addToPartInvoice">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="UserID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addToPartInvoiceResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="addToPartInvoiceResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addToPcInvoice">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="UserID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addToPcInvoiceResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="addToPcInvoiceResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getpcinvoice">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="InvoiceID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getpcinvoiceResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getpcinvoiceResult" nillable="true" type="q38:ArrayOfcAllCart" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getPartInvoice">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="InvoiceID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getPartInvoiceResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPartInvoiceResult" nillable="true" type="q39:ArrayOfcAllCart" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addToPartSold">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="UserID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addToPartSoldResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="addToPartSoldResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addToPcSold">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="UserID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addToPcSoldResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="addToPcSoldResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="decreasePartStock">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="userID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="decreasePartStockResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="decreasePartStockResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="decreasePcStock">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="userID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="decreasePcStockResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="decreasePcStockResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getpcStockStats">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getpcStockStatsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getpcStockStatsResult" nillable="true" type="q40:ArrayOfcStock" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getpcSoldStats">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getpcSoldStatsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getpcSoldStatsResult" nillable="true" type="q41:ArrayOfcSold" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getpartStockStats">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getpartStockStatsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getpartStockStatsResult" nillable="true" type="q42:ArrayOfcStock" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getpartSoldStats">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getpartSoldStatsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getpartSoldStatsResult" nillable="true" type="q43:ArrayOfcSold" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getLoginStats">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getLoginStatsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getLoginStatsResult" nillable="true" type="q44:ArrayOfcLoginStat" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getRegisterStats">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getRegisterStatsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getRegisterStatsResult" nillable="true" type="q45:ArrayOfcRegisterStat" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="Login">
     <xs:complexType>
       <xs:sequence>
@@ -872,7 +1178,7 @@
   <xs:element name="getUserPositionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getUserPositionsResult" nillable="true" type="q46:ArrayOfstring" />
+        <xs:element xmlns:q67="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getUserPositionsResult" nillable="true" type="q67:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -884,14 +1190,14 @@
   <xs:element name="getAllEmployeesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllEmployeesResult" nillable="true" type="q47:ArrayOfcEmployee" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllEmployeesResult" nillable="true" type="q68:ArrayOfcEmployee" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="addAirCooler">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newAC" nillable="true" type="q48:cAirCooler" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newAC" nillable="true" type="q69:cAirCooler" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -907,8 +1213,8 @@
   <xs:element name="EditAirCooler">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newAC" nillable="true" type="q49:cAirCooler" />
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q50:PartsStock" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newAC" nillable="true" type="q70:cAirCooler" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q71:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -937,7 +1243,7 @@
   <xs:element name="addCase">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newCase" nillable="true" type="q51:cCase" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newCase" nillable="true" type="q72:cCase" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -953,8 +1259,8 @@
   <xs:element name="EditCase">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newCase" nillable="true" type="q52:cCase" />
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q53:PartsStock" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newCase" nillable="true" type="q73:cCase" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q74:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -983,7 +1289,7 @@
   <xs:element name="addCPU">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newCPU" nillable="true" type="q54:cCPU" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newCPU" nillable="true" type="q75:cCPU" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -999,8 +1305,8 @@
   <xs:element name="EditCPU">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newCPU" nillable="true" type="q55:cCPU" />
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q56:PartsStock" />
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newCPU" nillable="true" type="q76:cCPU" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q77:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1029,7 +1335,7 @@
   <xs:element name="addFan">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newFan" nillable="true" type="q57:cFan" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newFan" nillable="true" type="q78:cFan" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1045,8 +1351,8 @@
   <xs:element name="EditFan">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newFan" nillable="true" type="q58:cFan" />
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q59:PartsStock" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newFan" nillable="true" type="q79:cFan" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q80:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1075,7 +1381,7 @@
   <xs:element name="addGPU">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newGPU" nillable="true" type="q60:cGPU" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newGPU" nillable="true" type="q81:cGPU" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="price" type="xs:decimal" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
@@ -1092,8 +1398,8 @@
   <xs:element name="EditGPU">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newGPU" nillable="true" type="q61:cGPU" />
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q62:PartsStock" />
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newGPU" nillable="true" type="q82:cGPU" />
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q83:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1122,7 +1428,7 @@
   <xs:element name="addHDD">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newHDD" nillable="true" type="q63:cHDD" />
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newHDD" nillable="true" type="q84:cHDD" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1138,8 +1444,8 @@
   <xs:element name="EditHDD">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newHDD" nillable="true" type="q64:cHDD" />
-        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q65:PartsStock" />
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newHDD" nillable="true" type="q85:cHDD" />
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q86:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1168,7 +1474,7 @@
   <xs:element name="addHeadset">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newHeadset" nillable="true" type="q66:cHeadset" />
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newHeadset" nillable="true" type="q87:cHeadset" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1184,8 +1490,8 @@
   <xs:element name="EditHeadset">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newHeadset" nillable="true" type="q67:cHeadset" />
-        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q68:PartsStock" />
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newHeadset" nillable="true" type="q88:cHeadset" />
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q89:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1214,7 +1520,7 @@
   <xs:element name="addKeyboard">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newKeyboard" nillable="true" type="q69:cKeyboard" />
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newKeyboard" nillable="true" type="q90:cKeyboard" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1230,8 +1536,8 @@
   <xs:element name="EditKeyboard">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newKeyboard" nillable="true" type="q70:cKeyboard" />
-        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q71:PartsStock" />
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newKeyboard" nillable="true" type="q91:cKeyboard" />
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q92:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1260,7 +1566,7 @@
   <xs:element name="addLiquidCooler">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newLC" nillable="true" type="q72:cLiquidCooler" />
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newLC" nillable="true" type="q93:cLiquidCooler" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1276,8 +1582,8 @@
   <xs:element name="EditLiquidCooler">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newLC" nillable="true" type="q73:cLiquidCooler" />
-        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q74:PartsStock" />
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newLC" nillable="true" type="q94:cLiquidCooler" />
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q95:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1306,7 +1612,7 @@
   <xs:element name="addMicrophone">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMicrophone" nillable="true" type="q75:cMicrophone" />
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMicrophone" nillable="true" type="q96:cMicrophone" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1322,8 +1628,8 @@
   <xs:element name="EditMicrophone">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMicrophone" nillable="true" type="q76:cMicrophone" />
-        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q77:PartsStock" />
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMicrophone" nillable="true" type="q97:cMicrophone" />
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q98:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1352,7 +1658,7 @@
   <xs:element name="addMobo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMobo" nillable="true" type="q78:cMobo" />
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMobo" nillable="true" type="q99:cMobo" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1368,8 +1674,8 @@
   <xs:element name="EditMobo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMobo" nillable="true" type="q79:cMobo" />
-        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q80:PartsStock" />
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMobo" nillable="true" type="q100:cMobo" />
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q101:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1398,7 +1704,7 @@
   <xs:element name="addMonitor">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMonitor" nillable="true" type="q81:cMonitor" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMonitor" nillable="true" type="q102:cMonitor" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1414,8 +1720,8 @@
   <xs:element name="EditMonitor">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMonitor" nillable="true" type="q82:cMonitor" />
-        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q83:PartsStock" />
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMonitor" nillable="true" type="q103:cMonitor" />
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q104:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1444,7 +1750,7 @@
   <xs:element name="addMouse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMouse" nillable="true" type="q84:cMouse" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMouse" nillable="true" type="q105:cMouse" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1460,8 +1766,8 @@
   <xs:element name="EditMouse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMouse" nillable="true" type="q85:cMouse" />
-        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q86:PartsStock" />
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMouse" nillable="true" type="q106:cMouse" />
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q107:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1490,7 +1796,7 @@
   <xs:element name="addMousepad">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMousepad" nillable="true" type="q87:cMousePad" />
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMousepad" nillable="true" type="q108:cMousePad" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1506,8 +1812,8 @@
   <xs:element name="EditMousepad">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMousepad" nillable="true" type="q88:cMousePad" />
-        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q89:PartsStock" />
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newMousepad" nillable="true" type="q109:cMousePad" />
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q110:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1536,7 +1842,7 @@
   <xs:element name="addOS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newOS" nillable="true" type="q90:cOS" />
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newOS" nillable="true" type="q111:cOS" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1552,8 +1858,8 @@
   <xs:element name="EditOS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newOS" nillable="true" type="q91:cOS" />
-        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q92:PartsStock" />
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newOS" nillable="true" type="q112:cOS" />
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q113:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1582,7 +1888,7 @@
   <xs:element name="addPSU">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPSU" nillable="true" type="q93:cPSU" />
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPSU" nillable="true" type="q114:cPSU" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1598,8 +1904,8 @@
   <xs:element name="EditPSU">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPSU" nillable="true" type="q94:cPSU" />
-        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q95:PartsStock" />
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPSU" nillable="true" type="q115:cPSU" />
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q116:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1628,7 +1934,7 @@
   <xs:element name="addRAM">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newRAM" nillable="true" type="q96:cRAM" />
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newRAM" nillable="true" type="q117:cRAM" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1644,8 +1950,8 @@
   <xs:element name="EditRAM">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newRAM" nillable="true" type="q97:cRAM" />
-        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q98:PartsStock" />
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newRAM" nillable="true" type="q118:cRAM" />
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q119:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1674,7 +1980,7 @@
   <xs:element name="addSSD">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newSSD" nillable="true" type="q99:cSSD" />
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newSSD" nillable="true" type="q120:cSSD" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1690,8 +1996,8 @@
   <xs:element name="EditSSD">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newSSD" nillable="true" type="q100:cSSD" />
-        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q101:PartsStock" />
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newSSD" nillable="true" type="q121:cSSD" />
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q122:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1720,7 +2026,7 @@
   <xs:element name="addSpeaker">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newSpeaker" nillable="true" type="q102:cSpeaker" />
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newSpeaker" nillable="true" type="q123:cSpeaker" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1736,8 +2042,8 @@
   <xs:element name="EditSpeaker">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newSpeaker" nillable="true" type="q103:cSpeaker" />
-        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q104:PartsStock" />
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newSpeaker" nillable="true" type="q124:cSpeaker" />
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q125:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1766,7 +2072,7 @@
   <xs:element name="addPC">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPC" nillable="true" type="q105:cPC" />
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPC" nillable="true" type="q126:cPC" />
         <xs:element minOccurs="0" name="qua" type="xs:int" />
         <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1782,8 +2088,8 @@
   <xs:element name="EditPC">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPC" nillable="true" type="q106:cPC" />
-        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q107:PartsStock" />
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPC" nillable="true" type="q127:cPC" />
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="newPart" nillable="true" type="q128:PartsStock" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1792,300 +2098,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="EditPCResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="deletePC">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="deletePCResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="deletePCResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getPart">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getPartResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPartResult" nillable="true" type="q108:c_ProductPageInfo" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="intgetPC">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="intgetPCResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="intgetPCResult" nillable="true" type="q109:cPC" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getPcInfo">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getPcInfoResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPcInfoResult" nillable="true" type="q110:c_PcPageInfo" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getAirCooler">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getAirCoolerResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAirCoolerResult" nillable="true" type="q111:cAirCooler" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getCase">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getCaseResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCaseResult" nillable="true" type="q112:cCase" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getCPU">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getCPUResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCPUResult" nillable="true" type="q113:cCPU" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getFan">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getFanResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getFanResult" nillable="true" type="q114:cFan" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getGPU">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getGPUResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getGPUResult" nillable="true" type="q115:cGPU" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getHDD">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getHDDResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getHDDResult" nillable="true" type="q116:cHDD" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getHeadset">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getHeadsetResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getHeadsetResult" nillable="true" type="q117:cHeadset" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getLiquidCooler">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getLiquidCoolerResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getLiquidCoolerResult" nillable="true" type="q118:cLiquidCooler" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getMobo">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getMoboResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMoboResult" nillable="true" type="q119:cMobo" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getPSU">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getPSUResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPSUResult" nillable="true" type="q120:cPSU" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getRAM">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getRAMResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getRAMResult" nillable="true" type="q121:cRAM" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getSSD">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getSSDResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getSSDResult" nillable="true" type="q122:cSSD" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getKeyboard">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getKeyboardResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getKeyboardResult" nillable="true" type="q123:cKeyboard" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getMicrophone">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getMicrophoneResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMicrophoneResult" nillable="true" type="q124:cMicrophone" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getSpeaker">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getSpeakerResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getSpeakerResult" nillable="true" type="q125:cSpeaker" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getMonitor">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getMonitorResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMonitorResult" nillable="true" type="q126:cMonitor" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getMouse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getMouseResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMouseResult" nillable="true" type="q127:cMouse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -1,4 +1,5 @@
 ﻿using CyberLlamaConsumerSite.CRUDService;
+using CyberLlamaConsumerSite.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,6 +69,58 @@ namespace CyberLlamaConsumerSite.Controllers
                     break;
             }
             return View();
+        }
+
+        public ActionResult PC()
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            PCModel pcmodel = new PCModel
+            {
+              parts =  sr.getAllPCparts()
+            };
+            return View(pcmodel);
+        }
+
+        public ActionResult addPC(int? caseID, int? moboID, int? CPUID, int? RAMID, int? GPUID, int? coolerID, int? SSDID, int? FanID, int? HDDID, int? PSUID, int? OSID, int? MonitorID, int? HeadsetID, int? KeyboardID, int? MouseID, int? SpeakerID, string Warranty, int? numFans, int? numSSDs, int? numHDDs, string pcType, int? Quantity, double? Price, string Image, bool? Active, int? Discount)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cPC newPC = new cPC
+            {
+                active = Active != null ? 1 : 0,
+                case_id = Convert.ToString(caseID),
+                cooler_id = Convert.ToString(coolerID),
+                cpu_id = Convert.ToString(CPUID),
+                fan_id = Convert.ToString(FanID),
+                gpu_id = Convert.ToString(GPUID),
+                headset_id = Convert.ToString(HeadsetID),
+                hdd_id = Convert.ToString(HDDID),
+                keyboard_id = Convert.ToString(KeyboardID),
+                mobo_id = Convert.ToString(moboID),
+                monitor_id = Convert.ToString(MonitorID),
+                mouse_id = Convert.ToString(MouseID),
+                os_id = Convert.ToString(OSID),
+                psu_id = Convert.ToString(PSUID),
+                ram_id = Convert.ToString(RAMID),
+                ssd_id = Convert.ToString(SSDID),
+                speaker_id = Convert.ToString(SpeakerID),
+                discount = Discount != null ? (int)Discount : 0,
+                num_fans= numFans != null ? (int)numFans : 0,
+                num_hdd= numHDDs != null ? (int)numHDDs : 0,
+                num_ssd = numSSDs != null ? (int)numSSDs : 0,
+                price  = Price != null ? (double)Price : 0,
+                type = pcType,
+                warranty  = Warranty,
+            };
+            bool added = sr.addPC(newPC, Quantity == null ? 0:(int) Quantity, Image);
+            if (added)
+            {
+                return this.RedirectToAction("Index", "AddnewProduct");
+            }
+            else
+            {
+                return this.RedirectToAction("PC", "AddnewProduct");
+            }
+
         }
 
         public ActionResult GPU()
@@ -625,37 +678,6 @@ namespace CyberLlamaConsumerSite.Controllers
             else
             {
                 return this.Redirect(Url.Action("Monitor", "AddNewProduct"));
-            }
-        }
-
-        public ActionResult PC()
-        {
-            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
-            {
-                return this.Redirect(@Url.Action("Index", "Home"));
-            }
-            cPC part = new cPC
-            {
-                active = 0
-            };
-
-            return View(part);
-        }
-        public ActionResult addPC(cPC part, string image)
-        {
-            if (Convert.ToInt32(Session["UserType"]) != 1 && Convert.ToInt32(Session["UserType"]) != 3)
-            {
-                return this.Redirect(@Url.Action("Index", "Home"));
-            }
-            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
-            bool added = sr.addPC(part, 1, image);
-            if (added)
-            {
-                return this.Redirect(Url.Action("Complete", "AddNewProduct"));
-            }
-            else
-            {
-                return this.Redirect(Url.Action("PC", "AddNewProduct"));
             }
         }
 
