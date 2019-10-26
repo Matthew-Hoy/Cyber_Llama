@@ -5,92 +5,90 @@
 }
 @model CyberLlamaConsumerSite.CRUDService.cHDD
 
-<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
-<h1 class="centerText" style="margin:10px 0px 40px 0px">Edit Hard drive</h1>
-<hr color="white" />
+<h1 class="centerText" style="margin:10px 0px 10px 0px">Edit Hard drive</h1>
 
 @using (Html.BeginForm("ChangeHDD", "EditProduct", FormMethod.Post))
 {
-    <div class="form-Input centerImage" style="display:none">
+    <div class="form-Input" style="display:none">
         <label>id:</label>
         @Html.TextBoxFor(m => m.id);
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input">
         <label>Model:</label>
         @Html.TextBoxFor(m => m.model)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input">
         <label>Brand:</label>
         @Html.TextBoxFor(m => m.brand)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input">
         <label>Series:</label>
         @Html.TextBoxFor(m => m.series)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input">
         <label>Size:</label>
         @Html.TextBoxFor(m => m.size)
     </div>
 
-    <div class="form-Input centerImage">
+    <div class="form-Input">
         <label>Storage:</label>
         @Html.TextBoxFor(m => m.storage)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input">
         <label>Interface type:</label>
         @Html.TextBoxFor(m => m.interface_type)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input">
         <label>Max sustained Transfer rate:</label>
         @Html.TextBoxFor(m => m.max_sustained_transfer_rate)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input">
         <label>Rotational speed:</label>
         @Html.TextBoxFor(m => m.rotational_speed)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Louad Unload Cycles:</label>
         @Html.TextBoxFor(m => m.load_unload_cycles)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Workload rate limit:</label>
         @Html.TextBoxFor(m => m.Workload_Rate_Limit)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Power Usage:</label>
         @Html.TextBoxFor(m => m.avg_power_usage)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Operating Temparature:</label>
         @Html.TextBoxFor(m => m.operation_temp)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Weight:</label>
         @Html.TextBoxFor(m => m.weight)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>warranty:</label>
         @Html.TextBoxFor(m => m.warranty)
     </div>
 
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Active:</label>
         @Html.TextBoxFor(m => m.active)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Price:</label>
         @Html.TextBoxFor(m => m.price)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Quantity:</label>
         <input name="quantity" id="quantity" />
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Image Link:</label>
         <input name="image" id="image" />
     </div>
     <p color="red" style="text-align:center">@ViewBag.status</p>
-    <div class="form-Input centerImage login">
+    <div class="form-Input ">
         <input type="submit" value="Edit HDD" />
     </div>
 }

@@ -5,88 +5,86 @@
 }
 @model CyberLlamaConsumerSite.CRUDService.cFan
 
-<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
-<h1 class="centerText" style="margin:10px 0px 40px 0px">Edit Fan</h1>
-<hr color="white" />
+<h1 class="centerText" style="margin:10px 0px 10px 0px">Edit Fan</h1>
 
 @using (Html.BeginForm("ChangeFan", "EditProduct", FormMethod.Post))
 {
-    <div class="form-Input centerImage" style="display:none">
+    <div class="form-Input " style="display:none">
         <label>id:</label>
         @Html.TextBoxFor(m => m.id);
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Model:</label>
         @Html.TextBoxFor(m => m.model)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Brand:</label>
         @Html.TextBoxFor(m => m.brand)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Series:</label>
         @Html.TextBoxFor(m => m.series)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Size:</label>
         @Html.TextBoxFor(m => m.size)
     </div>
 
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>RPM:</label>
         @Html.TextBoxFor(m => m.rpm)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>max air flow:</label>
         @Html.TextBoxFor(m => m.max_air_flow)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Noise:</label>
         @Html.TextBoxFor(m => m.noise)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Static Pressure:</label>
         @Html.TextBoxFor(m => m.static_pressure)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Input voltage:</label>
         @Html.TextBoxFor(m => m.input_voltage)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>MTBF:</label>
         @Html.TextBoxFor(m => m.mtbf)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Cable length:</label>
         @Html.TextBoxFor(m => m.cable_length)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Number of fans:</label>
         @Html.TextBoxFor(m => m.num_fans)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>warranty:</label>
         @Html.TextBoxFor(m => m.warranty)
     </div>
 
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Active:</label>
         @Html.TextBoxFor(m => m.active)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Price:</label>
         @Html.TextBoxFor(m => m.price)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Quantity:</label>
         <input name="quantity" id="quantity" />
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Image Link:</label>
         <input name="image" id="image" />
     </div>
     <p color="red" style="text-align:center">@ViewBag.status</p>
-    <div class="form-Input centerImage login">
+    <div class="form-Input ">
         <input type="submit" value="Edit Fan" />
     </div>
 }

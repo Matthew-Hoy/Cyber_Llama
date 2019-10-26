@@ -6,80 +6,78 @@
 
 @model CyberLlamaConsumerSite.CRUDService.cRAM
 
-<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
-<h1 class="centerText" style="margin:10px 0px 40px 0px">Edit RAM</h1>
-<hr color="white" />
+<h1 class="centerText" style="margin:10px 0px 10px 0px">Edit RAM</h1>
 
 @using (Html.BeginForm("ChangeRAM", "EditProduct", FormMethod.Post))
 {
-    <div class="form-Input centerImage" style="display:none">
+    <div class="form-Input " style="display:none">
         <label>id:</label>
         @Html.TextBoxFor(m => m.id);
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Model:</label>
         @Html.TextBoxFor(m => m.model)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Brand:</label>
         @Html.TextBoxFor(m => m.brand)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Series:</label>
         @Html.TextBoxFor(m => m.series)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>capacity:</label>
         @Html.TextBoxFor(m => m.capacity)
     </div>
 
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Type:</label>
         @Html.TextBoxFor(m => m.type)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>speed:</label>
         @Html.TextBoxFor(m => m.speed)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>latency:</label>
         @Html.TextBoxFor(m => m.latency)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>voltage:</label>
         @Html.TextBoxFor(m => m.voltage)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>channel config:</label>
         @Html.TextBoxFor(m => m.channel_config)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>height:</label>
         @Html.TextBoxFor(m => m.height)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>warranty:</label>
         @Html.TextBoxFor(m => m.warranty)
     </div>
 
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Active:</label>
         @Html.TextBoxFor(m => m.active)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Price:</label>
         @Html.TextBoxFor(m => m.price)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Quantity:</label>
         <input name="quantity" id="quantity" />
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Image Link:</label>
         <input name="image" id="image" />
     </div>
     <p color="red" style="text-align:center">@ViewBag.status</p>
-    <div class="form-Input centerImage login">
+    <div class="form-Input ">
         <input type="submit" value="Edit RAM" />
     </div>
 }

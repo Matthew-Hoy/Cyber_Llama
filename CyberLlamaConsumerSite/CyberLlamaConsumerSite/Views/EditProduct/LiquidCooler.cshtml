@@ -5,95 +5,93 @@
 }
 @model CyberLlamaConsumerSite.CRUDService.cLiquidCooler
 
-<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
-<h1 class="centerText" style="margin:10px 0px 40px 0px">Edit Liquid Cooler</h1>
-<hr color="white" />
+<h1 class="centerText" style="margin:10px 0px 10px 0px">Edit Liquid Cooler</h1>
 
 @using (Html.BeginForm("ChangeLiquidCooler", "EditProduct", FormMethod.Post))
 {
-    <div class="form-Input centerImage" style="display:none">
+    <div class="form-Input " style="display:none">
         <label>id:</label>
         @Html.TextBoxFor(m => m.id);
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Model:</label>
         @Html.TextBoxFor(m => m.model)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Brand:</label>
         @Html.TextBoxFor(m => m.brand)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Series:</label>
         @Html.TextBoxFor(m => m.series)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Radiator Mats:</label>
         @Html.TextBoxFor(m => m.rad_mats)
     </div>
 
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Fan Size:</label>
         @Html.TextBoxFor(m => m.fan_size)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Radiator length:</label>
         @Html.TextBoxFor(m => m.rad_length)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Radiator Width:</label>
         @Html.TextBoxFor(m => m.rad_width)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Radiator Height:</label>
         @Html.TextBoxFor(m => m.rad_height)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Tube lenth:</label>
         @Html.TextBoxFor(m => m.tube_length)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Tube Mats:</label>
         @Html.TextBoxFor(m => m.tube_mats)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Sockets supported:</label>
         @Html.TextBoxFor(m => m.sockets)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Colour:</label>
         @Html.TextBoxFor(m => m.color)
     </div>
 
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>RGB:</label>
         @Html.TextBoxFor(m => m.rgb)
     </div>
 
 
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>warranty:</label>
         @Html.TextBoxFor(m => m.warranty)
     </div>
 
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Active:</label>
         @Html.TextBoxFor(m => m.active)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Price:</label>
         @Html.TextBoxFor(m => m.price)
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Quantity:</label>
         <input name="quantity" id="quantity" />
     </div>
-    <div class="form-Input centerImage">
+    <div class="form-Input ">
         <label>Image Link:</label>
         <input name="image" id="image" />
     </div>
     <p color="red" style="text-align:center">@ViewBag.status</p>
-    <div class="form-Input centerImage login">
+    <div class="form-Input">
         <input type="submit" value="Edit Liquid Cooler" />
     </div>
 }
