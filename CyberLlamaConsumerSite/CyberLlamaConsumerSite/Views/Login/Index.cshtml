@@ -1,23 +1,29 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LoginAdmin.cshtml";
 }
 
-<img class="centerImage" Style="margin-top:8%;" src="~/Images/llama.png" />
-@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+<img class="centerImage" Style="margin-top:100px;margin-bottom:10px;" src="~/Images/llama.png" />
+<h1 class="centerText">Login</h1>
+@using (Html.BeginForm("Login", "Login", FormMethod.Post, new { style = "margin-left:auto;margin-right:auto;width:400px;" }))
 {
-    <div class="form-Input centerImage">
-        <label for="email" class="required">Email:</label>
-        <input type="text" name="strEmail" id="email" placeholder="Neo@gmail.com" />
+    <div class="borderedAddEditElement">
+        <div class="form-Input" style="padding-top:30px;">
+            <label for="email" class="required">Email:</label>
+            <input type="text" name="strEmail" id="email" placeholder="Neo@gmail.com" />
+        </div>
+        <div class="form-Input">
+            <label for="Password" class="required">Password:</label>
+            <input type="password" name="strPassword" id="password" placeholder="123" />
+        </div>
     </div>
-    <div class="form-Input centerImage">
-        <label for="Password" class="required">Password:</label>
-        <input type="password" name="strPassword" id="password" placeholder="123" />
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input">
+        <input class="AddEditButton centerImage" type="submit" value="Login" />
     </div>
-        <p color="red" style="text-align:center">@ViewBag.status</p>
-    <div class="form-Input centerImage login">
-        <input type="submit" value="Login" />
+    <div class="form-Input">
+        <input style="margin-top:10px;" onclick="location.href='@Url.Action("Index", "Home")'" class="AddEditButton centerImage"  value="Back to Home Screen" />
     </div>
- }
+}
 
 

@@ -50,7 +50,10 @@
                 </div>
                 <div class="form-Input ">
                     <label>Active:</label>
-                    <input type="checkbox" checked name="Active" value=@(Model.PC.active == 1? true:false) />
+                    <select name="Active" >
+                        <option value=1>True</option>
+                        <option value=0>False</option>
+                    </select>
                 </div>
 
 
@@ -175,7 +178,6 @@
                             {
                                 <option value=@part.ID>@part.model</option>
                             }
-                            <option value=@part.ID>@part.model</option>
                         }
                         @if (Model.PC.ssd_id != "0" && Model.PC.ssd_id != null)
                         {

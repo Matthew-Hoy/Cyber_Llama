@@ -1382,6 +1382,11 @@ public class Service : IService
     {
         var part = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
 
+        if(part == null)
+        {
+            return null;
+        }
+
         c_ProductPageInfo temp = new c_ProductPageInfo()
         {
             ID = part.ID,
@@ -5228,3 +5233,4 @@ public class Service : IService
         throw new NotImplementedException();
     }
 }
+                                                                                 

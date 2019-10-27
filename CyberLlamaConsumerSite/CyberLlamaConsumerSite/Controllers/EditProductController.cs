@@ -884,12 +884,12 @@ namespace CyberLlamaConsumerSite.Controllers
             return View(pcmodel);
         }
 
-        public ActionResult changePC(int? id, int? caseID, int? moboID, int? CPUID, int? RAMID, int? GPUID, int? coolerID, int? SSDID, int? FanID, int? HDDID, int? PSUID, int? OSID, int? MonitorID, int? HeadsetID, int? KeyboardID, int? MouseID, int? SpeakerID, string Warranty, int? numFans, int? numSSDs, int? numHDDs, string pcType, int? Quantity, double? Price, string Image, bool? Active, int? Discount)
+        public ActionResult changePC(int? id, int? caseID, int? moboID, int? CPUID, int? RAMID, int? GPUID, int? coolerID, int? SSDID, int? FanID, int? HDDID, int? PSUID, int? OSID, int? MonitorID, int? HeadsetID, int? KeyboardID, int? MouseID, int? SpeakerID, string Warranty, int? numFans, int? numSSDs, int? numHDDs, string pcType, int? Quantity, double? Price, string Image, int? Active, int? Discount)
         {
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             cPC newPC = new cPC
             {
-                active = Active != null ? 1 : 0,
+                active = (int)Active,
                 case_id = Convert.ToString(caseID),
                 cooler_id = Convert.ToString(coolerID),
                 cpu_id = Convert.ToString(CPUID),
@@ -918,7 +918,7 @@ namespace CyberLlamaConsumerSite.Controllers
             PcStock stock = new PcStock
             {
                PC_Type =  pcType,
-               Active = Active == true ? 1:0,
+               Active = (int)Active,
                Discount = (int)Discount  ,
                ID = (int)id,
                Image = Image,
