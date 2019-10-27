@@ -50,18 +50,24 @@
 
 </div>
 
+<div class="toasterCartSuccess">Item Added to Cart</div>
+<div class="toasterCartError">Unable to add item to cart</div>
+
 <script>
     $(".addCartLink").click(function (e) {
         e.preventDefault();
         $.ajax({
             url: $(this).attr("href"),
             success: function () {
-                alert("Added To Cart");
+                var x = document.getElementsByClassName("toasterCartSuccess");
+                x[0].className += " show";
+                setTimeout(function(){ x[0].className = x[0].className.replace("show", ""); }, 3000);
             },
             error: function () {
-                alert("An error Occured, Login to access Cart");
+                 var x = document.getElementsByClassName("toasterCartError");
+                x[0].className += " show";
+                setTimeout(function(){ x[0].className = x[0].className.replace("show", ""); }, 3000);
             }
-
         });
     });
 </script>

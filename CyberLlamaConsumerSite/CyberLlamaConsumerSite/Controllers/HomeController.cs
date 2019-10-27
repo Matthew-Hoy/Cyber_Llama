@@ -145,11 +145,10 @@ namespace CyberLlamaConsumerSite.Controllers
             else if (Session["Cart"] != null)
             {
                 List<int> cartIds = (List<int>)Session["Cart"];
-                if(cartIds.Where(x => x.Equals(ID)).Select(y => y) == null)
+                if (cartIds.Where(x => x.Equals(ID)).Select(y => y).FirstOrDefault() == 0)
                 {
                     cartIds.Add(ID);
                 }
-                
             }
             else if (Session["Cart"] == null)
             {
