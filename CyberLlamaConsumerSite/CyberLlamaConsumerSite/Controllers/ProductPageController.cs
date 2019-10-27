@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CyberLlamaConsumerSite.CRUDService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,9 +11,31 @@ namespace CyberLlamaConsumerSite.Controllers
     public class ProductPageController : Controller
     {
         // GET: ProductPage
-        public ActionResult Index()
+        public ActionResult Index(string id, string filter)
         {
-            return View();
+            CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
+            var prods = sc.getAllParts(id).ToList();
+
+            if (filter != null)
+            {
+
+                if (filter.Equals("price"))
+                {
+                    return View(prods.OrderBy(x => x.price).Select(x => x).ToList());
+                }
+                else if (filter.Equals("name"))
+                {
+                    return View(prods.OrderBy(x => x.model.Trim()).Select(x => x).ToList());
+                }
+                else
+                {
+                    return View(prods.OrderByDescending(x => x.discount).Select(x => x).ToList());
+                }
+            }
+            else
+            {
+                return View(prods.OrderByDescending(x => x.discount).Select(x => x).ToList());
+            }
         }
 
         public void AddToCart(int ID)

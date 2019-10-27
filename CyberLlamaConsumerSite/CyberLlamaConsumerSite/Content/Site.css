@@ -152,6 +152,13 @@ textarea {
         width: 10%;
         min-width: 30px;
     }
+
+    .centerCataloqueImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width:initial;
+    }
     /*
     Div relates CSS
 */
@@ -313,6 +320,29 @@ tbody.data {
     min-width: 60%;
     font-size: 18px;
 }
+
+.sidenav {
+    height: 100%; 
+    width: 160px; 
+    position: fixed; 
+    z-index: 20; 
+    left: 0;
+    overflow-x: hidden; 
+    padding-top: 20px;
+}
+
+.sidenav input {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #3d9395;
+    cursor: pointer;
+    font-size: 18px;
+    text-align:left;
+}
+
+
 .FilterButton {
     border: none;
     outline: 0;
@@ -322,6 +352,7 @@ tbody.data {
     text-align: center;
     cursor: pointer;
     font-size: 18px;
+    margin-top:20px;
 }
 
 .SearchFilter {
