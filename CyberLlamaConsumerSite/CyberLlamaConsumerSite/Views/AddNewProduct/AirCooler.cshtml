@@ -30,7 +30,22 @@
                 <div class="form-Input">
                     <label>Compatability:</label>
                     @{var chpsetList = sr.getAllCPU().Select(x => x.Chipset);}
-                    @Html.DropDownListFor(m => m.chipset, new SelectList(chpsetList.Select(x => x).Distinct()))
+                    @Html.DropDownList("chipsetDropdown", new SelectList(chpsetList.Select(x => x).Distinct()), new { @onchange = "addChip()", @id = "chipsetDropdown" })
+                    @Html.TextBoxFor(m => m.chipset, new { id = "chipsetText" })
+                    <script>
+                        function addChip() {
+                            console.log("Running");
+                            var x = document.getElementById("chipsetText");
+
+                            var e = document.getElementById("chipsetDropdown");
+                            var listValue = e.options[e.selectedIndex].text;
+                            if (x.value == "") {
+                                x.value = listValue;
+                            } else {
+                                    x.value += ", " + listValue;
+                            }
+                        }
+                    </script>
                 </div>
                 <div class="form-Input ">
                     <label>warranty:</label>

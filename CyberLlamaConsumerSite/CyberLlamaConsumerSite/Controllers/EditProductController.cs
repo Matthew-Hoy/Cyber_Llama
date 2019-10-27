@@ -1,4 +1,5 @@
 ﻿using CyberLlamaConsumerSite.CRUDService;
+using CyberLlamaConsumerSite.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -863,6 +864,79 @@ namespace CyberLlamaConsumerSite.Controllers
                 return this.Redirect(Url.Action("Monitor", "EditProduct"));
             }
         }
+
+        public ActionResult EditPC()
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            List<cPC> part = sr.getAllPC().ToList();
+
+            return View(part);
+        }
+
+        public ActionResult PC(int id)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            PCModel pcmodel = new PCModel
+            {
+                parts = sr.getAllPCparts(),
+                PC = sr.getPCbyID(id)
+            };
+            return View(pcmodel);
+        }
+
+        public ActionResult changePC(int? id, int? caseID, int? moboID, int? CPUID, int? RAMID, int? GPUID, int? coolerID, int? SSDID, int? FanID, int? HDDID, int? PSUID, int? OSID, int? MonitorID, int? HeadsetID, int? KeyboardID, int? MouseID, int? SpeakerID, string Warranty, int? numFans, int? numSSDs, int? numHDDs, string pcType, int? Quantity, double? Price, string Image, bool? Active, int? Discount)
+        {
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cPC newPC = new cPC
+            {
+                active = Active != null ? 1 : 0,
+                case_id = Convert.ToString(caseID),
+                cooler_id = Convert.ToString(coolerID),
+                cpu_id = Convert.ToString(CPUID),
+                fan_id = Convert.ToString(FanID),
+                gpu_id = Convert.ToString(GPUID),
+                headset_id = Convert.ToString(HeadsetID) == "" ? null : Convert.ToString(HeadsetID),
+                hdd_id = Convert.ToString(HDDID) == "" ? null:  Convert.ToString(HDDID),
+                keyboard_id = Convert.ToString(KeyboardID) == "" ? null : Convert.ToString(KeyboardID),
+                mobo_id = Convert.ToString(moboID),
+                monitor_id = Convert.ToString(MonitorID) == "" ? null : Convert.ToString(MonitorID),
+                mouse_id = Convert.ToString(MouseID) == "" ? null : Convert.ToString(MouseID),
+                os_id = Convert.ToString(OSID) == "" ? null : Convert.ToString(OSID),
+                psu_id = Convert.ToString(PSUID),
+                ram_id = Convert.ToString(RAMID),
+                ssd_id = Convert.ToString(SSDID) == "" ? null : Convert.ToString(SSDID),
+                speaker_id = Convert.ToString(SpeakerID) == "" ? null : Convert.ToString(SpeakerID),
+                discount = Discount != null ? (int)Discount : 0,
+                num_fans = numFans != null ? (int)numFans : 0,
+                num_hdd = numHDDs != null ? (int)numHDDs : 0,
+                num_ssd = numSSDs != null ? (int)numSSDs : 0,
+                price = Price != null ? (double)Price : 0,
+                type = pcType,
+                warranty = Warranty,
+            };
+
+            PcStock stock = new PcStock
+            {
+               PC_Type =  pcType,
+               Active = Active == true ? 1:0,
+               Discount = (int)Discount  ,
+               ID = (int)id,
+               Image = Image,
+               Price = (decimal)Price,
+               Quantity = (int)Quantity 
+            };
+
+            bool edited = sr.EditPC(newPC, stock, (int)id);
+            if (edited)
+            {
+                return this.Redirect(Url.Action("Complete", "EditProduct"));
+            }
+            else
+            {
+                return this.Redirect(Url.Action("PC", "EditProduct"));
+            }
+    }
+
 
         public void Delete(string type, int id)
         {

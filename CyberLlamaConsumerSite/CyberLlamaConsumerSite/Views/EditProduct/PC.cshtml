@@ -3,6 +3,457 @@
     ViewBag.Title = "PC";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model CyberLlamaConsumerSite.Models.PCModel
+@using CyberLlamaConsumerSite.CRUDService
 
-<h2>PC</h2>
+<h1 class="centerText" style="margin:10px 0px 10px 0px">Edit PC</h1>
+
+<form method="post" action="@Url.Action("changePC", "EditProduct")">
+    <div class="row">
+        <div class="col-md-4 smallMargin-top">
+            <div class="borderedAddEditElement ">
+                <h4 class="addEditFormTitle centerText" style="margin:10px 0px 10px 0px">General</h4>
+                <div class="form-Input">
+                    <label>PC Type:</label>
+                    <select required name="pcType" style="width:200px;float:right">
+                        <option>@Model.PC.type</option>
+                        <option>Gaming</option>
+                        <option>Home</option>
+                        <option>Business</option>
+                        <option>Workstation</option>
+                    </select>
+                </div>
+                <div class="form-Input ">
+                    <label>Warranty:</label>
+                    <input required name="Warranty" value="@Model.PC.warranty" style="width:200px;float:right" />
+                </div>
+
+                <div class="form-Input " style="display:none">
+                    <label>id:</label>
+                    <input name="id" value=@Model.PC.id />;
+                </div>
+                <div class="form-Input ">
+                    <label>Price:</label>
+                    <input required value="@Model.PC.price" name="Price" style="width:200px;float:right" />
+                </div>
+                <div class="form-Input ">
+                    <label>Discount:</label>
+                    <input type="number" value="@Model.PC.discount" required name="Discount" style="width:200px;float:right" />
+                </div>
+                <div class="form-Input ">
+                    <label>Quantity:</label>
+                    <input required name="Quantity" style="width:200px;float:right" />
+                </div>
+                <div class="form-Input ">
+                    <label>Image:</label>
+                    <input required name="Image" style="width:200px;float:right" />
+                </div>
+                <div class="form-Input ">
+                    <label>Active:</label>
+                    <input type="checkbox" checked name="Active" value=@(Model.PC.active == 1? true:false) />
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-md-4 smallMargin-top">
+            <div class="borderedAddEditElement">
+                <h4 class="addEditFormTitle centerText" style="margin:10px 0px 10px 0px">Specificaions</h4>
+                <div class="form-Input">
+                    <label>Select a Case:</label>
+                    <select required name="caseID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.Allcase)
+                        {
+                            if (Model.PC.case_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input">
+                    <label>Motherboard:</label>
+                    <select required name="moboID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllMobo)
+                        {
+                            if (Model.PC.mobo_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a CPU:</label>
+                    <select required name="CPUID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllCPU)
+                        {
+                            if (Model.PC.cpu_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a RAM:</label>
+                    <select required name="RAMID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllRAM)
+                        {
+                            if (Model.PC.ram_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a GPU:</label>
+                    <select required name="GPUID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllGPU)
+                        {
+                            if (Model.PC.gpu_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Cooler:</label>
+                    <select required name="coolerID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllCooler)
+                        {
+                            if (Model.PC.cooler_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a SSD:</label>
+                    <select name="SSDID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllSSD)
+                        {
+                            if (Model.PC.ssd_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                            <option value=@part.ID>@part.model</option>
+                        }
+                        @if (Model.PC.ssd_id != "0" && Model.PC.ssd_id != null)
+                        {
+                            <option>None</option>
+                        }
+                        else
+                        {
+                            <option selected="selected">None</option>
+                        }
+
+                    </select>
+                </div>
+
+
+                <div class="form-Input ">
+                    <label>Select a Fan:</label>
+                    <select required name="fanID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllFan)
+                        {
+                            if (Model.PC.fan_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+
+                <div class="form-Input ">
+                    <label>Select a HDD:</label>
+                    <select name="HDDID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllHDD)
+                        {
+                            if (Model.PC.hdd_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                        @if (Model.PC.hdd_id != "0" && Model.PC.hdd_id != null)
+                        {
+                            <option>None</option>
+                        }
+                        else
+                        {
+                            <option selected="selected">None</option>
+                        }
+                    </select>
+                </div>
+
+
+                <div class="form-Input ">
+                    <label>Select a PSU:</label>
+                    <select required name="PSUID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllPSU)
+                        {
+                            if (Model.PC.psu_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Operating system:</label>
+                    <select required name="OSID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllOS)
+                        {
+                            if (Model.PC.os_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Monitor:</label>
+                    <select name="monitorID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllMonitor)
+                        {
+                            if (Model.PC.monitor_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                        @if (Model.PC.monitor_id != "0" && Model.PC.monitor_id != null)
+                        {
+                            <option>None</option>
+                        }
+                        else
+                        {
+                            <option selected="selected">None</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Headset:</label>
+                    <select name="headsetID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllHeadset)
+                        {
+                            if (Model.PC.headset_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                        @if (Model.PC.headset_id != "0" && Model.PC.headset_id != null)
+                        {
+                            <option>None</option>
+                        }
+                        else
+                        {
+                            <option selected="selected">None</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Keyboard:</label>
+                    <select name="keyboardID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllKeyboard)
+                        {
+                            if (Model.PC.keyboard_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                        @if (Model.PC.keyboard_id != "0" && Model.PC.keyboard_id != null)
+                        {
+                            <option>None</option>
+                        }
+                        else
+                        {
+                            <option selected="selected">None</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Mouse:</label>
+                    <select name="mouseID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllMouse)
+                        {
+                            if (Model.PC.mouse_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                        @if (Model.PC.mouse_id != "0" && Model.PC.mouse_id != null)
+                        {
+                            <option>None</option>
+                        }
+                        else
+                        {
+                            <option selected="selected">None</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-Input ">
+                    <label>Select a Speaker:</label>
+                    <select name="speakerID" style="width:200px;float:right">
+                        @foreach (cPart part in Model.parts.AllSpeaker)
+                        {
+                            if (Model.PC.speaker_id == Convert.ToString(part.ID))
+                            {
+                                <option selected="selected" value=@part.ID>@part.model</option>
+                            }
+                            else
+                            {
+                                <option value=@part.ID>@part.model</option>
+                            }
+                        }
+                        @if (Model.PC.speaker_id != "0" && Model.PC.speaker_id != null)
+                        {
+                            <option>None</option>
+                        }
+                        else
+                        {
+                            <option selected="selected">None</option>
+                        }
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4 smallMargin-top">
+            <div class="borderedAddEditElement centerText">
+                <div class="form-Input ">
+                    <h4 class="addEditFormTitle" style="margin:10px 0px 10px 0px">Quantities</h4>
+                    <label>Number of HDDs:</label>
+                    <select required name="numHDDs" style="width:200px;float:right">
+                        @for (int x = 0; x <= 20; x++)
+                        {
+                            if (x == Model.PC.num_hdd)
+                            {
+                                <option selected="selected">@x</option>
+                            }
+                            else
+                            {
+                                <option>@x</option>
+                            }
+
+                        }
+                    </select>
+                </div>
+                <div class="form-Input ">
+                    <label>Number of Fans:</label>
+                    <select required name="numFans" style="width:200px;float:right">
+                        @for (int x = 0; x <= 20; x++)
+                        {
+                            if (x == Model.PC.num_fans)
+                            {
+                                <option selected="selected">@x</option>
+                            }
+                            else
+                            {
+                                <option>@x</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="form-Input ">
+                    <label>Number of SSDs:</label>
+                    <select required name="numSSDs" style="width:200px;float:right">
+                        @for (int x = 0; x <= 20; x++)
+                        {
+                            if (x == Model.PC.num_ssd)
+                            {
+                                <option selected="selected">@x</option>
+                            }
+                            else
+                            {
+                                <option>@x</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input" style="margin-top:30px;">
+        <input class="AddEditButton centerImage" type="submit" value="Edit PC" />
+    </div>
+</form>
 

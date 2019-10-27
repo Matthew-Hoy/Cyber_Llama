@@ -10,95 +10,108 @@
 
 @using (Html.BeginForm("ChangeSSD", "EditProduct", FormMethod.Post))
 {
-    <div class="form-Input " style="display:none">
-        <label>id:</label>
-        @Html.TextBoxFor(m => m.id);
-    </div>
-    <div class="form-Input ">
-        <label>Model:</label>
-        @Html.TextBoxFor(m => m.model)
-    </div>
-    <div class="form-Input ">
-        <label>Brand:</label>
-        @Html.TextBoxFor(m => m.brand)
-    </div>
-    <div class="form-Input ">
-        <label>Series:</label>
-        @Html.TextBoxFor(m => m.series)
-    </div>
-    <div class="form-Input ">
-        <label>form factor:</label>
-        @Html.TextBoxFor(m => m.form_factor)
-    </div>
 
-    <div class="form-Input ">
-        <label>Capacity:</label>
-        @Html.TextBoxFor(m => m.capacity)
-    </div>
-    <div class="form-Input ">
-        <label>interface type:</label>
-        @Html.TextBoxFor(m => m.interface_type)
-    </div>
-    <div class="form-Input ">
-        <label>length:</label>
-        @Html.TextBoxFor(m => m.length)
-    </div>
-    <div class="form-Input ">
-        <label>width:</label>
-        @Html.TextBoxFor(m => m.width)
-    </div>
-    <div class="form-Input ">
-        <label>max sequential read :</label>
-        @Html.TextBoxFor(m => m.max_seq_read)
-    </div>
-    <div class="form-Input ">
-        <label>max sequential write:</label>
-        @Html.TextBoxFor(m => m.max_seq_write)
-    </div>
-    <div class="form-Input ">
-        <label> random read:</label>
-        @Html.TextBoxFor(m => m.random_read)
-    </div>
-    <div class="form-Input ">
-        <label>random write:</label>
-        @Html.TextBoxFor(m => m.random_write)
-    </div>
-    <div class="form-Input ">
-        <label>MTBF:</label>
-        @Html.TextBoxFor(m => m.mtbf)
-    </div>
-    <div class="form-Input ">
-        <label>operating temperature:</label>
-        @Html.TextBoxFor(m => m.operating_temp)
-    </div>
-    <div class="form-Input ">
-        <label>max power usage:</label>
-        @Html.TextBoxFor(m => m.max_power_usage)
-    </div>
-    <div class="form-Input ">
-        <label>warranty:</label>
-        @Html.TextBoxFor(m => m.warranty)
-    </div>
+    <div class="row">
+        <div class="col-md-6 smallMargin-top">
+            <div class="borderedAddEditElement ">
+                <h4 class="centerText addEditFormTitle">General</h4>
+                <div class="form-Input " style="display:none">
+                    <label>id:</label>
+                    @Html.TextBoxFor(m => m.id);
+                </div>
+                <div class="form-Input " style="margin-top:30px;">
+                    <label>Model:</label>
+                    @Html.TextBoxFor(m => m.model)
+                </div>
+                <div class="form-Input ">
+                    <label>Brand:</label>
+                    @Html.TextBoxFor(m => m.brand)
+                </div>
+                <div class="form-Input ">
+                    <label>Series:</label>
+                    @Html.TextBoxFor(m => m.series)
+                </div>
+                <div class="form-Input ">
+                    <label>form factor:</label>
+                    @Html.TextBoxFor(m => m.form_factor)
+                </div>
 
-    <div class="form-Input ">
-        <label>Active:</label>
-        @Html.TextBoxFor(m => m.active)
-    </div>
-    <div class="form-Input ">
-        <label>Price:</label>
-        @Html.TextBoxFor(m => m.price)
-    </div>
-    <div class="form-Input ">
-        <label>Quantity:</label>
-        <input name="quantity" id="quantity" />
-    </div>
-    <div class="form-Input ">
-        <label>Image Link:</label>
-        <input name="image" id="image" />
+                <div class="form-Input ">
+                    <label>Capacity:</label>
+                    @Html.TextBoxFor(m => m.capacity)
+                </div>
+                <div class="form-Input ">
+                    <label>warranty:</label>
+                    @Html.TextBoxFor(m => m.warranty)
+                </div>
+
+                <div class="form-Input ">
+                    <label>Active:</label>
+                    @Html.TextBoxFor(m => m.active)
+                </div>
+                <div class="form-Input ">
+                    <label>Price:</label>
+                    @Html.TextBoxFor(m => m.price)
+                </div>
+                <div class="form-Input ">
+                    <label>Quantity:</label>
+                    <input name="quantity" id="quantity" />
+                </div>
+                <div class="form-Input ">
+                    <label>Image Link:</label>
+                    <input name="image" id="image" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 smallMargin-top">
+            <div class="borderedAddEditElement ">
+                <h4 class="centerText addEditFormTitle">Additional</h4>
+                <div class="form-Input " style="margin-top:30px;">
+                    <label>interface type:</label>
+                    @Html.TextBoxFor(m => m.interface_type)
+                </div>
+                <div class="form-Input ">
+                    <label>length:</label>
+                    @Html.TextBoxFor(m => m.length)
+                </div>
+                <div class="form-Input ">
+                    <label>width:</label>
+                    @Html.TextBoxFor(m => m.width)
+                </div>
+                <div class="form-Input ">
+                    <label>max sequential read :</label>
+                    @Html.TextBoxFor(m => m.max_seq_read)
+                </div>
+                <div class="form-Input ">
+                    <label>max sequential write:</label>
+                    @Html.TextBoxFor(m => m.max_seq_write)
+                </div>
+                <div class="form-Input ">
+                    <label> random read:</label>
+                    @Html.TextBoxFor(m => m.random_read)
+                </div>
+                <div class="form-Input ">
+                    <label>random write:</label>
+                    @Html.TextBoxFor(m => m.random_write)
+                </div>
+                <div class="form-Input ">
+                    <label>MTBF:</label>
+                    @Html.TextBoxFor(m => m.mtbf)
+                </div>
+                <div class="form-Input ">
+                    <label>operating temperature:</label>
+                    @Html.TextBoxFor(m => m.operating_temp)
+                </div>
+                <div class="form-Input ">
+                    <label>max power usage:</label>
+                    @Html.TextBoxFor(m => m.max_power_usage)
+                </div>
+            </div>
+        </div>
     </div>
     <p color="red" style="text-align:center">@ViewBag.status</p>
     <div class="form-Input ">
-        <input type="submit" value="Edit SSD" />
+        <input class="AddEditButton centerImage" type="submit" value="Edit SSD" />
     </div>
 }
 

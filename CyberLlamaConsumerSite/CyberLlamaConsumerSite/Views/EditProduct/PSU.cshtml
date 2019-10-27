@@ -9,79 +9,92 @@
 
 @using (Html.BeginForm("ChangePSU", "EditProduct", FormMethod.Post))
 {
-    <div class="form-Input " style="display:none">
-        <label>id:</label>
-        @Html.TextBoxFor(m => m.id);
-    </div>
-    <div class="form-Input ">
-        <label>Model:</label>
-        @Html.TextBoxFor(m => m.model)
-    </div>
-    <div class="form-Input ">
-        <label>Brand:</label>
-        @Html.TextBoxFor(m => m.brand)
-    </div>
-    <div class="form-Input ">
-        <label>Series:</label>
-        @Html.TextBoxFor(m => m.series)
-    </div>
-    <div class="form-Input ">
-        <label>Power:</label>
-        @Html.TextBoxFor(m => m.Power)
+
+    <div class="row">
+        <div class="col-md-6 smallMargin-top">
+            <div class="borderedAddEditElement ">
+                <h4 class="centerText addEditFormTitle">General</h4>
+                <div class="form-Input " style="display:none">
+                    <label>id:</label>
+                    @Html.TextBoxFor(m => m.id);
+                </div>
+                <div class="form-Input " style="margin-top:30px;">
+                    <label>Model:</label>
+                    @Html.TextBoxFor(m => m.model)
+                </div>
+                <div class="form-Input ">
+                    <label>Brand:</label>
+                    @Html.TextBoxFor(m => m.brand)
+                </div>
+                <div class="form-Input ">
+                    <label>Series:</label>
+                    @Html.TextBoxFor(m => m.series)
+                </div>
+                <div class="form-Input ">
+                    <label>Power:</label>
+                    @Html.TextBoxFor(m => m.Power)
+                </div>
+                <div class="form-Input ">
+                    <label>warranty:</label>
+                    @Html.TextBoxFor(m => m.warranty)
+                </div>
+
+                <div class="form-Input ">
+                    <label>Active:</label>
+                    @Html.TextBoxFor(m => m.active)
+                </div>
+                <div class="form-Input ">
+                    <label>Price:</label>
+                    @Html.TextBoxFor(m => m.price)
+                </div>
+                <div class="form-Input ">
+                    <label>Quantity:</label>
+                    <input name="quantity" id="quantity" />
+                </div>
+                <div class="form-Input ">
+                    <label>Image Link:</label>
+                    <input name="image" id="image" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 smallMargin-top">
+            <div class="borderedAddEditElement ">
+                <h4 class="centerText addEditFormTitle">Additional</h4>
+                <div class="form-Input " style="margin-top:30px;">
+                    <label>Certification:</label>
+                    @Html.TextBoxFor(m => m.certification)
+                </div>
+                <div class="form-Input ">
+                    <label>Modular:</label>
+                    @Html.TextBoxFor(m => m.modular)
+                </div>
+                <div class="form-Input ">
+                    <label>Connectors:</label>
+                    @Html.TextBoxFor(m => m.connectors)
+                </div>
+                <div class="form-Input ">
+                    <label>MTBF:</label>
+                    @Html.TextBoxFor(m => m.mtbf)
+                </div>
+                <div class="form-Input ">
+                    <label>Fan Size:</label>
+                    @Html.TextBoxFor(m => m.fan_size)
+                </div>
+                <div class="form-Input ">
+                    <label>cabels:</label>
+                    @Html.TextBoxFor(m => m.cables)
+                </div>
+                <div class="form-Input ">
+                    <label>Dimensions:</label>
+                    @Html.TextBoxFor(m => m.dimensions)
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="form-Input ">
-        <label>Certification:</label>
-        @Html.TextBoxFor(m => m.certification)
-    </div>
-    <div class="form-Input ">
-        <label>Modular:</label>
-        @Html.TextBoxFor(m => m.modular)
-    </div>
-    <div class="form-Input ">
-        <label>Connectors:</label>
-        @Html.TextBoxFor(m => m.connectors)
-    </div>
-    <div class="form-Input ">
-        <label>MTBF:</label>
-        @Html.TextBoxFor(m => m.mtbf)
-    </div>
-    <div class="form-Input ">
-        <label>Fan Size:</label>
-        @Html.TextBoxFor(m => m.fan_size)
-    </div>
-    <div class="form-Input ">
-        <label>cabels:</label>
-        @Html.TextBoxFor(m => m.cables)
-    </div>
-    <div class="form-Input ">
-        <label>Dimensions:</label>
-        @Html.TextBoxFor(m => m.dimensions)
-    </div>
-    <div class="form-Input ">
-        <label>warranty:</label>
-        @Html.TextBoxFor(m => m.warranty)
-    </div>
-
-    <div class="form-Input ">
-        <label>Active:</label>
-        @Html.TextBoxFor(m => m.active)
-    </div>
-    <div class="form-Input ">
-        <label>Price:</label>
-        @Html.TextBoxFor(m => m.price)
-    </div>
-    <div class="form-Input ">
-        <label>Quantity:</label>
-        <input name="quantity" id="quantity" />
-    </div>
-    <div class="form-Input ">
-        <label>Image Link:</label>
-        <input name="image" id="image" />
-    </div>
     <p color="red" style="text-align:center">@ViewBag.status</p>
     <div class="form-Input ">
-        <input type="submit" value="Edit PSU" />
+        <input class="AddEditButton centerImage" type="submit" value="Edit PSU" />
     </div>
 }
 

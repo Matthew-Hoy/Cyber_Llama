@@ -163,7 +163,7 @@ public interface IService
     [OperationContract]
     bool addPC(cPC newPC, int qua, string image);
     [OperationContract]
-    bool EditPC(cPC newPC, PartsStock newPart, int id);
+    bool EditPC(cPC newPC, PcStock newPart, int id);
     [OperationContract]
     bool deletePC(int id);
 
@@ -399,6 +399,9 @@ public interface IService
     List<cRegisterStat> getRegisterStats();
     [OperationContract]
     cPCParts getAllPCparts();
+    [OperationContract]
+    cPC getPCbyID(int ID);
+
 
 
 
