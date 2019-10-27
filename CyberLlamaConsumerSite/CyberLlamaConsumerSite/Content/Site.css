@@ -152,6 +152,13 @@ textarea {
         width: 10%;
         min-width: 30px;
     }
+
+    .centerCataloqueImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width:initial;
+    }
     /*
     Div relates CSS
 */
@@ -171,6 +178,7 @@ textarea {
         border-radius: 10px;
         margin: 0% 2% 0% 2%;
         height: 100%;
+        padding-bottom:30px;
     }
 
     .addEditFormTitle {
@@ -313,6 +321,138 @@ tbody.data {
     font-size: 18px;
 }
 
+.sidenav {
+    height: 100%; 
+    width: 160px; 
+    position: fixed; 
+    z-index: 20; 
+    left: 0;
+    overflow-x: hidden; 
+    padding-top: 20px;
+}
+
+.sidenav input {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #3d9395;
+    cursor: pointer;
+    font-size: 18px;
+    text-align:left;
+}
+
+
+.FilterButton {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #3d9395;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top:20px;
+}
+
+.SearchFilter {
+    padding: 12px 12px 12px 12px;
+    text-align: left;
+    font-size: 18px;
+    border:none;
+    background-color:#393939;
+    color:white;
+    min-width:300px;
+}
+
+.toasterCartSuccess {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #3d9395;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 30px;
+}
+
+.toasterCartError {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #782424;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 30px;
+}
+
+.toasterCartSuccess.show {
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+.toasterCartError.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        top: 30px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        top: 30px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
 
 
 

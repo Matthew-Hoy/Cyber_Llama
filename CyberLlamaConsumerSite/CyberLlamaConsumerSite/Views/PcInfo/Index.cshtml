@@ -69,11 +69,11 @@
             </div>
             <div class="row">
                 <div class="col">SSD:</div>
-                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = SSD.ID})">@(SSD.model)</a></div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = (SSD == null? 0 : SSD.ID)})">@(SSD == null ? "None": SSD.model)</a></div>
             </div>
             <div class="row">
                 <div class="col">HDD:</div>
-                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = HDD.ID})">@(HDD.model)</a></div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = (HDD == null? 0 : HDD.ID)})">@(HDD == null ? "None": HDD.model)</a></div>
             </div>
 
         </div>

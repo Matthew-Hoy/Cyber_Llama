@@ -1331,28 +1331,28 @@ public class Service : IService
         //Add new Part to its respective Table
         var pc = new Pc
         {
-            
+
             PC_ID = db.PcStocks.OrderByDescending(x => x.ID).FirstOrDefault().ID,
             PC_Type = temp.PC_Type,
             Case_ID = Convert.ToInt32(newPC.case_id),
             Mobo_ID = Convert.ToInt32(newPC.mobo_id),
-            CPU_ID = Convert.ToInt32(newPC.cpu_id),
+            CPU_ID = Convert.ToInt32(newPC.cpu_id ),
             RAM_ID = Convert.ToInt32(newPC.ram_id),
             GPU_ID = Convert.ToInt32(newPC.gpu_id),
             Cooler_ID = Convert.ToInt32(newPC.cooler_id),
-            SSD_ID = Convert.ToInt32(newPC.ssd_id),
-            HDD_ID = Convert.ToInt32(newPC.hdd_id),
+            SSD_ID = Convert.ToInt32(newPC.ssd_id == "" ? "0" : newPC.ssd_id),
+            HDD_ID = Convert.ToInt32(newPC.hdd_id == "" ? "0" : newPC.hdd_id),
             PSU_ID = Convert.ToInt32(newPC.psu_id),
             OS_ID = Convert.ToInt32(newPC.os_id),
             Fan_ID = Convert.ToInt32(newPC.fan_id),
             Num_Fans = newPC.num_fans,
             Num_SSD = newPC.num_ssd,
             Num_HDD = newPC.num_hdd,
-            Monitor_ID = Convert.ToInt32(newPC.monitor_id),
-            Headset_ID = Convert.ToInt32(newPC.headset_id),
-            Keyboard_ID = Convert.ToInt32(newPC.keyboard_id),
-            Mouse_ID = Convert.ToInt32(newPC.mouse_id),
-            Speaker_ID = Convert.ToInt32(newPC.speaker_id),
+            Monitor_ID = Convert.ToInt32(newPC.monitor_id == "" ? "0" : newPC.monitor_id),
+            Headset_ID = Convert.ToInt32(newPC.headset_id == "" ? "0" : newPC.headset_id),
+            Keyboard_ID = Convert.ToInt32(newPC.keyboard_id == "" ? "0" : newPC.keyboard_id),
+            Mouse_ID = Convert.ToInt32(newPC.mouse_id == "" ? "0" : newPC.mouse_id),
+            Speaker_ID = Convert.ToInt32(newPC.speaker_id == "" ? "0" : newPC.speaker_id),
             Warranty = newPC.warranty
             
         };
@@ -1381,6 +1381,11 @@ public class Service : IService
     public c_ProductPageInfo getPart(int ID)
     {
         var part = (from p in db.PartsStocks where p.ID == ID select p).FirstOrDefault();
+
+        if(part == null)
+        {
+            return null;
+        }
 
         c_ProductPageInfo temp = new c_ProductPageInfo()
         {
@@ -2590,6 +2595,43 @@ public class Service : IService
         }
 
         return list;
+    }
+
+    public cPC getPCbyID(int ID)
+    {
+        List<cPC> list = new List<cPC>();
+        var pc = db.Pcs.Where(x => x.PC_ID.Equals(ID)).FirstOrDefault();
+        var part = db.PcStocks.Where(x => x.ID.Equals(ID)).FirstOrDefault();
+        cPC temp = new cPC
+        {
+            id = pc.PC_ID,
+            type = pc.PC_Type,
+            price = (double)part.Price,
+            case_id = Convert.ToString(pc.Case_ID),
+            mobo_id = Convert.ToString(pc.Mobo_ID),
+            cpu_id = Convert.ToString(pc.CPU_ID),
+            ram_id = Convert.ToString(pc.RAM_ID),
+            gpu_id = Convert.ToString(pc.GPU_ID),
+            cooler_id = Convert.ToString(pc.Cooler_ID),
+            ssd_id = Convert.ToString(pc.SSD_ID),
+            hdd_id = Convert.ToString(pc.HDD_ID),
+            psu_id = Convert.ToString(pc.PSU_ID),
+            os_id = Convert.ToString(pc.OS_ID),
+            fan_id = Convert.ToString(pc.Fan_ID),
+            num_fans = pc.Num_Fans,
+            num_ssd = pc.Num_SSD,
+            num_hdd = pc.Num_HDD,
+            monitor_id = Convert.ToString(pc.Monitor_ID),
+            headset_id = Convert.ToString(pc.Headset_ID),
+            keyboard_id = Convert.ToString(pc.Keyboard_ID),
+            mouse_id = Convert.ToString(pc.Mouse_ID),
+            speaker_id = Convert.ToString(pc.Speaker_ID),
+            warranty = pc.Warranty,
+            discount = part.Discount,
+            active = part.Active
+        };
+
+        return temp;
     }
 
 
@@ -5133,9 +5175,57 @@ public class Service : IService
         }
     }
 
-    public bool EditPC(cPC newPC, PartsStock newPart, int id)
+    public bool EditPC(cPC newPC, PcStock newPart, int id)
     {
-        throw new NotImplementedException();
+        var part = db.PcStocks.Where(x => x.ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var pc = db.Pcs.Where(x => x.PC_ID.Equals(id)).Select(x => x).FirstOrDefault();
+        var cart = db.PcCarts.Where(x => x.Pc_ID.Equals(id)).Select(x => x).FirstOrDefault();
+
+        if (cart != null)
+        {
+            cart.Pc_ID = id;
+            cart.Qua = newPart.Quantity;
+        }
+
+        part.PC_Type = newPC.type;
+        part.Quantity = newPart.Quantity;
+        part.Price = (decimal)newPC.price;
+        part.Active = newPC.active;
+        part.Discount = newPC.discount;
+        part.Image = newPart.Image;
+
+        pc.PC_ID = part.ID;
+        pc.Case_ID = Convert.ToInt32(newPC.case_id);
+        pc.Cooler_ID = Convert.ToInt32(newPC.cooler_id);
+        pc.CPU_ID = Convert.ToInt32(newPC.cpu_id);
+        pc.Fan_ID = Convert.ToInt32(newPC.fan_id);
+        pc.GPU_ID = Convert.ToInt32(newPC.gpu_id);
+        pc.HDD_ID = Convert.ToInt32(newPC.hdd_id);
+        pc.Headset_ID = Convert.ToInt32(newPC.headset_id);
+        pc.Keyboard_ID = Convert.ToInt32(newPC.keyboard_id);
+        pc.Mobo_ID = Convert.ToInt32(newPC.mobo_id);
+        pc.Monitor_ID = Convert.ToInt32(newPC.monitor_id);
+        pc.Mouse_ID = Convert.ToInt32(newPC.mouse_id);
+        pc.Num_Fans = newPC.num_fans;
+        pc.Num_HDD = newPC.num_hdd;
+        pc.Num_SSD = newPC.num_ssd;
+        pc.OS_ID = Convert.ToInt32(newPC.os_id);
+        pc.PSU_ID = Convert.ToInt32(newPC.psu_id);
+        pc.RAM_ID = Convert.ToInt32(newPC.ram_id);
+        pc.Speaker_ID = Convert.ToInt32(newPC.speaker_id);
+        pc.SSD_ID = Convert.ToInt32(newPC.ssd_id);
+        pc.PC_Type = newPC.type;
+        pc.Warranty = newPC.warranty;
+
+        try
+        {
+            db.SubmitChanges();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     public bool deletePC(int id)
@@ -5143,3 +5233,4 @@ public class Service : IService
         throw new NotImplementedException();
     }
 }
+                                                                                 

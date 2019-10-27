@@ -4,103 +4,118 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model CyberLlamaConsumerSite.CRUDService.cMobo
-
-<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
-<h1 class="centerText" style="margin:10px 0px 40px 0px">Edit Motherboard</h1>
-<hr color="white" />
+@using CyberLlamaConsumerSite.CRUDService
+@{ServiceClient sr = new ServiceClient();}
+<h1 class="centerText" style="margin:10px 0px 10px 0px">Edit Motherboard</h1>
 
 @using (Html.BeginForm("ChangeMobo", "EditProduct", FormMethod.Post))
 {
-    <div class="form-Input centerImage" style="display:none">
-        <label>id:</label>
-        @Html.TextBoxFor(m => m.id);
-    </div>
-    <div class="form-Input centerImage">
-        <label>Model:</label>
-        @Html.TextBoxFor(m => m.model)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Brand:</label>
-        @Html.TextBoxFor(m => m.brand)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Series:</label>
-        @Html.TextBoxFor(m => m.series)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Chpset:</label>
-        @Html.TextBoxFor(m => m.chipset)
+
+    <div class="row">
+        <div class="col-md-6 smallMargin-top">
+            <div class="borderedAddEditElement ">
+                <h4 class="centerText addEditFormTitle">General</h4>
+                <div class="form-Input " style="display:none">
+                    <label>id:</label>
+                    @Html.TextBoxFor(m => m.id);
+                </div>
+                <div class="form-Input " style="margin-top:30px;">
+                    <label>Model:</label>
+                    @Html.TextBoxFor(m => m.model)
+                </div>
+                <div class="form-Input ">
+                    <label>Brand:</label>
+                    @Html.TextBoxFor(m => m.brand)
+                </div>
+                <div class="form-Input ">
+                    <label>Series:</label>
+                    @Html.TextBoxFor(m => m.series)
+                </div>
+                <div class="form-Input ">
+                    <label>Chpset:</label>
+                    @{var chpsetList = sr.getAllCPU().Select(x => x.Chipset);}
+                    @Html.DropDownListFor(m => m.chipset, new SelectList(chpsetList.Select(x => x).Distinct()))
+                </div>
+
+                <div class="form-Input ">
+                    <label>Memory Type:</label>
+                    @{var type = sr.getAllRAM().Select(x => x.type);}
+                    @Html.DropDownListFor(m => m.memoryType, new SelectList(type.Select(x => x).Distinct()))
+                </div>
+                <div class="form-Input ">
+                    <label>max memory size:</label>
+                    @Html.TextBoxFor(m => m.max_mem_size)
+                </div>
+                <div class="form-Input ">
+                    <label>Storage:</label>
+                    @Html.TextBoxFor(m => m.storage)
+                </div>
+                <div class="form-Input ">
+                    <label>Form factor:</label>
+                    @Html.TextBoxFor(m => m.form_factor)
+                </div>
+                <div class="form-Input ">
+                    <label>warranty:</label>
+                    @Html.TextBoxFor(m => m.warranty)
+                </div>
+
+                <div class="form-Input ">
+                    <label>Active:</label>
+                    @Html.TextBoxFor(m => m.active)
+                </div>
+                <div class="form-Input ">
+                    <label>Price:</label>
+                    @Html.TextBoxFor(m => m.price)
+                </div>
+                <div class="form-Input ">
+                    <label>Quantity:</label>
+                    <input name="quantity" id="quantity" />
+                </div>
+                <div class="form-Input ">
+                    <label>Image Link:</label>
+                    <input name="image" id="image" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 smallMargin-top">
+            <div class="borderedAddEditElement ">
+                <h4 class="centerText addEditFormTitle">Additional</h4>
+                <div class="form-Input " style="margin-top:30px;">
+                    <label>Max Memory Speed:</label>
+                    @Html.TextBoxFor(m => m.max_mem_speed)
+                </div>
+                <div class="form-Input ">
+                    <label>LAN:</label>
+                    @Html.TextBoxFor(m => m.lan)
+                </div>
+                <div class="form-Input ">
+                    <label>expansion slots:</label>
+                    @Html.TextBoxFor(m => m.expansion_slots)
+                </div>
+                <div class="form-Input ">
+                    <label>Internal I/O connectors:</label>
+                    @Html.TextBoxFor(m => m.internal_IO)
+                </div>
+                <div class="form-Input ">
+                    <label>back Panel connectors:</label>
+                    @Html.TextBoxFor(m => m.back_panel_IO)
+                </div>
+
+                <div class="form-Input ">
+                    <label>OS Supported:</label>
+                    @Html.TextBoxFor(m => m.os_support)
+                </div>
+                <div class="form-Input ">
+                    <label>Notes:</label>
+                    @Html.TextBoxFor(m => m.notes)
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="form-Input centerImage">
-        <label>Memory Type:</label>
-        @Html.TextBoxFor(m => m.memoryType)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Max Memory Speed:</label>
-        @Html.TextBoxFor(m => m.max_mem_speed)
-    </div>
-    <div class="form-Input centerImage">
-        <label>max memory size:</label>
-        @Html.TextBoxFor(m => m.max_mem_size)
-    </div>
-    <div class="form-Input centerImage">
-        <label>LAN:</label>
-        @Html.TextBoxFor(m => m.lan)
-    </div>
-    <div class="form-Input centerImage">
-        <label>expansion slots:</label>
-        @Html.TextBoxFor(m => m.expansion_slots)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Storage:</label>
-        @Html.TextBoxFor(m => m.storage)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Internal I/O connectors:</label>
-        @Html.TextBoxFor(m => m.internal_IO)
-    </div>
-    <div class="form-Input centerImage">
-        <label>back Panel connectors:</label>
-        @Html.TextBoxFor(m => m.back_panel_IO)
-    </div>
-
-    <div class="form-Input centerImage">
-        <label>OS Supported:</label>
-        @Html.TextBoxFor(m => m.os_support)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Form factor:</label>
-        @Html.TextBoxFor(m => m.form_factor)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Notes:</label>
-        @Html.TextBoxFor(m => m.notes)
-    </div>
-    <div class="form-Input centerImage">
-        <label>warranty:</label>
-        @Html.TextBoxFor(m => m.warranty)
-    </div>
-
-    <div class="form-Input centerImage">
-        <label>Active:</label>
-        @Html.TextBoxFor(m => m.active)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Price:</label>
-        @Html.TextBoxFor(m => m.price)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Quantity:</label>
-        <input name="quantity" id="quantity" />
-    </div>
-    <div class="form-Input centerImage">
-        <label>Image Link:</label>
-        <input name="image" id="image" />
-    </div>
     <p color="red" style="text-align:center">@ViewBag.status</p>
-    <div class="form-Input centerImage login">
-        <input type="submit" value="Edit Motherboard" />
+    <div class="form-Input ">
+        <input class="AddEditButton centerImage" type="submit" value="Edit Motherboard" />
     </div>
 }
 

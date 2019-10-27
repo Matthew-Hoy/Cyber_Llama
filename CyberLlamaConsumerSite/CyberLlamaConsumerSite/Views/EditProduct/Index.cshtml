@@ -4,38 +4,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
-<h1 class="centerText" style="margin:10px 0px 40px 0px">Edit Product</h1>
-<hr color="white" />
-<div class="row" style="margin-top:3%;">
-    <form method="post" action="@Url.Action("EditProduct", "EditProduct")" style="width:100%">
-        <div class="col-md-6">
-            <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
-                <h3 class="centerText">Pc Parts: </h3>
-                <select style="width:70%" id="selectPart" name="product">
-                    <option>Graphics processing Unit</option>
-                    <option>Motherboard</option>
-                    <option>Random Access Memory</option>
-                    <option>Computer Processing Unit</option>
-                    <option>Air Cooler</option>
-                    <option>Liquid Cooler</option>
-                    <option>Solid State Drive</option>
-                    <option>Hard Drive</option>
-                    <option>PC Chassis</option>
-                    <option>Power Supply</option>
-                    <option>Case Fan</option>
-                    <option>Keyboard</option>
-                    <option>Mouse</option>
-                    <option>Mousepad</option>
-                    <option>Headset</option>
-                    <option>Speaker</option>
-                    <option>Microphone</option>
-                    <option>Monitor</option>
-                </select>
-                <button type="submit">Edit Part</button>
-            </div>
-        </div>
-    </form>
-</div>
+<h1 class="centerText" style="margin:10px 0px 10px 0px">Edit Product</h1>
+
+<form method="post" action="@Url.Action("EditProduct", "EditProduct")" style="width:100%">
+    <div style="margin-left: auto; margin-right: auto;margin-top:30px">
+        <select class="selectCategoryList" style="width:70%" id="selectPart" name="product" >
+            <option>Air Cooler</option>
+            <option>Case Fan</option>
+            <option>Computer Processing Unit</option>
+            <option>Graphics processing Unit</option>
+            <option>Hard Drive</option>
+            <option>Headset</option>
+            <option>Keyboard</option>
+            <option>Liquid Cooler</option>
+            <option>Microphone</option>
+            <option>Motherboard</option>
+            <option>Monitor</option>
+            <option>Mouse</option>
+            <option>Mousepad</option>
+            <option>PC</option>
+            <option>PC Chassis</option>
+            <option>Power Supply</option>
+            <option>Random Access Memory</option>
+            <option>Solid State Drive</option>
+            <option>Speaker</option>
+        </select>
+        <button style="margin-top:30px" class="AddEditButton centerImage" type="submit">Edit Part</button>
+    </div>
+</form>
 
 

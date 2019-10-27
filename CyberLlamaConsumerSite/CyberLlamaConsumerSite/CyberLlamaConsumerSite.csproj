@@ -577,6 +577,7 @@
     <Content Include="Views\EditProduct\Microphone.cshtml" />
     <Content Include="Views\EditProduct\Keyboard.cshtml" />
     <Content Include="Views\EditProduct\Headset.cshtml" />
+    <Content Include="Views\EditProduct\EditPC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

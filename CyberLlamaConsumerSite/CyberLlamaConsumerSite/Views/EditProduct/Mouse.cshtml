@@ -5,94 +5,106 @@
 }
 @model CyberLlamaConsumerSite.CRUDService.cMouse
 
-<img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
-<h1 class="centerText" style="margin:10px 0px 40px 0px">Edit Mouse</h1>
-<hr color="white" />
+<h1 class="centerText" style="margin:10px 0px 10px 0px">Edit Mouse</h1>
 
 @using (Html.BeginForm("ChangeMouse", "EditProduct", FormMethod.Post))
 {
-    <div class="form-Input centerImage" style="display:none">
-        <label>id:</label>
-        @Html.TextBoxFor(m => m.id);
-    </div>
-    <div class="form-Input centerImage">
-        <label>Model:</label>
-        @Html.TextBoxFor(m => m.model)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Brand:</label>
-        @Html.TextBoxFor(m => m.brand)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Series:</label>
-        @Html.TextBoxFor(m => m.series)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Sensor:</label>
-        @Html.TextBoxFor(m => m.sensor)
+
+    <div class="row">
+        <div class="col-md-6 smallMargin-top">
+            <div class="borderedAddEditElement ">
+                <h4 class="centerText addEditFormTitle">General</h4>
+                <div class="form-Input " style="display:none">
+                    <label>id:</label>
+                    @Html.TextBoxFor(m => m.id);
+                </div>
+                <div class="form-Input " style="margin-top:30px;">
+                    <label>Model:</label>
+                    @Html.TextBoxFor(m => m.model)
+                </div>
+                <div class="form-Input ">
+                    <label>Brand:</label>
+                    @Html.TextBoxFor(m => m.brand)
+                </div>
+                <div class="form-Input ">
+                    <label>Series:</label>
+                    @Html.TextBoxFor(m => m.series)
+                </div>
+                <div class="form-Input ">
+                    <label>warranty:</label>
+                    @Html.TextBoxFor(m => m.warranty)
+                </div>
+
+                <div class="form-Input ">
+                    <label>Active:</label>
+                    @Html.TextBoxFor(m => m.active)
+                </div>
+                <div class="form-Input ">
+                    <label>Price:</label>
+                    @Html.TextBoxFor(m => m.price)
+                </div>
+                <div class="form-Input ">
+                    <label>Quantity:</label>
+                    <input name="quantity" id="quantity" />
+                </div>
+                <div class="form-Input ">
+                    <label>Image Link:</label>
+                    <input name="image" id="image" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 smallMargin-top">
+            <div class="borderedAddEditElement ">
+                <h4 class="centerText addEditFormTitle">Additional</h4>
+                <div class="form-Input " style="margin-top:30px;">
+                    <label>Sensor:</label>
+                    @Html.TextBoxFor(m => m.sensor)
+                </div>
+
+                <div class="form-Input ">
+                    <label>Resolution:</label>
+                    @Html.TextBoxFor(m => m.resolution)
+                </div>
+                <div class="form-Input ">
+                    <label>Max Acceleration:</label>
+                    @Html.TextBoxFor(m => m.max_acceleration)
+                </div>
+                <div class="form-Input ">
+                    <label>Max Speed:</label>
+                    @Html.TextBoxFor(m => m.max_speed)
+                </div>
+                <div class="form-Input ">
+                    <label>Connection Type:</label>
+                    @Html.TextBoxFor(m => m.connection_type)
+                </div>
+                <div class="form-Input ">
+                    <label>PTFE Feet:</label>
+                    @Html.TextBoxFor(m => m.ptfe_feet)
+                </div>
+                <div class="form-Input ">
+                    <label>Battery:</label>
+                    @Html.TextBoxFor(m => m.battery)
+                </div>
+                <div class="form-Input ">
+                    <label>Dimensions:</label>
+                    @Html.TextBoxFor(m => m.dimensions)
+                </div>
+                <div class="form-Input ">
+                    <label>Weight:</label>
+                    @Html.TextBoxFor(m => m.weight)
+                </div>
+
+                <div class="form-Input ">
+                    <label>Cable Length:</label>
+                    @Html.TextBoxFor(m => m.cable_length)
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="form-Input centerImage">
-        <label>Resolution:</label>
-        @Html.TextBoxFor(m => m.resolution)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Max Acceleration:</label>
-        @Html.TextBoxFor(m => m.max_acceleration)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Max Speed:</label>
-        @Html.TextBoxFor(m => m.max_speed)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Connection Type:</label>
-        @Html.TextBoxFor(m => m.connection_type)
-    </div>
-    <div class="form-Input centerImage">
-        <label>PTFE Feet:</label>
-        @Html.TextBoxFor(m => m.ptfe_feet)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Battery:</label>
-        @Html.TextBoxFor(m => m.battery)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Dimensions:</label>
-        @Html.TextBoxFor(m => m.dimensions)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Weight:</label>
-        @Html.TextBoxFor(m => m.weight)
-    </div>
-
-    <div class="form-Input centerImage">
-        <label>Cable Length:</label>
-        @Html.TextBoxFor(m => m.cable_length)
-    </div>
-    <div class="form-Input centerImage">
-        <label>warranty:</label>
-        @Html.TextBoxFor(m => m.warranty)
-    </div>
-
-    <div class="form-Input centerImage">
-        <label>Active:</label>
-        @Html.TextBoxFor(m => m.active)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Price:</label>
-        @Html.TextBoxFor(m => m.price)
-    </div>
-    <div class="form-Input centerImage">
-        <label>Quantity:</label>
-        <input name="quantity" id="quantity" />
-    </div>
-    <div class="form-Input centerImage">
-        <label>Image Link:</label>
-        <input name="image" id="image" />
-    </div>
     <p color="red" style="text-align:center">@ViewBag.status</p>
-    <div class="form-Input centerImage login">
-        <input type="submit" value="Edit Mouse" />
+    <div class="form-Input ">
+        <input class="AddEditButton centerImage" type="submit" value="Edit Mouse" />
     </div>
 }
 

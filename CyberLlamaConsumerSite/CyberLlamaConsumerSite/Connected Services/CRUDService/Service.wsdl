@@ -116,6 +116,12 @@
   <wsdl:message name="IService_getAllPCparts_OutputMessage">
     <wsdl:part name="parameters" element="tns:getAllPCpartsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getPCbyID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPCbyID" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPCbyID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPCbyIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_deletePC_InputMessage">
     <wsdl:part name="parameters" element="tns:deletePC" />
   </wsdl:message>
@@ -957,6 +963,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllPCparts" message="tns:IService_getAllPCparts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllPCpartsResponse" message="tns:IService_getAllPCparts_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getPCbyID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPCbyID" message="tns:IService_getPCbyID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPCbyIDResponse" message="tns:IService_getPCbyID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="deletePC">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/deletePC" message="tns:IService_deletePC_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/deletePCResponse" message="tns:IService_deletePC_OutputMessage" />
@@ -1627,6 +1637,15 @@
     </wsdl:operation>
     <wsdl:operation name="getAllPCparts">
       <soap:operation soapAction="http://tempuri.org/IService/getAllPCparts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPCbyID">
+      <soap:operation soapAction="http://tempuri.org/IService/getPCbyID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

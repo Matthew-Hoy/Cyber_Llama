@@ -1,63 +1,76 @@
-﻿@using CyberLlamaConsumerSite.ServiceReference1;
-@{
-    string id = (string)ViewContext.RouteData.Values["id"];
-    ViewBag.Title = id;
-    ServiceClient sc = new ServiceClient();
-    dynamic products = sc.getAllParts(id);
+﻿@using CyberLlamaConsumerSite.CRUDService;
+@model List<CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo>
+<div class="sidenav">
+    <input value="Sort by Price" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "ProductPage", new {filter ="price", id = Model.FirstOrDefault().type})'" />
+    <input value="Sort by Name" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "ProductPage", new {filter = "name", id = Model.FirstOrDefault().type})'" />
+    <input value="Sort by Discount" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "ProductPage", new {filter = "discount", id = Model.FirstOrDefault().type})'" />
+</div>
+<div style="margin-left:100px">
+    @{
 
-    List<c_ProductPageInfo> prods = new List<c_ProductPageInfo>();
 
-
-    foreach (c_ProductPageInfo p in products)
-    {
-        prods.Add(p);
+        if (Model.Count == 0)
+        {
+            <h1 style="text-align:center">Woops!</h1>
+            <p style="text-align:center">You caught us, we have no products of this kind in stock...</p>
+            <hr />
+            <img src="~/Images/woops.png" alt="llama" class="llamaImage" />
+            <hr />
+            <p style="text-align:center">Hold on! Products are on there way!</p>
+        }
     }
 
-    if (prods.Count == 0)
-    {
-        <h1 style="text-align:center">Woops!</h1>
-        <p style="text-align:center">You caught us, we have no products of this kind in stock...</p>
+    @{
         <hr />
-        <img src="~/Images/woops.png" alt="llama" class="llamaImage" />
-        <hr />
-        <p style="text-align:center">Hold on! Products are on there way!</p>
+
+
+        foreach (c_ProductPageInfo p in Model)
+        {
+            String imageLink = p.image;
+            String model = p.model;
+            int price = p.price;
+            int quantity = p.Quantity;
+            int discount = p.discount;
+
+            <div class="card" style=" width: 280px; height: 400px;margin: 0 auto;border:1px solid white;margin:10px">
+                <div style="width:280px;height:180px;">
+                    <img class="centerCataloqueImage" src="@(imageLink)" alt="Ram" style="width:100%">
+                </div>
+                <div style="width:280px;height:70px;">
+                    <h3><a href="@Url.Action("Index", "PartInfo", new {id=p.ID})">@(model)</a></h3>
+                </div>
+                <p class="price">R@(price)</p>
+                <p style="margin-bottom:1px;">Quantity: @(quantity)</p>
+                <p style="margin-top:1px;margin-bottom:1px;">Discount: @(discount)%</p>
+                <p><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = p.ID })>Add to Cart</button></p>
+            </div>
+
+        }
     }
-}
 
-@{
-    <hr/>
-    foreach (c_ProductPageInfo p in prods)
-    {
-        String imageLink = p.image;
-        String model = p.model;
-        int price = p.price;
-        int quantity = p.Quantity;
-    
-        <div class="card">
-            <img src="@(imageLink)" alt="Ram" style="width:100%">
-            <h1><a href="@Url.Action("Index", "PartInfo", new {id=p.ID})">@(model)</a></h1>
-            <p class="price">R@(price)</p>
-            <p>Quantity: @(quantity)</p>
-            <p><button class="addCartLink" href=@Url.Action("AddToCart", new { ID = p.ID })>Add to Cart</button></p>
-        </div>
-    }
-}
+</div>
 
-    <script>
-        $(".addCartLink").click(function (e) {
-            e.preventDefault();
-            $.ajax({
-                url: $(this).attr("href"),
-                success: function () {
-                    alert("Added To Cart");
-                },
-                error: function () {
-                    alert("An error Occured, Login to access Cart");
-                }
+<div class="toasterCartSuccess">Item Added to Cart</div>
+<div class="toasterCartError">Unable to add item to cart</div>
 
-            });
+<script>
+    $(".addCartLink").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                var x = document.getElementsByClassName("toasterCartSuccess");
+                x[0].className += " show";
+                setTimeout(function(){ x[0].className = x[0].className.replace("show", ""); }, 3000);
+            },
+            error: function () {
+                 var x = document.getElementsByClassName("toasterCartError");
+                x[0].className += " show";
+                setTimeout(function(){ x[0].className = x[0].className.replace("show", ""); }, 3000);
+            }
         });
-    </script>
+    });
+</script>
 
 <style>
     .llamaImage {
@@ -74,12 +87,14 @@
         margin: auto;
         text-align: center;
         font-family: arial;
-        display:inline-block;
+        display: inline-block;
     }
 
     .price {
         color: grey;
         font-size: 22px;
+         margin-bottom:1px;
+        margin-top:1px;
     }
 
     .card button {
@@ -97,9 +112,10 @@
         .card button:hover {
             opacity: 0.7;
         }
-        .card  img {
-        max-height: 200px;
-        max-width: 100%;
+
+    .card img {
+        max-height: 180px;
+        max-width: 278px;
         height: auto;
         width: auto;
     }
