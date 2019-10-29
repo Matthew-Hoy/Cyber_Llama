@@ -17,7 +17,7 @@
 </head>
 <body style="background-color:#1f1e1f; padding-top:0px; color:#bfbfbf;">
     <!--JumboTron is the large banner at the top-->
-    <div class="jumbotron" style="margin-bottom:0px; padding: 2%">
+    <div class="jumbotron" style="margin-bottom:0px; padding: 0%; height:100px">
         <a class="navbar-brand" href=@Url.Action("Index", "Home")><img width="80" image height="120" src="~/Images/llama.png" /> </a>
         <h1 style="font-size:400%; max-width:400px; display:inline;">CyberLlama<br></h1>
     </div>
@@ -130,36 +130,41 @@
                     </a>
                 </li>
 
-                @{if (Session["UserID"] != null)
-                    {
-            <li class="nav-item">
-                <a href=@Url.Action("Index", "Invoice")><img src="~/Images/Invoice_Icon.png" class="MenuIcon" /></a>
-                <a class="nav-link" href=@Url.Action("Index", "Invoice")>
-                    Invoices
-                </a>
-            </li>
-}
-                }
+                <li class="nav-item dropdown">
+                    <a href="#"><img src="~/Images/computerIcon.png" class="MenuIcon" /></a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_desktop" href="#">
+                        Info
+                        <span class="caret"></span>
+                    </a>
 
-                <li class="nav-item">
-                    <a href=@Url.Action("Index", "About")><img src="~/Images/aboutIcon.png" class="MenuIcon" /></a>
-                    <a class="nav-link" href=@Url.Action("Index", "About")>
-                        ABOUT
-                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown_desktop">
+                        <a class="dropdown-item" href=@Url.Action("Index", "About")>About</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href=@Url.Action("Index", "Contact", new { id = "Business" })>Contact</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href=@Url.Action("Index", "FAQs", new { id = "Home" })>FAQs</a>
+                        <div class="dropdown-divider"></div>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a href=@Url.Action("Index", "Contact")><img src="~/Images/contactIcon.png" class="MenuIcon" /></a>
-                    <a class="nav-link" href=@Url.Action("Index", "Contact")>
-                        CONTACT
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href=@Url.Action("Index", "FAQs")><img src="~/Images/faqIcon.png" class="MenuIcon" /></a>
-                    <a class="nav-link" href=@Url.Action("Index", "FAQs")>
-                        FAQ's
-                    </a>
-                </li>
-
+                <!--  <li class="nav-item">
+            <a href=@Url.Action("Index", "About")><img src="~/Images/aboutIcon.png" class="MenuIcon" /></a>
+            <a class="nav-link" href=@Url.Action("Index", "About")>
+                ABOUT
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href=@Url.Action("Index", "Contact")><img src="~/Images/contactIcon.png" class="MenuIcon" /></a>
+            <a class="nav-link" href=@Url.Action("Index", "Contact")>
+                CONTACT
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href=@Url.Action("Index", "FAQs")><img src="~/Images/faqIcon.png" class="MenuIcon" /></a>
+            <a class="nav-link" href=@Url.Action("Index", "FAQs")>
+                FAQ's
+            </a>
+        </li>
+    -->
 
                 @{if (Session["UserID"] == null)
                     {
@@ -175,8 +180,8 @@
                 @{if (Session["UserID"] != null)
                     {
                         <li class="nav-item">
-                            <a href=@Url.Action("Index", "Profile")><img src="~/Images/ProfileIcon.png" class="MenuIcon" /></a>
-                            <a class="nav-link" href=@Url.Action("Index", "Profile")>
+                            <a href=@Url.Action("Index", "Invoice")><img src="~/Images/ProfileIcon.png" class="MenuIcon" /></a>
+                            <a class="nav-link" href=@Url.Action("Index", "Invoice")>
                                 Profile
                             </a>
                         </li>
@@ -185,47 +190,47 @@
 
 
 
-            @{ if (Session["UserID"] != null)
-    {
-        var id = Convert.ToInt32(Session["UserType"]);
-        if (id < 7)
+                @{ if (Session["UserID"] != null)
         {
-            <li class="nav-item dropdown">
-                <a href="#"><img src="~/Images/employeeIcon.png" class="MenuIcon" /></a>
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_laptop" href="#">
-                    Employee
-                    <span class="caret"></span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdown_desktop">
+            var id = Convert.ToInt32(Session["UserType"]);
+            if (id < 7)
+            {
+                <li class="nav-item dropdown">
+                    <a href="#"><img src="~/Images/employeeIcon.png" class="MenuIcon" /></a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_laptop" href="#">
+                        Employee
+                        <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown_desktop">
 
-                    @if (id == 3 || id < 2)
-                    {
-                        <a class="dropdown-item" href=@Url.Action("Index", "AddNewProduct")>Add Product</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href=@Url.Action("Index", "EditProduct")>Edit Product</a>
-                        <div class="dropdown-divider"></div>
-                    }
+                        @if (id == 3 || id < 2)
+            {
+                <a class="dropdown-item" href=@Url.Action("Index", "AddNewProduct")>Add Product</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href=@Url.Action("Index", "EditProduct")>Edit Product</a>
+                <div class="dropdown-divider"></div>
+}
 
-                    @if (id <= 2)
-                    {
-                        <a class="dropdown-item" href=@Url.Action("Index", "AddUser")>Add User</a>
-                        <div class="dropdown-divider"></div>
-                    }
+                        @if (id <= 2)
+            {
+                <a class="dropdown-item" href=@Url.Action("Index", "AddUser")>Add User</a>
+                <div class="dropdown-divider"></div>
+}
 
-                    @if (id <= 2)
-                    {
-                        <a class="dropdown-item">Administration</a>
-                        <div class="dropdown-divider"></div>
-                    }
+                        @if (id <= 2)
+            {
+                <a class="dropdown-item">Administration</a>
+                <div class="dropdown-divider"></div>
+}
 
-                    @if (id == 1)
-                    {
-                        <a class="dropdown-item" href=@Url.Action("Index", "Management")>Management</a>
-                        <div class="dropdown-divider"></div>
-                    }
+                        @if (id == 1)
+            {
+                <a class="dropdown-item" href=@Url.Action("Index", "Management")>Management</a>
+                <div class="dropdown-divider"></div>
+}
 
-                </div>
-            </li>
+                    </div>
+                </li>
 }
             <li class="nav-item">
                 <a href="#"><img src="~/Images/LoginIcon.png" class="MenuIcon" /></a>
@@ -257,7 +262,7 @@ else
 
             </li>
 }
-            }
+                }
             </ul>
         </div>
     </nav>
