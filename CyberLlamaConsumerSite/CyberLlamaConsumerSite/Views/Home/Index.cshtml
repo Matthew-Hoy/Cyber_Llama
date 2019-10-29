@@ -3,7 +3,7 @@
 }
 @model List<CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo>
 @using CyberLlamaConsumerSite.ServiceReference1;
-<div class="sidenav">
+<div class="sidenavHome">
     <input value="Sort by Price" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "Home", new {filter ="price"})'" />
     <input value="Sort by Name" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "Home", new {filter = "name"})'" />
     <input value="Sort by Discount" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "Home", new {filter = "discount"})'" />
@@ -172,7 +172,7 @@
     });
 
     window.addEventListener("scroll", function () {
-        var target = document.getElementsByClassName('sidenav');
+        var target = document.getElementsByClassName('sidenavHome');
         if (window.pageYOffset > 650) {
             target[0].style.display = "block";
         }
