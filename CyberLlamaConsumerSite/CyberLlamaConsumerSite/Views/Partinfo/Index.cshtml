@@ -9,11 +9,11 @@
 
     String imageLink = part.image;
     String model = part.model;
-    int price = part.price;
+    decimal price = Math.Round(part.price,2);
     int quantity = part.Quantity;
 
-     <h2 style="text-align:center"> Product Info </h2>
-     <hr style="color:white;"/>
+    <h2 style="text-align:center"> Product Info </h2>
+    <hr style="color:white;" />
 
     <div class="row">
         <div class="col" style="text-align:center">
@@ -30,1069 +30,1074 @@
                 <div class="col">@(model)</div>
             </div>
             @{if (part.type.Equals("Case"))
-        {
-            cCase c = sc.getCase(part.ID);
+                {
+                    cCase c = sc.getCase(part.ID);
 
-            <div class="row">
-                <div class="col" style="text-align:right">Brand: </div>
-                <div class="col">@(c.brand)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Series: </div>
-                <div class="col">@(c.series)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Colour: </div>
-                <div class="col">@(c.colour)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Dimensions: </div>
-                <div class="col">@(c.dimensions)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Net  Weight: </div>
-                <div class="col">@(c.net_weight)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Motherobard Form Factor: </div>
-                <div class="col">@(c.mobo_form_factor)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Side Window: </div>
-                <div class="col">@(c.side_window)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Number of HDD docks: </div>
-                <div class="col">@(c.num_hdd_drives)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Nuber od SSD docks: </div>
-                <div class="col">@(c.num_ssd_drives)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Front I/O: </div>
-                <div class="col">@(c.front_io)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Expansion Slots: </div>
-                <div class="col">@(c.expansion_slots)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Fan support (Front/Top/Back/Bottom): </div>
-                <div class="col">@(c.num_front_fans) / @(c.num_top_fans) / @(c.num_back_fans) / @(c.num_bottom_fans)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Radiator Support (Top/Front): </div>
-                <div class="col">@(c.top_rad_length) / @(c.front_rad_length)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Max GPU Length: </div>
-                <div class="col">@(c.gpu_max_length)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right">Max Air Cooler Height: </div>
-                <div class="col">@(c.cpu_cooler_max_height)</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align:right"> Warranty: </div>
-                <div class="col">@(c.warranty)</div>
-            </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Colour: </div>
+                        <div class="col">@(c.colour)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Dimensions: </div>
+                        <div class="col">@(c.dimensions)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Net  Weight: </div>
+                        <div class="col">@(c.net_weight)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Motherobard Form Factor: </div>
+                        <div class="col">@(c.mobo_form_factor)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Side Window: </div>
+                        <div class="col">@(c.side_window)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Number of HDD docks: </div>
+                        <div class="col">@(c.num_hdd_drives)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Nuber od SSD docks: </div>
+                        <div class="col">@(c.num_ssd_drives)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Front I/O: </div>
+                        <div class="col">@(c.front_io)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Expansion Slots: </div>
+                        <div class="col">@(c.expansion_slots)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Fan support (Front/Top/Back/Bottom): </div>
+                        <div class="col">@(c.num_front_fans) / @(c.num_top_fans) / @(c.num_back_fans) / @(c.num_bottom_fans)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Radiator Support (Top/Front): </div>
+                        <div class="col">@(c.top_rad_length) / @(c.front_rad_length)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max GPU Length: </div>
+                        <div class="col">@(c.gpu_max_length)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Air Cooler Height: </div>
+                        <div class="col">@(c.cpu_cooler_max_height)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("Motherboard"))
-{
-    cMobo c = sc.getMobo(part.ID);
+                if (part.type.Equals("Motherboard"))
+                {
+                    cMobo c = sc.getMobo(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Chipset: </div>
-            <div class="col">@(c.chipset)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Memory Type: </div>
-            <div class="col">@(c.memoryType)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Memory Capacity: </div>
-            <div class="col">@(c.max_mem_size)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Memory Speed: </div>
-            <div class="col">@(c.max_mem_speed)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">LAN: </div>
-            <div class="col">@(c.lan)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Expansion Slots: </div>
-            <div class="col">@(c.expansion_slots)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Storage: </div>
-            <div class="col">@(c.storage)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Internal I/O: </div>
-            <div class="col">@(c.internal_IO)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Back Panel Connectors: </div>
-            <div class="col">@(c.back_panel_IO)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">OS support: </div>
-            <div class="col">@(c.os_support)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Form Factor: </div>
-            <div class="col">@(c.form_factor)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Notes: </div>
-            <div class="col">@(c.notes)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Chipset: </div>
+                        <div class="col">@(c.chipset)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Memory Type: </div>
+                        <div class="col">@(c.memoryType)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Memory Capacity: </div>
+                        <div class="col">@(c.max_mem_size)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Memory Speed: </div>
+                        <div class="col">@(c.max_mem_speed)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">LAN: </div>
+                        <div class="col">@(c.lan)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Expansion Slots: </div>
+                        <div class="col">@(c.expansion_slots)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Storage: </div>
+                        <div class="col">@(c.storage)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Internal I/O: </div>
+                        <div class="col">@(c.internal_IO)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Back Panel Connectors: </div>
+                        <div class="col">@(c.back_panel_IO)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">OS support: </div>
+                        <div class="col">@(c.os_support)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Form Factor: </div>
+                        <div class="col">@(c.form_factor)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Notes: </div>
+                        <div class="col">@(c.notes)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("RAM"))
-{
-cRAM c = sc.getRAM(part.ID);
+                if (part.type.Equals("RAM"))
+                {
+                    cRAM c = sc.getRAM(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Capacity: </div>
-            <div class="col">@(c.capacity) GB</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Memory Type: </div>
-            <div class="col">@(c.type)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Speed: </div>
-            <div class="col">@(c.speed) MHz</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Latency: </div>
-            <div class="col">@(c.latency)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Voltage: </div>
-            <div class="col">@(c.voltage)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Channel Configuration: </div>
-            <div class="col">@(c.channel_config)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Height: </div>
-            <div class="col">@(c.height) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Capacity: </div>
+                        <div class="col">@(c.capacity) GB</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Memory Type: </div>
+                        <div class="col">@(c.type)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Speed: </div>
+                        <div class="col">@(c.speed) MHz</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Latency: </div>
+                        <div class="col">@(c.latency)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Voltage: </div>
+                        <div class="col">@(c.voltage)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Channel Configuration: </div>
+                        <div class="col">@(c.channel_config)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Height: </div>
+                        <div class="col">@(c.height) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("GPU"))
-{
-cGPU c = sc.getGPU(part.ID);
+                if (part.type.Equals("GPU"))
+                {
+                    cGPU c = sc.getGPU(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Manufacturer: </div>
-            <div class="col">@(c.manufacturer)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Base Clock Speed: </div>
-            <div class="col">@(c.base_clock)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Boost Clock Speed: </div>
-            <div class="col">@(c.boost_clock)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Stream Processor: </div>
-            <div class="col">@(c.stream_proccessors)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Memory Clock Speed: </div>
-            <div class="col">@(c.mem_speed)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Memory Capacity: </div>
-            <div class="col">@(c.mem_size)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Memory Type: </div>
-            <div class="col">@(c.mem_type)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Ports: </div>
-            <div class="col">@(c.ports)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Digital Resolution: </div>
-            <div class="col">@(c.max_resolution)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">VR Ready: </div>
-            <div class="col">@(c.vr_ready)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Recommended PSU Power: </div>
-            <div class="col">@(c.recommended_psu_power)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Form Factor: </div>
-            <div class="col">@(c.form_factor)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Slot Width: </div>
-            <div class="col">@(c.slot_width)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Length: </div>
-            <div class="col">@(c.length) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Height: </div>
-            <div class="col">@(c.height) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Manufacturer: </div>
+                        <div class="col">@(c.manufacturer)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Base Clock Speed: </div>
+                        <div class="col">@(c.base_clock)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Boost Clock Speed: </div>
+                        <div class="col">@(c.boost_clock)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Stream Processor: </div>
+                        <div class="col">@(c.stream_proccessors)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Memory Clock Speed: </div>
+                        <div class="col">@(c.mem_speed)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Memory Capacity: </div>
+                        <div class="col">@(c.mem_size)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Memory Type: </div>
+                        <div class="col">@(c.mem_type)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Ports: </div>
+                        <div class="col">@(c.ports)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Digital Resolution: </div>
+                        <div class="col">@(c.max_resolution)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">VR Ready: </div>
+                        <div class="col">@(c.vr_ready)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Recommended PSU Power: </div>
+                        <div class="col">@(c.recommended_psu_power)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Form Factor: </div>
+                        <div class="col">@(c.form_factor)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Slot Width: </div>
+                        <div class="col">@(c.slot_width)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Length: </div>
+                        <div class="col">@(c.length) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Height: </div>
+                        <div class="col">@(c.height) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("CPU"))
-{
-cCPU c = sc.getCPU(part.ID);
+                if (part.type.Equals("CPU"))
+                {
+                    cCPU c = sc.getCPU(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Chipset: </div>
-            <div class="col">@(c.Chipset)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Cores: </div>
-            <div class="col">@(c.cores)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Threads: </div>
-            <div class="col">@(c.threads)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Base Clock Speed: </div>
-            <div class="col">@(c.base_clock)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Boost Clock Speed: </div>
-            <div class="col">@(c.boost_clock)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Total Cache: </div>
-            <div class="col">@(c.total_cache)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">TDP: </div>
-            <div class="col">@(c.tdp)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Operating Temperature: </div>
-            <div class="col">@(c.max_temp) 'C</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Memory Speed: </div>
-            <div class="col">@(c.max_mem_speed)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Menory Type: </div>
-            <div class="col">@(c.mem_type)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Memory Channels: </div>
-            <div class="col">@(c.mem_channels)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Chipset: </div>
+                        <div class="col">@(c.Chipset)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Cores: </div>
+                        <div class="col">@(c.cores)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Threads: </div>
+                        <div class="col">@(c.threads)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Base Clock Speed: </div>
+                        <div class="col">@(c.base_clock)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Boost Clock Speed: </div>
+                        <div class="col">@(c.boost_clock)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Total Cache: </div>
+                        <div class="col">@(c.total_cache)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">TDP: </div>
+                        <div class="col">@(c.tdp)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Operating Temperature: </div>
+                        <div class="col">@(c.max_temp) 'C</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Memory Speed: </div>
+                        <div class="col">@(c.max_mem_speed)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Menory Type: </div>
+                        <div class="col">@(c.mem_type)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Memory Channels: </div>
+                        <div class="col">@(c.mem_channels)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("AirCooler"))
-{
-cAirCooler c = sc.getAirCooler(part.ID);
+                if (part.type.Equals("AirCooler"))
+                {
+                    cAirCooler c = sc.getAirCooler(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Sockets Supported: </div>
-            <div class="col">@(c.chipset)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Fan Size: </div>
-            <div class="col">@(c.fan_size) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Fan RPM: </div>
-            <div class="col">@(c.fan_rpm) rpm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Air Flow: </div>
-            <div class="col">@(c.air_flow)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Noise Level: </div>
-            <div class="col">@(c.noise_level)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Power Connector: </div>
-            <div class="col">@(c.power_connector)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Colour: </div>
-            <div class="col">@(c.colour)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Materials: </div>
-            <div class="col">@(c.materials)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Length: </div>
-            <div class="col">@(c.length) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Height: </div>
-            <div class="col">@(c.height) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Width: </div>
-            <div class="col">@(c.width)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Sockets Supported: </div>
+                        <div class="col">@(c.chipset)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Fan Size: </div>
+                        <div class="col">@(c.fan_size) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Fan RPM: </div>
+                        <div class="col">@(c.fan_rpm) rpm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Air Flow: </div>
+                        <div class="col">@(c.air_flow)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Noise Level: </div>
+                        <div class="col">@(c.noise_level)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Power Connector: </div>
+                        <div class="col">@(c.power_connector)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Colour: </div>
+                        <div class="col">@(c.colour)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Materials: </div>
+                        <div class="col">@(c.materials)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Length: </div>
+                        <div class="col">@(c.length) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Height: </div>
+                        <div class="col">@(c.height) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Width: </div>
+                        <div class="col">@(c.width)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
 
-}
+                }
 
-if (part.type.Equals("LiquidCooler"))
-{
-cLiquidCooler c = sc.getLiquidCooler(part.ID);
+                if (part.type.Equals("LiquidCooler"))
+                {
+                    cLiquidCooler c = sc.getLiquidCooler(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Sockets Supported: </div>
-            <div class="col">@(c.sockets)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Fan Size: </div>
-            <div class="col">@(c.fan_size) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Radiator Materials: </div>
-            <div class="col">@(c.rad_mats)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Radiator Length: </div>
-            <div class="col">@(c.rad_length) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Radiator Width: </div>
-            <div class="col">@(c.rad_width) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Radiator Height: </div>
-            <div class="col">@(c.rad_height) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Tube Length: </div>
-            <div class="col">@(c.tube_length)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Tube Material: </div>
-            <div class="col">@(c.tube_mats)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Color: </div>
-            <div class="col">@(c.color)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">RGB: </div>
-            <div class="col">@(c.rgb)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Sockets Supported: </div>
+                        <div class="col">@(c.sockets)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Fan Size: </div>
+                        <div class="col">@(c.fan_size) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Radiator Materials: </div>
+                        <div class="col">@(c.rad_mats)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Radiator Length: </div>
+                        <div class="col">@(c.rad_length) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Radiator Width: </div>
+                        <div class="col">@(c.rad_width) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Radiator Height: </div>
+                        <div class="col">@(c.rad_height) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Tube Length: </div>
+                        <div class="col">@(c.tube_length)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Tube Material: </div>
+                        <div class="col">@(c.tube_mats)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Color: </div>
+                        <div class="col">@(c.color)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">RGB: </div>
+                        <div class="col">@(c.rgb)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
 
-}
+                }
 
-if (part.type.Equals("SSD"))
-{
-cSSD c = sc.getSSD(part.ID);
+                if (part.type.Equals("SSD"))
+                {
+                    cSSD c = sc.getSSD(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Form Factor: </div>
-            <div class="col">@(c.form_factor)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Capacity: </div>
-            <div class="col">@(c.capacity)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Interface Type: </div>
-            <div class="col">@(c.interface_type)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Length: </div>
-            <div class="col">@(c.length) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Width: </div>
-            <div class="col">@(c.width) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Sequantial Read: </div>
-            <div class="col">@(c.max_seq_read)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Sequaltial Write: </div>
-            <div class="col">@(c.max_seq_write)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Random Read: </div>
-            <div class="col">@(c.random_read)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Random Write: </div>
-            <div class="col">@(c.random_write)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">MTBF: </div>
-            <div class="col">@(c.mtbf)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Operating Temperature: </div>
-            <div class="col">@(c.operating_temp) 'C</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Power Usage: </div>
-            <div class="col">@(c.max_power_usage)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Form Factor: </div>
+                        <div class="col">@(c.form_factor)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Capacity: </div>
+                        <div class="col">@(c.capacity)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Interface Type: </div>
+                        <div class="col">@(c.interface_type)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Length: </div>
+                        <div class="col">@(c.length) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Width: </div>
+                        <div class="col">@(c.width) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Sequantial Read: </div>
+                        <div class="col">@(c.max_seq_read)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Sequaltial Write: </div>
+                        <div class="col">@(c.max_seq_write)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Random Read: </div>
+                        <div class="col">@(c.random_read)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Random Write: </div>
+                        <div class="col">@(c.random_write)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">MTBF: </div>
+                        <div class="col">@(c.mtbf)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Operating Temperature: </div>
+                        <div class="col">@(c.operating_temp) 'C</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Power Usage: </div>
+                        <div class="col">@(c.max_power_usage)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("HDD"))
-{
-cHDD c = sc.getHDD(part.ID);
+                if (part.type.Equals("HDD"))
+                {
+                    cHDD c = sc.getHDD(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Interface Type: </div>
-            <div class="col">@(c.interface_type)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Size: </div>
-            <div class="col">@(c.size)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Sustained Transfer Rate: </div>
-            <div class="col">@(c.max_sustained_transfer_rate)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Rotational Speed: </div>
-            <div class="col">@(c.rotational_speed)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Load/Unload Cycles: </div>
-            <div class="col">@(c.load_unload_cycles)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Power Usage: </div>
-            <div class="col">@(c.avg_power_usage)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Operating Temperature: </div>
-            <div class="col">@(c.operation_temp) 'C</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Weight: </div>
-            <div class="col">@(c.weight)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Interface Type: </div>
+                        <div class="col">@(c.interface_type)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Size: </div>
+                        <div class="col">@(c.size)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Sustained Transfer Rate: </div>
+                        <div class="col">@(c.max_sustained_transfer_rate)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Rotational Speed: </div>
+                        <div class="col">@(c.rotational_speed)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Load/Unload Cycles: </div>
+                        <div class="col">@(c.load_unload_cycles)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Power Usage: </div>
+                        <div class="col">@(c.avg_power_usage)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Operating Temperature: </div>
+                        <div class="col">@(c.operation_temp) 'C</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Weight: </div>
+                        <div class="col">@(c.weight)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("PSU"))
-{
-cPSU c = sc.getPSU(part.ID);
+                if (part.type.Equals("PSU"))
+                {
+                    cPSU c = sc.getPSU(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Power: </div>
-            <div class="col">@(c.Power) W</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Certification: </div>
-            <div class="col">@(c.certification)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Modular: </div>
-            <div class="col">@(c.modular)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Connectors: </div>
-            <div class="col">@(c.connectors)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">MTBF: </div>
-            <div class="col">@(c.mtbf)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Fan Size: </div>
-            <div class="col">@(c.fan_size) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Cables: </div>
-            <div class="col">@(c.cables)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Dimensions: </div>
-            <div class="col">@(c.dimensions)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Power: </div>
+                        <div class="col">@(c.Power) W</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Certification: </div>
+                        <div class="col">@(c.certification)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Modular: </div>
+                        <div class="col">@(c.modular)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Connectors: </div>
+                        <div class="col">@(c.connectors)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">MTBF: </div>
+                        <div class="col">@(c.mtbf)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Fan Size: </div>
+                        <div class="col">@(c.fan_size) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Cables: </div>
+                        <div class="col">@(c.cables)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Dimensions: </div>
+                        <div class="col">@(c.dimensions)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("Fan"))
-{
-cFan c = sc.getFan(part.ID);
+                if (part.type.Equals("Fan"))
+                {
+                    cFan c = sc.getFan(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Size: </div>
-            <div class="col">@(c.size) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">RPM: </div>
-            <div class="col">@(c.rpm) rpm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Air Flow: </div>
-            <div class="col">@(c.max_air_flow)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Noise: </div>
-            <div class="col">@(c.noise)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Static Pressure: </div>
-            <div class="col">@(c.static_pressure) </div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Input Voltage: </div>
-            <div class="col">@(c.input_voltage)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">MTBF: </div>
-            <div class="col">@(c.mtbf) hours</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Cable Length: </div>
-            <div class="col">@(c.cable_length)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Number of Fans: </div>
-            <div class="col">@(c.num_fans)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Size: </div>
+                        <div class="col">@(c.size) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">RPM: </div>
+                        <div class="col">@(c.rpm) rpm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Air Flow: </div>
+                        <div class="col">@(c.max_air_flow)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Noise: </div>
+                        <div class="col">@(c.noise)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Static Pressure: </div>
+                        <div class="col">@(c.static_pressure) </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Input Voltage: </div>
+                        <div class="col">@(c.input_voltage)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">MTBF: </div>
+                        <div class="col">@(c.mtbf) hours</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Cable Length: </div>
+                        <div class="col">@(c.cable_length)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Number of Fans: </div>
+                        <div class="col">@(c.num_fans)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("Headset"))
-{
-cHeadset c = sc.getHeadset(part.ID);
+                if (part.type.Equals("Headset"))
+                {
+                    cHeadset c = sc.getHeadset(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Cabel Length: </div>
-            <div class="col">@(c.cable_length) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Connector: </div>
-            <div class="col">@(c.connector)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Frequency Response: </div>
-            <div class="col">@(c.frequency_response)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Microphone: </div>
-            <div class="col">@(c.microphone)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Microphone Frequency Response: </div>
-            <div class="col">@(c.mp_frequency_response) </div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Microphone Pickup Pattern: </div>
-            <div class="col">@(c.mp_pickup_pattern)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Colour: </div>
-            <div class="col">@(c.colour)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Wearing Style: </div>
-            <div class="col">@(c.wearing_style)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Cabel Length: </div>
+                        <div class="col">@(c.cable_length) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Connector: </div>
+                        <div class="col">@(c.connector)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Frequency Response: </div>
+                        <div class="col">@(c.frequency_response)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Microphone: </div>
+                        <div class="col">@(c.microphone)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Microphone Frequency Response: </div>
+                        <div class="col">@(c.mp_frequency_response) </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Microphone Pickup Pattern: </div>
+                        <div class="col">@(c.mp_pickup_pattern)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Colour: </div>
+                        <div class="col">@(c.colour)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Wearing Style: </div>
+                        <div class="col">@(c.wearing_style)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("Keyboard"))
-{
-cKeyboard c = sc.getKeyboard(part.ID);
+                if (part.type.Equals("Keyboard"))
+                {
+                    cKeyboard c = sc.getKeyboard(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Switches: </div>
-            <div class="col">@(c.switches) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Connector: </div>
-            <div class="col">@(c.connector)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Programmable Macro Keys: </div>
-            <div class="col">@(c.programmable_macros)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">LED Backlight: </div>
-            <div class="col">@(c.led_backlight)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> Multimedia keys: </div>
-            <div class="col">@(c.multimedia_keys) </div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Material: </div>
-            <div class="col">@(c.material)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Dimensions: </div>
-            <div class="col">@(c.dimensions)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Weight: </div>
-            <div class="col">@(c.weight)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Switches: </div>
+                        <div class="col">@(c.switches) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Connector: </div>
+                        <div class="col">@(c.connector)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Programmable Macro Keys: </div>
+                        <div class="col">@(c.programmable_macros)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">LED Backlight: </div>
+                        <div class="col">@(c.led_backlight)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> Multimedia keys: </div>
+                        <div class="col">@(c.multimedia_keys) </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Material: </div>
+                        <div class="col">@(c.material)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Dimensions: </div>
+                        <div class="col">@(c.dimensions)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Weight: </div>
+                        <div class="col">@(c.weight)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("Mouse"))
-{
-cMouse c = sc.getMouse(part.ID);
+                if (part.type.Equals("Mouse"))
+                {
+                    cMouse c = sc.getMouse(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Sensor: </div>
-            <div class="col">@(c.sensor) mm</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Resolution: </div>
-            <div class="col">@(c.resolution)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Max Acceleration: </div>
-            <div class="col">@(c.max_acceleration)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Connection Type: </div>
-            <div class="col">@(c.connection_type)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right"> PTFE FeetDurability: </div>
-            <div class="col">@(c.ptfe_feet) </div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Battery: </div>
-            <div class="col">@(c.battery)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Dimensions: </div>
-            <div class="col">@(c.dimensions)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Weight: </div>
-            <div class="col">@(c.weight)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Cable Length: </div>
-            <div class="col">@(c.cable_length)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Sensor: </div>
+                        <div class="col">@(c.sensor) mm</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Resolution: </div>
+                        <div class="col">@(c.resolution)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Max Acceleration: </div>
+                        <div class="col">@(c.max_acceleration)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Connection Type: </div>
+                        <div class="col">@(c.connection_type)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right"> PTFE FeetDurability: </div>
+                        <div class="col">@(c.ptfe_feet) </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Battery: </div>
+                        <div class="col">@(c.battery)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Dimensions: </div>
+                        <div class="col">@(c.dimensions)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Weight: </div>
+                        <div class="col">@(c.weight)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Cable Length: </div>
+                        <div class="col">@(c.cable_length)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("Mousepad"))
-{
-cMousePad c = sc.getMousepad(part.ID);
+                if (part.type.Equals("Mousepad"))
+                {
+                    cMousePad c = sc.getMousepad(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Colour: </div>
-            <div class="col">@(c.colour)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Materials: </div>
-            <div class="col">@(c.materials)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Pad Base: </div>
-            <div class="col">@(c.pad_base)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Dimensions: </div>
-            <div class="col">@(c.dimensions)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Colour: </div>
+                        <div class="col">@(c.colour)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Materials: </div>
+                        <div class="col">@(c.materials)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Pad Base: </div>
+                        <div class="col">@(c.pad_base)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Dimensions: </div>
+                        <div class="col">@(c.dimensions)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("Speaker"))
-{
-cSpeaker c = sc.getSpeaker(part.ID);
+                if (part.type.Equals("Speaker"))
+                {
+                    cSpeaker c = sc.getSpeaker(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Satellite Dimensions: </div>
-            <div class="col">@(c.satellite_dimensions)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Satellite Weight: </div>
-            <div class="col">@(c.satellite_weight)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Subwoofer Dimensions: </div>
-            <div class="col">@(c.subwoofer_dimensions)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Subwoofer Weight: </div>
-            <div class="col">@(c.subwoofer_weight)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Controls: </div>
-            <div class="col">@(c.controls)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">System Requirements: </div>
-            <div class="col">@(c.system_requirements)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Features: </div>
-            <div class="col">@(c.features)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Satellite Dimensions: </div>
+                        <div class="col">@(c.satellite_dimensions)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Satellite Weight: </div>
+                        <div class="col">@(c.satellite_weight)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Subwoofer Dimensions: </div>
+                        <div class="col">@(c.subwoofer_dimensions)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Subwoofer Weight: </div>
+                        <div class="col">@(c.subwoofer_weight)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Controls: </div>
+                        <div class="col">@(c.controls)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">System Requirements: </div>
+                        <div class="col">@(c.system_requirements)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Features: </div>
+                        <div class="col">@(c.features)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("Monitor"))
-{
-cMonitor c = sc.getMonitor(part.ID);
+                if (part.type.Equals("Monitor"))
+                {
+                    cMonitor c = sc.getMonitor(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Screen Size: </div>
-            <div class="col">@(c.screen_size)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Screen Ratio: </div>
-            <div class="col">@(c.screen_ratio)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Brightness: </div>
-            <div class="col">@(c.brightness)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Contrast Ratio: </div>
-            <div class="col">@(c.contrast_ratio)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Viewing Angle: </div>
-            <div class="col">@(c.viewing_angle)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Response Time: </div>
-            <div class="col">@(c.response_time)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Panel Type: </div>
-            <div class="col">@(c.panel_type)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Screen Size: </div>
+                        <div class="col">@(c.screen_size)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Screen Ratio: </div>
+                        <div class="col">@(c.screen_ratio)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brightness: </div>
+                        <div class="col">@(c.brightness)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Contrast Ratio: </div>
+                        <div class="col">@(c.contrast_ratio)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Viewing Angle: </div>
+                        <div class="col">@(c.viewing_angle)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Response Time: </div>
+                        <div class="col">@(c.response_time)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Panel Type: </div>
+                        <div class="col">@(c.panel_type)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Refresh Rate: </div>
-            <div class="col">@(c.refresh_rate)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Resolution: </div>
-            <div class="col">@(c.resolution)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Colours: </div>
-            <div class="col">@(c.colours)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Display Port: </div>
-            <div class="col">@(c.display_port)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">HDMI: </div>
-            <div class="col">@(c.hdmi)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">VGA: </div>
-            <div class="col">@(c.vga)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Speakers: </div>
-            <div class="col">@(c.speakers)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Swivel: </div>
-            <div class="col">@(c.swivel)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Tilt: </div>
-            <div class="col">@(c.tilt)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Pivot: </div>
-            <div class="col">@(c.pivot)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-}
+                    <div class="row">
+                        <div class="col" style="text-align:right">Refresh Rate: </div>
+                        <div class="col">@(c.refresh_rate)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Resolution: </div>
+                        <div class="col">@(c.resolution)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Colours: </div>
+                        <div class="col">@(c.colours)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Display Port: </div>
+                        <div class="col">@(c.display_port)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">HDMI: </div>
+                        <div class="col">@(c.hdmi)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">VGA: </div>
+                        <div class="col">@(c.vga)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Speakers: </div>
+                        <div class="col">@(c.speakers)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Swivel: </div>
+                        <div class="col">@(c.swivel)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Tilt: </div>
+                        <div class="col">@(c.tilt)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Pivot: </div>
+                        <div class="col">@(c.pivot)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
 
-if (part.type.Equals("Microphone"))
-{
-cMicrophone c = sc.getMicrophone(part.ID);
+                if (part.type.Equals("Microphone"))
+                {
+                    cMicrophone c = sc.getMicrophone(part.ID);
 
-        <div class="row">
-            <div class="col" style="text-align:right">Brand: </div>
-            <div class="col">@(c.brand)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Series: </div>
-            <div class="col">@(c.series)</div>
-        </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Brand: </div>
+                        <div class="col">@(c.brand)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Series: </div>
+                        <div class="col">@(c.series)</div>
+                    </div>
 
-        <div class="row">
-            <div class="col" style="text-align:right">Pick Up Pattern: </div>
-            <div class="col">@(c.pick_up_pattern)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Frequency Response: </div>
-            <div class="col">@(c.frequency_response)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Sensitivity: </div>
-            <div class="col">@(c.sensitivity)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Cable Length: </div>
-            <div class="col">@(c.cable_length)</div>
-        </div>
-        <div class="row">
-            <div class="col" style="text-align:right">Warranty: </div>
-            <div class="col">@(c.warranty)</div>
-        </div>
-    }
+                    <div class="row">
+                        <div class="col" style="text-align:right">Pick Up Pattern: </div>
+                        <div class="col">@(c.pick_up_pattern)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Frequency Response: </div>
+                        <div class="col">@(c.frequency_response)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Sensitivity: </div>
+                        <div class="col">@(c.sensitivity)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Cable Length: </div>
+                        <div class="col">@(c.cable_length)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align:right">Warranty: </div>
+                        <div class="col">@(c.warranty)</div>
+                    </div>
+                }
             }
         </div>
     </div>
 }
+<div class="toasterCartSuccess">Item Added to Cart</div>
+<div class="toasterCartError">Unable to add item to cart</div>
+<script>
+    $(".addCartLink").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                var x = document.getElementsByClassName("toasterCartSuccess");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
+            },
+            error: function () {
+                var x = document.getElementsByClassName("toasterCartError");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
+            }
 
-    <script>
-        $(".addCartLink").click(function (e) {
-            e.preventDefault();
-            $.ajax({
-                url: $(this).attr("href"),
-                success: function () {
-                    alert("Added To Cart");
-                },
-                error: function () {
-                    alert("An error Occured, Login to access Cart");
-                }
-
-            });
         });
-    </script>
+    });
+</script>
 
-    <style>
-        button {
-            border: none;
-            outline: 0;
-            padding: 12px;
-            color: white;
-            background-color: #000;
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-        }
+<style>
+    button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
 
         button:hover {
             opacity: 0.7;
         }
-    </style>
+</style>
 

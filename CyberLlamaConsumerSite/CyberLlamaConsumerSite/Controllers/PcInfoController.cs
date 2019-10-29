@@ -18,10 +18,23 @@ namespace CyberLlamaConsumerSite.Controllers
         public void AddToCart(int ID)
         {
             CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
-            if(Session["UserID"] != null)
+            if (Session["UserID"] != null)
             {
                 sc.addToPcCart(Convert.ToInt32(Session["UserID"]), ID, 1, 100);
 
+            }
+            else if (Session["PartCart"] != null)
+            {
+                List<int> cartIds = (List<int>)Session["PartCart"];
+                if (cartIds.Where(x => x.Equals(ID)).Select(y => y) == null)
+                {
+                    cartIds.Add(ID);
+                }
+
+            }
+            else if (Session["PartCart"] == null)
+            {
+                Session["PartCart"] = new List<int> { ID };
             }
             else
             {

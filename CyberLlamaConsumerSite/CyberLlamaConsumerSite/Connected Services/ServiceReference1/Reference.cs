@@ -1627,7 +1627,7 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         private string modelField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int priceField;
+        private decimal priceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string typeField;
@@ -1721,7 +1721,7 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int price {
+        public decimal price {
             get {
                 return this.priceField;
             }
@@ -1781,7 +1781,7 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         private string imageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int priceField;
+        private decimal priceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string typeField;
@@ -1862,7 +1862,7 @@ namespace CyberLlamaConsumerSite.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int price {
+        public decimal price {
             get {
                 return this.priceField;
             }

@@ -30,8 +30,8 @@
     foreach (c_PcPageInfo p in pcs)
     {
         String imageLink = p.image;
-        String model = Convert.ToString(p.type + " "+ p.ID);
-        int price = p.price;
+        String model = Convert.ToString(p.type + " " + p.ID);
+        decimal price = Math.Round(p.price,2);
         int quantity = p.Quantity;
 
         <div class="card">
@@ -44,17 +44,22 @@
     }
 }
 
-
+<div class="toasterCartSuccess">Item Added to Cart</div>
+<div class="toasterCartError">Unable to add item to cart</div>
 <script>
     $(".addCartLink").click(function (e) {
         e.preventDefault();
         $.ajax({
             url: $(this).attr("href"),
-            success: function () {
-                alert("Added To Cart");
+             success: function () {
+                var x = document.getElementsByClassName("toasterCartSuccess");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
             },
             error: function () {
-                alert("An error Occured, Login to access Cart");
+                var x = document.getElementsByClassName("toasterCartError");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
             }
 
         });
