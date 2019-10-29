@@ -19,11 +19,11 @@ namespace CyberLlamaConsumerSite.Controllers
             {
                return this.Redirect(Url.Action("Cart", "Checkout", new { ID = Convert.ToInt32(Session["UserID"]) }));
             }
-            else if (Session["Cart"] != null)
+            else if (Session["Cart"] != null || Session["PartCart"] != null)
             {
                 return this.Redirect(Url.Action("Cart", "Checkout", new { ID = 0 }));
             }
-            else if (Session["Cart"] == null)
+            else if (Session["Cart"] == null && Session["PartCart"] == null)
             {
                 return this.Redirect(Url.Action("Cart", "Checkout", new { ID = 0 }));
             }
@@ -134,6 +134,10 @@ namespace CyberLlamaConsumerSite.Controllers
                 return this.Redirect(Url.Action("Index", "Login"));
             }
             CRUDService.ServiceClient sc = new CRUDService.ServiceClient();
+            if(cart == null)
+            {
+                return this.Redirect(Url.Action("Index", "Checkout"));
+            }
             foreach (Cart item in cart)
             {
                 bool updated = sc.updatePartCart(Convert.ToInt32(Session["UserID"]), item.ProductID, item.Quantity);
