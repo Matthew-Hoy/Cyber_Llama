@@ -373,15 +373,15 @@
                                     String model6 = c6.model;
                                     Double price6 = c6.price;
                                     int quantity6 = c6.Quantity;
-                                <div class="col">
-                                    <div class="card">
-                                        <img src="@(imageLink6)" alt="Ram"  >
-                                        <h1><a href="@Url.Action("Index", "PartInfo", new { id = c6.ID })">@(model6)</a></h1>
-                                        <p class="price">R@(price6)</p>
-                                        <p>Quantity: @(quantity6)</p>
-                                        <p><button class="selectPart" href=@Url.Action("SelectRAM", new { id = c6.ID })> Select RAM</button></p>
+                                    <div class="col">
+                                        <div class="card">
+                                            <img src="@(imageLink6)" alt="Ram"  >
+                                            <h1><a href="@Url.Action("Index", "PartInfo", new { id = c6.ID })">@(model6)</a></h1>
+                                            <p class="price">R@(price6)</p>
+                                            <p>Quantity: @(quantity6)</p>
+                                            <p><button class="selectPart" href=@Url.Action("SelectRAM", new { id = c6.ID })> Select RAM</button></p>
+                                        </div>
                                     </div>
-                                </div>
                                 }
                             }
                             </div>
@@ -566,8 +566,6 @@
                                         }
                                         if (Session["HDD"] != null)
                                         {
-                                            
-
                                             c_ProductPageInfo hdd = sc.getPart(Convert.ToInt32(Session["HDD"]));
                                             String imageLink10 = hdd.image;
                                             String model10 = hdd.model;
