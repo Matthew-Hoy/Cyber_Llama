@@ -10,7 +10,7 @@
     cPC pc = sc.intgetPC(Convert.ToInt32(id));
 
     String imageLink = part.image;
-    int price = (int)part.price;
+    decimal price = Math.Round(part.price,2);
     int quantity = part.Quantity;
 
     c_ProductPageInfo Case = sc.getPart(Convert.ToInt32(pc.case_id));
@@ -69,31 +69,36 @@
             </div>
             <div class="row">
                 <div class="col">SSD:</div>
-                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = (SSD == null? 0 : SSD.ID)})">@(SSD == null ? "None": SSD.model)</a></div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = (SSD == null? 0 : SSD.ID)})">@(SSD == null ? "None" : SSD.model)</a></div>
             </div>
             <div class="row">
                 <div class="col">HDD:</div>
-                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = (HDD == null? 0 : HDD.ID)})">@(HDD == null ? "None": HDD.model)</a></div>
+                <div class="col"><a href="@Url.Action("Index", "PartInfo", new { ID = (HDD == null? 0 : HDD.ID)})">@(HDD == null ? "None" : HDD.model)</a></div>
             </div>
 
         </div>
     </div>
 }
-
+<div class="toasterCartSuccess">Item Added to Cart</div>
+<div class="toasterCartError">Unable to add item to cart</div>
 <script>
-        $(".addCartLink").click(function (e) {
-            e.preventDefault();
-            $.ajax({
-                url: $(this).attr("href"),
-                success: function () {
-                    alert("Added To Cart");
-                },
-                error: function () {
-                    alert("An error Occured, Login to access Cart");
-                }
+    $(".addCartLink").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                var x = document.getElementsByClassName("toasterCartSuccess");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
+            },
+            error: function () {
+                var x = document.getElementsByClassName("toasterCartError");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
+            }
 
-            });
         });
+    });
 </script>
 
 <style>
@@ -105,19 +110,19 @@
         font-family: arial;
     }
 
-    .card button {
-        border: none;
-        outline: 0;
-        padding: 12px;
-        color: white;
-        background-color: #000;
-        text-align: center;
-        cursor: pointer;
-        width: 100%;
-        font-size: 18px;
-    }
-
-       .card button:hover {
-            opacity: 0.7;
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
         }
+
+            .card button:hover {
+                opacity: 0.7;
+            }
 </style>

@@ -3,11 +3,11 @@
 }
 @model List<CyberLlamaConsumerSite.CRUDService.c_ProductPageInfo>
 @using CyberLlamaConsumerSite.ServiceReference1;
-    <div class="sidenav">
-        <input value="Sort by Price" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "Home", new {filter ="price"})'" />
-        <input value="Sort by Name" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "Home", new {filter = "name"})'" />
-        <input value="Sort by Discount" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "Home", new {filter = "discount"})'" />
-    </div>
+<div class="sidenav">
+    <input value="Sort by Price" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "Home", new {filter ="price"})'" />
+    <input value="Sort by Name" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "Home", new {filter = "name"})'" />
+    <input value="Sort by Discount" class="FilterButton" style="float:left;" onclick="location.href='@Url.Action("Index", "Home", new {filter = "discount"})'" />
+</div>
 <style>
 
     .slideshowContainer {
@@ -128,7 +128,7 @@
         {
             String imageLink = p.image;
             String model = p.model;
-            int price = p.price;
+            decimal price = Math.Round(p.price,2);
             int quantity = p.Quantity;
             int discount = p.discount;
 
@@ -148,16 +148,24 @@
     }
 
 </div>
+
+<div class="toasterCartSuccess">Item Added to Cart</div>
+<div class="toasterCartError">Unable to add item to cart</div>
+
 <script>
     $(".addCartLink").click(function (e) {
         e.preventDefault();
         $.ajax({
             url: $(this).attr("href"),
             success: function () {
-                alert("Added To Cart");
+                var x = document.getElementsByClassName("toasterCartSuccess");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
             },
             error: function () {
-                alert("An error Occured, Login to access Cart");
+                var x = document.getElementsByClassName("toasterCartError");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
             }
 
         });
@@ -205,8 +213,8 @@
     .price {
         color: grey;
         font-size: 22px;
-        margin-bottom:1px;
-        margin-top:1px;
+        margin-bottom: 1px;
+        margin-top: 1px;
     }
 
     .card button {

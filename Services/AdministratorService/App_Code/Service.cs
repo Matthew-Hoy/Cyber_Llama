@@ -1396,7 +1396,7 @@ public class Service : IService
             Quantity = part.Quantity,
             active = part.Active,
             discount = part.Discount,
-            price = (int)part.Price,
+            price = part.Price,
 };
 
         return temp;
@@ -2008,7 +2008,7 @@ public class Service : IService
             Quantity = part.Quantity,
             active = part.Active,
             discount = part.Discount,
-            price = (int)part.Price,
+            price = part.Price,
             
         };
 
@@ -3171,7 +3171,7 @@ public class Service : IService
                 model = p.Model,
                 Quantity = p.Quantity,
                 type = p.Type,
-                price = (int)p.Price
+                price = p.Price
             };
 
             list.Add(product);
@@ -3197,7 +3197,7 @@ public class Service : IService
                 image = p.Image,
                 Quantity = p.Quantity,
                 type = p.PC_Type,
-                price = (int)p.Price
+                price = p.Price
             };
 
             list.Add(temp);

@@ -15,6 +15,6 @@ public class c_ProductPageInfo
     public int Quantity;
     public int active;
     public int discount;
-    public int price;
+    public decimal price;
 }
 
