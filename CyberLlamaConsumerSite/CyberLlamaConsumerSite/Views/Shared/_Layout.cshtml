@@ -179,11 +179,19 @@
 
                 @{if (Session["UserID"] != null)
                     {
-                        <li class="nav-item">
+                        <li class="nav-item dropdown">
                             <a href=@Url.Action("Index", "Invoice")><img src="~/Images/ProfileIcon.png" class="MenuIcon" /></a>
-                            <a class="nav-link" href=@Url.Action("Index", "Invoice")>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_profile">
                                 Profile
+                                <span class="caret"></span>
                             </a>
+                             <div class="dropdown-menu" aria-labelledby="dropdown_profile">
+                                <a class="dropdown-item" href=@Url.Action("Index", "invoice")>Accounts</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href=@Url.Action("Index", "EditUser")>Edit Profile</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+
                         </li>
                     }
                 }

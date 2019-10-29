@@ -155,6 +155,28 @@ public class Service : IService
         }
     }
 
+    public bool editClient(cClient client)
+    {
+        var oldClient = db.Clients.Where(x => client.ID.Equals(x.User_ID)).FirstOrDefault();
+        oldClient.ZIP_Code = client.ZipCode;
+        oldClient.Surname = client.Surname;
+        oldClient.Province = client.province;
+        oldClient.Address = client.Address;
+        oldClient.City = client.city;
+        oldClient.Email = client.email;
+        oldClient.First_Name = client.firstName;
+
+        try{
+            db.SubmitChanges();
+            return true;
+        } catch (Exception ex)
+        {
+            ex.GetBaseException();
+            return false;
+        }
+
+    }
+
     public List<string> getUserPositions()
     {
         return db.UserPositions.Select(x => x.Position).ToList();

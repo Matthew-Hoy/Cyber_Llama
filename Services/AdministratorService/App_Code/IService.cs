@@ -10,7 +10,8 @@ using System.Text;
 [ServiceContract]
 public interface IService
 {
-
+    [OperationContract]
+    bool editClient(cClient client);
     [OperationContract]
     string Login(string strUserName, string strPassword);
 
