@@ -1,0 +1,705 @@
+﻿@using CyberLlamaConsumerSite.ServiceReference1;
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    ServiceClient sc = new ServiceClient();
+    <p><button class="clearbuild" href="@Url.Action("ClearAll")">Clear Entire Build</button></p>
+    <div class="row">
+        <div class="col-md-2.3">
+            <div class="tab">
+                <div class="row"><button class="tablinks" onclick="openPart(event, 'Case')" style="color:black;" id="defaultOpen">Case</button></div>
+                @if (Session["Case"] != null)
+                {
+                    <div class="row"><button class="tablinks" onclick="openPart(event, 'Mobo')" style="color:black;">Motherboard</button></div>
+                    if (Session["Mobo"] != null)
+                    {
+                        <div class="row"><button class="tablinks" onclick="openPart(event, 'CPU')" style="color:black;">CPU</button></div>
+                        if (Session["CPU"] != null)
+                        {
+                            <div class="row"><button class="tablinks" onclick="openPart(event, 'Cooler')" style="color:black;">Cooler</button></div>
+                            if (Session["Cooler"] != null)
+                            {
+                                <div class="row"><button class="tablinks" onclick="openPart(event, 'RAM')" style="color:black;">RAM</button></div>
+                                if (Session["RAM"] != null)
+                                {
+                                    <div class="row"><button class="tablinks" onclick="openPart(event, 'GPU')" style="color:black;">GPU</button></div>
+                                    if (Session["GPU"] != null)
+                                    {
+                                        <div class="row"><button class="tablinks" onclick="openPart(event, 'PSU')" style="color:black;">PSU</button></div>
+                                        if (Session["PSU"] != null)
+                                        {
+                                            <div class="row"><button class="tablinks" onclick="openPart(event, 'Fans')" style="color:black;">Fans</button></div>
+                                            if (Session["Fan"] != null)
+                                            {
+                                                <div class="row"><button class="tablinks" onclick="openPart(event, 'HDD')" style="color:black;">HDD - Storage Drive</button></div>
+                                                if (Session["HDD"] != null)
+                                                {
+                                                    <div class="row"><button class="tablinks" onclick="openPart(event, 'SSD')" style="color:black;">SSD - Boot Drive</button></div>
+                                                    if (Session["SSD"] != null)
+                                                    {
+                                                        <div class="row"><button class="AddToCart" href="@Url.Action("AddAllToCart")" style="color:black; background-color:hsl(0, 100%, 35%)">Add Parts to Cart</button></div>
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="col">
+            <div id="Case" class="tabcontent">
+                @{
+                    if (Session["Case"] == null)
+                    {
+                        c_ProductPageInfo[] list = sc.getAllParts("Case");
+                        <div class="row">
+                            @foreach (c_ProductPageInfo c in list)
+                            {
+                                String imageLink = c.image;
+                                String model = c.model;
+                                Double price = c.price;
+                                int quantity = c.Quantity;
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="@(imageLink)" alt="Ram">
+                                        <h1 style="font-size:100%"><a href="@Url.Action("Index", "PartInfo", new { id = c.ID })">@(model)</a></h1>
+                                        <p class="price">R@(price)</p>
+                                        <p>Quantity: @(quantity)</p>
+                                        <p><button class="selectPart" href="@Url.Action("SelectCase", new { ID = c.ID })"> Select Case</button></p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Session["Case"] != null)
+                    {
+                        c_ProductPageInfo c = sc.getPart(Convert.ToInt32(Session["Case"]));
+                        cCase Case = sc.getCase(c.ID);
+
+                        String imageLink = c.image;
+                        String model = c.model;
+                        Double price = c.price;
+                        int quantity = c.Quantity;
+
+                        <div class="card">
+                            <img src="@(imageLink)" alt="Ram">
+                            <h1><a href="@Url.Action("Index", "PartInfo", new {id=c.ID})">@(model)</a></h1>
+                            <p class="price">R@(price)</p>
+                            <p>Quantity: @(quantity)</p>
+                            <p><button class="selectPart" href=@Url.Action("ClearCase")> Clear Case</button></p>
+                        </div>
+                    }
+                }
+            </div>
+
+            <div id="Mobo" class="tabcontent">
+                @{
+                    if (Session["Mobo"] == null)
+                    {
+                        c_ProductPageInfo[] list2 = sc.getMotherboardForCase(Convert.ToInt32(Session["Case"]));
+
+                        <div class="row">
+                            @foreach (c_ProductPageInfo m in list2)
+                            {
+                                String imageLink2 = m.image;
+                                String model2 = m.model;
+                                Double price2 = m.price;
+                                int quantity2 = m.Quantity;
+
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="@(imageLink2)" alt="Ram">
+                                        <h1><a href="@Url.Action("Index", "PartInfo", new { id = m.ID })">@(model2)</a></h1>
+                                        <p class="price">R@(price2)</p>
+                                        <p>Quantity: @(quantity2)</p>
+                                        <p><button class="selectPart" href="@Url.Action("SelectMobo", new { id = m.ID })"> Select Motherboard</button></p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Session["Mobo"] != null)
+                    {
+
+                        c_ProductPageInfo c2 = sc.getPart(Convert.ToInt32(Session["Mobo"]));
+                        String imageLink2 = c2.image;
+                        String model2 = c2.model;
+                        Double price2 = c2.price;
+                        int quantity2 = c2.Quantity;
+
+                        <div class="card">
+                            <img src="@(imageLink2)" alt="Ram">
+                            <h1><a href="@Url.Action("Index", "PartInfo", new { id = c2.ID })">@(model2)</a></h1>
+                            <p class="price">R@(price2)</p>
+                            <p>Quantity: @(quantity2)</p>
+                            <p><button class="clearPart" href="@Url.Action("ClearMobo", new { id = c2.ID })"> Clear Motherboard</button></p>
+                        </div>
+                    }
+                }
+            </div>
+
+            <div id="CPU" class="tabcontent">
+                @{
+                    if (Session["CPU"] == null)
+                    {
+                        c_ProductPageInfo[] list2 = sc.getCPUForMotherboard(Convert.ToInt32(Session["Mobo"]));
+
+                        <div class="row">
+                            @foreach (c_ProductPageInfo cpu in list2)
+                            {
+                                String imageLink3 = cpu.image;
+                                String model3 = cpu.model;
+                                Double price3 = cpu.price;
+                                int quantity3 = cpu.Quantity;
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="@(imageLink3)" alt="Ram">
+                                        <h1><a href="@Url.Action("Index", "PartInfo", new {id=cpu.ID})">@(model3)</a></h1>
+                                        <p class="price">R@(price3)</p>
+                                        <p>Quantity: @(quantity3)</p>
+                                        <p><button class="selectPart" href=@Url.Action("SelectCPU", new { id=cpu.ID })> Select CPU</button></p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Session["CPU"] != null)
+                    {
+                        c_ProductPageInfo c3 = sc.getPart(Convert.ToInt32(Session["CPU"]));
+                        String imageLink3 = c3.image;
+                        String model3 = c3.model;
+                        Double price3 = c3.price;
+                        int quantity3 = c3.Quantity;
+
+                        <div class="card">
+                            <img src="@(imageLink3)" alt="Ram">
+                            <h1><a href="@Url.Action("Index", "PartInfo", new {id=c3.ID})">@(model3)</a></h1>
+                            <p class="price">R@(price3)</p>
+                            <p>Quantity: @(quantity3)</p>
+                            <p><button class="clearPart" href=@Url.Action("ClearCPU")> Clear CPU</button></p>
+                        </div>
+
+                    }
+                }
+            </div>
+
+            <div id="Cooler" class="tabcontent">
+                @{
+                    if (Session["Cooler"] == null)
+                    {
+                        c_ProductPageInfo[] list3 = sc.getAirCoolersForCPU(Convert.ToInt32(Session["CPU"]));
+                        c_ProductPageInfo[] list5 = sc.getLiquidCoolersForCPU(Convert.ToInt32(Session["CPU"]));
+
+                        <div class="row">
+                            @foreach (c_ProductPageInfo c4 in list3)
+                            {
+                                String imageLink4 = c4.image;
+                                String model4 = c4.model;
+                                Double price4 = c4.price;
+                                int quantity4 = c4.Quantity;
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="@(imageLink4)" alt="Ram">
+                                        <h1><a href="@Url.Action("Index", "PartInfo", new { id = c4.ID })">@(model4)</a></h1>
+                                        <p class="price">R@(price4)</p>
+                                        <p>Quantity: @(quantity4)</p>
+                                        <p><button class="selectPart" href=@Url.Action("SelectCooler", new { id = c4.ID })> Select Air Cooler</button></p>
+                                    </div>
+                                </div>
+                            }
+
+                            @foreach (c_ProductPageInfo c5 in list5)
+                            {
+                                String imageLink5 = c5.image;
+                                String model5 = c5.model;
+                                Double price5 = c5.price;
+                                int quantity5 = c5.Quantity;
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="@(imageLink5)" alt="Ram">
+                                        <h1><a href="@Url.Action("Index", "PartInfo", new { id = c5.ID })">@(model5)</a></h1>
+                                        <p class="price">R@(price5)</p>
+                                        <p>Quantity: @(quantity5)</p>
+                                        <p><button class="selectPart" href=@Url.Action("SelectCooler", new { id = c5.ID })> Select Liquid Cooler</button></p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Session["Cooler"] != null)
+                    {
+                        c_ProductPageInfo cooler = sc.getPart(Convert.ToInt32(Session["Cooler"]));
+                        String imageLink5 = cooler.image;
+                        String model5 = cooler.model;
+                        Double price5 = cooler.price;
+                        int quantity5 = cooler.Quantity;
+
+                        <div class="card">
+                            <img src="@(imageLink5)" alt="Ram">
+                            <h1><a href="@Url.Action("Index", "PartInfo", new {id=cooler.ID})">@(model5)</a></h1>
+                            <p class="price">R@(price5)</p>
+                            <p>Quantity: @(quantity5)</p>
+                            <p><button class="clearPart" href=@Url.Action("ClearCooler")> Clear Cooler</button></p>
+                        </div>
+
+                    }
+                }
+            </div>
+
+            <div id="RAM" class="tabcontent">
+                @{
+                    if (Session["RAM"] == null)
+                    {
+                        c_ProductPageInfo[] list6 = sc.getRAMForMotherboard(Convert.ToInt32(Session["Mobo"]));
+
+                        <div class="row">
+                            @foreach (c_ProductPageInfo c6 in list6)
+                            {
+                                String imageLink6 = c6.image;
+                                String model6 = c6.model;
+                                Double price6 = c6.price;
+                                int quantity6 = c6.Quantity;
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="@(imageLink6)" alt="Ram">
+                                        <h1><a href="@Url.Action("Index", "PartInfo", new { id = c6.ID })">@(model6)</a></h1>
+                                        <p class="price">R@(price6)</p>
+                                        <p>Quantity: @(quantity6)</p>
+                                        <p><button class="selectPart" href=@Url.Action("SelectRAM", new { id = c6.ID })> Select RAM</button></p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Session["RAM"] != null)
+                    {
+                        c_ProductPageInfo ram = sc.getPart(Convert.ToInt32(Session["RAM"]));
+                        String imageLink6 = ram.image;
+                        String model6 = ram.model;
+                        Double price6 = ram.price;
+                        int quantity6 = ram.Quantity;
+
+                        <div class="card">
+                            <img src="@(imageLink6)" alt="Ram">
+                            <h1><a href="@Url.Action("Index", "PartInfo", new {id=ram.ID})">@(model6)</a></h1>
+                            <p class="price">R@(price6)</p>
+                            <p>Quantity: @(quantity6)</p>
+                            <p><button class="clearPart" href=@Url.Action("ClearRAM")> Clear RAM</button></p>
+                        </div>
+
+                    }
+                }
+            </div>
+
+            <div id="GPU" class="tabcontent">
+                @{
+                    if (Session["GPU"] == null)
+                    {
+                        c_ProductPageInfo[] list7 = sc.getAllParts("GPU");
+
+                        <div class="row">
+                            @foreach (c_ProductPageInfo c7 in list7)
+                            {
+                                String imageLink7 = c7.image;
+                                String model7 = c7.model;
+                                Double price7 = c7.price;
+                                int quantity7 = c7.Quantity;
+
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="@(imageLink7)" alt="Ram">
+                                        <h1><a href="@Url.Action("Index", "PartInfo", new { id = c7.ID })">@(model7)</a></h1>
+                                        <p class="price">R@(price7)</p>
+                                        <p>Quantity: @(quantity7)</p>
+                                        <p><button class="selectPart" href=@Url.Action("SelectGPU", new { id = c7.ID })> Select GPU</button></p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Session["GPU"] != null)
+                    {
+                        c_ProductPageInfo gpu = sc.getPart(Convert.ToInt32(Session["GPU"]));
+                        String imageLink7 = gpu.image;
+                        String model7 = gpu.model;
+                        Double price7 = gpu.price;
+                        int quantity7 = gpu.Quantity;
+
+                        <div class="card">
+                            <img src="@(imageLink7)" alt="Ram">
+                            <h1><a href="@Url.Action("Index", "PartInfo", new {id=gpu.ID})">@(model7)</a></h1>
+                            <p class="price">R@(price7)</p>
+                            <p>Quantity: @(quantity7)</p>
+                            <p><button class="clearPart" href=@Url.Action("ClearGPU")> Clear GPU</button></p>
+                        </div>
+                    }
+                }
+            </div>
+
+            <div id="PSU" class="tabcontent">
+                @{
+                    if (Session["PSU"] == null)
+                    {
+                        c_ProductPageInfo[] list8 = sc.getAllParts("PSU");
+
+                        <div class="row">
+                            @foreach (c_ProductPageInfo c8 in list8)
+                            {
+                                String imageLink8 = c8.image;
+                                String model8 = c8.model;
+                                Double price8 = c8.price;
+                                int quantity8 = c8.Quantity;
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="@(imageLink8)" alt="Ram">
+                                        <h1><a href="@Url.Action("Index", "PartInfo", new {id=c8.ID})">@(model8)</a></h1>
+                                        <p class="price">R@(price8)</p>
+                                        <p>Quantity: @(quantity8)</p>
+                                        <p><button class="selectPart" href=@Url.Action("SelectPSU", new { id=c8.ID })> Select GPU</button></p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Session["PSU"] != null)
+                    {
+                        c_ProductPageInfo psu = sc.getPart(Convert.ToInt32(Session["PSU"]));
+                        String imageLink8 = psu.image;
+                        String model8 = psu.model;
+                        Double price8 = psu.price;
+                        int quantity8 = psu.Quantity;
+
+                        <div class="card">
+                            <img src="@(imageLink8)" alt="Ram" style="width:100%; height:30%">
+                            <h1><a href="@Url.Action("Index", "PartInfo", new {id=psu.ID})">@(model8)</a></h1>
+                            <p class="price">R@(price8)</p>
+                            <p>Quantity: @(quantity8)</p>
+                            <p><button class="clearPart" href=@Url.Action("ClearPSU")> Clear PSU</button></p>
+                        </div>
+                    }
+                }
+            </div>
+
+            <div id="Fans" class="tabcontent">
+                @{
+                    if (Session["Fan"] == null)
+                    {
+                        c_ProductPageInfo[] list9 = sc.getAllParts("Fan");
+
+                        <div class="row">
+                            @foreach (c_ProductPageInfo c9 in list9)
+                            {
+                                String imageLink9 = c9.image;
+                                String model9 = c9.model;
+                                Double price9 = c9.price;
+                                int quantity9 = c9.Quantity;
+
+                                <div class="card">
+                                    <img src="@(imageLink9)" alt="Ram" style="width:100%; height:30%">
+                                    <h1><a href="@Url.Action("Index", "PartInfo", new {id=c9.ID})">@(model9)</a></h1>
+                                    <p class="price">R@(price9)</p>
+                                    <p>Quantity: @(quantity9)</p>
+                                    <p><button class="selectPart" href=@Url.Action("SelectFan", new { id=c9.ID })> Select Fan</button></p>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Session["Fan"] != null)
+                    {
+                        c_ProductPageInfo fans = sc.getPart(Convert.ToInt32(Session["Fan"]));
+                        String imageLink9 = fans.image;
+                        String model9 = fans.model;
+                        Double price9 = fans.price;
+                        int quantity9 = fans.Quantity;
+
+                        <div class="card">
+                            <img src="@(imageLink9)" alt="Ram" style="width:100%; height:30%">
+                            <h1><a href="@Url.Action("Index", "PartInfo", new {id=fans.ID})">@(model9)</a></h1>
+                            <p class="price">R@(price9)</p>
+                            <p>Quantity: @(quantity9)</p>
+                            <p><button class="clearPart" href=@Url.Action("ClearFan")> Clear Fans</button></p>
+                        </div>
+                    }
+                }
+            </div>
+
+            <div id="HDD" class="tabcontent">
+                @{
+                    if (Session["HDD"] == null)
+                    {
+                        c_ProductPageInfo[] list10 = sc.getAllParts("HDD");
+
+                        <div class="row">
+                            @foreach (c_ProductPageInfo c10 in list10)
+                            {
+                                String imageLink10 = c10.image;
+                                String model10 = c10.model;
+                                Double price10 = c10.price;
+                                int quantity10 = c10.Quantity;
+
+                                <div class="card">
+                                    <img src="@(imageLink10)" alt="Ram">
+                                    <h1><a href="@Url.Action("Index", "PartInfo", new {id=c10.ID})">@(model10)</a></h1>
+                                    <p class="price">R@(price10)</p>
+                                    <p>Quantity: @(quantity10)</p>
+                                    <p><button class="selectPart" href=@Url.Action("SelectHDD", new { id=c10.ID })> Select HDD</button></p>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Session["HDD"] != null)
+                    {
+                        c_ProductPageInfo hdd = sc.getPart(Convert.ToInt32(Session["HDD"]));
+                        String imageLink10 = hdd.image;
+                        String model10 = hdd.model;
+                        Double price10 = hdd.price;
+                        int quantity10 = hdd.Quantity;
+
+                        <div class="card">
+                            <img src="@(imageLink10)" alt="Ram" style="width:100%; height:30%">
+                            <h1><a href="@Url.Action("Index", "PartInfo", new {id=hdd.ID})">@(model10)</a></h1>
+                            <p class="price">R@(price10)</p>
+                            <p>Quantity: @(quantity10)</p>
+                            <p><button class="clearPart" href=@Url.Action("ClearHDD")> Clear HDD</button></p>
+                        </div>
+                    }
+                }
+            </div>
+
+            <div id="SSD" class="tabcontent">
+                @{
+                    if (Session["SSD"] == null)
+                    {
+                        c_ProductPageInfo[] list11 = sc.getAllParts("SSD");
+
+                        <div class="row">
+                            @foreach (c_ProductPageInfo c11 in list11)
+                            {
+                                String imageLink11 = c11.image;
+                                String model11 = c11.model;
+                                Double price11 = c11.price;
+                                int quantity11 = c11.Quantity;
+
+                                <div class="card">
+                                    <img src="@(imageLink11)" alt="Ram" style="width:100%; height:30%">
+                                    <h1><a href="@Url.Action("Index", "PartInfo", new {id=c11.ID})">@(model11)</a></h1>
+                                    <p class="price">R@(price11)</p>
+                                    <p>Quantity: @(quantity11)</p>
+                                    <p><button class="selectPart" href=@Url.Action("SelectSSD", new { id=c11.ID })> Select SSD</button></p>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Session["SSD"] != null)
+                    {
+                        c_ProductPageInfo ssd = sc.getPart(Convert.ToInt32(Session["SSD"]));
+                        String imageLink11 = ssd.image;
+                        String model11 = ssd.model;
+                        Double price11 = ssd.price;
+                        int quantity11 = ssd.Quantity;
+
+                        <div class="card">
+                            <img src="@(imageLink11)" alt="Ram" style="width:100%; height:30%">
+                            <h1><a href="@Url.Action("Index", "PartInfo", new {id=ssd.ID})">@(model11)</a></h1>
+                            <p class="price">R@(price11)</p>
+                            <p>Quantity: @(quantity11)</p>
+                            <p><button class="clearPart" href=@Url.Action("ClearSSD")> Clear SSD</button></p>
+                        </div>
+
+                    }
+                }
+            </div>
+
+        </div>
+    </div>
+}
+
+
+<div class="toasterCartSuccess">Parts added to Cart</div>
+<div class="toasterCartError">Unable to Add Selected Parts to Cart</div>
+<div class="toasterPartSuccess">Item Selected</div>
+<div class="toasterPartError">Unable to Select Item</div>
+
+<script>
+
+    document.getElementById("defaultOpen").click();
+
+    function openPart(evt, partName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(partName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    $(".selectPart").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                var x = document.getElementsByClassName("toasterPartSuccess");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 6000);
+                window.location.reload(false);
+            },
+            error: function () {
+                var x = document.getElementsByClassName("toasterPartError");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
+            }
+        });
+    });
+
+    $(".clearPart").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                var x = document.getElementsByClassName("toasterPartSuccess");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 6000);
+                window.location.reload(false);
+            },
+            error: function () {
+                var x = document.getElementsByClassName("toasterPartError");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
+            }
+        });
+    });
+
+    $(".clearbuild").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                var x = document.getElementsByClassName("toasterPartSuccess");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 6000);
+                window.location.reload(false);
+            },
+            error: function () {
+                var x = document.getElementsByClassName("toasterPartError");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
+            }
+        });
+    });
+
+    $(".AddToCart").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function () {
+                var x = document.getElementsByClassName("toasterCartSuccess");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 6000);
+            },
+            error: function () {
+                var x = document.getElementsByClassName("toasterCartError");
+                x[0].className += " show";
+                setTimeout(function () { x[0].className = x[0].className.replace("show", ""); }, 3000);
+            }
+        });
+    });
+
+</script>
+
+<style>
+    .tab {
+        overflow: hidden;
+        
+        background-color: #f1f1f1;
+        width: 200px;
+        padding: 0;
+        margin: 0;
+    }
+
+        /* Style the buttons that are used to open the tab content */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 14px;
+            width: 220px;
+            padding: 0;
+            margin: 0;
+            transition: 0.3s;
+        }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        border-top: none;
+    }
+
+    /*Styles for the Parts*/
+    button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+        button:hover {
+            opacity: 0.7;
+        }
+
+    .card {
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        padding: 5px;
+        text-align: center;
+        font-family: arial;
+        display: inline-block;
+    }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+    .card img {
+        max-height: 200px;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
+</style>
+
