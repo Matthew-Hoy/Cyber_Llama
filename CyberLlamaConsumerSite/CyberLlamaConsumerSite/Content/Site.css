@@ -243,6 +243,13 @@ textarea {
     color:white;
 }
 
+footer {
+    width: 85% !important;
+    height: 180px !important;
+    top: 800px !important;
+    position: absolute !important;
+}
+
 .smallMargin-top {
     margin-top: 1%;
 }
