@@ -1,30 +1,72 @@
-
+@using CyberLlamaConsumerSite.ServiceReference1;
 @{
     ViewBag.Title = "Invoices";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model List<CyberLlamaConsumerSite.Models.Invoice>
-
 <img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
-<h1 class="centerText" style="margin:10px 0px 40px 0px">Invoices</h1>
-<table style="width:100%;">
-    <tr>
-        <th>Invoice</th>
-        <th>Date</th>
-        <th>View More</th>
-    </tr>
+@{
+    ServiceClient sc = new ServiceClient();
+    int NIB = 0;
+    double spent = 0;
+    int points = 0;
 
-    @foreach (var item in @Model.GroupBy(x => x.InvoiceId).Select(y =>y.FirstOrDefault()))
+    dynamic list = sc.getAllInvoices(Convert.ToInt32(Session["UserID"]));
+    if (list != null)
     {
-    
+        foreach (cInvoice i in list)
+        {
+            c_ProductPageInfo part = sc.getPart(i.pc_ID);
+
+            NIB++;
+            spent += (part.price * part.Quantity);
+        }
+
+        points = (int)(spent / 1000);
+    }
+    <h1 class="centerText" style="margin:10px 0px 40px 0px">Overview</h1>
+    <div class="card-content">
+        <div class="row">
+            <div class="col s3 offset-s2">
+                <h4 id="username" runat="server" class="card-title grey-text text-darken-4"></h4>
+                <p id="usertype" runat="server" class="medium-small grey-text"></p>
+            </div>
+
+            <div class="col s2 center-align">
+                <h4 class="card-title grey-text text-darken-4">@(NIB)</h4>
+                <p class="medium-small grey-text">Items Bought</p>
+            </div>
+
+
+            <div class="col s2 center-align">
+                <h4 class="card-title grey-text text-darken-4">R@(spent)</h4>
+                <p class="medium-small grey-text">Total Spent</p>
+            </div>
+
+            <div class="col s2 center-align">
+                <h4 class="card-title grey-text text-darken-4">@(points)</h4>
+                <p class="medium-small grey-text">Your Points</p>
+            </div>
+        </div>
+    </div>
+}
+<br />
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Invoices</h1>
+<table style="width:75%; margin-left:270px">
+    <tr>
+        <th><u>Invoice</u></th>
+        <th><u>Date</u></th>
+        <th><u>View More</u></th>
+    </tr>
+    @foreach (var item in @Model.GroupBy(x => x.InvoiceId).Select(y => y.FirstOrDefault()))
+    {
+
         <tr>
             <td>@item.InvoiceId</td>
             <td>@item.date.Day / @item.date.Month / @item.date.Year</td>
             <td><a href=@Url.Action("Invoice", "Invoice", new {id = item.InvoiceId })>View More</a></td>
         </tr>
-    
+
     }
-
 </table>
-
 

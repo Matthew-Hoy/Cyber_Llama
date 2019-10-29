@@ -346,11 +346,22 @@
                     if (Session["PSU"] == null)
                     {
                         c_ProductPageInfo[] list8 = sc.getAllParts("PSU");
+                        int power = 0;
+                        if (Session["CPU"]!=null && Session["GPU"] != null)
+                        {
+                            cCPU cpu = sc.getCPU(Convert.ToInt32(Session["CPU"]));
+                            cGPU gpu = sc.getGPU(Convert.ToInt32(Session["GPU"]));
+
+                            power = cpu.tdp + Convert.ToInt32(gpu.recommended_psu_power);
+                        }
 
                         <div class="row">
                             @foreach (c_ProductPageInfo c8 in list8)
                             {
-                                String imageLink8 = c8.image;
+                                cPSU psu = sc.getPSU(c8.ID);
+                                if (Convert.ToInt32(psu.Power) >=power)
+                                {
+                                    String imageLink8 = c8.image;
                                 String model8 = c8.model;
                                 Double price8 = c8.price;
                                 int quantity8 = c8.Quantity;
@@ -363,6 +374,7 @@
                                         <p><button class="selectPart" href=@Url.Action("SelectPSU", new { id=c8.ID })> Select GPU</button></p>
                                     </div>
                                 </div>
+                                }
                             }
                         </div>
                     }
@@ -521,7 +533,7 @@
 
 
 <div class="toasterCartSuccess">Parts added to Cart</div>
-<div class="toasterCartError">Unable to Add Selected Parts to Cart</div>
+<div class="toasterCartError">Please Login to Add Selected Parts to Cart</div>
 <div class="toasterPartSuccess">Item Selected</div>
 <div class="toasterPartError">Unable to Select Item</div>
 
