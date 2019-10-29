@@ -7,9 +7,9 @@
 <img class="centerImage" Style="margin-top:4%;max-width: 100px;margin-top:20px" src="~/Images/llama.png" />
 <h1 class="centerText" style="margin:10px 0px 40px 0px">Checkout</h1>
 <hr color="white" />
-<p>Please select your delivery option</p>
+<h3>Please select your delivery option</h3>
 
-<select class="deliveryMethod" id="deliveryMethod" name="deliveryMethod" onchange="toggleAddress()" style="width:20%">
+<select class="deliveryMethod selectCategoryList" id="deliveryMethod" name="deliveryMethod" onchange="toggleAddress()" style="width:20%">
     <option class="deliver">Collect</option>
     <option class="collect">Deliver</option>
 </select>
@@ -34,18 +34,33 @@
 
 
 </script>
-<div class="centerImage">
-    <div id="address" style="display:none;">
-        @using (Html.BeginForm("Invoice", "Checkout", FormMethod.Post))
-        {
-            <p><label>Address:</label>@Html.TextAreaFor(m => m.Address, new { value = Model.Address }) </p>
-            <P><label>City:</label>@Html.TextBoxFor(m => m.City, new { value = Model.City })</P>
-            <p><label>Province:</label>@Html.TextBoxFor(m => m.Province, new { value = Model.Province })</p>
-            <p><label>Zip_Code:</label>@Html.TextBoxFor(m => m.ZipCode, new { value = Model.ZipCode })</p>
-            <button type="submit"> Continue</button>
-        }
-    </div>
-    <p><button type="button" onclick="location.href='@Url.Action("Invoice", "Checkout", new {delivery = @Model})'" id="collect" style="margin-top:5%"> Continue</button></p>
+
+<div id="address" style="display:none;margin-top:30px;">
+    @using (Html.BeginForm("Invoice", "Checkout", FormMethod.Post, new { style = "margin-left:auto;margin-right:auto;width:600px;" }))
+    {
+
+        <div class="borderedAddEditElement" style="margin-bottom:30px;margin-top:30px;padding:30px">
+            <div class="form-Input " style="margin-top:30px">
+                <label>Address:</label>@Html.TextBoxFor(m => m.Address, new { value = Model.Address })
+            </div>
+            <div class="form-Input ">
+                <label>City:</label>@Html.TextBoxFor(m => m.City, new { value = Model.City })
+            </div>
+            <div class="form-Input ">
+                <label>Province:</label>@Html.TextBoxFor(m => m.Province, new { value = Model.Province })
+            </div>
+            <div class="form-Input " style="margin-bottom:30px;">
+                <label>Zip_Code:</label>@Html.TextBoxFor(m => m.ZipCode, new { value = Model.ZipCode })
+            </div>
+        </div>
+        <div class="form-Input ">
+            <button class="AddEditButton centerImage" type="submit"> Continue</button>
+        </div>
+
+    }
 </div>
+
+    <div class="centerImage"><button class="AddEditButton centerImage" type="button" onclick="location.href='@Url.Action("Invoice", "Checkout", new {delivery = @Model})'" id="collect" style="margin-top:5%"> Continue</button></div>
+
 
 

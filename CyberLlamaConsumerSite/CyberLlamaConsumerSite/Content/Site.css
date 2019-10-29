@@ -328,17 +328,38 @@ tbody.data {
     font-size: 18px;
 }
 
-.sidenav {
-    height: 100%; 
-    width: 160px; 
-    position: fixed; 
-    z-index: 20; 
+.sidenavHome {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 20;
     left: 0;
-    overflow-x: hidden; 
+    overflow-x: hidden;
+    padding-top: 20px;
+    display: none;
+}
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    overflow-x: hidden;
     padding-top: 20px;
 }
 
 .sidenav input {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #3d9395;
+    cursor: pointer;
+    font-size: 18px;
+    text-align:left;
+}
+
+.sidenavHome input {
     border: none;
     outline: 0;
     padding: 12px;
@@ -462,7 +483,7 @@ tbody.data {
     }
 
     to {
-        top: 30px;
+        top: 50px;
         opacity: 1;
     }
 }
@@ -474,14 +495,14 @@ tbody.data {
     }
 
     to {
-        top: 30px;
+        top: 50px;
         opacity: 1;
     }
 }
 
 @-webkit-keyframes fadeout {
     from {
-        top: 30px;
+        top: 50px;
         opacity: 1;
     }
 
@@ -493,7 +514,7 @@ tbody.data {
 
 @keyframes fadeout {
     from {
-        top: 30px;
+        top: 50px;
         opacity: 1;
     }
 
