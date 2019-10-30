@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "AdminIndex";
+}
+@model List<CyberLlamaConsumerSite.CRUDService.cEmployee>
+<h1 class="centerText" style="margin:10px 0px 40px 0px">Edit Employee</h1>
+<hr color="white" />
+
+<input class="FilterButton" type="button" value="Sort by Name" onclick="location.href='@Url.Action("AdminIndex", "Management", new { search = "name" })'" />
+<input class="FilterButton" type="button" value="Sort by ID" onclick="location.href='@Url.Action("AdminIndex", "Management", new { search = "id" })'" />
+<input class="FilterButton" type="button" value="Sort by Surname" onclick="location.href='@Url.Action("AdminIndex", "Management", new { search = "surname" })'" />
+<input class="FilterButton" type="button" value="Sort by Email" onclick="location.href='@Url.Action("AdminIndex", "Management", new { search = "email" })'" />
+
+<input class="SearchFilter" type="text" style="margin-top:20px;margin-bottom:20px;"  id="search" name="search" value="search" />
+
+
+<button class="FilterButton" onclick="search()">Search... </button>
+
+<script>
+
+    function search() {
+        var searchval = document.getElementById("search");
+        var search = searchval.value;
+        location.href = "/Management/AdminIndex?search=" + search;
+        
+
+    }
+</script>
+
+<table class="data">
+    <thead class="data">
+        <tr>
+            <th class="data">Employee ID</th>
+            <th class="data">Position</th>
+            <th class="data">First Name</th>
+            <th class="data">Surname</th>
+            <th class="data">E-Mail</th>
+            <th class="data">Phone Number</th>
+            <th class="data">Edit</th>
+        </tr>
+    </thead>
+    <tbody class="data">
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td class="data">@employee.Admin_ID</td>
+                <td class="data">@employee.Position</td>
+                <td class="data">@employee.First_Name</td>
+                <td class="data">@employee.Surname</td>
+                <td class="data">@employee.Email</td>
+                <td class="data">@employee.Contact_Number</td>
+                <td class="data"><a href=@Url.Action("EditEmployee", new { id = employee.Admin_ID })><img src="~/Images/Edit_Icon.png" style="max-width:30px;" /></a></td>
+
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+
+    </tfoot>
+</table>

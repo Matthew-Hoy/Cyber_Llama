@@ -210,32 +210,38 @@
                         <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown_desktop">
+                        @if (id == 5 || id < 2)
+                        {
+                            <a class="dropdown-item" href=@Url.Action("Index", "AdminInvoice")>View Invoices</a>
+                            <div class="dropdown-divider"></div>
+                        }
+
 
                         @if (id == 3 || id < 2)
-            {
-                <a class="dropdown-item" href=@Url.Action("Index", "AddNewProduct")>Add Product</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href=@Url.Action("Index", "EditProduct")>Edit Product</a>
-                <div class="dropdown-divider"></div>
-}
+                        {
+                            <a class="dropdown-item" href=@Url.Action("Index", "AddNewProduct")>Add Product</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href=@Url.Action("Index", "EditProduct")>Edit Product</a>
+                            <div class="dropdown-divider"></div>
+                        }
 
                         @if (id <= 2)
-            {
-                <a class="dropdown-item" href=@Url.Action("Index", "AddUser")>Add User</a>
-                <div class="dropdown-divider"></div>
-}
+                        {
+                            <a class="dropdown-item" href=@Url.Action("Index", "AddUser")>Add User</a>
+                            <div class="dropdown-divider"></div>
+                        }
 
                         @if (id <= 2)
-            {
-                <a class="dropdown-item">Administration</a>
-                <div class="dropdown-divider"></div>
-}
+                        {
+                            <a class="dropdown-item" href=@Url.Action("AdminIndex", "Management")>Edit Employee</a>
+                            <div class="dropdown-divider"></div>
+                        }
 
                         @if (id == 1)
-            {
-                <a class="dropdown-item" href=@Url.Action("Index", "Management")>Management</a>
-                <div class="dropdown-divider"></div>
-}
+                        {
+                            <a class="dropdown-item" href=@Url.Action("Index", "Management")>Management</a>
+                            <div class="dropdown-divider"></div>
+                        }
 
                     </div>
                 </li>

@@ -12,6 +12,10 @@ namespace CyberLlamaConsumerSite.Controllers
         // GET: EditUser
         public ActionResult Index()
         {
+            if(Session["UserID"] == null)
+            {
+               return this.Redirect(Url.Action("Index", "Home"));
+            }
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             cClient client = sr.getClient(Convert.ToInt32(Session["UserID"]));
             return View(client);
@@ -20,6 +24,11 @@ namespace CyberLlamaConsumerSite.Controllers
 
         public ActionResult ChangeUser(cClient client)
         {
+            if (Session["UserID"] == null)
+            {
+               return this.Redirect(Url.Action("Index", "Home"));
+            }
+
             CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
             bool isEditied = sr.editClient(client);
             if (isEditied)

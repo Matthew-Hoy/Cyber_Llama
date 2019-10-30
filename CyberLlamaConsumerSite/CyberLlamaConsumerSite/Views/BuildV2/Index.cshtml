@@ -62,7 +62,7 @@
                             {
                                 String imageLink = c.image;
                                 String model = c.model;
-                                Double price = c.price;
+                                Double price = (double)c.price;
                                 int quantity = c.Quantity;
                                 <div class="col">
                                     <div class="card">
@@ -83,7 +83,7 @@
 
                         String imageLink = c.image;
                         String model = c.model;
-                        Double price = c.price;
+                        Double price = (double)c.price;
                         int quantity = c.Quantity;
 
                         <div class="card">
@@ -108,7 +108,7 @@
                             {
                                 String imageLink2 = m.image;
                                 String model2 = m.model;
-                                Double price2 = m.price;
+                                Double price2 = (double)m.price;
                                 int quantity2 = m.Quantity;
 
                                 <div class="col">
@@ -129,7 +129,7 @@
                         c_ProductPageInfo c2 = sc.getPart(Convert.ToInt32(Session["Mobo"]));
                         String imageLink2 = c2.image;
                         String model2 = c2.model;
-                        Double price2 = c2.price;
+                        Double price2 = (double)c2.price;
                         int quantity2 = c2.Quantity;
 
                         <div class="card">
@@ -154,7 +154,7 @@
                             {
                                 String imageLink3 = cpu.image;
                                 String model3 = cpu.model;
-                                Double price3 = cpu.price;
+                                Double price3 = (double)cpu.price;
                                 int quantity3 = cpu.Quantity;
                                 <div class="col">
                                     <div class="card">
@@ -173,7 +173,7 @@
                         c_ProductPageInfo c3 = sc.getPart(Convert.ToInt32(Session["CPU"]));
                         String imageLink3 = c3.image;
                         String model3 = c3.model;
-                        Double price3 = c3.price;
+                        Double price3 = (double)c3.price;
                         int quantity3 = c3.Quantity;
 
                         <div class="card">
@@ -200,7 +200,7 @@
                             {
                                 String imageLink4 = c4.image;
                                 String model4 = c4.model;
-                                Double price4 = c4.price;
+                                Double price4 = (double)c4.price;
                                 int quantity4 = c4.Quantity;
                                 <div class="col">
                                     <div class="card">
@@ -217,7 +217,7 @@
                             {
                                 String imageLink5 = c5.image;
                                 String model5 = c5.model;
-                                Double price5 = c5.price;
+                                Double price5 = (double)c5.price;
                                 int quantity5 = c5.Quantity;
                                 <div class="col">
                                     <div class="card">
@@ -236,7 +236,7 @@
                         c_ProductPageInfo cooler = sc.getPart(Convert.ToInt32(Session["Cooler"]));
                         String imageLink5 = cooler.image;
                         String model5 = cooler.model;
-                        Double price5 = cooler.price;
+                        Double price5 = (double)cooler.price;
                         int quantity5 = cooler.Quantity;
 
                         <div class="card">
@@ -262,7 +262,7 @@
                             {
                                 String imageLink6 = c6.image;
                                 String model6 = c6.model;
-                                Double price6 = c6.price;
+                                Double price6 = (double)c6.price;
                                 int quantity6 = c6.Quantity;
                                 <div class="col">
                                     <div class="card">
@@ -281,7 +281,7 @@
                         c_ProductPageInfo ram = sc.getPart(Convert.ToInt32(Session["RAM"]));
                         String imageLink6 = ram.image;
                         String model6 = ram.model;
-                        Double price6 = ram.price;
+                        Double price6 = (double)ram.price;
                         int quantity6 = ram.Quantity;
 
                         <div class="card">
@@ -307,7 +307,7 @@
                             {
                                 String imageLink7 = c7.image;
                                 String model7 = c7.model;
-                                Double price7 = c7.price;
+                                Double price7 = (double)c7.price;
                                 int quantity7 = c7.Quantity;
 
                                 <div class="col">
@@ -327,7 +327,7 @@
                         c_ProductPageInfo gpu = sc.getPart(Convert.ToInt32(Session["GPU"]));
                         String imageLink7 = gpu.image;
                         String model7 = gpu.model;
-                        Double price7 = gpu.price;
+                        Double price7 = (double)gpu.price;
                         int quantity7 = gpu.Quantity;
 
                         <div class="card">
@@ -363,7 +363,7 @@
                                 {
                                     String imageLink8 = c8.image;
                                 String model8 = c8.model;
-                                Double price8 = c8.price;
+                                Double price8 = (double)c8.price;
                                 int quantity8 = c8.Quantity;
                                 <div class="col">
                                     <div class="card">
@@ -383,7 +383,7 @@
                         c_ProductPageInfo psu = sc.getPart(Convert.ToInt32(Session["PSU"]));
                         String imageLink8 = psu.image;
                         String model8 = psu.model;
-                        Double price8 = psu.price;
+                        Double price8 = (double)psu.price;
                         int quantity8 = psu.Quantity;
 
                         <div class="card">
@@ -408,7 +408,7 @@
                             {
                                 String imageLink9 = c9.image;
                                 String model9 = c9.model;
-                                Double price9 = c9.price;
+                                Double price9 = (double)c9.price;
                                 int quantity9 = c9.Quantity;
 
                                 <div class="card">
@@ -426,7 +426,7 @@
                         c_ProductPageInfo fans = sc.getPart(Convert.ToInt32(Session["Fan"]));
                         String imageLink9 = fans.image;
                         String model9 = fans.model;
-                        Double price9 = fans.price;
+                        Double price9 = (double)fans.price;
                         int quantity9 = fans.Quantity;
 
                         <div class="card">
@@ -451,7 +451,7 @@
                             {
                                 String imageLink10 = c10.image;
                                 String model10 = c10.model;
-                                Double price10 = c10.price;
+                                Double price10 = (double)c10.price;
                                 int quantity10 = c10.Quantity;
 
                                 <div class="card">
@@ -469,7 +469,7 @@
                         c_ProductPageInfo hdd = sc.getPart(Convert.ToInt32(Session["HDD"]));
                         String imageLink10 = hdd.image;
                         String model10 = hdd.model;
-                        Double price10 = hdd.price;
+                        Double price10 = (double)hdd.price;
                         int quantity10 = hdd.Quantity;
 
                         <div class="card">
@@ -494,7 +494,7 @@
                             {
                                 String imageLink11 = c11.image;
                                 String model11 = c11.model;
-                                Double price11 = c11.price;
+                                Double price11 = (double)c11.price;
                                 int quantity11 = c11.Quantity;
 
                                 <div class="card">
@@ -512,7 +512,7 @@
                         c_ProductPageInfo ssd = sc.getPart(Convert.ToInt32(Session["SSD"]));
                         String imageLink11 = ssd.image;
                         String model11 = ssd.model;
-                        Double price11 = ssd.price;
+                        Double price11 = (double)ssd.price;
                         int quantity11 = ssd.Quantity;
 
                         <div class="card">

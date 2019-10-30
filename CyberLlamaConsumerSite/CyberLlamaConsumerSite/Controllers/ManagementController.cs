@@ -1,4 +1,5 @@
-﻿using CyberLlamaConsumerSite.Models;
+﻿using CyberLlamaConsumerSite.CRUDService;
+using CyberLlamaConsumerSite.Models;
 using CyberLlamaConsumerSite.Models.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -93,6 +94,73 @@ namespace CyberLlamaConsumerSite.Controllers
             }
 
         
+        }
+
+        public ActionResult AdminIndex(string search)
+        {
+            if (Convert.ToInt32(Session["UserType"]) > 2 || Session["UserID"] == null)
+            {
+                return this.Redirect(Url.Action("Index", "Home"));
+            }
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            List<cEmployee> employees = sr.getAllEmployees().ToList();
+            if (search == null)
+            {
+                return View(employees);
+            }
+            else if(search == "name")
+            {
+                return View(employees.OrderBy(x => x.First_Name.Trim()).Select(y => y).ToList());
+            }
+            else if (search == "email")
+            {
+                return View(employees.OrderBy(x => x.Email.Trim()).Select(y => y).ToList());
+            }
+            else if (search == "surname")
+            {
+                return View(employees.OrderBy(x => x.Surname.Trim()).Select(y => y).ToList());
+            }
+            else if (search == "id")
+            {
+                return View(employees.OrderBy(x => x.Admin_ID).Select(y => y).ToList());
+            }
+            else
+            {
+                return View(employees.Where(x => x.First_Name.Equals(search) || x.Email.Equals(search) || x.Surname.Equals(search)).Select(y => y).ToList());
+            }
+        }
+
+        public ActionResult EditEmployee(int id)
+        {
+            if (Convert.ToInt32(Session["UserType"]) > 2 || Session["UserID"] == null)
+            {
+                return this.Redirect(Url.Action("Index", "Home"));
+            }
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            cEmployee client = sr.getEmployee(id);
+            return View(client);
+
+        }
+
+        public ActionResult ChangeEmployee(cEmployee client)
+        {
+            if (Session["UserID"] == null)
+            {
+                return this.Redirect(Url.Action("Index", "Home"));
+            }
+
+            CRUDService.ServiceClient sr = new CRUDService.ServiceClient();
+            bool isEditied = sr.editEmployee(client);
+             if (isEditied)
+             {
+                 return View();
+             }
+             else
+             {
+                 return this.Redirect(Url.Action("EditEmployee", "Management"));
+             }
+            
+
         }
     }
 }

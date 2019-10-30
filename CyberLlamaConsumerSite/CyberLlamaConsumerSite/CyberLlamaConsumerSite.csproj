@@ -131,6 +131,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AddNewProductController.cs" />
     <Compile Include="Controllers\AddUserController.cs" />
+    <Compile Include="Controllers\AdminInvoiceController.cs" />
     <Compile Include="Controllers\BuildV2Controller.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
@@ -583,6 +584,10 @@
     <Content Include="Views\BuildV2\Index.cshtml" />
     <Content Include="Views\EditUser\Index.cshtml" />
     <Content Include="Views\EditUser\ChangeUser.cshtml" />
+    <Content Include="Views\Management\EditEmployee.cshtml" />
+    <Content Include="Views\Management\ChangeEmployee.cshtml" />
+    <Content Include="Views\Management\AdminIndex.cshtml" />
+    <Content Include="Views\AdminInvoice\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

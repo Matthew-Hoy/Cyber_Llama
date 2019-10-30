@@ -25,7 +25,12 @@ public interface IService
     List<string> getUserPositions();
     [OperationContract]
     List<cEmployee> getAllEmployees();
-
+    [OperationContract]
+    cEmployee getEmployee(int id);
+    [OperationContract]
+    bool editEmployee(cEmployee employee);
+    [OperationContract]
+    List<cInvoice> getEntireInvoice();
     //Adding new Products to the DB
     [OperationContract]
     bool addAirCooler(cAirCooler newAC, int qua, string image);

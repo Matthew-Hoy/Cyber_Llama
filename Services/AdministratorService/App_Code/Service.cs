@@ -29,6 +29,14 @@ public class Service : IService
                 {
                     newLogin.Date = DateTime.Now;
                 }
+                else
+                {
+                    loginStat stat = new loginStat();
+                    stat.Date = DateTime.Now;
+                    stat.User_Id = User.User_ID;
+                    db.loginStats.InsertOnSubmit(stat);
+
+                }
                 db.SubmitChanges();
                 return User.User_ID + "," + User.User_Name + "," + User.User_Type;
             }
@@ -194,6 +202,45 @@ public class Service : IService
             Contact_Number = x.Conrtact_Number,
             Position = x.Position
         }).ToList();     
+    }
+
+    public cEmployee getEmployee(int id)
+    {
+
+        return db.Admins.Where(x => x.Admin_ID.Equals(id)).Select(x => new cEmployee
+        {
+            Admin_ID = x.Admin_ID,
+            First_Name = x.First_Name,
+            Surname = x.Surname,
+            Email = x.Email,
+            Contact_Number = x.Conrtact_Number,
+            Position = x.Position
+        }).FirstOrDefault();
+    }
+
+    public bool editEmployee(cEmployee employee)
+    {
+        Admin admin = db.Admins.Where(x => x.Admin_ID.Equals(employee.Admin_ID)).Select(y => y).FirstOrDefault();
+        if(admin != null)
+        {
+            admin.Conrtact_Number = employee.Contact_Number;
+            admin.Email = employee.Email;
+            admin.First_Name = employee.First_Name;
+            admin.Position = employee.Position;
+            admin.Surname = employee.Surname;
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+                return false;
+            }
+            
+        }
+        return false;
     }
 
     //Adding new Products to the DB
@@ -3269,6 +3316,34 @@ public class Service : IService
         return pcincoices.Concat(partInvoices).ToList();
     }
 
+    public List<cInvoice> getEntireInvoice()
+    {
+        List<cInvoice> partInvoices = db.PartInvoices.Select(y => new cInvoice
+        {
+            date = y.Date,
+            InvoiceId = y.Invoice_ID,
+            numItems = y.NumProducts,
+            pc_ID = y.Part_ID,
+            type = "PartInvoice",
+            user_ID = y.User_ID
+        }).ToList();
+
+        List<cInvoice> pcincoices = db.PcInvoices.Select(y => new cInvoice
+        {
+            date = y.Date,
+            InvoiceId = y.Invoice_ID,
+            numItems = y.NumProducts,
+            pc_ID = y.Pc_ID,
+            type = "PcInvoice",
+            user_ID = y.User_ID
+        }).ToList();
+
+        return pcincoices.Concat(partInvoices).ToList();
+    }
+
+
+
+
     private int getLastPartInvoiceID()
     {
         var record = db.PartInvoices.OrderByDescending(x => x.Invoice_ID).FirstOrDefault();
@@ -3443,7 +3518,23 @@ public class Service : IService
             }
             else
             {
-                current.Quantity_Sold += item.Quantity;
+                if(current.date == DateTime.Now.Date)
+                {
+                    current.Quantity_Sold += item.Quantity;
+                }
+                else
+                {
+                    PartsSold dbSold = new PartsSold
+                    {
+                        ID = item.pc_ID,
+                        Model = item.Model,
+                        Quantity_Sold = item.Quantity,
+                        Type = item.Type,
+                        date = item.date
+                    };
+                    db.PartsSolds.InsertOnSubmit(dbSold);
+                }
+                
             }
             try
             {
@@ -3489,7 +3580,22 @@ public class Service : IService
             }
             else
             {
-                current.Quantity_Sold += item.Quantity;
+                if(current.Date == DateTime.Now.Date)
+                {
+                    current.Quantity_Sold += item.Quantity;
+                }
+                else
+                {
+                    PcSold dbSold = new PcSold
+                    {
+                        PC_ID = item.pc_ID,
+                        Quantity_Sold = item.Quantity,
+                        Type = item.Type,
+                        Date = item.date
+                    };
+                    db.PcSolds.InsertOnSubmit(dbSold);
+                }
+                
             }
             try
             {

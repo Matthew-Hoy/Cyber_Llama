@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model List<CyberLlamaConsumerSite.CRUDService.cInvoice>
+
+<h1 class="centerText" style="margin:10px 0px 10px 0px">View Invoices</h1>
+<hr color="white" />
+
+<input class="FilterButton" type="button" value="Sort by Invoice ID" onclick="location.href='@Url.Action("Index", "AdminInvoice", new { search = "iID" })'" />
+<input class="FilterButton" type="button" value="Sort by User ID" onclick="location.href='@Url.Action("Index", "AdminInvoice", new { search = "uID" })'" />
+<input class="FilterButton" type="button" value="Sort by Date" onclick="location.href='@Url.Action("Index", "AdminInvoice", new { search = "date" })'" />
+<input class="FilterButton" type="button" value="Only PC Invoices" onclick="location.href='@Url.Action("Index", "AdminInvoice", new { search = "PcInvoice" })'" />
+<input class="FilterButton" type="button" value="Only Parts Invoices" onclick="location.href='@Url.Action("Index", "AdminInvoice", new { search = "PartInvoice" })'" />
+
+
+
+
+<table style="width:75%; margin-left:270px; margin-top:30px" class="data">
+    <thead class="data">
+        <tr>
+            <th class="data"><u>Invoice ID</u></th>
+            <th class="data"><u>User ID</u></th>
+            <th class="data"><u>Date</u></th>
+            <th class="data"><u>Type</u></th>
+            <th class="data"><u>View More</u></th>
+
+        </tr>
+    </thead>
+    <tbody class="data">
+        @foreach (var item in @Model)
+        {
+
+            <tr>
+                <td class="data">@item.InvoiceId</td>
+                <td class="data">@item.user_ID</td>
+                <td class="data">@item.date.Day / @item.date.Month / @item.date.Year </td>
+                <td class="data">@item.type</td>
+                <td class="data"> <a href=@Url.Action("Invoice", "Invoice", new {id = item.InvoiceId })>View More</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
