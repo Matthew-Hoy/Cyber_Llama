@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Edit Details";
+}
+
+@model CyberLlamaConsumerSite.CRUDService.cClient
+
+    <img class="centerImage" style="max-width:100px;margin-top:10px;" src="~/Images/llama.png" />
+
+<h1 class="centerText" style="margin:10px 0px 10px 0px">Edit Your Details</h1>
+
+@using (Html.BeginForm("ChangeUser", "EditUser", FormMethod.Post, new { style = "margin-left:auto;margin-right:auto;width:600px;" }))
+{
+    <div class="borderedAddEditElement ">
+        <h4 class="centerText addEditFormTitle">User Details</h4>
+        <div class="form-Input " style="display:none">
+            <label>id:</label>
+            @Html.TextBoxFor(m => m.ID, new {required = "required" });
+        </div>
+        <div class="form-Input " style="margin-top:30px;">
+            <label>First Name:</label>
+            @Html.TextBoxFor(m => m.firstName, new {required = "required" })
+        </div>
+        <div class="form-Input ">
+            <label>Surname:</label>
+            @Html.TextBoxFor(m => m.Surname, new {required = "required" })
+        </div>
+        <div class="form-Input ">
+            <label>E-Mail:</label>
+            @Html.TextBoxFor(m => m.email, new {required = "required" })
+        </div>
+        <div class="form-Input ">
+            <label>Address:</label>
+            @Html.TextBoxFor(m => m.Address, new {required = "required" })
+        </div>
+
+        <div class="form-Input ">
+            <label>City:</label>
+            @Html.TextBoxFor(m => m.city, new {required = "required" })
+        </div>
+        <div class="form-Input ">
+            <label>Province:</label>
+            @Html.TextBoxFor(m => m.province, new {required = "required" })
+        </div>
+        <div class="form-Input ">
+            <label>Zip Code:</label>
+            @Html.TextBoxFor(m => m.ZipCode, new {required = "required" })
+        </div>
+    </div>
+
+    <p color="red" style="text-align:center">@ViewBag.status</p>
+    <div class="form-Input">
+        <input class="AddEditButton centerImage" type="submit" value="Edit User Details" />
+    </div>
+}
+

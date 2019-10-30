@@ -1601,4838 +1601,6 @@ namespace CyberLlamaConsumerSite.CRUDService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="c_ProductPageInfo", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class c_ProductPageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int QuantityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string imageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Quantity {
-            get {
-                return this.QuantityField;
-            }
-            set {
-                if ((this.QuantityField.Equals(value) != true)) {
-                    this.QuantityField = value;
-                    this.RaisePropertyChanged("Quantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string image {
-            get {
-                return this.imageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.imageField, value) != true)) {
-                    this.imageField = value;
-                    this.RaisePropertyChanged("image");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typeField, value) != true)) {
-                    this.typeField = value;
-                    this.RaisePropertyChanged("type");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="c_PcPageInfo", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class c_PcPageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int QuantityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string imageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Quantity {
-            get {
-                return this.QuantityField;
-            }
-            set {
-                if ((this.QuantityField.Equals(value) != true)) {
-                    this.QuantityField = value;
-                    this.RaisePropertyChanged("Quantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string image {
-            get {
-                return this.imageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.imageField, value) != true)) {
-                    this.imageField = value;
-                    this.RaisePropertyChanged("image");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typeField, value) != true)) {
-                    this.typeField = value;
-                    this.RaisePropertyChanged("type");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cAirCooler", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cAirCooler : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string air_flowField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string chipsetField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string colourField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string fan_rpmField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string fan_sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string featuresField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string heightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string materialsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string noise_levelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string power_connectorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string weightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string widthField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string air_flow {
-            get {
-                return this.air_flowField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.air_flowField, value) != true)) {
-                    this.air_flowField = value;
-                    this.RaisePropertyChanged("air_flow");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string chipset {
-            get {
-                return this.chipsetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.chipsetField, value) != true)) {
-                    this.chipsetField = value;
-                    this.RaisePropertyChanged("chipset");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string colour {
-            get {
-                return this.colourField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.colourField, value) != true)) {
-                    this.colourField = value;
-                    this.RaisePropertyChanged("colour");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fan_rpm {
-            get {
-                return this.fan_rpmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.fan_rpmField, value) != true)) {
-                    this.fan_rpmField = value;
-                    this.RaisePropertyChanged("fan_rpm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fan_size {
-            get {
-                return this.fan_sizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.fan_sizeField, value) != true)) {
-                    this.fan_sizeField = value;
-                    this.RaisePropertyChanged("fan_size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string features {
-            get {
-                return this.featuresField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.featuresField, value) != true)) {
-                    this.featuresField = value;
-                    this.RaisePropertyChanged("features");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string height {
-            get {
-                return this.heightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.heightField, value) != true)) {
-                    this.heightField = value;
-                    this.RaisePropertyChanged("height");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string length {
-            get {
-                return this.lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.lengthField, value) != true)) {
-                    this.lengthField = value;
-                    this.RaisePropertyChanged("length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string materials {
-            get {
-                return this.materialsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.materialsField, value) != true)) {
-                    this.materialsField = value;
-                    this.RaisePropertyChanged("materials");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string noise_level {
-            get {
-                return this.noise_levelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.noise_levelField, value) != true)) {
-                    this.noise_levelField = value;
-                    this.RaisePropertyChanged("noise_level");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string power_connector {
-            get {
-                return this.power_connectorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.power_connectorField, value) != true)) {
-                    this.power_connectorField = value;
-                    this.RaisePropertyChanged("power_connector");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string weight {
-            get {
-                return this.weightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.weightField, value) != true)) {
-                    this.weightField = value;
-                    this.RaisePropertyChanged("weight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string width {
-            get {
-                return this.widthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.widthField, value) != true)) {
-                    this.widthField = value;
-                    this.RaisePropertyChanged("width");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cCase", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cCase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string colourField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cpu_cooler_max_heightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string dimensionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string expansion_slotsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string front_ioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string front_rad_lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string gpu_max_lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mobo_form_factorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string net_weightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int num_back_fansField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int num_bottom_fansField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int num_front_fansField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int num_hdd_drivesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int num_ssd_drivesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int num_top_fansField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string side_windowField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string top_rad_lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string colour {
-            get {
-                return this.colourField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.colourField, value) != true)) {
-                    this.colourField = value;
-                    this.RaisePropertyChanged("colour");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cpu_cooler_max_height {
-            get {
-                return this.cpu_cooler_max_heightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cpu_cooler_max_heightField, value) != true)) {
-                    this.cpu_cooler_max_heightField = value;
-                    this.RaisePropertyChanged("cpu_cooler_max_height");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string dimensions {
-            get {
-                return this.dimensionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
-                    this.dimensionsField = value;
-                    this.RaisePropertyChanged("dimensions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string expansion_slots {
-            get {
-                return this.expansion_slotsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.expansion_slotsField, value) != true)) {
-                    this.expansion_slotsField = value;
-                    this.RaisePropertyChanged("expansion_slots");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string front_io {
-            get {
-                return this.front_ioField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.front_ioField, value) != true)) {
-                    this.front_ioField = value;
-                    this.RaisePropertyChanged("front_io");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string front_rad_length {
-            get {
-                return this.front_rad_lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.front_rad_lengthField, value) != true)) {
-                    this.front_rad_lengthField = value;
-                    this.RaisePropertyChanged("front_rad_length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string gpu_max_length {
-            get {
-                return this.gpu_max_lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.gpu_max_lengthField, value) != true)) {
-                    this.gpu_max_lengthField = value;
-                    this.RaisePropertyChanged("gpu_max_length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mobo_form_factor {
-            get {
-                return this.mobo_form_factorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mobo_form_factorField, value) != true)) {
-                    this.mobo_form_factorField = value;
-                    this.RaisePropertyChanged("mobo_form_factor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string net_weight {
-            get {
-                return this.net_weightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.net_weightField, value) != true)) {
-                    this.net_weightField = value;
-                    this.RaisePropertyChanged("net_weight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int num_back_fans {
-            get {
-                return this.num_back_fansField;
-            }
-            set {
-                if ((this.num_back_fansField.Equals(value) != true)) {
-                    this.num_back_fansField = value;
-                    this.RaisePropertyChanged("num_back_fans");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int num_bottom_fans {
-            get {
-                return this.num_bottom_fansField;
-            }
-            set {
-                if ((this.num_bottom_fansField.Equals(value) != true)) {
-                    this.num_bottom_fansField = value;
-                    this.RaisePropertyChanged("num_bottom_fans");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int num_front_fans {
-            get {
-                return this.num_front_fansField;
-            }
-            set {
-                if ((this.num_front_fansField.Equals(value) != true)) {
-                    this.num_front_fansField = value;
-                    this.RaisePropertyChanged("num_front_fans");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int num_hdd_drives {
-            get {
-                return this.num_hdd_drivesField;
-            }
-            set {
-                if ((this.num_hdd_drivesField.Equals(value) != true)) {
-                    this.num_hdd_drivesField = value;
-                    this.RaisePropertyChanged("num_hdd_drives");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int num_ssd_drives {
-            get {
-                return this.num_ssd_drivesField;
-            }
-            set {
-                if ((this.num_ssd_drivesField.Equals(value) != true)) {
-                    this.num_ssd_drivesField = value;
-                    this.RaisePropertyChanged("num_ssd_drives");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int num_top_fans {
-            get {
-                return this.num_top_fansField;
-            }
-            set {
-                if ((this.num_top_fansField.Equals(value) != true)) {
-                    this.num_top_fansField = value;
-                    this.RaisePropertyChanged("num_top_fans");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string side_window {
-            get {
-                return this.side_windowField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.side_windowField, value) != true)) {
-                    this.side_windowField = value;
-                    this.RaisePropertyChanged("side_window");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string top_rad_length {
-            get {
-                return this.top_rad_lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.top_rad_lengthField, value) != true)) {
-                    this.top_rad_lengthField = value;
-                    this.RaisePropertyChanged("top_rad_length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cCPU", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cCPU : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ChipsetField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string base_clockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string boost_clockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string coresField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int max_mem_speedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string max_tempField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mem_channelsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mem_typeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int tdpField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string threadsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string total_cacheField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Chipset {
-            get {
-                return this.ChipsetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChipsetField, value) != true)) {
-                    this.ChipsetField = value;
-                    this.RaisePropertyChanged("Chipset");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string base_clock {
-            get {
-                return this.base_clockField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.base_clockField, value) != true)) {
-                    this.base_clockField = value;
-                    this.RaisePropertyChanged("base_clock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string boost_clock {
-            get {
-                return this.boost_clockField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.boost_clockField, value) != true)) {
-                    this.boost_clockField = value;
-                    this.RaisePropertyChanged("boost_clock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cores {
-            get {
-                return this.coresField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.coresField, value) != true)) {
-                    this.coresField = value;
-                    this.RaisePropertyChanged("cores");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int max_mem_speed {
-            get {
-                return this.max_mem_speedField;
-            }
-            set {
-                if ((this.max_mem_speedField.Equals(value) != true)) {
-                    this.max_mem_speedField = value;
-                    this.RaisePropertyChanged("max_mem_speed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string max_temp {
-            get {
-                return this.max_tempField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.max_tempField, value) != true)) {
-                    this.max_tempField = value;
-                    this.RaisePropertyChanged("max_temp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mem_channels {
-            get {
-                return this.mem_channelsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mem_channelsField, value) != true)) {
-                    this.mem_channelsField = value;
-                    this.RaisePropertyChanged("mem_channels");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mem_type {
-            get {
-                return this.mem_typeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mem_typeField, value) != true)) {
-                    this.mem_typeField = value;
-                    this.RaisePropertyChanged("mem_type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int tdp {
-            get {
-                return this.tdpField;
-            }
-            set {
-                if ((this.tdpField.Equals(value) != true)) {
-                    this.tdpField = value;
-                    this.RaisePropertyChanged("tdp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string threads {
-            get {
-                return this.threadsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.threadsField, value) != true)) {
-                    this.threadsField = value;
-                    this.RaisePropertyChanged("threads");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string total_cache {
-            get {
-                return this.total_cacheField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.total_cacheField, value) != true)) {
-                    this.total_cacheField = value;
-                    this.RaisePropertyChanged("total_cache");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cFan", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cFan : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cable_lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string input_voltageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string max_air_flowField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mtbfField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string noiseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int num_fansField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string rpmField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string static_pressureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cable_length {
-            get {
-                return this.cable_lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cable_lengthField, value) != true)) {
-                    this.cable_lengthField = value;
-                    this.RaisePropertyChanged("cable_length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string input_voltage {
-            get {
-                return this.input_voltageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.input_voltageField, value) != true)) {
-                    this.input_voltageField = value;
-                    this.RaisePropertyChanged("input_voltage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string max_air_flow {
-            get {
-                return this.max_air_flowField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.max_air_flowField, value) != true)) {
-                    this.max_air_flowField = value;
-                    this.RaisePropertyChanged("max_air_flow");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mtbf {
-            get {
-                return this.mtbfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mtbfField, value) != true)) {
-                    this.mtbfField = value;
-                    this.RaisePropertyChanged("mtbf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string noise {
-            get {
-                return this.noiseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.noiseField, value) != true)) {
-                    this.noiseField = value;
-                    this.RaisePropertyChanged("noise");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int num_fans {
-            get {
-                return this.num_fansField;
-            }
-            set {
-                if ((this.num_fansField.Equals(value) != true)) {
-                    this.num_fansField = value;
-                    this.RaisePropertyChanged("num_fans");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string rpm {
-            get {
-                return this.rpmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.rpmField, value) != true)) {
-                    this.rpmField = value;
-                    this.RaisePropertyChanged("rpm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string size {
-            get {
-                return this.sizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sizeField, value) != true)) {
-                    this.sizeField = value;
-                    this.RaisePropertyChanged("size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string static_pressure {
-            get {
-                return this.static_pressureField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.static_pressureField, value) != true)) {
-                    this.static_pressureField = value;
-                    this.RaisePropertyChanged("static_pressure");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cGPU", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cGPU : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string base_clockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string boost_clockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string form_factorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string heightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string manufacturerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string max_resolutionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mem_sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mem_speedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mem_typeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string portsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string recommended_psu_powerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string slot_widthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string stream_proccessorsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string vr_readyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string base_clock {
-            get {
-                return this.base_clockField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.base_clockField, value) != true)) {
-                    this.base_clockField = value;
-                    this.RaisePropertyChanged("base_clock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string boost_clock {
-            get {
-                return this.boost_clockField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.boost_clockField, value) != true)) {
-                    this.boost_clockField = value;
-                    this.RaisePropertyChanged("boost_clock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string form_factor {
-            get {
-                return this.form_factorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.form_factorField, value) != true)) {
-                    this.form_factorField = value;
-                    this.RaisePropertyChanged("form_factor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string height {
-            get {
-                return this.heightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.heightField, value) != true)) {
-                    this.heightField = value;
-                    this.RaisePropertyChanged("height");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string length {
-            get {
-                return this.lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.lengthField, value) != true)) {
-                    this.lengthField = value;
-                    this.RaisePropertyChanged("length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string manufacturer {
-            get {
-                return this.manufacturerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.manufacturerField, value) != true)) {
-                    this.manufacturerField = value;
-                    this.RaisePropertyChanged("manufacturer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string max_resolution {
-            get {
-                return this.max_resolutionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.max_resolutionField, value) != true)) {
-                    this.max_resolutionField = value;
-                    this.RaisePropertyChanged("max_resolution");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mem_size {
-            get {
-                return this.mem_sizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mem_sizeField, value) != true)) {
-                    this.mem_sizeField = value;
-                    this.RaisePropertyChanged("mem_size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mem_speed {
-            get {
-                return this.mem_speedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mem_speedField, value) != true)) {
-                    this.mem_speedField = value;
-                    this.RaisePropertyChanged("mem_speed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mem_type {
-            get {
-                return this.mem_typeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mem_typeField, value) != true)) {
-                    this.mem_typeField = value;
-                    this.RaisePropertyChanged("mem_type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ports {
-            get {
-                return this.portsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.portsField, value) != true)) {
-                    this.portsField = value;
-                    this.RaisePropertyChanged("ports");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string recommended_psu_power {
-            get {
-                return this.recommended_psu_powerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.recommended_psu_powerField, value) != true)) {
-                    this.recommended_psu_powerField = value;
-                    this.RaisePropertyChanged("recommended_psu_power");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string slot_width {
-            get {
-                return this.slot_widthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.slot_widthField, value) != true)) {
-                    this.slot_widthField = value;
-                    this.RaisePropertyChanged("slot_width");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string stream_proccessors {
-            get {
-                return this.stream_proccessorsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.stream_proccessorsField, value) != true)) {
-                    this.stream_proccessorsField = value;
-                    this.RaisePropertyChanged("stream_proccessors");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string vr_ready {
-            get {
-                return this.vr_readyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.vr_readyField, value) != true)) {
-                    this.vr_readyField = value;
-                    this.RaisePropertyChanged("vr_ready");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cHDD", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cHDD : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Workload_Rate_LimitField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string avg_power_usageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string interface_typeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string load_unload_cyclesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string max_sustained_transfer_rateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string operation_tempField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string rotational_speedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string storageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string weightField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Workload_Rate_Limit {
-            get {
-                return this.Workload_Rate_LimitField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Workload_Rate_LimitField, value) != true)) {
-                    this.Workload_Rate_LimitField = value;
-                    this.RaisePropertyChanged("Workload_Rate_Limit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string avg_power_usage {
-            get {
-                return this.avg_power_usageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.avg_power_usageField, value) != true)) {
-                    this.avg_power_usageField = value;
-                    this.RaisePropertyChanged("avg_power_usage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string interface_type {
-            get {
-                return this.interface_typeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.interface_typeField, value) != true)) {
-                    this.interface_typeField = value;
-                    this.RaisePropertyChanged("interface_type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string load_unload_cycles {
-            get {
-                return this.load_unload_cyclesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.load_unload_cyclesField, value) != true)) {
-                    this.load_unload_cyclesField = value;
-                    this.RaisePropertyChanged("load_unload_cycles");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string max_sustained_transfer_rate {
-            get {
-                return this.max_sustained_transfer_rateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.max_sustained_transfer_rateField, value) != true)) {
-                    this.max_sustained_transfer_rateField = value;
-                    this.RaisePropertyChanged("max_sustained_transfer_rate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string operation_temp {
-            get {
-                return this.operation_tempField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.operation_tempField, value) != true)) {
-                    this.operation_tempField = value;
-                    this.RaisePropertyChanged("operation_temp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string rotational_speed {
-            get {
-                return this.rotational_speedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.rotational_speedField, value) != true)) {
-                    this.rotational_speedField = value;
-                    this.RaisePropertyChanged("rotational_speed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string size {
-            get {
-                return this.sizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sizeField, value) != true)) {
-                    this.sizeField = value;
-                    this.RaisePropertyChanged("size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string storage {
-            get {
-                return this.storageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.storageField, value) != true)) {
-                    this.storageField = value;
-                    this.RaisePropertyChanged("storage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string weight {
-            get {
-                return this.weightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.weightField, value) != true)) {
-                    this.weightField = value;
-                    this.RaisePropertyChanged("weight");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cHeadset", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cHeadset : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cable_lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string colourField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string connectorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string featuresField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string frequency_responseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string microphoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mp_frequency_responseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mp_pickup_patternField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mp_sensitivityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string wearing_styleField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cable_length {
-            get {
-                return this.cable_lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cable_lengthField, value) != true)) {
-                    this.cable_lengthField = value;
-                    this.RaisePropertyChanged("cable_length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string colour {
-            get {
-                return this.colourField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.colourField, value) != true)) {
-                    this.colourField = value;
-                    this.RaisePropertyChanged("colour");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string connector {
-            get {
-                return this.connectorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.connectorField, value) != true)) {
-                    this.connectorField = value;
-                    this.RaisePropertyChanged("connector");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string features {
-            get {
-                return this.featuresField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.featuresField, value) != true)) {
-                    this.featuresField = value;
-                    this.RaisePropertyChanged("features");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string frequency_response {
-            get {
-                return this.frequency_responseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.frequency_responseField, value) != true)) {
-                    this.frequency_responseField = value;
-                    this.RaisePropertyChanged("frequency_response");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string microphone {
-            get {
-                return this.microphoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.microphoneField, value) != true)) {
-                    this.microphoneField = value;
-                    this.RaisePropertyChanged("microphone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mp_frequency_response {
-            get {
-                return this.mp_frequency_responseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mp_frequency_responseField, value) != true)) {
-                    this.mp_frequency_responseField = value;
-                    this.RaisePropertyChanged("mp_frequency_response");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mp_pickup_pattern {
-            get {
-                return this.mp_pickup_patternField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mp_pickup_patternField, value) != true)) {
-                    this.mp_pickup_patternField = value;
-                    this.RaisePropertyChanged("mp_pickup_pattern");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mp_sensitivity {
-            get {
-                return this.mp_sensitivityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mp_sensitivityField, value) != true)) {
-                    this.mp_sensitivityField = value;
-                    this.RaisePropertyChanged("mp_sensitivity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string wearing_style {
-            get {
-                return this.wearing_styleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.wearing_styleField, value) != true)) {
-                    this.wearing_styleField = value;
-                    this.RaisePropertyChanged("wearing_style");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cLiquidCooler", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cLiquidCooler : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string colorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string fan_sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string rad_heightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string rad_lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string rad_matsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string rad_widthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string rgbField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string socketsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string tube_lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string tube_matsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string color {
-            get {
-                return this.colorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.colorField, value) != true)) {
-                    this.colorField = value;
-                    this.RaisePropertyChanged("color");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fan_size {
-            get {
-                return this.fan_sizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.fan_sizeField, value) != true)) {
-                    this.fan_sizeField = value;
-                    this.RaisePropertyChanged("fan_size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string rad_height {
-            get {
-                return this.rad_heightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.rad_heightField, value) != true)) {
-                    this.rad_heightField = value;
-                    this.RaisePropertyChanged("rad_height");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string rad_length {
-            get {
-                return this.rad_lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.rad_lengthField, value) != true)) {
-                    this.rad_lengthField = value;
-                    this.RaisePropertyChanged("rad_length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string rad_mats {
-            get {
-                return this.rad_matsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.rad_matsField, value) != true)) {
-                    this.rad_matsField = value;
-                    this.RaisePropertyChanged("rad_mats");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string rad_width {
-            get {
-                return this.rad_widthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.rad_widthField, value) != true)) {
-                    this.rad_widthField = value;
-                    this.RaisePropertyChanged("rad_width");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string rgb {
-            get {
-                return this.rgbField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.rgbField, value) != true)) {
-                    this.rgbField = value;
-                    this.RaisePropertyChanged("rgb");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string sockets {
-            get {
-                return this.socketsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.socketsField, value) != true)) {
-                    this.socketsField = value;
-                    this.RaisePropertyChanged("sockets");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string tube_length {
-            get {
-                return this.tube_lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tube_lengthField, value) != true)) {
-                    this.tube_lengthField = value;
-                    this.RaisePropertyChanged("tube_length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string tube_mats {
-            get {
-                return this.tube_matsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tube_matsField, value) != true)) {
-                    this.tube_matsField = value;
-                    this.RaisePropertyChanged("tube_mats");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cMobo", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cMobo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string back_panel_IOField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string chipsetField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string expansion_slotsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string form_factorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string internal_IOField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string lanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int max_mem_sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int max_mem_speedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string memoryTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string notesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string os_supportField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string storageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string back_panel_IO {
-            get {
-                return this.back_panel_IOField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.back_panel_IOField, value) != true)) {
-                    this.back_panel_IOField = value;
-                    this.RaisePropertyChanged("back_panel_IO");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string chipset {
-            get {
-                return this.chipsetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.chipsetField, value) != true)) {
-                    this.chipsetField = value;
-                    this.RaisePropertyChanged("chipset");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string expansion_slots {
-            get {
-                return this.expansion_slotsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.expansion_slotsField, value) != true)) {
-                    this.expansion_slotsField = value;
-                    this.RaisePropertyChanged("expansion_slots");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string form_factor {
-            get {
-                return this.form_factorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.form_factorField, value) != true)) {
-                    this.form_factorField = value;
-                    this.RaisePropertyChanged("form_factor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string internal_IO {
-            get {
-                return this.internal_IOField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.internal_IOField, value) != true)) {
-                    this.internal_IOField = value;
-                    this.RaisePropertyChanged("internal_IO");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string lan {
-            get {
-                return this.lanField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.lanField, value) != true)) {
-                    this.lanField = value;
-                    this.RaisePropertyChanged("lan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int max_mem_size {
-            get {
-                return this.max_mem_sizeField;
-            }
-            set {
-                if ((this.max_mem_sizeField.Equals(value) != true)) {
-                    this.max_mem_sizeField = value;
-                    this.RaisePropertyChanged("max_mem_size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int max_mem_speed {
-            get {
-                return this.max_mem_speedField;
-            }
-            set {
-                if ((this.max_mem_speedField.Equals(value) != true)) {
-                    this.max_mem_speedField = value;
-                    this.RaisePropertyChanged("max_mem_speed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string memoryType {
-            get {
-                return this.memoryTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.memoryTypeField, value) != true)) {
-                    this.memoryTypeField = value;
-                    this.RaisePropertyChanged("memoryType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string notes {
-            get {
-                return this.notesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.notesField, value) != true)) {
-                    this.notesField = value;
-                    this.RaisePropertyChanged("notes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string os_support {
-            get {
-                return this.os_supportField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.os_supportField, value) != true)) {
-                    this.os_supportField = value;
-                    this.RaisePropertyChanged("os_support");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string storage {
-            get {
-                return this.storageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.storageField, value) != true)) {
-                    this.storageField = value;
-                    this.RaisePropertyChanged("storage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cPSU", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cPSU : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PowerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cablesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string certificationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string connectorsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string dimensionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string fan_sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modularField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mtbfField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Power {
-            get {
-                return this.PowerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PowerField, value) != true)) {
-                    this.PowerField = value;
-                    this.RaisePropertyChanged("Power");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cables {
-            get {
-                return this.cablesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cablesField, value) != true)) {
-                    this.cablesField = value;
-                    this.RaisePropertyChanged("cables");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string certification {
-            get {
-                return this.certificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.certificationField, value) != true)) {
-                    this.certificationField = value;
-                    this.RaisePropertyChanged("certification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string connectors {
-            get {
-                return this.connectorsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.connectorsField, value) != true)) {
-                    this.connectorsField = value;
-                    this.RaisePropertyChanged("connectors");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string dimensions {
-            get {
-                return this.dimensionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
-                    this.dimensionsField = value;
-                    this.RaisePropertyChanged("dimensions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fan_size {
-            get {
-                return this.fan_sizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.fan_sizeField, value) != true)) {
-                    this.fan_sizeField = value;
-                    this.RaisePropertyChanged("fan_size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string modular {
-            get {
-                return this.modularField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modularField, value) != true)) {
-                    this.modularField = value;
-                    this.RaisePropertyChanged("modular");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mtbf {
-            get {
-                return this.mtbfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mtbfField, value) != true)) {
-                    this.mtbfField = value;
-                    this.RaisePropertyChanged("mtbf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cRAM", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cRAM : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string capacityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string channel_configField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string heightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string latencyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string speedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string voltageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string capacity {
-            get {
-                return this.capacityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.capacityField, value) != true)) {
-                    this.capacityField = value;
-                    this.RaisePropertyChanged("capacity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string channel_config {
-            get {
-                return this.channel_configField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.channel_configField, value) != true)) {
-                    this.channel_configField = value;
-                    this.RaisePropertyChanged("channel_config");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string height {
-            get {
-                return this.heightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.heightField, value) != true)) {
-                    this.heightField = value;
-                    this.RaisePropertyChanged("height");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string latency {
-            get {
-                return this.latencyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.latencyField, value) != true)) {
-                    this.latencyField = value;
-                    this.RaisePropertyChanged("latency");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string speed {
-            get {
-                return this.speedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.speedField, value) != true)) {
-                    this.speedField = value;
-                    this.RaisePropertyChanged("speed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typeField, value) != true)) {
-                    this.typeField = value;
-                    this.RaisePropertyChanged("type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string voltage {
-            get {
-                return this.voltageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.voltageField, value) != true)) {
-                    this.voltageField = value;
-                    this.RaisePropertyChanged("voltage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cSSD", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cSSD : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string capacityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string form_factorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string interface_typeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string max_power_usageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string max_seq_readField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string max_seq_writeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mtbfField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string operating_tempField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string random_readField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string random_writeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string widthField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string capacity {
-            get {
-                return this.capacityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.capacityField, value) != true)) {
-                    this.capacityField = value;
-                    this.RaisePropertyChanged("capacity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string form_factor {
-            get {
-                return this.form_factorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.form_factorField, value) != true)) {
-                    this.form_factorField = value;
-                    this.RaisePropertyChanged("form_factor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string interface_type {
-            get {
-                return this.interface_typeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.interface_typeField, value) != true)) {
-                    this.interface_typeField = value;
-                    this.RaisePropertyChanged("interface_type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string length {
-            get {
-                return this.lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.lengthField, value) != true)) {
-                    this.lengthField = value;
-                    this.RaisePropertyChanged("length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string max_power_usage {
-            get {
-                return this.max_power_usageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.max_power_usageField, value) != true)) {
-                    this.max_power_usageField = value;
-                    this.RaisePropertyChanged("max_power_usage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string max_seq_read {
-            get {
-                return this.max_seq_readField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.max_seq_readField, value) != true)) {
-                    this.max_seq_readField = value;
-                    this.RaisePropertyChanged("max_seq_read");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string max_seq_write {
-            get {
-                return this.max_seq_writeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.max_seq_writeField, value) != true)) {
-                    this.max_seq_writeField = value;
-                    this.RaisePropertyChanged("max_seq_write");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mtbf {
-            get {
-                return this.mtbfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mtbfField, value) != true)) {
-                    this.mtbfField = value;
-                    this.RaisePropertyChanged("mtbf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string operating_temp {
-            get {
-                return this.operating_tempField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.operating_tempField, value) != true)) {
-                    this.operating_tempField = value;
-                    this.RaisePropertyChanged("operating_temp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string random_read {
-            get {
-                return this.random_readField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.random_readField, value) != true)) {
-                    this.random_readField = value;
-                    this.RaisePropertyChanged("random_read");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string random_write {
-            get {
-                return this.random_writeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.random_writeField, value) != true)) {
-                    this.random_writeField = value;
-                    this.RaisePropertyChanged("random_write");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string width {
-            get {
-                return this.widthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.widthField, value) != true)) {
-                    this.widthField = value;
-                    this.RaisePropertyChanged("width");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cKeyboard", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cKeyboard : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string connectorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string dimensionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string led_backlightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string materialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string multimedia_keysField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string programmable_macrosField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string switchesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string weightField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string connector {
-            get {
-                return this.connectorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.connectorField, value) != true)) {
-                    this.connectorField = value;
-                    this.RaisePropertyChanged("connector");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string dimensions {
-            get {
-                return this.dimensionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
-                    this.dimensionsField = value;
-                    this.RaisePropertyChanged("dimensions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string led_backlight {
-            get {
-                return this.led_backlightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.led_backlightField, value) != true)) {
-                    this.led_backlightField = value;
-                    this.RaisePropertyChanged("led_backlight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string material {
-            get {
-                return this.materialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.materialField, value) != true)) {
-                    this.materialField = value;
-                    this.RaisePropertyChanged("material");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string multimedia_keys {
-            get {
-                return this.multimedia_keysField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.multimedia_keysField, value) != true)) {
-                    this.multimedia_keysField = value;
-                    this.RaisePropertyChanged("multimedia_keys");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string programmable_macros {
-            get {
-                return this.programmable_macrosField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.programmable_macrosField, value) != true)) {
-                    this.programmable_macrosField = value;
-                    this.RaisePropertyChanged("programmable_macros");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string switches {
-            get {
-                return this.switchesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.switchesField, value) != true)) {
-                    this.switchesField = value;
-                    this.RaisePropertyChanged("switches");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string weight {
-            get {
-                return this.weightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.weightField, value) != true)) {
-                    this.weightField = value;
-                    this.RaisePropertyChanged("weight");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cMicrophone", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cMicrophone : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cable_lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string frequency_responseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pick_up_patternField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sensitivityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cable_length {
-            get {
-                return this.cable_lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cable_lengthField, value) != true)) {
-                    this.cable_lengthField = value;
-                    this.RaisePropertyChanged("cable_length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string frequency_response {
-            get {
-                return this.frequency_responseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.frequency_responseField, value) != true)) {
-                    this.frequency_responseField = value;
-                    this.RaisePropertyChanged("frequency_response");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pick_up_pattern {
-            get {
-                return this.pick_up_patternField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pick_up_patternField, value) != true)) {
-                    this.pick_up_patternField = value;
-                    this.RaisePropertyChanged("pick_up_pattern");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string sensitivity {
-            get {
-                return this.sensitivityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sensitivityField, value) != true)) {
-                    this.sensitivityField = value;
-                    this.RaisePropertyChanged("sensitivity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="cSpeaker", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class cSpeaker : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -6686,1114 +1854,6 @@ namespace CyberLlamaConsumerSite.CRUDService {
                 if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
                     this.warrantyField = value;
                     this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cMonitor", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cMonitor : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brightnessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string coloursField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string contrast_ratioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string display_portField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string hdmiField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string panel_typeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pivotField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string refresh_rateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string resolutionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string response_timeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string screen_ratioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string screen_sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string speakersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string swivelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string tiltField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string vgaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string viewing_angleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brightness {
-            get {
-                return this.brightnessField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brightnessField, value) != true)) {
-                    this.brightnessField = value;
-                    this.RaisePropertyChanged("brightness");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string colours {
-            get {
-                return this.coloursField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.coloursField, value) != true)) {
-                    this.coloursField = value;
-                    this.RaisePropertyChanged("colours");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string contrast_ratio {
-            get {
-                return this.contrast_ratioField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.contrast_ratioField, value) != true)) {
-                    this.contrast_ratioField = value;
-                    this.RaisePropertyChanged("contrast_ratio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string display_port {
-            get {
-                return this.display_portField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.display_portField, value) != true)) {
-                    this.display_portField = value;
-                    this.RaisePropertyChanged("display_port");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string hdmi {
-            get {
-                return this.hdmiField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.hdmiField, value) != true)) {
-                    this.hdmiField = value;
-                    this.RaisePropertyChanged("hdmi");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string panel_type {
-            get {
-                return this.panel_typeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.panel_typeField, value) != true)) {
-                    this.panel_typeField = value;
-                    this.RaisePropertyChanged("panel_type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pivot {
-            get {
-                return this.pivotField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pivotField, value) != true)) {
-                    this.pivotField = value;
-                    this.RaisePropertyChanged("pivot");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string refresh_rate {
-            get {
-                return this.refresh_rateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.refresh_rateField, value) != true)) {
-                    this.refresh_rateField = value;
-                    this.RaisePropertyChanged("refresh_rate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string resolution {
-            get {
-                return this.resolutionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.resolutionField, value) != true)) {
-                    this.resolutionField = value;
-                    this.RaisePropertyChanged("resolution");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string response_time {
-            get {
-                return this.response_timeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.response_timeField, value) != true)) {
-                    this.response_timeField = value;
-                    this.RaisePropertyChanged("response_time");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string screen_ratio {
-            get {
-                return this.screen_ratioField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.screen_ratioField, value) != true)) {
-                    this.screen_ratioField = value;
-                    this.RaisePropertyChanged("screen_ratio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string screen_size {
-            get {
-                return this.screen_sizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.screen_sizeField, value) != true)) {
-                    this.screen_sizeField = value;
-                    this.RaisePropertyChanged("screen_size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string speakers {
-            get {
-                return this.speakersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.speakersField, value) != true)) {
-                    this.speakersField = value;
-                    this.RaisePropertyChanged("speakers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string swivel {
-            get {
-                return this.swivelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.swivelField, value) != true)) {
-                    this.swivelField = value;
-                    this.RaisePropertyChanged("swivel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string tilt {
-            get {
-                return this.tiltField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tiltField, value) != true)) {
-                    this.tiltField = value;
-                    this.RaisePropertyChanged("tilt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string vga {
-            get {
-                return this.vgaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.vgaField, value) != true)) {
-                    this.vgaField = value;
-                    this.RaisePropertyChanged("vga");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string viewing_angle {
-            get {
-                return this.viewing_angleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.viewing_angleField, value) != true)) {
-                    this.viewing_angleField = value;
-                    this.RaisePropertyChanged("viewing_angle");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cMouse", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cMouse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string batteryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cable_lengthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string connection_typeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string dimensionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string max_accelerationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string max_speedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ptfe_feetField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string resolutionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sensorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string weightField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string battery {
-            get {
-                return this.batteryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.batteryField, value) != true)) {
-                    this.batteryField = value;
-                    this.RaisePropertyChanged("battery");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cable_length {
-            get {
-                return this.cable_lengthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cable_lengthField, value) != true)) {
-                    this.cable_lengthField = value;
-                    this.RaisePropertyChanged("cable_length");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string connection_type {
-            get {
-                return this.connection_typeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.connection_typeField, value) != true)) {
-                    this.connection_typeField = value;
-                    this.RaisePropertyChanged("connection_type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string dimensions {
-            get {
-                return this.dimensionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
-                    this.dimensionsField = value;
-                    this.RaisePropertyChanged("dimensions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string max_acceleration {
-            get {
-                return this.max_accelerationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.max_accelerationField, value) != true)) {
-                    this.max_accelerationField = value;
-                    this.RaisePropertyChanged("max_acceleration");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string max_speed {
-            get {
-                return this.max_speedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.max_speedField, value) != true)) {
-                    this.max_speedField = value;
-                    this.RaisePropertyChanged("max_speed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ptfe_feet {
-            get {
-                return this.ptfe_feetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ptfe_feetField, value) != true)) {
-                    this.ptfe_feetField = value;
-                    this.RaisePropertyChanged("ptfe_feet");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string resolution {
-            get {
-                return this.resolutionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.resolutionField, value) != true)) {
-                    this.resolutionField = value;
-                    this.RaisePropertyChanged("resolution");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string sensor {
-            get {
-                return this.sensorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sensorField, value) != true)) {
-                    this.sensorField = value;
-                    this.RaisePropertyChanged("sensor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string weight {
-            get {
-                return this.weightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.weightField, value) != true)) {
-                    this.weightField = value;
-                    this.RaisePropertyChanged("weight");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cMousePad", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cMousePad : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string brandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string colourField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string dimensionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int discountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string materialsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pad_baseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string seriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warrantyField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
-            get {
-                return this.activeField;
-            }
-            set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string brand {
-            get {
-                return this.brandField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.brandField, value) != true)) {
-                    this.brandField = value;
-                    this.RaisePropertyChanged("brand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string colour {
-            get {
-                return this.colourField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.colourField, value) != true)) {
-                    this.colourField = value;
-                    this.RaisePropertyChanged("colour");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string dimensions {
-            get {
-                return this.dimensionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
-                    this.dimensionsField = value;
-                    this.RaisePropertyChanged("dimensions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int discount {
-            get {
-                return this.discountField;
-            }
-            set {
-                if ((this.discountField.Equals(value) != true)) {
-                    this.discountField = value;
-                    this.RaisePropertyChanged("discount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string materials {
-            get {
-                return this.materialsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.materialsField, value) != true)) {
-                    this.materialsField = value;
-                    this.RaisePropertyChanged("materials");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pad_base {
-            get {
-                return this.pad_baseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pad_baseField, value) != true)) {
-                    this.pad_baseField = value;
-                    this.RaisePropertyChanged("pad_base");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string series {
-            get {
-                return this.seriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
-                    this.seriesField = value;
-                    this.RaisePropertyChanged("series");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string size {
-            get {
-                return this.sizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sizeField, value) != true)) {
-                    this.sizeField = value;
-                    this.RaisePropertyChanged("size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warranty {
-            get {
-                return this.warrantyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
-                    this.warrantyField = value;
-                    this.RaisePropertyChanged("warranty");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cEmployee", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class cEmployee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Admin_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Contact_NumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string First_NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PositionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SurnameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Admin_ID {
-            get {
-                return this.Admin_IDField;
-            }
-            set {
-                if ((this.Admin_IDField.Equals(value) != true)) {
-                    this.Admin_IDField = value;
-                    this.RaisePropertyChanged("Admin_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Contact_Number {
-            get {
-                return this.Contact_NumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Contact_NumberField, value) != true)) {
-                    this.Contact_NumberField = value;
-                    this.RaisePropertyChanged("Contact_Number");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string First_Name {
-            get {
-                return this.First_NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
-                    this.First_NameField = value;
-                    this.RaisePropertyChanged("First_Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Position {
-            get {
-                return this.PositionField;
-            }
-            set {
-                if ((this.PositionField.Equals(value) != true)) {
-                    this.PositionField = value;
-                    this.RaisePropertyChanged("Position");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Surname {
-            get {
-                return this.SurnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
-                    this.SurnameField = value;
-                    this.RaisePropertyChanged("Surname");
                 }
             }
         }
@@ -16909,6 +10969,5946 @@ namespace CyberLlamaConsumerSite.CRUDService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="c_ProductPageInfo", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class c_ProductPageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string image {
+            get {
+                return this.imageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imageField, value) != true)) {
+                    this.imageField = value;
+                    this.RaisePropertyChanged("image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typeField, value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="c_PcPageInfo", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class c_PcPageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string image {
+            get {
+                return this.imageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imageField, value) != true)) {
+                    this.imageField = value;
+                    this.RaisePropertyChanged("image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typeField, value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cAirCooler", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cAirCooler : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string air_flowField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string chipsetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string colourField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fan_rpmField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fan_sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string featuresField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string heightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string materialsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string noise_levelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string power_connectorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string weightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string widthField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string air_flow {
+            get {
+                return this.air_flowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.air_flowField, value) != true)) {
+                    this.air_flowField = value;
+                    this.RaisePropertyChanged("air_flow");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string chipset {
+            get {
+                return this.chipsetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.chipsetField, value) != true)) {
+                    this.chipsetField = value;
+                    this.RaisePropertyChanged("chipset");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string colour {
+            get {
+                return this.colourField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.colourField, value) != true)) {
+                    this.colourField = value;
+                    this.RaisePropertyChanged("colour");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fan_rpm {
+            get {
+                return this.fan_rpmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fan_rpmField, value) != true)) {
+                    this.fan_rpmField = value;
+                    this.RaisePropertyChanged("fan_rpm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fan_size {
+            get {
+                return this.fan_sizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fan_sizeField, value) != true)) {
+                    this.fan_sizeField = value;
+                    this.RaisePropertyChanged("fan_size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string features {
+            get {
+                return this.featuresField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.featuresField, value) != true)) {
+                    this.featuresField = value;
+                    this.RaisePropertyChanged("features");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string height {
+            get {
+                return this.heightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.heightField, value) != true)) {
+                    this.heightField = value;
+                    this.RaisePropertyChanged("height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string length {
+            get {
+                return this.lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lengthField, value) != true)) {
+                    this.lengthField = value;
+                    this.RaisePropertyChanged("length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string materials {
+            get {
+                return this.materialsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.materialsField, value) != true)) {
+                    this.materialsField = value;
+                    this.RaisePropertyChanged("materials");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string noise_level {
+            get {
+                return this.noise_levelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.noise_levelField, value) != true)) {
+                    this.noise_levelField = value;
+                    this.RaisePropertyChanged("noise_level");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string power_connector {
+            get {
+                return this.power_connectorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.power_connectorField, value) != true)) {
+                    this.power_connectorField = value;
+                    this.RaisePropertyChanged("power_connector");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string weight {
+            get {
+                return this.weightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.weightField, value) != true)) {
+                    this.weightField = value;
+                    this.RaisePropertyChanged("weight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string width {
+            get {
+                return this.widthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.widthField, value) != true)) {
+                    this.widthField = value;
+                    this.RaisePropertyChanged("width");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cCase", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cCase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string colourField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cpu_cooler_max_heightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dimensionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string expansion_slotsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string front_ioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string front_rad_lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string gpu_max_lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mobo_form_factorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string net_weightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int num_back_fansField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int num_bottom_fansField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int num_front_fansField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int num_hdd_drivesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int num_ssd_drivesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int num_top_fansField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string side_windowField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string top_rad_lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string colour {
+            get {
+                return this.colourField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.colourField, value) != true)) {
+                    this.colourField = value;
+                    this.RaisePropertyChanged("colour");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cpu_cooler_max_height {
+            get {
+                return this.cpu_cooler_max_heightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cpu_cooler_max_heightField, value) != true)) {
+                    this.cpu_cooler_max_heightField = value;
+                    this.RaisePropertyChanged("cpu_cooler_max_height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dimensions {
+            get {
+                return this.dimensionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
+                    this.dimensionsField = value;
+                    this.RaisePropertyChanged("dimensions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string expansion_slots {
+            get {
+                return this.expansion_slotsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.expansion_slotsField, value) != true)) {
+                    this.expansion_slotsField = value;
+                    this.RaisePropertyChanged("expansion_slots");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string front_io {
+            get {
+                return this.front_ioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.front_ioField, value) != true)) {
+                    this.front_ioField = value;
+                    this.RaisePropertyChanged("front_io");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string front_rad_length {
+            get {
+                return this.front_rad_lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.front_rad_lengthField, value) != true)) {
+                    this.front_rad_lengthField = value;
+                    this.RaisePropertyChanged("front_rad_length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string gpu_max_length {
+            get {
+                return this.gpu_max_lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.gpu_max_lengthField, value) != true)) {
+                    this.gpu_max_lengthField = value;
+                    this.RaisePropertyChanged("gpu_max_length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mobo_form_factor {
+            get {
+                return this.mobo_form_factorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mobo_form_factorField, value) != true)) {
+                    this.mobo_form_factorField = value;
+                    this.RaisePropertyChanged("mobo_form_factor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string net_weight {
+            get {
+                return this.net_weightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.net_weightField, value) != true)) {
+                    this.net_weightField = value;
+                    this.RaisePropertyChanged("net_weight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int num_back_fans {
+            get {
+                return this.num_back_fansField;
+            }
+            set {
+                if ((this.num_back_fansField.Equals(value) != true)) {
+                    this.num_back_fansField = value;
+                    this.RaisePropertyChanged("num_back_fans");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int num_bottom_fans {
+            get {
+                return this.num_bottom_fansField;
+            }
+            set {
+                if ((this.num_bottom_fansField.Equals(value) != true)) {
+                    this.num_bottom_fansField = value;
+                    this.RaisePropertyChanged("num_bottom_fans");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int num_front_fans {
+            get {
+                return this.num_front_fansField;
+            }
+            set {
+                if ((this.num_front_fansField.Equals(value) != true)) {
+                    this.num_front_fansField = value;
+                    this.RaisePropertyChanged("num_front_fans");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int num_hdd_drives {
+            get {
+                return this.num_hdd_drivesField;
+            }
+            set {
+                if ((this.num_hdd_drivesField.Equals(value) != true)) {
+                    this.num_hdd_drivesField = value;
+                    this.RaisePropertyChanged("num_hdd_drives");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int num_ssd_drives {
+            get {
+                return this.num_ssd_drivesField;
+            }
+            set {
+                if ((this.num_ssd_drivesField.Equals(value) != true)) {
+                    this.num_ssd_drivesField = value;
+                    this.RaisePropertyChanged("num_ssd_drives");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int num_top_fans {
+            get {
+                return this.num_top_fansField;
+            }
+            set {
+                if ((this.num_top_fansField.Equals(value) != true)) {
+                    this.num_top_fansField = value;
+                    this.RaisePropertyChanged("num_top_fans");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string side_window {
+            get {
+                return this.side_windowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.side_windowField, value) != true)) {
+                    this.side_windowField = value;
+                    this.RaisePropertyChanged("side_window");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string top_rad_length {
+            get {
+                return this.top_rad_lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.top_rad_lengthField, value) != true)) {
+                    this.top_rad_lengthField = value;
+                    this.RaisePropertyChanged("top_rad_length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cCPU", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cCPU : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ChipsetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string base_clockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string boost_clockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string coresField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int max_mem_speedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string max_tempField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mem_channelsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mem_typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int tdpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string threadsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string total_cacheField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Chipset {
+            get {
+                return this.ChipsetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChipsetField, value) != true)) {
+                    this.ChipsetField = value;
+                    this.RaisePropertyChanged("Chipset");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string base_clock {
+            get {
+                return this.base_clockField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.base_clockField, value) != true)) {
+                    this.base_clockField = value;
+                    this.RaisePropertyChanged("base_clock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string boost_clock {
+            get {
+                return this.boost_clockField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.boost_clockField, value) != true)) {
+                    this.boost_clockField = value;
+                    this.RaisePropertyChanged("boost_clock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cores {
+            get {
+                return this.coresField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.coresField, value) != true)) {
+                    this.coresField = value;
+                    this.RaisePropertyChanged("cores");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int max_mem_speed {
+            get {
+                return this.max_mem_speedField;
+            }
+            set {
+                if ((this.max_mem_speedField.Equals(value) != true)) {
+                    this.max_mem_speedField = value;
+                    this.RaisePropertyChanged("max_mem_speed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string max_temp {
+            get {
+                return this.max_tempField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.max_tempField, value) != true)) {
+                    this.max_tempField = value;
+                    this.RaisePropertyChanged("max_temp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mem_channels {
+            get {
+                return this.mem_channelsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mem_channelsField, value) != true)) {
+                    this.mem_channelsField = value;
+                    this.RaisePropertyChanged("mem_channels");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mem_type {
+            get {
+                return this.mem_typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mem_typeField, value) != true)) {
+                    this.mem_typeField = value;
+                    this.RaisePropertyChanged("mem_type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int tdp {
+            get {
+                return this.tdpField;
+            }
+            set {
+                if ((this.tdpField.Equals(value) != true)) {
+                    this.tdpField = value;
+                    this.RaisePropertyChanged("tdp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string threads {
+            get {
+                return this.threadsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.threadsField, value) != true)) {
+                    this.threadsField = value;
+                    this.RaisePropertyChanged("threads");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string total_cache {
+            get {
+                return this.total_cacheField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.total_cacheField, value) != true)) {
+                    this.total_cacheField = value;
+                    this.RaisePropertyChanged("total_cache");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cFan", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cFan : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cable_lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string input_voltageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string max_air_flowField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mtbfField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string noiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int num_fansField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string rpmField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string static_pressureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cable_length {
+            get {
+                return this.cable_lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cable_lengthField, value) != true)) {
+                    this.cable_lengthField = value;
+                    this.RaisePropertyChanged("cable_length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string input_voltage {
+            get {
+                return this.input_voltageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.input_voltageField, value) != true)) {
+                    this.input_voltageField = value;
+                    this.RaisePropertyChanged("input_voltage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string max_air_flow {
+            get {
+                return this.max_air_flowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.max_air_flowField, value) != true)) {
+                    this.max_air_flowField = value;
+                    this.RaisePropertyChanged("max_air_flow");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mtbf {
+            get {
+                return this.mtbfField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mtbfField, value) != true)) {
+                    this.mtbfField = value;
+                    this.RaisePropertyChanged("mtbf");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string noise {
+            get {
+                return this.noiseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.noiseField, value) != true)) {
+                    this.noiseField = value;
+                    this.RaisePropertyChanged("noise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int num_fans {
+            get {
+                return this.num_fansField;
+            }
+            set {
+                if ((this.num_fansField.Equals(value) != true)) {
+                    this.num_fansField = value;
+                    this.RaisePropertyChanged("num_fans");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string rpm {
+            get {
+                return this.rpmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.rpmField, value) != true)) {
+                    this.rpmField = value;
+                    this.RaisePropertyChanged("rpm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sizeField, value) != true)) {
+                    this.sizeField = value;
+                    this.RaisePropertyChanged("size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string static_pressure {
+            get {
+                return this.static_pressureField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.static_pressureField, value) != true)) {
+                    this.static_pressureField = value;
+                    this.RaisePropertyChanged("static_pressure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cGPU", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cGPU : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string base_clockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string boost_clockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string form_factorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string heightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string manufacturerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string max_resolutionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mem_sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mem_speedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mem_typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string portsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string recommended_psu_powerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string slot_widthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string stream_proccessorsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string vr_readyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string base_clock {
+            get {
+                return this.base_clockField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.base_clockField, value) != true)) {
+                    this.base_clockField = value;
+                    this.RaisePropertyChanged("base_clock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string boost_clock {
+            get {
+                return this.boost_clockField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.boost_clockField, value) != true)) {
+                    this.boost_clockField = value;
+                    this.RaisePropertyChanged("boost_clock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string form_factor {
+            get {
+                return this.form_factorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.form_factorField, value) != true)) {
+                    this.form_factorField = value;
+                    this.RaisePropertyChanged("form_factor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string height {
+            get {
+                return this.heightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.heightField, value) != true)) {
+                    this.heightField = value;
+                    this.RaisePropertyChanged("height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string length {
+            get {
+                return this.lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lengthField, value) != true)) {
+                    this.lengthField = value;
+                    this.RaisePropertyChanged("length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string manufacturer {
+            get {
+                return this.manufacturerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.manufacturerField, value) != true)) {
+                    this.manufacturerField = value;
+                    this.RaisePropertyChanged("manufacturer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string max_resolution {
+            get {
+                return this.max_resolutionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.max_resolutionField, value) != true)) {
+                    this.max_resolutionField = value;
+                    this.RaisePropertyChanged("max_resolution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mem_size {
+            get {
+                return this.mem_sizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mem_sizeField, value) != true)) {
+                    this.mem_sizeField = value;
+                    this.RaisePropertyChanged("mem_size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mem_speed {
+            get {
+                return this.mem_speedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mem_speedField, value) != true)) {
+                    this.mem_speedField = value;
+                    this.RaisePropertyChanged("mem_speed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mem_type {
+            get {
+                return this.mem_typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mem_typeField, value) != true)) {
+                    this.mem_typeField = value;
+                    this.RaisePropertyChanged("mem_type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ports {
+            get {
+                return this.portsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.portsField, value) != true)) {
+                    this.portsField = value;
+                    this.RaisePropertyChanged("ports");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string recommended_psu_power {
+            get {
+                return this.recommended_psu_powerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.recommended_psu_powerField, value) != true)) {
+                    this.recommended_psu_powerField = value;
+                    this.RaisePropertyChanged("recommended_psu_power");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string slot_width {
+            get {
+                return this.slot_widthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.slot_widthField, value) != true)) {
+                    this.slot_widthField = value;
+                    this.RaisePropertyChanged("slot_width");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string stream_proccessors {
+            get {
+                return this.stream_proccessorsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.stream_proccessorsField, value) != true)) {
+                    this.stream_proccessorsField = value;
+                    this.RaisePropertyChanged("stream_proccessors");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string vr_ready {
+            get {
+                return this.vr_readyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.vr_readyField, value) != true)) {
+                    this.vr_readyField = value;
+                    this.RaisePropertyChanged("vr_ready");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cHDD", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cHDD : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Workload_Rate_LimitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string avg_power_usageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string interface_typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string load_unload_cyclesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string max_sustained_transfer_rateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string operation_tempField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string rotational_speedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string storageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string weightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Workload_Rate_Limit {
+            get {
+                return this.Workload_Rate_LimitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Workload_Rate_LimitField, value) != true)) {
+                    this.Workload_Rate_LimitField = value;
+                    this.RaisePropertyChanged("Workload_Rate_Limit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string avg_power_usage {
+            get {
+                return this.avg_power_usageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.avg_power_usageField, value) != true)) {
+                    this.avg_power_usageField = value;
+                    this.RaisePropertyChanged("avg_power_usage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string interface_type {
+            get {
+                return this.interface_typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.interface_typeField, value) != true)) {
+                    this.interface_typeField = value;
+                    this.RaisePropertyChanged("interface_type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string load_unload_cycles {
+            get {
+                return this.load_unload_cyclesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.load_unload_cyclesField, value) != true)) {
+                    this.load_unload_cyclesField = value;
+                    this.RaisePropertyChanged("load_unload_cycles");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string max_sustained_transfer_rate {
+            get {
+                return this.max_sustained_transfer_rateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.max_sustained_transfer_rateField, value) != true)) {
+                    this.max_sustained_transfer_rateField = value;
+                    this.RaisePropertyChanged("max_sustained_transfer_rate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string operation_temp {
+            get {
+                return this.operation_tempField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.operation_tempField, value) != true)) {
+                    this.operation_tempField = value;
+                    this.RaisePropertyChanged("operation_temp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string rotational_speed {
+            get {
+                return this.rotational_speedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.rotational_speedField, value) != true)) {
+                    this.rotational_speedField = value;
+                    this.RaisePropertyChanged("rotational_speed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sizeField, value) != true)) {
+                    this.sizeField = value;
+                    this.RaisePropertyChanged("size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string storage {
+            get {
+                return this.storageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.storageField, value) != true)) {
+                    this.storageField = value;
+                    this.RaisePropertyChanged("storage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string weight {
+            get {
+                return this.weightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.weightField, value) != true)) {
+                    this.weightField = value;
+                    this.RaisePropertyChanged("weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cHeadset", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cHeadset : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cable_lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string colourField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string connectorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string featuresField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string frequency_responseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string microphoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mp_frequency_responseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mp_pickup_patternField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mp_sensitivityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string wearing_styleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cable_length {
+            get {
+                return this.cable_lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cable_lengthField, value) != true)) {
+                    this.cable_lengthField = value;
+                    this.RaisePropertyChanged("cable_length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string colour {
+            get {
+                return this.colourField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.colourField, value) != true)) {
+                    this.colourField = value;
+                    this.RaisePropertyChanged("colour");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string connector {
+            get {
+                return this.connectorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.connectorField, value) != true)) {
+                    this.connectorField = value;
+                    this.RaisePropertyChanged("connector");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string features {
+            get {
+                return this.featuresField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.featuresField, value) != true)) {
+                    this.featuresField = value;
+                    this.RaisePropertyChanged("features");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string frequency_response {
+            get {
+                return this.frequency_responseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.frequency_responseField, value) != true)) {
+                    this.frequency_responseField = value;
+                    this.RaisePropertyChanged("frequency_response");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string microphone {
+            get {
+                return this.microphoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.microphoneField, value) != true)) {
+                    this.microphoneField = value;
+                    this.RaisePropertyChanged("microphone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mp_frequency_response {
+            get {
+                return this.mp_frequency_responseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mp_frequency_responseField, value) != true)) {
+                    this.mp_frequency_responseField = value;
+                    this.RaisePropertyChanged("mp_frequency_response");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mp_pickup_pattern {
+            get {
+                return this.mp_pickup_patternField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mp_pickup_patternField, value) != true)) {
+                    this.mp_pickup_patternField = value;
+                    this.RaisePropertyChanged("mp_pickup_pattern");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mp_sensitivity {
+            get {
+                return this.mp_sensitivityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mp_sensitivityField, value) != true)) {
+                    this.mp_sensitivityField = value;
+                    this.RaisePropertyChanged("mp_sensitivity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string wearing_style {
+            get {
+                return this.wearing_styleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.wearing_styleField, value) != true)) {
+                    this.wearing_styleField = value;
+                    this.RaisePropertyChanged("wearing_style");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cLiquidCooler", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cLiquidCooler : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string colorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fan_sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string rad_heightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string rad_lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string rad_matsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string rad_widthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string rgbField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string socketsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tube_lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tube_matsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string color {
+            get {
+                return this.colorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.colorField, value) != true)) {
+                    this.colorField = value;
+                    this.RaisePropertyChanged("color");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fan_size {
+            get {
+                return this.fan_sizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fan_sizeField, value) != true)) {
+                    this.fan_sizeField = value;
+                    this.RaisePropertyChanged("fan_size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string rad_height {
+            get {
+                return this.rad_heightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.rad_heightField, value) != true)) {
+                    this.rad_heightField = value;
+                    this.RaisePropertyChanged("rad_height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string rad_length {
+            get {
+                return this.rad_lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.rad_lengthField, value) != true)) {
+                    this.rad_lengthField = value;
+                    this.RaisePropertyChanged("rad_length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string rad_mats {
+            get {
+                return this.rad_matsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.rad_matsField, value) != true)) {
+                    this.rad_matsField = value;
+                    this.RaisePropertyChanged("rad_mats");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string rad_width {
+            get {
+                return this.rad_widthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.rad_widthField, value) != true)) {
+                    this.rad_widthField = value;
+                    this.RaisePropertyChanged("rad_width");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string rgb {
+            get {
+                return this.rgbField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.rgbField, value) != true)) {
+                    this.rgbField = value;
+                    this.RaisePropertyChanged("rgb");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string sockets {
+            get {
+                return this.socketsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.socketsField, value) != true)) {
+                    this.socketsField = value;
+                    this.RaisePropertyChanged("sockets");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tube_length {
+            get {
+                return this.tube_lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tube_lengthField, value) != true)) {
+                    this.tube_lengthField = value;
+                    this.RaisePropertyChanged("tube_length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tube_mats {
+            get {
+                return this.tube_matsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tube_matsField, value) != true)) {
+                    this.tube_matsField = value;
+                    this.RaisePropertyChanged("tube_mats");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cMobo", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cMobo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string back_panel_IOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string chipsetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string expansion_slotsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string form_factorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string internal_IOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string lanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int max_mem_sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int max_mem_speedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string memoryTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string notesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string os_supportField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string storageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string back_panel_IO {
+            get {
+                return this.back_panel_IOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.back_panel_IOField, value) != true)) {
+                    this.back_panel_IOField = value;
+                    this.RaisePropertyChanged("back_panel_IO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string chipset {
+            get {
+                return this.chipsetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.chipsetField, value) != true)) {
+                    this.chipsetField = value;
+                    this.RaisePropertyChanged("chipset");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string expansion_slots {
+            get {
+                return this.expansion_slotsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.expansion_slotsField, value) != true)) {
+                    this.expansion_slotsField = value;
+                    this.RaisePropertyChanged("expansion_slots");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string form_factor {
+            get {
+                return this.form_factorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.form_factorField, value) != true)) {
+                    this.form_factorField = value;
+                    this.RaisePropertyChanged("form_factor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string internal_IO {
+            get {
+                return this.internal_IOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.internal_IOField, value) != true)) {
+                    this.internal_IOField = value;
+                    this.RaisePropertyChanged("internal_IO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string lan {
+            get {
+                return this.lanField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lanField, value) != true)) {
+                    this.lanField = value;
+                    this.RaisePropertyChanged("lan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int max_mem_size {
+            get {
+                return this.max_mem_sizeField;
+            }
+            set {
+                if ((this.max_mem_sizeField.Equals(value) != true)) {
+                    this.max_mem_sizeField = value;
+                    this.RaisePropertyChanged("max_mem_size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int max_mem_speed {
+            get {
+                return this.max_mem_speedField;
+            }
+            set {
+                if ((this.max_mem_speedField.Equals(value) != true)) {
+                    this.max_mem_speedField = value;
+                    this.RaisePropertyChanged("max_mem_speed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string memoryType {
+            get {
+                return this.memoryTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.memoryTypeField, value) != true)) {
+                    this.memoryTypeField = value;
+                    this.RaisePropertyChanged("memoryType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string notes {
+            get {
+                return this.notesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.notesField, value) != true)) {
+                    this.notesField = value;
+                    this.RaisePropertyChanged("notes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string os_support {
+            get {
+                return this.os_supportField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.os_supportField, value) != true)) {
+                    this.os_supportField = value;
+                    this.RaisePropertyChanged("os_support");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string storage {
+            get {
+                return this.storageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.storageField, value) != true)) {
+                    this.storageField = value;
+                    this.RaisePropertyChanged("storage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cPSU", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cPSU : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PowerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cablesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string certificationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string connectorsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dimensionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fan_sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modularField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mtbfField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Power {
+            get {
+                return this.PowerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PowerField, value) != true)) {
+                    this.PowerField = value;
+                    this.RaisePropertyChanged("Power");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cables {
+            get {
+                return this.cablesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cablesField, value) != true)) {
+                    this.cablesField = value;
+                    this.RaisePropertyChanged("cables");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string certification {
+            get {
+                return this.certificationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.certificationField, value) != true)) {
+                    this.certificationField = value;
+                    this.RaisePropertyChanged("certification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string connectors {
+            get {
+                return this.connectorsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.connectorsField, value) != true)) {
+                    this.connectorsField = value;
+                    this.RaisePropertyChanged("connectors");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dimensions {
+            get {
+                return this.dimensionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
+                    this.dimensionsField = value;
+                    this.RaisePropertyChanged("dimensions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fan_size {
+            get {
+                return this.fan_sizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fan_sizeField, value) != true)) {
+                    this.fan_sizeField = value;
+                    this.RaisePropertyChanged("fan_size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string modular {
+            get {
+                return this.modularField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modularField, value) != true)) {
+                    this.modularField = value;
+                    this.RaisePropertyChanged("modular");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mtbf {
+            get {
+                return this.mtbfField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mtbfField, value) != true)) {
+                    this.mtbfField = value;
+                    this.RaisePropertyChanged("mtbf");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cRAM", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cRAM : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string capacityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string channel_configField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string heightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string latencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string speedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string voltageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string capacity {
+            get {
+                return this.capacityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.capacityField, value) != true)) {
+                    this.capacityField = value;
+                    this.RaisePropertyChanged("capacity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string channel_config {
+            get {
+                return this.channel_configField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.channel_configField, value) != true)) {
+                    this.channel_configField = value;
+                    this.RaisePropertyChanged("channel_config");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string height {
+            get {
+                return this.heightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.heightField, value) != true)) {
+                    this.heightField = value;
+                    this.RaisePropertyChanged("height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string latency {
+            get {
+                return this.latencyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.latencyField, value) != true)) {
+                    this.latencyField = value;
+                    this.RaisePropertyChanged("latency");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string speed {
+            get {
+                return this.speedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.speedField, value) != true)) {
+                    this.speedField = value;
+                    this.RaisePropertyChanged("speed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typeField, value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string voltage {
+            get {
+                return this.voltageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.voltageField, value) != true)) {
+                    this.voltageField = value;
+                    this.RaisePropertyChanged("voltage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cSSD", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cSSD : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string capacityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string form_factorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string interface_typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string max_power_usageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string max_seq_readField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string max_seq_writeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mtbfField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string operating_tempField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string random_readField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string random_writeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string widthField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string capacity {
+            get {
+                return this.capacityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.capacityField, value) != true)) {
+                    this.capacityField = value;
+                    this.RaisePropertyChanged("capacity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string form_factor {
+            get {
+                return this.form_factorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.form_factorField, value) != true)) {
+                    this.form_factorField = value;
+                    this.RaisePropertyChanged("form_factor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string interface_type {
+            get {
+                return this.interface_typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.interface_typeField, value) != true)) {
+                    this.interface_typeField = value;
+                    this.RaisePropertyChanged("interface_type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string length {
+            get {
+                return this.lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lengthField, value) != true)) {
+                    this.lengthField = value;
+                    this.RaisePropertyChanged("length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string max_power_usage {
+            get {
+                return this.max_power_usageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.max_power_usageField, value) != true)) {
+                    this.max_power_usageField = value;
+                    this.RaisePropertyChanged("max_power_usage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string max_seq_read {
+            get {
+                return this.max_seq_readField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.max_seq_readField, value) != true)) {
+                    this.max_seq_readField = value;
+                    this.RaisePropertyChanged("max_seq_read");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string max_seq_write {
+            get {
+                return this.max_seq_writeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.max_seq_writeField, value) != true)) {
+                    this.max_seq_writeField = value;
+                    this.RaisePropertyChanged("max_seq_write");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mtbf {
+            get {
+                return this.mtbfField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mtbfField, value) != true)) {
+                    this.mtbfField = value;
+                    this.RaisePropertyChanged("mtbf");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string operating_temp {
+            get {
+                return this.operating_tempField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.operating_tempField, value) != true)) {
+                    this.operating_tempField = value;
+                    this.RaisePropertyChanged("operating_temp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string random_read {
+            get {
+                return this.random_readField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.random_readField, value) != true)) {
+                    this.random_readField = value;
+                    this.RaisePropertyChanged("random_read");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string random_write {
+            get {
+                return this.random_writeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.random_writeField, value) != true)) {
+                    this.random_writeField = value;
+                    this.RaisePropertyChanged("random_write");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string width {
+            get {
+                return this.widthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.widthField, value) != true)) {
+                    this.widthField = value;
+                    this.RaisePropertyChanged("width");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cKeyboard", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cKeyboard : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string connectorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dimensionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string led_backlightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string materialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string multimedia_keysField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string programmable_macrosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string switchesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string weightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string connector {
+            get {
+                return this.connectorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.connectorField, value) != true)) {
+                    this.connectorField = value;
+                    this.RaisePropertyChanged("connector");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dimensions {
+            get {
+                return this.dimensionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
+                    this.dimensionsField = value;
+                    this.RaisePropertyChanged("dimensions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string led_backlight {
+            get {
+                return this.led_backlightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.led_backlightField, value) != true)) {
+                    this.led_backlightField = value;
+                    this.RaisePropertyChanged("led_backlight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string material {
+            get {
+                return this.materialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.materialField, value) != true)) {
+                    this.materialField = value;
+                    this.RaisePropertyChanged("material");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string multimedia_keys {
+            get {
+                return this.multimedia_keysField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.multimedia_keysField, value) != true)) {
+                    this.multimedia_keysField = value;
+                    this.RaisePropertyChanged("multimedia_keys");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string programmable_macros {
+            get {
+                return this.programmable_macrosField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.programmable_macrosField, value) != true)) {
+                    this.programmable_macrosField = value;
+                    this.RaisePropertyChanged("programmable_macros");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string switches {
+            get {
+                return this.switchesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.switchesField, value) != true)) {
+                    this.switchesField = value;
+                    this.RaisePropertyChanged("switches");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string weight {
+            get {
+                return this.weightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.weightField, value) != true)) {
+                    this.weightField = value;
+                    this.RaisePropertyChanged("weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cMicrophone", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cMicrophone : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cable_lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string frequency_responseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string pick_up_patternField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sensitivityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cable_length {
+            get {
+                return this.cable_lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cable_lengthField, value) != true)) {
+                    this.cable_lengthField = value;
+                    this.RaisePropertyChanged("cable_length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string frequency_response {
+            get {
+                return this.frequency_responseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.frequency_responseField, value) != true)) {
+                    this.frequency_responseField = value;
+                    this.RaisePropertyChanged("frequency_response");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string pick_up_pattern {
+            get {
+                return this.pick_up_patternField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.pick_up_patternField, value) != true)) {
+                    this.pick_up_patternField = value;
+                    this.RaisePropertyChanged("pick_up_pattern");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string sensitivity {
+            get {
+                return this.sensitivityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sensitivityField, value) != true)) {
+                    this.sensitivityField = value;
+                    this.RaisePropertyChanged("sensitivity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cMonitor", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cMonitor : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brightnessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string coloursField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string contrast_ratioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string display_portField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string hdmiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string panel_typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string pivotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string refresh_rateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string resolutionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string response_timeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string screen_ratioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string screen_sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string speakersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string swivelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tiltField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string vgaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string viewing_angleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brightness {
+            get {
+                return this.brightnessField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brightnessField, value) != true)) {
+                    this.brightnessField = value;
+                    this.RaisePropertyChanged("brightness");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string colours {
+            get {
+                return this.coloursField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.coloursField, value) != true)) {
+                    this.coloursField = value;
+                    this.RaisePropertyChanged("colours");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string contrast_ratio {
+            get {
+                return this.contrast_ratioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.contrast_ratioField, value) != true)) {
+                    this.contrast_ratioField = value;
+                    this.RaisePropertyChanged("contrast_ratio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string display_port {
+            get {
+                return this.display_portField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.display_portField, value) != true)) {
+                    this.display_portField = value;
+                    this.RaisePropertyChanged("display_port");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string hdmi {
+            get {
+                return this.hdmiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.hdmiField, value) != true)) {
+                    this.hdmiField = value;
+                    this.RaisePropertyChanged("hdmi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string panel_type {
+            get {
+                return this.panel_typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.panel_typeField, value) != true)) {
+                    this.panel_typeField = value;
+                    this.RaisePropertyChanged("panel_type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string pivot {
+            get {
+                return this.pivotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.pivotField, value) != true)) {
+                    this.pivotField = value;
+                    this.RaisePropertyChanged("pivot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string refresh_rate {
+            get {
+                return this.refresh_rateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.refresh_rateField, value) != true)) {
+                    this.refresh_rateField = value;
+                    this.RaisePropertyChanged("refresh_rate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string resolution {
+            get {
+                return this.resolutionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.resolutionField, value) != true)) {
+                    this.resolutionField = value;
+                    this.RaisePropertyChanged("resolution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string response_time {
+            get {
+                return this.response_timeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.response_timeField, value) != true)) {
+                    this.response_timeField = value;
+                    this.RaisePropertyChanged("response_time");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string screen_ratio {
+            get {
+                return this.screen_ratioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.screen_ratioField, value) != true)) {
+                    this.screen_ratioField = value;
+                    this.RaisePropertyChanged("screen_ratio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string screen_size {
+            get {
+                return this.screen_sizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.screen_sizeField, value) != true)) {
+                    this.screen_sizeField = value;
+                    this.RaisePropertyChanged("screen_size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string speakers {
+            get {
+                return this.speakersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.speakersField, value) != true)) {
+                    this.speakersField = value;
+                    this.RaisePropertyChanged("speakers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string swivel {
+            get {
+                return this.swivelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.swivelField, value) != true)) {
+                    this.swivelField = value;
+                    this.RaisePropertyChanged("swivel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tilt {
+            get {
+                return this.tiltField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tiltField, value) != true)) {
+                    this.tiltField = value;
+                    this.RaisePropertyChanged("tilt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string vga {
+            get {
+                return this.vgaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.vgaField, value) != true)) {
+                    this.vgaField = value;
+                    this.RaisePropertyChanged("vga");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string viewing_angle {
+            get {
+                return this.viewing_angleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.viewing_angleField, value) != true)) {
+                    this.viewing_angleField = value;
+                    this.RaisePropertyChanged("viewing_angle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cMouse", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cMouse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string batteryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cable_lengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string connection_typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dimensionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string max_accelerationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string max_speedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ptfe_feetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string resolutionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sensorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string weightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string battery {
+            get {
+                return this.batteryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.batteryField, value) != true)) {
+                    this.batteryField = value;
+                    this.RaisePropertyChanged("battery");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cable_length {
+            get {
+                return this.cable_lengthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cable_lengthField, value) != true)) {
+                    this.cable_lengthField = value;
+                    this.RaisePropertyChanged("cable_length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string connection_type {
+            get {
+                return this.connection_typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.connection_typeField, value) != true)) {
+                    this.connection_typeField = value;
+                    this.RaisePropertyChanged("connection_type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dimensions {
+            get {
+                return this.dimensionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
+                    this.dimensionsField = value;
+                    this.RaisePropertyChanged("dimensions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string max_acceleration {
+            get {
+                return this.max_accelerationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.max_accelerationField, value) != true)) {
+                    this.max_accelerationField = value;
+                    this.RaisePropertyChanged("max_acceleration");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string max_speed {
+            get {
+                return this.max_speedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.max_speedField, value) != true)) {
+                    this.max_speedField = value;
+                    this.RaisePropertyChanged("max_speed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ptfe_feet {
+            get {
+                return this.ptfe_feetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ptfe_feetField, value) != true)) {
+                    this.ptfe_feetField = value;
+                    this.RaisePropertyChanged("ptfe_feet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string resolution {
+            get {
+                return this.resolutionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.resolutionField, value) != true)) {
+                    this.resolutionField = value;
+                    this.RaisePropertyChanged("resolution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string sensor {
+            get {
+                return this.sensorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sensorField, value) != true)) {
+                    this.sensorField = value;
+                    this.RaisePropertyChanged("sensor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string weight {
+            get {
+                return this.weightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.weightField, value) != true)) {
+                    this.weightField = value;
+                    this.RaisePropertyChanged("weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cMousePad", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cMousePad : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int activeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string brandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string colourField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dimensionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int discountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string materialsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string modelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string pad_baseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string seriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warrantyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int active {
+            get {
+                return this.activeField;
+            }
+            set {
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string brand {
+            get {
+                return this.brandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.brandField, value) != true)) {
+                    this.brandField = value;
+                    this.RaisePropertyChanged("brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string colour {
+            get {
+                return this.colourField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.colourField, value) != true)) {
+                    this.colourField = value;
+                    this.RaisePropertyChanged("colour");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dimensions {
+            get {
+                return this.dimensionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dimensionsField, value) != true)) {
+                    this.dimensionsField = value;
+                    this.RaisePropertyChanged("dimensions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                if ((this.discountField.Equals(value) != true)) {
+                    this.discountField = value;
+                    this.RaisePropertyChanged("discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string materials {
+            get {
+                return this.materialsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.materialsField, value) != true)) {
+                    this.materialsField = value;
+                    this.RaisePropertyChanged("materials");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string model {
+            get {
+                return this.modelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.modelField, value) != true)) {
+                    this.modelField = value;
+                    this.RaisePropertyChanged("model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string pad_base {
+            get {
+                return this.pad_baseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.pad_baseField, value) != true)) {
+                    this.pad_baseField = value;
+                    this.RaisePropertyChanged("pad_base");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string series {
+            get {
+                return this.seriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.seriesField, value) != true)) {
+                    this.seriesField = value;
+                    this.RaisePropertyChanged("series");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sizeField, value) != true)) {
+                    this.sizeField = value;
+                    this.RaisePropertyChanged("size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warrantyField, value) != true)) {
+                    this.warrantyField = value;
+                    this.RaisePropertyChanged("warranty");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="cEmployee", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class cEmployee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Admin_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Contact_NumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string First_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurnameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Admin_ID {
+            get {
+                return this.Admin_IDField;
+            }
+            set {
+                if ((this.Admin_IDField.Equals(value) != true)) {
+                    this.Admin_IDField = value;
+                    this.RaisePropertyChanged("Admin_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Contact_Number {
+            get {
+                return this.Contact_NumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Contact_NumberField, value) != true)) {
+                    this.Contact_NumberField = value;
+                    this.RaisePropertyChanged("Contact_Number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string First_Name {
+            get {
+                return this.First_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
+                    this.First_NameField = value;
+                    this.RaisePropertyChanged("First_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Position {
+            get {
+                return this.PositionField;
+            }
+            set {
+                if ((this.PositionField.Equals(value) != true)) {
+                    this.PositionField = value;
+                    this.RaisePropertyChanged("Position");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Surname {
+            get {
+                return this.SurnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
+                    this.SurnameField = value;
+                    this.RaisePropertyChanged("Surname");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="cOS", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class cOS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -17116,6 +17116,30 @@ namespace CyberLlamaConsumerSite.CRUDService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRUDService.IService")]
     public interface IService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePcCart", ReplyAction="http://tempuri.org/IService/updatePcCartResponse")]
+        bool updatePcCart(int user_ID, int pc_ID, int qua);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePcCart", ReplyAction="http://tempuri.org/IService/updatePcCartResponse")]
+        System.Threading.Tasks.Task<bool> updatePcCartAsync(int user_ID, int pc_ID, int qua);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeFromPcCart", ReplyAction="http://tempuri.org/IService/removeFromPcCartResponse")]
+        bool removeFromPcCart(int user_ID, int pc_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeFromPcCart", ReplyAction="http://tempuri.org/IService/removeFromPcCartResponse")]
+        System.Threading.Tasks.Task<bool> removeFromPcCartAsync(int user_ID, int pc_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/clearPcCart", ReplyAction="http://tempuri.org/IService/clearPcCartResponse")]
+        bool clearPcCart(int user_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/clearPcCart", ReplyAction="http://tempuri.org/IService/clearPcCartResponse")]
+        System.Threading.Tasks.Task<bool> clearPcCartAsync(int user_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/checkOut", ReplyAction="http://tempuri.org/IService/checkOutResponse")]
+        bool checkOut(int user_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/checkOut", ReplyAction="http://tempuri.org/IService/checkOutResponse")]
+        System.Threading.Tasks.Task<bool> checkOutAsync(int user_ID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCartItems", ReplyAction="http://tempuri.org/IService/getCartItemsResponse")]
         CyberLlamaConsumerSite.CRUDService.cAllCart[] getCartItems(int user_ID);
         
@@ -17229,6 +17253,30 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPCbyID", ReplyAction="http://tempuri.org/IService/getPCbyIDResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC> getPCbyIDAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditSpeaker", ReplyAction="http://tempuri.org/IService/EditSpeakerResponse")]
+        bool EditSpeaker(CyberLlamaConsumerSite.CRUDService.cSpeaker newSpeaker, CyberLlamaConsumerSite.CRUDService.PartsStock newPart, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditSpeaker", ReplyAction="http://tempuri.org/IService/EditSpeakerResponse")]
+        System.Threading.Tasks.Task<bool> EditSpeakerAsync(CyberLlamaConsumerSite.CRUDService.cSpeaker newSpeaker, CyberLlamaConsumerSite.CRUDService.PartsStock newPart, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/deleteSpeaker", ReplyAction="http://tempuri.org/IService/deleteSpeakerResponse")]
+        bool deleteSpeaker(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/deleteSpeaker", ReplyAction="http://tempuri.org/IService/deleteSpeakerResponse")]
+        System.Threading.Tasks.Task<bool> deleteSpeakerAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addPC", ReplyAction="http://tempuri.org/IService/addPCResponse")]
+        bool addPC(CyberLlamaConsumerSite.CRUDService.cPC newPC, int qua, string image);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addPC", ReplyAction="http://tempuri.org/IService/addPCResponse")]
+        System.Threading.Tasks.Task<bool> addPCAsync(CyberLlamaConsumerSite.CRUDService.cPC newPC, int qua, string image);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditPC", ReplyAction="http://tempuri.org/IService/EditPCResponse")]
+        bool EditPC(CyberLlamaConsumerSite.CRUDService.cPC newPC, CyberLlamaConsumerSite.CRUDService.PcStock newPart, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditPC", ReplyAction="http://tempuri.org/IService/EditPCResponse")]
+        System.Threading.Tasks.Task<bool> EditPCAsync(CyberLlamaConsumerSite.CRUDService.cPC newPC, CyberLlamaConsumerSite.CRUDService.PcStock newPart, int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/deletePC", ReplyAction="http://tempuri.org/IService/deletePCResponse")]
         bool deletePC(int id);
@@ -17590,29 +17638,11 @@ namespace CyberLlamaConsumerSite.CRUDService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addToPcCart", ReplyAction="http://tempuri.org/IService/addToPcCartResponse")]
         System.Threading.Tasks.Task<bool> addToPcCartAsync(int user_ID, int pc_ID, int qua, double total_price);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePcCart", ReplyAction="http://tempuri.org/IService/updatePcCartResponse")]
-        bool updatePcCart(int user_ID, int pc_ID, int qua);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/editClient", ReplyAction="http://tempuri.org/IService/editClientResponse")]
+        bool editClient(CyberLlamaConsumerSite.CRUDService.cClient client);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updatePcCart", ReplyAction="http://tempuri.org/IService/updatePcCartResponse")]
-        System.Threading.Tasks.Task<bool> updatePcCartAsync(int user_ID, int pc_ID, int qua);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeFromPcCart", ReplyAction="http://tempuri.org/IService/removeFromPcCartResponse")]
-        bool removeFromPcCart(int user_ID, int pc_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeFromPcCart", ReplyAction="http://tempuri.org/IService/removeFromPcCartResponse")]
-        System.Threading.Tasks.Task<bool> removeFromPcCartAsync(int user_ID, int pc_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/clearPcCart", ReplyAction="http://tempuri.org/IService/clearPcCartResponse")]
-        bool clearPcCart(int user_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/clearPcCart", ReplyAction="http://tempuri.org/IService/clearPcCartResponse")]
-        System.Threading.Tasks.Task<bool> clearPcCartAsync(int user_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/checkOut", ReplyAction="http://tempuri.org/IService/checkOutResponse")]
-        bool checkOut(int user_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/checkOut", ReplyAction="http://tempuri.org/IService/checkOutResponse")]
-        System.Threading.Tasks.Task<bool> checkOutAsync(int user_ID);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/editClient", ReplyAction="http://tempuri.org/IService/editClientResponse")]
+        System.Threading.Tasks.Task<bool> editClientAsync(CyberLlamaConsumerSite.CRUDService.cClient client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
         string Login(string strUserName, string strPassword);
@@ -17643,6 +17673,24 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getAllEmployees", ReplyAction="http://tempuri.org/IService/getAllEmployeesResponse")]
         System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cEmployee[]> getAllEmployeesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getEmployee", ReplyAction="http://tempuri.org/IService/getEmployeeResponse")]
+        CyberLlamaConsumerSite.CRUDService.cEmployee getEmployee(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getEmployee", ReplyAction="http://tempuri.org/IService/getEmployeeResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cEmployee> getEmployeeAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/editEmployee", ReplyAction="http://tempuri.org/IService/editEmployeeResponse")]
+        bool editEmployee(CyberLlamaConsumerSite.CRUDService.cEmployee employee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/editEmployee", ReplyAction="http://tempuri.org/IService/editEmployeeResponse")]
+        System.Threading.Tasks.Task<bool> editEmployeeAsync(CyberLlamaConsumerSite.CRUDService.cEmployee employee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getEntireInvoice", ReplyAction="http://tempuri.org/IService/getEntireInvoiceResponse")]
+        CyberLlamaConsumerSite.CRUDService.cInvoice[] getEntireInvoice();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getEntireInvoice", ReplyAction="http://tempuri.org/IService/getEntireInvoiceResponse")]
+        System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cInvoice[]> getEntireInvoiceAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addAirCooler", ReplyAction="http://tempuri.org/IService/addAirCoolerResponse")]
         bool addAirCooler(CyberLlamaConsumerSite.CRUDService.cAirCooler newAC, int qua, string image);
@@ -17973,30 +18021,6 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addSpeaker", ReplyAction="http://tempuri.org/IService/addSpeakerResponse")]
         System.Threading.Tasks.Task<bool> addSpeakerAsync(CyberLlamaConsumerSite.CRUDService.cSpeaker newSpeaker, int qua, string image);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditSpeaker", ReplyAction="http://tempuri.org/IService/EditSpeakerResponse")]
-        bool EditSpeaker(CyberLlamaConsumerSite.CRUDService.cSpeaker newSpeaker, CyberLlamaConsumerSite.CRUDService.PartsStock newPart, int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditSpeaker", ReplyAction="http://tempuri.org/IService/EditSpeakerResponse")]
-        System.Threading.Tasks.Task<bool> EditSpeakerAsync(CyberLlamaConsumerSite.CRUDService.cSpeaker newSpeaker, CyberLlamaConsumerSite.CRUDService.PartsStock newPart, int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/deleteSpeaker", ReplyAction="http://tempuri.org/IService/deleteSpeakerResponse")]
-        bool deleteSpeaker(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/deleteSpeaker", ReplyAction="http://tempuri.org/IService/deleteSpeakerResponse")]
-        System.Threading.Tasks.Task<bool> deleteSpeakerAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addPC", ReplyAction="http://tempuri.org/IService/addPCResponse")]
-        bool addPC(CyberLlamaConsumerSite.CRUDService.cPC newPC, int qua, string image);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addPC", ReplyAction="http://tempuri.org/IService/addPCResponse")]
-        System.Threading.Tasks.Task<bool> addPCAsync(CyberLlamaConsumerSite.CRUDService.cPC newPC, int qua, string image);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditPC", ReplyAction="http://tempuri.org/IService/EditPCResponse")]
-        bool EditPC(CyberLlamaConsumerSite.CRUDService.cPC newPC, CyberLlamaConsumerSite.CRUDService.PcStock newPart, int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditPC", ReplyAction="http://tempuri.org/IService/EditPCResponse")]
-        System.Threading.Tasks.Task<bool> EditPCAsync(CyberLlamaConsumerSite.CRUDService.cPC newPC, CyberLlamaConsumerSite.CRUDService.PcStock newPart, int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18024,6 +18048,38 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public bool updatePcCart(int user_ID, int pc_ID, int qua) {
+            return base.Channel.updatePcCart(user_ID, pc_ID, qua);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updatePcCartAsync(int user_ID, int pc_ID, int qua) {
+            return base.Channel.updatePcCartAsync(user_ID, pc_ID, qua);
+        }
+        
+        public bool removeFromPcCart(int user_ID, int pc_ID) {
+            return base.Channel.removeFromPcCart(user_ID, pc_ID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> removeFromPcCartAsync(int user_ID, int pc_ID) {
+            return base.Channel.removeFromPcCartAsync(user_ID, pc_ID);
+        }
+        
+        public bool clearPcCart(int user_ID) {
+            return base.Channel.clearPcCart(user_ID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> clearPcCartAsync(int user_ID) {
+            return base.Channel.clearPcCartAsync(user_ID);
+        }
+        
+        public bool checkOut(int user_ID) {
+            return base.Channel.checkOut(user_ID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> checkOutAsync(int user_ID) {
+            return base.Channel.checkOutAsync(user_ID);
         }
         
         public CyberLlamaConsumerSite.CRUDService.cAllCart[] getCartItems(int user_ID) {
@@ -18176,6 +18232,38 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cPC> getPCbyIDAsync(int ID) {
             return base.Channel.getPCbyIDAsync(ID);
+        }
+        
+        public bool EditSpeaker(CyberLlamaConsumerSite.CRUDService.cSpeaker newSpeaker, CyberLlamaConsumerSite.CRUDService.PartsStock newPart, int id) {
+            return base.Channel.EditSpeaker(newSpeaker, newPart, id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditSpeakerAsync(CyberLlamaConsumerSite.CRUDService.cSpeaker newSpeaker, CyberLlamaConsumerSite.CRUDService.PartsStock newPart, int id) {
+            return base.Channel.EditSpeakerAsync(newSpeaker, newPart, id);
+        }
+        
+        public bool deleteSpeaker(int id) {
+            return base.Channel.deleteSpeaker(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> deleteSpeakerAsync(int id) {
+            return base.Channel.deleteSpeakerAsync(id);
+        }
+        
+        public bool addPC(CyberLlamaConsumerSite.CRUDService.cPC newPC, int qua, string image) {
+            return base.Channel.addPC(newPC, qua, image);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addPCAsync(CyberLlamaConsumerSite.CRUDService.cPC newPC, int qua, string image) {
+            return base.Channel.addPCAsync(newPC, qua, image);
+        }
+        
+        public bool EditPC(CyberLlamaConsumerSite.CRUDService.cPC newPC, CyberLlamaConsumerSite.CRUDService.PcStock newPart, int id) {
+            return base.Channel.EditPC(newPC, newPart, id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditPCAsync(CyberLlamaConsumerSite.CRUDService.cPC newPC, CyberLlamaConsumerSite.CRUDService.PcStock newPart, int id) {
+            return base.Channel.EditPCAsync(newPC, newPart, id);
         }
         
         public bool deletePC(int id) {
@@ -18658,36 +18746,12 @@ namespace CyberLlamaConsumerSite.CRUDService {
             return base.Channel.addToPcCartAsync(user_ID, pc_ID, qua, total_price);
         }
         
-        public bool updatePcCart(int user_ID, int pc_ID, int qua) {
-            return base.Channel.updatePcCart(user_ID, pc_ID, qua);
+        public bool editClient(CyberLlamaConsumerSite.CRUDService.cClient client) {
+            return base.Channel.editClient(client);
         }
         
-        public System.Threading.Tasks.Task<bool> updatePcCartAsync(int user_ID, int pc_ID, int qua) {
-            return base.Channel.updatePcCartAsync(user_ID, pc_ID, qua);
-        }
-        
-        public bool removeFromPcCart(int user_ID, int pc_ID) {
-            return base.Channel.removeFromPcCart(user_ID, pc_ID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> removeFromPcCartAsync(int user_ID, int pc_ID) {
-            return base.Channel.removeFromPcCartAsync(user_ID, pc_ID);
-        }
-        
-        public bool clearPcCart(int user_ID) {
-            return base.Channel.clearPcCart(user_ID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> clearPcCartAsync(int user_ID) {
-            return base.Channel.clearPcCartAsync(user_ID);
-        }
-        
-        public bool checkOut(int user_ID) {
-            return base.Channel.checkOut(user_ID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> checkOutAsync(int user_ID) {
-            return base.Channel.checkOutAsync(user_ID);
+        public System.Threading.Tasks.Task<bool> editClientAsync(CyberLlamaConsumerSite.CRUDService.cClient client) {
+            return base.Channel.editClientAsync(client);
         }
         
         public string Login(string strUserName, string strPassword) {
@@ -18728,6 +18792,30 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cEmployee[]> getAllEmployeesAsync() {
             return base.Channel.getAllEmployeesAsync();
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cEmployee getEmployee(int id) {
+            return base.Channel.getEmployee(id);
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cEmployee> getEmployeeAsync(int id) {
+            return base.Channel.getEmployeeAsync(id);
+        }
+        
+        public bool editEmployee(CyberLlamaConsumerSite.CRUDService.cEmployee employee) {
+            return base.Channel.editEmployee(employee);
+        }
+        
+        public System.Threading.Tasks.Task<bool> editEmployeeAsync(CyberLlamaConsumerSite.CRUDService.cEmployee employee) {
+            return base.Channel.editEmployeeAsync(employee);
+        }
+        
+        public CyberLlamaConsumerSite.CRUDService.cInvoice[] getEntireInvoice() {
+            return base.Channel.getEntireInvoice();
+        }
+        
+        public System.Threading.Tasks.Task<CyberLlamaConsumerSite.CRUDService.cInvoice[]> getEntireInvoiceAsync() {
+            return base.Channel.getEntireInvoiceAsync();
         }
         
         public bool addAirCooler(CyberLlamaConsumerSite.CRUDService.cAirCooler newAC, int qua, string image) {
@@ -19168,38 +19256,6 @@ namespace CyberLlamaConsumerSite.CRUDService {
         
         public System.Threading.Tasks.Task<bool> addSpeakerAsync(CyberLlamaConsumerSite.CRUDService.cSpeaker newSpeaker, int qua, string image) {
             return base.Channel.addSpeakerAsync(newSpeaker, qua, image);
-        }
-        
-        public bool EditSpeaker(CyberLlamaConsumerSite.CRUDService.cSpeaker newSpeaker, CyberLlamaConsumerSite.CRUDService.PartsStock newPart, int id) {
-            return base.Channel.EditSpeaker(newSpeaker, newPart, id);
-        }
-        
-        public System.Threading.Tasks.Task<bool> EditSpeakerAsync(CyberLlamaConsumerSite.CRUDService.cSpeaker newSpeaker, CyberLlamaConsumerSite.CRUDService.PartsStock newPart, int id) {
-            return base.Channel.EditSpeakerAsync(newSpeaker, newPart, id);
-        }
-        
-        public bool deleteSpeaker(int id) {
-            return base.Channel.deleteSpeaker(id);
-        }
-        
-        public System.Threading.Tasks.Task<bool> deleteSpeakerAsync(int id) {
-            return base.Channel.deleteSpeakerAsync(id);
-        }
-        
-        public bool addPC(CyberLlamaConsumerSite.CRUDService.cPC newPC, int qua, string image) {
-            return base.Channel.addPC(newPC, qua, image);
-        }
-        
-        public System.Threading.Tasks.Task<bool> addPCAsync(CyberLlamaConsumerSite.CRUDService.cPC newPC, int qua, string image) {
-            return base.Channel.addPCAsync(newPC, qua, image);
-        }
-        
-        public bool EditPC(CyberLlamaConsumerSite.CRUDService.cPC newPC, CyberLlamaConsumerSite.CRUDService.PcStock newPart, int id) {
-            return base.Channel.EditPC(newPC, newPart, id);
-        }
-        
-        public System.Threading.Tasks.Task<bool> EditPCAsync(CyberLlamaConsumerSite.CRUDService.cPC newPC, CyberLlamaConsumerSite.CRUDService.PcStock newPart, int id) {
-            return base.Channel.EditPCAsync(newPC, newPart, id);
         }
     }
 }

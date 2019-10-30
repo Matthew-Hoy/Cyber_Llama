@@ -66,7 +66,7 @@
         for (var i = 0; i < pcSold.length; i++) {
             document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
             document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
-            document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+            document.getElementById("pcsoldQua " + i).innerHTML = pcSold[i].Quantity;
         }
     }
 
@@ -81,7 +81,7 @@
         for (var i = 0; i < pcSold.length; i++) {
             document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
             document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
-            document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+            document.getElementById("pcsoldQua " + i).innerHTML = pcSold[i].Quantity;
         }
     }
 
@@ -96,7 +96,7 @@
         for (var i = 0; i < pcSold.length; i++) {
             document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
             document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
-            document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+            document.getElementById("pcsoldQua " + i).innerHTML = pcSold[i].Quantity;
         }
     }
     //Date for sales filter
@@ -109,9 +109,9 @@
                     document.getElementById("partSoldQua " + i).innerHTML = "";
                 }
                 for (var i = 0; i < pcSold.length; i++) {
-                    document.getElementById("partsoldID " + i).innerHTML = "";
-                    document.getElementById("partsoldName " + i).innerHTML = "";
-                    document.getElementById("partSoldQua " + i).innerHTML = "";
+                    document.getElementById("pcsoldID " + i).innerHTML = "";
+                    document.getElementById("pcsoldName " + i).innerHTML = "";
+                    document.getElementById("pcsoldQua " + i).innerHTML = "";
                 }
 
                 var e = document.getElementById("list");
@@ -128,7 +128,7 @@
                     for (var i = 0; i < pcSold.length; i++) {
                         document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
                         document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
-                        document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+                        document.getElementById("pcsoldQua " + i).innerHTML = pcSold[i].Quantity;
                     }
                 } else if (value == "this Year") {
                     partsold = @Html.Raw(Json.Encode(Model.partSold.Where(x => x.Date.Year == DateTime.Now.Date.Year)));
@@ -141,7 +141,7 @@
                     for (var i = 0; i < pcSold.length; i++) {
                         document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
                         document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
-                        document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+                        document.getElementById("pcsoldQua " + i).innerHTML = pcSold[i].Quantity;
                     }
                 }
                 else if (value == "the Beginning of time") {
@@ -155,7 +155,7 @@
                     for (var i = 0; i < pcSold.length; i++) {
                         document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
                         document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
-                        document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+                        document.getElementById("pcsoldQua " + i).innerHTML = pcSold[i].Quantity;
                     }
                 }
                 else if (value == "today") {
@@ -169,7 +169,7 @@
                     for (var i = 0; i < pcSold.length; i++) {
                         document.getElementById("pcsoldID " + i).innerHTML = pcSold[i].ProductID;
                         document.getElementById("pcsoldName " + i).innerHTML = pcSold[i].Name;
-                        document.getElementById("pcSoldQua " + i).innerHTML = pcSold[i].Quantity;
+                        document.getElementById("pcsoldQua " + i).innerHTML = pcSold[i].Quantity;
                     }
                 }
                 console.log(value);
@@ -223,7 +223,6 @@
             <th class="data">Surname</th>
             <th class="data">E-Mail</th>
             <th class="data">Phone Number</th>
-            <th class="data">Remove</th>
             <th class="data">Edit</th>
         </tr>
     </thead>
@@ -237,8 +236,7 @@
                 <td class="data">@employee.Surname</td>
                 <td class="data">@employee.Email</td>
                 <td class="data">@employee.Conrtact_Number</td>
-                <td class="data"><a href=@Url.Action("RemoveEmployee", new { item = employee.Admin_ID })><img src="~/Images/cross-icon.jpg" style="max-width:30px;" /></a></td>
-                <td class="data"><a href=@Url.Action("RemoveEmployee", new { item = employee.Admin_ID })><img src="~/Images/Edit_Icon.png" style="max-width:30px;" /></a></td>
+                <td class="data"><a href=@Url.Action("EditEmployee", new { id = employee.Admin_ID })><img src="~/Images/Edit_Icon.png" style="max-width:30px;" /></a></td>
 
             </tr>
         }
@@ -255,9 +253,9 @@
     <div class="col-md-4">
         <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
             <h4>Sort Inventories By:</h4>
-            <button onclick="sortStockbyID()">Product ID</button>
-            <button onclick="sortStockbyName()">Product Name</button>
-            <button onclick="sortStockbyQua()">Quantity</button>
+            <button class="FilterButton" onclick="sortStockbyID()">Product ID</button>
+            <button  class="FilterButton" onclick="sortStockbyName()">Product Name</button>
+            <button class="FilterButton" onclick="sortStockbyQua()">Quantity</button>
         </div>
         <h4 class="centerText" style="margin-top:30px;">Out Of Stock</h4>
         <table class="data">
@@ -342,10 +340,10 @@
     <div class="col-md-4">
         <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
             <h4>Sort By:</h4>
-            <button onclick="sortSoldbyID()">Product ID</button>
-            <button onclick="sortSoldbyName()">Product Name</button>
-            <button onclick="sortSoldbyQua()">Quantity</button>
-            <select style="width:70%;margin-bottom:10px;margin-top:15px" id="list" onchange="getDateValue()">
+            <button class="FilterButton" onclick="sortSoldbyID()">Product ID</button>
+            <button class="FilterButton" onclick="sortSoldbyName()">Product Name</button>
+            <button class="FilterButton" onclick="sortSoldbyQua()">Quantity</button>
+            <select class="selectCategoryList" style="width:70%;margin-bottom:10px;margin-top:15px" id="list" onchange="getDateValue()">
                 <option class="today">today</option>
                 <option class="this Month">this Month</option>
                 <option class="this Year">this Year</option>
@@ -424,7 +422,7 @@
     <div class="col-md-6">
         <div class="centerText-Max1000" style="margin-left: auto; margin-right: auto;">
             <h4>Sort By</h4>
-            <select style="width:70%" id="userList" onchange="changeDateUsers()">
+            <select class="selectCategoryList" style="width:70%" id="userList" onchange="changeDateUsers()">
                 <option class="begining">the Beginning of time</option>
                 <option class="today">today</option>
                 <option class="this Month">this Month</option>

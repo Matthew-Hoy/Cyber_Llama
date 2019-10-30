@@ -8,6 +8,30 @@
       <xsd:import schemaLocation="http://localhost:53884/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService_updatePcCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePcCart" />
+  </wsdl:message>
+  <wsdl:message name="IService_updatePcCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePcCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_removeFromPcCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeFromPcCart" />
+  </wsdl:message>
+  <wsdl:message name="IService_removeFromPcCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeFromPcCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_clearPcCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:clearPcCart" />
+  </wsdl:message>
+  <wsdl:message name="IService_clearPcCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:clearPcCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_checkOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkOut" />
+  </wsdl:message>
+  <wsdl:message name="IService_checkOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkOutResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_getCartItems_InputMessage">
     <wsdl:part name="parameters" element="tns:getCartItems" />
   </wsdl:message>
@@ -121,6 +145,30 @@
   </wsdl:message>
   <wsdl:message name="IService_getPCbyID_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPCbyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditSpeaker_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditSpeaker" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditSpeaker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditSpeakerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_deleteSpeaker_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteSpeaker" />
+  </wsdl:message>
+  <wsdl:message name="IService_deleteSpeaker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteSpeakerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addPC_InputMessage">
+    <wsdl:part name="parameters" element="tns:addPC" />
+  </wsdl:message>
+  <wsdl:message name="IService_addPC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditPC_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditPC" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditPC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditPCResponse" />
   </wsdl:message>
   <wsdl:message name="IService_deletePC_InputMessage">
     <wsdl:part name="parameters" element="tns:deletePC" />
@@ -482,29 +530,11 @@
   <wsdl:message name="IService_addToPcCart_OutputMessage">
     <wsdl:part name="parameters" element="tns:addToPcCartResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_updatePcCart_InputMessage">
-    <wsdl:part name="parameters" element="tns:updatePcCart" />
+  <wsdl:message name="IService_editClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:editClient" />
   </wsdl:message>
-  <wsdl:message name="IService_updatePcCart_OutputMessage">
-    <wsdl:part name="parameters" element="tns:updatePcCartResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_removeFromPcCart_InputMessage">
-    <wsdl:part name="parameters" element="tns:removeFromPcCart" />
-  </wsdl:message>
-  <wsdl:message name="IService_removeFromPcCart_OutputMessage">
-    <wsdl:part name="parameters" element="tns:removeFromPcCartResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_clearPcCart_InputMessage">
-    <wsdl:part name="parameters" element="tns:clearPcCart" />
-  </wsdl:message>
-  <wsdl:message name="IService_clearPcCart_OutputMessage">
-    <wsdl:part name="parameters" element="tns:clearPcCartResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_checkOut_InputMessage">
-    <wsdl:part name="parameters" element="tns:checkOut" />
-  </wsdl:message>
-  <wsdl:message name="IService_checkOut_OutputMessage">
-    <wsdl:part name="parameters" element="tns:checkOutResponse" />
+  <wsdl:message name="IService_editClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editClientResponse" />
   </wsdl:message>
   <wsdl:message name="IService_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Login" />
@@ -535,6 +565,24 @@
   </wsdl:message>
   <wsdl:message name="IService_getAllEmployees_OutputMessage">
     <wsdl:part name="parameters" element="tns:getAllEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_editEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:editEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IService_editEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEntireInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEntireInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEntireInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEntireInvoiceResponse" />
   </wsdl:message>
   <wsdl:message name="IService_addAirCooler_InputMessage">
     <wsdl:part name="parameters" element="tns:addAirCooler" />
@@ -866,31 +914,23 @@
   <wsdl:message name="IService_addSpeaker_OutputMessage">
     <wsdl:part name="parameters" element="tns:addSpeakerResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_EditSpeaker_InputMessage">
-    <wsdl:part name="parameters" element="tns:EditSpeaker" />
-  </wsdl:message>
-  <wsdl:message name="IService_EditSpeaker_OutputMessage">
-    <wsdl:part name="parameters" element="tns:EditSpeakerResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_deleteSpeaker_InputMessage">
-    <wsdl:part name="parameters" element="tns:deleteSpeaker" />
-  </wsdl:message>
-  <wsdl:message name="IService_deleteSpeaker_OutputMessage">
-    <wsdl:part name="parameters" element="tns:deleteSpeakerResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_addPC_InputMessage">
-    <wsdl:part name="parameters" element="tns:addPC" />
-  </wsdl:message>
-  <wsdl:message name="IService_addPC_OutputMessage">
-    <wsdl:part name="parameters" element="tns:addPCResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_EditPC_InputMessage">
-    <wsdl:part name="parameters" element="tns:EditPC" />
-  </wsdl:message>
-  <wsdl:message name="IService_EditPC_OutputMessage">
-    <wsdl:part name="parameters" element="tns:EditPCResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService">
+    <wsdl:operation name="updatePcCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updatePcCart" message="tns:IService_updatePcCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updatePcCartResponse" message="tns:IService_updatePcCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeFromPcCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/removeFromPcCart" message="tns:IService_removeFromPcCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/removeFromPcCartResponse" message="tns:IService_removeFromPcCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="clearPcCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/clearPcCart" message="tns:IService_clearPcCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/clearPcCartResponse" message="tns:IService_clearPcCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/checkOut" message="tns:IService_checkOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/checkOutResponse" message="tns:IService_checkOut_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getCartItems">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getCartItems" message="tns:IService_getCartItems_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getCartItemsResponse" message="tns:IService_getCartItems_OutputMessage" />
@@ -966,6 +1006,22 @@
     <wsdl:operation name="getPCbyID">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getPCbyID" message="tns:IService_getPCbyID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getPCbyIDResponse" message="tns:IService_getPCbyID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSpeaker">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditSpeaker" message="tns:IService_EditSpeaker_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditSpeakerResponse" message="tns:IService_EditSpeaker_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSpeaker">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/deleteSpeaker" message="tns:IService_deleteSpeaker_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/deleteSpeakerResponse" message="tns:IService_deleteSpeaker_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addPC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addPC" message="tns:IService_addPC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addPCResponse" message="tns:IService_addPC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditPC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditPC" message="tns:IService_EditPC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditPCResponse" message="tns:IService_EditPC_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="deletePC">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/deletePC" message="tns:IService_deletePC_InputMessage" />
@@ -1207,21 +1263,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addToPcCart" message="tns:IService_addToPcCart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addToPcCartResponse" message="tns:IService_addToPcCart_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="updatePcCart">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/updatePcCart" message="tns:IService_updatePcCart_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/updatePcCartResponse" message="tns:IService_updatePcCart_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="removeFromPcCart">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/removeFromPcCart" message="tns:IService_removeFromPcCart_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/removeFromPcCartResponse" message="tns:IService_removeFromPcCart_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="clearPcCart">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/clearPcCart" message="tns:IService_clearPcCart_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/clearPcCartResponse" message="tns:IService_clearPcCart_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="checkOut">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/checkOut" message="tns:IService_checkOut_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/checkOutResponse" message="tns:IService_checkOut_OutputMessage" />
+    <wsdl:operation name="editClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/editClient" message="tns:IService_editClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/editClientResponse" message="tns:IService_editClient_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
@@ -1242,6 +1286,18 @@
     <wsdl:operation name="getAllEmployees">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllEmployees" message="tns:IService_getAllEmployees_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllEmployeesResponse" message="tns:IService_getAllEmployees_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getEmployee" message="tns:IService_getEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getEmployeeResponse" message="tns:IService_getEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/editEmployee" message="tns:IService_editEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/editEmployeeResponse" message="tns:IService_editEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEntireInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getEntireInvoice" message="tns:IService_getEntireInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getEntireInvoiceResponse" message="tns:IService_getEntireInvoice_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addAirCooler">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addAirCooler" message="tns:IService_addAirCooler_InputMessage" />
@@ -1463,25 +1519,45 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addSpeaker" message="tns:IService_addSpeaker_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addSpeakerResponse" message="tns:IService_addSpeaker_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="EditSpeaker">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditSpeaker" message="tns:IService_EditSpeaker_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditSpeakerResponse" message="tns:IService_EditSpeaker_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="deleteSpeaker">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/deleteSpeaker" message="tns:IService_deleteSpeaker_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/deleteSpeakerResponse" message="tns:IService_deleteSpeaker_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="addPC">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/addPC" message="tns:IService_addPC_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/addPCResponse" message="tns:IService_addPC_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="EditPC">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditPC" message="tns:IService_EditPC_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditPCResponse" message="tns:IService_EditPC_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="updatePcCart">
+      <soap:operation soapAction="http://tempuri.org/IService/updatePcCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeFromPcCart">
+      <soap:operation soapAction="http://tempuri.org/IService/removeFromPcCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearPcCart">
+      <soap:operation soapAction="http://tempuri.org/IService/clearPcCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkOut">
+      <soap:operation soapAction="http://tempuri.org/IService/checkOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getCartItems">
       <soap:operation soapAction="http://tempuri.org/IService/getCartItems" style="document" />
       <wsdl:input>
@@ -1646,6 +1722,42 @@
     </wsdl:operation>
     <wsdl:operation name="getPCbyID">
       <soap:operation soapAction="http://tempuri.org/IService/getPCbyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSpeaker">
+      <soap:operation soapAction="http://tempuri.org/IService/EditSpeaker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSpeaker">
+      <soap:operation soapAction="http://tempuri.org/IService/deleteSpeaker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPC">
+      <soap:operation soapAction="http://tempuri.org/IService/addPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditPC">
+      <soap:operation soapAction="http://tempuri.org/IService/EditPC" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2193,35 +2305,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updatePcCart">
-      <soap:operation soapAction="http://tempuri.org/IService/updatePcCart" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="removeFromPcCart">
-      <soap:operation soapAction="http://tempuri.org/IService/removeFromPcCart" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="clearPcCart">
-      <soap:operation soapAction="http://tempuri.org/IService/clearPcCart" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="checkOut">
-      <soap:operation soapAction="http://tempuri.org/IService/checkOut" style="document" />
+    <wsdl:operation name="editClient">
+      <soap:operation soapAction="http://tempuri.org/IService/editClient" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2267,6 +2352,33 @@
     </wsdl:operation>
     <wsdl:operation name="getAllEmployees">
       <soap:operation soapAction="http://tempuri.org/IService/getAllEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployee">
+      <soap:operation soapAction="http://tempuri.org/IService/getEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editEmployee">
+      <soap:operation soapAction="http://tempuri.org/IService/editEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntireInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/getEntireInvoice" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2762,42 +2874,6 @@
     </wsdl:operation>
     <wsdl:operation name="addSpeaker">
       <soap:operation soapAction="http://tempuri.org/IService/addSpeaker" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EditSpeaker">
-      <soap:operation soapAction="http://tempuri.org/IService/EditSpeaker" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteSpeaker">
-      <soap:operation soapAction="http://tempuri.org/IService/deleteSpeaker" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="addPC">
-      <soap:operation soapAction="http://tempuri.org/IService/addPC" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EditPC">
-      <soap:operation soapAction="http://tempuri.org/IService/EditPC" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

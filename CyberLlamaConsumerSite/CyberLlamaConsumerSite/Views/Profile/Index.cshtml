@@ -15,7 +15,7 @@
             c_ProductPageInfo part = sc.getPart(i.pc_ID);
 
             NIB++;
-            spent += (part.price*part.Quantity);
+            spent += ((double)(part.price)*part.Quantity);
         }
 
         points = (int)(spent / 1000);
